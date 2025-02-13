@@ -1,0 +1,44 @@
+\documentclass{book}
+
+% Packages
+\usepackage{lipsum} % For dummy text, remove if not needed
+\usepackage{listings} % For pseudo-code formatting
+
+% Define pseudo-code macro
+\newcommand{\pseudocode}[1]{%
+  \lstset{
+    basicstyle=\ttfamily,
+    frame=single,
+    columns=flexible
+  }
+  \lstinline{#1}
+}
+
+
+
+% Title and Author
+\title{Trading Systems}
+\author{Bill Cochran}
+
+\begin{document}
+
+% Title Page
+\maketitle
+
+% Table of Contents
+\tableofcontents
+
+\chapter{Introduction}
+\input{intro.tex}
+
+\part{Theory}
+
+\input{theory_intro.tex}
+\input{theory_instruments.tex}
+
+\input{markets.tex} 
+
+\part{Practice}
+
+\end{document}
+

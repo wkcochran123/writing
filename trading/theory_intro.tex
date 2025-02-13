@@ -1,0 +1,116 @@
+\chapter{The Three Trading Systems}
+
+One simple way to classify trading systems is by the type of instrument they trade.
+Equitites engines, futures engines, and currency/crypto trading are some examples of
+types of trading engines.  But, defining instruments turns out to be a very difficult
+problem and one reserved for another book.
+
+Rather, we can look at the type of \emph{risk} the instrument being traded
+represents.  There are three fundamental types of risk that most, if not all,
+instruments fall into:
+\begin{enumerate}
+\item \emph{Absolute risk instruments} are instruments where it is \emph{not
+possible} to lose more than the principal on the instrument.
+\item \emph{Relative risk instruments} are instruments where it is \emph{possible}
+to lose more than principle on the instrument.
+\item \emph{Cross risk "instruments"} are not really instruments at all.  These
+are crossrates that compute the value of one thing in terms of the other.  EURUSD,
+for instance, is how many dollars it takes to buy 1 euro. There is no "EURUSD"
+instrument. When I refer to instruments in this book, I inclusively include crossrates
+and crypto trading, even though these are not instruments by any definition.
+\end{enumerate}
+At the heart of these definitions is the idea of risk. Throughout this book, I will
+measure risk in dollars.  Value at Risk (VaR) or appropriate surrogate is the idea
+being captured.  Some idea of the magnitude of the first derivative is another way
+to conecptualize this. But, to measure risk, we need to understand another concept.
+
+Holding period, or how long should the trading system expect before any particular
+position is unwound, is the other concept necessary to describe the type of risk
+being taken on.  Given a holding period and a variance, the total amount of
+\emph{traded risk} can be modeled.
+
+As the trading horizon decreases, the total amount of traded risk that can be
+accummulated safely decreases. Having a highly volatile short term view is incosistent
+with having a large position and expectation of profit.  As such, the quantitative
+trading strategies fundamentally change.  The algorithms used to manage portfolios
+get more and more streamlined. There becomes a very real tradeoff between performance
+and flexibility.  For this reason, trading systems can be divided into three different
+holding horizons based on focus.
+\begin{enumerate}
+\item \emph{Mid-long frequency} strategies routinely hold informed overnight positions.
+By informed, I mean exactly that, the trade was designed to incur overnight volatilies.
+Holding times are long enough to make ownership limit positions possible for long
+periods of time while less directional trading can still playout intraday.
+\item \emph{Low-latency} trading has evolved and added appropriate "ultra" and "super,"
+but their technology has become robust enough and flexible enough that low-latency
+trading engines are filtering into broader and broader trading strategies.  These
+are mid-to-high frequency trading signals that allow for accumulation intraday and
+possibility of overnight holding but rely on market making strategies to improve
+market impact.
+\item \emph{Ultra Low Latency} We are almost to the point where there is the minimal
+entropy inside the switch that triggers the outgoing order.  The entire fight is
+finding clever ways to cut the number of bits required of an incoming message to
+trigger a profitable trade on the outbound.
+\end{enumerate}
+
+These are three very different kinds of trading systems--algorithmic trading at
+a maximal rate related to traded risk, high speed trading using very narrowly
+applicable technology, and the hybrid system that blends them.  This chapter will
+explore risk and trading horizon in depth to understand how a trading system
+
+\section{Risk}
+
+Before we start with trading engines, let's start with trading.  Why do people trade?
+The reasons are as diverse as the wisdom or folly behind them.  This book is not
+concerned with \textit{why} people trade but with \textit{how} people trade. Or,
+rather as the case is today, how computers trade.
+
+For instance, consider a retail order placed on a app that enables day-trading.
+That order is then presented to a wholesale market maker that will decide whether they
+should fill from inventory or exhaust.  There can be several layers of this exhaust,
+depending on the calibre of the retail trader and the liquidity of the name being
+traded. The eventual final exhaust is, of course, the open market.  There can be
+several trading systems tied together in a loose collaboration through FIX that
+eventually all agree on how to fill the order.
+
+Of course, trading can get much more sophisticated than this.  It would be very
+difficult to give an exhaustive list of the potential responsibilities of a trading
+system.  Not only that, but rules and regulations change fairly frequently around
+the world.  Profitable trading strategies ebb and flow as macroeconomic conditions
+gyrate. The trading system should fill orders at \emph{minimal market impact} without
+impacting orderly trading while being able to seamlessly absorbed changes required
+by the ever evolving landscape. Should a new marketplace appear desirable, it should be 
+serving that marketplace within a matter of weeks to race opportunity decay.
+
+This is the financial dimension of trading systems.  The trading system negotiates the
+exchange of something of value for something else of value for the purposes of 
+transferring some risk.  Exposure to profits and losses of a company, the point 
+value of the S\&P 500 will increase or decrease, inflation risk, default risk,
+etc.  The list 
+goes on and on, but the fact remains, all trading incurs risk.  All trading systems 
+manage risk.  The trading system facilitates the lifecycle transistions of risk.
+
+As such, this book divides these trading systems into three different types of 
+financial instrument: \emph{absolute risk instruments} such as equities, 
+\emph{relative risk instruments} such as derivatives, and \emph{cross risk 
+instruments} such as currency pairs.  
+
+A trade can decide to take a risk.  The trader can calculate how much risk they would
+like to take, find an instrument that represents that risk, compute the amount of the
+instrument to purchase, and enter the trade. At this point, the trader owns rights
+granted by the instrument.  But, the trade won't turn a profit or book a loss until..
+
+\section{Horizon}
+
+They flatten their position.  The length of time the trader plans to hold the position
+before re-evaluation is the \emph{horizon}.  
+
+
+
+
+
+
+\begin{lstlisting}
+   while 
+\end{lstlisting}
+
