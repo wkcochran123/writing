@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.16)  8 OCT 2025 13:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.16)  8 OCT 2025 15:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -129,7 +129,11 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count279
 \l__pdf_internal_box=\box53
 )
-(./hilbert.aux)
+(./hilbert.aux
+
+LaTeX Warning: Label `prop:universe_tensor' multiply defined.
+
+)
 \openout1 = `hilbert.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
@@ -152,6 +156,7 @@ LaTeX Font Info:    Trying to load font information for U+msa on input line 31.
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 31.
+
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -196,39 +201,25 @@ t/12 x\OT1/cmr/m/n/12 ) ^^A\OML/cmm/m/it/12 x \OT1/cmr/m/n/12 + []\OT1/cmr/bx/n
 2 x\OT1/cmr/m/n/12 )[]\OML/cmm/m/it/12 ;
  []
 
-[16]
-Overfull \hbox (4.54567pt too wide) in paragraph at lines 845--845
-[]\OT1/cmr/bx/n/17.28 On Dark Mat-ter -- STOP READ-ING HERE
+[16] [17] [18]
+Overfull \hbox (11.01778pt too wide) in paragraph at lines 903--903
+[]\OT1/cmr/bx/n/17.28 Gauge In-vari-ance of the Ein-stein Field Equa-
  []
 
-
-Overfull \hbox (17.47122pt too wide) in paragraph at lines 845--845
-\OT1/cmr/bx/n/17.28 LETS GET EV-ERY-THING WA-TER TIGHT
- []
-
-[17]
-
-LaTeX Warning: Citation `milgrom1983' on page 18 undefined on input line 895.
-
-
-LaTeX Warning: Citation `verlinde2017' on page 18 undefined on input line 895.
-
-[18]
-Overfull \hbox (60.30844pt too wide) in paragraph at lines 912--922
- [] 
- []
-
-[19] (./hilbert.bbl [20]) [21] (./hilbert.aux)
+[19] [20] [21] (./hilbert.bbl [22] [23]) [24] (./hilbert.aux)
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 1973 strings out of 476025
- 27958 string characters out of 5790017
+ 1979 strings out of 476025
+ 28024 string characters out of 5790017
  1860388 words of memory out of 5000000
- 22439 multiletter control sequences out of 15000+600000
- 526858 words of font info for 85 fonts, out of 8000000 for 9000
+ 22443 multiletter control sequences out of 15000+600000
+ 528388 words of font info for 90 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,12n,62p,503b,297s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
@@ -253,10 +244,10 @@ exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/20
 23/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2023
 /texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2023/t
 exmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on hilbert.pdf (21 pages, 312139 bytes).
+Output written on hilbert.pdf (24 pages, 315488 bytes).
 PDF statistics:
- 184 PDF objects out of 1000 (max. 8388607)
- 115 compressed objects within 2 object streams
+ 193 PDF objects out of 1000 (max. 8388607)
+ 121 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

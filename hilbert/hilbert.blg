@@ -4,11 +4,9 @@ The top-level auxiliary file: hilbert.aux
 The style file: plain.bst
 Database file #1: hilbert.bib
 Warning--I didn't find a database entry for "hossenfelder2018"
-Warning--I didn't find a database entry for "milgrom1983"
-Warning--I didn't find a database entry for "verlinde2017"
 You've used 12 entries,
             2118 wiz_defined-function locations,
-            583 strings with 5829 characters,
+            581 strings with 5806 characters,
 and the built_in function-call counts, 3547 in all, are:
 = -- 354
 > -- 114
@@ -47,4 +45,4 @@ warning$ -- 0
 while$ -- 37
 width$ -- 14
 write$ -- 146
-(There were 3 warnings)
+(There was 1 warning)
