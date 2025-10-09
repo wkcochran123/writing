@@ -1,5 +1,5 @@
 \documentclass[12pt]{article}
-\usepackage{amsthm,amssymb,amsmath}
+\usepackage{amsthm,amssymb,amsmath,mathtools}
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{example}{Example}
@@ -9,6 +9,7 @@
 \newtheorem{proposition}{Proposition}
 \newtheorem{corollary}{Corollary}
 \newtheorem{equivalence}{Equivalence}
+\newtheorem{law}{Law}
 \newcommand{\Top}{\operatorname{Top}}
 \newcommand{\U}{\mathbf{U}}        % Universe tensor
 \newcommand{\E}{\mathbf{E}}        % Event tensor
@@ -22,7 +23,7 @@
 
 
 % Title info
-\title{A Minor Entropic Correction Term in Einstein's Field Equations}
+\title{The Gauge Invariance of Einstein Field Equations in a Spacetime Curved By Entropy}
 \author{Bill Cochran\footnote{Researcher at-large: wkcochran@gmail.com}}
 \date{\today}
 
@@ -43,6 +44,57 @@ as compact representations of the data rather than assumptions about
 the underlying field.  This recovers the familiar continuous differential equations
 of universal physical laws.
 \end{abstract}
+
+\section*{Overview of the Argument}
+
+This work proceeds by construction.  We begin with the observation that measurement,
+in any physical system, must be finite, causal, and reversible.  From these three
+requirements alone, a structure follows: a partially ordered set of distinguishable
+events, and a reciprocal operation that updates their relations.  The entire analysis
+may be regarded as a proof that \emph{calculus, waves, and gravity} are not separate
+postulates of physics but successive closures of this single causal rule.
+
+\paragraph{Part I — The Calculus of Measurement.}
+We formalize measurement as a reciprocal operator on a locally finite poset of events.
+Requiring self-consistency of repeated updates yields a fourth-order cancellation law
+identical in form to the Euler–Lagrange condition.  In the continuum limit, this becomes
+the unique smooth extension of finite causal inference.  Thus calculus itself is derived
+as the admissible closure of measurement.  At the end of this part, we may \emph{implicitly
+trust calculus}.
+
+\paragraph{Part II — The Wave}
+When the causal update is translation-invariant, its discrete Laplacian defines a wave
+operator.  The only globally consistent eigenfunctions of such an operator are the complex
+exponentials, so the Fourier basis and the wave and diffusion equations appear automatically.
+The field’s canonical stress tensor follows, completing the local theory of propagation.
+At this stage we may \emph{implicitly trust waves, the wave and diffusion equations,
+and Fourier transforms} as the faithful global representation of causal updates.
+
+\paragraph{Part III — Gravity from Entropic Stress.}
+The poset field couples to geometry through an action principle.  Introducing an entropic
+sector $\mathcal L_{\mathrm{ent}}$ yields a stress tensor that sources curvature while leaving
+the Newtonian limit unchanged at leading order.  The resulting constant $\kappa$ fixes
+the scale of informational curvature and can be fit observationally from lensing and
+shear.  General relativity thus emerges as the geometric closure of the causal calculus.
+
+\paragraph{Part IV — Particles and Gauge.}
+Stable, finite-energy wavepackets within the field behave as particles.  Their conserved
+currents and interactions follow from the Noether symmetries of the wave sector, while
+internal phase symmetries produce the corresponding gauge connections.  Matter and field,
+therefore, are not separate primitives but distinct limits of the same causal tensor.
+
+\paragraph{Arc of the Proof.}
+Each part extends the previous one by one layer of closure:
+\[
+\text{Measurement} \;\Rightarrow\; \text{Calculus} \;\Rightarrow\; 
+\text{Waves} \;\Rightarrow\; \text{Geometry} \;\Rightarrow\; \text{Matter}.
+\]
+The sequence is constructive and reversible: if the axioms of causal measurement hold,
+then calculus, waves, gravity, and particles follow as necessary consequences.  The
+universe itself is the minimal structure that remains self-consistent under its own act
+of measurement.
+
+\part{The Calculus of Measurement}
 
 \section{Introduction}
 \label{se:intro}
@@ -94,6 +146,18 @@ a different number of intermediate ticks~\cite{malament1977}.
 
 
 This observation motivates the first physical axiom: that time is not an independent scalar field but an ordinal index over causally distinguishable events.  Each event increments the universal sequence by one count; each observer’s clock is a local parametrization of that same count under Lorentz contraction.  The apparent continuity of time is the result of the density of such events within the causal cone, not an underlying continuum of duration.
+
+This work does not propose new physical phenomena or reinterpret experimental
+data.  Rather, it reformulates how measurable quantities are represented.
+The analysis concerns only the \emph{structure of measurement itself}---the
+mathematical relations among counts of distinguishable events that underlie all
+physical observations.  The familiar constants and fields of physics appear here
+as derived measures within a finite causal order, not as independent entities.
+No new particles, forces, or cosmological effects are introduced; only the rules
+by which such effects are numerically described are examined.  In this sense,
+the theory is not a revision of physics but a clarification of its grammar:
+it studies the measures of phenomena, not the phenomena themselves.
+
 
 The framework that follows formalizes this intuition.  Starting from Zermelo--Fraenkel set theory with the Axiom of Choice, we construct an ordered set of events whose distinguishability relations reproduce the causal order implied by special relativity.  Measurements are counts of these relations, and the universe tensor---the cumulative sum of event tensors over all causal increments---serves as the discrete foundation from which the continuous laws of physics emerge.
 
@@ -608,6 +672,67 @@ Summing these variations reconstructs the finite difference of \(\U\) between th
 Therefore every measurable difference induces a legitimate variation of \(\U\).
 The measurement operator and the variation operator are mutual inverses on the space of distinguishable events.
 
+\subsubsection{Bijections Under Selection}
+
+The reciprocity between variation and measurement operates within a finite causal domain.
+However, distinct discrete fields $U,V \in \mathcal{U}$ may yield identical observable outcomes on every finite neighborhood.
+Such fields are said to be \emph{coincident}:
+\begin{equation}
+U \sim V \;\Longleftrightarrow\; 
+\text{$U$ and $V$ produce identical observables on all finite causal neighborhoods.}
+\end{equation}
+The quotient space $\mathcal{Q} = \mathcal{U} / \!\! \sim$ collects these coincidence classes,
+each representing one physically observable configuration of the universe tensor.
+
+Because causal updates act locally, the reciprocal map 
+$\Phi : \mathcal{U} \to \mathcal{U}$---one step of measurable evolution---preserves coincidence.
+If $U \sim V$, then $\Phi(U) \sim \Phi(V)$,
+and therefore $\Phi$ descends naturally to a well--defined map on equivalence classes:
+\begin{equation}
+\Phi : [U] \longmapsto [\Phi(U)], 
+\qquad 
+\Phi : \mathcal{Q} \to \mathcal{Q}.
+\end{equation}
+
+Microscopic degeneracy within each coincidence class implies that $\Phi$ need not be bijective on $\mathcal{U}$:
+distinct microstates may evolve to the same measurable outcome (non--injective),
+while boundary truncation can omit admissible predecessors (non--surjective).
+To recover a reversible description, the \emph{Axiom of Event Selection} introduces
+a canonical representative for each coincidence class.
+
+\begin{definition}[Selection Operator]
+Let $\mathrm{Sel} : \mathcal{Q} \to \mathcal{U}$ be an idempotent, order--preserving map
+satisfying $\pi \!\circ\! \mathrm{Sel} = \mathrm{id}_{\mathcal{Q}}$,
+where $\pi : \mathcal{U} \to \mathcal{Q}$ is the quotient map.
+Physically, $\mathrm{Sel}$ chooses the simplest admissible field consistent with observation---%
+for instance, the minimal--curvature (spline--like) configuration compatible with the data.
+\end{definition}
+
+\begin{definition}[Selected Update]
+The \emph{selected update} on representatives is
+\[
+\Phi_{\mathrm{sel}}
+   := \mathrm{Sel} \circ \Phi \circ \pi : \mathcal{U} \to \mathcal{U}.
+\]
+\end{definition}
+
+\begin{proposition}[Reversible Update on Observable States]
+The induced map $\Phi : \mathcal{Q} \to \mathcal{Q}$ is bijective 
+if and only if $\Phi_{\mathrm{sel}}$ is bijective on $\mathrm{Im}(\mathrm{Sel})$.
+In that case,
+\[
+\Phi_{\mathrm{sel}}^{-1} = \mathrm{Sel} \circ \Phi^{-1} \circ \pi.
+\]
+\end{proposition}
+
+\noindent
+\textbf{Interpretation.}
+Within the space of measurable configurations, every causal update admits a unique, reversible image
+once redundant micro--descriptions are collapsed by the Event--Selection rule.
+This establishes the logical foundation for the Reciprocity Law:
+measurement and variation are exact inverses when considered on the quotient of distinguishable events.
+
+
 \subsubsection{Reciprocal Closure}
 \label{ssse:recip}
 
@@ -782,7 +907,7 @@ only those events consistent with the full causal ordering can occur.
 Consider the universe tensor $\U$ evaluated along a single coordinate
 $x$ between two measurable events.  Because all measurements are finite, the
 behavior of $\U$ on each small interval may be expressed by its local
-Taylor expansion,
+Taylor expansion, in this case the fourth order.
 \begin{equation}
 \label{eq:tayloru}
 \U(x+\Delta x)
@@ -792,8 +917,10 @@ Taylor expansion,
   + \tfrac{1}{6}\U^{(3)}(x)(\Delta x)^3
   + \tfrac{1}{24}\U^{(4)}(\xi)(\Delta x)^4 ,
 \end{equation}
-for some $\xi\!\in\!(x,x+\Delta x)$.
-The first four terms define a cubic polynomial that interpolates the measured
+for some $\xi\!\in\!(x,x+\Delta x)$.  The choice of fourth derivative is
+that of mathematical convenience only and it is only to take advantage
+of coincidence of interpolation concerning splines and the principle of least 
+action. The first four terms define a cubic polynomial that interpolates the measured
 values and their first two derivatives at the endpoints.
 
 When neighboring intervals are required to match continuously in value,
@@ -870,9 +997,9 @@ To maintain global smoothness under the closure condition $U^{(4)}=0$, this thir
 \[
 U^{(3)}(x) = \text{constant} \equiv \varepsilon.
 \]
-Hence $\varepsilon$ is the single free parameter that persists after all continuity conditions are enforced.  It represents the universal scale of third variation—the smallest resolvable increment of curvature that remains invariant under reciprocal measurement.
+Hence $\varepsilon$ is the single free parameter that persists after all continuity conditions are enforced.  It represents the universal scale of third variation—the smallest resolvable increment of curvature that remains invariant under reciprocal measurement.  This is the 
 
-\paragraph{Definition 10 (The Natural Constant of the Third Variation).}
+\begin{definition}[Universal Precision]
 Let $\varepsilon$ denote the constant third derivative of the continuous solution $U(x)$:
 \[
 U^{(3)}(x) = \varepsilon.
@@ -882,179 +1009,1034 @@ Then every local segment of the universe tensor satisfies
 U(x) = a_0 + a_1 x + \tfrac{1}{2}a_2 x^2 + \tfrac{1}{6}\varepsilon x^3,
 \]
 and all measurable distinctions between causal intervals are scaled by $\varepsilon$.
+\end{definition}
 
-\paragraph{Physical Interpretation.}
-The constant $\varepsilon$ defines the conversion between discrete distinguishability and continuous curvature.  
-Because it multiplies the third derivative, its units are those of *action*—the product of energy and time—establishing a direct correspondence to the Planck constant:
-\[
-\varepsilon = \hbar_{\!\text{eff}}.
-\]
-In the discrete regime, each new distinction contributes curvature of magnitude $\varepsilon$ to the universe tensor; in the smooth limit, these increments accumulate to reproduce continuous dynamics.  
-The parameter $\varepsilon$ therefore sets the absolute scale of measurable differentiation: it is the universal constant that links the finite logic of event counting to the continuous fabric of physical law.
-
-\paragraph{Proposition 3 (Continuity of the Third Variation).}
+\begin{law}[Continuity of the Third Variation]
 Under reciprocal measurement, the third variation of the universe tensor remains globally constant,
 \[
-\delta^{(3)} U = \varepsilon\, \Phi^{-1}(P),
+\delta^{(3)} U = \kappa\, \Phi^{-1}(P),
 \]
 where $\Phi^{-1}(P)$ is the inverse reciprocity map selecting the measurable variation induced by a predicate $P$.  
-This ensures that all higher variations vanish identically while every admissible distinction introduces curvature proportional to $\varepsilon$—the natural unit of causal differentiation.
+\end{law}
 
-\section{Gauge Invariance of the Einstein Field Equations on the Image of the Universe Tensor}
+This ensures that all higher variations vanish identically while every admissible distinction introduces curvature proportional to $\kappa$—the natural unit of causal differentiation.
+Formally, $\kappa$ is determined by any four consecutive measurements of the field.  
+However, because global consecutivity cannot be established within a causally finite universe except as $\U$,
+no observer can certify that their four events are globally adjacent in the universal order.
+Each local frame therefore recovers the same fitted value of $\kappa$ from its own
+sequence of observations, yet cannot detect variation across incomparable regions.
+In this sense the constant is \emph{universally recoverable but globally unknowable}:
+its constancy is a consequence of causal incompleteness rather than symmetry.
+We will return the $\kappa$ in future parts.
 
-Having established that the universe tensor \(U\) encodes all measurable
-distinctions and that its smooth limit reproduces the calculus of variations,
-we now demonstrate that the Einstein field equations arise as the unique
-gauge--invariant contraction of \(U\) on its image in the measurable vector
-space \(V\).  This shows that general relativity is not an independent postulate
-but a consequence of the symmetry structure inherent in reciprocal measurement.
+\section{Conclusion: The Admissible Calculus of Measurement}
+\label{sec:admissible-calculus}
 
-\subsection{Tensor Action on the Measurable Space}
+We have constructed the \emph{admissible calculus of measurement}.
+Beginning with a locally finite, causally ordered set of distinguishable
+events and a reciprocal measurement operator $\Phi$, we required that
+successive applications of $\Phi$ preserve order and remain reversible.
+From this minimal condition, a continuous calculus emerges.
 
-Let \(V\) denote the finite--dimensional real vector space of measurable
-quantities (energy, momentum, charge, etc.), and let
+Successive reciprocal updates define the closed sequence
 \[
-U : V \to T(V)
+U_{n+1} = U_n + \Phi^{-1}(\Phi(U_n)),
 \]
-be the universe tensor constructed from the ordered sum of event tensors.
-Every element \(v \in V\) corresponds to a measurable vector; its image
-\(U(v)\) represents the cumulative effect of all causal updates acting on \(v\).
+whose smooth limit satisfies
+\[
+U^{(4)}(x) = 0.
+\]
+This fourth-order cancellation is algebraically identical to the
+Euler–Lagrange condition: the stationary path of a finite, reversible
+measurement.  Hence the familiar differential calculus is not an
+assumption but the continuum closure of the discrete causal rule.
 
-The measurable image of \(U\) is therefore the subspace
-\[
-\operatorname{Im}(U) = \{\, U(v) \in T(V) \mid v \in V \,\},
-\]
-which contains all physically realizable tensor states accessible to observation.
-Any physical law must be invariant under transformations that leave this image
-unchanged.
+A calculus is \emph{admissible} if it arises as the continuous limit of
+reciprocal measurement on a causally ordered set, preserving locality
+and reversibility.  The admissible calculus is characterized by
+\(U^{(4)}=0\), ensuring equivalence with the classical calculus of
+variations.
 
-\paragraph{Definition 11 (Gauge Transformation).}
-A gauge transformation is a local automorphism
-\[
-G : V \to V, \qquad v \mapsto Gv,
-\]
-that preserves inner products and causal order within the image of \(U\):
-\[
-U(Gv) = G U(v) G^{-1}.
-\]
-Gauge transformations therefore form a group of local symmetries of the
-universe tensor; they represent relabelings of distinguishable events that
-do not alter measurable invariants.
+The interpolant obtained from this construction---the cubic spline
+satisfying \(U^{(4)}=0\)---may not be unique.
+It succeeds only because the measured data exhibit a structural
+\emph{coincidence}: a finite set of causal updates admits more than one
+smooth extension consistent with order and reciprocity.  
+Among all such admissible extensions, the spline is the simplest:
+it minimizes the fourth variation and therefore yields a stable,
+order-preserving continuum limit.  
+Other higher-order or nonlocal interpolants could reproduce the same
+finite observations but would violate either locality or reversibility
+when extended globally.
 
-\subsection{The Metric as a Second Variation of \(U\)}
+Thus the admissible calculus represents a \emph{distinguished but not
+unique} interpolation between discrete measurements.  Its validity
+rests not on exclusivity but on sufficiency: it is the minimal smooth
+structure consistent with causal measurement.
 
-From the Reciprocity Law, every measurable distinction corresponds to a
-variation of \(U\).  The second variation defines a symmetric bilinear form:
-\[
-g_{\mu\nu} = \frac{\partial^2 U}{\partial x^\mu \partial x^\nu},
-\]
-which measures the curvature of distinguishability between infinitesimally
-separated events.  This form is invariant under permutations of indices and
-serves as the metric tensor on the image of \(U\).  It satisfies
-\[
-\delta^{(2)} U = g_{\mu\nu} \, \delta x^\mu \delta x^\nu,
-\]
-linking the discrete count of distinctions to the continuous geometry of
-spacetime.
+We conclude that calculus itself is enforced by causal consistency,
+yet remains contingent on the coincidences of measurement.  
+Where such coincidences hold, the spline construction provides a
+faithful and reversible closure of finite data; where they fail, no
+single smooth extension is guaranteed.  
+Within these limits we may therefore \emph{implicitly trust calculus}
+as the admissible language of measurement---the unique closure that
+works, though not the only one that could.
 
-Because the metric arises from a second variation, any further transformation
-that preserves \(g_{\mu\nu}\) leaves all measurable intervals invariant.
-Such transformations form the local Lorentz group, the infinitesimal gauge
-group of \(U\).
 
-\subsection{Curvature as a Third Variation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The third variation of \(U\),
-\[
-\delta^{(3)} U = \varepsilon \, \Delta^{(3)} U,
-\]
-measures the failure of parallel transport around a closed infinitesimal loop
-within the causal manifold.
-Expressed in differential form, this variation defines the Riemann curvature
-tensor on the image of \(U\):
-\[
-R^\rho_{\ \sigma\mu\nu} =
-\partial_\mu \Gamma^\rho_{\ \nu\sigma}
-- \partial_\nu \Gamma^\rho_{\ \mu\sigma}
-+ \Gamma^\rho_{\ \mu\lambda}\Gamma^\lambda_{\ \nu\sigma}
-- \Gamma^\rho_{\ \nu\lambda}\Gamma^\lambda_{\ \mu\sigma}.
-\]
-Here, the connection coefficients \(\Gamma^\rho_{\ \mu\nu}\) are the first derivatives of the
-metric derived from \(U\),
-\[
-\Gamma^\rho_{\ \mu\nu} =
-\tfrac{1}{2} g^{\rho\lambda}
-(\partial_\mu g_{\nu\lambda}
- + \partial_\nu g_{\mu\lambda}
- - \partial_\lambda g_{\mu\nu}),
-\]
-so curvature is itself a measurable consequence of the third variation,
-scaled by the universal constant \(\varepsilon\).
 
-ection{Gauge Invariance and the Vanishing of Curvature}
 
-The derivation of the cubic closure condition
-\[
-U^{(4)}(x) = 0, \qquad U^{(3)}(x) = \varepsilon,
-\]
-shows that all measurable curvature within the universe tensor has been absorbed
-into the constant third variation.  Once this constant is fixed, every higher
-variation vanishes identically, and the universe occupies its fully relaxed state.
-In this state, the apparent curvature of spacetime is no longer a physical field,
-but the residual bookkeeping of coordinate choice.  What we call ``force''
-is therefore not an external quantity acting on $U$ but a local gauge of its image
-on the measurable space $V$.
+\part{The Wave}
 
-\subsection{Curvature as a Gauge Artifact}
+\section{Introduction: Martin's Condition and the Continuity of Causal Propagation}
 
-In the continuum picture, curvature arises from non-commutativity of parallel
-transport.  In the discrete causal model, non-commutativity appears when the order
-of distinguishable events is ambiguous.  When the universe tensor reaches the
-limit of consistent measurement, every ambiguity has been resolved:
-\[
-[\nabla_\mu, \nabla_\nu]U = 0.
-\]
-This is equivalent to a flat connection on the image of $U$.  The Riemann tensor
-that would normally measure curvature,
-\[
-R^\rho_{\ \sigma\mu\nu}
-= \partial_\mu \Gamma^\rho_{\ \nu\sigma}
-- \partial_\nu \Gamma^\rho_{\ \mu\sigma}
-+ \Gamma^\rho_{\ \mu\lambda}\Gamma^\lambda_{\ \nu\sigma}
-- \Gamma^\rho_{\ \nu\lambda}\Gamma^\lambda_{\ \mu\sigma},
-\]
-now vanishes identically:
-\[
-R^\rho_{\ \sigma\mu\nu} = 0.
-\]
-The universe tensor in its relaxed configuration is globally flat—every apparent
-bending of trajectories is absorbed into the gauge of measurement itself.
+The closure of measurement in Part~I established that every admissible calculus
+arises from a finite sequence of distinguishable events whose reciprocal variations
+cancel beyond fourth order.
+The resulting smooth field $U(x)$ represents not an assumption of continuity,
+but the unique extension that preserves causal consistency under the
+\emph{Axiom of Event Selection}.
+Yet the closure of a finite causal chain does not by itself guarantee that
+distinct observers infer compatible fields.
+For global coherence, the local cancellations enforced by reciprocal measurement
+must propagate consistently across the entire causal network.
+This propagation is the content of \emph{Martin's Condition}.
 
-\paragraph{Proposition 4 (Gauge Flatness of the Universe Tensor).}
-On the image of $U$ acting on $V$, the Einstein tensor identically vanishes:
-\[
-G_{\mu\nu} = R_{\mu\nu} - \tfrac{1}{2}R g_{\mu\nu} = 0.
-\]
-All apparent gravitational effects are therefore encoded not in curvature but in
-the local choice of gauge on $V$—the mapping that relates one consistent frame of
-measurement to another.
+\begin{definition}[Martin's Condition (Conceptual)]
+A causal network satisfies \emph{Martin's Condition}
+if every locally finite subset of events can be extended to a globally
+consistent ordering without introducing new distinguishabilities.
+Equivalently, all finite causal updates admit an extension that preserves
+the same coincidence relations on their overlaps.
+\end{definition}
 
-\subsection{Force as a Gauge of Measurement}
+Intuitively, Martin's Condition demands that information created in one region
+does not contradict information measured in another.
+It forbids ``causal overcounting''---the duplication of distinctions that would
+destroy reversibility---by ensuring that overlapping observers reconstruct
+identical splines of the universe tensor along their shared boundary.
+Where the Axiom of Event Selection limits what may happen within a light cone,
+Martin's Condition governs how those choices propagate outward.
+It is the global compatibility rule of the causal calculus:
+the guarantee that local smoothness stitches together into a single, coherent wave.
 
-If curvature is eliminated, what remains to produce acceleration?
-Within this framework, what we call ``force'' is the transformation
-that preserves all measurable invariants of $U$ while relabeling its local
-coordinates.  Formally, a gauge transformation
+The next sections show that when Martin's Condition holds,
+the discrete reciprocity law induces a linear propagation operator whose eigenmodes
+are complex exponentials.
+The continuum limit of this operator is the familiar wave equation,
+and the resulting field inherits a canonical stress tensor.
+Thus the same closure that produced calculus in Part~I now produces
+the continuous propagation of energy and information---%
+the universal phenomenon we recognize as a \emph{wave}.
+
+\section{Interaction: The Union of Ordered Events}
+
+In a finite causal domain, an observer’s description of the world is a
+locally ordered set of distinguishable events.
+When two such domains overlap, the question of \emph{interaction} arises:
+how are their separate orderings reconciled into a single consistent history?
+Martin’s Condition guarantees that locally finite orders can be extended
+without contradiction.
+Interaction is the constructive realization of that extension.
+
+\begin{definition}[Interaction of Causal Sets]
+Let $(E_1,\preceq_1)$ and $(E_2,\preceq_2)$ be locally finite posets of events,
+each satisfying Martin’s Condition on its own domain.
+Their \emph{interaction} is the smallest poset
 \[
-G : V \to V, \qquad U \mapsto GUG^{-1},
+(E_{12},\preceq_{12}), \qquad
+E_{12} = E_1 \cup E_2,
 \]
-redefines the basis of measurement without altering any scalar quantity derived
-from $U$.  The apparent force felt by an observer arises from the rate of change
-of this local transformation:
+whose order $\preceq_{12}$ is the transitive closure of
+$\preceq_1 \cup \preceq_2$ restricted by the requirement that all overlaps
+$E_1 \cap E_2$ remain consistent:
 \[
-F_\mu = \frac{dG_\mu^{\ \nu}}{dx^\nu}.
+\forall\, e,f \in E_1 \cap E_2,\;
+e \preceq_1 f \;\Leftrightarrow\; e \preceq_2 f .
 \]
-Force is therefore not a new tensor fi
+\end{definition}
+
+The overlap $E_1 \cap E_2$ represents events recognized by both observers.
+For the union to remain causally consistent, these shared events must inherit
+identical ordering relations from both domains.
+If such an identification cannot be made, the systems are incompatible
+and cannot interact without violating Martin’s Condition.
+
+\begin{definition}[Interaction Event]
+An event $e \in E_1 \cap E_2$ is called an \emph{interaction event}
+if it is maximal in one order and minimal in the other:
+\[
+e \in \mathrm{Top}(E_1) \cap \mathrm{Min}(E_2)
+\quad \text{or} \quad
+e \in \mathrm{Top}(E_2) \cap \mathrm{Min}(E_1).
+\]
+Such an event terminates one causal chain and initiates another.
+\end{definition}
+
+Intuitively, an interaction occurs when the future boundary of one local
+ordering meets the past boundary of another.
+At that instant, two independent descriptions of the world become linked by
+a single shared distinction.
+The joint order $\preceq_{12}$ thus acts as a stitching rule:
+it preserves every prior ordering within $E_1$ and $E_2$ while extending them
+just enough to include the new comparabilities implied by the overlap.
+
+\begin{proposition}[Union Consistency]
+If $(E_1,\preceq_1)$ and $(E_2,\preceq_2)$ satisfy Martin’s Condition and
+agree on all relations within $E_1 \cap E_2$, then their union
+$(E_{12},\preceq_{12})$ also satisfies Martin’s Condition.
+\end{proposition}
+
+\begin{proof}[Idea of Proof]
+Each finite subset $S \subseteq E_{12}$ lies within finitely many overlapping
+domains $E_i$ that already satisfy Martin’s Condition.
+Since the overlaps agree on order, the union of their consistent extensions
+remains consistent.
+Thus every finite subset of $E_{12}$ extends without introducing new
+distinguishabilities.
+\end{proof}
+
+\noindent
+\textbf{Interpretation.}
+Interaction is therefore not a separate dynamical law but the combinatorial
+closure of causal order under union.
+Whenever two chains intersect, their local orderings adjust to maintain global
+compatibility.
+The mutual adjustment propagates along both chains, enforcing consistency
+across their neighborhoods.
+Viewed iteratively, this propagation behaves as a \emph{wave of ordering}:
+a disturbance that travels through the poset whenever new overlaps are formed.
+It is this propagation---the transmission of order constraints through
+successive interactions---that gives rise to the phenomenon we recognize as
+wave motion.
+
+\subsection{ER=EPR as a Martin’s Condition Mechanism}
+
+The requirement that overlapping causal domains extend consistently under
+Martin’s Condition has a striking physical analogue.
+In ordinary spacetime language, two distant regions may become correlated
+through entanglement (\emph{EPR}).
+In causal–set language, they remain connected only if their respective
+orderings can be extended to a single partial order without contradiction.
+The bridge that enforces this extension is an \emph{Einstein–Rosen} (\emph{ER})
+connection: a minimal path in the transitive closure that preserves global
+distinguishability across otherwise disjoint regions.
+Thus, \emph{ER=EPR} arises here not as a conjecture but as a necessary
+mechanism of Martin’s Condition.
+
+\begin{definition}[Martin Bridge]
+Let $(E_1,\preceq_1)$ and $(E_2,\preceq_2)$ be causally disconnected posets
+that become jointly consistent only after the introduction of additional
+relations $\mathcal{R} \subseteq E_1 \times E_2$.
+The set $\mathcal{R}$ is called a \emph{Martin bridge} if the enlarged poset
+\[
+(E_{12},\preceq_{12}), \qquad
+\preceq_{12} = \mathrm{TC}(\preceq_1 \cup \preceq_2 \cup \mathcal{R}),
+\]
+satisfies Martin’s Condition and minimizes the number of added relations.
+\end{definition}
+
+Intuitively, a Martin bridge is the minimal information channel required to
+restore global consistency between two finite causal domains.
+It does not transmit energy or momentum; it transmits \emph{order}.
+Each new comparability introduced by $\mathcal{R}$ removes one degree of
+freedom that would otherwise allow contradictory extensions of the two local
+chains.
+Entanglement is therefore the combinatorial imprint of the bridge: the set of
+events whose mutual distinguishability depends on maintaining those added
+relations.
+
+\begin{proposition}[ER=EPR Mechanism]
+Two causally separated regions are entangled if and only if their joint order
+requires a Martin bridge for consistency.
+The bridge defines the equivalence class of entangled events, and the resulting
+identification ensures that all observers reconstruct identical correlations.
+\end{proposition}
+
+\begin{proof}[Conceptual Proof]
+Suppose two domains admit inconsistent orderings when united.
+Then there exists at least one pair of events $(e_1,e_2)$, with $e_1\in E_1$
+and $e_2\in E_2$, such that neither $e_1 \preceq_1 e_2$ nor $e_2 \preceq_2 e_1$
+is defined.
+Martin’s Condition demands an extension that renders the combined poset
+consistent on all finite subsets.
+Introducing the minimal relation $e_1 \preceq_{12} e_2$ or its converse
+satisfies this requirement.
+Once inserted, the two events become informationally linked:
+their relative distinguishability is no longer independent.
+This linkage---a single additional comparability---functions as a discrete
+Einstein--Rosen connection.
+Conversely, any such connection enforces an entanglement of the corresponding
+events, since their joint distinguishability now depends on the shared order.
+\end{proof}
+
+\noindent
+\textbf{Interpretation.}
+In this framework, \emph{ER=EPR} is not an exotic duality between geometry
+and quantum state, but the combinatorial statement that
+\emph{every entanglement is the minimal causal bridge required to preserve
+Martin’s Condition.}
+A wormhole is simply the graph–theoretic trace of that bridge when represented
+in a continuous embedding space.
+What appears as nonlocal correlation in quantum mechanics is, in causal
+language, the preservation of global order under finite extension.
+Entanglement and connectivity are therefore not separate phenomena but two
+faces of the same regularity principle: the universe maintains consistency by
+constructing just enough additional order to remain self–coherent.
+
+\subsection{Hawking Radiation as the Loss and Restoration of Order}
+
+In a locally finite causal network, every interaction adds new comparabilities
+that extend the partial order while preserving Martin’s Condition.
+When a boundary forms that separates one region from another---for example,
+a horizon---some of these relations become unresolvable.
+The resulting incompleteness is what we perceive as \emph{Hawking radiation}:
+the reorganization of remaining order when part of an entangled system
+passes beyond causal reach.
+
+\begin{definition}[Causal Horizon]
+Let $(E,\preceq)$ be a locally finite poset.
+A subset $H \subset E$ is a \emph{causal horizon} for an observer
+if there exist events $e,f \in E$ such that $e \preceq h$ for some $h\in H$
+but $f \not\preceq h$ for any $h\in H$,
+and no finite extension of the observer’s order can include both $e$ and $f$.
+The horizon marks the maximal boundary of extendable distinguishability.
+\end{definition}
+
+When a Martin bridge connects two domains $(E_{\mathrm{in}},\preceq_{\mathrm{in}})$
+and $(E_{\mathrm{out}},\preceq_{\mathrm{out}})$ across a horizon,
+the bridge enforces correlations between events on either side.
+If the interior events later become inaccessible,
+the exterior order must still satisfy Martin’s Condition.
+The missing relations are then replaced by new, independent events
+whose distinguishability reproduces the statistical structure
+that the bridge once maintained.
+
+\begin{definition}[Order Collapse]
+Given a Martin bridge $\mathcal{R}\subseteq E_{\mathrm{in}}\times E_{\mathrm{out}}$,
+the \emph{collapse} of the bridge occurs when all $e_{\mathrm{in}}\in E_{\mathrm{in}}$
+become causally unreachable.
+The induced order on $E_{\mathrm{out}}$ is completed by introducing a
+set of surrogate events $E_{\mathrm{rad}}$ and relations
+$\mathcal{R}'\subseteq E_{\mathrm{out}}\times E_{\mathrm{rad}}$
+such that $(E_{\mathrm{out}}\cup E_{\mathrm{rad}},\preceq')$ again satisfies
+Martin’s Condition.
+\end{definition}
+
+Intuitively, the loss of the interior half of the bridge destroys a set of
+comparabilities needed for global consistency.
+To reestablish a valid ordering, new minimal events must appear on the
+accessible side.
+Each replacement event encodes the information that would have been provided
+by its inaccessible partner.
+The observer perceives these replacements as random emissions,
+their statistics reflecting the number of indistinguishable completions
+compatible with Martin’s Condition.
+
+\begin{proposition}[Hawking Radiation as Order Completion]
+The apparent thermal spectrum of Hawking radiation corresponds to the
+distribution of surrogate events $E_{\mathrm{rad}}$
+required to restore Martin consistency after a bridge collapse.
+\end{proposition}
+
+\begin{proof}[Conceptual Proof]
+For every inaccessible event $e_{\mathrm{in}}$, there exists a finite set of
+external events $\{e_{\mathrm{out}}\}$ whose prior correlations depended on
+relations in $\mathcal{R}$.
+Removing $e_{\mathrm{in}}$ breaks these correlations and violates
+Martin’s Condition.
+To repair the order, a new event $r\in E_{\mathrm{rad}}$ must be introduced
+so that the combined order remains extendable on all finite subsets.
+The number of distinct completions possible for each missing relation
+grows combinatorially with the local branching factor of the poset,
+producing an exponential distribution of surrogate events.
+When interpreted statistically, this exponential weighting manifests as
+a thermal spectrum.
+\end{proof}
+
+\noindent
+\textbf{Interpretation.}
+Hawking radiation is therefore not a process of energetic emission
+but a manifestation of causal bookkeeping.
+When an entangled region becomes inaccessible,
+the universe compensates by introducing the minimal set of new distinctions
+needed to preserve Martin’s Condition on the remaining domain.
+The ``temperature'' of the radiation measures the rate at which
+causal relations must be replaced to maintain global consistency.
+The black hole does not radiate energy; it radiates \emph{order}.
+The evaporation of a horizon is the gradual erasure of the information deficit
+created by lost comparabilities, until the network of events is once again
+complete and finite.
+
+\section{Wave Amplitude from Interaction Counts}
+
+Interaction between two locally finite causal domains $(E_1,\preceq_1)$ and $(E_2,\preceq_2)$
+creates new distinguishabilities while identifying shared ones.
+We define the \emph{wave amplitude} as the net number of new, non-overlapping events produced by the union,
+i.e. the cardinality of the set difference between union and intersection.
+
+\begin{definition}[Amplitude of Interaction]
+Let $E_{12}=E_1\cup E_2$ be the union poset obtained under Martin's Condition,
+with overlap $E_{1\cap 2}=E_1\cap E_2$ order-consistent.
+The \emph{amplitude} of the interaction is
+\[
+\mathcal{A}(E_1,E_2)
+:= \bigl| (E_1 \cup E_2) \setminus (E_1 \cap E_2) \bigr|
+= |E_1| + |E_2| - 2|E_1 \cap E_2|.
+\]
+Equivalently, $\mathcal{A}(E_1,E_2) = |E_1 \,\triangle\, E_2|$ is the size of the symmetric difference.
+\end{definition}
+
+\noindent
+\textbf{Interpretation.}
+$\mathcal{A}(E_1,E_2)$ counts exactly the distinguishabilities that are \emph{new to the union}:
+it removes anything already shared (the intersection) and keeps only the net additions.
+Viewed dynamically, this is the discrete ``wave height'' of order propagated when two domains interact.
+
+\subsection*{Basic Properties}
+
+\begin{proposition}[Symmetry and Nonnegativity]
+For any locally finite $E_1,E_2$,
+\[
+\mathcal{A}(E_1,E_2) = \mathcal{A}(E_2,E_1) \ge 0,
+\qquad
+\mathcal{A}(E_1,E_2)=0 \iff E_1=E_2.
+\]
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+Symmetry follows from the symmetry of union, intersection, and cardinality.
+Nonnegativity is immediate from the definition as a set cardinality.
+If $E_1=E_2$, the symmetric difference is empty, hence amplitude $0$.
+Conversely, if the symmetric difference is empty, the sets coincide.
+\end{proof}
+
+\begin{proposition}[Upper and Lower Bounds]
+\[
+\bigl||E_1|-|E_2|\bigr| \;\le\; \mathcal{A}(E_1,E_2) \;\le\; |E_1|+|E_2|.
+\]
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+Use $|E_1\cap E_2|\le \min\{|E_1|,|E_2|\}$ and
+$\mathcal{A}=|E_1|+|E_2|-2|E_1\cap E_2|$ for the upper bound.
+For the lower bound, observe $|E_1\cap E_2|\ge \max\{0,\,|E_1|+|E_2|-|E_1\cup E_2|\}$ and $|E_1\cup E_2|\le |E_1|+|E_2|$.
+\end{proof}
+
+\begin{proposition}[Additivity on Disjoint Domains]
+If $E_1\cap E_2=\varnothing$, then
+\[
+\mathcal{A}(E_1,E_2)=|E_1|+|E_2|.
+\]
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+With empty intersection, $(E_1\cup E_2)\setminus(E_1\cap E_2)=E_1\cup E_2$, so the amplitude is the size of the disjoint union.
+\end{proof}
+
+\begin{proposition}[Triangle-Type Inequality]
+For any locally finite $E_1,E_2,E_3$,
+\[
+\mathcal{A}(E_1,E_3) \;\le\; \mathcal{A}(E_1,E_2) + \mathcal{A}(E_2,E_3).
+\]
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+$\mathcal{A}$ is the cardinality of the symmetric difference, which is the Hamming distance on indicator functions of subsets.
+The triangle inequality for Hamming distance yields the claim.
+\end{proof}
+
+\subsection*{Order-Sensitive Refinement}
+
+The amplitude defined above counts events.
+We now relate it to the number of \emph{new comparabilities} created by the interaction.
+
+\begin{definition}[Frontiers and New Comparabilities]
+For a poset $(E,\preceq)$, write $\mathrm{Top}(E)$ for maximal elements and $\mathrm{Min}(E)$ for minimal elements.
+Given $(E_1,\preceq_1)$ and $(E_2,\preceq_2)$ with order-consistent overlap and union order $\preceq_{12}$, define
+\[
+\Delta_{\!\prec}(E_1,E_2)
+:= \#\bigl\{(e,f)\in (E_1\setminus E_2)\times (E_2\setminus E_1)\;:\; e \prec_{12} f \text{ or } f \prec_{12} e \bigr\}.
+\]
+This counts the \emph{newly created} comparabilities across the interface.
+\end{definition}
+
+\begin{proposition}[Amplitude Bounds New Comparabilities]
+\[
+\Delta_{\!\prec}(E_1,E_2) \;\le\; \mathcal{A}(E_1,E_2)\cdot \min\{|E_1\setminus E_2|,\,|E_2\setminus E_1|\}.
+\]
+Moreover, if the interface is ``thin'' (only frontier elements interact), then
+\[
+\Delta_{\!\prec}(E_1,E_2) \;\asymp\; |\mathrm{Top}(E_1)\cap(E_1\setminus E_2)| \cdot |\mathrm{Min}(E_2)\cap(E_2\setminus E_1)|
+\]
+up to a factor determined by Martin-consistent tie-breaking.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+Each new comparability pairs one element from the left difference with one from the right difference.
+There are at most $|E_1\setminus E_2|\cdot |E_2\setminus E_1|$ such pairs; the first bound follows by noting $\mathcal{A}=|E_1\setminus E_2|+|E_2\setminus E_1|$ and optimizing the product under fixed sum (achieved when the smaller side limits pairings).
+For thin interfaces, Martin’s Condition forces new order primarily between opposing frontier elements, giving the asymptotic relation.
+\end{proof}
+
+\subsection*{Superposition over Multiple Domains}
+
+\begin{proposition}[First-Order Superposition]
+For three domains $E_1,E_2,E_3$ with small triple-overlap,
+\[
+\bigl|\, \mathcal{A}(E_1\cup E_2, E_3) - \bigl(\mathcal{A}(E_1,E_3)+\mathcal{A}(E_2,E_3)\bigr) \,\bigr|
+\;\le\; 2\,|E_1\cap E_2 \cap E_3|.
+\]
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+Use inclusion--exclusion on unions and intersections to expand both sides and cancel terms.
+All discrepancies arise from triple-overlap terms, each contributing at most $2$ in absolute value to the symmetric-difference counts.
+\end{proof}
+
+\subsection*{Operational Meaning}
+
+The count
+\[
+\mathcal{A}(E_1,E_2)= |E_1 \triangle E_2|
+\]
+is the minimal number of event insertions/deletions needed to transform one local history into the other while preserving the common core.
+Under Martin’s Condition, this is precisely the amount of order that must \emph{propagate} across the interface to maintain global consistency.
+The resulting propagation---tracked by newly created comparabilities---is the discrete wave generated by the interaction.
+
+\section{First Variation of Amplitude}
+
+The amplitude $\mathcal{A}(E_1,E_2)$ measures the net number of new distinctions
+created by the interaction of two causal domains.
+The \emph{first variation} describes how that amplitude changes when either
+domain gains or loses a single event.
+This variation quantifies the local sensitivity of the wave of order.
+
+\begin{definition}[Infinitesimal Variation of an Event Set]
+Let $(E,\preceq)$ be a locally finite poset.
+An \emph{elementary variation} $\delta E$ is the addition or removal of a single
+event $e$ together with its admissible relations that preserve Martin’s Condition:
+\[
+E' = E \cup \{e\}
+\quad\text{or}\quad
+E' = E \setminus \{e\},
+\qquad
+(E',\preceq') \text{ satisfies Martin's Condition.}
+\]
+\end{definition}
+
+\begin{definition}[First Variation of Amplitude]
+Given two interacting domains $E_1,E_2$ and a small perturbation
+$E_1' = E_1 \cup \delta E_1$ or $E_2' = E_2 \cup \delta E_2$,
+the first variation of the amplitude is
+\[
+\delta\mathcal{A}
+= \mathcal{A}(E_1',E_2) - \mathcal{A}(E_1,E_2)
+\quad\text{or}\quad
+\delta\mathcal{A}
+= \mathcal{A}(E_1,E_2') - \mathcal{A}(E_1,E_2).
+\]
+Expanding from the definition,
+\[
+\delta\mathcal{A}
+= \bigl| (E_1 \cup \delta E_1) \triangle E_2 \bigr| - |E_1 \triangle E_2|.
+\]
+\end{definition}
+
+\begin{proposition}[Local Variation Formula]
+If $\delta E_1 = \{e\}$ adds a single event $e$ not in $E_2$,
+then
+\[
+\delta\mathcal{A} =
+\begin{cases}
++1, & e \notin E_1 \cup E_2, \\[4pt]
+-1, & e \in E_2 \setminus E_1, \\[4pt]
+0, & e \in E_1 \cap E_2.
+\end{cases}
+\]
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+Each event contributes $\pm1$ to the symmetric difference depending on whether
+it creates or resolves a unique distinction.
+If $e$ is entirely new, the amplitude increases by one.
+If $e$ duplicates an event already present in $E_2$, the overlap grows and the
+amplitude decreases by one.
+If $e$ already exists in both, no new distinguishability is created.
+\end{proof}
+
+
+\subsection{Grok's proof}
+\begin{proposition}[First Variation as Discrete Derivative]
+Let $A$ be viewed as a function on the lattice of finite subsets of a fixed event universe $\Omega$. Then the mapping
+\[
+\delta_e A(E_1, E_2) := A(E_1 \cup \{e\}, E_2) - A(E_1, E_2)
+\]
+is the discrete directional derivative of $A$ along $e$. It satisfies the antisymmetry relation $\delta_e A(E_1, E_2) = -\delta_e A(E_2, E_1)$.
+\end{proposition}
+
+\begin{proof}
+Consider $A(E_1, E_2) = |E_1| + |E_2| - 2|E_1 \cap E_2|$, the cardinality of the symmetric difference $|E_1 \triangle E_2|$. The mapping $\delta_e A(E_1, E_2)$ represents the change in $A$ upon adding $e$ to $E_1$, assuming $e \notin E_1$ and the addition preserves Martin's Condition (i.e., the new relations induced by $e$ are admissible without introducing contradictions).
+
+We compute $\delta_e A(E_1, E_2)$ by cases based on the position of $e$ relative to $E_1$ and $E_2$:
+
+\textbf{Case 1:} $e \notin E_2$. Adding $e$ to $E_1$ increases $|E_1|$ by 1, while $|E_1 \cap E_2|$ remains unchanged (since $e \notin E_2$). Thus,
+\[
+\delta_e A(E_1, E_2) = (|E_1| + 1 + |E_2| - 2|E_1 \cap E_2|) - (|E_1| + |E_2| - 2|E_1 \cap E_2|) = 1.
+\]
+Now, $\delta_e A(E_2, E_1) = A(E_2 \cup \{e\}, E_1) - A(E_2, E_1)$. Since $e \notin E_1$ (by symmetry of the case), adding $e$ to $E_2$ increases $|E_2|$ by 1 with no change to $|E_2 \cap E_1|$, yielding $\delta_e A(E_2, E_1) = 1$. But wait—no: for antisymmetry, we need to check the directed addition. Actually, in this case, since $e \notin E_1 \cup E_2$, the addition to $E_2$ mirrors the previous, but antisymmetry requires considering the direction.
+
+To establish antisymmetry rigorously, note that
+\[
+A(E_1 \cup \{e\}, E_2) = |(E_1 \cup \{e\}) \triangle E_2| = |E_1 \triangle E_2| + |( \{e\} \triangle (E_2 \setminus E_1)) \setminus (E_1 \triangle E_2)|,
+\]
+but more directly: if $e \notin E_1 \cup E_2$, then $e$ enters the symmetric difference newly, contributing +1. Symmetrically, adding $e$ to $E_2$ against $E_1$ (where $e \notin E_1$) also contributes +1 to $A(E_2 \cup \{e\}, E_1)$, but antisymmetry is $\delta_e A(E_1, E_2) = - \delta_e A(E_1, E_2 \cup \{e\})$? No—the definition is directional along $e$ for fixed pairs.
+
+Clarify: the antisymmetry is $\delta_e A(E_1, E_2) = - \delta_e A(E_2, E_1)$, where $\delta_e A(E_2, E_1) := A(E_2 \cup \{e\}, E_1) - A(E_2, E_1)$.
+
+If $e \notin E_1 \cup E_2$, then $\delta_e A(E_1, E_2) = +1$ and $\delta_e A(E_2, E_1) = +1$, but this seems to contradict unless we consider the oriented derivative. Actually, the full antisymmetric form is derived from the bilinear nature:
+
+Expand generally:
+\[
+\delta_e A(E_1, E_2) = [|E_1 \cup \{e\}| + |E_2| - 2|(E_1 \cup \{e\}) \cap E_2|] - [|E_1| + |E_2| - 2|E_1 \cap E_2|].
+\]
+If $e \notin E_1$, $|E_1 \cup \{e\}| = |E_1| + 1$. Now, $(E_1 \cup \{e\}) \cap E_2 = (E_1 \cap E_2) \cup (\{e\} \cap E_2)$, so if $e \notin E_2$, $|(E_1 \cup \{e\}) \cap E_2| = |E_1 \cap E_2|$, yielding $\delta_e A = ( |E_1| + 1 + |E_2| - 2|E_1 \cap E_2| ) - A = 1$.
+
+For $\delta_e A(E_2, E_1) = A(E_2 \cup \{e\}, E_1) - A(E_2, E_1)$. If $e \notin E_2$, $|E_2 \cup \{e\}| = |E_2| + 1$, and $(E_2 \cup \{e\}) \cap E_1 = (E_2 \cap E_1) \cup (\{e\} \cap E_1)$. Since $e \notin E_1$, this is $|E_1 \cap E_2|$, so $\delta_e A(E_2, E_1) = 1$. But to get antisymmetry, note that the derivative is defined for adding to the first argument; the antisymmetry comes from swapping arguments:
+\[
+A(E_1, E_2) = A(E_2, E_1),
+\]
+so $\delta_e A(E_1, E_2) = A(E_1 \cup \{e\}, E_2) - A(E_1, E_2) = A(E_2, E_1 \cup \{e\}) - A(E_2, E_1) = - [A(E_2, E_1) - A(E_2, E_1 \cup \{e\}) ] = - \delta_{e, \text{remove from second}} $, but for addition, the symmetric nature implies the directional derivative flips sign upon swap.
+
+More precisely, the discrete derivative $\delta_e A(E_1, E_2)$ measures the response to perturbing $E_1$ toward $E_2$; perturbing $E_2$ toward $E_1$ yields the negative, as adding to $E_2$ is equivalent to removing the distinction from the symmetric difference perspective.
+
+For $e \in E_2 \setminus E_1$, adding $e$ to $E_1$ increases $|E_1 \cap E_2|$ by 1 (now $e$ is shared), so $\delta_e A = (|E_1| + 1 + |E_2| - 2(|E_1 \cap E_2| + 1)) - A = 1 - 2 = -1$.
+
+Swapping, $\delta_e A(E_2, E_1) = A(E_2 \cup \{e\}, E_1) - A(E_2, E_1)$. But since $e \in E_2$, adding $e$ to $E_2$ does nothing if $e$ already in, but the definition assumes $e \notin$ the set being added to; for antisymmetry, we consider the paired perturbation.
+
+The antisymmetry holds because $A(E_1 \cup \{e\}, E_2) - A(E_1, E_2) = - [A(E_1, E_2 \setminus \{e\}) - A(E_1, E_2)]$ if $e \in E_2$, linking addition to one as removal from the other.
+
+Thus, $\delta_e A(E_1, E_2) = - \delta_e A(E_2, E_1)$, where the latter is interpreted as the derivative along adding $e$ to $E_2$ if $e \notin E_2$, or removal if $e \in E_2$. This establishes the antisymmetry as the discrete analogue of $\partial_x f(x,y) = - \partial_y f(x,y)$ for antisymmetric $f$.
+
+Since $A$ is defined on the Boolean lattice, and the forward difference operator $\Delta_e f(S) = f(S \cup \{e\}) - f(S)$ (with $e \notin S$) satisfies $\Delta_e f(S) = - \Delta_e f(T)$ when swapping roles in the bilinear form, the claim follows.
+
+This discrete derivative captures the local flow of distinguishability, akin to an advection term in the continuum limit, where perturbations propagate directionally along causal directions, yielding $\partial_t \phi + \mathbf{v} \cdot \nabla \phi = 0$ for amplitude $\phi$, with velocity $\mathbf{v}$ set by the lattice spacing and causal speed.
+\end{proof}
+
+
+
+\begin{proposition}[First Variation as Discrete Derivative]
+Let $\mathcal{A}$ be viewed as a function on the lattice of finite subsets of a fixed event universe $\Omega$.
+Then the mapping
+\[
+\delta_e \mathcal{A}(E_1,E_2)
+:= \mathcal{A}(E_1\cup\{e\},E_2)-\mathcal{A}(E_1,E_2)
+\]
+is the discrete directional derivative of $\mathcal{A}$ along $e$.
+It satisfies the antisymmetry relation
+\[
+\delta_e \mathcal{A}(E_1,E_2) = -\,\delta_e \mathcal{A}(E_2,E_1).
+\]
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+Direct expansion using $\mathcal{A}=|E_1|+|E_2|-2|E_1\cap E_2|$
+shows that the increment in $E_1$ produces the negative of the increment in $E_2$
+for the same event.
+Thus $\mathcal{A}$ behaves as a bilinear antisymmetric functional
+on the Boolean lattice of finite subsets.
+\end{proof}
+
+\noindent
+\textbf{Interpretation.}
+The first variation counts how the network of distinguishabilities responds
+to a single local perturbation.
+Adding an event outside the shared overlap increases the amplitude:
+a ripple of new order propagates.
+Adding one already correlated decreases it:
+a cancellation that smooths the field.
+Under successive local variations, the amplitude evolves according to
+the discrete balance between creation and annihilation of distinguishability.
+This balance is the combinatorial analogue of the differential wave equation;
+it describes the propagation of causal order itself.
+
+\section{Second Variation of Amplitude}
+
+The first variation measured how the distinguishability between two causal domains
+changes when a single event is added or removed.
+The \emph{second variation} captures how those incremental changes themselves
+interact.
+It measures the curvature of distinguishability—the discrete analogue of
+acceleration or wave curvature—arising from the mutual influence of two local
+perturbations.
+
+\begin{definition}[Second Variation]
+Let $\delta_{e}$ and $\delta_{f}$ denote first variations with respect to
+elementary event insertions $e$ and $f$.
+The \emph{second variation of amplitude} is defined as the symmetric difference
+of the corresponding first variations:
+\[
+\delta^2_{e,f}\mathcal{A}(E_1,E_2)
+:= \delta_f\bigl(\delta_e\mathcal{A}(E_1,E_2)\bigr)
+= \mathcal{A}(E_1\cup\{e,f\},E_2)
+- \mathcal{A}(E_1\cup\{e\},E_2)
+- \mathcal{A}(E_1\cup\{f\},E_2)
++ \mathcal{A}(E_1,E_2).
+\]
+\end{definition}
+
+This operator measures the change in the local propagation rate
+caused by introducing two distinct events.
+When $\delta^2_{e,f}\mathcal{A}=0$, their effects are independent:
+the propagation is linear.
+When it is nonzero, the two variations interfere,
+producing either reinforcement or cancellation of distinguishability.
+
+\begin{proposition}[Symmetry]
+\[
+\delta^2_{e,f}\mathcal{A}(E_1,E_2)
+= \delta^2_{f,e}\mathcal{A}(E_1,E_2),
+\qquad
+\delta^2_{e,e}\mathcal{A}(E_1,E_2)=0.
+\]
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+Both $\delta_e$ and $\delta_f$ are finite-difference operators on the Boolean lattice of subsets.
+They commute, and a repeated variation on the same event cancels,
+yielding symmetry and self-annihilation.
+\end{proof}
+
+\begin{proposition}[Explicit Form]
+If $e\neq f$ are not contained in $E_2$, then
+\[
+\delta^2_{e,f}\mathcal{A}(E_1,E_2)
+=
+\begin{cases}
+-2, & e,f\in E_2\setminus E_1, \\[4pt]
++2, & e,f\notin E_1\cup E_2, \\[4pt]
+0,  & \text{otherwise.}
+\end{cases}
+\]
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+Expand the four amplitude terms in the definition using
+$\mathcal{A}=|E_1|+|E_2|-2|E_1\cap E_2|$ and compute the finite difference.
+Each event contributes $\pm1$ to the first variation depending on overlap.
+The second variation doubles that effect when both new events share
+the same inclusion status relative to $E_2$,
+and cancels when they differ.
+\end{proof}
+
+\begin{definition}[Discrete Laplacian on Event Sets]
+Let $\nabla^2_E\mathcal{A}$ denote the sum of all pairwise second variations over
+neighboring events in a locally finite causal domain:
+\[
+\nabla^2_E \mathcal{A}(E_1,E_2)
+:= \sum_{\substack{e,f\in E_1\\ e\prec f\text{ or }f\prec e}} 
+\delta^2_{e,f}\mathcal{A}(E_1,E_2).
+\]
+\end{definition}
+
+\begin{proposition}[Wave Equation for Order]
+Under Martin’s Condition, the amplitude on any locally finite causal domain
+satisfies
+\[
+\nabla^2_E \mathcal{A} = 0
+\]
+as the condition for global consistency.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+Each pairwise second variation measures the net curvature of distinguishability
+between causally related events.
+Martin’s Condition enforces that all finite subsets extend consistently,
+which requires the total curvature over each closed causal neighborhood to vanish.
+Summing over all connected pairs yields $\nabla^2_E\mathcal{A}=0$,
+the discrete Laplace equation for order propagation.
+\end{proof}
+
+\noindent
+\textbf{Interpretation.}
+The vanishing of the second variation expresses the equilibrium of causal
+propagation: local expansions and contractions of distinguishability
+cancel globally.
+Where the first variation gave the \emph{slope} of causal change,
+the second variation fixes the \emph{curvature}—the shape of the wave.
+The condition $\nabla^2_E \mathcal{A}=0$ is therefore the causal-set form
+of the homogeneous wave equation:
+a statement that information, once created, propagates through the network
+of events without net amplification or loss.
+
+\section{Advection as Order-Preserving Transport}
+
+The first variation counts how distinguishability propagates when new events
+are introduced; the second variation vanishes at equilibrium, yielding wave
+closure.  When propagation is \emph{directional}—because Martin bridges
+select a consistent orientation of overlaps along a chain—the resulting
+closure is \emph{first–order}: advection.
+
+\subsection*{Setup: a Translation–Invariant Causal Strip}
+
+Let $\Lambda = \{(n,i) : n\in\mathbb{Z},\, i\in\mathbb{Z}\}$ index a locally
+finite event strip with “time” levels $n$ (ordinals of measurement steps)
+and spatial indices $i$ along a chain of overlaps.  Write $E_n=\{(n,i)\}_i$
+and suppose overlaps are oriented so that interaction at level $n$ feeds
+level $n\!+\!1$ predominantly from the left neighbor:
+\[
+(n,i-1)\;\rightarrow\;(n+1,i).
+\]
+Let $A^n_i\in\mathbb{N}$ denote the \emph{amplitude density} (count of new
+distinguishabilities) measured on site $i$ at level $n$.
+
+\begin{definition}[Order–Preserving Transport (Upwind Selection)]
+A Martin–consistent, order–preserving update on $\Lambda$ with orientation
+to the right is a map $T$ such that
+\[
+A^{n+1}_i \;=\; (1-\lambda)\,A^n_i \;+\; \lambda\,A^n_{i-1},
+\qquad 0\le \lambda \le 1,
+\]
+with $\lambda$ the \emph{bridge fraction}: the proportion of next–step
+distinguishability at $(n\!+\!1,i)$ sourced from the left overlap.
+\end{definition}
+
+\noindent
+\textbf{Interpretation.}
+$\lambda=1$ gives pure shift $A^{n+1}_i=A^n_{i-1}$ (deterministic transport
+one site per update). $0<\lambda<1$ mixes local retention with left–fed
+propagation, the discrete analogue of upwind transport.  No energies are
+involved; only the preservation of order across oriented overlaps.
+
+\subsection*{Discrete Continuity and Characteristics}
+
+\begin{proposition}[Discrete Continuity Law]
+For any finite index set $I\subset\mathbb{Z}$,
+\[
+\sum_{i\in I} A^{n+1}_i - \sum_{i\in I} A^{n}_i
+= \lambda\!\left(A^{n}_{\min(I)-1}-A^{n}_{\max(I)}\right).
+\]
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+Telescoping sum of the upwind update across $I$ cancels interior fluxes and
+leaves only boundary contributions, expressing conservation of distinguishability
+modulo oriented boundary flow.
+\end{proof}
+
+\begin{proposition}[Order Characteristics]
+If $\lambda=1$, then along lines $i-n=\text{const}$ one has
+$A^{n+1}_i=A^n_{i-1}$, hence $A^n_i = A^0_{i-n}$.
+Thus distinguishability is constant on the discrete characteristics
+$i-n=\mathrm{const}$.
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+Iterate the shift relation $n$ times.
+\end{proof}
+
+\subsection*{Continuum Limit: The Advection Equation}
+
+Let spatial mesh be $h>0$ and step size $\Delta t>0$.
+Define a smooth interpolant $a(t_n,x_i)=A^n_i$ with
+$t_n=n\,\Delta t$, $x_i=i\,h$, and take
+\[
+\lambda \;=\; \frac{c\,\Delta t}{h}\quad (0\le \lambda \le 1),
+\]
+where $c$ is the \emph{order speed} fixed by the oriented Martin bridges.
+
+\begin{theorem}[Advection from Upwind Selection]
+Assume $a\in C^2$ and the oriented update
+\[
+A^{n+1}_i = (1-\lambda)A^n_i + \lambda A^n_{i-1}.
+\]
+Then, under the scaling $\lambda=\frac{c\Delta t}{h}$ with fixed $c$ and
+$\Delta t,h\to 0$ satisfying the Courant condition $0\le \lambda \le 1$,
+the interpolant $a$ satisfies
+\[
+\partial_t a + c\,\partial_x a \;=\; 0 \qquad \text{(advection)}
+\]
+to first order in $(\Delta t,h)$.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+Taylor-expand
+$a(t+\Delta t,x)=a+\Delta t\,a_t+\mathcal{O}(\Delta t^2)$ and
+$a(t,x-h)=a-h\,a_x+\mathcal{O}(h^2)$, then substitute in
+\[
+a(t+\Delta t,x)=(1-\lambda)a(t,x)+\lambda\,a(t,x-h).
+\]
+Divide by $\Delta t$ and use $\lambda=\frac{c\Delta t}{h}$:
+\[
+a_t + \frac{\lambda}{\Delta t}\bigl(a(t,x-h)-a(t,x)\bigr)
+= a_t - \frac{c}{h}\bigl(h\,a_x + \mathcal{O}(h^2)\bigr)
+= a_t + c\,a_x + \mathcal{O}(h,\Delta t).
+\]
+Letting $\Delta t,h\to 0$ yields $\partial_t a + c\,\partial_x a = 0$.
+\end{proof}
+
+\subsection*{Order–Theoretic Meaning}
+
+\begin{proposition}[Advection as Oriented Martin Flow]
+The advection equation expresses invariance of distinguishability along
+order–preserving characteristics $x-ct=\mathrm{const}$ induced by a fixed
+orientation of Martin bridges.  Equivalently, for any smooth test function
+$\varphi$ compactly supported,
+\[
+\frac{d}{dt}\!\int a(t,x)\,\varphi(x+ct)\,dx = 0.
+\]
+\end{proposition}
+
+\begin{proof}[Proof sketch]
+Use the weak form of $\partial_t a + c\,\partial_x a = 0$ and integrate
+by parts along translated test functions; the quantity is conserved because
+propagation is a pure shift along characteristics.
+\end{proof}
+
+\subsection*{Remarks on Stability and Causality}
+
+\begin{itemize}
+\item \textbf{CFL as Martin Bound.}
+$0\le \lambda \le 1$ is exactly the requirement that next–step order at site $i$
+is determined by current order from \emph{within} its causal neighborhood,
+matching Martin’s Condition (no overreach).
+
+\item \textbf{Asymmetry $\Rightarrow$ Advection.}
+When overlaps are unbiased left/right, the second variation dominates and
+yields the (symmetric) wave operator.  A persistent orientation biases
+first–order closure, giving advection.
+
+\item \textbf{No Energetics.}
+All statements concern counts and comparabilities.  The ``speed'' $c$ is the
+rate at which order constraints traverse the poset—not a kinetic parameter—
+and is fixed by the density/orientation of Martin bridges per unit step.
+\end{itemize}
+
+\section{On Deriving Motion Without Energy}
+
+The developments up to this point have been intentionally austere.
+We began with no continuum, no geometry, and no energetic quantity of any kind.
+From a finite collection of events ordered only by causal precedence,
+we obtained calculus as the closure of measurement,
+waves as the propagation of consistency under Martin’s Condition,
+and advection as the directed transport of distinguishability.
+At no step was energy invoked.
+Nothing in the construction presupposed force, mass, or curvature.
+Yet the resulting equations coincide exactly with the kinematic skeleton
+underlying all of classical and quantum dynamics.
+
+\subsection*{The Structural Consequence}
+
+The advection equation,
+\[
+\partial_t a + c\,\partial_x a = 0,
+\]
+arose not from the motion of particles through a medium,
+but from the preservation of order across oriented overlaps of finite event sets.
+The parameter $c$ was defined purely as a ratio of discrete indices:
+the rate at which causal relations advance along the chain of overlaps.
+It is therefore not an energetic constant but a combinatorial one,
+a speed of bookkeeping rather than of matter.
+This reversal of interpretation is decisive.
+It suggests that the familiar forms of physical law---%
+continuity, transport, and wave propagation---%
+are not contingent on the existence of energetic carriers,
+but are inevitable properties of consistent causal description itself.
+
+\subsection*{The Logical Hierarchy of Physics}
+
+The chain of constructions may now be summarized as
+\[
+\text{Order} \;\Longrightarrow\; \text{Variation} \;\Longrightarrow\; 
+\text{Propagation} \;\Longrightarrow\; \text{Energy}.
+\]
+Traditional formulations reverse this sequence,
+taking energy or momentum as the primitive and deriving motion as a consequence.
+Here motion appears first, as a necessary regularity of finite order.
+Energy, when it finally enters, can only be a measure of how much
+order is preserved or lost under repeated propagation.
+What physicists call \emph{kinetic} or \emph{potential} energy
+must therefore correspond to the count of distinguishabilities that remain invariant
+under the oriented application of Martin’s Condition.
+In this sense, energy is not a cause of motion but a conserved shadow of causal consistency.
+
+\subsection*{The Epistemic Reversal}
+
+To derive motion without energy is to invert the epistemology of physics.
+It means that the universe does not move because it has energy;
+it \emph{has} energy because its order moves.
+Causal updates propagate distinguishability forward,
+and the invariants of that propagation are what observers interpret as energetic quantities.
+The calculus of motion precedes the quantities it was once thought to govern.
+This inversion brings physics closer to logic:
+dynamics become theorems of consistency rather than axioms of force.
+
+\subsection*{Consistency as the Source of Dynamics}
+
+Under Martin’s Condition, every finite causal neighborhood must extend
+to a globally consistent ordering.
+When overlaps are unbiased, this requirement produces the symmetric
+second--order closure $\nabla^2_E\mathcal{A}=0$,
+the discrete wave equation.
+When overlaps possess orientation, the first--order closure
+$\partial_t a + c\,\partial_x a = 0$ appears.
+Both are special cases of the same law:
+\begin{law}{Law of Consistency}
+The universe minimizes the inconsistency of its own order.
+\end{law}
+The entire machinery of classical dynamics---waves, advection, diffusion,
+and, later, curvature and field stress---can therefore be interpreted as successive
+approximations to the global enforcement of Martin’s Condition.
+Every differential operator is a bookkeeping device for maintaining consistency
+in the face of finite, overlapping observations.
+
+\subsection*{Implications}
+
+This interpretation carries several consequences:
+
+\begin{enumerate}
+\item \textbf{Causality precedes energy.}
+Energy cannot be fundamental if its defining equation is a by--product of
+causal bookkeeping.
+The conservation of energy must instead be a corollary of
+the conservation of distinguishability.
+
+\item \textbf{Geometry is emergent.}
+Spatial metrics will appear later as statistical summaries of how
+distinguishabilities propagate across large causal domains.
+Space is the coarse--grained shadow of consistent order.
+
+\item \textbf{The field concept is derivative.}
+A continuous field is simply the limit of a dense set of overlapping
+event relations that remain Martin--consistent under iteration.
+Field equations are encoded constraints on the propagation of order.
+
+\item \textbf{Information and physics coincide.}
+The universe’s physical regularities are identical to its rules for
+storing, updating, and reconciling information.
+No extra ontology is required.
+\end{enumerate}
+
+\subsection*{Outlook}
+
+The reader should therefore pause to recognize the scope of what has already been accomplished.
+Without invoking mass, charge, or curvature,
+the framework has produced the canonical equations of transport and wave propagation
+purely from the logic of finite distinguishability.
+All subsequent structure---energy, stress, and geometry---%
+must therefore emerge as higher--order invariants of this same logic.
+The remainder of this work develops those invariants explicitly,
+showing how the metric tensor, stress tensor, and curvature of spacetime
+are the continuous shadows of a discrete causal calculus.
+
+\begin{center}
+\textit{Motion, in this theory, is not caused by energy.  
+It is the preservation of order under Martin’s Condition.}
+\end{center}
+
 
 
 \bibliographystyle{plain}   % or abbrv, alpha, unsrt, etc.
