@@ -61,6 +61,18 @@ Gene~H. Golub and Charles~F. Van~Loan.
 \newblock {\em Matrix Computations}.
 \newblock Johns Hopkins University Press, 4 edition, 2013.
 
+\bibitem{halmos1958}
+Paul~R. Halmos.
+\newblock {\em Finite-Dimensional Vector Spaces}.
+\newblock Springer, 1958.
+\newblock Classical construction of tensors and operators over vector spaces.
+
+\bibitem{halmos1974}
+Paul~R. Halmos.
+\newblock {\em Naive Set Theory}.
+\newblock Springer, 1974.
+\newblock Concise exposition of ZFC and its role in functional analysis.
+
 \bibitem{hawking1973}
 S.~W. Hawking and G.~F.~R. Ellis.
 \newblock {\em The Large Scale Structure of Space-Time}.
@@ -75,6 +87,12 @@ David Hilbert.
 Sabine Hossenfelder.
 \newblock {\em Lost in Math: How Beauty Leads Physics Astray}.
 \newblock Basic Books, New York, 2018.
+
+\bibitem{jech2003}
+Thomas Jech.
+\newblock {\em Set Theory: The Third Millennium Edition, Revised and Expanded}.
+\newblock Springer, 2003.
+\newblock Comprehensive modern treatment of ZFC foundations.
 
 \bibitem{kunen1980}
 Kenneth Kunen.
@@ -130,6 +148,11 @@ Max Planck.
 \newblock P. Blakiston’s Son \& Co., Philadelphia, 1914.
 \newblock Translated by M. Masius. Reprinted by Dover Publications, 1959.
 
+\bibitem{rindler2006}
+Wolfgang Rindler.
+\newblock {\em Relativity: Special, General, and Cosmological}.
+\newblock Oxford University Press, 2nd edition, 2006.
+
 \bibitem{sorkin1991}
 Rafael~D. Sorkin.
 \newblock Finitary substitute for continuous topology.
@@ -140,6 +163,11 @@ Rafael~D. Sorkin.
 Rafael~D. Sorkin.
 \newblock Causal sets: Discrete gravity.
 \newblock {\em Lectures on Quantum Gravity (Proceedings, Valdivia)}, 2003.
+
+\bibitem{taylor1992}
+Edwin~F. Taylor and John~Archibald Wheeler.
+\newblock {\em Spacetime Physics}.
+\newblock W. H. Freeman, 2nd edition, 1992.
 
 \bibitem{weyl1949}
 Hermann Weyl.

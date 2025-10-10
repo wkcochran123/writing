@@ -180,7 +180,7 @@ by a finite tensor of interactions---local updates to a global state---that toge
 continuity only through cancellation across countable events~\cite{bombelli1987, sorkin2003}.
 
 Special relativity provides the canonical local model for this causal structure~\cite{einstein1905}.  
-Consider the Lorentz transformation for a boost of velocity $v$ in one spatial dimension,
+Consider the Lorentz transformation for a boost of velocity $v$ in one spatial dimension,~\cite{einstein1905,rindler2006,taylor1992}
 \begin{equation}
 \label{eq:lorentz}
 \begin{pmatrix}
@@ -210,18 +210,36 @@ a different number of intermediate ticks~\cite{malament1977}.
 
 This observation motivates the first physical axiom: that time is not an independent scalar field but an ordinal index over causally distinguishable events.  Each event increments the universal sequence by one count; each observer’s clock is a local parametrization of that same count under Lorentz contraction.  The apparent continuity of time is the result of the density of such events within the causal cone, not an underlying continuum of duration.
 
-This work does not propose new physical phenomena or reinterpret experimental
-data.  Rather, it reformulates how measurable quantities are represented
-and reduces the number of degrees of freedom to understand the universe to just one
-that can be curve fit.
-The analysis concerns only the \emph{structure of measurement itself}---the
-mathematical relations among counts of distinguishable events that underlie all
-physical observations.  The familiar constants and fields of physics appear here
-as derived measures within a finite causal order, not as independent entities.
-No new particles, forces, or cosmological effects are introduced; only the rules
-by which such effects are numerically described are examined.  In this sense,
-the theory is not a revision of physics but a clarification of its grammar:
-it studies the measures of phenomena, not the phenomena themselves.
+\subsection{On the Structure of Measurement}
+
+This work does not propose new physical phenomena or reinterpret existing
+experimental data.  Rather, it reformulates how measurable quantities are
+represented and reduces the number of degrees of freedom needed to describe
+the universe to a single parameter that can be curve–fit.
+
+The analysis concerns only the \emph{structure of measurement itself}:
+the mathematical relations among counts of distinguishable events that
+underlie all physical observations.  In this framing, physics is viewed
+as a grammar of distinctions.  The familiar constants and fields---mass,
+charge, curvature, temperature---arise as \emph{derived measures} within a
+finite causal order, not as independent entities.
+
+No new particles, forces, or cosmological effects are introduced; only the
+rules by which such effects are numerically expressed are examined.
+Hence the present theory is not a revision of physics but a clarification
+of its syntax: it studies the measures of phenomena, not the phenomena
+themselves.
+
+Operationally, every observation can be decomposed into three layers:
+\begin{enumerate}
+  \item the \textbf{logical} layer---which events are distinguishable;
+  \item the \textbf{mathematical} layer---how those distinctions are counted;
+  \item the \textbf{physical} layer---how the resulting counts are named and
+        parameterized as energy, momentum, or time.
+\end{enumerate}
+By isolating the first two layers, we obtain a calculus that is universal
+to any admissible physics: a closed system of relations that expresses how
+order itself becomes measurable.
 
 
 The framework that follows formalizes this intuition.  The axioms of Zermelo--Fraenkel set theory with the Axiom of Choice, we construct an ordered set of events whose distinguishability relations reproduce the causal order implied by special relativity.  Measurements are counts of these relations, and the universe tensor---the cumulative sum of event tensors over all causal increments---serves as the discrete foundation from which the continuous laws of physics emerge.
@@ -246,9 +264,12 @@ consequences relevant to the construction that follows:
 \end{itemize}
 
 These are precisely the ingredients required to formalize a locally finite
-causal order.  All further constructions—relations, tensors, and operators—
-are definable within standard ZFC mathematics; no additional axioms are
-introduced.
+causal order.
+All further constructions---relations, tensors, and operators---are definable
+within standard ZFC mathematics; see Kunen~\cite{kunen1980} and Jech~\cite{jech2003}
+for set-theoretic foundations, and Halmos~\cite{halmos1958,halmos1974} for the
+induced tensor and operator structures on finite-dimensional vector spaces.
+
 
 \begin{axiom}[The Axioms of Mathematics~\cite{zermelo1908,fraenkel1922,kunen1980}]
 \label{ax:mathematics}
@@ -272,7 +293,14 @@ derivable within ordinary mathematical logic.
 \subsection{Sets of Events}
 \label{sse:eventsets}
 
-Let the set of all events accessible to an observer be denoted \(E\), ordered by causal precedence \(\leq\).  
+Let the set of all events accessible to an observer be denoted \(E\)\footnote{
+The symbol $E$ here denotes the \emph{set of distinguishable events}---it is
+not the energy operator or expectation value familiar from mechanics.
+Throughout this work, $E$ indexes discrete occurrences in the causal order,
+while quantities such as energy, momentum, or stress appear only later as
+\emph{derived measures} on this set.
+}
+, ordered by causal precedence \(\leq\).  
 Because any physically realizable region is finite, this order forms a locally finite partially ordered set (poset)~\cite{finkelstein1988causal}.
 
 Each admissible set of events may be represented as a locally finite
@@ -290,6 +318,39 @@ network itself---a pictorial reduction of the full tensor of event
 relations---and the path integral becomes a statement of global
 consistency across all measurable causal connections.
 
+\begin{example}[Feynman Diagram as a Causal Network]
+In conventional quantum field theory, a Feynman diagram depicts a sum over
+interaction histories connecting initial and final particle states.  Each
+vertex represents an elementary event---an interaction that renders previously
+indistinguishable outcomes distinct---and each propagator represents the
+possibility of causal influence between events.
+
+In the present formulation, such a diagram is naturally interpreted as a finite
+\emph{causal network}.  The set of vertices corresponds to the event set
+$E$, and the directed edges encode the causal relation $\leq$ defined by
+the Axiom of Order.  The tensor assigned to each vertex,
+$E_k \in T(V)$, records the measurable contribution of that interaction to
+the global state, while the propagators describe admissible compositions of
+these event tensors within the Universe Tensor
+\[
+U_n = \sum_{k=1}^n E_k.
+\]
+
+Summing over all consistent diagrams is therefore equivalent to enumerating
+all admissible orderings of distinguishable events.  The path integral itself
+becomes a statement of \emph{global consistency} across the entire causal
+network: every measurable amplitude corresponds to one possible embedding of
+finite causal order into the continuous limit.  In this sense, a Feynman
+diagram is not merely a pictorial tool but a discrete representation of the
+causal tensor algebra from which continuum physics emerges.
+\end{example}
+
+This identification is pedagogically useful.  From this point onward, every
+construction may be viewed as an algebraic generalization of the familiar
+Feynman diagram:  the event tensors are its vertices, the causal relations
+its edges, and the Universe Tensor the cumulative sum over all consistent
+orderings.  The remainder of the monograph simply formalizes this graphical
+intuition in set-theoretic and tensorial language, rather than using calculus.
 
 \begin{definition}[Partially Ordered Set]
 \label{def:poset}
@@ -3669,6 +3730,38 @@ invariance is the statement that the rules of this ledger do not change
 when we shift the page in time; hence the total energy remains the same.
 \end{example}
 
+\begin{example}[Feynman Diagram as a Tensor Expansion of the Field]
+In conventional quantum field theory, perturbation expansions of the
+generating functional are represented diagrammatically: vertices encode local
+interactions and propagators connect them according to the causal structure of
+spacetime.  In the causal formulation developed here, the same construction
+arises directly from the Universe Tensor.
+
+Each vertex corresponds to an event tensor $E_k \in T(V)$ contributing a
+measurable distinction within the causal order.  A propagator corresponds to
+an admissible contraction between event tensors---a bilinear map
+\[
+\langle E_i , E_j \rangle = \mathrm{Tr}(E_i^\top\, G\, E_j),
+\]
+where $G$ is the causal propagator enforcing Martin consistency between the
+connected events.  The complete amplitude for a process is therefore the
+contraction of the ordered product
+\[
+U_n = \sum_{k=1}^{n} E_k,
+\]
+with all admissible propagators.  The resulting scalar invariants of $U_n$
+constitute the measurable quantities of the theory.
+
+Thus, a Feynman diagram is the graphical representation of a tensor
+contraction in the causal algebra: each diagram corresponds to one term in the
+finite expansion of the Universe Tensor, and summing over all diagrams is
+equivalent to enforcing global consistency of causal order.  What appears in
+standard field theory as a perturbation series is, in this formalism, a finite
+enumeration of distinguishable causal relations---a bookkeeping identity
+derived from the Reciprocity Law rather than using calculus.
+\end{example}
+
+
 \section{Angular Momentum and Spin}
 \label{sec:angmom-spin}
 
@@ -4301,9 +4394,59 @@ Every act of measurement refines the universe’s partition,
 and each refinement enlarges the count of admissible configurations.
 The universe evolves by distinguishing itself.
 
-\begin{flushright}
-\emph{Quod erat demonstrandum.}
-\end{flushright}
+\section{Quod Erat Demonstrandum}
+
+We began with the observation that every act of physics is an act of
+distinction: to measure is to separate one possibility from another.
+Within ZFC, such distinctions are represented as finite subsets of a causal
+order, and the act of measurement is the enumeration of their admissible
+refinements.  Nothing else is assumed.
+
+Martin's Axiom enters only to ensure that these refinements can be extended
+consistently---that the space of distinguishable events admits countable dense
+families without contradiction.  This single assumption is the logical
+equivalent of $\sigma$-additivity in measure theory, the minimal condition required
+for any self-consistent calculus of observation.
+
+From this, the Second Law follows as a theorem of order:
+each consistent extension of the causal set increases the number of
+distinguishable configurations, and therefore
+\[
+\Delta S \ge 0.
+\]
+Entropy is not a statistical tendency but a logical necessity---the price of
+consistency within a self-measuring universe.
+
+No new forces, particles, or cosmologies are introduced; only the rule by
+which distinction propagates.  What began as a grammar of measurement closes
+as the unique structure of physical law.
+
+\begin{theorem}[The Second Law of Causal Order]
+\label{thm:causalorder}
+In any finite, causally consistent ordering of distinguishable events,
+the number of measurable distinctions cannot decrease.
+Every admissible extension of order produces at least one new differentiation,
+and therefore every universe consistent with its own record of events
+obeys the inequality
+\[
+\Delta S \ge 0.
+\]
+\end{theorem}
+
+\begin{proof}[Conclusion]
+We are left with but one conclusion:
+\[
+\boxed{\text{Order implies thermodynamics.}}
+\]
+A universe that preserves its own causal record must,
+by necessity, increase the count of what can be distinguished.
+\end{proof}
+
+
+\begin{center}
+\textit{Quod erat demonstrandum.}
+\end{center}
+
 
 
 \backmatter

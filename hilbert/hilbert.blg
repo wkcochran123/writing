@@ -5,45 +5,45 @@ The style file: plain.bst
 Database file #1: hilbert.bib
 Warning--I didn't find a database entry for "Wolfram2002"
 Warning--empty publisher in boltzmann1872
-You've used 27 entries,
+You've used 32 entries,
             2118 wiz_defined-function locations,
-            670 strings with 7611 characters,
-and the built_in function-call counts, 7588 in all, are:
-= -- 756
-> -- 242
+            693 strings with 8143 characters,
+and the built_in function-call counts, 8742 in all, are:
+= -- 864
+> -- 283
 < -- 5
-+ -- 106
-- -- 72
-* -- 455
-:= -- 1276
-add.period$ -- 87
-call.type$ -- 27
-change.case$ -- 104
++ -- 123
+- -- 84
+* -- 503
+:= -- 1480
+add.period$ -- 105
+call.type$ -- 32
+change.case$ -- 122
 chr.to.int$ -- 0
-cite$ -- 28
-duplicate$ -- 335
-empty$ -- 685
-format.name$ -- 72
-if$ -- 1597
+cite$ -- 33
+duplicate$ -- 395
+empty$ -- 795
+format.name$ -- 84
+if$ -- 1844
 int.to.chr$ -- 0
-int.to.str$ -- 27
-missing$ -- 40
-newline$ -- 143
-num.names$ -- 56
-pop$ -- 138
+int.to.str$ -- 32
+missing$ -- 50
+newline$ -- 171
+num.names$ -- 66
+pop$ -- 174
 preamble$ -- 1
-purify$ -- 89
+purify$ -- 105
 quote$ -- 0
-skip$ -- 205
+skip$ -- 236
 stack$ -- 0
-substring$ -- 487
-swap$ -- 50
+substring$ -- 512
+swap$ -- 55
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 82
+type$ -- 92
 warning$ -- 1
-while$ -- 83
-width$ -- 29
-write$ -- 305
+while$ -- 93
+width$ -- 34
+write$ -- 363
 (There were 2 warnings)
