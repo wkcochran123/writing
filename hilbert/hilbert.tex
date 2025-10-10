@@ -408,6 +408,25 @@ Since $\U_1 = \E_1$, induction yields
 $\U_n = \sum_{k=1}^n \E_k$.
 \end{proof}
 
+\begin{example}[Non-commutative event pair]
+Let $V=\mathbb{R}^2$ and take event tensors as $2\times2$ matrices acting on $V$ with the usual (non-commutative) product. Define
+\[
+E_A=\begin{pmatrix}1&1\\0&1\end{pmatrix},\qquad
+E_B=\begin{pmatrix}1&0\\1&1\end{pmatrix}.
+\]
+Then
+\[
+E_AE_B=\begin{pmatrix}2&1\\1&1\end{pmatrix}\neq
+\begin{pmatrix}1&1\\1&2\end{pmatrix}=E_BE_A,
+\quad\text{so }[E_A,E_B]\neq 0.
+\]
+Thus, the universe update $U_2=E_AE_B$ differs from $U_2'=E_BE_A$ whenever the event pair is not in an entanglement class that permits permutation.
+However, cyclic scalar invariants agree: $\mathrm{tr}(E_AE_B)=\mathrm{tr}(E_BE_A)=3$, and $\det(E_AE_B)=\det(E_A)\det(E_B)=1$.
+Hence order affects the \emph{operator} state but leaves cyclic scalars (our measurable invariants) unchanged.
+This illustrates how Event Selection can forbid reordering (no entanglement) while Martin-like consistency still preserves global scalar bookkeeping.
+\end{example}
+
+
 \subsection{Formal Structure of Event and Universe Tensors}
 \label{se:formaluniverse}
 
@@ -1511,6 +1530,25 @@ $E_1 \cap E_2$ remain consistent:
 e \preceq_1 f \;\Leftrightarrow\; e \preceq_2 f .
 \]
 \end{definition}
+\begin{example}[Non-commuting measurements as event selection]
+Let the event tensor act on a qubit. Take Pauli operators $\sigma_x,\sigma_z$ and projective predicates
+\(
+P_x^\pm=\tfrac{1}{2}(I\pm \sigma_x),\quad
+P_z^\pm=\tfrac{1}{2}(I\pm \sigma_z).
+\)
+The selection ``measure $x$ then $z$'' corresponds to the ordered update
+\(
+U_{xz}(\rho)=\sum_{a,b\in\{\pm\}} P_z^b P_x^a\,\rho\, P_x^a P_z^b,
+\)
+while ``measure $z$ then $x$'' is
+\(
+U_{zx}(\rho)=\sum_{a,b} P_x^a P_z^b\,\rho\, P_z^b P_x^a.
+\)
+Because $[\sigma_x,\sigma_z]\neq 0$, one has $U_{xz}\neq U_{zx}$ in general; order changes the post-measurement state and the subsequent event statistics.
+Yet the scalar count of admissible outcomes over the full branch set is preserved (the total probability $=1$), reflecting that the measurable bookkeeping across the causal domain remains consistent even when the micro-updates do not commute.
+This realizes Event Selection as a non-commutative refinement of the distinguishability chain.
+\end{example}
+
 
 The overlap $E_1 \cap E_2$ represents events recognized by both observers.
 For the union to remain causally consistent, these shared events must inherit
@@ -2887,6 +2925,21 @@ the local coordinate frame.  The connection therefore enforces the
 \emph{covariant constancy} of the causal gauge: every observer’s
 measurements can differ, but the underlying order they describe remains
 identical.
+\begin{example}[Non-Abelian transport and curvature]
+Let $A_\mu(x)$ be a matrix-valued connection (local gauge of distinction). Parallel transport along a path $\gamma$ uses the path-ordered exponential
+\[
+U[\gamma]=\mathcal{P}\exp\!\left(\int_\gamma A_\mu\,dx^\mu\right).
+\]
+For an infinitesimal rectangle spanned by $\delta x^\mu,\delta x^\nu$,
+\[
+U[\square]=I+F_{\mu\nu}\,\delta x^\mu\delta x^\nu+O(\delta^3),\qquad
+F_{\mu\nu}=\partial_\mu A_\nu-\partial_\nu A_\mu+[A_\mu,A_\nu].
+\]
+The $[A_\mu,A_\nu]$ term \emph{is} the non-commutative residue of transporting in different orders around the loop.
+Thus, failure of local updates to commute produces a measurable scalar (via contractions of $F_{\mu\nu}$) that records global non-closure—our curvature as informational residue.
+This ties the reciprocity-preserving gauge to the field strength that appears in the continuum limit.
+\end{example}
+
 
 	\subsection{Causal Interpretation}
 
