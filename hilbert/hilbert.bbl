@@ -14,6 +14,12 @@ Ludwig Boltzmann.
   Gasmolekülen}, volume~66.
 \newblock 1872.
 
+\bibitem{boltzmann1896}
+Ludwig Boltzmann.
+\newblock {\em Lectures on Gas Theory}.
+\newblock Dover Publications, New York, 1964.
+\newblock English translation of the 1896 original.
+
 \bibitem{bombelli1987}
 Luca Bombelli, Joohan Lee, David Meyer, and Rafael~D. Sorkin.
 \newblock Space-time as a causal set.
@@ -50,6 +56,12 @@ David Finkelstein.
 \newblock Causal sets as the deep structure of spacetime.
 \newblock {\em International Journal of Theoretical Physics}, 27(4):473--484,
   1988.
+
+\bibitem{finkelstein1996}
+David Finkelstein.
+\newblock {\em Quantum Relativity: A Synthesis of the Ideas of Einstein and
+  Heisenberg}.
+\newblock Springer, Berlin, 1996.
 
 \bibitem{fraenkel1922}
 Abraham~A Fraenkel.
@@ -114,9 +126,9 @@ David~B. Malament.
 \newblock {\em Journal of Mathematical Physics}, 18(7):1399--1404, 1977.
 
 \bibitem{martin1970}
-Donald~A Martin and Robert~M Solovay.
-\newblock Martin's axiom.
-\newblock {\em Annals of Mathematical Logic}, 2(1):143--178, 1970.
+Donald~A. Martin and Robert~M. Solovay.
+\newblock Internal cohen extensions.
+\newblock {\em Annals of Mathematical Logic}, 2:143--178, 1970.
 
 \bibitem{minkowski1908}
 Hermann Minkowski.
@@ -168,6 +180,11 @@ Rafael~D. Sorkin.
 Edwin~F. Taylor and John~Archibald Wheeler.
 \newblock {\em Spacetime Physics}.
 \newblock W. H. Freeman, 2nd edition, 1992.
+
+\bibitem{todorcevic2010}
+Stevo Todorcevic.
+\newblock {\em Introduction to Ramsey Spaces}.
+\newblock Princeton University Press, Princeton, NJ, 2010.
 
 \bibitem{weyl1949}
 Hermann Weyl.
