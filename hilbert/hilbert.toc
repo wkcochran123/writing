@@ -115,6 +115,6 @@
 \contentsline {chapter}{\numberline {7}The Second Law of Causal Order}{114}{}%
 \contentsline {section}{\numberline {7.1}Statement of the Law}{114}{}%
 \contentsline {section}{\numberline {7.2}Entropy as Informational Curvature}{115}{}%
-\contentsline {section}{\numberline {7.3}Statistical Interpretation}{115}{}%
-\contentsline {section}{\numberline {7.4}Physical Consequences}{116}{}%
-\contentsline {section}{\numberline {7.5}Conclusion}{116}{}%
+\contentsline {section}{\numberline {7.3}Statistical Interpretation}{116}{}%
+\contentsline {section}{\numberline {7.4}Physical Consequences}{117}{}%
+\contentsline {section}{\numberline {7.5}Conclusion}{117}{}%
