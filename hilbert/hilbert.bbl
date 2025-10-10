@@ -8,16 +8,26 @@ George Berkeley.
 \newblock Available in many reprints; see, e.g., Project Gutenberg (Eprint
   \#27200).
 
-\bibitem{boltzmann1964}
+\bibitem{boltzmann1872}
 Ludwig Boltzmann.
-\newblock {\em Lectures on Gas Theory}.
-\newblock University of California Press, Berkeley, 1964.
-\newblock Edited and translated by Stephen G. Brush.
+\newblock {\em Weitere Studien über das Wärmegleichgewicht unter
+  Gasmolekülen}, volume~66.
+\newblock 1872.
 
 \bibitem{bombelli1987}
 Luca Bombelli, Joohan Lee, David Meyer, and Rafael~D. Sorkin.
 \newblock Space-time as a causal set.
 \newblock {\em Physical Review Letters}, 59(5):521--524, 1987.
+
+\bibitem{cantor1895}
+Georg Cantor.
+\newblock Beiträge zur begründung der transfiniten mengenlehre.
+\newblock {\em Mathematische Annalen}, 46(4):481--512, 1895.
+
+\bibitem{earman1974}
+John Earman.
+\newblock An attempt to formulate a causal theory of time.
+\newblock {\em Journal of Philosophy}, 71(17):561--579, 1974.
 
 \bibitem{einstein1905}
 Albert Einstein.
@@ -25,22 +35,70 @@ Albert Einstein.
 \newblock {\em Annalen der Physik}, 17:891--921, 1905.
 \newblock English translation: "On the Electrodynamics of Moving Bodies".
 
+\bibitem{feynman1948}
+Richard~P. Feynman.
+\newblock Space-time approach to non-relativistic quantum mechanics.
+\newblock {\em Reviews of Modern Physics}, 20(2):367--387, 1948.
+
+\bibitem{feynman1965}
+Richard~P. Feynman, Robert~B. Leighton, and Matthew Sands.
+\newblock {\em The Feynman Lectures on Physics, Volume III: Quantum Mechanics}.
+\newblock Addison-Wesley, 1965.
+
+\bibitem{finkelstein1988causal}
+David Finkelstein.
+\newblock Causal sets as the deep structure of spacetime.
+\newblock {\em International Journal of Theoretical Physics}, 27(4):473--484,
+  1988.
+
+\bibitem{fraenkel1922}
+Abraham~A Fraenkel.
+\newblock {\em Einleitung in die Mengenlehre}.
+\newblock Springer, 1922.
+
+\bibitem{golub2013}
+Gene~H. Golub and Charles~F. Van~Loan.
+\newblock {\em Matrix Computations}.
+\newblock Johns Hopkins University Press, 4 edition, 2013.
+
 \bibitem{hawking1973}
 S.~W. Hawking and G.~F.~R. Ellis.
 \newblock {\em The Large Scale Structure of Space-Time}.
 \newblock Cambridge University Press, Cambridge, 1973.
 
-\bibitem{kunen1980set}
+\bibitem{hilbert1902}
+David Hilbert.
+\newblock {\em The Foundations of Geometry}.
+\newblock Open Court Publishing Company, 1902.
+
+\bibitem{hossenfelder2018}
+Sabine Hossenfelder.
+\newblock {\em Lost in Math: How Beauty Leads Physics Astray}.
+\newblock Basic Books, New York, 2018.
+
+\bibitem{kunen1980}
 Kenneth Kunen.
 \newblock {\em Set Theory: An Introduction to Independence Proofs}, volume 102
   of {\em Studies in Logic and the Foundations of Mathematics}.
 \newblock North-Holland, Amsterdam, 1980.
+
+\bibitem{lorentz1904}
+Hendrik~A Lorentz.
+\newblock Electromagnetic phenomena in a system moving with any velocity
+  smaller than that of light.
+\newblock {\em Proceedings of the Royal Netherlands Academy of Arts and
+  Sciences}, 6:809--831, 1904.
 
 \bibitem{malament1977}
 David~B. Malament.
 \newblock The class of continuous timelike curves determines the topology of
   spacetime.
 \newblock {\em Journal of Mathematical Physics}, 18(7):1399--1404, 1977.
+
+\bibitem{martin1970}
+Donald~A Martin and Robert~M Solovay.
+\newblock Martin's axiom.
+\newblock {\em Annals of Mathematical Logic}, 2(1):143--178, 1970.
 
 \bibitem{minkowski1908}
 Hermann Minkowski.
@@ -49,10 +107,22 @@ Hermann Minkowski.
 \newblock Lecture delivered at 80th Assembly of German Natural Scientists and
   Physicians, Cologne, 1908. English translation: "Space and Time.".
 
+\bibitem{newton1687}
+Isaac Newton.
+\newblock {\em Philosophi{\ae} Naturalis Principia Mathematica}.
+\newblock Royal Society of London, 1687.
+\newblock Translated as \emph{The Mathematical Principles of Natural
+  Philosophy}, University of California Press, 1934.
+
 \bibitem{penrose1972}
 Roger Penrose.
 \newblock {\em Techniques of Differential Topology in Relativity}.
 \newblock Society for Industrial and Applied Mathematics, Philadelphia, 1972.
+
+\bibitem{planck1901}
+Max Planck.
+\newblock On the law of distribution of energy in the normal spectrum.
+\newblock {\em Annalen der Physik}, 309(3):553--563, 1901.
 
 \bibitem{planck1914}
 Max Planck.
@@ -70,5 +140,15 @@ Rafael~D. Sorkin.
 Rafael~D. Sorkin.
 \newblock Causal sets: Discrete gravity.
 \newblock {\em Lectures on Quantum Gravity (Proceedings, Valdivia)}, 2003.
+
+\bibitem{weyl1949}
+Hermann Weyl.
+\newblock {\em Philosophy of Mathematics and Natural Science}.
+\newblock Princeton University Press, 1949.
+
+\bibitem{zermelo1908}
+Ernst Zermelo.
+\newblock Investigations in the foundations of set theory i.
+\newblock {\em Mathematische Annalen}, 65(2):261--281, 1908.
 
 \end{thebibliography}
