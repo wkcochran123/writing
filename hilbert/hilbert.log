@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.16)  11 OCT 2025 12:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.16)  11 OCT 2025 15:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -210,6 +210,9 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 
 LaTeX Warning: Label `prop:universe_tensor' multiply defined.
 
+
+LaTeX Warning: Label `chap:quantum-fields' multiply defined.
+
 )
 \openout1 = `hilbert.aux'.
 
@@ -294,18 +297,29 @@ s the fourth{order
 
 
 
-] [2] (./hilbert.toc)
+] [2] (./hilbert.toc [3
+
+]
+Overfull \hbox (1.00156pt too wide) in paragraph at lines 42--42
+ [][] []\OT1/cmr/m/n/12 Introduction: Mar-tin's Con-di-tion and the Con-ti-nu-i
+ty of Causal 
+ []
+
+[4] [5])
 \tf@toc=\write3
 \openout3 = `hilbert.toc'.
 
- [3
-
-]
+ [6]
 showing example
-No file hilbert.loe.
-[4
+(./hilbert.loe
+Overfull \hbox (0.5099pt too wide) in paragraph at lines 47--47
+ [][] []\OT1/cmr/m/n/12 Thought Ex-per-i-ment (Mach--Zehnder In-ter-fer-om-e-te
+r as Causal 
+ []
 
-]
+[7
+
+]) [8]
 Overfull \hbox (21.78833pt too wide) in paragraph at lines 83--87
  \OT1/cmr/bx/n/12 Part I | The Cal-cu-lus of Mea-sure-ment.[] \OT1/cmr/m/n/12 B
 e-gin-ning with Zer-melo{Fraenkel
@@ -317,180 +331,34 @@ Overfull \hbox (11.96225pt too wide) in paragraph at lines 89--91
 e-la-tion is translation-invariant,
  []
 
-[5
+[9
 
-] [6] [7] [8]
+] [10] [11] [12]
 Chapter 1.
 [1
 
 
 ] [2]
 Chapter 2.
-
-LaTeX Warning: Citation `boltzmann1872' on page 3 undefined on input line 223.
-
-
-LaTeX Warning: Citation `planck1914' on page 3 undefined on input line 223.
-
-
-LaTeX Warning: Citation `einstein1905' on page 3 undefined on input line 225.
-
-
-LaTeX Warning: Citation `minkowski1908' on page 3 undefined on input line 225.
-
-
-LaTeX Warning: Citation `hawking1973' on page 3 undefined on input line 227.
-
-
-LaTeX Warning: Citation `penrose1972' on page 3 undefined on input line 227.
-
-
-LaTeX Warning: Citation `hawking1973' on page 3 undefined on input line 231.
-
-
-LaTeX Warning: Citation `malament1977' on page 3 undefined on input line 231.
-
-
-LaTeX Warning: Citation `hawking1973' on page 3 undefined on input line 233.
-
-
-LaTeX Warning: Citation `malament1977' on page 3 undefined on input line 233.
-
-
-LaTeX Warning: Citation `bombelli1987' on page 3 undefined on input line 235.
-
-
-LaTeX Warning: Citation `sorkin1991' on page 3 undefined on input line 235.
-
-
-LaTeX Warning: Citation `bombelli1987' on page 3 undefined on input line 237.
-
-
-LaTeX Warning: Citation `sorkin2003' on page 3 undefined on input line 237.
-
-
-LaTeX Warning: Citation `einstein1905' on page 3 undefined on input line 239.
-
-
-LaTeX Warning: Citation `einstein1905' on page 3 undefined on input line 240.
-
-
-LaTeX Warning: Citation `rindler2006' on page 3 undefined on input line 240.
-
-
-LaTeX Warning: Citation `taylor1992' on page 3 undefined on input line 240.
-
 [3
 
-]
-
-LaTeX Warning: Citation `minkowski1908' on page 4 undefined on input line 263.
-
-
-LaTeX Warning: Citation `malament1977' on page 4 undefined on input line 265.
-
-[4]
-
-LaTeX Warning: Citation `kunen1980' on page 5 undefined on input line 309.
-
-[5]
-
-LaTeX Warning: Citation `kunen1980' on page 6 undefined on input line 326.
-
-
-LaTeX Warning: Citation `jech2003' on page 6 undefined on input line 326.
-
-
-LaTeX Warning: Citation `halmos1958' on page 6 undefined on input line 327.
-
-
-LaTeX Warning: Citation `halmos1974' on page 6 undefined on input line 327.
-
-
-LaTeX Warning: Citation `fraenkel1922' on page 6 undefined on input line 331.
-
-
-LaTeX Warning: Citation `kunen1980' on page 6 undefined on input line 331.
-
-
-LaTeX Warning: Citation `zermelo1908' on page 6 undefined on input line 331.
-
-
-LaTeX Warning: Citation `finkelstein1988causal' on page 6 undefined on input li
-ne 361.
-
-[6{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
-}]
-
-LaTeX Warning: Citation `bombelli1987' on page 7 undefined on input line 364.
-
-
-LaTeX Warning: Citation `sorkin1991' on page 7 undefined on input line 364.
-
-
-LaTeX Warning: Citation `feynman1948' on page 7 undefined on input line 372.
-
-
-LaTeX Warning: Citation `feynman1965' on page 7 undefined on input line 372.
-
+] [4] [5] [6{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-sup
+er-ts1.enc}]
 
 LaTeX Warning: Citation `fenynman1965' on page 7 undefined on input line 378.
 
 [7]
 
-LaTeX Warning: Citation `bombelli1987' on page 8 undefined on input line 422.
+LaTeX Warning: Citation `sorkin2005' on page 8 undefined on input line 427.
 
-[8]
-
-LaTeX Warning: Citation `boltzmann1896' on page 9 undefined on input line 436.
-
-
-LaTeX Warning: Citation `planck1914' on page 9 undefined on input line 436.
-
-
-LaTeX Warning: Citation `berkeley1734' on page 9 undefined on input line 436.
-
-
-LaTeX Warning: Citation `hossenfelder2018' on page 9 undefined on input line 43
-6.
-
-
-LaTeX Warning: Citation `hilbert1902' on page 9 undefined on input line 439.
-
-
-LaTeX Warning: Citation `weyl1949' on page 9 undefined on input line 439.
-
-
-LaTeX Warning: Citation `newton1687' on page 9 undefined on input line 448.
-
-[9]
-
-LaTeX Warning: Citation `einstein1905' on page 10 undefined on input line 464.
-
-
-LaTeX Warning: Citation `lorentz1904' on page 10 undefined on input line 464.
-
-
-LaTeX Warning: Citation `cantor1895' on page 10 undefined on input line 469.
-
-
-LaTeX Warning: Citation `earman1974' on page 10 undefined on input line 469.
-
-
-LaTeX Warning: Citation `golub2013' on page 10 undefined on input line 489.
-
-[10]
+[8] [9] [10]
 Overfull \hbox (18.24774pt too wide) in paragraph at lines 521--522
 \OT1/cmr/m/it/12 take event ten-sors as $\OT1/cmr/m/n/12 2 \OMS/cmsy/m/n/12 ^^B
  \OT1/cmr/m/n/12 2$ \OT1/cmr/m/it/12 ma-tri-ces act-ing on $\OML/cmm/m/it/12 V$
  \OT1/cmr/m/it/12 with the usual (non-commutative)
  []
 
-[11] [12] [13] [14] [15]
-
-LaTeX Warning: Citation `planck1901' on page 16 undefined on input line 767.
-
-[16] [17]
+[11] [12] [13] [14] [15] [16] [17]
 Overfull \hbox (2.12944pt too wide) in paragraph at lines 828--832
 []\OT1/cmr/m/it/12 Operationally, this is a Banach--Tarski--like over-count-ing
 : the causal struc-
@@ -498,31 +366,7 @@ Overfull \hbox (2.12944pt too wide) in paragraph at lines 828--832
 
 [18]
 
-LaTeX Warning: Citation `martin1970' on page 19 undefined on input line 863.
-
-
-LaTeX Warning: Citation `kunen1980' on page 19 undefined on input line 863.
-
-
 LaTeX Warning: Citation `jech2002' on page 19 undefined on input line 863.
-
-
-LaTeX Warning: Citation `todorcevic2010' on page 19 undefined on input line 863
-.
-
-
-LaTeX Warning: Citation `boltzmann1896' on page 19 undefined on input line 863.
-
-
-
-LaTeX Warning: Citation `hilbert1902' on page 19 undefined on input line 863.
-
-
-LaTeX Warning: Citation `bombelli1987' on page 19 undefined on input line 863.
-
-
-LaTeX Warning: Citation `finkelstein1996' on page 19 undefined on input line 86
-3.
 
 [19]
 LaTeX Font Info:    Trying to load font information for U+euf on input line 897
@@ -744,9 +588,9 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4404 strings out of 476025
- 75254 string characters out of 5790017
- 1859388 words of memory out of 5000000
+ 4406 strings out of 476025
+ 75278 string characters out of 5790017
+ 1860388 words of memory out of 5000000
  24776 multiletter control sequences out of 15000+600000
  531647 words of font info for 104 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -780,10 +624,10 @@ ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023
 /texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2023/t
 exmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on hilbert.pdf (138 pages, 622231 bytes).
+Output written on hilbert.pdf (142 pages, 629340 bytes).
 PDF statistics:
- 595 PDF objects out of 1000 (max. 8388607)
- 393 compressed objects within 4 object streams
+ 609 PDF objects out of 1000 (max. 8388607)
+ 402 compressed objects within 5 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

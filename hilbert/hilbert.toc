@@ -1,11 +1,11 @@
 \contentsline {chapter}{Abstract}{i}{}%
-\contentsline {chapter}{Overview of the Argument}{v}{}%
-\contentsline {paragraph}{Part I — The Calculus of Measurement.}{v}{}%
-\contentsline {paragraph}{Part II — The Wave.}{vi}{}%
-\contentsline {paragraph}{Part III — The Kinematics of Light.}{vi}{}%
-\contentsline {paragraph}{Part IV — Quantum and Gravitational Fields.}{vi}{}%
-\contentsline {paragraph}{Part V — The Second Law of Causal Order.}{vi}{}%
-\contentsline {paragraph}{Reading the Proof.}{vi}{}%
+\contentsline {chapter}{Overview of the Argument}{ix}{}%
+\contentsline {paragraph}{Part I — The Calculus of Measurement.}{ix}{}%
+\contentsline {paragraph}{Part II — The Wave.}{x}{}%
+\contentsline {paragraph}{Part III — The Kinematics of Light.}{x}{}%
+\contentsline {paragraph}{Part IV — Quantum and Gravitational Fields.}{x}{}%
+\contentsline {paragraph}{Part V — The Second Law of Causal Order.}{x}{}%
+\contentsline {paragraph}{Reading the Proof.}{x}{}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{}%
 \contentsline {chapter}{\numberline {2}The Calculus of Measurement}{3}{}%
 \contentsline {section}{\numberline {2.1}Introduction}{3}{}%
