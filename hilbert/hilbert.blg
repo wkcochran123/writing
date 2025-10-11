@@ -91,12 +91,13 @@ Repeated entry---line 989 of file hilbert.bib
  : @book{halmos1974
  :                 ,
 I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "fenynman1965"
 Warning--I didn't find a database entry for "jech2002"
 Warning--I didn't find a database entry for "Wolfram2002"
 Warning--empty publisher in boltzmann1872
 You've used 35 entries,
             2118 wiz_defined-function locations,
-            708 strings with 8434 characters,
+            709 strings with 8446 characters,
 and the built_in function-call counts, 9403 in all, are:
 = -- 926
 > -- 304
