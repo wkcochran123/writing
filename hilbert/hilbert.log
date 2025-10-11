@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.16)  10 OCT 2025 16:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.16)  11 OCT 2025 06:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -269,7 +269,7 @@ s the fourth{order
 ] [2] (./hilbert.toc [3
 
 ]
-Overfull \hbox (1.00156pt too wide) in paragraph at lines 41--41
+Overfull \hbox (1.00156pt too wide) in paragraph at lines 42--42
  [][] []\OT1/cmr/m/n/12 Introduction: Mar-tin's Con-di-tion and the Con-ti-nu-i
 ty of Causal 
  []
@@ -292,7 +292,7 @@ e-la-tion is translation-invariant,
 
 [7
 
-] [8] [9]
+] [8] [9] [10]
 Chapter 1.
 [1
 
@@ -303,92 +303,91 @@ Chapter 2.
 
 ] [4] [5] [6{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-sup
 er-ts1.enc}] [7] [8] [9] [10] [11] [12] [13]
-Overfull \hbox (5.28941pt too wide) in paragraph at lines 630--633
+Overfull \hbox (5.28941pt too wide) in paragraph at lines 665--668
 \OT1/cmr/bx/n/12 Example 5 \OT1/cmr/m/n/12 (Hawk-ing Ra-di-a-tion)\OT1/cmr/bx/n
 /12 . \OT1/cmr/m/it/12 Let $\OT1/cmr/bx/n/12 E[]$ \OT1/cmr/m/it/12 and $\OT1/cm
 r/bx/n/12 E[]$ \OT1/cmr/m/it/12 de-note the pair of particle-
  []
 
 [14] [15] [16] [17]
-Overfull \hbox (2.12944pt too wide) in paragraph at lines 775--779
+Overfull \hbox (2.12944pt too wide) in paragraph at lines 810--814
 []\OT1/cmr/m/it/12 Operationally, this is a Banach--Tarski--like over-count-ing
 : the causal struc-
  []
 
 [18]
 
-LaTeX Warning: Citation `jech2002' on page 19 undefined on input line 810.
+LaTeX Warning: Citation `jech2002' on page 19 undefined on input line 845.
 
 [19]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 831
+LaTeX Font Info:    Trying to load font information for U+euf on input line 880
 .
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-)
-Overfull \hbox (1.24495pt too wide) in paragraph at lines 836--838
+) [20]
+Overfull \hbox (1.24495pt too wide) in paragraph at lines 885--887
 \OT1/cmr/m/n/12 Physically, each dense set $\OML/cmm/m/it/12 D[]$ \OT1/cmr/m/n/
 12 rep-re-sents a lo-cal causal con-straint|\something
  []
 
-[20]
-Overfull \hbox (16.93542pt too wide) detected at line 851
+
+Overfull \hbox (16.93542pt too wide) detected at line 900
 \OT1/cmr/bx/n/12 U[] \OT1/cmr/m/n/12 = \OT1/cmr/bx/n/12 U[] \OT1/cmr/m/n/12 + \
 OT1/cmr/bx/n/12 E[]\OML/cmm/m/it/12 ;  []\OT1/cmr/bx/n/12 E[][]
  []
 
 [21] [22] [23] [24] [25] [26]
-Overfull \hbox (58.98656pt too wide) detected at line 1022
+Overfull \hbox (58.98656pt too wide) detected at line 1071
 []\OML/cmm/m/it/12 U \OMS/cmsy/m/n/12 ^^X \OML/cmm/m/it/12 V  \OMS/cmsy/m/n/12 
 ([])  []
  []
 
 [27]
-Overfull \hbox (1.01028pt too wide) in paragraph at lines 1067--1073
+Overfull \hbox (1.01028pt too wide) in paragraph at lines 1116--1122
 \OT1/cmr/bx/n/12 Interpretation. \OT1/cmr/m/n/12 Within the space of mea-sur-ab
 le con-fig-u-ra-tions, ev-ery causal
  []
 
-[28]
-Overfull \hbox (9.06451pt too wide) detected at line 1148
+[28] [29]
+Overfull \hbox (9.06451pt too wide) detected at line 1197
 []\OT1/cmr/m/n/12 ^^H : \OML/cmm/m/it/12 V \OMS/cmsy/m/n/12 ! \OML/cmm/m/it/12 
 M;  \OT1/cmr/m/n/12 ^^H(\OML/cmm/m/it/12 ^^NU\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12
  e\OT1/cmr/m/n/12 ) = []
  []
 
-[29] [30] [31]
+[30] [31] [32]
 
-LaTeX Warning: Citation `Wolfram2002' on page 32 undefined on input line 1247.
-
-[32]
-
-LaTeX Warning: Reference `sec:closure' on page 33 undefined on input line 1267.
+LaTeX Warning: Citation `Wolfram2002' on page 33 undefined on input line 1308.
 
 
+LaTeX Warning: Reference `sec:closure' on page 33 undefined on input line 1328.
 
-Overfull \hbox (15.90384pt too wide) in paragraph at lines 1265--1274
+
+
+Overfull \hbox (15.90384pt too wide) in paragraph at lines 1326--1335
 \OT1/cmr/m/it/12 this dis-crete rewrit-ing rule is an ex-plicit re-al-iza-tion 
 of the reciprocal-measurement
  []
 
-[33] [34]
-Overfull \hbox (60.7907pt too wide) in paragraph at lines 1375--1377
+[33] [34] [35]
+Overfull \hbox (60.7907pt too wide) in paragraph at lines 1436--1438
 \OT1/cmr/m/n/12 ja-cent in-ter-vals match in value, slope, and cur-va-ture. :co
 n-tentRe-f-er-ence[oaicite:0]index=0
  []
 
-[35]
-Overfull \hbox (27.21712pt too wide) in paragraph at lines 1383--1384
+
+Overfull \hbox (27.21712pt too wide) in paragraph at lines 1444--1445
 \OT1/cmr/m/n/12 ing (con-ti-nu-ity of $\OML/cmm/m/it/12 U; U[]; U[]$\OT1/cmr/m/
 n/12 ) at in-te-rior knots.[] :con-tentRe-f-er-ence[oaicite:2]index=2
  []
 
-[36]
-Overfull \hbox (3.78627pt too wide) in paragraph at lines 1401--1401
+[36] [37]
+Overfull \hbox (3.78627pt too wide) in paragraph at lines 1462--1462
 []\OT1/cmr/bx/n/14.4 Principle of Least Ac-tion as Dual to Cu-bic Splines 
  []
 
 
-Overfull \hbox (11.79193pt too wide) detected at line 1416
+Overfull \hbox (11.79193pt too wide) detected at line 1477
 []\OT1/cmr/bx/n/12 U\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x \OT1/cmr/m/n/12 + ^^A\O
 ML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = \OT1/cmr/bx/n/12 U\OT1/cmr/m/n/12 (\OML/cmm
 /m/it/12 x\OT1/cmr/m/n/12 ) + \OT1/cmr/bx/n/12 U[]\OT1/cmr/m/n/12 (\OML/cmm/m/i
@@ -400,71 +399,52 @@ t/12 x\OT1/cmr/m/n/12 ) ^^A\OML/cmm/m/it/12 x \OT1/cmr/m/n/12 + []\OT1/cmr/bx/n
 2 x\OT1/cmr/m/n/12 )[]\OML/cmm/m/it/12 ;
  []
 
-[37] [38] [39] [40] [41] [42] [43]
+[38] [39] [40] [41] [42] [43] [44]
 Chapter 3.
 
-Overfull \hbox (2.35774pt too wide) in paragraph at lines 1618--1618
+Overfull \hbox (2.35774pt too wide) in paragraph at lines 1679--1679
 []\OT1/cmr/bx/n/17.28 Introduction: Mar-tin's Con-di-tion and the
  []
 
-[44
+[45
 
 ]
-Overfull \hbox (5.12773pt too wide) in paragraph at lines 1672--1672
+Overfull \hbox (5.12773pt too wide) in paragraph at lines 1733--1733
 []\OT1/cmr/bx/n/17.28 Interaction: The Union of Or-dered Events 
  []
 
-[45] [46]
-Overfull \hbox (2.05426pt too wide) in paragraph at lines 1758--1771
+[46] [47]
+Overfull \hbox (2.05426pt too wide) in paragraph at lines 1819--1832
 \OT1/cmr/m/n/12 mu-tual ad-just-ment prop-a-gates along both chains, en-forc-in
 g con-sis-tency across
  []
 
-[47] [48]
-Overfull \hbox (1.2927pt too wide) in paragraph at lines 1842--1850
+[48] [49]
+Overfull \hbox (1.2927pt too wide) in paragraph at lines 1903--1911
 \OT1/cmr/m/n/12 main. To a lo-cal ob-server, this ap-pears as in-stan-ta-neous 
 cor-re-la-tion|``spooky
  []
 
-[49] [50] [51] [52]
-Overfull \hbox (3.78203pt too wide) in paragraph at lines 1989--1993
+[50] [51] [52] [53]
+Overfull \hbox (3.78203pt too wide) in paragraph at lines 2050--2054
 []\OT1/cmr/m/n/12 Each sur-ro-gate event rep-re-sents the rec-on-cil-i-a-tion o
 f an un-re-solv-able causal
  []
 
-[53]
-Overfull \hbox (1.31776pt too wide) in paragraph at lines 2021--2021
+[54]
+Overfull \hbox (1.31776pt too wide) in paragraph at lines 2082--2082
 []\OT1/cmr/bx/n/17.28 Wave Am-pli-tude from In-ter-ac-tion Counts 
  []
 
-[54] [55]
-Overfull \hbox (1.54176pt too wide) in paragraph at lines 2088--2089
+[55] [56]
+Overfull \hbox (1.54176pt too wide) in paragraph at lines 2149--2150
 \OT1/cmr/bx/n/12 Proposition 10 \OT1/cmr/m/n/12 (Tri-an-gle--Type In-equal-ity)
 \OT1/cmr/bx/n/12 . \OT1/cmr/m/it/12 For any lo-cally fi-nite $\OML/cmm/m/it/12 
 E[]; E[]; E[]$\OT1/cmr/m/it/12 , 
  []
 
-[56] [57] [58] [59]
-Overfull \hbox (32.56047pt too wide) in paragraph at lines 2244--2245
-[]\OT1/cmr/m/n/12 Clarify: the an-ti-sym-me-try is $\OML/cmm/m/it/12 ^^N[]A\OT1
-/cmr/m/n/12 (\OML/cmm/m/it/12 E[]; E[]\OT1/cmr/m/n/12 ) = \OMS/cmsy/m/n/12 ^^@\
-OML/cmm/m/it/12 ^^N[]A\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E[]; E[]\OT1/cmr/m/n/12
- )$, where $\OML/cmm/m/it/12 ^^N[]A\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E[]; E[]\O
-T1/cmr/m/n/12 ) :=
- []
-
-[60]
-Overfull \hbox (10.5151pt too wide) in paragraph at lines 2266--2267
-[]\OT1/cmr/m/n/12 The an-ti-sym-me-try holds be-cause $\OML/cmm/m/it/12 A\OT1/c
-mr/m/n/12 (\OML/cmm/m/it/12 E[] \OMS/cmsy/m/n/12 [ f\OML/cmm/m/it/12 e\OMS/cmsy
-/m/n/12 g\OML/cmm/m/it/12 ; E[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ \OML/cmm/
-m/it/12 A\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E[]; E[]\OT1/cmr/m/n/12 ) = \OMS/cms
-y/m/n/12 ^^@\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 A\OT1/cmr/m/n/12 (\OML/cmm/m/it/1
-2 E[]; E[] \OMS/cmsy/m/n/12 n
- []
-
-[61] [62]
-Overfull \hbox (119.81583pt too wide) detected at line 2334
+[57] [58] [59] [60]
+Overfull \hbox (119.81583pt too wide) detected at line 2336
 \OML/cmm/m/it/12 ^^N[]\OMS/cmsy/m/n/12 A\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E[]; 
 E[]\OT1/cmr/m/n/12 ) := \OML/cmm/m/it/12 ^^N[][]^^N[]\OMS/cmsy/m/n/12 A\OT1/cmr
 /m/n/12 (\OML/cmm/m/it/12 E[]; E[]\OT1/cmr/m/n/12 )[] = \OMS/cmsy/m/n/12 A\OT1/
@@ -477,61 +457,61 @@ mr/m/n/12 (\OML/cmm/m/it/12 E[] \OMS/cmsy/m/n/12 [ f\OML/cmm/m/it/12 f\OMS/cmsy
 /n/12 (\OML/cmm/m/it/12 E[]; E[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 :
  []
 
-[63]
-Overfull \hbox (2.2438pt too wide) in paragraph at lines 2421--2421
+[61] [62]
+Overfull \hbox (2.2438pt too wide) in paragraph at lines 2423--2423
 []\OT1/cmr/bx/n/17.28 Advection as Order-Preserving Trans-port 
  []
 
-[64] [65] [66] [67]
-Overfull \hbox (15.92354pt too wide) in paragraph at lines 2558--2562
+[63] [64] [65]
+Overfull \hbox (15.92354pt too wide) in paragraph at lines 2560--2564
 \OT1/cmr/m/n/12 The ``speed'' $\OML/cmm/m/it/12 c$ \OT1/cmr/m/n/12 is the rate 
 at which or-der con-straints tra-verse the poset|not
  []
 
-[68] [69] [70] [71]
+[66] [67] [68] [69] [70]
 Chapter 4.
-[72
+[71
 
-] [73] [74] [75] [76] [77] [78] [79] [80] [81] [82] [83]
-Overfull \hbox (23.25404pt too wide) in paragraph at lines 3140--3144
+] [72] [73] [74] [75] [76] [77] [78] [79] [80] [81] [82]
+Overfull \hbox (23.25404pt too wide) in paragraph at lines 3142--3146
 \OT1/cmr/m/it/12 represents the in-finites-i-mal mea-sure of dis-tin-guisha-bil
 -ity be-tween these events|the
  []
 
-[84] [85] [86]
+[83] [84] [85]
 Chapter 5.
-[87
+[86
 
-] [88] [89] [90] [91] [92] [93]
+] [87] [88] [89] [90] [91] [92]
 Chapter 6.
-[94
+[93
 
-] [95] [96] [97] [98] [99] [100] [101] [102] [103] [104] [105] [106]
-[107] [108] [109] [110] [111] [112]
-Overfull \hbox (2.30241pt too wide) in paragraph at lines 4168--4172
+] [94] [95] [96] [97] [98] [99] [100] [101] [102] [103] [104] [105] [106]
+[107] [108] [109] [110] [111]
+Overfull \hbox (2.30241pt too wide) in paragraph at lines 4170--4174
 \OT1/cmr/m/n/12 ledger. Lo-cal in-vari-ance means that the ex-change rates be-t
 ween these columns
  []
 
-[113]
-Overfull \hbox (0.51817pt too wide) in paragraph at lines 4192--4199
+[112]
+Overfull \hbox (0.51817pt too wide) in paragraph at lines 4194--4201
 \OT1/cmr/m/n/12 Perfect causal sym-me-try im-plies mo-tion at the limit of dis-
 tin-guisha-bil-ity|the
  []
 
-[114] [115] [116] [117] [118] [119]
+[113] [114] [115] [116] [117] [118]
 Chapter 7.
-[120
+[119
 
-] [121] [122] [123] [124] [125] (./hilbert.bbl
+] [120] [121] [122] [123] [124] (./hilbert.bbl
 Underfull \hbox (badness 1389) in paragraph at lines 50--53
 []\OT1/cmr/m/n/12 Richard P. Feyn-man, Robert B. Leighton, and Matthew Sands.
  []
 
-[126
+[125
 
 
-] [127] [128]) [129] (./hilbert.aux)
+] [126] [127]) [128] (./hilbert.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -542,7 +522,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  3616 strings out of 476025
  55557 string characters out of 5790017
- 1861388 words of memory out of 5000000
+ 1860388 words of memory out of 5000000
  24021 multiletter control sequences out of 15000+600000
  531647 words of font info for 104 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -576,7 +556,7 @@ ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023
 /texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2023/t
 exmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on hilbert.pdf (140 pages, 625978 bytes).
+Output written on hilbert.pdf (140 pages, 623896 bytes).
 PDF statistics:
  602 PDF objects out of 1000 (max. 8388607)
  398 compressed objects within 4 object streams

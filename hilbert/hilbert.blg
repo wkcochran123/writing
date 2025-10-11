@@ -3,6 +3,94 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: hilbert.aux
 The style file: plain.bst
 Database file #1: hilbert.bib
+Repeated entry---line 390 of file hilbert.bib
+ : @book{boltzmann1872
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 399 of file hilbert.bib
+ : @book{boltzmann1896
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 407 of file hilbert.bib
+ : @book{cantor1895
+ :                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 425 of file hilbert.bib
+ : @book{hilbert1902
+ :                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 450 of file hilbert.bib
+ : @book{newton1687
+ :                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 458 of file hilbert.bib
+ : @article{lorentz1904
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 467 of file hilbert.bib
+ : @article{einstein1905
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 476 of file hilbert.bib
+ : @article{planck1901
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 590 of file hilbert.bib
+ : @article{feynman1948
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 696 of file hilbert.bib
+ : @book{boltzmann1872
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 705 of file hilbert.bib
+ : @book{boltzmann1896
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 713 of file hilbert.bib
+ : @book{cantor1895
+ :                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 731 of file hilbert.bib
+ : @book{hilbert1902
+ :                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 756 of file hilbert.bib
+ : @book{newton1687
+ :                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 764 of file hilbert.bib
+ : @article{lorentz1904
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 773 of file hilbert.bib
+ : @article{einstein1905
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 782 of file hilbert.bib
+ : @article{planck1901
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 896 of file hilbert.bib
+ : @article{feynman1948
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 957 of file hilbert.bib
+ : @book{jech2003
+ :               ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 973 of file hilbert.bib
+ : @article{martin1970
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 982 of file hilbert.bib
+ : @book{halmos1958
+ :                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 989 of file hilbert.bib
+ : @book{halmos1974
+ :                 ,
+I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "jech2002"
 Warning--I didn't find a database entry for "Wolfram2002"
 Warning--empty publisher in boltzmann1872
@@ -47,4 +135,4 @@ warning$ -- 1
 while$ -- 99
 width$ -- 37
 write$ -- 398
-(There were 3 warnings)
+(There were 22 error messages)
