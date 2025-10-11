@@ -1,5 +1,5 @@
 \documentclass[12pt,oneside]{book}
-\usepackage{amsthm,amssymb,amsmath,mathtools,setspace}
+\usepackage{amsthm,amssymb,amsmath,mathtools,setspace,thmtools}
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{example}{Thought Experiment}
@@ -66,6 +66,9 @@ Thus, $\Delta S \ge 0$ is not a thermodynamic postulate but a theorem of causal 
 \newpage
 \setcounter{tocdepth}{2}   % 1=sections, 2=subsections, 3=subsubsections
 \tableofcontents
+\newpage
+
+\listoftheorems[ignoreall, show={example}, title={List of Thought Experiments}]
 \newpage
 
 \chapter*{Overview of the Argument}
@@ -325,7 +328,7 @@ for set-theoretic foundations, and Halmos~\cite{halmos1958,halmos1974} for the
 induced tensor and operator structures on finite-dimensional vector spaces.
 
 
-\begin{axiom}[The Axioms of Mathematics~\cite{zermelo1908,fraenkel1922,kunen1980}]
+\begin{axiom}[The Axioms of Mathematics~\cite{fraenkel1922,kunen1980,zermelo1908}]
 \label{ax:mathematics}
 All reasoning in this work is confined to the framework of
 Zermelo--Fraenkel set theory with the Axiom of Choice (ZFC).
@@ -372,7 +375,7 @@ network itself---a pictorial reduction of the full tensor of event
 relations---and the path integral becomes a statement of global
 consistency across all measurable causal connections.
 
-\begin{example}[Feynman Diagram as a Causal Network]
+\begin{example}[Feynman Diagram as a Causal Network]~\cite{fenynman1965}
 In conventional quantum field theory, a Feynman diagram depicts a sum over
 interaction histories connecting initial and final particle states.  Each
 vertex represents an elementary event---an interaction that renders previously
