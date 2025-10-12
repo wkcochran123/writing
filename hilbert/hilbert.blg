@@ -27,45 +27,45 @@ Warning--I didn't find a database entry for "martin1970"
 Warning--I didn't find a database entry for "dantzig1963"
 Warning--empty publisher in boltzmann1872
 Warning--empty publisher in cantor1895
-You've used 49 entries,
+You've used 50 entries,
             2118 wiz_defined-function locations,
-            789 strings with 10267 characters,
-and the built_in function-call counts, 13085 in all, are:
-= -- 1290
-> -- 429
+            796 strings with 10460 characters,
+and the built_in function-call counts, 13351 in all, are:
+= -- 1315
+> -- 442
 < -- 7
-+ -- 186
-- -- 127
-* -- 730
-:= -- 2232
-add.period$ -- 160
-call.type$ -- 49
-change.case$ -- 185
++ -- 192
+- -- 131
+* -- 743
+:= -- 2279
+add.period$ -- 164
+call.type$ -- 50
+change.case$ -- 189
 chr.to.int$ -- 0
-cite$ -- 51
-duplicate$ -- 598
-empty$ -- 1197
-format.name$ -- 127
-if$ -- 2769
+cite$ -- 52
+duplicate$ -- 610
+empty$ -- 1219
+format.name$ -- 131
+if$ -- 2825
 int.to.chr$ -- 0
-int.to.str$ -- 49
-missing$ -- 77
-newline$ -- 258
-num.names$ -- 102
-pop$ -- 271
+int.to.str$ -- 50
+missing$ -- 79
+newline$ -- 264
+num.names$ -- 104
+pop$ -- 278
 preamble$ -- 1
-purify$ -- 160
+purify$ -- 164
 quote$ -- 0
-skip$ -- 351
+skip$ -- 358
 stack$ -- 0
-substring$ -- 706
-swap$ -- 78
+substring$ -- 712
+swap$ -- 79
 text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 138
+type$ -- 140
 warning$ -- 2
-while$ -- 138
-width$ -- 51
-write$ -- 559
+while$ -- 140
+width$ -- 52
+write$ -- 572
 (There were 4 error messages)

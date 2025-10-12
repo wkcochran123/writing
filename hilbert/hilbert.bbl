@@ -205,6 +205,12 @@ Max Planck.
 \newblock P. Blakiston’s Son \& Co., Philadelphia, 1914.
 \newblock Translated by M. Masius. Reprinted by Dover Publications, 1959.
 
+\bibitem{rasiowa1963}
+Helena Rasiowa and Roman Sikorski.
+\newblock {\em The Mathematics of Metamathematics}.
+\newblock Panstwowe Wydawnictwo Naukowe (PWN), Warsaw, 1963.
+\newblock See Theorem~3.6.4 for the Rasiowa--Sikorski lemma on generic filters.
+
 \bibitem{rideout1999}
 David Rideout and Rafael~D. Sorkin.
 \newblock A classical sequential growth dynamics for causal sets.
