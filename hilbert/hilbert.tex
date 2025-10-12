@@ -1227,6 +1227,26 @@ Its inverse reconstructs a variation from a predicate:
 \begin{equation}
 \Phi^{-1}(P) = \sum_{e \in \mathcal{E}:\, P(e)=1} \delta \E_e .
 \end{equation}
+
+\begin{proposition}[Injectivity up to entanglement]\label{lem:injectivity}
+Let $\Phi:V\to M$ be the measurement map defined by the Selected Update
+$\Phi_{\mathrm{sel}}$ (Definition~\ref{def:selected-update}).  
+If $\Phi(\delta U_1)=\Phi(\delta U_2)$, then $\delta U_1$ and $\delta U_2$ belong to the same entanglement-equivalence class
+(Definition~\ref{def:entanglement}).
+Hence $\Phi$ is injective on the quotient space of observables
+\begin{equation}
+Q \;=\; V/\!\!\sim,
+\end{equation}
+where $\delta U_1\sim\delta U_2 \iff \delta U_1\equiv\delta U_2$
+(equality modulo entanglement equivalence).
+\end{lemma}
+
+\begin{proof}
+By Definition~\ref{def:selected-update}, $\Phi_{\mathrm{sel}}$ acts only on components distinguishable under the measurement algebra of $M$.
+Equality of images therefore implies indistinguishability of pre-images under all admissible measurement functionals.
+By Definition~\ref{def:entanglement}, this holds exactly when $\delta U_1$ and $\delta U_2$ differ only by entangled (commutative) reorderings, i.e.\ $\delta U_1\equiv\delta U_2$.
+\end{proof}
+
 \begin{proposition}[Equivalence of Discrete and Continuum]
 \label{thm:equivalence}
 $\Phi$ is bijective on the space of distinguishable events~\cite{deboor1978,landau1976,shannon1948,jaynes1957,kolmogorov1933}.
