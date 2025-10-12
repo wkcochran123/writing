@@ -297,26 +297,20 @@ s the fourth{order
 
 
 
-] [2] (./hilbert.toc [3
-
-]
-Overfull \hbox (1.00156pt too wide) in paragraph at lines 41--41
- [][] []\OT1/cmr/m/n/12 Introduction: Mar-tin's Con-di-tion and the Con-ti-nu-i
-ty of Causal 
- []
-
-[4] [5])
+] [2] (./hilbert.toc)
 \tf@toc=\write3
 \openout3 = `hilbert.toc'.
 
- [6]
+ [3
+
+]
 showing example
 (./hilbert.loe
 
-LaTeX Warning: Citation `bell1964' on page vii undefined on input line 14.
+LaTeX Warning: Citation `einstein1935' on page iv undefined on input line 14.
 
 
-LaTeX Warning: Citation `einstein1935' on page vii undefined on input line 14.
+LaTeX Warning: Citation `sorkin2005' on page iv undefined on input line 14.
 
 
 Overfull \hbox (0.5099pt too wide) in paragraph at lines 48--48
@@ -324,9 +318,9 @@ Overfull \hbox (0.5099pt too wide) in paragraph at lines 48--48
 r as Causal 
  []
 
-[7
+[4
 
-]) [8]
+]) [5]
 Overfull \hbox (21.78833pt too wide) in paragraph at lines 83--87
  \OT1/cmr/bx/n/12 Part I | The Cal-cu-lus of Mea-sure-ment.[] \OT1/cmr/m/n/12 B
 e-gin-ning with Zer-melo{Fraenkel
@@ -338,31 +332,186 @@ Overfull \hbox (11.96225pt too wide) in paragraph at lines 89--91
 e-la-tion is translation-invariant,
  []
 
-[9
+[6
 
-] [10] [11] [12]
+] [7] [8] [9]
 Chapter 1.
 [1
 
 
 ] [2]
 Chapter 2.
+
+LaTeX Warning: Citation `boltzmann1872' on page 3 undefined on input line 223.
+
+
+LaTeX Warning: Citation `planck1914' on page 3 undefined on input line 223.
+
+
+LaTeX Warning: Citation `einstein1905' on page 3 undefined on input line 225.
+
+
+LaTeX Warning: Citation `minkowski1908' on page 3 undefined on input line 225.
+
+
+LaTeX Warning: Citation `hawking1973' on page 3 undefined on input line 227.
+
+
+LaTeX Warning: Citation `penrose1972' on page 3 undefined on input line 227.
+
+
+LaTeX Warning: Citation `hawking1973' on page 3 undefined on input line 231.
+
+
+LaTeX Warning: Citation `malament1977' on page 3 undefined on input line 231.
+
+
+LaTeX Warning: Citation `hawking1973' on page 3 undefined on input line 233.
+
+
+LaTeX Warning: Citation `malament1977' on page 3 undefined on input line 233.
+
+
+LaTeX Warning: Citation `bombelli1987' on page 3 undefined on input line 235.
+
+
+LaTeX Warning: Citation `sorkin1991' on page 3 undefined on input line 235.
+
+
+LaTeX Warning: Citation `bombelli1987' on page 3 undefined on input line 237.
+
+
+LaTeX Warning: Citation `sorkin2003' on page 3 undefined on input line 237.
+
+
+LaTeX Warning: Citation `einstein1905' on page 3 undefined on input line 239.
+
+
+LaTeX Warning: Citation `einstein1905' on page 3 undefined on input line 240.
+
+
+LaTeX Warning: Citation `rindler2006' on page 3 undefined on input line 240.
+
+
+LaTeX Warning: Citation `taylor1992' on page 3 undefined on input line 240.
+
 [3
 
-] [4] [5]
+]
+
+LaTeX Warning: Citation `minkowski1908' on page 4 undefined on input line 263.
+
+
+LaTeX Warning: Citation `malament1977' on page 4 undefined on input line 265.
+
+[4]
+
+LaTeX Warning: Citation `kunen1980' on page 5 undefined on input line 309.
+
+[5]
+
+LaTeX Warning: Citation `kunen1980' on page 6 undefined on input line 326.
+
+
+LaTeX Warning: Citation `jech2003' on page 6 undefined on input line 326.
+
+
+LaTeX Warning: Citation `halmos1958' on page 6 undefined on input line 327.
+
 
 LaTeX Warning: Citation `halmos1974' on page 6 undefined on input line 327.
+
+
+LaTeX Warning: Citation `fraenkel1922' on page 6 undefined on input line 331.
+
+
+LaTeX Warning: Citation `kunen1980' on page 6 undefined on input line 331.
+
+
+LaTeX Warning: Citation `zermelo1908' on page 6 undefined on input line 331.
+
+
+LaTeX Warning: Citation `finkelstein1988causal' on page 6 undefined on input li
+ne 361.
 
 [6{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }]
 
+LaTeX Warning: Citation `bombelli1987' on page 7 undefined on input line 364.
+
+
+LaTeX Warning: Citation `sorkin1991' on page 7 undefined on input line 364.
+
+
+LaTeX Warning: Citation `feynman1948' on page 7 undefined on input line 372.
+
+
+LaTeX Warning: Citation `feynman1965' on page 7 undefined on input line 372.
+
+
 LaTeX Warning: Citation `fenynman1965' on page 7 undefined on input line 378.
 
-[7] [8] [9] [10]
+[7]
+
+LaTeX Warning: Citation `bombelli1987' on page 8 undefined on input line 422.
+
+
+LaTeX Warning: Citation `sorkin2005' on page 8 undefined on input line 427.
+
+[8]
+
+LaTeX Warning: Citation `boltzmann1896' on page 9 undefined on input line 436.
+
+
+LaTeX Warning: Citation `planck1914' on page 9 undefined on input line 436.
+
+
+LaTeX Warning: Citation `berkeley1734' on page 9 undefined on input line 436.
+
+
+LaTeX Warning: Citation `hossenfelder2018' on page 9 undefined on input line 43
+6.
+
+
+LaTeX Warning: Citation `hilbert1902' on page 9 undefined on input line 439.
+
+
+LaTeX Warning: Citation `weyl1949' on page 9 undefined on input line 439.
+
+
+LaTeX Warning: Citation `newton1687' on page 9 undefined on input line 448.
+
+[9]
+
+LaTeX Warning: Citation `einstein1905' on page 10 undefined on input line 464.
+
+
+LaTeX Warning: Citation `lorentz1904' on page 10 undefined on input line 464.
+
+
+LaTeX Warning: Citation `cantor1895' on page 10 undefined on input line 469.
+
+
+LaTeX Warning: Citation `earman1974' on page 10 undefined on input line 469.
+
+
+LaTeX Warning: Citation `golub2013' on page 10 undefined on input line 489.
+
+[10]
+
+LaTeX Warning: Citation `halmos1958' on page 11 undefined on input line 530.
+
 
 LaTeX Warning: Citation `lang2002' on page 11 undefined on input line 530.
 
-[11] [12]
+[11]
+
+LaTeX Warning: Citation `bombelli1987' on page 12 undefined on input line 545.
+
+
+LaTeX Warning: Citation `halmos1958' on page 12 undefined on input line 545.
+
+[12]
 Overfull \hbox (18.24774pt too wide) in paragraph at lines 608--609
 \OT1/cmr/m/it/12 take event ten-sors as $\OT1/cmr/m/n/12 2 \OMS/cmsy/m/n/12 ^^B
  \OT1/cmr/m/n/12 2$ \OT1/cmr/m/it/12 ma-tri-ces act-ing on $\OML/cmm/m/it/12 V$
@@ -371,12 +520,16 @@ Overfull \hbox (18.24774pt too wide) in paragraph at lines 608--609
 
 [13]
 
-LaTeX Warning: Citation `bell1964' on page 14 undefined on input line 677.
-
-
 LaTeX Warning: Citation `einstein1935' on page 14 undefined on input line 677.
 
-[14] [15] [16] [17] [18]
+
+LaTeX Warning: Citation `sorkin2005' on page 14 undefined on input line 677.
+
+[14] [15] [16]
+
+LaTeX Warning: Citation `planck1901' on page 17 undefined on input line 783.
+
+[17] [18]
 Overfull \hbox (0.32942pt too wide) in paragraph at lines 840--844
 []\OT1/cmr/m/it/12 Operationally, this is a Banach--Tarski-like over-count-ing:
  the causal struc-
@@ -384,6 +537,30 @@ Overfull \hbox (0.32942pt too wide) in paragraph at lines 840--844
 
 
 LaTeX Warning: Citation `martin1970' on page 19 undefined on input line 875.
+
+
+LaTeX Warning: Citation `kunen1980' on page 19 undefined on input line 875.
+
+
+LaTeX Warning: Citation `jech2002' on page 19 undefined on input line 875.
+
+
+LaTeX Warning: Citation `todorcevic2010' on page 19 undefined on input line 875
+.
+
+
+LaTeX Warning: Citation `boltzmann1896' on page 19 undefined on input line 875.
+
+
+
+LaTeX Warning: Citation `hilbert1902' on page 19 undefined on input line 875.
+
+
+LaTeX Warning: Citation `bombelli1987' on page 19 undefined on input line 875.
+
+
+LaTeX Warning: Citation `finkelstein1996' on page 19 undefined on input line 87
+5.
 
 [19]
 
@@ -429,6 +606,9 @@ M;  \OT1/cmr/m/n/12 ^^H(\OML/cmm/m/it/12 ^^NU\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12
  []
 
 [31] [32] [33]
+
+LaTeX Warning: Citation `wolfram2002' on page 34 undefined on input line 1357.
+
 
 LaTeX Warning: Reference `sec:closure' on page 34 undefined on input line 1377.
 
@@ -610,10 +790,10 @@ You may provide a definition with
 
  
 Here is how much of TeX's memory you used:
- 4399 strings out of 476025
- 75378 string characters out of 5790017
+ 4364 strings out of 476025
+ 74910 string characters out of 5790017
  1860388 words of memory out of 5000000
- 24770 multiletter control sequences out of 15000+600000
+ 24735 multiletter control sequences out of 15000+600000
  531647 words of font info for 104 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  65i,13n,71p,771b,323s stack positions out of 10000i,1000n,20000p,200000b,200000s
