@@ -1378,7 +1378,7 @@ predicted by the Axiom of Event Selection, demonstrating that
 computation and causal measurement share a common algebraic structure.
 \end{example}
 
-\begin{example}[Point-wise Agreement of the Infinite Taylor Expansion]
+\begin{example}[Point-wise Agreement of the Infinite Taylor Expansion~\cite{ortega1970, isaacson1966, stoerbulirsch2002, strangfix1973, deBoor1978}]
 Consider any measurable function $U(x)$ obtained from a finite sequence of
 reciprocal updates $\{U_n\}$ that converge at a point $x_0$.
 At every measurement location $x_k$ the discrete update rule
@@ -1410,70 +1410,31 @@ This is the canonical example of how the discrete dual can recreate continuous p
 \end{example}
 
 
-\subsubsection{Example: Coincidence as a Retro-Constraint}
-\label{ssse:coincidene}
+\begin{example}[Coincidence as a Retro-Constraint~\cite{tarski1955,spencerbrown1969,gold1967,markopoulou2000,rideoutsorkin1999}]
+In the discrete calculus of measurement, two fields $U,V \in \mathcal{U}$ are said to be \emph{coincident} when all measurable differences vanish on every finite causal neighborhood,
+\begin{equation}
+U \sim V 
+\quad \Longleftrightarrow \quad 
+\Delta^{(k)}(U - V) = 0 \quad \forall k < 4.
+\end{equation}
+Operationally, this expresses \emph{point-wise agreement} through the third finite difference—the discrete analogue of $C^2$ continuity. 
+Under the closure condition $\Delta^{(4)}U = 0$, every admissible update must interpolate neighboring measurements with vanishing fourth variation, so that the next event $E_{n+1}$ cannot introduce a new measurable degree of freedom without violating consistency.
 
-Consider two causal chains,
-\begin{equation}
-\label{eq:causalchain}
-A_1 \prec A_2, \qquad B_1 \prec B_2,
-\end{equation}
-representing two local measurements.
-Each chain is internally ordered, but the relative ordering between
-the $A$ and $B$ events is only partially specified.
+Viewed retrospectively, coincidence functions as a \emph{retro-constraint}: once two histories agree to third order, all subsequent refinements are forced to maintain that agreement. 
+The causal record therefore relaxes toward a fixed point of distinguishability—the discrete universe tensor evolves only within the coincidence class that preserves prior curvature and slope. 
+In the continuum limit, this retro-constraint corresponds exactly to the theoretical–numerical condition of point-wise convergence of the Taylor expansion~\cite{isaacson1966,ortega1970,strangfix1973,deBoor1978,stoerbulirsch2002}.
+\end{example}
 
-Suppose an invariant condition couples the terminal events,
-\begin{equation}
-\label{eq:entangle}
-f(A_2,B_2)=0,
-\end{equation}
-such that the combined value of the pair must satisfy a conservation
-or matching rule in the universe tensor.
-When this constraint is enforced at the future boundary $(A_2,B_2)$,
-it propagates backward through the partial order:
-the admissible values of $(A_1,B_1)$ are now restricted to those
-for which the subsequent evolution yields the required terminal pair.
-Formally, we obtain a dependency
-\begin{equation}
-\label{eq:dependex}
-(A_1,B_1)\ \longmapsto\ (A_2,B_2),
-\end{equation}
-so that the poset must be extended with additional relations ensuring
-compatibility.  In the simplest case, one future event becomes
-conditionally prior:
-\begin{equation}
-\label{eq:conditionex}
-A_1 \prec B_2 \quad\text{(if $B_2$ requires a specific $A_1$ value)}.
-\end{equation}
-
-This induced relation is what we call a \emph{coincidence}:
-a future event whose consistency condition fixes a present variable.
-In the universe tensor, such coincidences appear as cancellations of
-independent variations—degrees of freedom that are no longer free once
-the end condition is imposed.  Each coincidence therefore removes one
-order of independent variation from the causal sum, driving the sequence
-toward the smooth limit
-\begin{equation}
-\label{eq:relaxed}
-\U^{(4)}(x)=0.
-\end{equation}
-
-Thus, a ``coincidental'' alignment is not a mystery of timing but a
-structural enforcement of consistency within the partially ordered
-set: the future boundary constrains the present values so that the
-entire tensor remains self-consistent under reciprocal measurement.
-This is the operational significance of the Axiom of Event Selection---
-only those events consistent with the full causal ordering can occur.
 
 \subsubsection{The spline is the Euler solution with minimal degrees of freedom}\label{subsubsec:spline-min-dofs}
 
-We have already shown that relaxing the fourth derivative yields the Euler--Lagrange condition for the bending energy,
-\[
+We have already shown that relaxing the fourth derivative yields the Euler--Lagrange condition for the bending energy~\cite{courant1943,hilbert1902,ziegler1963,braess2007,whitney1957},
+\begin{equation}
 E[U] \;=\; \int (U''(x))^2\,dx,\qquad \delta E = 0 \;\Longleftrightarrow\; U^{(4)}(x)=0, 
-\]
-so that the relaxed field on each causal interval is a \emph{cubic} polynomial and adjacent intervals match in value, slope, and curvature. :contentReference[oaicite:0]{index=0} :contentReference[oaicite:1]{index=1}
+\end{equation}
+so that the relaxed field on each causal interval is a \emph{cubic} polynomial and adjacent intervals match in value, slope, and curvature.
 
-\begin{proposition}[Spline = Euler solution with minimal DoFs]
+\begin{proposition}[Spline = Euler solution with minimal DoFs~\cite{courant1943,ahlberg1967,braess2007,zienkiewicz1977,reddy1993}]
 Fix knots $x_0<\cdots<x_n$ and data $\{U(x_k)\}_{k=0}^n$. Among all $C^2$ functions that interpolate these values, the unique minimizer of $E[U]=\int (U'')^2$ is the (natural or appropriately boundary-conditioned) \emph{cubic spline}. On each open subinterval $(x_{k-1},x_k)$ it satisfies the Euler equation $U^{(4)}=0$ and is therefore a cubic polynomial. Moreover, cubic is the \emph{minimal degree} capable of enforcing $C^2$ continuity across arbitrary knot data; any lower degree generically fails, so the spline achieves the interpolation with the fewest free parameters compatible with the Euler condition.
 \end{proposition}
 

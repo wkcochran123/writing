@@ -1,6 +1,16 @@
 This is BibTeX, Version 0.99d (TeX Live 2023)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: hilbert.aux
+Case mismatch error between cite keys deBoor1978 and deboor1978
+---line 231 of file hilbert.aux
+ : \citation{deBoor1978
+ :                     }
+I'm skipping whatever remains of this command
+Case mismatch error between cite keys deBoor1978 and deboor1978
+---line 241 of file hilbert.aux
+ : \citation{deBoor1978
+ :                     }
+I'm skipping whatever remains of this command
 The style file: plain.bst
 Database file #1: hilbert.bib
 Repeated entry---line 517 of file hilbert.bib
@@ -52,13 +62,24 @@ Warning--I didn't find a database entry for "zienkiewicz1977"
 Warning--I didn't find a database entry for "reddy1993"
 Warning--I didn't find a database entry for "braess2007"
 Warning--I didn't find a database entry for "quarteroni2008"
+Warning--I didn't find a database entry for "ortega1970"
+Warning--I didn't find a database entry for "isaacson1966"
+Warning--I didn't find a database entry for "stoerbulirsch2002"
+Warning--I didn't find a database entry for "strangfix1973"
+Warning--I didn't find a database entry for "tarski1955"
+Warning--I didn't find a database entry for "gold1967"
+Warning--I didn't find a database entry for "rideoutsorkin1999"
+Warning--I didn't find a database entry for "courant1943"
+Warning--I didn't find a database entry for "ziegler1963"
+Warning--I didn't find a database entry for "whitney1957"
+Warning--I didn't find a database entry for "ahlberg1967"
 Warning--empty publisher in boltzmann1872
 Warning--empty publisher in cantor1895
 Warning--empty publisher in jaynes1957
 Warning--empty publisher in shannon1948
 You've used 55 entries,
             2118 wiz_defined-function locations,
-            835 strings with 11064 characters,
+            846 strings with 11195 characters,
 and the built_in function-call counts, 14716 in all, are:
 = -- 1451
 > -- 477
@@ -97,4 +118,4 @@ warning$ -- 4
 while$ -- 156
 width$ -- 57
 write$ -- 625
-(There were 8 error messages)
+(There were 10 error messages)
