@@ -13,55 +13,39 @@ Case mismatch error between cite keys deBoor1978 and deboor1978
 I'm skipping whatever remains of this command
 The style file: plain.bst
 Database file #1: hilbert.bib
-Repeated entry---line 517 of file hilbert.bib
+Repeated entry---line 534 of file hilbert.bib
  : @incollection{sorkin2005
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 683 of file hilbert.bib
+Repeated entry---line 700 of file hilbert.bib
  : @article{godel1931
  :                   ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 913 of file hilbert.bib
+Repeated entry---line 930 of file hilbert.bib
  : @article{godel1931
  :                   ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 993 of file hilbert.bib
+Repeated entry---line 1010 of file hilbert.bib
  : @book{feynman1965
  :                  ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1020 of file hilbert.bib
+Repeated entry---line 1037 of file hilbert.bib
  : @book{shannon1948
  :                  ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1029 of file hilbert.bib
+Repeated entry---line 1046 of file hilbert.bib
  : @book{jaynes1957
  :                 ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1174 of file hilbert.bib
+Repeated entry---line 1177 of file hilbert.bib
  : @article{shannon1948
  :                     ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 1183 of file hilbert.bib
+Repeated entry---line 1186 of file hilbert.bib
  : @book{jaynes1957
  :                 ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "halmos1974"
-Warning--I didn't find a database entry for "fenynman1965"
-Warning--I didn't find a database entry for "hilbert1902"
-Warning--I didn't find a database entry for "lang2002"
-Warning--I didn't find a database entry for "martin1970"
-Warning--I didn't find a database entry for "dantzig1963"
-Warning--I didn't find a database entry for "landau1976"
-Warning--I didn't find a database entry for "kolmogorov1933"
-Warning--I didn't find a database entry for "leveque2007"
 Warning--I didn't find a database entry for "quarteroni1994"
-Warning--I didn't find a database entry for "morton2005"
-Warning--I didn't find a database entry for "strikwerda2004"
-Warning--I didn't find a database entry for "cook1974"
-Warning--I didn't find a database entry for "zienkiewicz1977"
-Warning--I didn't find a database entry for "reddy1993"
-Warning--I didn't find a database entry for "braess2007"
-Warning--I didn't find a database entry for "quarteroni2008"
 Warning--I didn't find a database entry for "ortega1970"
 Warning--I didn't find a database entry for "isaacson1966"
 Warning--I didn't find a database entry for "stoerbulirsch2002"
@@ -70,6 +54,7 @@ Warning--I didn't find a database entry for "tarski1955"
 Warning--I didn't find a database entry for "gold1967"
 Warning--I didn't find a database entry for "rideoutsorkin1999"
 Warning--I didn't find a database entry for "courant1943"
+Warning--I didn't find a database entry for "hilbert1902"
 Warning--I didn't find a database entry for "ziegler1963"
 Warning--I didn't find a database entry for "whitney1957"
 Warning--I didn't find a database entry for "ahlberg1967"
@@ -77,45 +62,45 @@ Warning--empty publisher in boltzmann1872
 Warning--empty publisher in cantor1895
 Warning--empty publisher in jaynes1957
 Warning--empty publisher in shannon1948
-You've used 55 entries,
+You've used 71 entries,
             2118 wiz_defined-function locations,
-            846 strings with 11195 characters,
-and the built_in function-call counts, 14716 in all, are:
-= -- 1451
-> -- 477
-< -- 9
-+ -- 208
-- -- 141
-* -- 837
-:= -- 2504
-add.period$ -- 179
-call.type$ -- 55
-change.case$ -- 207
+            900 strings with 12701 characters,
+and the built_in function-call counts, 18625 in all, are:
+= -- 1830
+> -- 613
+< -- 10
++ -- 267
+- -- 181
+* -- 1042
+:= -- 3186
+add.period$ -- 230
+call.type$ -- 71
+change.case$ -- 269
 chr.to.int$ -- 0
-cite$ -- 59
-duplicate$ -- 667
-empty$ -- 1346
-format.name$ -- 141
-if$ -- 3106
+cite$ -- 75
+duplicate$ -- 858
+empty$ -- 1708
+format.name$ -- 181
+if$ -- 3938
 int.to.chr$ -- 0
-int.to.str$ -- 55
-missing$ -- 86
-newline$ -- 289
-num.names$ -- 114
-pop$ -- 300
+int.to.str$ -- 71
+missing$ -- 116
+newline$ -- 371
+num.names$ -- 146
+pop$ -- 395
 preamble$ -- 1
-purify$ -- 179
+purify$ -- 231
 quote$ -- 0
-skip$ -- 393
+skip$ -- 495
 stack$ -- 0
-substring$ -- 819
-swap$ -- 86
-text.length$ -- 9
+substring$ -- 952
+swap$ -- 104
+text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 156
+type$ -- 192
 warning$ -- 4
-while$ -- 156
-width$ -- 57
-write$ -- 625
+while$ -- 192
+width$ -- 73
+write$ -- 813
 (There were 10 error messages)

@@ -41,6 +41,12 @@ Stephen Boyd and Lieven Vandenberghe.
 \newblock See Section~11.4 for the geometric interpretation of the simplex
   method as a path on the vertex adjacency graph.
 
+\bibitem{braess2007}
+Dietrich Braess.
+\newblock {\em Finite Elements: Theory, Fast Solvers, and Applications in Solid
+  Mechanics}.
+\newblock Cambridge University Press, Cambridge, 3rd edition, 2007.
+
 \bibitem{cantor1895}
 Georg Cantor.
 \newblock {\em Beiträge zur Begründung der transfiniten Mengenlehre},
@@ -56,6 +62,16 @@ Gregory~J. Chaitin.
 Gregory~J. Chaitin.
 \newblock {\em Algorithmic Information Theory}.
 \newblock Cambridge University Press, Cambridge, 1987.
+
+\bibitem{cook1974}
+R.~D. Cook.
+\newblock {\em Concepts and Applications of Finite Element Analysis}.
+\newblock John Wiley \& Sons, New York, 1974.
+
+\bibitem{dantzig1963}
+George~B. Dantzig.
+\newblock {\em Linear Programming and Extensions}.
+\newblock Princeton University Press, Princeton, NJ, 1963.
 
 \bibitem{deboor1978}
 Carl de~Boor.
@@ -123,6 +139,12 @@ Paul~R. Halmos.
 \newblock {\em Finite‐Dimensional Vector Spaces}.
 \newblock Springer, 1958.
 
+\bibitem{halmos1974naive}
+Paul~R. Halmos.
+\newblock {\em Naive Set Theory}.
+\newblock Springer, 1974.
+\newblock Concise exposition of ZFC and its role in functional analysis.
+
 \bibitem{hawking1973}
 S.~W. Hawking and G.~F.~R. Ellis.
 \newblock {\em The Large Scale Structure of Space-Time}.
@@ -132,6 +154,17 @@ S.~W. Hawking and G.~F.~R. Ellis.
 Michael~T. Heath.
 \newblock {\em Scientific Computing: An Introductory Survey}.
 \newblock McGraw-Hill, New York, 2nd edition, 2002.
+
+\bibitem{hilbert1902geometry}
+David Hilbert.
+\newblock {\em The Foundations of Geometry}.
+\newblock Open Court Publishing Company, 1902.
+
+\bibitem{hilbert1902problems}
+David Hilbert.
+\newblock Mathematical problems.
+\newblock {\em Bulletin of the American Mathematical Society}, 8(10):437--479,
+  1902.
 
 \bibitem{hossenfelder2018}
 Sabine Hossenfelder.
@@ -155,16 +188,40 @@ Thomas Jech.
 \newblock {\em Set Theory: The Third Millennium Edition, Revised and Expanded}.
 \newblock Springer, Berlin, 2003.
 
+\bibitem{kolmogorov1933}
+Andrey~N. Kolmogorov.
+\newblock {\em Grundbegriffe der Wahrscheinlichkeitsrechnung}.
+\newblock Springer, Berlin, 1933.
+\newblock English translation: \textit{Foundations of the Theory of
+  Probability}, Chelsea Publishing, 1950.
+
 \bibitem{kunen1980}
 Kenneth Kunen.
 \newblock {\em Set Theory: An Introduction to Independence Proofs}, volume 102
   of {\em Studies in Logic and the Foundations of Mathematics}.
 \newblock North-Holland, Amsterdam, 1980.
 
+\bibitem{landau1976}
+L.~D. Landau and E.~M. Lifshitz.
+\newblock {\em Mechanics}, volume~1 of {\em Course of Theoretical Physics}.
+\newblock Pergamon Press, Oxford, 3rd edition, 1976.
+
 \bibitem{landauer1961}
 Rolf Landauer.
 \newblock Irreversibility and heat generation in the computing process.
 \newblock {\em IBM Journal of Research and Development}, 5(3):183--191, 1961.
+
+\bibitem{lang2002}
+Serge Lang.
+\newblock {\em Algebra}.
+\newblock Springer, New York, 3rd edition, 2002.
+
+\bibitem{leveque2007}
+Randall~J. LeVeque.
+\newblock {\em Finite Difference Methods for Ordinary and Partial Differential
+  Equations: Steady-State and Time-Dependent Problems}.
+\newblock Society for Industrial and Applied Mathematics (SIAM), Philadelphia,
+  PA, 2007.
 
 \bibitem{lorentz1904}
 Hendrik~A. Lorentz.
@@ -185,6 +242,11 @@ Fotini Markopoulou.
   like from the inside.
 \newblock {\em Communications in Mathematical Physics}, 211:559--583, 2000.
 
+\bibitem{martin1970cohen}
+Donald~A. Martin and Robert~M. Solovay.
+\newblock Internal cohen extensions.
+\newblock {\em Annals of Mathematical Logic}, 2:143--178, 1970.
+
 \bibitem{maturana1980}
 Humberto~R. Maturana and Francisco~J. Varela.
 \newblock {\em Autopoiesis and Cognition: The Realization of the Living}.
@@ -196,6 +258,12 @@ Hermann Minkowski.
 \newblock In {\em Physikalische Zeitschrift}, volume~10, pages 104--111, 1908.
 \newblock Lecture delivered at 80th Assembly of German Natural Scientists and
   Physicians, Cologne, 1908. English translation: "Space and Time.".
+
+\bibitem{morton2005}
+K.~W. Morton and D.~F. Mayers.
+\newblock {\em Numerical Solution of Partial Differential Equations: An
+  Introduction}.
+\newblock Cambridge University Press, Cambridge, 2nd edition, 2005.
 
 \bibitem{newton1687}
 Isaac Newton.
@@ -220,11 +288,22 @@ Max Planck.
 \newblock P. Blakiston’s Son \& Co., Philadelphia, 1914.
 \newblock Translated by M. Masius. Reprinted by Dover Publications, 1959.
 
+\bibitem{quarteroni2008}
+Alfio Quarteroni and Alberto Valli.
+\newblock {\em Numerical Approximation of Partial Differential Equations}.
+\newblock Springer Series in Computational Mathematics. Springer, Berlin, 2nd
+  edition, 2008.
+
 \bibitem{rasiowa1963}
 Helena Rasiowa and Roman Sikorski.
 \newblock {\em The Mathematics of Metamathematics}.
 \newblock Panstwowe Wydawnictwo Naukowe (PWN), Warsaw, 1963.
 \newblock See Theorem~3.6.4 for the Rasiowa--Sikorski lemma on generic filters.
+
+\bibitem{reddy1993}
+J.~N. Reddy.
+\newblock {\em An Introduction to the Finite Element Method}.
+\newblock McGraw–Hill, New York, 2nd edition, 1993.
 
 \bibitem{rideout1999}
 David Rideout and Rafael~D. Sorkin.
@@ -269,6 +348,12 @@ George Spencer-Brown.
 \newblock {\em Laws of Form}.
 \newblock George Allen and Unwin, London, 1969.
 
+\bibitem{strikwerda2004}
+John~C. Strikwerda.
+\newblock {\em Finite Difference Schemes and Partial Differential Equations}.
+\newblock Society for Industrial and Applied Mathematics (SIAM), Philadelphia,
+  PA, 2nd edition, 2004.
+
 \bibitem{taylor1992}
 Edwin~F. Taylor and John~Archibald Wheeler.
 \newblock {\em Spacetime Physics}.
@@ -301,6 +386,11 @@ Stephen Wolfram.
 Ernst Zermelo.
 \newblock Investigations in the foundations of set theory i.
 \newblock {\em Mathematische Annalen}, 65(2):261--281, 1908.
+
+\bibitem{zienkiewicz1977}
+O.~C. Zienkiewicz.
+\newblock {\em The Finite Element Method}.
+\newblock McGraw–Hill, London, 3rd edition, 1977.
 
 \bibitem{zurek1989}
 Wojciech~H. Zurek.
