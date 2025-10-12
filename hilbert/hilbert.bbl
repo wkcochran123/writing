@@ -42,6 +42,21 @@ Georg Cantor.
   volume~46.
 \newblock 1895.
 
+\bibitem{chaitin1974}
+Gregory~J. Chaitin.
+\newblock Information-theoretic limitations of formal systems.
+\newblock {\em Journal of the ACM}, 21(3):403--424, 1974.
+
+\bibitem{chaitin1987}
+Gregory~J. Chaitin.
+\newblock {\em Algorithmic Information Theory}.
+\newblock Cambridge University Press, Cambridge, 1987.
+
+\bibitem{deboor1978}
+Carl de~Boor.
+\newblock {\em A Practical Guide to Splines}.
+\newblock Springer, New York, 1978.
+
 \bibitem{earman1974}
 John Earman.
 \newblock An attempt to formulate a causal theory of time.
@@ -86,6 +101,13 @@ Abraham~A Fraenkel.
 \newblock {\em Einleitung in die Mengenlehre}.
 \newblock Springer, 1922.
 
+\bibitem{godel1931}
+Kurt Godel.
+\newblock {\em Uber formal unentscheidbare Satze der Principia Mathematica und
+  verwandter Systeme I}.
+\newblock Monatshefte fur Mathematik und Physik, 1931.
+\newblock Translated in Davis (ed.), The Undecidable, Raven Press, 1965.
+
 \bibitem{golub2013}
 Gene~H. Golub and Charles~F. Van~Loan.
 \newblock {\em Matrix Computations}.
@@ -100,6 +122,11 @@ Paul~R. Halmos.
 S.~W. Hawking and G.~F.~R. Ellis.
 \newblock {\em The Large Scale Structure of Space-Time}.
 \newblock Cambridge University Press, Cambridge, 1973.
+
+\bibitem{heath2002}
+Michael~T. Heath.
+\newblock {\em Scientific Computing: An Introductory Survey}.
+\newblock McGraw-Hill, New York, 2nd edition, 2002.
 
 \bibitem{hossenfelder2018}
 Sabine Hossenfelder.
@@ -137,6 +164,17 @@ David~B. Malament.
   spacetime.
 \newblock {\em Journal of Mathematical Physics}, 18(7):1399--1404, 1977.
 
+\bibitem{markopoulou2000}
+Fotini Markopoulou.
+\newblock The internal description of a causal set: What the universe looks
+  like from the inside.
+\newblock {\em Communications in Mathematical Physics}, 211:559--583, 2000.
+
+\bibitem{maturana1980}
+Humberto~R. Maturana and Francisco~J. Varela.
+\newblock {\em Autopoiesis and Cognition: The Realization of the Living}.
+\newblock Reidel, Dordrecht, 1980.
+
 \bibitem{minkowski1908}
 Hermann Minkowski.
 \newblock Raum und zeit.
@@ -167,10 +205,21 @@ Max Planck.
 \newblock P. Blakiston’s Son \& Co., Philadelphia, 1914.
 \newblock Translated by M. Masius. Reprinted by Dover Publications, 1959.
 
+\bibitem{rideout1999}
+David Rideout and Rafael~D. Sorkin.
+\newblock A classical sequential growth dynamics for causal sets.
+\newblock {\em Physical Review D}, 61:024002, 1999.
+
 \bibitem{rindler2006}
 Wolfgang Rindler.
 \newblock {\em Relativity: Special, General, and Cosmological}.
 \newblock Oxford University Press, 2nd edition, 2006.
+
+\bibitem{schoenberg1946}
+I.~J. Schoenberg.
+\newblock Contributions to the problem of approximation of equidistant data by
+  analytic functions.
+\newblock {\em Quarterly of Applied Mathematics}, 4(1):45--99, 1946.
 
 \bibitem{sorkin1991}
 Rafael~D. Sorkin.
@@ -189,6 +238,11 @@ Rafael~D. Sorkin.
 \newblock arXiv:gr-qc/0309009, 2005.
 \newblock See Sections~3--4 on causal order and nonlocal correlation.
 
+\bibitem{spencerbrown1969}
+George Spencer-Brown.
+\newblock {\em Laws of Form}.
+\newblock George Allen and Unwin, London, 1969.
+
 \bibitem{taylor1992}
 Edwin~F. Taylor and John~Archibald Wheeler.
 \newblock {\em Spacetime Physics}.
@@ -203,6 +257,12 @@ Stevo Todorcevic.
 Hermann Weyl.
 \newblock {\em Philosophy of Mathematics and Natural Science}.
 \newblock Princeton University Press, 1949.
+
+\bibitem{wheeler1990}
+John~A. Wheeler.
+\newblock Information, physics, quantum: The search for links.
+\newblock In W.~H. Zurek, editor, {\em Complexity, Entropy, and the Physics of
+  Information}, pages 3--28. Addison-Wesley, Redwood City, CA, 1990.
 
 \bibitem{wolfram2002}
 Stephen Wolfram.
