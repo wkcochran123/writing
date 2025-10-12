@@ -45,61 +45,53 @@ Repeated entry---line 1186 of file hilbert.bib
  : @book{jaynes1957
  :                 ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "ortega1970"
-Warning--I didn't find a database entry for "isaacson1966"
-Warning--I didn't find a database entry for "stoerbulirsch2002"
-Warning--I didn't find a database entry for "strangfix1973"
-Warning--I didn't find a database entry for "tarski1955"
-Warning--I didn't find a database entry for "gold1967"
-Warning--I didn't find a database entry for "rideoutsorkin1999"
-Warning--I didn't find a database entry for "courant1943"
-Warning--I didn't find a database entry for "hilbert1902"
-Warning--I didn't find a database entry for "ziegler1963"
-Warning--I didn't find a database entry for "whitney1957"
-Warning--I didn't find a database entry for "ahlberg1967"
+Name 1 in "R. Courant, K. Friedrichs, and H. Lewy" has a comma at the end for entry courant1943
+while executing---line 1049 of file plain.bst
 Warning--empty publisher in boltzmann1872
 Warning--empty publisher in cantor1895
 Warning--empty publisher in jaynes1957
+Name 1 in "R. Courant, K. Friedrichs, and H. Lewy" has a comma at the end for entry courant1943
+while executing---line 1090 of file plain.bst
 Warning--empty publisher in shannon1948
-You've used 71 entries,
+You've used 83 entries,
             2118 wiz_defined-function locations,
-            899 strings with 12687 characters,
-and the built_in function-call counts, 18625 in all, are:
-= -- 1830
-> -- 613
-< -- 10
-+ -- 267
-- -- 181
-* -- 1042
-:= -- 3186
-add.period$ -- 230
-call.type$ -- 71
-change.case$ -- 269
+            940 strings with 13860 characters,
+and the built_in function-call counts, 22044 in all, are:
+= -- 2174
+> -- 744
+< -- 11
++ -- 323
+- -- 221
+* -- 1240
+:= -- 3768
+add.period$ -- 270
+call.type$ -- 83
+change.case$ -- 321
 chr.to.int$ -- 0
-cite$ -- 75
-duplicate$ -- 858
-empty$ -- 1708
-format.name$ -- 181
-if$ -- 3938
+cite$ -- 87
+duplicate$ -- 1006
+empty$ -- 1998
+format.name$ -- 221
+if$ -- 4660
 int.to.chr$ -- 0
-int.to.str$ -- 71
-missing$ -- 116
-newline$ -- 371
-num.names$ -- 146
-pop$ -- 395
+int.to.str$ -- 83
+missing$ -- 133
+newline$ -- 434
+num.names$ -- 170
+pop$ -- 456
 preamble$ -- 1
-purify$ -- 231
+purify$ -- 275
 quote$ -- 0
-skip$ -- 495
+skip$ -- 591
 stack$ -- 0
-substring$ -- 952
-swap$ -- 104
-text.length$ -- 10
+substring$ -- 1141
+swap$ -- 125
+text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 192
+type$ -- 230
 warning$ -- 4
-while$ -- 192
-width$ -- 73
-write$ -- 813
-(There were 10 error messages)
+while$ -- 226
+width$ -- 85
+write$ -- 952
+(There were 12 error messages)

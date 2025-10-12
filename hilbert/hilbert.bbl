@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{ahlberg1967}
+J.~H. Ahlberg, E.~N. Nilson, and J.~L. Walsh.
+\newblock {\em The Theory of Splines and Their Applications}.
+\newblock Academic Press, New York, 1967.
+
 \bibitem{bell1964}
 John~S. Bell.
 \newblock On the einstein podolsky rosen paradox.
@@ -129,6 +134,11 @@ Kurt Godel.
 \newblock Monatshefte fur Mathematik und Physik, 1931.
 \newblock Translated in Davis (ed.), The Undecidable, Raven Press, 1965.
 
+\bibitem{gold1967}
+E.~Mark Gold.
+\newblock Language identification in the limit.
+\newblock {\em Information and Control}, 10(5):447--474, 1967.
+
 \bibitem{golub2013}
 Gene~H. Golub and Charles~F. Van~Loan.
 \newblock {\em Matrix Computations}.
@@ -166,10 +176,23 @@ David Hilbert.
 \newblock {\em Bulletin of the American Mathematical Society}, 8(10):437--479,
   1902.
 
+\bibitem{hilbert1902}
+David Hilbert.
+\newblock Mathematical problems.
+\newblock {\em Bulletin of the American Mathematical Society}, 8(10):437--479,
+  1902.
+\newblock English translation of Hilbert's 1900 address.
+
 \bibitem{hossenfelder2018}
 Sabine Hossenfelder.
 \newblock {\em Lost in Math: How Beauty Leads Physics Astray}.
 \newblock Basic Books, New York, 2018.
+
+\bibitem{isaacson1966}
+Eugene Isaacson and Herbert~B. Keller.
+\newblock Analysis of numerical methods.
+\newblock {\em Wiley}, 1966.
+\newblock Classic text on finite difference stability and convergence.
 
 \bibitem{jaynes1957}
 Edwin~T. Jaynes.
@@ -272,6 +295,11 @@ Isaac Newton.
 \newblock Translated as \emph{The Mathematical Principles of Natural
   Philosophy}, University of California Press, 1934.
 
+\bibitem{ortega1970}
+James~M. Ortega and Werner~C. Rheinboldt.
+\newblock {\em Iterative Solution of Nonlinear Equations in Several Variables}.
+\newblock Academic Press, New York, 1970.
+
 \bibitem{penrose1972}
 Roger Penrose.
 \newblock {\em Techniques of Differential Topology in Relativity}.
@@ -294,6 +322,13 @@ Alfio Quarteroni and Alberto Valli.
 \newblock Springer Series in Computational Mathematics. Springer, Berlin, 2nd
   edition, 2008.
 
+\bibitem{courant1943}
+K.~Friedrichs R.~Courant and H.~Lewy.
+\newblock On the partial difference equations of mathematical physics.
+\newblock {\em IBM Journal of Research and Development (translation of original
+  1928 German paper)}, 11:215--234, 1943.
+\newblock Commonly cited as the CFL condition.
+
 \bibitem{rasiowa1963}
 Helena Rasiowa and Roman Sikorski.
 \newblock {\em The Mathematics of Metamathematics}.
@@ -306,6 +341,11 @@ J.~N. Reddy.
 \newblock McGraw–Hill, New York, 2nd edition, 1993.
 
 \bibitem{rideout1999}
+David Rideout and Rafael~D. Sorkin.
+\newblock A classical sequential growth dynamics for causal sets.
+\newblock {\em Physical Review D}, 61:024002, 1999.
+
+\bibitem{rideoutsorkin1999}
 David Rideout and Rafael~D. Sorkin.
 \newblock A classical sequential growth dynamics for causal sets.
 \newblock {\em Physical Review D}, 61:024002, 1999.
@@ -348,11 +388,27 @@ George Spencer-Brown.
 \newblock {\em Laws of Form}.
 \newblock George Allen and Unwin, London, 1969.
 
+\bibitem{stoerbulirsch2002}
+Josef Stoer and Roland Bulirsch.
+\newblock {\em Introduction to Numerical Analysis}.
+\newblock Springer, New York, 3rd edition, 2002.
+
+\bibitem{strangfix1973}
+Gilbert Strang and George Fix.
+\newblock An analysis of the finite element method.
+\newblock {\em Prentice--Hall Series in Automatic Computation}, 1973.
+
 \bibitem{strikwerda2004}
 John~C. Strikwerda.
 \newblock {\em Finite Difference Schemes and Partial Differential Equations}.
 \newblock Society for Industrial and Applied Mathematics (SIAM), Philadelphia,
   PA, 2nd edition, 2004.
+
+\bibitem{tarski1955}
+Alfred Tarski.
+\newblock Contributions to the theory of models.
+\newblock In {\em Proceedings of the 1954 International Congress of
+  Mathematicians}, pages 713--720. North-Holland, Amsterdam, 1955.
 
 \bibitem{taylor1992}
 Edwin~F. Taylor and John~Archibald Wheeler.
@@ -375,6 +431,11 @@ John~A. Wheeler.
 \newblock In W.~H. Zurek, editor, {\em Complexity, Entropy, and the Physics of
   Information}, pages 3--28. Addison-Wesley, Redwood City, CA, 1990.
 
+\bibitem{whitney1957}
+Hassler Whitney.
+\newblock {\em Geometric Integration Theory}.
+\newblock Princeton University Press, Princeton, NJ, 1957.
+
 \bibitem{wolfram2002}
 Stephen Wolfram.
 \newblock {\em A New Kind of Science}.
@@ -386,6 +447,11 @@ Stephen Wolfram.
 Ernst Zermelo.
 \newblock Investigations in the foundations of set theory i.
 \newblock {\em Mathematische Annalen}, 65(2):261--281, 1908.
+
+\bibitem{ziegler1963}
+Hans Ziegler.
+\newblock {\em An Introduction to Thermomechanics}.
+\newblock North-Holland, Amsterdam, 1963.
 
 \bibitem{zienkiewicz1977}
 O.~C. Zienkiewicz.
