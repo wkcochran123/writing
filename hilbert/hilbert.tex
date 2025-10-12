@@ -913,6 +913,33 @@ and Finkelstein \cite{finkelstein1996} for the logical formulation of causal con
 $(\mathsf{P},\le)$ be the poset of finite, order-consistent partial histories in a locally finite causal domain, ordered by extension. For every countable family $\{D_n\}_{n\in\mathbb{N}}$ of dense subsets of $\mathsf{P}$ (local causal constraints), \emph{there exists} a filter $G\subseteq \mathsf{P}$ with $G\cap D_n\neq\varnothing$ for all $n$.
 \end{axiom}
 
+\begin{proposition}[Minimal informational closure]\label{prop:minimal-closure}
+Let $G\subseteq\mathsf{P}$ be a global filter guaranteed by
+Axiom~\ref{ax:selection}.  
+Then there exists an equivalence class $\mathcal{U}_G$ of field configurations consistent with $G$.  
+Among these, the canonical representative selected by the Selection Operator (Definition~\ref{def:selection-operator}) minimizes the informational curvature functional
+\[
+R[U]\;=\;\int (\Delta_h^{(2)} U)^2\,dx.
+\]
+The Euler–Lagrange condition
+\[
+\frac{\delta R}{\delta U}=0
+\quad\Longleftrightarrow\quad
+U^{(4)}=0
+\]
+defines the unique minimal-information extension of $G$.
+\end{proposition}
+
+\begin{proof}
+Axiom~\ref{ax:selection} ensures non-empty existence of $G$.  
+Each admissible $U$ consistent with $G$ corresponds to a permissible refinement satisfying local constraints.
+The Selection Operator chooses the least-biased representative—the one minimizing $R[U]$, the “informational bending energy.”  
+By standard variational calculus, minimization of this quadratic functional yields the cubic-spline condition $U^{(4)}=0$.  
+Thus, the non-constructive existence of $G$ implies the existence of a minimal-curvature representative $U_G$ within its equivalence class.  
+This is the informational analog of Occam’s principle: simplicity as closure.
+\end{proof}
+
+
 \begin{remark}[Logical guarantee, not a mechanism]\label{rem:nonconstructive}
 Axiom~\ref{ax:selection} is non-constructive. It asserts the \emph{existence} of at least one globally consistent extension meeting all countably many local constraints but does not prescribe any observable or deterministic procedure that finds it. This mirrors the role of the Rasiowa--Sikorski lemma in forcing and is structurally analogous (though weaker in scope) to Martin's Axiom on ccc posets. The axiom thereby rules out pathological overgeneration (e.g.\ uncountable splits into indistinguishable refinements) by restricting attention to countable, order-coherent extensions.
 \end{remark}
@@ -1619,6 +1646,24 @@ $U^\mu$ describing causal displacement and its covector dual
 $U_\mu = g_{\mu\nu}U^\nu$ together encode the reciprocity between order and
 geometry that underlies the continuum theory developed in the next chapter.
 \end{remark}
+
+\section*{Coda: The Existence of Flow}
+\addcontentsline{toc}{section}{Coda: The Existence of Flow}
+
+In the language of events, the Navier--Stokes problem is not a mystery of fluid mechanics but a test of measurement itself.
+Every differential equation is a local constraint; every proof of existence is a statement that these constraints admit a countable extension.
+The Axiom of Event Selection guarantees that such an extension exists whenever local finiteness is preserved.
+
+A finite flow, then, is not a miracle of calculus but a consequence of informational sufficiency:
+no law of physics can demand the enumeration of uncountably many indistinguishable refinements.
+The smoothness of motion is therefore not an analytic gift but a logical necessity.
+
+\begin{quote}
+\emph{Hilbert wrote that all physical laws are finite.  
+Here, the finiteness of flow is the finiteness of understanding itself.}
+\end{quote}
+
+This closes the argument of Chapter 2: existence is not constructed—it is selected.
 
 
 
