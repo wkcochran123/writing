@@ -645,6 +645,10 @@ LaTeX Warning: Citation `schoenberg1946' on page 26 undefined on input line 103
 8.
 
 [26] [27]
+Underfull \hbox (badness 10000) in paragraph at lines 1104--1108
+
+ []
+
 ! Improper \prevdepth.
 <recently read> \prevdepth 
                            
