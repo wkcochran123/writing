@@ -2,12 +2,12 @@ This is BibTeX, Version 0.99d (TeX Live 2023)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: hilbert.aux
 Case mismatch error between cite keys deBoor1978 and deboor1978
----line 236 of file hilbert.aux
+---line 238 of file hilbert.aux
  : \citation{deBoor1978
  :                     }
 I'm skipping whatever remains of this command
 Case mismatch error between cite keys deBoor1978 and deboor1978
----line 246 of file hilbert.aux
+---line 249 of file hilbert.aux
  : \citation{deBoor1978
  :                     }
 I'm skipping whatever remains of this command
