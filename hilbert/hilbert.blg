@@ -45,7 +45,6 @@ Repeated entry---line 1186 of file hilbert.bib
  : @book{jaynes1957
  :                 ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "quarteroni1994"
 Warning--I didn't find a database entry for "ortega1970"
 Warning--I didn't find a database entry for "isaacson1966"
 Warning--I didn't find a database entry for "stoerbulirsch2002"
@@ -64,7 +63,7 @@ Warning--empty publisher in jaynes1957
 Warning--empty publisher in shannon1948
 You've used 71 entries,
             2118 wiz_defined-function locations,
-            900 strings with 12701 characters,
+            899 strings with 12687 characters,
 and the built_in function-call counts, 18625 in all, are:
 = -- 1830
 > -- 613
