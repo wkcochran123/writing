@@ -3,138 +3,125 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: hilbert.aux
 The style file: plain.bst
 Database file #1: hilbert.bib
-Repeated entry---line 390 of file hilbert.bib
+Repeated entry---line 416 of file hilbert.bib
  : @book{boltzmann1872
  :                    ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 399 of file hilbert.bib
- : @book{boltzmann1896
- :                    ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 407 of file hilbert.bib
- : @book{cantor1895
- :                 ,
 I'm skipping whatever remains of this entry
 Repeated entry---line 425 of file hilbert.bib
- : @book{hilbert1902
- :                  ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 450 of file hilbert.bib
- : @book{newton1687
- :                 ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 458 of file hilbert.bib
- : @article{lorentz1904
- :                     ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 467 of file hilbert.bib
- : @article{einstein1905
- :                      ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 476 of file hilbert.bib
- : @article{planck1901
- :                    ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 590 of file hilbert.bib
- : @article{feynman1948
- :                     ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 696 of file hilbert.bib
- : @book{boltzmann1872
- :                    ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 705 of file hilbert.bib
  : @book{boltzmann1896
  :                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 713 of file hilbert.bib
+Repeated entry---line 433 of file hilbert.bib
  : @book{cantor1895
  :                 ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 731 of file hilbert.bib
+Repeated entry---line 451 of file hilbert.bib
  : @book{hilbert1902
  :                  ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 756 of file hilbert.bib
+Repeated entry---line 476 of file hilbert.bib
  : @book{newton1687
  :                 ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 764 of file hilbert.bib
+Repeated entry---line 484 of file hilbert.bib
  : @article{lorentz1904
  :                     ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 773 of file hilbert.bib
+Repeated entry---line 493 of file hilbert.bib
  : @article{einstein1905
  :                      ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 782 of file hilbert.bib
+Repeated entry---line 502 of file hilbert.bib
  : @article{planck1901
  :                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 896 of file hilbert.bib
+Repeated entry---line 616 of file hilbert.bib
  : @article{feynman1948
  :                     ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 957 of file hilbert.bib
- : @book{jech2003
- :               ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 973 of file hilbert.bib
- : @article{martin1970
+Repeated entry---line 722 of file hilbert.bib
+ : @book{boltzmann1872
  :                    ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 982 of file hilbert.bib
- : @book{halmos1958
+Repeated entry---line 731 of file hilbert.bib
+ : @book{boltzmann1896
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 739 of file hilbert.bib
+ : @book{cantor1895
  :                 ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 989 of file hilbert.bib
- : @book{halmos1974
+Repeated entry---line 757 of file hilbert.bib
+ : @book{hilbert1902
+ :                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 782 of file hilbert.bib
+ : @book{newton1687
  :                 ,
 I'm skipping whatever remains of this entry
+Repeated entry---line 790 of file hilbert.bib
+ : @article{lorentz1904
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 799 of file hilbert.bib
+ : @article{einstein1905
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 808 of file hilbert.bib
+ : @article{planck1901
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 922 of file hilbert.bib
+ : @article{feynman1948
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 931 of file hilbert.bib
+ : @book{feynman1965
+ :                  ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "halmos1974"
 Warning--I didn't find a database entry for "fenynman1965"
-Warning--I didn't find a database entry for "sorkin2005"
-Warning--I didn't find a database entry for "jech2002"
-Warning--I didn't find a database entry for "Wolfram2002"
+Warning--I didn't find a database entry for "martin1970"
 Warning--empty publisher in boltzmann1872
-You've used 35 entries,
+You've used 36 entries,
             2118 wiz_defined-function locations,
-            710 strings with 8456 characters,
-and the built_in function-call counts, 9403 in all, are:
-= -- 926
-> -- 304
-< -- 5
-+ -- 132
-- -- 90
-* -- 527
-:= -- 1599
-add.period$ -- 115
-call.type$ -- 35
-change.case$ -- 131
+            716 strings with 8594 characters,
+and the built_in function-call counts, 9800 in all, are:
+= -- 970
+> -- 313
+< -- 6
++ -- 136
+- -- 92
+* -- 545
+:= -- 1659
+add.period$ -- 120
+call.type$ -- 36
+change.case$ -- 134
 chr.to.int$ -- 0
-cite$ -- 36
-duplicate$ -- 431
-empty$ -- 860
-format.name$ -- 90
-if$ -- 1986
+cite$ -- 37
+duplicate$ -- 456
+empty$ -- 898
+format.name$ -- 92
+if$ -- 2086
 int.to.chr$ -- 0
-int.to.str$ -- 35
-missing$ -- 56
-newline$ -- 187
-num.names$ -- 72
-pop$ -- 194
+int.to.str$ -- 36
+missing$ -- 58
+newline$ -- 192
+num.names$ -- 76
+pop$ -- 199
 preamble$ -- 1
-purify$ -- 114
+purify$ -- 116
 quote$ -- 0
-skip$ -- 254
+skip$ -- 271
 stack$ -- 0
-substring$ -- 527
-swap$ -- 58
-text.length$ -- 5
+substring$ -- 540
+swap$ -- 68
+text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 98
+type$ -- 100
 warning$ -- 1
-while$ -- 99
-width$ -- 37
-write$ -- 398
-(There were 22 error messages)
+while$ -- 103
+width$ -- 38
+write$ -- 415
+(There were 19 error messages)

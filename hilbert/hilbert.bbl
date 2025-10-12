@@ -75,15 +75,8 @@ Gene~H. Golub and Charles~F. Van~Loan.
 
 \bibitem{halmos1958}
 Paul~R. Halmos.
-\newblock {\em Finite-Dimensional Vector Spaces}.
+\newblock {\em Finite‐Dimensional Vector Spaces}.
 \newblock Springer, 1958.
-\newblock Classical construction of tensors and operators over vector spaces.
-
-\bibitem{halmos1974}
-Paul~R. Halmos.
-\newblock {\em Naive Set Theory}.
-\newblock Springer, 1974.
-\newblock Concise exposition of ZFC and its role in functional analysis.
 
 \bibitem{hawking1973}
 S.~W. Hawking and G.~F.~R. Ellis.
@@ -100,11 +93,17 @@ Sabine Hossenfelder.
 \newblock {\em Lost in Math: How Beauty Leads Physics Astray}.
 \newblock Basic Books, New York, 2018.
 
+\bibitem{jech2002}
+Thomas Jech.
+\newblock {\em Set Theory}.
+\newblock Springer Monographs in Mathematics. Springer, Berlin, 3rd millennium
+  edition, revised and expanded edition, 2002.
+\newblock Definitive reference on ZFC, forcing, and independence results.
+
 \bibitem{jech2003}
 Thomas Jech.
 \newblock {\em Set Theory: The Third Millennium Edition, Revised and Expanded}.
-\newblock Springer, 2003.
-\newblock Comprehensive modern treatment of ZFC foundations.
+\newblock Springer, Berlin, 2003.
 
 \bibitem{kunen1980}
 Kenneth Kunen.
@@ -124,11 +123,6 @@ David~B. Malament.
 \newblock The class of continuous timelike curves determines the topology of
   spacetime.
 \newblock {\em Journal of Mathematical Physics}, 18(7):1399--1404, 1977.
-
-\bibitem{martin1970}
-Donald~A. Martin and Robert~M. Solovay.
-\newblock Internal cohen extensions.
-\newblock {\em Annals of Mathematical Logic}, 2:143--178, 1970.
 
 \bibitem{minkowski1908}
 Hermann Minkowski.
@@ -176,6 +170,13 @@ Rafael~D. Sorkin.
 \newblock Causal sets: Discrete gravity.
 \newblock {\em Lectures on Quantum Gravity (Proceedings, Valdivia)}, 2003.
 
+\bibitem{sorkin2005}
+Rafael~D. Sorkin.
+\newblock Causal sets: Discrete gravity.
+\newblock In Andres Gomberoff and Donald Marolf, editors, {\em Lectures on
+  Quantum Gravity}, pages 305--327. Springer, Boston, MA, 2005.
+\newblock Foundational overview of the causal set approach to quantum gravity.
+
 \bibitem{taylor1992}
 Edwin~F. Taylor and John~Archibald Wheeler.
 \newblock {\em Spacetime Physics}.
@@ -190,6 +191,13 @@ Stevo Todorcevic.
 Hermann Weyl.
 \newblock {\em Philosophy of Mathematics and Natural Science}.
 \newblock Princeton University Press, 1949.
+
+\bibitem{wolfram2002}
+Stephen Wolfram.
+\newblock {\em A New Kind of Science}.
+\newblock Wolfram Media, Champaign, IL, 2002.
+\newblock Introduces computational irreducibility and cellular automata
+  foundations.
 
 \bibitem{zermelo1908}
 Ernst Zermelo.
