@@ -3,21 +3,37 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: hilbert.aux
 The style file: plain.bst
 Database file #1: hilbert.bib
-Repeated entry---line 484 of file hilbert.bib
+Repeated entry---line 517 of file hilbert.bib
  : @incollection{sorkin2005
  :                         ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 650 of file hilbert.bib
+Repeated entry---line 683 of file hilbert.bib
  : @article{godel1931
  :                   ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 880 of file hilbert.bib
+Repeated entry---line 913 of file hilbert.bib
  : @article{godel1931
  :                   ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 960 of file hilbert.bib
+Repeated entry---line 993 of file hilbert.bib
  : @book{feynman1965
  :                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1020 of file hilbert.bib
+ : @book{shannon1948
+ :                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1029 of file hilbert.bib
+ : @book{jaynes1957
+ :                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1174 of file hilbert.bib
+ : @article{shannon1948
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1183 of file hilbert.bib
+ : @book{jaynes1957
+ :                 ,
 I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "halmos1974"
 Warning--I didn't find a database entry for "fenynman1965"
@@ -25,47 +41,60 @@ Warning--I didn't find a database entry for "hilbert1902"
 Warning--I didn't find a database entry for "lang2002"
 Warning--I didn't find a database entry for "martin1970"
 Warning--I didn't find a database entry for "dantzig1963"
+Warning--I didn't find a database entry for "landau1976"
+Warning--I didn't find a database entry for "kolmogorov1933"
+Warning--I didn't find a database entry for "leveque2007"
+Warning--I didn't find a database entry for "quarteroni1994"
+Warning--I didn't find a database entry for "morton2005"
+Warning--I didn't find a database entry for "strikwerda2004"
+Warning--I didn't find a database entry for "cook1974"
+Warning--I didn't find a database entry for "zienkiewicz1977"
+Warning--I didn't find a database entry for "reddy1993"
+Warning--I didn't find a database entry for "braess2007"
+Warning--I didn't find a database entry for "quarteroni2008"
 Warning--empty publisher in boltzmann1872
 Warning--empty publisher in cantor1895
-You've used 50 entries,
+Warning--empty publisher in jaynes1957
+Warning--empty publisher in shannon1948
+You've used 55 entries,
             2118 wiz_defined-function locations,
-            796 strings with 10460 characters,
-and the built_in function-call counts, 13351 in all, are:
-= -- 1315
-> -- 442
-< -- 7
-+ -- 192
-- -- 131
-* -- 743
-:= -- 2279
-add.period$ -- 164
-call.type$ -- 50
-change.case$ -- 189
+            835 strings with 11064 characters,
+and the built_in function-call counts, 14716 in all, are:
+= -- 1451
+> -- 477
+< -- 9
++ -- 208
+- -- 141
+* -- 837
+:= -- 2504
+add.period$ -- 179
+call.type$ -- 55
+change.case$ -- 207
 chr.to.int$ -- 0
-cite$ -- 52
-duplicate$ -- 610
-empty$ -- 1219
-format.name$ -- 131
-if$ -- 2825
+cite$ -- 59
+duplicate$ -- 667
+empty$ -- 1346
+format.name$ -- 141
+if$ -- 3106
 int.to.chr$ -- 0
-int.to.str$ -- 50
-missing$ -- 79
-newline$ -- 264
-num.names$ -- 104
-pop$ -- 278
+int.to.str$ -- 55
+missing$ -- 86
+newline$ -- 289
+num.names$ -- 114
+pop$ -- 300
 preamble$ -- 1
-purify$ -- 164
+purify$ -- 179
 quote$ -- 0
-skip$ -- 358
+skip$ -- 393
 stack$ -- 0
-substring$ -- 712
-swap$ -- 79
-text.length$ -- 7
+substring$ -- 819
+swap$ -- 86
+text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 140
-warning$ -- 2
-while$ -- 140
-width$ -- 52
-write$ -- 572
-(There were 4 error messages)
+type$ -- 156
+warning$ -- 4
+while$ -- 156
+width$ -- 57
+write$ -- 625
+(There were 8 error messages)

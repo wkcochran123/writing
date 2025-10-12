@@ -5,6 +5,11 @@ John~S. Bell.
 \newblock On the einstein podolsky rosen paradox.
 \newblock {\em Physics}, 1(3):195--200, 1964.
 
+\bibitem{bennett1973}
+Charles~H. Bennett.
+\newblock Logical reversibility of computation.
+\newblock {\em IBM Journal of Research and Development}, 17(6):525--532, 1973.
+
 \bibitem{berkeley1734}
 George Berkeley.
 \newblock {\em The Analyst: or, A Discourse Addressed to an Infidel
@@ -133,6 +138,11 @@ Sabine Hossenfelder.
 \newblock {\em Lost in Math: How Beauty Leads Physics Astray}.
 \newblock Basic Books, New York, 2018.
 
+\bibitem{jaynes1957}
+Edwin~T. Jaynes.
+\newblock {\em Information Theory and Statistical Mechanics}, volume 106.
+\newblock 1957.
+
 \bibitem{jech2002}
 Thomas Jech.
 \newblock {\em Set Theory}.
@@ -150,6 +160,11 @@ Kenneth Kunen.
 \newblock {\em Set Theory: An Introduction to Independence Proofs}, volume 102
   of {\em Studies in Logic and the Foundations of Mathematics}.
 \newblock North-Holland, Amsterdam, 1980.
+
+\bibitem{landauer1961}
+Rolf Landauer.
+\newblock Irreversibility and heat generation in the computing process.
+\newblock {\em IBM Journal of Research and Development}, 5(3):183--191, 1961.
 
 \bibitem{lorentz1904}
 Hendrik~A. Lorentz.
@@ -227,6 +242,11 @@ I.~J. Schoenberg.
   analytic functions.
 \newblock {\em Quarterly of Applied Mathematics}, 4(1):45--99, 1946.
 
+\bibitem{shannon1948}
+Claude~E. Shannon.
+\newblock {\em A Mathematical Theory of Communication}, volume~27.
+\newblock 1948.
+
 \bibitem{sorkin1991}
 Rafael~D. Sorkin.
 \newblock Finitary substitute for continuous topology.
@@ -281,5 +301,10 @@ Stephen Wolfram.
 Ernst Zermelo.
 \newblock Investigations in the foundations of set theory i.
 \newblock {\em Mathematische Annalen}, 65(2):261--281, 1908.
+
+\bibitem{zurek1989}
+Wojciech~H. Zurek.
+\newblock Algorithmic randomness and physical entropy.
+\newblock {\em Physical Review A}, 40(8):4731--4751, 1989.
 
 \end{thebibliography}
