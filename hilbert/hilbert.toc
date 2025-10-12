@@ -1,0 +1,123 @@
+\contentsline {chapter}{Abstract}{i}{}%
+\contentsline {chapter}{Overview of the Argument}{vi}{}%
+\contentsline {paragraph}{Part I — The Calculus of Measurement.}{vi}{}%
+\contentsline {paragraph}{Part II — The Wave.}{vii}{}%
+\contentsline {paragraph}{Part III — The Kinematics of Light.}{vii}{}%
+\contentsline {paragraph}{Part IV — Quantum and Gravitational Fields.}{vii}{}%
+\contentsline {paragraph}{Part V — The Second Law of Causal Order.}{vii}{}%
+\contentsline {paragraph}{Reading the Proof.}{vii}{}%
+\contentsline {chapter}{\numberline {1}Introduction}{1}{}%
+\contentsline {chapter}{\numberline {2}The Calculus of Measurement}{3}{}%
+\contentsline {section}{\numberline {2.1}Introduction}{3}{}%
+\contentsline {subsection}{\numberline {2.1.1}On the Structure of Measurement}{4}{}%
+\contentsline {section}{\numberline {2.2}The Axioms of the Mathematical}{5}{}%
+\contentsline {subsection}{\numberline {2.2.1}Sets of Events}{7}{}%
+\contentsline {section}{\numberline {2.3}The Axioms of the Physical}{9}{}%
+\contentsline {subsection}{\numberline {2.3.1}Measurement and the Axiom of Order}{9}{}%
+\contentsline {subsection}{\numberline {2.3.2}Formal Structure of Event and Universe Tensors}{11}{}%
+\contentsline {subsection}{\numberline {2.3.3}Axiom of Finite Observation}{17}{}%
+\contentsline {subsection}{\numberline {2.3.4}Construction of the Universe Tensor and the Axiom of Event Selection}{17}{}%
+\contentsline {paragraph}{Overgeneration and the Need for Selection.}{19}{}%
+\contentsline {paragraph}{Non-physicality of the Selection Mechanism.}{20}{}%
+\contentsline {paragraph}{Relation to Martin’s Axiom.}{21}{}%
+\contentsline {paragraph}{Interpretation.}{21}{}%
+\contentsline {subsection}{\numberline {2.3.5}The Necessity of Consistency (The Martin Correspondence)}{24}{}%
+\contentsline {section}{\numberline {2.4}The Equivalence Principle of Physics}{24}{}%
+\contentsline {subsection}{\numberline {2.4.1}Kinematics as a Consequence of Martin's Axiom}{24}{}%
+\contentsline {subsection}{\numberline {2.4.2}Variations and the Reciprocity of Measurement}{26}{}%
+\contentsline {subsubsection}{From Distinguishability to Variation}{27}{}%
+\contentsline {subsubsection}{From Variation to Measurement}{27}{}%
+\contentsline {subsubsection}{Bijections Under Selection}{28}{}%
+\contentsline {subsubsection}{Reciprocal Closure}{29}{}%
+\contentsline {subsection}{\numberline {2.4.3}Formal Definition of the Reciprocity Mapping}{30}{}%
+\contentsline {subsection}{\numberline {2.4.4}Discrete--to--Continuum Limit}{32}{}%
+\contentsline {subsubsection}{Example: Coincidence as a Retro-Constraint}{36}{}%
+\contentsline {subsubsection}{The spline is the Euler solution with minimal degrees of freedom}{37}{}%
+\contentsline {subsection}{\numberline {2.4.5}Principle of Least Action as Dual to Cubic Splines}{39}{}%
+\contentsline {subsection}{\numberline {2.4.6}The Free Parameter of the Third Variation and the Natural Constant}{40}{}%
+\contentsline {section}{\numberline {2.5}Conclusion: The Admissible Calculus of Measurement}{42}{}%
+\contentsline {chapter}{\numberline {3}The Wave}{45}{}%
+\contentsline {section}{\numberline {3.1}Introduction: Martin's Condition and the Continuity of Causal Propagation}{45}{}%
+\contentsline {section}{\numberline {3.2}Interaction: The Union of Ordered Events}{47}{}%
+\contentsline {subsection}{\numberline {3.2.1}Spooky Action as a Dantzig Pivot}{49}{}%
+\contentsline {paragraph}{Degeneracy and Feasibility.}{50}{}%
+\contentsline {paragraph}{Selection as Pivot.}{50}{}%
+\contentsline {paragraph}{Nonlocal Consistency.}{51}{}%
+\contentsline {paragraph}{Interpretation.}{51}{}%
+\contentsline {subsection}{\numberline {3.2.2}The Qubit as an Example of Event Selection}{52}{}%
+\contentsline {subsection}{\numberline {3.2.3}Hawking Radiation as the Loss and Restoration of Order}{53}{}%
+\contentsline {paragraph}{Observer--Side Perception of Order.}{53}{}%
+\contentsline {paragraph}{Relation to Holographic Consistency.}{55}{}%
+\contentsline {section}{\numberline {3.3}Wave Amplitude from Interaction Counts}{56}{}%
+\contentsline {section}{\numberline {3.4}First Variation of Amplitude}{59}{}%
+\contentsline {section}{\numberline {3.5}Second Variation of Amplitude}{61}{}%
+\contentsline {section}{\numberline {3.6}Advection as Order-Preserving Transport}{63}{}%
+\contentsline {section}{\numberline {3.7}On Deriving Motion Without Energy}{67}{}%
+\contentsline {chapter}{\numberline {4}The Kinematics of Light}{71}{}%
+\contentsline {subsection}{\numberline {4.0.1}Consequences and Outlook}{72}{}%
+\contentsline {subsection}{\numberline {4.0.2}Arc of the Proof}{73}{}%
+\contentsline {paragraph}{1. Construction of the metric as a gauge of separation.}{73}{}%
+\contentsline {paragraph}{2. Connection as the rule of causal transport.}{73}{}%
+\contentsline {paragraph}{3. Curvature as the residue of inconsistency.}{73}{}%
+\contentsline {paragraph}{4. Einstein equation as the constraint of global consistency.}{74}{}%
+\contentsline {subsection}{\numberline {4.0.3}Defining Entropy}{74}{}%
+\contentsline {section}{\numberline {4.1}Metric as a Gauge of Separation}{75}{}%
+\contentsline {subsection}{\numberline {4.1.1}From Distinction to Distance}{75}{}%
+\contentsline {subsection}{\numberline {4.1.2}Axiomatic Necessity}{75}{}%
+\contentsline {subsection}{\numberline {4.1.3}The Metric as a Gauge Connection}{76}{}%
+\contentsline {subsection}{\numberline {4.1.4}Causal Interpretation}{77}{}%
+\contentsline {section}{\numberline {4.2}The Rule of Causal Transport}{81}{}%
+\contentsline {subsection}{\numberline {4.2.1}From Gauge Preservation to Connection}{81}{}%
+\contentsline {subsection}{\numberline {4.2.2}Operational Meaning}{81}{}%
+\contentsline {subsection}{\numberline {4.2.3}Parallel Transport and Martin Consistency}{82}{}%
+\contentsline {subsection}{\numberline {4.2.4}Causal Interpretation}{83}{}%
+\contentsline {chapter}{\numberline {5}Quantum Fields}{86}{}%
+\contentsline {section}{\numberline {5.1}The Residue of Inconsistency}{87}{}%
+\contentsline {subsection}{\numberline {5.1.1}Curvature as the Measure of Non-Closure}{88}{}%
+\contentsline {subsection}{\numberline {5.1.2}Physical Interpretation}{89}{}%
+\contentsline {subsection}{\numberline {5.1.3}Contractions and Scalar Invariants}{89}{}%
+\contentsline {subsection}{\numberline {5.1.4}The Meaning of Curvature in the Causal Framework}{89}{}%
+\contentsline {section}{\numberline {5.2}Global Constraint as the Einstein Equation}{90}{}%
+\contentsline {subsection}{\numberline {5.2.1}From Local Residue to Global Balance}{90}{}%
+\contentsline {subsection}{\numberline {5.2.2}Interpretation in the Causal Framework}{91}{}%
+\contentsline {subsection}{\numberline {5.2.3}The Closure of the Gauge of Light}{91}{}%
+\contentsline {chapter}{\numberline {6}Quantum Fields}{93}{}%
+\contentsline {section}{\numberline {6.1}The Action Functional}{95}{}%
+\contentsline {subsection}{\numberline {6.1.1}Definition from the Causal Universe Tensor}{95}{}%
+\contentsline {subsection}{\numberline {6.1.2}Physical Interpretation}{96}{}%
+\contentsline {subsection}{\numberline {6.1.3}Noether Currents of the Causal Gauge}{96}{}%
+\contentsline {section}{\numberline {6.2}The Application of Noether}{97}{}%
+\contentsline {subsection}{\numberline {6.2.1}Symmetry and Conservation as Statistical Identities}{97}{}%
+\contentsline {subsection}{\numberline {6.2.2}Conserved Quantities of the Causal Gauge}{98}{}%
+\contentsline {subsection}{\numberline {6.2.3}Statistical Interpretation}{100}{}%
+\contentsline {subsection}{\numberline {6.2.4}Translations and the Stress--Energy Tensor}{100}{}%
+\contentsline {subsection}{\numberline {6.2.5}Energy and Momentum Densities}{102}{}%
+\contentsline {subsection}{\numberline {6.2.6}Bookkeeping Interpretation}{102}{}%
+\contentsline {subsection}{\numberline {6.2.7}Curved Backgrounds and Killing Symmetries}{103}{}%
+\contentsline {paragraph}{Continuity (bookkeeping) equation.}{104}{}%
+\contentsline {paragraph}{Integrated conservation law.}{104}{}%
+\contentsline {paragraph}{Causal bookkeeping interpretation.}{104}{}%
+\contentsline {section}{\numberline {6.3}Angular Momentum and Spin}{106}{}%
+\contentsline {subsection}{\numberline {6.3.1}Noether Current for Lorentz Invariance}{106}{}%
+\contentsline {subsection}{\numberline {6.3.2}Belinfante–Rosenfeld Improvement}{107}{}%
+\contentsline {subsection}{\numberline {6.3.3}Conserved Charges}{108}{}%
+\contentsline {subsection}{\numberline {6.3.4}Worked Examples}{108}{}%
+\contentsline {paragraph}{Real scalar (spin $0$).}{108}{}%
+\contentsline {paragraph}{Dirac field (spin $1/2$).}{108}{}%
+\contentsline {subsection}{\numberline {6.3.5}Bookkeeping Interpretation}{109}{}%
+\contentsline {section}{\numberline {6.4}Gauge Fields as Local Noether Symmetries}{109}{}%
+\contentsline {subsection}{\numberline {6.4.1}From Global to Local Symmetry}{109}{}%
+\contentsline {subsection}{\numberline {6.4.2}Interpretation in the Causal Framework}{111}{}%
+\contentsline {subsection}{\numberline {6.4.3}Bookkeeping of Local Consistency}{112}{}%
+\contentsline {section}{\numberline {6.5}Mass and the Breaking of Symmetry}{113}{}%
+\contentsline {subsection}{\numberline {6.5.1}From Gauge Symmetry to Mass Terms}{113}{}%
+\contentsline {subsection}{\numberline {6.5.2}Causal Interpretation}{115}{}%
+\contentsline {subsection}{\numberline {6.5.3}Statistical View}{115}{}%
+\contentsline {section}{\numberline {6.6}Conclusion: Quantization as Finite Consistency}{117}{}%
+\contentsline {chapter}{\numberline {7}The Second Law of Causal Order}{119}{}%
+\contentsline {section}{\numberline {7.1}Statement of the Law}{119}{}%
+\contentsline {section}{\numberline {7.2}Entropy as Informational Curvature}{120}{}%
+\contentsline {section}{\numberline {7.3}Statistical Interpretation}{121}{}%
+\contentsline {section}{\numberline {7.4}Physical Consequences}{122}{}%
+\contentsline {section}{\numberline {7.5}Conclusion}{122}{}%
+\contentsline {section}{\numberline {7.6}Epiloge}{123}{}%
