@@ -1133,19 +1133,19 @@ for instance, the minimal--curvature (spline--like) configuration compatible wit
 
 \begin{definition}[Selected Update]
 The \emph{selected update} on representatives is
-\[
+\begin{equation}
 \Phi_{\mathrm{sel}}
    := \mathrm{Sel} \circ \Phi \circ \pi : \mathcal{U} \to \mathcal{U}.
-\]
+\end{equation}
 \end{definition}
 
 \begin{proposition}[Reversible Update on Observable States]
 The induced map $\Phi : \mathcal{Q} \to \mathcal{Q}$ is bijective 
 if and only if $\Phi_{\mathrm{sel}}$ is bijective on $\mathrm{Im}(\mathrm{Sel})$.
 In that case,
-\[
+\begin{equation}
 \Phi_{\mathrm{sel}}^{-1} = \mathrm{Sel} \circ \Phi^{-1} \circ \pi.
-\]
+\end{equation}
 \end{proposition}
 
 \noindent
@@ -1161,14 +1161,14 @@ measurement and variation are exact inverses when considered on the quotient of 
 
 Let \(\V\) denote the set of all variations consistent with the causal order
 and \(\M\) the set of all measurable predicates.
-The preceding arguments define bijections
+The preceding arguments define bijections under selection
 \begin{equation}
 \Phi:\V\rightarrow\M, \qquad
 \Phi^{-1}:\M\rightarrow\V,
 \end{equation}
 establishing the following physical principle.
 
-\begin{example}[Double--Slit as the Partition of Path Distinguishability]
+\begin{example}[Double--Slit as the Partition of Path Distinguishability~\cite{landauer1961,bennett1973,zurek1989}]
 In the double--slit experiment, a single particle may traverse one of two
 spatially distinct apertures before reaching a detection screen.
 Before any which--path information is recorded, the causal domain is covered
@@ -1236,7 +1236,7 @@ Its inverse reconstructs a variation from a predicate:
 \end{equation}
 \begin{proposition}[Equivalence of Discrete and Continuum]
 \label{thm:equivalence}
-$\Phi$ is bijective on the space of distinguishable events.
+$\Phi$ is bijective on the space of distinguishable events~\cite{deboor1978,landau1976,shannon1948,jaynes1957,kolmogorov1933}.
 \end{proposition}
 
 \begin{proof}
@@ -1267,7 +1267,7 @@ no new distinguishability is introduced beyond what the universe records.
 To exhibit the analytic limit explicitly, let the sequence $\{\U_n\}$ represent
 samples of a smooth function $\U(x)$ on a uniform lattice with spacing $h$,
 so that $\U_{n\pm k}=\U(x\pm kh)$.  
-Define the fourth--order finite difference operator
+Define the fourth--order finite difference operator~\cite{leveque2007,quarteroni1994,morton2005,strikwerda2004}
 \begin{equation}
 \label{eq:finitediff}
 \Delta_h^{(4)}\U_n =
@@ -1286,7 +1286,7 @@ logical reciprocity acquires a variational meaning.
 The discrete operator \(\Delta^{(2)}_h\) measures second–order inconsistency 
 of causal order within the finite tensor \(\U\);  
 minimizing its square defines a functional on admissible configurations 
-analogous to an action.  
+analogous to an action~\cite{leveque2007,quarteroni1994,morton2005,strikwerda2004}.  
 Only after this identification---treating the smooth extremum of causal 
 inconsistency as a stationary point---does the continuum limit 
 \(\U^{(4)} = 0\) reproduce the Euler–Lagrange form.  
@@ -1305,7 +1305,9 @@ In the continuum limit $h\!\to\!0$, this becomes the Euler–Lagrange equation
 \begin{equation}
 \frac{d^4 U}{dx^4} = 0,
 \end{equation}
-identifying the cubic spline as the minimal–curvature interpolation of causal increments.
+identifying the cubic spline as the minimal–curvature interpolation of causal increments
+~\cite{cook1974,zienkiewicz1977,reddy1993,braess2007,quarteroni2008}.
+
 
 Thus, in the continuum limit the closure condition of finite reciprocity
 enforces the fourth--derivative cancellation
