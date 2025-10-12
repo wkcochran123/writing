@@ -1,5 +1,5 @@
 \documentclass[12pt,oneside]{book}
-\usepackage{amsthm,amssymb,amsmath,mathtools,setspace,thmtools}
+\usepackage{amsthm,amssymb,amsmath,mathtools,setspace,thmtools,titling}
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{example}{Thought Experiment}
@@ -24,7 +24,7 @@
 
 
 % Title info
-\title{The Conditions of $\Delta S \ge 0$}
+\title{On Measurement \\ \large Volume I \\ \large The Conditions of $\Delta S \ge 0$}
 \author{Bill Cochran\\wkcochran@gmail.com}
 \date{\today}
 
@@ -931,15 +931,6 @@ Under this rule, the smoothness of physical law is not imposed but emerges as th
 
 
 \begin{corollary}[Martin consistency from Event Selection (domain version)]
-Let $\mathbb{P}$ be the poset of all \emph{finite, order-consistent partial histories} in a fixed observer’s causal domain, ordered by extension ($p\le q$ iff $q$ extends $p$ without introducing new distinguishabilities). Then:
-\begin{enumerate}
-\item $\mathbb{P}$ satisfies the countable chain condition (ccc).
-\item For any family $\{D_\xi:\xi<\kappa\}$ of dense subsets of $\mathbb{P}$ with $\kappa<2^{\aleph_0}$, there exists a filter $G\subseteq\mathbb{P}$ meeting every $D_\xi$.
-\end{enumerate}
-Consequently, every countable system of local causal choices admits a globally consistent extension meeting all local constraints. This is the domain-analogue of Martin’s Axiom for the causal poset.
-\end{corollary}
-
-\begin{corollary}[Martin consistency from Event Selection (domain version)]
 Let $P$ be the poset of all finite, order–consistent partial histories in a fixed observer’s causal domain, ordered by extension ($p \le q$ iff $q$ extends $p$ without introducing new indistinguishabilities). Then:
 \begin{enumerate}
 \item $P$ satisfies the countable chain condition (ccc).
@@ -953,7 +944,7 @@ Consequently, every countable system of local causal choices admits a globally c
 By construction, each condition $p \in P$ encodes only finitely many events and order-relations drawn from a \emph{countable} label set available to the observer (Axiom of Finite Observation). Two conditions are incompatible iff they disagree on at least one finite relation (e.g.\ they force contradictory orderings on some finite subconfiguration). But there are only countably many distinct finite patterns over a countable alphabet; hence any antichain injects into a countable set of such patterns and must itself be countable. Therefore $P$ has no uncountable antichain, i.e.\ $P$ is ccc.
 
 \smallskip
-\textbf{(2) Existence of a filter meeting a countable dense family.}
+\textbf{(2) Existence of a filter meeting a countable dense family~cite{rasiowa1963,kunen1980}.}
 Let $\langle D_n : n \in \mathbb{N} \rangle$ be dense subsets of $P$. We build an increasing sequence $(p_n)_{n \in \mathbb{N}}$ in $P$ by recursion so that $p_{n+1} \in D_n$ for all $n$.
 
 Start with any $p_0 \in P$ (e.g.\ the empty partial history). Given $p_n$, use the density of $D_n$ to choose $p_{n+1} \in D_n$ with $p_{n+1} \le p_n$. (Here $\le$ is the extension order, so $p_{n+1}$ extends $p_n$ and is therefore compatible with all earlier requirements.) This recursion is legitimate by the Axiom of Choice (assumed via ZFC).
@@ -973,7 +964,13 @@ The above construction yields the classical Rasiowa--Sikorski lemma for countabl
 
 
 \begin{remark}[Scope]
-This is \emph{not} a derivation of set-theoretic Martin’s Axiom inside ZFC. Rather, under the physical axioms of locally finite causality and Event Selection, the induced forcing-like poset of finite partial histories enjoys an MA-like property sufficient for our global-consistency arguments. In §2, this is exactly the “Martin’s Condition” used to guarantee propagation/compatibility across overlaps. 
+This is \emph{not} a derivation of set-theoretic Martin’s 
+Axiom inside ZFC. Rather, under the physical axioms of locally 
+finite causality and Event Selection, the induced forcing-like 
+poset of finite partial histories enjoys an MA-like property 
+sufficient for our global-consistency arguments. In Chapter~\ref{chap:wave}, 
+this is exactly the “Martin’s Condition” used to guarantee 
+propagation/compatibility across overlaps. 
 \end{remark}
 
 The values of the Causal Universe Tensor compute the scalar invariants of
@@ -991,22 +988,6 @@ The proof requires only a finite analogue of Martin’s Axiom: that every counta
 Formally, if $(P,\le)$ is the poset of finite partial histories satisfying the countable chain condition, then any countable family of dense causal requirements admits a filter meeting them all.  This ensures that every local causal patch can be embedded into a global history.  
 
 This principle has the same structural form as Martin’s Axiom but does not depend on its full set-theoretic strength.  It is the minimal regularity condition needed for global causal coherence: the statement that the universe can always extend its own record of distinctions without inconsistency.
-
-\subsection{Axiomatic Necessity}
-
-The appeal to ZFC and Martin’s Axiom is not an external mathematical convenience but a
-physical necessity. Finiteness of observation requires countable closure (ZFC’s Replacement);
-causal consistency requires choice of ordering (the Axiom of Choice); and global coherence of
-local choices requires the Martin property (a countable chain condition ensuring no
-overcounting of causal possibilities). Thus each axiom corresponds to a measurable physical
-principle:
-\[
-\text{Finiteness} \leftrightarrow \mathrm{ZFC}, \qquad
-\text{Consistency} \leftrightarrow \mathrm{Martin}, \qquad
-\text{Reversibility} \leftrightarrow \mathrm{Choice}.
-\]
-Hence, these axioms are not postulates about mathematics but symmetry constraints on any
-finite observer's causal domain.
 
 
 \section{The Equivalence Principle of Physics}
@@ -1028,12 +1009,16 @@ order; there always exists a global history that meets every local causal
 constraint.  This property alone is enough to endow the set of events with
 a notion of motion.
 
-Let $E(t)$ denote the evolving record of distinguishable events.  Because
-each extension preserves order, successive updates can be represented as a
+The evolving record of distinctions, denoted \(E(t)\), formalizes the process by which an observer’s information state becomes linearly ordered through successive acts of differentiation. 
+Each increment in \(E(t)\) represents a new, non-redundant distinction—an extension of the prefix of computable structure that defines the observer’s informational past. 
+This conception unifies classical and modern treatments of order, computation, and measurement: from Gödel’s incompleteness (1931), through Spencer–Brown’s calculus of distinction (1969), Chaitin’s algorithmic information theory (1974, 1987), Wheeler’s “it from bit” (1990), and the causal–set formulations of Sorkin and collaborators (Rideout and Sorkin 1999; Markopoulou 2000), to the self-organizing theories of cognition in Maturana and Varela (1980). 
+Taken together, these works articulate the same fundamental principle of \emph{linearization}: that reality, in any consistent system of record, unfolds as a temporally ordered accumulation of distinctions.\cite{godel1931,spencerbrown1969,chaitin1974,chaitin1987,wheeler1990,rideout1999,markopoulou2000,maturana1980}
+
+Because each extension preserves order, successive updates can be represented as a
 smooth deformation of the existing configuration,
-\[
+\begin{equation}
 E(t+\delta t) = E(t) + \Delta E,
-\]
+\end{equation}
 where $\Delta E$ is constrained by consistency rather than by force.  The
 existence of a consistent extension implies that the second variation of
 order, $\Delta^2 E$, must itself be smooth across all overlapping causal
@@ -1042,15 +1027,16 @@ two incompatible extensions.
 
 From this we can deduce that the curvature of order---the rate at which
 second differences change---is constant within each causal interval:
-\[
+\begin{equation}
 \Delta^4 E = 0.
-\]
+\end{equation}
 Passing to the continuum limit, this becomes the differential statement
-\[
+\begin{equation}
 E^{(4)}(x) = 0,
-\]
+\end{equation}
 which is precisely the condition satisfied by the cubic spline in
-configuration space.  Thus the familiar kinematic law that smooth motion
+configuration space~\cite{deboor1978,heath2002,schoenberg1946}.  Thus the familiar 
+kinematic law that smooth motion
 is described by a polynomial of minimal curvature arises directly from the
 requirement of global consistency under Martin’s Axiom.
 
@@ -1724,6 +1710,7 @@ geometry that underlies the continuum theory developed in the next chapter.
 
 \newpage
 \chapter{The Wave}
+\label{chap:wave}
 
 \section{Introduction: Martin's Condition and the Continuity of Causal Propagation}
 
