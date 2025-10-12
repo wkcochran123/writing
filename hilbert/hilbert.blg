@@ -2,12 +2,12 @@ This is BibTeX, Version 0.99d (TeX Live 2023)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: hilbert.aux
 Case mismatch error between cite keys deBoor1978 and deboor1978
----line 231 of file hilbert.aux
+---line 236 of file hilbert.aux
  : \citation{deBoor1978
  :                     }
 I'm skipping whatever remains of this command
 Case mismatch error between cite keys deBoor1978 and deboor1978
----line 241 of file hilbert.aux
+---line 246 of file hilbert.aux
  : \citation{deBoor1978
  :                     }
 I'm skipping whatever remains of this command
@@ -53,45 +53,45 @@ Warning--empty publisher in jaynes1957
 Name 1 in "R. Courant, K. Friedrichs, and H. Lewy" has a comma at the end for entry courant1943
 while executing---line 1090 of file plain.bst
 Warning--empty publisher in shannon1948
-You've used 83 entries,
+You've used 81 entries,
             2118 wiz_defined-function locations,
-            940 strings with 13860 characters,
-and the built_in function-call counts, 22044 in all, are:
-= -- 2174
-> -- 744
+            932 strings with 13610 characters,
+and the built_in function-call counts, 21561 in all, are:
+= -- 2129
+> -- 724
 < -- 11
-+ -- 323
-- -- 221
-* -- 1240
-:= -- 3768
-add.period$ -- 270
-call.type$ -- 83
-change.case$ -- 321
++ -- 315
+- -- 215
+* -- 1218
+:= -- 3682
+add.period$ -- 263
+call.type$ -- 81
+change.case$ -- 314
 chr.to.int$ -- 0
-cite$ -- 87
-duplicate$ -- 1006
-empty$ -- 1998
-format.name$ -- 221
-if$ -- 4660
+cite$ -- 85
+duplicate$ -- 982
+empty$ -- 1954
+format.name$ -- 215
+if$ -- 4557
 int.to.chr$ -- 0
-int.to.str$ -- 83
-missing$ -- 133
-newline$ -- 434
-num.names$ -- 170
-pop$ -- 456
+int.to.str$ -- 81
+missing$ -- 129
+newline$ -- 423
+num.names$ -- 166
+pop$ -- 442
 preamble$ -- 1
-purify$ -- 275
+purify$ -- 268
 quote$ -- 0
-skip$ -- 591
+skip$ -- 578
 stack$ -- 0
-substring$ -- 1141
-swap$ -- 125
+substring$ -- 1131
+swap$ -- 123
 text.length$ -- 11
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 230
+type$ -- 226
 warning$ -- 4
-while$ -- 226
-width$ -- 85
-write$ -- 952
+while$ -- 222
+width$ -- 83
+write$ -- 928
 (There were 12 error messages)

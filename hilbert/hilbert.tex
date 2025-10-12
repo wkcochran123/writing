@@ -265,6 +265,21 @@ light cones~\cite{minkowski1908}.  The only invariant quantity is the causal ord
 all observers concur on which event precedes which, even though they may count
 a different number of intermediate ticks~\cite{malament1977}.
 
+\begin{definition}[Rank time]\label{def:rank-time}
+Let $(E,\preceq)$ be a locally finite poset of events. A \emph{time rank} is an order-embedding
+\[
+\tau : E \to \mathrm{Ord}
+\]
+satisfying $e \prec f \implies \tau(e) < \tau(f)$. Local finiteness implies that for any observer's causal domain $D \subseteq E$, $\tau(D)$ is order-isomorphic to an initial segment of $\mathbb{N}$. We therefore define the \emph{duration} between anchors $a \prec b$ by
+\[
+|\delta t|(a,b) \;=\; \#\{\, e \in E \mid a \prec e \prec b \,\}\in \mathbb{N}.
+\]
+Two rank functions $\tau,\tau'$ are \emph{equivalent} if there exists an order-isomorphism $\phi$ with $\tau'=\phi\circ\tau$; equivalent ranks yield identical durations.
+\end{definition}
+
+\begin{remark}[Operational content of time]
+Time is an ordinal rank on $E$, not an independent scalar field. All subsequent uses of ``$t$'' refer to an order-equivalence class of rank functions as in Definition~\ref{def:rank-time}. The additivity $|\delta t|(a,b)=|\delta t|(a,c)+|\delta t|(c,b)$ follows from local finiteness.
+\end{remark}
 
 This observation motivates the first physical axiom: that time is not an independent scalar field but an ordinal index over causally distinguishable events.  Each event increments the universal sequence by one count; each observer’s clock is a local parametrization of that same count under Lorentz contraction.  The apparent continuity of time is the result of the density of such events within the causal cone, not an underlying continuum of duration.
 
@@ -494,29 +509,34 @@ It is related to the logical event by a measurable embedding
 $\Psi : \Eset \rightarrow \Talg$, where $\E_k = \Psi(e_k)$.
 \end{definition}
 
-\begin{proposition}[Causal Universe Tensor]\label{prop:universe_tensor}
-\label{prop:universe_tensor}
-Let $\{\E_k\}_{k=1}^{n}$ be the ordered sequence of event tensors guaranteed by the Axiom of Order.  
-The \emph{universe tensor} after $n$ events is the ordered sum
-\begin{equation}
-\label{eq:universetensor}
-\U_n = \sum_{k=1}^{n} \E_k,
-\end{equation}
-where addition in $\Talg$ preserves causal order: 
-if $i<j$, then $(\E_i,\E_j)$ occurs before $(\E_j,\E_i)$ unless $\E_i$ and $\E_j$ commute.
+\begin{definition}[Ordered fold]\label{def:ordered-fold}
+Let $(E,\preceq)$ be totally ordered as $\langle e_1,\dots,e_n\rangle$ on a finite prefix, and let $(\mathcal{A},\oplus)$ be a (not-necessarily commutative) associative algebraic structure with identity $0$. Given event tensors $E_k\in\mathcal{A}$, define the ordered fold by
+\[
+\mathrm{Fold}_\oplus(E_1,\dots,E_n)\;:=\;(((0\oplus E_1)\oplus E_2)\cdots)\oplus E_n.
+\]
+\end{definition}
+
+\begin{definition}[Entanglement equivalence]\label{def:entanglement}
+Write $E_i \sim E_j$ if they lie in a subset on which $\oplus$ is commutative and which preserves all cyclic scalar invariants (e.g.\ traces of contractions). Two ordered lists are \emph{entanglement-equivalent} if they differ only by permutations inside such subsets. We write $\equiv$ for equality modulo entanglement equivalence.
+\end{definition}
+
+\begin{proposition}[Causal Universe Tensor]\label{prop:universe-tensor}
+Let $E_1\prec\cdots\prec E_n$ be the event tensors in order, with $\oplus$ the addition in $T(V)$ (componentwise in the direct sum) and composition handled only by subsequent linear functionals. Define $U_0:=0$ and
+\[
+U_{k+1}\;:=\;U_k \oplus E_{k+1},\qquad 0\le k<n.
+\]
+Then:
+\begin{enumerate}
+\item The sequence $(U_k)_{k=0}^n$ is uniquely determined by the recursion (no ambiguity of parenthesization since $\oplus$ is associative).
+\item If a subset $S\subset\{1,\dots,n\}$ is entangled in the sense of Definition~\ref{def:entanglement}, then reordering $\{E_i\}_{i\in S}$ leaves all cyclic scalar invariants of $U_n$ unchanged; i.e.\ $U_n \equiv U_n'$ for any such reordering.
+\item In the fully commutative case, $U_n=\sum_{k=1}^n E_k$ as a componentwise sum in $T(V)$.
+\end{enumerate}
 \end{proposition}
 
 \begin{proof}
-By the Axiom of Order, all observers agree only on the \emph{sequence} in
-which events occur. Thus, the state of the universe can be constructed
-recursively:
-\begin{equation}
-\label{eq:universeassembly}
-\U_{n+1} = \U_n + \E_{n+1}.
-\end{equation}
-Since $\U_1 = \E_1$, induction yields
-$\U_n = \sum_{k=1}^n \E_k$.
+(1) Associativity gives well-definedness of the left fold. (2) By construction, permutations inside entangled subsets preserve $\oplus$ and cyclic scalar functionals (e.g.\ traces of contractions), hence invariants coincide. (3) If $\oplus$ is commutative, the fold equals the ordinary finite sum.
 \end{proof}
+
 
 
 With the ordinal structure of events established, we now formalize how these measurements combine algebraically within a finite vector space.
@@ -865,8 +885,9 @@ Pure mathematics allows objects that exceed any finite observer’s capacity to 
 In physical terms, such pathologies correspond to hypothetical universes that overcount possibilities—histories in which indistinguishable outcomes are spuriously distinguished by the formalism itself.  
 To restrict attention to realizable histories, we introduce an axiom that selects only those extensions of the causal order that remain both countable and consistent with local finiteness.
 
-\begin{axiom}[The Axiom of Event Selection (The Axiom of Boltzmann)]
-For\footnote{The structural analogy between the Axiom of Event Selection and Martin’s Axiom
+
+\begin{axiom}[Axiom of Event Selection (The Axiom of Boltzmann)]\label{ax:selection}
+Let\footnote{The structural analogy between the Axiom of Event Selection and Martin’s Axiom
 follows standard set-theoretic treatments of the countable chain condition and forcing
 \cite{martin1970cohen,kunen1980,jech2002,todorcevic2010}.
 Physically, it parallels Boltzmann’s principle that every admissible microstate
@@ -874,50 +895,21 @@ selection must preserve distinguishability \cite{boltzmann1896},
 and echoes Hilbert’s call to axiomatize the foundations of physics \cite{hilbert1902geometry}.
 See also Bombelli et~al.\ \cite{bombelli1987} for causal-set structure
 and Finkelstein \cite{finkelstein1996} for the logical formulation of causal consistency.}
-any countable family of admissible events within a finite causal domain, there exists at least one consistent extension that selects exactly one outcome from each family while preserving the distinguishability of all previously realized events.
+$(\mathsf{P},\le)$ be the poset of finite, order-consistent partial histories in a locally finite causal domain, ordered by extension. For every countable family $\{D_n\}_{n\in\mathbb{N}}$ of dense subsets of $\mathsf{P}$ (local causal constraints), \emph{there exists} a filter $G\subseteq \mathsf{P}$ with $G\cap D_n\neq\varnothing$ for all $n$.
 \end{axiom}
 
-\paragraph{Non-physicality of the Selection Mechanism.}
-Although Martin's Axiom guarantees the existence of a consistent extension of any countable chain,
-it does not prescribe a constructive rule for obtaining it.
-The mechanism is therefore non-physical in the same sense that the axiom of choice is:
-it ensures consistency but does not correspond to an observable dynamical process.
-To illustrate this distinction, consider the simplex algorithm of Dantzig~\cite{boyd2004,dantzig1963}.
-The procedure deterministically traverses admissible vertices of a convex polytope,
-selecting at each step the locally optimal move under a global constraint.
-Its outcome is guaranteed by the existence of an extremum,
-yet the pivot sequence itself is an abstract computation rather than a physical trajectory.
-In the same way, the Axiom of Event Selection asserts that a causal extension \(\E'\)
-consistent with all prior constraints exists and can be indexed,
-even though no physical process need perform the selection.
-
-\begin{remark}[Countable Closure and the Scope of Martin Consistency]
-The restriction to locally finite causal domains allows a countably infinite
-ensemble of admissible extensions within an otherwise uncountable continuum
-of possibilities.  This intermediate scale---countable yet arbitrarily
-extensible---is precisely the regime in which Martin's Axiom applies:
-every countable family of dense causal requirements admits a consistent
-global realization.  Physically, the discreteness of observation enforces the
-countable–chain condition, while the continuum of potential refinements
-provides the density required for closure.  Thus the universe behaves as if
-it satisfies Martin's Axiom: locally finite, globally coherent, and incapable
-of overcounting its own distinctions.
+\begin{remark}[Logical guarantee, not a mechanism]\label{rem:nonconstructive}
+Axiom~\ref{ax:selection} is non-constructive. It asserts the \emph{existence} of at least one globally consistent extension meeting all countably many local constraints but does not prescribe any observable or deterministic procedure that finds it. This mirrors the role of the Rasiowa--Sikorski lemma in forcing and is structurally analogous (though weaker in scope) to Martin's Axiom on ccc posets. The axiom thereby rules out pathological overgeneration (e.g.\ uncountable splits into indistinguishable refinements) by restricting attention to countable, order-coherent extensions.
 \end{remark}
 
+\begin{example}[Algorithmic analogies are illustrative only]\label{ex:dantzig}
+Classical algorithms such as Dantzig's simplex method \emph{select} admissible vertices in a feasible polytope under global constraints, providing existence-by-structure but not physics. We invoke such algorithms only as intuition pumps: they exemplify selection under constraints, not a dynamical law implemented by nature.
+\end{example}
 
-\paragraph{Relation to Martin’s Axiom.}
-The Axiom of Event Selection is the physical analogue of Martin’s Axiom in set theory.  
-Let $(\mathfrak{P}, \le)$ denote the poset of all finite, order-consistent partial histories within an observer’s causal domain, ordered by extension ($p \le q$ iff $q$ extends $p$ without introducing new indistinguishabilities$)$.
-Finite observation ensures that $(\mathfrak{P}, \le)$ satisfies the countable chain condition (no uncountable antichains).  
-Martin’s Axiom then asserts that for any countable collection of dense subsets $\{D_\xi\}$ of $\mathfrak{P}$, there exists a filter $G \subseteq \mathfrak{P}$ intersecting each $D_\xi$:
-\[
-\forall \xi < \kappa < 2^{\aleph_0}, \quad G \cap D_\xi \neq \varnothing .
-\]
-Physically, each dense set $D_\xi$ represents a local causal constraint—“something must happen next” within a neighborhood of the observer’s light cone—and the filter $G$ corresponds to the unique globally consistent history that satisfies all such local requirements.
+\begin{remark}
+Downstream results should cite Axiom~\ref{ax:selection} only for \emph{existence}. Any phrase suggesting that the axiom ``chooses,'' ``constructs,'' or ``computes'' a history should be replaced with ``there exists a history meeting the constraints.''
+\end{remark}
 
-Thus, the mathematical role of Martin’s Axiom is mirrored here by the physical demand for causal coherence.  
-Every countable collection of local observations can be assembled into a single consistent world-line, and every finite causal patch can be extended to a global history without overcounting.  
-This principle—that locally consistent choices always admit a globally consistent realization—is the minimal regularity condition required for a universe that remains self-consistent under its own act of measurement.
 
 \paragraph{Interpretation.}
 The Axiom of Event Selection serves as the ``spline condition'' for causal structure: it ensures that the discrete increments of measurement join smoothly into a coherent global record.  

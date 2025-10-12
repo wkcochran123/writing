@@ -9,22 +9,20 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{}%
 \contentsline {chapter}{\numberline {2}The Calculus of Measurement}{3}{}%
 \contentsline {section}{\numberline {2.1}Introduction}{3}{}%
-\contentsline {subsection}{\numberline {2.1.1}On the Structure of Measurement}{4}{}%
-\contentsline {section}{\numberline {2.2}The Axioms of the Mathematical}{5}{}%
+\contentsline {subsection}{\numberline {2.1.1}On the Structure of Measurement}{5}{}%
+\contentsline {section}{\numberline {2.2}The Axioms of the Mathematical}{6}{}%
 \contentsline {subsection}{\numberline {2.2.1}Sets of Events}{7}{}%
 \contentsline {section}{\numberline {2.3}The Axioms of the Physical}{9}{}%
-\contentsline {subsection}{\numberline {2.3.1}Measurement and the Axiom of Order}{9}{}%
-\contentsline {subsection}{\numberline {2.3.2}Formal Structure of Event and Universe Tensors}{11}{}%
-\contentsline {subsection}{\numberline {2.3.3}Axiom of Finite Observation}{17}{}%
-\contentsline {subsection}{\numberline {2.3.4}Construction of the Universe Tensor and the Axiom of Event Selection}{17}{}%
-\contentsline {paragraph}{Overgeneration and the Need for Selection.}{19}{}%
-\contentsline {paragraph}{Non-physicality of the Selection Mechanism.}{20}{}%
-\contentsline {paragraph}{Relation to Martin’s Axiom.}{21}{}%
-\contentsline {paragraph}{Interpretation.}{21}{}%
+\contentsline {subsection}{\numberline {2.3.1}Measurement and the Axiom of Order}{10}{}%
+\contentsline {subsection}{\numberline {2.3.2}Formal Structure of Event and Universe Tensors}{12}{}%
+\contentsline {subsection}{\numberline {2.3.3}Axiom of Finite Observation}{18}{}%
+\contentsline {subsection}{\numberline {2.3.4}Construction of the Universe Tensor and the Axiom of Event Selection}{18}{}%
+\contentsline {paragraph}{Overgeneration and the Need for Selection.}{20}{}%
+\contentsline {paragraph}{Interpretation.}{22}{}%
 \contentsline {subsection}{\numberline {2.3.5}The Necessity of Consistency (The Martin Correspondence)}{24}{}%
-\contentsline {section}{\numberline {2.4}The Equivalence Principle of Physics}{24}{}%
-\contentsline {subsection}{\numberline {2.4.1}Kinematics as a Consequence of Martin's Axiom}{24}{}%
-\contentsline {subsection}{\numberline {2.4.2}Variations and the Reciprocity of Measurement}{26}{}%
+\contentsline {section}{\numberline {2.4}The Equivalence Principle of Physics}{25}{}%
+\contentsline {subsection}{\numberline {2.4.1}Kinematics as a Consequence of Martin's Axiom}{25}{}%
+\contentsline {subsection}{\numberline {2.4.2}Variations and the Reciprocity of Measurement}{27}{}%
 \contentsline {subsubsection}{From Distinguishability to Variation}{27}{}%
 \contentsline {subsubsection}{From Variation to Measurement}{27}{}%
 \contentsline {subsubsection}{Bijections Under Selection}{28}{}%
