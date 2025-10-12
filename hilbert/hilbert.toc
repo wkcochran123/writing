@@ -14,27 +14,27 @@
 \contentsline {subsection}{\numberline {2.2.1}Sets of Events}{7}{}%
 \contentsline {section}{\numberline {2.3}The Axioms of the Physical}{9}{}%
 \contentsline {subsection}{\numberline {2.3.1}Measurement and the Axiom of Order}{10}{}%
-\contentsline {subsection}{\numberline {2.3.2}Formal Structure of Event and Universe Tensors}{12}{}%
+\contentsline {subsection}{\numberline {2.3.2}Formal Structure of Event and Universe Tensors}{13}{}%
 \contentsline {subsection}{\numberline {2.3.3}Axiom of Finite Observation}{18}{}%
-\contentsline {subsection}{\numberline {2.3.4}Construction of the Universe Tensor and the Axiom of Event Selection}{18}{}%
-\contentsline {paragraph}{Overgeneration and the Need for Selection.}{20}{}%
+\contentsline {subsection}{\numberline {2.3.4}Construction of the Universe Tensor and the Axiom of Event Selection}{19}{}%
+\contentsline {paragraph}{Overgeneration and the Need for Selection.}{21}{}%
 \contentsline {paragraph}{Interpretation.}{22}{}%
 \contentsline {subsection}{\numberline {2.3.5}The Necessity of Consistency (The Martin Correspondence)}{24}{}%
 \contentsline {section}{\numberline {2.4}The Equivalence Principle of Physics}{25}{}%
 \contentsline {subsection}{\numberline {2.4.1}Kinematics as a Consequence of Martin's Axiom}{25}{}%
 \contentsline {subsection}{\numberline {2.4.2}Variations and the Reciprocity of Measurement}{27}{}%
 \contentsline {subsubsection}{From Distinguishability to Variation}{27}{}%
-\contentsline {subsubsection}{From Variation to Measurement}{27}{}%
+\contentsline {subsubsection}{From Variation to Measurement}{28}{}%
 \contentsline {subsubsection}{Bijections Under Selection}{28}{}%
-\contentsline {subsubsection}{Reciprocal Closure}{29}{}%
+\contentsline {subsubsection}{Reciprocal Closure}{30}{}%
 \contentsline {subsection}{\numberline {2.4.3}Formal Definition of the Reciprocity Mapping}{31}{}%
-\contentsline {subsection}{\numberline {2.4.4}Discrete--to--Continuum Limit}{32}{}%
+\contentsline {subsection}{\numberline {2.4.4}Discrete--to--Continuum Limit}{33}{}%
 \contentsline {subsubsection}{The spline is the Euler solution with minimal degrees of freedom}{37}{}%
 \contentsline {subsection}{\numberline {2.4.5}2.4.6\hskip 1em\relax The Free Parameter of the Third Variation}{39}{}%
-\contentsline {paragraph}{Tensor Form of the Variational Functional.}{39}{}%
+\contentsline {paragraph}{Tensor Form of the Variational Functional.}{40}{}%
 \contentsline {paragraph}{Residual Freedom.}{40}{}%
 \contentsline {paragraph}{Interpretation.}{40}{}%
-\contentsline {paragraph}{Conclusion.}{40}{}%
+\contentsline {paragraph}{Conclusion.}{41}{}%
 \contentsline {section}{\numberline {2.5}Conclusion: The Admissible Calculus of Measurement}{41}{}%
 \contentsline {chapter}{\numberline {3}The Wave}{44}{}%
 \contentsline {section}{\numberline {3.1}Introduction: Martin's Condition and the Continuity of Causal Propagation}{44}{}%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.16)  12 OCT 2025 19:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.16)  12 OCT 2025 19:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -358,49 +358,49 @@ The ad-di-tiv-ity $\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 ^^Nt\OMS/cmsy/m/n/12 j\OT
 
 [4] [5] [6{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super
 -ts1.enc}] [7] [8] [9] [10] [11] [12] [13]
-Overfull \hbox (18.24774pt too wide) in paragraph at lines 629--630
+Overfull \hbox (18.24774pt too wide) in paragraph at lines 644--645
 \OT1/cmr/m/it/12 take event ten-sors as $\OT1/cmr/m/n/12 2 \OMS/cmsy/m/n/12 ^^B
  \OT1/cmr/m/n/12 2$ \OT1/cmr/m/it/12 ma-tri-ces act-ing on $\OML/cmm/m/it/12 V$
  \OT1/cmr/m/it/12 with the usual (non-commutative)
  []
 
-[14]
+[14] [15]
 
-LaTeX Warning: Reference `prop:universe_tensor' on page 15 undefined on input l
-ine 695.
+LaTeX Warning: Reference `prop:universe_tensor' on page 16 undefined on input l
+ine 710.
 
-[15] [16] [17] [18] [19]
-Overfull \hbox (0.32942pt too wide) in paragraph at lines 861--865
+[16] [17] [18] [19]
+Overfull \hbox (0.32942pt too wide) in paragraph at lines 876--880
 []\OT1/cmr/m/it/12 Operationally, this is a Banach--Tarski-like over-count-ing:
  the causal struc-
  []
 
 [20]
-Overfull \hbox (11.0925pt too wide) in paragraph at lines 902--903
-\OT1/cmr/bx/n/12 Remark 3 \OT1/cmr/m/n/12 (Log-i-cal guar-an-tee, not a mech-a-
+Overfull \hbox (11.0925pt too wide) in paragraph at lines 917--918
+\OT1/cmr/bx/n/12 Remark 4 \OT1/cmr/m/n/12 (Log-i-cal guar-an-tee, not a mech-a-
 nism)\OT1/cmr/bx/n/12 . \OT1/cmr/m/it/12 Ax-iom 4[] is non-constructive.
  []
 
 [21]
-Overfull \hbox (16.93542pt too wide) detected at line 922
+Overfull \hbox (16.93542pt too wide) detected at line 937
 \OT1/cmr/bx/n/12 U[] \OT1/cmr/m/n/12 = \OT1/cmr/bx/n/12 U[] \OT1/cmr/m/n/12 + \
 OT1/cmr/bx/n/12 E[]\OML/cmm/m/it/12 ;  []\OT1/cmr/bx/n/12 E[][]
  []
 
 [22] [23] [24] [25] [26] [27]
-Overfull \hbox (125.5692pt too wide) detected at line 1099
+Overfull \hbox (125.5692pt too wide) detected at line 1114
 []\OML/cmm/m/it/12 U \OMS/cmsy/m/n/12 ^^X \OML/cmm/m/it/12 V  \OMS/cmsy/m/n/12 
 ([])  []
  []
 
 [28]
-Overfull \hbox (1.01028pt too wide) in paragraph at lines 1144--1150
+Overfull \hbox (1.01028pt too wide) in paragraph at lines 1159--1165
 \OT1/cmr/bx/n/12 Interpretation. \OT1/cmr/m/n/12 Within the space of mea-sur-ab
 le con-fig-u-ra-tions, ev-ery causal
  []
 
 [29] [30]
-Overfull \hbox (9.06451pt too wide) detected at line 1225
+Overfull \hbox (9.06451pt too wide) detected at line 1240
 []\OT1/cmr/m/n/12 ^^H : \OML/cmm/m/it/12 V \OMS/cmsy/m/n/12 ! \OML/cmm/m/it/12 
 M;  \OT1/cmr/m/n/12 ^^H(\OML/cmm/m/it/12 ^^NU\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12
  e\OT1/cmr/m/n/12 ) = []
@@ -408,32 +408,34 @@ M;  \OT1/cmr/m/n/12 ^^H(\OML/cmm/m/it/12 ^^NU\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12
 
 
 LaTeX Warning: Reference `def:selected-update' on page 31 undefined on input li
-ne 1233.
+ne 1248.
+
+[31]
+
+LaTeX Warning: Reference `def:selected-update' on page 32 undefined on input li
+ne 1260.
+
+[32] [33] [34]
+
+LaTeX Warning: Reference `sec:closure' on page 35 undefined on input line 1393.
 
 
-LaTeX Warning: Reference `def:selected-update' on page 31 undefined on input li
-ne 1245.
 
-[31] [32] [33] [34]
-
-LaTeX Warning: Reference `sec:closure' on page 35 undefined on input line 1378.
-
-
-
-Overfull \hbox (15.90384pt too wide) in paragraph at lines 1376--1385
+Overfull \hbox (15.90384pt too wide) in paragraph at lines 1391--1400
 \OT1/cmr/m/it/12 this dis-crete rewrit-ing rule is an ex-plicit re-al-iza-tion 
 of the reciprocal-measurement
  []
 
+[35]
 
-LaTeX Warning: Citation `deBoor1978' on page 35 undefined on input line 1394.
+LaTeX Warning: Citation `deBoor1978' on page 36 undefined on input line 1409.
 
-[35] [36]
+[36]
 
-LaTeX Warning: Citation `deBoor1978' on page 37 undefined on input line 1438.
+LaTeX Warning: Citation `deBoor1978' on page 37 undefined on input line 1453.
 
 
-Overfull \hbox (7.89374pt too wide) in paragraph at lines 1436--1439
+Overfull \hbox (7.89374pt too wide) in paragraph at lines 1451--1454
 \OT1/cmr/m/it/12 uum limit, this retro-constraint cor-re-sponds ex-actly to the
  the-o-ret-i-cal{numerical
  []
@@ -441,19 +443,19 @@ Overfull \hbox (7.89374pt too wide) in paragraph at lines 1436--1439
 [37] [38] [39] [40] [41] [42] [43]
 Chapter 3.
 
-Overfull \hbox (2.35774pt too wide) in paragraph at lines 1619--1619
+Overfull \hbox (2.35774pt too wide) in paragraph at lines 1634--1634
 []\OT1/cmr/bx/n/17.28 Introduction: Mar-tin's Con-di-tion and the
  []
 
 [44
 
 ]
-Overfull \hbox (5.12773pt too wide) in paragraph at lines 1673--1673
+Overfull \hbox (5.12773pt too wide) in paragraph at lines 1688--1688
 []\OT1/cmr/bx/n/17.28 Interaction: The Union of Or-dered Events 
  []
 
 [45]
-Overfull \hbox (16.08832pt too wide) in paragraph at lines 1700--1716
+Overfull \hbox (16.08832pt too wide) in paragraph at lines 1715--1731
 \OT1/cmr/m/it/12 sure $\OML/cmm/m/it/12 x$ \OT1/cmr/m/it/12 then $\OML/cmm/m/it
 /12 z$\OT1/cmr/m/it/12 '' cor-re-sponds to the or-dered up-date $\OML/cmm/m/it/
 12 U[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^Z\OT1/cmr/m/n/12 ) = [][] \OML/cmm/m/
@@ -461,37 +463,37 @@ it/12 P[]P[] ^^Z P[]P[];$
  []
 
 [46]
-Overfull \hbox (2.05426pt too wide) in paragraph at lines 1759--1772
+Overfull \hbox (2.05426pt too wide) in paragraph at lines 1774--1787
 \OT1/cmr/m/n/12 mu-tual ad-just-ment prop-a-gates along both chains, en-forc-in
 g con-sis-tency across
  []
 
 [47] [48] [49]
-Overfull \hbox (1.2927pt too wide) in paragraph at lines 1843--1851
+Overfull \hbox (1.2927pt too wide) in paragraph at lines 1858--1866
 \OT1/cmr/m/n/12 main. To a lo-cal ob-server, this ap-pears as in-stan-ta-neous 
 cor-re-la-tion|``spooky
  []
 
 [50] [51] [52] [53]
-Overfull \hbox (3.78203pt too wide) in paragraph at lines 1990--1994
+Overfull \hbox (3.78203pt too wide) in paragraph at lines 2005--2009
 []\OT1/cmr/m/n/12 Each sur-ro-gate event rep-re-sents the rec-on-cil-i-a-tion o
 f an un-re-solv-able causal
  []
 
 
-Overfull \hbox (1.31776pt too wide) in paragraph at lines 2022--2022
+Overfull \hbox (1.31776pt too wide) in paragraph at lines 2037--2037
 []\OT1/cmr/bx/n/17.28 Wave Am-pli-tude from In-ter-ac-tion Counts 
  []
 
 [54] [55]
-Overfull \hbox (1.54176pt too wide) in paragraph at lines 2089--2090
+Overfull \hbox (1.54176pt too wide) in paragraph at lines 2104--2105
 \OT1/cmr/bx/n/12 Proposition 11 \OT1/cmr/m/n/12 (Tri-an-gle--Type In-equal-ity)
 \OT1/cmr/bx/n/12 . \OT1/cmr/m/it/12 For any lo-cally fi-nite $\OML/cmm/m/it/12 
 E[]; E[]; E[]$\OT1/cmr/m/it/12 , 
  []
 
 [56] [57] [58] [59]
-Overfull \hbox (119.81583pt too wide) detected at line 2276
+Overfull \hbox (119.81583pt too wide) detected at line 2291
 \OML/cmm/m/it/12 ^^N[]\OMS/cmsy/m/n/12 A\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E[]; 
 E[]\OT1/cmr/m/n/12 ) := \OML/cmm/m/it/12 ^^N[][]^^N[]\OMS/cmsy/m/n/12 A\OT1/cmr
 /m/n/12 (\OML/cmm/m/it/12 E[]; E[]\OT1/cmr/m/n/12 )[] = \OMS/cmsy/m/n/12 A\OT1/
@@ -505,12 +507,12 @@ mr/m/n/12 (\OML/cmm/m/it/12 E[] \OMS/cmsy/m/n/12 [ f\OML/cmm/m/it/12 f\OMS/cmsy
  []
 
 [60] [61]
-Overfull \hbox (2.2438pt too wide) in paragraph at lines 2363--2363
+Overfull \hbox (2.2438pt too wide) in paragraph at lines 2378--2378
 []\OT1/cmr/bx/n/17.28 Advection as Order-Preserving Trans-port 
  []
 
 [62] [63] [64]
-Overfull \hbox (15.92354pt too wide) in paragraph at lines 2500--2504
+Overfull \hbox (15.92354pt too wide) in paragraph at lines 2515--2519
 \OT1/cmr/m/n/12 The ``speed'' $\OML/cmm/m/it/12 c$ \OT1/cmr/m/n/12 is the rate 
 at which or-der con-straints tra-verse the poset|not
  []
@@ -520,14 +522,14 @@ Chapter 4.
 [70
 
 ] [71] [72] [73] [74] [75] [76] [77] [78] [79] [80]
-Overfull \hbox (6.40233pt too wide) in paragraph at lines 3036--3037
+Overfull \hbox (6.40233pt too wide) in paragraph at lines 3051--3052
 \OT1/cmr/bx/n/12 Thought Ex-per-i-ment 18 \OT1/cmr/m/n/12 (Non-A-belian trans-p
 ort and cur-va-ture)\OT1/cmr/bx/n/12 . \OT1/cmr/m/it/12 Let $\OML/cmm/m/it/12 A
 []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$
  []
 
 [81]
-Overfull \hbox (23.25404pt too wide) in paragraph at lines 3082--3086
+Overfull \hbox (23.25404pt too wide) in paragraph at lines 3097--3101
 \OT1/cmr/m/it/12 represents the in-finites-i-mal mea-sure of dis-tin-guisha-bil
 -ity be-tween these events|the
  []
@@ -542,13 +544,13 @@ Chapter 6.
 
 ] [93] [94] [95] [96] [97] [98] [99] [100] [101] [102] [103] [104] [105]
 [106] [107] [108] [109] [110]
-Overfull \hbox (2.30241pt too wide) in paragraph at lines 4110--4114
+Overfull \hbox (2.30241pt too wide) in paragraph at lines 4125--4129
 \OT1/cmr/m/n/12 ledger. Lo-cal in-vari-ance means that the ex-change rates be-t
 ween these columns
  []
 
 [111]
-Overfull \hbox (0.51817pt too wide) in paragraph at lines 4134--4141
+Overfull \hbox (0.51817pt too wide) in paragraph at lines 4149--4156
 \OT1/cmr/m/n/12 Perfect causal sym-me-try im-plies mo-tion at the limit of dis-
 tin-guisha-bil-ity|the
  []
@@ -578,13 +580,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4508 strings out of 476025
- 77240 string characters out of 5790017
+ 4509 strings out of 476025
+ 77274 string characters out of 5790017
  1861388 words of memory out of 5000000
- 24880 multiletter control sequences out of 15000+600000
+ 24881 multiletter control sequences out of 15000+600000
  528984 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 65i,13n,71p,724b,323s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 65i,13n,71p,724b,301s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><
 /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb>
@@ -612,7 +614,7 @@ st/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/
 texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2023/te
 xmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on hilbert.pdf (145 pages, 626393 bytes).
+Output written on hilbert.pdf (145 pages, 627117 bytes).
 PDF statistics:
  610 PDF objects out of 1000 (max. 8388607)
  404 compressed objects within 5 object streams

@@ -527,7 +527,16 @@ U_{k+1}\;:=\;U_k \oplus E_{k+1},\qquad 0\le k<n.
 \]
 Then:
 \begin{enumerate}
-\item The sequence $(U_k)_{k=0}^n$ is uniquely determined by the recursion (no ambiguity of parenthesization since $\oplus$ is associative).
+\item
+(\emph{Causal uniqueness})  
+Let the index $k$ correspond to the ordinal rank of each event
+(Definition~\ref{def:rank-time}), whose existence is guaranteed by ZFC + Axiom of Order (Axiom~\ref{ax:order}).
+Then the recursion
+\begin{equation}
+U_{k+1}=U_k\oplus E_{k+1}
+\end{equation}
+is unique because this ordinal order $\preceq$ is fixed by the causal structure and cannot be permuted outside entanglement-equivalence classes (Definition~\ref{def:entanglement}).
+Associativity of $\oplus$ ensures mechanical well-definedness once that order is fixed.
 \item If a subset $S\subset\{1,\dots,n\}$ is entangled in the sense of Definition~\ref{def:entanglement}, then reordering $\{E_i\}_{i\in S}$ leaves all cyclic scalar invariants of $U_n$ unchanged; i.e.\ $U_n \equiv U_n'$ for any such reordering.
 \item In the fully commutative case, $U_n=\sum_{k=1}^n E_k$ as a componentwise sum in $T(V)$.
 \end{enumerate}
@@ -536,6 +545,12 @@ Then:
 \begin{proof}
 (1) Associativity gives well-definedness of the left fold. (2) By construction, permutations inside entangled subsets preserve $\oplus$ and cyclic scalar functionals (e.g.\ traces of contractions), hence invariants coincide. (3) If $\oplus$ is commutative, the fold equals the ordinary finite sum.
 \end{proof}
+
+\begin{remark}[Ordinal determinacy]
+The sequence $(\U_k)$ is not merely algebraically well-defined but \emph{physically ordered}:  
+$k$ indexes ordinal rank, not arbitrary enumeration.  
+Hence any reordering outside entanglement classes violates Axiom~\ref{ax:order}.
+\end{remark}
 
 
 
