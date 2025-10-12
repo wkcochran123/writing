@@ -342,16 +342,16 @@ Chapter 1.
 Chapter 2.
 [3
 
-] [4] [5] [6{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-sup
-er-ts1.enc}]
+] [4] [5]
+
+LaTeX Warning: Citation `halmos1974' on page 6 undefined on input line 327.
+
+[6{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
+}]
 
 LaTeX Warning: Citation `fenynman1965' on page 7 undefined on input line 378.
 
-[7]
-
-LaTeX Warning: Citation `sorkin2005' on page 8 undefined on input line 427.
-
-[8] [9] [10]
+[7] [8] [9] [10]
 Overfull \hbox (18.24774pt too wide) in paragraph at lines 521--522
 \OT1/cmr/m/it/12 take event ten-sors as $\OT1/cmr/m/n/12 2 \OMS/cmsy/m/n/12 ^^B
  \OT1/cmr/m/n/12 2$ \OT1/cmr/m/it/12 ma-tri-ces act-ing on $\OML/cmm/m/it/12 V$
@@ -366,7 +366,7 @@ Overfull \hbox (2.12944pt too wide) in paragraph at lines 828--832
 
 [18]
 
-LaTeX Warning: Citation `jech2002' on page 19 undefined on input line 863.
+LaTeX Warning: Citation `martin1970' on page 19 undefined on input line 863.
 
 [19]
 LaTeX Font Info:    Trying to load font information for U+euf on input line 897
@@ -405,9 +405,6 @@ M;  \OT1/cmr/m/n/12 ^^H(\OML/cmm/m/it/12 ^^NU\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12
  []
 
 [30] [31] [32]
-
-LaTeX Warning: Citation `wolfram2002' on page 33 undefined on input line 1325.
-
 
 LaTeX Warning: Reference `sec:closure' on page 33 undefined on input line 1345.
 
@@ -588,10 +585,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4409 strings out of 476025
- 75313 string characters out of 5790017
+ 4407 strings out of 476025
+ 75289 string characters out of 5790017
  1860388 words of memory out of 5000000
- 24779 multiletter control sequences out of 15000+600000
+ 24777 multiletter control sequences out of 15000+600000
  531647 words of font info for 104 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  65i,13n,71p,828b,287s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -624,7 +621,7 @@ ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023
 /texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2023/t
 exmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on hilbert.pdf (142 pages, 629754 bytes).
+Output written on hilbert.pdf (142 pages, 629989 bytes).
 PDF statistics:
  609 PDF objects out of 1000 (max. 8388607)
  402 compressed objects within 5 object streams
