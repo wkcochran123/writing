@@ -3,79 +3,11 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: hilbert.aux
 The style file: plain.bst
 Database file #1: hilbert.bib
-Repeated entry---line 416 of file hilbert.bib
- : @book{boltzmann1872
- :                    ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 425 of file hilbert.bib
- : @book{boltzmann1896
- :                    ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 433 of file hilbert.bib
- : @book{cantor1895
- :                 ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 451 of file hilbert.bib
+Repeated entry---line 676 of file hilbert.bib
  : @book{hilbert1902
  :                  ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 476 of file hilbert.bib
- : @book{newton1687
- :                 ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 484 of file hilbert.bib
- : @article{lorentz1904
- :                     ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 493 of file hilbert.bib
- : @article{einstein1905
- :                      ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 502 of file hilbert.bib
- : @article{planck1901
- :                    ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 616 of file hilbert.bib
- : @article{feynman1948
- :                     ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 722 of file hilbert.bib
- : @book{boltzmann1872
- :                    ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 731 of file hilbert.bib
- : @book{boltzmann1896
- :                    ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 739 of file hilbert.bib
- : @book{cantor1895
- :                 ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 757 of file hilbert.bib
- : @book{hilbert1902
- :                  ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 782 of file hilbert.bib
- : @book{newton1687
- :                 ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 790 of file hilbert.bib
- : @article{lorentz1904
- :                     ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 799 of file hilbert.bib
- : @article{einstein1905
- :                      ,
 I'm skipping whatever remains of this entry
 Repeated entry---line 808 of file hilbert.bib
- : @article{planck1901
- :                    ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 922 of file hilbert.bib
- : @article{feynman1948
- :                     ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 931 of file hilbert.bib
  : @book{feynman1965
  :                  ,
 I'm skipping whatever remains of this entry
@@ -83,45 +15,46 @@ Warning--I didn't find a database entry for "halmos1974"
 Warning--I didn't find a database entry for "fenynman1965"
 Warning--I didn't find a database entry for "martin1970"
 Warning--empty publisher in boltzmann1872
+Warning--empty publisher in cantor1895
 You've used 36 entries,
             2118 wiz_defined-function locations,
-            716 strings with 8594 characters,
-and the built_in function-call counts, 9800 in all, are:
-= -- 970
+            715 strings with 8574 characters,
+and the built_in function-call counts, 9711 in all, are:
+= -- 955
 > -- 313
-< -- 6
+< -- 7
 + -- 136
 - -- 92
-* -- 545
-:= -- 1659
-add.period$ -- 120
+* -- 530
+:= -- 1646
+add.period$ -- 119
 call.type$ -- 36
-change.case$ -- 134
+change.case$ -- 133
 chr.to.int$ -- 0
-cite$ -- 37
-duplicate$ -- 456
-empty$ -- 898
+cite$ -- 38
+duplicate$ -- 457
+empty$ -- 891
 format.name$ -- 92
-if$ -- 2086
+if$ -- 2068
 int.to.chr$ -- 0
 int.to.str$ -- 36
-missing$ -- 58
-newline$ -- 192
+missing$ -- 59
+newline$ -- 191
 num.names$ -- 76
-pop$ -- 199
+pop$ -- 206
 preamble$ -- 1
 purify$ -- 116
 quote$ -- 0
 skip$ -- 271
 stack$ -- 0
-substring$ -- 540
-swap$ -- 68
-text.length$ -- 6
+substring$ -- 515
+swap$ -- 69
+text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 100
-warning$ -- 1
-while$ -- 103
+type$ -- 98
+warning$ -- 2
+while$ -- 101
 width$ -- 38
-write$ -- 415
-(There were 19 error messages)
+write$ -- 412
+(There were 2 error messages)

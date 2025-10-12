@@ -10,15 +10,14 @@ George Berkeley.
 
 \bibitem{boltzmann1872}
 Ludwig Boltzmann.
-\newblock {\em Weitere Studien über das Wärmegleichgewicht unter
-  Gasmolekülen}, volume~66.
+\newblock {\em Weitere Studien {\"u}ber das Wärmegleichgewicht unter
+  Gasmolek{\"u}len}, volume~66.
 \newblock 1872.
 
 \bibitem{boltzmann1896}
 Ludwig Boltzmann.
-\newblock {\em Lectures on Gas Theory}.
-\newblock Dover Publications, New York, 1964.
-\newblock English translation of the 1896 original.
+\newblock {\em Vorlesungen {\"u}ber Gastheorie}.
+\newblock Johann Ambrosius Barth, Leipzig, 1896.
 
 \bibitem{bombelli1987}
 Luca Bombelli, Joohan Lee, David Meyer, and Rafael~D. Sorkin.
@@ -27,8 +26,9 @@ Luca Bombelli, Joohan Lee, David Meyer, and Rafael~D. Sorkin.
 
 \bibitem{cantor1895}
 Georg Cantor.
-\newblock Beiträge zur begründung der transfiniten mengenlehre.
-\newblock {\em Mathematische Annalen}, 46(4):481--512, 1895.
+\newblock {\em Beiträge zur Begründung der transfiniten Mengenlehre},
+  volume~46.
+\newblock 1895.
 
 \bibitem{earman1974}
 John Earman.
@@ -43,8 +43,8 @@ Albert Einstein.
 
 \bibitem{feynman1948}
 Richard~P. Feynman.
-\newblock Space-time approach to non-relativistic quantum mechanics.
-\newblock {\em Reviews of Modern Physics}, 20(2):367--387, 1948.
+\newblock Space–time approach to non-relativistic quantum mechanics.
+\newblock {\em Reviews of Modern Physics}, 20:367--387, 1948.
 
 \bibitem{feynman1965}
 Richard~P. Feynman, Robert~B. Leighton, and Matthew Sands.
@@ -112,9 +112,9 @@ Kenneth Kunen.
 \newblock North-Holland, Amsterdam, 1980.
 
 \bibitem{lorentz1904}
-Hendrik~A Lorentz.
-\newblock Electromagnetic phenomena in a system moving with any velocity
-  smaller than that of light.
+Hendrik~A. Lorentz.
+\newblock Electromagnetic phenomena in a system moving with any velocity less
+  than that of light.
 \newblock {\em Proceedings of the Royal Netherlands Academy of Arts and
   Sciences}, 6:809--831, 1904.
 
@@ -145,8 +145,8 @@ Roger Penrose.
 
 \bibitem{planck1901}
 Max Planck.
-\newblock On the law of distribution of energy in the normal spectrum.
-\newblock {\em Annalen der Physik}, 309(3):553--563, 1901.
+\newblock Über das gesetz der energieverteilung im normalspektrum.
+\newblock {\em Annalen der Physik}, 4:553--563, 1901.
 
 \bibitem{planck1914}
 Max Planck.
