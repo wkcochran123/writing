@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{bell1964}
+John~S. Bell.
+\newblock On the einstein podolsky rosen paradox.
+\newblock {\em Physics Physique Физика}, 1(3):195--200, 1964.
+
 \bibitem{berkeley1734}
 George Berkeley.
 \newblock {\em The Analyst: or, A Discourse Addressed to an Infidel
@@ -24,6 +29,13 @@ Luca Bombelli, Joohan Lee, David Meyer, and Rafael~D. Sorkin.
 \newblock Space-time as a causal set.
 \newblock {\em Physical Review Letters}, 59(5):521--524, 1987.
 
+\bibitem{boyd2004}
+Stephen Boyd and Lieven Vandenberghe.
+\newblock {\em Convex Optimization}.
+\newblock Cambridge University Press, Cambridge, UK, 2004.
+\newblock See Section~11.4 for the geometric interpretation of the simplex
+  method as a path on the vertex adjacency graph.
+
 \bibitem{cantor1895}
 Georg Cantor.
 \newblock {\em Beiträge zur Begründung der transfiniten Mengenlehre},
@@ -40,6 +52,12 @@ Albert Einstein.
 \newblock Zur elektrodynamik bewegter k{\"o}rper.
 \newblock {\em Annalen der Physik}, 17:891--921, 1905.
 \newblock English translation: "On the Electrodynamics of Moving Bodies".
+
+\bibitem{einstein1935}
+Albert Einstein, Boris Podolsky, and Nathan Rosen.
+\newblock Can quantum-mechanical description of physical reality be considered
+  complete?
+\newblock {\em Physical Review}, 47(10):777--780, 1935.
 
 \bibitem{feynman1948}
 Richard~P. Feynman.
@@ -82,11 +100,6 @@ Paul~R. Halmos.
 S.~W. Hawking and G.~F.~R. Ellis.
 \newblock {\em The Large Scale Structure of Space-Time}.
 \newblock Cambridge University Press, Cambridge, 1973.
-
-\bibitem{hilbert1902}
-David Hilbert.
-\newblock {\em The Foundations of Geometry}.
-\newblock Open Court Publishing Company, 1902.
 
 \bibitem{hossenfelder2018}
 Sabine Hossenfelder.
@@ -172,10 +185,9 @@ Rafael~D. Sorkin.
 
 \bibitem{sorkin2005}
 Rafael~D. Sorkin.
-\newblock Causal sets: Discrete gravity.
-\newblock In Andres Gomberoff and Donald Marolf, editors, {\em Lectures on
-  Quantum Gravity}, pages 305--327. Springer, Boston, MA, 2005.
-\newblock Foundational overview of the causal set approach to quantum gravity.
+\newblock Causal sets: Discrete gravity (notes for the valdivia summer school).
+\newblock arXiv:gr-qc/0309009, 2005.
+\newblock See Sections~3--4 on causal order and nonlocal correlation.
 
 \bibitem{taylor1992}
 Edwin~F. Taylor and John~Archibald Wheeler.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.16)  12 OCT 2025 12:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.16)  12 OCT 2025 12:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -210,9 +210,6 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 
 LaTeX Warning: Label `prop:universe_tensor' multiply defined.
 
-
-LaTeX Warning: Label `chap:quantum-fields' multiply defined.
-
 )
 \openout1 = `hilbert.aux'.
 
@@ -297,19 +294,13 @@ s the fourth{order
 
 
 
-] [2] (./hilbert.toc [3
-
-]
-Overfull \hbox (1.00156pt too wide) in paragraph at lines 42--42
- [][] []\OT1/cmr/m/n/12 Introduction: Mar-tin's Con-di-tion and the Con-ti-nu-i
-ty of Causal 
- []
-
-[4] [5])
+] [2] (./hilbert.toc)
 \tf@toc=\write3
 \openout3 = `hilbert.toc'.
 
- [6]
+ [3
+
+]
 showing example
 (./hilbert.loe
 Overfull \hbox (0.5099pt too wide) in paragraph at lines 47--47
@@ -317,9 +308,9 @@ Overfull \hbox (0.5099pt too wide) in paragraph at lines 47--47
 r as Causal 
  []
 
-[7
+[4
 
-]) [8]
+]) [5]
 Overfull \hbox (21.78833pt too wide) in paragraph at lines 83--87
  \OT1/cmr/bx/n/12 Part I | The Cal-cu-lus of Mea-sure-ment.[] \OT1/cmr/m/n/12 B
 e-gin-ning with Zer-melo{Fraenkel
@@ -331,31 +322,186 @@ Overfull \hbox (11.96225pt too wide) in paragraph at lines 89--91
 e-la-tion is translation-invariant,
  []
 
-[9
+[6
 
-] [10] [11] [12]
+] [7] [8] [9]
 Chapter 1.
 [1
 
 
 ] [2]
 Chapter 2.
+
+LaTeX Warning: Citation `boltzmann1872' on page 3 undefined on input line 223.
+
+
+LaTeX Warning: Citation `planck1914' on page 3 undefined on input line 223.
+
+
+LaTeX Warning: Citation `einstein1905' on page 3 undefined on input line 225.
+
+
+LaTeX Warning: Citation `minkowski1908' on page 3 undefined on input line 225.
+
+
+LaTeX Warning: Citation `hawking1973' on page 3 undefined on input line 227.
+
+
+LaTeX Warning: Citation `penrose1972' on page 3 undefined on input line 227.
+
+
+LaTeX Warning: Citation `hawking1973' on page 3 undefined on input line 231.
+
+
+LaTeX Warning: Citation `malament1977' on page 3 undefined on input line 231.
+
+
+LaTeX Warning: Citation `hawking1973' on page 3 undefined on input line 233.
+
+
+LaTeX Warning: Citation `malament1977' on page 3 undefined on input line 233.
+
+
+LaTeX Warning: Citation `bombelli1987' on page 3 undefined on input line 235.
+
+
+LaTeX Warning: Citation `sorkin1991' on page 3 undefined on input line 235.
+
+
+LaTeX Warning: Citation `bombelli1987' on page 3 undefined on input line 237.
+
+
+LaTeX Warning: Citation `sorkin2003' on page 3 undefined on input line 237.
+
+
+LaTeX Warning: Citation `einstein1905' on page 3 undefined on input line 239.
+
+
+LaTeX Warning: Citation `einstein1905' on page 3 undefined on input line 240.
+
+
+LaTeX Warning: Citation `rindler2006' on page 3 undefined on input line 240.
+
+
+LaTeX Warning: Citation `taylor1992' on page 3 undefined on input line 240.
+
 [3
 
-] [4] [5]
+]
+
+LaTeX Warning: Citation `minkowski1908' on page 4 undefined on input line 263.
+
+
+LaTeX Warning: Citation `malament1977' on page 4 undefined on input line 265.
+
+[4]
+
+LaTeX Warning: Citation `kunen1980' on page 5 undefined on input line 309.
+
+[5]
+
+LaTeX Warning: Citation `kunen1980' on page 6 undefined on input line 326.
+
+
+LaTeX Warning: Citation `jech2003' on page 6 undefined on input line 326.
+
+
+LaTeX Warning: Citation `halmos1958' on page 6 undefined on input line 327.
+
 
 LaTeX Warning: Citation `halmos1974' on page 6 undefined on input line 327.
+
+
+LaTeX Warning: Citation `fraenkel1922' on page 6 undefined on input line 331.
+
+
+LaTeX Warning: Citation `kunen1980' on page 6 undefined on input line 331.
+
+
+LaTeX Warning: Citation `zermelo1908' on page 6 undefined on input line 331.
+
+
+LaTeX Warning: Citation `finkelstein1988causal' on page 6 undefined on input li
+ne 361.
 
 [6{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }]
 
+LaTeX Warning: Citation `bombelli1987' on page 7 undefined on input line 364.
+
+
+LaTeX Warning: Citation `sorkin1991' on page 7 undefined on input line 364.
+
+
+LaTeX Warning: Citation `feynman1948' on page 7 undefined on input line 372.
+
+
+LaTeX Warning: Citation `feynman1965' on page 7 undefined on input line 372.
+
+
 LaTeX Warning: Citation `fenynman1965' on page 7 undefined on input line 378.
 
-[7] [8] [9] [10]
+[7]
+
+LaTeX Warning: Citation `bombelli1987' on page 8 undefined on input line 422.
+
+
+LaTeX Warning: Citation `sorkin2005' on page 8 undefined on input line 427.
+
+[8]
+
+LaTeX Warning: Citation `boltzmann1896' on page 9 undefined on input line 436.
+
+
+LaTeX Warning: Citation `planck1914' on page 9 undefined on input line 436.
+
+
+LaTeX Warning: Citation `berkeley1734' on page 9 undefined on input line 436.
+
+
+LaTeX Warning: Citation `hossenfelder2018' on page 9 undefined on input line 43
+6.
+
+
+LaTeX Warning: Citation `hilbert1902' on page 9 undefined on input line 439.
+
+
+LaTeX Warning: Citation `weyl1949' on page 9 undefined on input line 439.
+
+
+LaTeX Warning: Citation `newton1687' on page 9 undefined on input line 448.
+
+[9]
+
+LaTeX Warning: Citation `einstein1905' on page 10 undefined on input line 464.
+
+
+LaTeX Warning: Citation `lorentz1904' on page 10 undefined on input line 464.
+
+
+LaTeX Warning: Citation `cantor1895' on page 10 undefined on input line 469.
+
+
+LaTeX Warning: Citation `earman1974' on page 10 undefined on input line 469.
+
+
+LaTeX Warning: Citation `golub2013' on page 10 undefined on input line 489.
+
+[10]
+
+LaTeX Warning: Citation `halmos1958' on page 11 undefined on input line 530.
+
 
 LaTeX Warning: Citation `lang2002' on page 11 undefined on input line 530.
 
-[11] [12]
+[11]
+
+LaTeX Warning: Citation `bombelli1987' on page 12 undefined on input line 545.
+
+
+LaTeX Warning: Citation `halmos1958' on page 12 undefined on input line 545.
+
+[12]
 Overfull \hbox (18.24774pt too wide) in paragraph at lines 608--609
 \OT1/cmr/m/it/12 take event ten-sors as $\OT1/cmr/m/n/12 2 \OMS/cmsy/m/n/12 ^^B
  \OT1/cmr/m/n/12 2$ \OT1/cmr/m/it/12 ma-tri-ces act-ing on $\OML/cmm/m/it/12 V$
@@ -364,31 +510,322 @@ Overfull \hbox (18.24774pt too wide) in paragraph at lines 608--609
 
 [13]
 
-! LaTeX Error: \begin{document} ended by \end{example}.
+LaTeX Warning: Citation `bell1964' on page 14 undefined on input line 677.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.674 \end{example}
-                   
-? 
-! Emergency stop.
- ...                                              
-                                                  
-l.674 \end{example}
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
 
- 
+LaTeX Warning: Citation `einstein1935' on page 14 undefined on input line 677.
+
+
+LaTeX Warning: Citation `sorkin2005' on page 14 undefined on input line 677.
+
+[14] [15] [16]
+
+LaTeX Warning: Citation `planck1901' on page 17 undefined on input line 783.
+
+[17] [18]
+Overfull \hbox (0.32942pt too wide) in paragraph at lines 840--844
+[]\OT1/cmr/m/it/12 Operationally, this is a Banach--Tarski-like over-count-ing:
+ the causal struc-
+ []
+
+
+LaTeX Warning: Citation `martin1970' on page 19 undefined on input line 875.
+
+
+LaTeX Warning: Citation `kunen1980' on page 19 undefined on input line 875.
+
+
+LaTeX Warning: Citation `jech2002' on page 19 undefined on input line 875.
+
+
+LaTeX Warning: Citation `todorcevic2010' on page 19 undefined on input line 875
+.
+
+
+LaTeX Warning: Citation `boltzmann1896' on page 19 undefined on input line 875.
+
+
+
+LaTeX Warning: Citation `hilbert1902' on page 19 undefined on input line 875.
+
+
+LaTeX Warning: Citation `bombelli1987' on page 19 undefined on input line 875.
+
+
+LaTeX Warning: Citation `finkelstein1996' on page 19 undefined on input line 87
+5.
+
+[19]
+
+LaTeX Warning: Citation `boyd2004' on page 20 undefined on input line 884.
+
+
+LaTeX Warning: Citation `dantzig1963' on page 20 undefined on input line 884.
+
+[20]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 909
+.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)
+Overfull \hbox (1.24495pt too wide) in paragraph at lines 914--916
+\OT1/cmr/m/n/12 Physically, each dense set $\OML/cmm/m/it/12 D[]$ \OT1/cmr/m/n/
+12 rep-re-sents a lo-cal causal con-straint|\something
+ []
+
+[21]
+Overfull \hbox (16.93542pt too wide) detected at line 929
+\OT1/cmr/bx/n/12 U[] \OT1/cmr/m/n/12 = \OT1/cmr/bx/n/12 U[] \OT1/cmr/m/n/12 + \
+OT1/cmr/bx/n/12 E[]\OML/cmm/m/it/12 ;  []\OT1/cmr/bx/n/12 E[][]
+ []
+
+[22] [23] [24] [25] [26] [27]
+Overfull \hbox (58.98656pt too wide) detected at line 1120
+[]\OML/cmm/m/it/12 U \OMS/cmsy/m/n/12 ^^X \OML/cmm/m/it/12 V  \OMS/cmsy/m/n/12 
+([])  []
+ []
+
+[28]
+Overfull \hbox (1.01028pt too wide) in paragraph at lines 1165--1171
+\OT1/cmr/bx/n/12 Interpretation. \OT1/cmr/m/n/12 Within the space of mea-sur-ab
+le con-fig-u-ra-tions, ev-ery causal
+ []
+
+[29] [30]
+Overfull \hbox (9.06451pt too wide) detected at line 1246
+[]\OT1/cmr/m/n/12 ^^H : \OML/cmm/m/it/12 V \OMS/cmsy/m/n/12 ! \OML/cmm/m/it/12 
+M;  \OT1/cmr/m/n/12 ^^H(\OML/cmm/m/it/12 ^^NU\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12
+ e\OT1/cmr/m/n/12 ) = []
+ []
+
+[31] [32]
+
+LaTeX Warning: Reference `ex:spooky' on page 33 undefined on input line 1345.
+
+[33]
+
+LaTeX Warning: Citation `wolfram2002' on page 34 undefined on input line 1357.
+
+
+LaTeX Warning: Reference `sec:closure' on page 34 undefined on input line 1377.
+
+
+
+Overfull \hbox (15.90384pt too wide) in paragraph at lines 1375--1384
+\OT1/cmr/m/it/12 this dis-crete rewrit-ing rule is an ex-plicit re-al-iza-tion 
+of the reciprocal-measurement
+ []
+
+[34] [35] [36]
+Overfull \hbox (60.7907pt too wide) in paragraph at lines 1485--1487
+\OT1/cmr/m/n/12 ja-cent in-ter-vals match in value, slope, and cur-va-ture. :co
+n-tentRe-f-er-ence[oaicite:0]index=0
+ []
+
+[37]
+Overfull \hbox (27.21712pt too wide) in paragraph at lines 1493--1494
+\OT1/cmr/m/n/12 ing (con-ti-nu-ity of $\OML/cmm/m/it/12 U; U[]; U[]$\OT1/cmr/m/
+n/12 ) at in-te-rior knots.[] :con-tentRe-f-er-ence[oaicite:2]index=2
+ []
+
+[38]
+Overfull \hbox (3.78627pt too wide) in paragraph at lines 1511--1511
+[]\OT1/cmr/bx/n/14.4 Principle of Least Ac-tion as Dual to Cu-bic Splines 
+ []
+
+
+Overfull \hbox (11.79193pt too wide) detected at line 1526
+[]\OT1/cmr/bx/n/12 U\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x \OT1/cmr/m/n/12 + ^^A\O
+ML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = \OT1/cmr/bx/n/12 U\OT1/cmr/m/n/12 (\OML/cmm
+/m/it/12 x\OT1/cmr/m/n/12 ) + \OT1/cmr/bx/n/12 U[]\OT1/cmr/m/n/12 (\OML/cmm/m/i
+t/12 x\OT1/cmr/m/n/12 ) ^^A\OML/cmm/m/it/12 x \OT1/cmr/m/n/12 + []\OT1/cmr/bx/n
+/12 U[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )(^^A\OML/cmm/m/it/12
+ x\OT1/cmr/m/n/12 )[] + []\OT1/cmr/bx/n/12 U[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12
+ x\OT1/cmr/m/n/12 )(^^A\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )[] + []\OT1/cmr/bx/n/
+12 U[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^X\OT1/cmr/m/n/12 )(^^A\OML/cmm/m/it/1
+2 x\OT1/cmr/m/n/12 )[]\OML/cmm/m/it/12 ;
+ []
+
+[39] [40] [41] [42] [43] [44] [45]
+Chapter 3.
+
+Overfull \hbox (2.35774pt too wide) in paragraph at lines 1728--1728
+[]\OT1/cmr/bx/n/17.28 Introduction: Mar-tin's Con-di-tion and the
+ []
+
+[46
+
+]
+Overfull \hbox (5.12773pt too wide) in paragraph at lines 1782--1782
+[]\OT1/cmr/bx/n/17.28 Interaction: The Union of Or-dered Events 
+ []
+
+[47]
+Overfull \hbox (16.08832pt too wide) in paragraph at lines 1809--1825
+\OT1/cmr/m/it/12 sure $\OML/cmm/m/it/12 x$ \OT1/cmr/m/it/12 then $\OML/cmm/m/it
+/12 z$\OT1/cmr/m/it/12 '' cor-re-sponds to the or-dered up-date $\OML/cmm/m/it/
+12 U[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^Z\OT1/cmr/m/n/12 ) = [][] \OML/cmm/m/
+it/12 P[]P[] ^^Z P[]P[];$
+ []
+
+[48]
+Overfull \hbox (2.05426pt too wide) in paragraph at lines 1868--1881
+\OT1/cmr/m/n/12 mu-tual ad-just-ment prop-a-gates along both chains, en-forc-in
+g con-sis-tency across
+ []
+
+[49] [50] [51]
+Overfull \hbox (1.2927pt too wide) in paragraph at lines 1952--1960
+\OT1/cmr/m/n/12 main. To a lo-cal ob-server, this ap-pears as in-stan-ta-neous 
+cor-re-la-tion|``spooky
+ []
+
+[52] [53] [54] [55]
+Overfull \hbox (3.78203pt too wide) in paragraph at lines 2099--2103
+[]\OT1/cmr/m/n/12 Each sur-ro-gate event rep-re-sents the rec-on-cil-i-a-tion o
+f an un-re-solv-able causal
+ []
+
+
+Overfull \hbox (1.31776pt too wide) in paragraph at lines 2131--2131
+[]\OT1/cmr/bx/n/17.28 Wave Am-pli-tude from In-ter-ac-tion Counts 
+ []
+
+[56] [57]
+Overfull \hbox (1.54176pt too wide) in paragraph at lines 2198--2199
+\OT1/cmr/bx/n/12 Proposition 10 \OT1/cmr/m/n/12 (Tri-an-gle--Type In-equal-ity)
+\OT1/cmr/bx/n/12 . \OT1/cmr/m/it/12 For any lo-cally fi-nite $\OML/cmm/m/it/12 
+E[]; E[]; E[]$\OT1/cmr/m/it/12 , 
+ []
+
+[58] [59] [60] [61]
+Overfull \hbox (119.81583pt too wide) detected at line 2385
+\OML/cmm/m/it/12 ^^N[]\OMS/cmsy/m/n/12 A\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E[]; 
+E[]\OT1/cmr/m/n/12 ) := \OML/cmm/m/it/12 ^^N[][]^^N[]\OMS/cmsy/m/n/12 A\OT1/cmr
+/m/n/12 (\OML/cmm/m/it/12 E[]; E[]\OT1/cmr/m/n/12 )[] = \OMS/cmsy/m/n/12 A\OT1/
+cmr/m/n/12 (\OML/cmm/m/it/12 E[] \OMS/cmsy/m/n/12 [ f\OML/cmm/m/it/12 e; f\OMS/
+cmsy/m/n/12 g\OML/cmm/m/it/12 ; E[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ A\OT1
+/cmr/m/n/12 (\OML/cmm/m/it/12 E[] \OMS/cmsy/m/n/12 [ f\OML/cmm/m/it/12 e\OMS/cm
+sy/m/n/12 g\OML/cmm/m/it/12 ; E[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ A\OT1/c
+mr/m/n/12 (\OML/cmm/m/it/12 E[] \OMS/cmsy/m/n/12 [ f\OML/cmm/m/it/12 f\OMS/cmsy
+/m/n/12 g\OML/cmm/m/it/12 ; E[]\OT1/cmr/m/n/12 ) + \OMS/cmsy/m/n/12 A\OT1/cmr/m
+/n/12 (\OML/cmm/m/it/12 E[]; E[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 :
+ []
+
+[62] [63]
+Overfull \hbox (2.2438pt too wide) in paragraph at lines 2472--2472
+[]\OT1/cmr/bx/n/17.28 Advection as Order-Preserving Trans-port 
+ []
+
+[64] [65] [66]
+Overfull \hbox (15.92354pt too wide) in paragraph at lines 2609--2613
+\OT1/cmr/m/n/12 The ``speed'' $\OML/cmm/m/it/12 c$ \OT1/cmr/m/n/12 is the rate 
+at which or-der con-straints tra-verse the poset|not
+ []
+
+[67] [68] [69] [70] [71]
+Chapter 4.
+[72
+
+] [73] [74] [75] [76] [77] [78] [79] [80] [81] [82]
+Overfull \hbox (6.40233pt too wide) in paragraph at lines 3145--3146
+\OT1/cmr/bx/n/12 Thought Ex-per-i-ment 16 \OT1/cmr/m/n/12 (Non-A-belian trans-p
+ort and cur-va-ture)\OT1/cmr/bx/n/12 . \OT1/cmr/m/it/12 Let $\OML/cmm/m/it/12 A
+[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )$
+ []
+
+[83]
+Overfull \hbox (23.25404pt too wide) in paragraph at lines 3191--3195
+\OT1/cmr/m/it/12 represents the in-finites-i-mal mea-sure of dis-tin-guisha-bil
+-ity be-tween these events|the
+ []
+
+[84] [85] [86]
+Chapter 5.
+[87
+
+] [88] [89] [90] [91] [92] [93]
+Chapter 6.
+[94
+
+] [95] [96] [97] [98] [99] [100] [101] [102] [103] [104] [105] [106]
+[107] [108] [109] [110] [111] [112]
+Overfull \hbox (2.30241pt too wide) in paragraph at lines 4219--4223
+\OT1/cmr/m/n/12 ledger. Lo-cal in-vari-ance means that the ex-change rates be-t
+ween these columns
+ []
+
+[113]
+Overfull \hbox (0.51817pt too wide) in paragraph at lines 4243--4250
+\OT1/cmr/m/n/12 Perfect causal sym-me-try im-plies mo-tion at the limit of dis-
+tin-guisha-bil-ity|the
+ []
+
+[114] [115] [116] [117] [118] [119]
+Chapter 7.
+[120
+
+] [121] [122] [123] [124] [125] (./hilbert.bbl
+Underfull \hbox (badness 1389) in paragraph at lines 50--53
+[]\OT1/cmr/m/n/12 Richard P. Feyn-man, Robert B. Leighton, and Matthew Sands.
+ []
+
+[126
+
+
+] [127] [128])
+\tf@loe=\write4
+\openout4 = `hilbert.loe'.
+
+ [129] (./hilbert.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 4278 strings out of 476025
- 71069 string characters out of 5790017
+ 4404 strings out of 476025
+ 75252 string characters out of 5790017
  1860388 words of memory out of 5000000
- 24666 multiletter control sequences out of 15000+600000
- 526611 words of font info for 85 fonts, out of 8000000 for 9000
+ 24774 multiletter control sequences out of 15000+600000
+ 531647 words of font info for 104 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 65i,8n,71p,608b,261s stack positions out of 10000i,1000n,20000p,200000b,200000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 65i,13n,71p,771b,323s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></
+usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><
+/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></
+usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></
+usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
+sr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></us
+r/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/
+local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/lo
+cal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
+l/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/
+texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/te
+xlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texli
+ve/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/
+2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/202
+3/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/local/texlive/2023
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2023/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2023/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2023/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2023/texmf-dis
+t/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2023/texmf-d
+ist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/tex
+mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023
+/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2023/t
+exmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
+Output written on hilbert.pdf (140 pages, 628109 bytes).
+PDF statistics:
+ 602 PDF objects out of 1000 (max. 8388607)
+ 398 compressed objects within 4 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
