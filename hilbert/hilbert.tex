@@ -517,23 +517,6 @@ Since $\U_1 = \E_1$, induction yields
 $\U_n = \sum_{k=1}^n \E_k$.
 \end{proof}
 
-\begin{example}[Non-commutative event pair]
-Let $V=\mathbb{R}^2$ and take event tensors as $2\times2$ matrices acting on $V$ with the usual (non-commutative) product. Define
-\[
-E_A=\begin{pmatrix}1&1\\0&1\end{pmatrix},\qquad
-E_B=\begin{pmatrix}1&0\\1&1\end{pmatrix}.
-\]
-Then
-\[
-E_AE_B=\begin{pmatrix}2&1\\1&1\end{pmatrix}\neq
-\begin{pmatrix}1&1\\1&2\end{pmatrix}=E_BE_A,
-\quad\text{so }[E_A,E_B]\neq 0.
-\]
-Thus, the universe update $U_2=E_AE_B$ differs from $U_2'=E_BE_A$ whenever the event pair is not in an entanglement class that permits permutation.
-However, cyclic scalar invariants agree: $\mathrm{tr}(E_AE_B)=\mathrm{tr}(E_BE_A)=3$, and $\det(E_AE_B)=\det(E_A)\det(E_B)=1$.
-Hence order affects the \emph{operator} state but leaves cyclic scalars (our measurable invariants) unchanged.
-This illustrates how Event Selection can forbid reordering (no entanglement) while Martin-like consistency still preserves global scalar bookkeeping.
-\end{example}
 
 With the ordinal structure of events established, we now formalize how these measurements combine algebraically within a finite vector space.
 
@@ -544,7 +527,7 @@ With the ordinal structure of events established, we now formalize how these mea
 We now specify the algebraic structure of the quantities introduced above.
 Let $\V$ denote a finite--dimensional real vector space representing
 the independent channels of measurable quantities (e.g.\ energy, momentum,
-charge).  Define the tensor algebra
+charge).  Define the tensor algebra~\cite{halmos1958,lang2002}
 \begin{equation}
 \label{eq:tensoralg}
 \Talg = \bigoplus_{r=0}^\infty \V^{\otimes r},
@@ -559,7 +542,7 @@ state.  We write
 \U_n = \sum_{k=1}^{n} \E_k \in \Talg).
 \end{equation}
 Addition is understood componentwise in the direct sum and preserves the
-ordering of indices guaranteed by the Axiom of~Order.  In this setting the
+ordering of indices guaranteed by the Axiom of~Order~\cite{bombelli1987,halmos1958}.  In this setting the
 ``universe tensor'' $\U_n$ is the cumulative history of all event tensors up to
 ordinal~$n$.
 
@@ -586,9 +569,17 @@ contractions, and bilinear forms of~$\V$.  The subsequent analysis
 of variation and measurement therefore proceeds entirely within conventional
 linear--operator theory.
 
-From this definition of the universe tensor, it is easy to define an
-entanglement as a set of events that can be permuted in the list of all events
-without changing any invariant scalars.
+From the definition of the Universe Tensor
+\begin{equation}
+U_n = \sum_{k=1}^{n} E_k,
+\end{equation}
+we may regard an \emph{entanglement} as any subset of events whose local order can be permuted without altering the global scalar invariants of \(U_n\). 
+Formally, a subset \(S \subseteq \{E_1, \ldots, E_n\}\) is entangled if, for every permutation \(\pi\) of \(S\),
+\begin{equation}
+\sum_{E_i \in S} E_i = \sum_{E_i \in S} E_{\pi(i)}.
+\end{equation}
+In this case, all contractions or scalar traces derived from \(U_n\) remain unchanged by reordering the elements of \(S\), even though the operator sequence itself may differ.
+
 
 \begin{definition}[Entanglement]
 \label{def:entangle}
@@ -613,38 +604,63 @@ and therefore no invariant scalar derived from $\U_n$ is changed by
 reordering the events in $S$.
 \end{definition}
 
-\begin{example}[Finite Causal Chain]
-\label{ex:fcc}
-Consider a toy causal network consisting of four ordered events
-$A_1 \prec A_2$ and $B_1 \prec B_2$, with no initial ordering between
-the $A$ and $B$ chains.  Let each event tensor be a $2\times2$ real matrix
-recording a pair of measurable quantities, for instance
+\begin{example}[Non-commutative event pair]
+Let $V=\mathbb{R}^2$ and take event tensors as $2\times2$ matrices acting on $V$ with the usual (non-commutative) product. Define
+\[
+E_A=\begin{pmatrix}1&1\\0&1\end{pmatrix},\qquad
+E_B=\begin{pmatrix}1&0\\1&1\end{pmatrix}.
+\]
+Then
+\[
+E_AE_B=\begin{pmatrix}2&1\\1&1\end{pmatrix}\neq
+\begin{pmatrix}1&1\\1&2\end{pmatrix}=E_BE_A,
+\quad\text{so }[E_A,E_B]\neq 0.
+\]
+Thus, the universe update $U_2=E_AE_B$ differs from $U_2'=E_BE_A$ whenever the event pair is not in an entanglement class that permits permutation.
+However, cyclic scalar invariants agree: $\mathrm{tr}(E_AE_B)=\mathrm{tr}(E_BE_A)=3$, and $\det(E_AE_B)=\det(E_A)\det(E_B)=1$.
+Hence order affects the \emph{operator} state but leaves cyclic scalars (our measurable invariants) unchanged.
+This illustrates how Event Selection can forbid reordering (no entanglement) while Martin-like consistency still preserves global scalar bookkeeping.
+\end{example}
+\begin{example}
+Consider two independent event chains \(A_1 \prec A_2\) and \(B_1 \prec B_2\), represented by \(2\times2\) event tensors
 \begin{equation}
-\label{eq:permex}
-\E_{A_1} =
+E_{A1} =
 \begin{pmatrix}
 1 & 0\\
 0 & 0
 \end{pmatrix},
 \quad
-\E_{A_2} =
+E_{A2} =
 \begin{pmatrix}
 0 & 1\\
 0 & 0
 \end{pmatrix},
 \quad
-\E_{B_1} =
+E_{B1} =
 \begin{pmatrix}
 0 & 0\\
 1 & 0
 \end{pmatrix},
 \quad
-\E_{B_2} =
+E_{B2} =
 \begin{pmatrix}
 0 & 0\\
 0 & 1
 \end{pmatrix}.
 \end{equation}
+The cumulative tensor through all four events is
+\begin{equation}
+U_4 = E_{A1} + E_{A2} + E_{B1} + E_{B2}
+      = 
+      \begin{pmatrix}
+      1 & 1\\
+      1 & 1
+      \end{pmatrix}.
+\end{equation}
+Because \(E_{A2}\) and \(E_{B2}\) commute under addition, the subset
+\(S=\{E_{A2},E_{B2}\}\) is entangled: its permutation leaves all scalar invariants of \(U_4\) unchanged.
+This simple algebraic example demonstrates how entanglement corresponds to commutative structure within a finite causal chain.
+
 The cumulative universe tensor through all four events is then
 \begin{equation}
 \label{eq:permex2}
@@ -658,7 +674,7 @@ otherwise ordered sequence.  This simple construction realizes the algebraic
 content of Proposition~\ref{prop:universe_tensor} in explicit matrix form.
 \end{example}
 
-\begin{example}[Spooky Action at a Distance]
+\begin{example}[Spooky Action at a Distance~\cite{bell1964,einstein1935,sorkin2005}]
 \label{ex:spooky}
 Consider an entanglement $S = \{ \E_i, \E_j \}$ of two
 spatially separated measurement events.  
@@ -774,21 +790,17 @@ observer’s proper time or causal reach.
 \noindent
 This axiom establishes the physical limit of any causal description:
 the sequence of measurable events available to an observer always ends in a
-finite record.  Beyond this frontier---beyond the end of the observer’s time---
-no additional distinctions can be drawn.  The \emph{last event} of an observer
+finite record.  Beyond this frontier---beyond the end of the observer’s time---no
+additional distinctions can be drawn.  The \emph{last event} of an observer
 thus coincides with the top of their causal set: the boundary of all that can be
 measured or known.
-
-The Axiom of Finite Observation has a corollary familiar to every graduate student: 
-the capacity of the universe to surprise is infinite, but the capacity of the hard 
-drive is not.
 
 \subsection{Construction of the Universe Tensor and the Axiom of Event Selection}
 
 The algebraic structure introduced so far defines a finite causal order of distinguishable events, each contributing an elementary tensor $\E_k$ to the cumulative universe tensor
-\[
+\begin{equation}
 \U_n = \sum_{k=1}^n \E_k .
-\]
+\end{equation}
 This sequence describes the universe as a recursively constructed record of distinctions: every new event refines the existing causal order by one measurable increment.  
 Yet the same mathematical machinery that enables such constructions can also generate pathological extensions—formal solutions with no physical meaning.  
 To maintain causal coherence, the theory must therefore include a regularity condition that limits which extensions are admissible.
@@ -797,50 +809,50 @@ To maintain causal coherence, the theory must therefore include a regularity con
 Let $E = \{e_1, e_2, e_3, \dots\}$ be a locally finite causal chain where each
 event $e_i$ has a unique successor $e_{i+1}$.  Define the corresponding universe
 tensor
-\[
-U_n = \sum_{k=1}^{n} E_k.
-\]
+\begin{equation}
+\U_n = \sum_{k=1}^{n} \E_k, \qquad \E_k=\mathbf\Psi_k(e_k).
+\end{equation}
 Now suppose we attempt to ``extend'' this history by splitting a single event
 $e_j$ into uncountably many indistinguishable refinements:
-\[
+\begin{equation}
 e_j \longrightarrow \{e_{j,\alpha}\}_{\alpha \in [0,1]},
-\]
+\end{equation}
 each representing a formally distinct but observationally identical outcome.
 Algebraically, this replacement yields
-\[
-E_j \longrightarrow \int_{0}^{1} E_{j,\alpha}\, d\alpha,
-\]
+\begin{equation}
+\E_j \longrightarrow \int_{0}^{1} \E_{j,\alpha}\, d\alpha,
+\end{equation}
 so that the next update becomes
-\[
-U_{n+1} = U_n + \int_{0}^{1} E_{j,\alpha}\, d\alpha.
-\]
+\begin{equation}
+\U_{n+1} = \U_n + \int_{0}^{1} \E_{j,\alpha}\, d\alpha.
+\end{equation}
 
 This ``extension'' violates the finiteness and distinguishability conditions
 necessary for causal coherence:
 \begin{enumerate}
 \item The set $\{e_{j,\alpha}\}$ is uncountable, destroying local finiteness;
-\item the new events are indistinguishable, so Extensionality no longer
+\item The new events are indistinguishable, so Extensionality no longer
       guarantees unique contributions;
-\item the total tensor amplitude $U_{n+1}$ can diverge or cancel arbitrarily,
+\item The total tensor amplitude $U_{n+1}$ can diverge or cancel arbitrarily,
       depending on how the continuum of duplicates is treated.
 \end{enumerate}
 
-Operationally, this is a Banach--Tarski--like overcounting: the causal structure
+Operationally, this is a Banach--Tarski-like overcounting: the causal structure
 has been ``refined'' in a way that preserves measure only formally while the
 order relation collapses.  The observer would now predict contradictory
 outcomes for the same antecedent state---an \emph{overcomplete history}.
 
 To prevent this, the \emph{Axiom of Event Selection} restricts the permissible
 extension to a countable, consistent refinement:
-\[
+\begin{equation}
 e_j \longrightarrow e_{j,1}, e_{j,2}, \dots, e_{j,k},
-\]
+\end{equation}
 and requires the selection of exactly one representative outcome from each
 locally admissible family.  This keeps $E$ locally finite and maintains a
 single-valued universe tensor,
-\[
-U_{n+1} = U_n + E_{j,k^\ast}.
-\]
+\begin{equation}
+\U_{n+1} = \U_n + \E_{j,k^\ast}.
+\end{equation}
 The axiom thus enforces the same regularity that Martin's Axiom guarantees in
 set theory: every countable family of local choices admits a globally consistent
 selection that preserves the partial order.
@@ -869,7 +881,7 @@ Although Martin's Axiom guarantees the existence of a consistent extension of an
 it does not prescribe a constructive rule for obtaining it.
 The mechanism is therefore non-physical in the same sense that the axiom of choice is:
 it ensures consistency but does not correspond to an observable dynamical process.
-To illustrate this distinction, consider the simplex algorithm of Dantzig.
+To illustrate this distinction, consider the simplex algorithm of Dantzig~\cite{boyd2004,dantzig1963}.
 The procedure deterministically traverses admissible vertices of a convex polytope,
 selecting at each step the locally optimal move under a global constraint.
 Its outcome is guaranteed by the existence of an extremum,
@@ -918,13 +930,6 @@ The result is a universe tensor $\U_n$ that can evolve indefinitely while preser
 Under this rule, the smoothness of physical law is not imposed but emerges as the global continuity of distinguishability itself.
 
 
-\subsubsection{Martin consistency as a corollary of Event Selection}
-\label{subsubsec:martin-from-selection}
-
-We recall the physical premises: (i) \emph{Finite Observation} — each observer’s causal domain is locally finite, and any record is finite; (ii) \emph{Axiom of Event Selection} — from any countable family of admissible events, there exists a consistent extension selecting one outcome from each while preserving distinguishability. % Finite Observation and Axiom 4
-% (Citations to manuscript text)
-\noindent\textit{See Axiom 3 and Axiom 4 in §1.3.3–1.3.4.}
-
 \begin{corollary}[Martin consistency from Event Selection (domain version)]
 Let $\mathbb{P}$ be the poset of all \emph{finite, order-consistent partial histories} in a fixed observer’s causal domain, ordered by extension ($p\le q$ iff $q$ extends $p$ without introducing new distinguishabilities). Then:
 \begin{enumerate}
@@ -934,11 +939,38 @@ Let $\mathbb{P}$ be the poset of all \emph{finite, order-consistent partial hist
 Consequently, every countable system of local causal choices admits a globally consistent extension meeting all local constraints. This is the domain-analogue of Martin’s Axiom for the causal poset.
 \end{corollary}
 
-\begin{proof}[Proof (sketch)]
-\textbf{(ccc).} By Finite Observation, each condition $p\in\mathbb{P}$ carries only finitely many events/relations from a countable label set (per observer). Two incompatible conditions must disagree on at least one finite relation; but there are only countably many such finite patterns, so any antichain injects into a countable set. Hence $\mathbb{P}$ is ccc.
+\begin{corollary}[Martin consistency from Event Selection (domain version)]
+Let $P$ be the poset of all finite, order–consistent partial histories in a fixed observer’s causal domain, ordered by extension ($p \le q$ iff $q$ extends $p$ without introducing new indistinguishabilities). Then:
+\begin{enumerate}
+\item $P$ satisfies the countable chain condition (ccc).
+\item For every \emph{countable} family $\{D_n : n \in \mathbb{N}\}$ of dense subsets of $P$, there exists a filter $G \subseteq P$ such that $G \cap D_n \neq \varnothing$ for all $n$.
+\end{enumerate}
+Consequently, every countable system of local causal choices admits a globally consistent extension meeting all local constraints. In \S2.3.4--\S2.3.5 we interpret this as the finite causal analogue of Martin's property in this domain.
+\end{corollary}
 
-\textbf{(Meeting dense sets).} Each dense set $D_\xi$ expresses a “locally unavoidable” causal requirement (e.g., resolve one member of a countable family at this stage). Enumerate the dense family as $\langle D_\xi:\xi<\kappa\rangle$ and build an increasing chain $p_0\le p_1\le\cdots$ choosing $p_{\alpha+1}\in D_\alpha$ with $p_{\alpha+1}\ge p_\alpha$ (possible because $D_\alpha$ is dense). At limit stages take unions; extension preserves order-consistency by construction. The Axiom of Event Selection supplies the compatible choice at each step (select one outcome from each local family so that distinguishability is preserved), ensuring the chain can always be continued. Let $G=\{q\in\mathbb{P}: \exists \alpha\, (p_\alpha\le q)\}$. Then $G$ is a filter meeting every $D_\xi$.
+\begin{proof}
+\textbf{(1) $P$ is ccc.}
+By construction, each condition $p \in P$ encodes only finitely many events and order-relations drawn from a \emph{countable} label set available to the observer (Axiom of Finite Observation). Two conditions are incompatible iff they disagree on at least one finite relation (e.g.\ they force contradictory orderings on some finite subconfiguration). But there are only countably many distinct finite patterns over a countable alphabet; hence any antichain injects into a countable set of such patterns and must itself be countable. Therefore $P$ has no uncountable antichain, i.e.\ $P$ is ccc.
+
+\smallskip
+\textbf{(2) Existence of a filter meeting a countable dense family.}
+Let $\langle D_n : n \in \mathbb{N} \rangle$ be dense subsets of $P$. We build an increasing sequence $(p_n)_{n \in \mathbb{N}}$ in $P$ by recursion so that $p_{n+1} \in D_n$ for all $n$.
+
+Start with any $p_0 \in P$ (e.g.\ the empty partial history). Given $p_n$, use the density of $D_n$ to choose $p_{n+1} \in D_n$ with $p_{n+1} \le p_n$. (Here $\le$ is the extension order, so $p_{n+1}$ extends $p_n$ and is therefore compatible with all earlier requirements.) This recursion is legitimate by the Axiom of Choice (assumed via ZFC).
+
+Define
+\begin{equation}
+G \;:=\; \{\, q \in P \mid \exists n\;\; p_n \le q \,\}.
+\end{equation}
+Then $G$ is upward closed by definition; and it is directed since $(p_n)$ is an increasing chain: for any $q_1,q_2 \in G$ choose $n_1,n_2$ with $p_{n_i} \le q_i$ and let $m=\max\{n_1,n_2\}$; then $p_m \le q_1,q_2$, so any $q \ge p_m$ lies in $G$ and is a common extension. Thus $G$ is a filter on $P$.
+
+Finally, for each $n$ we have $p_{n+1} \in D_n$ and $p_{n+1} \in G$, so $G \cap D_n \neq \varnothing$. Hence $G$ meets every dense set in the given countable family.
+
+\smallskip
+\textbf{Remark (transfinite families).}
+The above construction yields the classical Rasiowa--Sikorski lemma for countably many dense sets (provable in ZFC). In our setting, the \emph{Axiom of Event Selection} supplies the physical regularity that, together with local finiteness (ccc), supports the same book-keeping recursion along any well-orderable family of dense requirements indexed below $2^{\aleph_0}$, producing an increasing chain $\langle p_\alpha \mid \alpha<\kappa\rangle$ with $p_{\alpha+1} \in D_\alpha$ and the same filter $G=\{q:\exists \alpha\; p_\alpha \le q\}$ meeting all $D_\alpha$. In this sense, Event Selection plays the domain-specific role of an MA-like closure principle for the causal poset considered here.
 \end{proof}
+
 
 \begin{remark}[Scope]
 This is \emph{not} a derivation of set-theoretic Martin’s Axiom inside ZFC. Rather, under the physical axioms of locally finite causality and Event Selection, the induced forcing-like poset of finite partial histories enjoys an MA-like property sufficient for our global-consistency arguments. In §2, this is exactly the “Martin’s Condition” used to guarantee propagation/compatibility across overlaps. 
