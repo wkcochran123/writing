@@ -14,7 +14,7 @@
 \providecommand{\grad}{\nabla}
 \providecommand{\T}{\mathbf{T}}         % Stress tensor 
 \providecommand{\Acal}{\mathcal{A}}     % Informational Curvature Action (from V)
-\providecommand{\Bform}{\mathsf{B}}     % Symmetric Bilinear Form (from V)
+\providecommand{\Bform}{\mathsf{B}}    % Symmetric Bilinear Form (from V)
 \providecommand{\InjectiveMap}{\iota}   % Injective Class Map (from V)
 \providecommand{\OmegaSet}{\Omega}      % Set of equivalence classes
 
@@ -26,7 +26,7 @@
 
 % --- Title: Using the existing document information ---
 \title{\textbf{The Limits of Representation}\\ \large Volume I: The Conditions of $\Delta S \ge 0$} 
-\author{The Constructive Proof (V.tex Compliant)} 
+\author{Bill Cochran (Minimal Contract Compliance)} 
 \date{\today}
 
 \begin{document}
@@ -34,27 +34,31 @@
 \frontmatter
 
 \vnode[id=abs]{\chapter*{Abstract}}
-% Abstract placeholder - Content derived from P.tex abstract summary.
+This work presents a constructive proof that the entropy of any causally consistent universe is non-decreasing, $\Delta S \ge 0$. Measurement itself defines the metric structure of physics: each distinction generates an increment of causal order. Within the axioms of ZFC with Choice, a finite causal order of distinguishable events is defined whose dual operations—measurement and variation—form a bijective pair under the Reciprocity Law of Physics. Requiring global coherence under an axiom of Event Selection enforces the fourth-order cancellation $\mathbf{U}^{(4)} = 0$, which identifies the cubic spline as the minimal analytic closure of the dual system. This closure produces the continuous calculus as the smooth limit of finite causal measurement. The theorem $\Delta S \ge 0$ emerges as the necessary condition that any universe consistent with its own record of distinctions must increase the count of what can be known.
 
-\vnode[id=overview]{\chapter*{Overview: The Six Chapters of Consistency}}
-The constructive proof is divided into six stages, corresponding directly to the hierarchy of necessity in a self-consistent universe.
+\vnode[id=overview]{\chapter*{Overview: The Logical Chain of Consistency}}
+\addcontentsline{toc}{chapter}{Overview: The Logical Chain of Consistency}
+
+The constructive proof proceeds in six stages, mapping axiomatic necessity to physical law.
+
 \begin{enumerate}
-    \item \textbf{The Calculus of Measurement:} Defining the ordered set of events and the physical object $\U$.
-    \item \textbf{The Reciprocity Law:} Establishing the duality between observation and variation.
-    \item \textbf{Smoothness and Kinematic Closure:} Enforcing minimal informational curvature ($\U^{(4)}=0$).
-    \item \textbf{Conservation and Coherence:} Deriving conserved quantities ($\grad_\mu \T^{\mu\nu} = 0$).
-    \item \textbf{The Arrow of Time:} Proving the monotonicity of the set of distinctions ($\Delta S \ge 0$).
-    \item \textbf{The Proof Tensor and the Cosmic Ledger:} Unifying the fixed point structure.
+    \item \textbf{I. Causal Primitives:} Defining the Ordered Set ($\U$).
+    \item \textbf{II. Global Consistency:} The Reciprocity Law (Duality and $\Bform$).
+    \item \textbf{III. Kinematic Closure:} Deriving Minimal Curvature ($\mathbf{U}^{(4)}=0$).
+    \item \textbf{IV. Dynamics:} Noether's Theorem and Conserved Bookkeeping ($\grad_\mu \mathbf{T}^{\mu\nu}=0$).
+    \item \textbf{V. Thermodynamic Closure:} Proving the Arrow of Time ($\Delta S \ge 0$).
+    \item \textbf{VI. The Fixed Point:} Unifying the Ledger.
 \end{enumerate}
 
 \mainmatter
 
 % =================================================================
-% The Six Core Chapters with V-compliant claims
+% The Six Core Chapters with V-compliant claims (Improved Headings)
 % =================================================================
 
-\vnode[id=chap:order]{\chapter{The Calculus of Measurement: Defining Order}}
-\section*{Core Idea: The Universe is a Process of Measurement}
+\vnode[id=chap:order]{\chapter{I. The Calculus of Distinction}}
+\addcontentsline{toc}{chapter}{I. The Calculus of Distinction}
+\section*{Core Idea: Time is the ordinal index of measurable events, defining the Universe Tensor $\U$.}
 
 \begin{axiom}[The Axiom of Order]
 Time is an ordinal rank ($k$) on the sequence of distinguishable events.
@@ -63,39 +67,44 @@ Time is an ordinal rank ($k$) on the sequence of distinguishable events.
 The cumulative record of distinctions is the ordered fold $\U_n = \sum_{k=1}^n \Ek$.
 \end{definition}
 
-\vnode[id=chap:reciprocity]{\chapter{The Reciprocity Law: Duality of Observation and Change}}
-\section*{Core Idea: Observation and Change are Mirror Operations}
+\vnode[id=chap:reciprocity]{\chapter{II. The Reciprocal Duality}}
+\addcontentsline{toc}{chapter}{II. The Reciprocal Duality}
+\section*{Core Idea: The Axiom of Event Selection enforces a bijective duality ($\Bform$) between observable measurements and admissible variations.}
 
 \begin{axiom}[Axiom of Event Selection (MA-like)]
 Every countable family of admissible local causal choices admits a globally consistent extension.
 \end{axiom}
 \begin{equivalence}[The Reciprocity Law: Bilinear Symmetry]
-The duality between observation and variation defines the symmetric \textbf{Bilinear Form $\Bform$} (per V’s reciprocity definition), ensuring the consistency of measurable energy.
+The duality between observation and variation defines the symmetric \textbf{Bilinear Form $\Bform$}, ensuring the consistency of measurable energy.
 \end{equivalence}
 
-\vnode[id=chap:spline]{\chapter{Smoothness and Kinematic Closure}}
-\section*{Core Idea: Consistency Across Observations Requires Smooth Motion}
+\vnode[id=chap:spline]{\chapter{III. Kinematic Closure: The $\mathbf{U}^{(4)}=0$ Fixed Point}}
+\addcontentsline{toc}{chapter}{III. Kinematic Closure: The $\mathbf{U}^{(4)}=0$ Fixed Point}
+\section*{Core Idea: Enforcing minimal information curvature ($\Acal[\U]$) requires the continuity provided by the unique analytic solution: $\mathbf{U}^{(4)} = 0$.}
 
 \begin{theorem}[Kinematic Closure: Euler Fixed Point]
-The minimizer of the \textbf{Informational Curvature Action $\Acal[\U]$} yields the Euler–Lagrange condition $\U^{(4)} = 0$, defining the minimal analytic closure (cf. V’s variational statement).
+The minimizer of the \textbf{Informational Curvature Action $\Acal[\U]$} yields the Euler–Lagrange condition $\mathbf{U}^{(4)} = 0$, defining the minimal analytic closure.
 \end{theorem}
 
-\vnode[id=chap:conservation]{\chapter{Conservation and Coherence}}
-\section*{Core Idea: Smooth Motion Implies Conservation}
+\vnode[id=chap:conservation]{\chapter{IV. Conservation: Dynamics from Consistency}}
+\addcontentsline{toc}{chapter}{IV. Conservation: Dynamics from Consistency}
+\section*{Core Idea: Translational symmetry of the $\mathbf{U}^{(4)}=0$ field yields the conserved stress tensor $\mathbf{T}^{\mu\nu}$, enforcing the bookkeeping identity $\grad_\mu \mathbf{T}^{\mu\nu} = 0$.}
 
 \begin{theorem}[Noether Conservation]
-The translational symmetry of the $\U^{(4)} = 0$ kinematic field yields the conserved Noether current $\mathbf{T}^{\mu\nu}$, satisfying the bookkeeping identity $\grad_\mu \T^{\mu\nu} = 0$.
+The translational symmetry of the $\mathbf{U}^{(4)} = 0$ kinematic field yields the conserved Noether current $\mathbf{T}^{\mu\nu}$, satisfying the bookkeeping identity $\grad_\mu \mathbf{T}^{\mu\nu} = 0$.
 \end{theorem}
 
-\vnode[id=chap:entropy]{\chapter{The Arrow of Time: The Second Law as a Theorem}}
-\section*{Core Idea: A Consistent Record Must Grow}
+\vnode[id=chap:entropy]{\chapter{V. Thermodynamic Closure: The $\Delta S \ge 0$ Theorem}}
+\addcontentsline{toc}{chapter}{V. Thermodynamic Closure: The $\Delta S \ge 0$ Theorem}
+\section*{Core Idea: Causal consistency requires that every admissible refinement increases the set of distinguishable classes, proving the Second Law ($\Delta S \ge 0$).}
 
 \begin{theorem}[Second Law: Injective Count Monotonicity]
 For every consistent refinement that maintains observable compatibility, there exists an \textbf{Injective Class Map $\InjectiveMap$} ensuring the cardinality of distinguishable classes is non-decreasing: $\Delta S \ge 0$.
 \end{theorem}
 
-\vnode[id=chap:ledger]{\chapter{The Proof Tensor and the Cosmic Ledger}}
-\section*{Core Idea: Unifying Structure as a Global Fixed Point}
+\vnode[id=chap:ledger]{\chapter{VI. The Invariant: Unifying the Causal Fixed Point}}
+\addcontentsline{toc}{chapter}{VI. The Invariant: Unifying the Causal Fixed Point}
+\section*{Core Idea: The entire hierarchy of laws is unified as the unique, self-consistent structure of the Proof Tensor.}
 
 \begin{center}
 \textit{Quod erat demonstrandum. Order implies dynamics.}
