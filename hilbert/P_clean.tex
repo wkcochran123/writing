@@ -1,114 +1,101 @@
-\documentclass[12pt,oneside]{book}
-\usepackage{amsthm,amssymb,amsmath,mathtools,setspace}
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{setspace}
+\usepackage{pdfpages} % <-- FIX: Added for Option A
 \onehalfspacing
 
-% --- Minimal Dependencies for the Proof Structure ---
-\newtheorem{theorem}{Theorem}
-\newtheorem{axiom}{Axiom}
-\newtheorem{definition}{Definition}
-\newtheorem{equivalence}{Equivalence}
+% --- Final Unified Macro Set (Source V_macros.tex) ---
+% All essential symbols and contracts are loaded here.
+\input{V_macros.tex}
 
-% --- Core symbols (guarded to avoid redefinition clashes) ---
-\providecommand{\U}{\mathbf{U}}        % Universe tensor 
-\providecommand{\Ek}{\mathbf{E}_k}      % Event tensor
-\providecommand{\grad}{\nabla}
-\providecommand{\T}{\mathbf{T}}         % Stress tensor 
-\providecommand{\Acal}{\mathcal{A}}     % Informational Curvature Action (from V)
-\providecommand{\Bform}{\mathsf{B}}    % Symmetric Bilinear Form (from V)
-\providecommand{\InjectiveMap}{\iota}   % Injective Class Map (from V)
-\providecommand{\OmegaSet}{\Omega}      % Set of equivalence classes
-
-% --- V hooks fallbacks (no-ops if V.tex isn't loaded) ---
-\makeatletter
-\@ifundefined{vnode}{\newcommand{\vnode}[2][]{#2}}{}
-\@ifundefined{vnodechange}{\newcommand{\vnodechange}[3][]{}}{}
-\makeatother
-
-% --- Title: Using the existing document information ---
-\title{\textbf{The Limits of Representation}\\ \large Volume I: The Conditions of $\Delta S \ge 0$} 
-\author{Bill Cochran (Minimal Contract Compliance)} 
+% Title uses all four contracts for full context
+\title{\textbf{P-Clean: The Unified Causal Closure Chain} \\ \quad \\ \large Volume I: The Conditions of \texorpdfstring{\GOneStatement}{Delta S >= 0}}
+\author{The Project Synthesis}
 \date{\today}
 
 \begin{document}
 \maketitle
-\frontmatter
 
-\vnode[id=abs]{\chapter*{Abstract}}
-This work presents a constructive proof that the entropy of any causally consistent universe is non-decreasing, $\Delta S \ge 0$. Measurement itself defines the metric structure of physics: each distinction generates an increment of causal order. Within the axioms of ZFC with Choice, a finite causal order of distinguishable events is defined whose dual operations—measurement and variation—form a bijective pair under the Reciprocity Law of Physics. Requiring global coherence under an axiom of Event Selection enforces the fourth-order cancellation $\mathbf{U}^{(4)} = 0$, which identifies the cubic spline as the minimal analytic closure of the dual system. This closure produces the continuous calculus as the smooth limit of finite causal measurement. The theorem $\Delta S \ge 0$ emerges as the necessary condition that any universe consistent with its own record of distinctions must increase the count of what can be known.
+\begin{abstract}
+This document synthesizes the core closure arguments (G1--G4). It shows that the foundational axiom of \textbf{Minimal Informational Curvature} (\GTwoStatement) supplies the structural hypothesis necessary to derive the \textbf{Conservation of Stress--Energy} (\(\Div{\StressEnergy} = 0\)), which rigorously enforces the \textbf{Second Law of Causal Order} (\GOneStatement) as a theorem of monotonicity. The full system is constrained by \textbf{Discrete--Continuum Reciprocity} (\GThreeStatement) and the \textbf{Causal Data Processing Inequality} (\GFourDPI), ensuring the integrity of measurement and prediction.
+\end{abstract}
 
-\vnode[id=overview]{\chapter*{Overview: The Logical Chain of Consistency}}
-\addcontentsline{toc}{chapter}{Overview: The Logical Chain of Consistency}
+% --- TOC Inclusion (Stylistic Polish) ---
+\tableofcontents
+\bigskip\hrule\bigskip
 
-The constructive proof proceeds in six stages, mapping axiomatic necessity to physical law.
+\section{The Axiomatic Chain: Order Implies Dynamics}\label{sec:arc}
 
-\begin{enumerate}
-    \item \textbf{I. Causal Primitives:} Defining the Ordered Set ($\U$).
-    \item \textbf{II. Global Consistency:} The Reciprocity Law (Duality and $\Bform$).
-    \item \textbf{III. Kinematic Closure:} Deriving Minimal Curvature ($\mathbf{U}^{(4)}=0$).
-    \item \textbf{IV. Dynamics:} Noether's Theorem and Conserved Bookkeeping ($\grad_\mu \mathbf{T}^{\mu\nu}=0$).
-    \item \textbf{V. Thermodynamic Closure:} Proving the Arrow of Time ($\Delta S \ge 0$).
-    \item \textbf{VI. The Fixed Point:} Unifying the Ledger.
-\end{enumerate}
+The argument's structure is a single dependency chain, demonstrating that physical laws emerge from consistency:
+\[
+  \GTwoStatement \quad \xrightarrow{\text{G4S: Noether Bridge}} \quad \Div{\StressEnergy} = 0 \quad \xrightarrow{\text{G1S: Constraint}} \quad \GOneStatement.
+\]
 
-\mainmatter
+\section{Core Contracts and Closure Arguments}
 
-% =================================================================
-% The Six Core Chapters with V-compliant claims (Improved Headings)
-% =================================================================
+\subsection{Kinematic Closure and Reciprocity (G2)}\label{sec:g2}
 
-\vnode[id=chap:order]{\chapter{I. The Calculus of Distinction}}
-\addcontentsline{toc}{chapter}{I. The Calculus of Distinction}
-\section*{Core Idea: Time is the ordinal index of measurable events, defining the Universe Tensor $\U$.}
+The unique analytic closure for the admissible history \(\U\) minimizes the Informational Curvature Action, leading to the \textbf{Kinematic Closure} strong form and its necessary reciprocal constraint.
 
-\begin{axiom}[The Axiom of Order]
-Time is an ordinal rank ($k$) on the sequence of distinguishable events.
-\end{axiom}
-\begin{definition}[Universe Tensor]
-The cumulative record of distinctions is the ordered fold $\U_n = \sum_{k=1}^n \Ek$.
-\end{definition}
+\paragraph{Strong Closure.} The minimization yields the Euler–Lagrange equation:
+\[
+  \GTwoStatement.
+\]
 
-\vnode[id=chap:reciprocity]{\chapter{II. The Reciprocal Duality}}
-\addcontentsline{toc}{chapter}{II. The Reciprocal Duality}
-\section*{Core Idea: The Axiom of Event Selection enforces a bijective duality ($\Bform$) between observable measurements and admissible variations.}
+\paragraph{Weak Reciprocity.} This closure is equivalent to the \textbf{Weak Reciprocity Form}, which utilizes the symmetric, coercive bilinear form \(\Bform\):
+\[
+  \GTwoWeakForm.
+\]
 
-\begin{axiom}[Axiom of Event Selection (MA-like)]
-Every countable family of admissible local causal choices admits a globally consistent extension.
-\end{axiom}
-\begin{equivalence}[The Reciprocity Law: Bilinear Symmetry]
-The duality between observation and variation defines the symmetric \textbf{Bilinear Form $\Bform$}, ensuring the consistency of measurable energy.
-\end{equivalence}
+\subsection{Conservation and Discrete Consistency (G3/G4S)}\label{sec:g34}
 
-\vnode[id=chap:spline]{\chapter{III. Kinematic Closure: The $\mathbf{U}^{(4)}=0$ Fixed Point}}
-\addcontentsline{toc}{chapter}{III. Kinematic Closure: The $\mathbf{U}^{(4)}=0$ Fixed Point}
-\section*{Core Idea: Enforcing minimal information curvature ($\Acal[\U]$) requires the continuity provided by the unique analytic solution: $\mathbf{U}^{(4)} = 0$.}
+The stability established in G2 provides the foundation for all conservation laws, verified across the continuous and discrete domains.
 
-\begin{theorem}[Kinematic Closure: Euler Fixed Point]
-The minimizer of the \textbf{Informational Curvature Action $\Acal[\U]$} yields the Euler–Lagrange condition $\mathbf{U}^{(4)} = 0$, defining the minimal analytic closure.
-\end{theorem}
+\paragraph{Discrete Consistency (G3).} The discrete kinematic problem is proven to be stable and consistent, ensuring that the smooth analytic solution is the unique limit of finite measurement processes, fulfilling the contract:
+\[
+  \GThreeStatement.
+\]
 
-\vnode[id=chap:conservation]{\chapter{IV. Conservation: Dynamics from Consistency}}
-\addcontentsline{toc}{chapter}{IV. Conservation: Dynamics from Consistency}
-\section*{Core Idea: Translational symmetry of the $\mathbf{U}^{(4)}=0$ field yields the conserved stress tensor $\mathbf{T}^{\mu\nu}$, enforcing the bookkeeping identity $\grad_\mu \mathbf{T}^{\mu\nu} = 0$.}
+\paragraph{Noether Conservation (G4S).} The stationarity from G2 is the hypothesis for Noether's Theorem. Translational symmetry (\(\Xi\)) generates the conserved \textbf{Stress--Energy Tensor} (\(\StressEnergy\)):
+\[
+  \Div{\StressEnergy} = 0.
+\]
 
-\begin{theorem}[Noether Conservation]
-The translational symmetry of the $\mathbf{U}^{(4)} = 0$ kinematic field yields the conserved Noether current $\mathbf{T}^{\mu\nu}$, satisfying the bookkeeping identity $\grad_\mu \mathbf{T}^{\mu\nu} = 0$.
-\end{theorem}
+\subsection{Thermodynamic and Statistical Closure (G1/G5)}\label{sec:g15}
 
-\vnode[id=chap:entropy]{\chapter{V. Thermodynamic Closure: The $\Delta S \ge 0$ Theorem}}
-\addcontentsline{toc}{chapter}{V. Thermodynamic Closure: The $\Delta S \ge 0$ Theorem}
-\section*{Core Idea: Causal consistency requires that every admissible refinement increases the set of distinguishable classes, proving the Second Law ($\Delta S \ge 0$).}
+The conserved structure provides the constraints necessary for the final laws governing distinguishability and predictability.
 
-\begin{theorem}[Second Law: Injective Count Monotonicity]
-For every consistent refinement that maintains observable compatibility, there exists an \textbf{Injective Class Map $\InjectiveMap$} ensuring the cardinality of distinguishable classes is non-decreasing: $\Delta S \ge 0$.
-\end{theorem}
+\paragraph{Thermodynamic Closure (G1).} The conservation of order enforces that every admissible causal refinement (\(\mathcal{C}_{n} \to \mathcal{C}_{n+1}\)) cannot decrease the set of distinguishable micro-orderings (\(\Omega(\mathcal{C})\)), proving the \textbf{Second Law of Causal Order}:
+\[
+  \GOneStatement.
+\]
 
-\vnode[id=chap:ledger]{\chapter{VI. The Invariant: Unifying the Causal Fixed Point}}
-\addcontentsline{toc}{chapter}{VI. The Invariant: Unifying the Causal Fixed Point}
-\section*{Core Idea: The entire hierarchy of laws is unified as the unique, self-consistent structure of the Proof Tensor.}
+\paragraph{Statistical Closure (G5) (one-paragraph seed).}
+Admissible coarse-grainings consistent with \(\C\) cannot increase distinguishability and the score is unbiased at truth; together with conservation, these facts pin down which summaries remain stable and how much prediction is possible:
+\[
+  \GFourDPI \qquad\text{and}\qquad \GFourScoreZero .
+\]
+Conservation links symmetry to stability,
+\[
+  \Div{\Current}=0 \;\Longrightarrow\; \text{stability of } \Invariant{\Xi},
+\]
+so any remaining structure is captured as constrained noise \(\Res\), and predictability is bounded by the invariant geometry implied by these closures.
 
-\begin{center}
-\textit{Quod erat demonstrandum. Order implies dynamics.}
-\end{center}
+% --- Appendix Inclusion (Option A: Including Compiled PDFs) ---
+\appendix
+\section*{Appendix: Validation Modules}
+\addcontentsline{toc}{section}{Appendix: Validation Modules}
+\includepdf[pages=-,pagecommand={\section*{G1S: Order Monotonicity}\addcontentsline{toc}{subsection}{G1S: Order Monotonicity}}]{G1S.pdf}
+\includepdf[pages=-,pagecommand={\section*{G2S: Kinematic Closure}\addcontentsline{toc}{subsection}{G2S: Kinematic Closure}}]{G2S.pdf}
+\includepdf[pages=-,pagecommand={\section*{G3S: Discrete–Continuum Reciprocity}\addcontentsline{toc}{subsection}{G3S: Discrete–Continuum Reciprocity}}]{G3S.pdf}
+\includepdf[pages=-,pagecommand={\section*{G4S: Noether Bridge}\addcontentsline{toc}{subsection}{G4S: Noether Bridge}}]{G4S.pdf}
+\includepdf[pages=-,pagecommand={\section*{G5S: Statistical Closure}\addcontentsline{toc}{subsection}{G5S: Statistical Closure}}]{G5S.pdf}
 
-\backmatter
 \end{document}

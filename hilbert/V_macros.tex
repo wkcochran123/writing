@@ -1,31 +1,48 @@
 % V_macros.tex — ultra-minimal Rosetta (Gemini-safe)
-% Only simple \providecommand definitions. No packages, no \makeatletter.
+% Only \providecommand; no packages; all handles title-safe.
 
-% --- Core symbols used across G1S/G2S/G3S/P/V_article ---
+% --- Core symbols shared across G1S/G2S/G3S/G4S/P/V_article ---
 \providecommand{\U}{\mathbf{U}}         % Admissible history / universe field
 \providecommand{\V}{\mathbf{V}}         % Test / variation (generic handle)
 \providecommand{\ph}{\varphi}           % Test function (lowercase alias)
 \providecommand{\Test}{\mathcal{V}}     % Test space
 \providecommand{\Bform}{\mathsf{B}}     % Bilinear/reciprocity pairing (weak form)
-\providecommand{\grad}{\nabla}          % Gradient / abstract differential operator
+\providecommand{\grad}{\nabla}          % Abstract differential operator
 \providecommand{\C}{\mathcal{C}}        % Causal class / partition carrier
 
-% --- Entropy & closures (title-safe via \ensuremath) ---
+% --- Entropy & kinematic closures (title-safe) ---
 \providecommand{\EntropySymbol}{\mathrm{S}}
-% \Entropy[sub] -> S_sub (subscript optional), safe in text/headings
-\providecommand{\Entropy}[1][]{\ensuremath{\EntropySymbol_{\!#1}}}
-% Fourth derivative shorthand (1D strong closure)
-\providecommand{\DFour}{\U^{(4)}}
+\providecommand{\Entropy}[1][]{\ensuremath{\EntropySymbol_{\!#1}}} % S_sub (optional)
+\providecommand{\DFour}{\U^{(4)}}                                  % Strong closure shorthand
 
-% --- Named statement handles (contracts), safe in text/headings ---
+% --- Statement handles (contracts), safe in text/headings ---
 \providecommand{\GOneStatement}{\ensuremath{\Delta\,\Entropy \ge 0}}
 \providecommand{\GTwoStatement}{\ensuremath{\DFour = 0}}
 \providecommand{\GTwoWeakForm}{\ensuremath{\Bform(\U,\ph)=0\ \forall\,\ph\in\Test}}
 \providecommand{\GThreeStatement}{\ensuremath{\text{Discrete–continuum reciprocity via }\Bform}}
 
-% --- Noether bridge (index-free API primitives) ---
-\providecommand{\Xi}{\boldsymbol{\xi}}                                      % symmetry generator (abstract)
+% --- Noether bridge (index-free API) ---
+\providecommand{\Xi}{\boldsymbol{\xi}}                                      % Symmetry generator (abstract)
 \providecommand{\NoetherTensor}[3]{\mathsf{N}\!\left[#1,#2;#3\right]}       % N[L,U;Xi]
-\providecommand{\StressEnergy}{\mathbf{T}}                                   % stress–energy (abstract)
+\providecommand{\StressEnergy}{\mathbf{T}}                                   % Stress–energy (abstract)
 \providecommand{\Current}{\mathbf{J}}                                        % Noether current (abstract)
-\providecommand{\Div}[1]{\ensuremath{\grad\!\cdot\! #1}}                     % divergence via ∇· (uses \grad)
+\providecommand{\Div}[1]{\ensuremath{\grad\!\cdot\! #1}}                     % Divergence via ∇·
+
+% --- Volume 4: invariants & statistics (index-free, title-safe) ---
+\providecommand{\E}{\ensuremath{\mathbb{E}}}                                 % Expectation
+\providecommand{\Var}[1]{\ensuremath{\mathrm{Var}\!\left[#1\right]}}         % Variance
+\providecommand{\Estimator}[1]{\ensuremath{\widehat{#1}}}                     % Estimator, e.g. \Estimator{\theta}
+\providecommand{\Score}{\ensuremath{\mathcal{S}}}                             % Score function (abstract)
+\providecommand{\Fisher}{\ensuremath{\mathcal{I}}}                            % Fisher information (abstract)
+\providecommand{\KL}[2]{\ensuremath{\mathrm{D}_{\mathrm{KL}}\!\left(#1\!\parallel\!#2\right)}} % KL divergence
+\providecommand{\Invariant}[1]{\ensuremath{\mathsf{Inv}\!\left[#1\right]}}   % Invariant statistic
+\providecommand{\Res}{\ensuremath{\mathsf{R}}}                                % Residual (abstract)
+
+% --- V4 contract handles (title-safe one-liners) ---
+\providecommand{\GFourDPI}{\ensuremath{\mathrm{D}_{\mathrm{KL}}\ \text{monotone under admissible coarse\kern0.1em graining}}}
+\providecommand{\GFourScoreZero}{\ensuremath{\E\!\left[\Score\right]=0}}
+
+% --- (Optional) Newton shims for prompt convenience ----------------
+% Uncomment if you want named symbols in text for residual/Jacobian:
+% \providecommand{\Rfunc}{\mathsf{R}}    % residual symbol (index-free)
+% \providecommand{\Jfunc}{\mathsf{J}}    % Jacobian symbol (index-free)

@@ -1,68 +1,68 @@
 \documentclass[12pt]{article}
 \usepackage{amsthm,amssymb,amsmath,mathtools,setspace}
+\usepackage{hyperref} % for \texorpdfstring
 \onehalfspacing
 
 % --- Module Dependencies ---
 \newtheorem{theorem}{Theorem}
 \newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
 
-% --- Load Rosetta Layer ---
+% --- Load Rosetta Layer (Contracts & Shared Symbols) ---
 \input{V_macros.tex}
 
-% Local Macro Definitions for Derivation
+% Local symbols for this module (index-free)
 \providecommand{\Lcal}{\mathcal{L}}
 \providecommand{\Scal}{\mathcal{S}}
-\providecommand{\deltaVar}{\delta}
 
 \title{\textbf{Module 4: The Noether Bridge} \\
-\large Validating G4: Derivation of Conserved Currents $\Div{\StressEnergy} = 0$}
-\author{G4S — Proof of Conservation $\Div{\StressEnergy} = 0$}
+\large Validating G4: Derivation of Conserved Currents
+\texorpdfstring{\Div{\StressEnergy}=0}{div T = 0}}
+\author{G4S — Proof of Conservation (V.tex Compliant)}
 \date{\today}
 
 \begin{document}
 \maketitle
 
-\section{Input Node: Stationarity from G2}
+\section{Input Node: Stationarity from Kinematic Closure (G2)}
 
-The conservation law rests on the action principle. From the **Kinematic Closure** (G2), the admissible history $\U$ satisfies the stationarity condition, $\deltaVar \Scal = 0$.
+The conservation law relies on the \emph{action principle} being stationary. The kinematic
+closure \(\GTwoStatement\) guarantees that the fundamental field \(\U\) is a solution to the
+Euler–Lagrange equations in the sense needed to invoke stationarity \(\delta \Scal = 0\).
 
-\begin{definition}[Action Functional]
-The action functional $\Scal[\U]$ is the integral of the local Lagrangian density $\Lcal$ that encodes informational curvature:
+\begin{definition}[Action Functional \(\Scal\)]
+Let \(\Lcal\) be a local Lagrangian density encoding informational curvature. The action is
 \[
-\Scal[\U] = \int \Lcal(\U, \grad \U, g)\, d\tau.
+  \Scal[\U] \;=\; \int \Lcal\!\big(\U,\, \grad \U\big)\, d\tau ,
 \]
+where the measure \(d\tau\) is left abstract (index-free).
 \end{definition}
 
-\section{Conservation as Translational Symmetry}
+\section{Theorem: Conservation Law (Index-Free Noether)}
 
-Conservation of energy and momentum is a direct consequence of the field $\U$ being invariant under translations.
-
-\begin{theorem}[Noether's Theorem (Abstract Form)]
-For every continuous symmetry $\Xi$ that leaves the action $\Scal$ invariant ($\deltaVar \Scal = 0$), there exists a conserved current $\Current$ such that the divergence vanishes:
+\begin{theorem}[Noether Conservation]
+For every continuous symmetry \(\Xi\) that leaves the action invariant \((\delta \Scal = 0)\),
+there exists an associated current \(\Current\) whose divergence vanishes:
 \[
-\Div{\Current} = 0.
+  \Div{\Current} \;=\; 0.
 \]
 \end{theorem}
 
-\begin{proof}[\textbf{G4 Proof Obligation Fulfillment (Translational Invariance)}]
+\begin{proof}[\textbf{G4 Proof Obligation Fulfillment (Translational Case)}]
 \begin{enumerate}
-    \item \textbf{Hypothesis (G2 Closure):} The field $\U$ is a stationary point of $\Scal$ ($\deltaVar \Scal = 0$), a condition guaranteed by the **Kinematic Closure** $\GTwoStatement$.
-    \item \textbf{Symmetry:} We consider the continuous translational symmetry, $\Xi^{\text{trans}}$, which leaves the underlying structure of $\U$ unchanged.
-    \item \textbf{Current Derivation (API Call):} The abstract Noether current associated with translational symmetry is the **Stress-Energy Tensor**, $\StressEnergy$. This tensor is constructed by the abstract API primitive:
-    \[
-      \StressEnergy \leftarrow \NoetherTensor{\Lcal}{\U}{\Xi^{\text{trans}}}.
-    \]
-    \item \textbf{Divergence Identity:} Applying the Noether identity to this current yields the conservation law for energy and momentum:
-    \[
-      \Div{\StressEnergy} = 0.
-    \]
+  \item \textbf{Hypothesis (stationarity).} The closure \(\GTwoStatement\) positions \(\U\) at a stationary point: \(\delta \Scal = 0\).
+  \item \textbf{Symmetry selection.} Choose translational symmetry \(\Xi_{\mathrm{trans}}\).
+  \item \textbf{Noether bridge (API).} Invoke the abstract construction
+  \[
+    \StressEnergy \;\leftarrow\; \NoetherTensor{\Lcal}{\U}{\Xi_{\mathrm{trans}}}.
+  \]
+  \item \textbf{Conservation identity.} Symmetry implies the resulting current is conserved:
+  \[
+    \Div{\StressEnergy} \;=\; 0.
+  \]
 \end{enumerate}
-The **Noether bridge** is complete: the kinematic closure is the logical engine that produces the conserved current required for dynamics.
+Thus the Noether bridge carries the geometric constraint \(\GTwoStatement\) into the required
+conservation statement, furnishing the bookkeeping law for subsequent thermodynamic closure.
 \end{proof}
-
-\section{Output Node: Chain Completion}
-
-The derived conservation law, $\Div{\StressEnergy} = 0$, is the necessary intermediate structural constraint that links the local analytical consistency ($\GTwoStatement$) to the final **global thermodynamic consistency** ($\GOneStatement$).
-The logical proof chain is now ready for its final step.
 
 \end{document}

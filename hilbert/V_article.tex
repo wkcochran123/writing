@@ -15,8 +15,9 @@
 
 % Title (bookmark-safe with texorpdfstring)
 \title{V: Reader's Guide and Contract Layer\\
-\small (thermodynamic \texorpdfstring{\GOneStatement}{ΔS≥0},\;
-       kinematic \texorpdfstring{\GTwoStatement}{U^{(4)}=0})}
+\small (thermodynamic \texorpdfstring{\GOneStatement}{Delta S >= 0},\;
+       kinematic \texorpdfstring{\GTwoStatement}{U^(4)=0},\;
+       reciprocity \texorpdfstring{\GTwoWeakForm}{B(U,varphi)=0})}
 \author{Verification Tensor (V)}
 \date{\today}
 
@@ -24,22 +25,29 @@
 \maketitle
 
 \begin{abstract}
-This note declares the shared symbols and three contracts used across the build, and
-introduces an index-free Noether bridge (\NoetherTensor{L}{\U}{\Xi}) to connect the
-closure \GTwoStatement{} to conserved currents. All statement handles are title-safe
+This note declares the shared symbols and contracts (G1--G4), adds an index-free Noether
+bridge \(\NoetherTensor{L}{\U}{\Xi}\) linking stationarity to conserved currents, and introduces
+Volume~4 primitives for invariants and statistics. All handles are title-safe
 (\verb|\ensuremath|), so they can be used directly in text, headings, and captions.
 \end{abstract}
 
-\section*{Contracts}
+\section*{Contracts (G1--G4)}
 \begin{itemize}
-  \item G1 (thermodynamic closure): \GOneStatement.
-  \item G2 (kinematic closure, strong): \GTwoStatement.
-  \item G2 (weak/reciprocity): \GTwoWeakForm; summarized as \GThreeStatement.
+  \item \textbf{G1 thermodynamic closure:} \GOneStatement.
+  \item \textbf{G2 kinematic closure (strong):} \GTwoStatement.
+  \item \textbf{G2 weak/reciprocity:} \GTwoWeakForm; summarized as \GThreeStatement.
+  \item \textbf{G4 statistical invariants:}
+        \begin{itemize}
+          \item Data processing / coarse-graining: \GFourDPI.
+          \item Score unbiasedness at truth: \GFourScoreZero.
+        \end{itemize}
 \end{itemize}
 
 \section*{Shared symbols}
 \[
-  \U,\ \V,\ \ph\in\Test,\ \grad,\ \C,\ \Bform(\cdot,\cdot),\ \Entropy,\ \DFour.
+  \U,\ \V,\ \ph\in\Test,\ \grad,\ \C,\ \Bform(\cdot,\cdot),\ \Entropy,\ \DFour,\ 
+  \Xi,\ \NoetherTensor{L}{\U}{\Xi},\ \Current,\ \StressEnergy,\ \Div{\Current},\
+  \E,\ \Var{\cdot},\ \Estimator{\cdot},\ \Score,\ \Fisher,\ \KL{P}{Q},\ \Invariant{\cdot},\ \Res.
 \]
 
 \section*{Noether bridge (index-free API)}
@@ -48,12 +56,25 @@ We introduce a lightweight primitive:
   \NoetherTensor{L}{\U}{\Xi},
 \]
 mapping a local density \(L\), field \(\U\), and infinitesimal generator \(\Xi\) to an
-abstract current \(\Current\) (and, for translations, a stress–energy \(\StressEnergy\)),
+abstract current \(\Current\) (and, for translations, a stress--energy \(\StressEnergy\)),
 with conservation
 \[
   \Div{\Current} = 0.
 \]
-The closure \GTwoStatement{} supplies the stationarity hypothesis needed to invoke this construction.
+The closure \GTwoStatement{} supplies the stationarity hypothesis required to invoke this construction.
+
+\section*{Volume 4: invariants and statistical closure}
+Admissible coarse-grainings (consistent with \(\C\)) cannot increase distinguishability:
+\[
+  \KL{P}{Q}\ \text{does not increase under admissible maps.}
+\]
+At the true parameter, the score has zero mean:
+\[
+  \GFourScoreZero.
+\]
+Estimation accuracy is bounded via \(\Fisher\), while symmetry induces index-free invariants
+\(\Invariant{\Xi}\) consistent with \(\Div{\Current}=0\). Residual structure \(\Res\) is thereby
+interpreted as constrained noise under the established closures.
 
 \section*{Usage notes}
 The statement handles already include math mode. Prefer \verb|(\GOneStatement)| not \verb|\(\GOneStatement\)|.

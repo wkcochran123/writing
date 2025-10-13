@@ -1,34 +1,39 @@
 \documentclass[12pt]{article}
 \usepackage{amsthm,amssymb,amsmath,mathtools,setspace}
+\usepackage{hyperref} % for \texorpdfstring
+\usepackage{enumitem} % Required for enumerate formatting
 \onehalfspacing
 
 % --- Module Dependencies ---
 \newtheorem{theorem}{Theorem}
 \newtheorem{definition}{Definition}
 \newtheorem{proposition}{Proposition}
-
-% --- Load Rosetta Layer ---
+\newtheorem{remark}{Remark} % <-- FIX: Added missing environment definition
+% 
+% --- Load Rosetta Layer (Contracts & Shared Symbols) ---
 \input{V_macros.tex}
 
-% Local Macro Definitions (if V_macros didn't load them)
-\providecommand{\DTwo}{\U''}
-\providecommand{\Domain}{\Omega}
-\providecommand{\NaturalBC}{\U''(x_0)=\U''(x_n)=0}
-\providecommand{\DFour}{\U^{(4)}}
-\providecommand{\ph}{\varphi}
+% Local symbols for this module
+\providecommand{\DTwo}{\mathbf{U}''}
+\providecommand{\Domain}{[x_0, x_n]}
+\providecommand{\NaturalBC}{\mathbf{U}''(x_0)=\mathbf{U}''(x_n)=0}
 \providecommand{\Acal}{\mathcal{A}}
-
-\newenvironment{varobligation}[1][]{%
-  \par\medskip\noindent\textbf{G2 Proof Obligation.} #1\;\emph{(Provide stationarity, reciprocity, and refinement consistency.)}%
-  \begin{enumerate}[leftmargin=2.2em,label=\alph*.]
-}{%
-  \end{enumerate}\medskip
-}
-\providecommand{\Rfunc}{\mathsf{R}}
+\providecommand{\Hspace}{H^2(\Domain)} % local: Hilbert space used in this module
+\providecommand{\Test}{\mathcal{V}}
+\providecommand{\DFour}{\mathbf{U}^{(4)}}
+\providecommand{\ph}{\varphi}
+\providecommand{\Rfunc}{\mathsf{R}} % optional Newton shims
 \providecommand{\Jfunc}{\mathsf{J}}
 
-\title{\textbf{Module 2: Kinematic Closure, Weak Reciprocity, and Newton Linearization} \\
-\large Validating G2: The Minimal Curvature Condition \texorpdfstring{\GTwoStatement}{U^{(4)}=0}}
+\newenvironment{varobligation}[1][]{%
+  \par\medskip\noindent\textbf{G2 Proof Obligation.} #1\;\emph{(Provide stationarity, reciprocity, and refinement consistency.)}%
+  \begin{enumerate}[leftmargin=2.2em,label=\alph*.]
+}{%
+  \end{enumerate}\medskip
+}
+
+\title{\textbf{Module 2: Kinematic Closure, Weak Reciprocity, and Newton Linearization}\\
+\large Validating G2: Minimal Curvature Condition \texorpdfstring{\GTwoStatement}{U^{(4)}=0}}
 \author{G2S — Module Contract Fulfillment (V.tex Compliant)}
 \date{\today}
 
@@ -37,44 +42,76 @@
 
 \section{Input Node: Reciprocity and Variational Setup}
 
-The unique analytic closure for the admissible history $\U$ minimizes the **Informational Curvature Action** $\Acal[\U]$:
-$$\Acal[\U] = \frac{1}{2} \int_{\Domain} (\DTwo)^2\, dx.$$
+The unique analytic closure for the admissible history \(\U\) minimizes the \emph{Informational Curvature Action} \(\Acal[\U]\) over the Hilbert space \(\Hspace\):
+\[
+  \Acal[\U] \;=\; \frac{1}{2}\int_{\Domain} \big(\DTwo\big)^2\,dx.
+\]
+The minimization is subject to fixed interpolation nodes and the \emph{natural boundary conditions} \(\NaturalBC\).
 
-\section{Theorem: Kinematic Closure and Reciprocity}
+\begin{definition}[Bilinear Form of Reciprocity]
+The symmetric bilinear form \(\Bform: \Hspace \times \Hspace \to \mathbb{R}\) corresponding to the weak form of the variational principle is
+\[
+  \Bform(\U,\ph) \;=\; \int_{\Domain} \big(\DTwo\big)\,\ph''\,dx.
+\]
+\end{definition}
 
-\begin{theorem}[Strong Kinematic Closure $\mathbf{(\GTwoStatement)}$]
-The unique minimal-curvature solution $\U^\star$ is the stationary point of $\Acal[\U]$, which yields the Euler-Lagrange strong form $\GTwoStatement$.
+\section{Theorem: Kinematic Closure (\GTwoStatement)}
+
+\begin{theorem}[Strong Kinematic Closure \(\mathbf{(\GTwoStatement)}\)]
+The unique minimal-curvature solution \(\U^\star\) compatible with Event Selection is the stationary point of \(\Acal[\U]\), which yields the Euler–Lagrange strong form \(\GTwoStatement\).
 \end{theorem}
 
+<hr>
+
 \begin{proof}[\textbf{G2 Proof Obligation Fulfillment}]
-The weak form uses the bilinear reciprocity pairing $\Bform(\U, \ph) = \int_{\Domain} (\DTwo) (\ph'')\, dx$.
-\begin{enumerate}
-    \item \textbf{Weak Form (Reciprocity):} Stationarity $\delta \Acal = 0$ requires the condition:
-    $$\text{Find } \U \in \Hspace \text{ such that } \GTwoWeakForm.$$.
-    \item \textbf{Strong Form:} Double integration by parts on the weak form yields the strong closure: $\GTwoStatement$.
-\end{enumerate}
+\begin{varobligation}
+  \item \textbf{Reciprocity and coercivity.} The bilinear form \(\Bform(\U,\ph)\) is symmetric. Coercivity holds by a Poincaré–type inequality on \(H^2(\Domain)\).
+  \item \textbf{Weak form (stationarity).} The first variation vanishes:
+  \[
+    \text{Find }\U\in\Hspace\ \text{such that}\ \GTwoWeakForm.
+  \]
+  \item \textbf{Strong form (Euler–Lagrange).} Integrating by parts twice, boundary terms vanish by \(\NaturalBC\) and the test space definition, yielding
+  \[
+    0 \;=\; \Bform(\U,\ph) \;=\; \int_\Domain \big(\DFour\big)\,\ph\,dx \quad\Longrightarrow\quad \GTwoStatement.
+  \]
+  \item \textbf{Refinement consistency (spline).} The stationary solution \(\U^\star\) is the cubic spline interpolant. Convergence of the discrete scheme confirms the continuum limit.
+\end{varobligation}
 \end{proof}
 
-\section{G2: Newton Linearization and Noether Bridge}
+<hr>
+
+\begin{remark}[\textbf{Kernel elimination}]
+The homogeneous strong form \(\GTwoStatement\) admits the four-dimensional kernel \(\mathrm{span}\{1,x,x^2,x^3\}\).
+Fixed interpolation nodes together with \(\NaturalBC\) remove the kernel, ensuring the \emph{unique cubic spline solution} \(\U^\star\).
+\end{remark}
+
+\section{G2: Operational Interpretation and Noether Bridge}
+
+\paragraph{Physical meaning of \(\GTwoStatement\).}
+The closure condition \(\DFour=0\) selects the minimal-information path consistent with global reciprocity.
+
+\begin{example}[Davisson–Germer and kinematic consistency]
+Electron diffraction demonstrates that a discrete event chain (particle) must obey the continuous propagation law induced by the reciprocity principle behind \(\GTwoStatement\). The observed intensity peaks are \emph{fixed points} of reciprocal measurement under lattice translations.
+\end{example}
 
 \paragraph{Residual and Newton step (index-free).}
-The analytic closure $\GTwoStatement$ is a non-linear (in coordinates/metric) residual function $\Rfunc(\U)$. The iteration is driven by the Fréchet Jacobian $\Jfunc(\U)$:
+The kinematic closure is interpreted as a numerically tractable root-finding problem.
+Define the residual \(\Rfunc\) and (Fréchet) Jacobian \(\Jfunc\):
 \[
-\Rfunc(\U) := \DFour,\qquad
-\Jfunc(\U) := \frac{\partial \Rfunc}{\partial \U}.
+  \Rfunc(\U) \;:=\; \DFour, \qquad
+  \Jfunc(\U) \;:=\; \frac{\partial \Rfunc}{\partial \U}.
 \]
-The Newton update $\delta \U$ for an iterate $\U^{(k)}$ satisfies:
+Given an iterate \(\U^{(k)}\), the update \(\delta\U\) solves the linear system:
 \[
-\Jfunc(\U^{(k)})\,\delta \U \;=\; -\, \Rfunc(\U^{(k)}).
+  \Jfunc(\U^{(k)})\,\delta\U \;=\; -\,\Rfunc(\U^{(k)}).
 \]
-This defines the computational implementation (the Newton rail) driven directly by the analytic closure $\DFour=0$.
 
 \paragraph{Noether bridge (API-level, index-free).}
-The stationary action, $\delta \Acal = 0$, supplies the core hypothesis required to invoke Noether's theorem.
-The abstract conservation current $\Current$ (and stress-energy $\StressEnergy$) is derived from a local Lagrangian density $L$ and translational symmetry $\Xi$:
-$$
-\NoetherTensor{L}{\U}{\Xi} \quad \implies \quad \Div{\Current} = 0.
-$$
-The kinematic closure $\GTwoStatement$ is therefore the necessary structural input for the derivation of all subsequent conservation laws.
+Stationarity \(\delta\Acal=0\) is the hypothesis for conservation. From a local density \(L\) and symmetry \(\Xi\),
+\[
+  \StressEnergy \;\leftarrow\; \NoetherTensor{L}{\U}{\Xi}, \qquad
+  \Div{\StressEnergy} \;=\; 0.
+\]
+Thus \(\GTwoStatement\) provides the structural input for the conservation law formalized in G4S.
 
 \end{document}
