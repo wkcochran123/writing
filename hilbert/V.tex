@@ -1,308 +1,109 @@
-% V.tex --- Verification Tensor: Medium-Step Proof Contract for G1S and G2S
-% Goal: enforce full proofs (no sketches) and enable optional node tracking,
-% while keeping P.tex unchanged and requiring no functional changes to P_clean.tex.
-% ASCII-only; minimal packages; no microtype/hyperref/enumitem.
+%=========================================================
+%  V.tex — Verification Tensor (Half-Step Rigor Version)
+%=========================================================
 
-\documentclass[12pt]{article}
+\documentclass[12pt,oneside]{book}
+\usepackage{amsthm,amssymb,amsmath,mathtools,setspace}
+\onehalfspacing
 
-% ===== Minimal, robust packages =====
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage{amsmath,amssymb,amsthm}
-\usepackage{geometry}
-\geometry{margin=1in}
-
-% ===== Guarded shared symbols (safe fallbacks only) =====
-% Causal set / order
-\providecommand{\C}{\mathcal{C}}
-\providecommand{\preceq}{\leq}
-
-% Universe / tensors / operators (placeholders; harmless if unused)
-\providecommand{\U}{\mathbf{U}}
-\providecommand{\T}{\mathbf{T}}
-\providecommand{\grad}{\nabla}
-
-% State/sample space and counting
-\providecommand{\OmegaSet}{\Omega}
-\DeclareMathOperator{\Dist}{Dist} % number of distinguishable classes
-
-% Entropy notation (avoid \S which is the section symbol)
-\providecommand{\Entropy}{\mathrm{S}}
-% Make \Entropy accept an optional subscript so \Entropy[\pi] typesets as S_{\pi}
-\makeatletter
-\let\EntropySymbol\Entropy
-\renewcommand{\Entropy}[1][]{\EntropySymbol_{\kern0.05em #1}}
-\makeatother
-
-% Shorthands
-\providecommand{\Monotone}{\Delta\,\Entropy \ge 0}
-\providecommand{\FixedPoint}{\mathsf{FP}}
-
-% ===== G2S: variational/reciprocity symbols (guarded) =====
-\providecommand{\Acal}{\mathcal{A}}     % action-like functional
-\providecommand{\Jcal}{\mathcal{J}}     % quadratic energy / reciprocity functional
-\providecommand{\Hspace}{\mathcal{H}}   % trial space
-\providecommand{\Test}{\mathcal{V}}     % test space
-\providecommand{\deltaVar}{\delta}      % first variation
-\providecommand{\Bform}{\mathsf{B}}     % bilinear form
-\providecommand{\Lin}{\mathsf{L}}       % linear operator (Frechet derivative)
-\providecommand{\Res}{\mathsf{R}}       % residual functional
-\providecommand{\bc}{\text{bc}}         % boundary condition tag
-\providecommand{\mesh}{\mathsf{h}}      % mesh scale (discrete)
-\providecommand{\Spline}{\mathsf{S}}    % spline/interpolation operator
-
-% ===== Node-tracking hooks (optional; no-ops unless enabled) =====
-\newif\ifVtrack            % default off
-\newwrite\Vlog             % log handle (opened only if tracking)
-\newcommand{\VenableTracking}{%
-  \Vtracktrue
-  \immediate\openout\Vlog=\jobname.vlog % writes to <jobname>.vlog
-  \typeout{V: tracking enabled -> \jobname.vlog}%
-}
-% Wrap a document "node" (renders its content unchanged).
-% Usage: \vnode[id=G1.12]{<existing content>}
-\providecommand{\vnode}[2][]{%
-  \ifVtrack
-    \begingroup
-      \edef\V@id{\detokenize{#1}}%
-      \immediate\write\Vlog{VNODE: id=\V@id}%
-    \endgroup
-  \fi
-  #2%
-}
-% Record a refinement/change at a node; renders nothing.
-% Usage: \vnodechange[id=G1.12]{old-label}{new-label}
-\providecommand{\vnodechange}[3][]{%
-  \ifVtrack
-    \begingroup
-      \edef\V@id{\detokenize{#1}}%
-      \edef\V@old{\detokenize{#2}}%
-      \edef\V@new{\detokenize{#3}}%
-      \immediate\write\Vlog{VCHANGE: id=\V@id, old=\V@old, new=\V@new}%
-    \endgroup
-  \fi
-}
-% Optional: auto-wrap sectioning as nodes (call \VwrapSections after \begin{document})
-\newcommand{\VwrapSections}{%
-  \let\V@oldsection\section
-  \renewcommand{\section}[1]{\vnode[id=sec:\number\value{section}]{\V@oldsection{##1}}}%
-  \let\V@oldsubsection\subsection
-  \renewcommand{\subsection}[1]{\vnode[id=subsec:\number\value{subsection}]{\V@oldsubsection{##1}}}%
-}
-
-% ===== Local theorem styles =====
-\theoremstyle{plain}
+% --- Theorem environments and macros ---
+\newtheorem{axiom}{Axiom}
+\newtheorem{definition}{Definition}
 \newtheorem{theorem}{Theorem}
-\newtheorem{lemma}[theorem]{Lemma}
-\theoremstyle{definition}
-\newtheorem{definition}[theorem]{Definition}
-\theoremstyle{remark}
-\newtheorem{remark}[theorem]{Remark}
+\newtheorem{lemma}{Lemma}
+\newtheorem{equivalence}{Equivalence}
+\newtheorem{proposition}{Proposition}
 
-% ===== Gold Check harness (generic, minimal) =====
-\newcounter{goldcheck}
-\newenvironment{goldcheck}[1][]{%
-  \refstepcounter{goldcheck}%
-  \par\medskip\noindent\textbf{Gold Check G\thegoldcheck. #1}\par\smallskip\noindent
-  \begin{enumerate}
-}{%
-  \end{enumerate}\medskip
-}
-\newcommand{\gpass}{\textbf{[PASS]}}
-\newcommand{\gfail}{\textbf{[FAIL]}}
+\newcommand{\U}{\mathbf{U}}        % Universe tensor
+\newcommand{\Ek}{\mathbf{E}_k}     % Event tensor
+\newcommand{\Acal}{\mathcal{A}}    % Informational curvature action
+\newcommand{\Bform}{\mathsf{B}}    % Symmetric bilinear form
+\newcommand{\InjectiveMap}{\iota}  % Injective class map
+\newcommand{\grad}{\nabla}
 
-% ===== G1S: Proof Obligation environment =====
-\newenvironment{proofobligation}[1][]{%
-  \par\medskip\noindent\textbf{Proof Obligation.} #1\;
-  \emph{(Show compatibility, injection, and count inequality.)}%
-  \begin{enumerate}
-}{\end{enumerate}\medskip}
-
-% ===== G2S: Variational Proof Obligations =====
-\newenvironment{varobligation}[1][]{%
-  \par\medskip\noindent\textbf{G2 Proof Obligation.} #1\;
-  \emph{(Provide stationarity, reciprocity, and refinement consistency.)}%
-  \begin{enumerate}
-}{\end{enumerate}\medskip}
-
+%=========================================================
 \begin{document}
 
-% --- Optional: enable V tracking for this compile; comment out if not desired
-% \VenableTracking
-% \VwrapSections
+\chapter{Foundations of the Verification Tensor}
 
-\section*{V: Proof Contract for G1S and G2S (Medium Step)}
-This V layer enforces full proofs by (i) tightening interfaces, (ii) requiring explicit proof obligations,
-and (iii) providing reference lemmas and theorems. It also offers optional node tracking that logs
-V-cycle changes to \texttt{<jobname>.vlog} without altering the PDF.
+\begin{axiom}[Working Basis]
+\label{ax:foundation}
+We work within the Zermelo--Fraenkel set theory with the Axiom of Choice (ZFC).
+Martin’s Axiom (MA) is assumed for all countable chain condition posets,
+and we impose the \emph{Axiom of Event Selection (Boltzmann)} restricting
+attention to locally finite, realizable event histories.
+\end{axiom}
 
-% =====================================================================
-% G1S CONTRACT (Monotone Entropy)
-% =====================================================================
+\begin{definition}[Core Objects and Contracts]
+\label{def:coreobjects}
+Let the following tensors and maps constitute the primitive objects:
 
-\subsection*{G1S: Definitions and Obligations}
-
-\begin{definition}[Causal Refinement]\label{def:refinement}
-Let $(\C,\preceq)$ be a locally finite partial order. A refinement is an order-embedding
-$\phi:\C\to\C'$ into another locally finite poset $(\C',\preceq')$ whose image is order-isomorphic to $\C$.
-\end{definition}
-
-\begin{definition}[Observable Compatibility]\label{def:observable}
-An observable is a map $\pi:\C\to\OmegaSet$ inducing $x\sim y \iff \pi(x)=\pi(y)$.
-It is compatible with a refinement $\phi$ if there exists $\pi':\C'\to\OmegaSet$ such that
-$\pi'\circ\phi=\pi$ and $\pi'$ does not merge distinct $\pi$-classes on $\phi(\C)$.
-\end{definition}
-
-\begin{definition}[Entropy as Distinguishable Count]\label{def:entropy}
-Given $\pi$, let $\OmegaSet(\C):=\C/\!\sim$. Define
-\[
-  \Entropy[\pi](\C) := \ln\bigl|\OmegaSet(\C)\bigr|.
-\]
-\end{definition}
-
-\noindent\textbf{G1 Proof Obligation.}
-\begin{proofobligation}[for $\Delta\Entropy \ge 0$ under $\phi$]
-  \item Define $\pi'$ with $\pi'\circ\phi=\pi$ and verify no merges on $\phi(\C)$.
-  \item Define $\iota:\OmegaSet(\C)\to\OmegaSet(\C')$, $[x]\mapsto[\phi(x)]$, and prove it is well-defined and injective.
-  \item Conclude $|\OmegaSet(\C)|\le|\OmegaSet(\C')|$ hence $\Delta\Entropy\ge 0$.
-\end{proofobligation}
-
-\subsection*{G1S: Reference Lemma and Theorem}
-
-\begin{lemma}[Class Injection]\label{lem:g1_injection}
-Let $\phi:(\C,\preceq)\to(\C',\preceq')$ be an order-embedding and let $\pi,\pi'$ satisfy $\pi'\circ\phi=\pi$,
-with the property that if $\pi(x)\neq\pi(y)$ then $\pi'(\phi(x))\neq\pi'(\phi(y))$.
-Then $\iota:\OmegaSet(\C)\to\OmegaSet(\C')$, $[x]\mapsto[\phi(x)]$ is well-defined and injective.
-\end{lemma}
-
-\begin{theorem}[G1 Monotonicity]\label{thm:g1_monotone}
-Under Lemma~\ref{lem:g1_injection}, $\Entropy[\pi'](\C') - \Entropy[\pi](\C) \ge 0$.
-\end{theorem}
-\begin{proof}
-Injection gives $|\OmegaSet(\C)|\le|\OmegaSet(\C')|$. Taking logarithms yields the claim.
-\end{proof}
-
-\begin{remark}[G1 Failure Modes]\label{rem:g1_fail}
-Monotonicity may fail if $\phi$ is not an order-embedding or if $\pi'$ merges previously distinct $\pi$-classes on $\phi(\C)$.
-Such cases are out of contract.
-\end{remark}
-
-\subsection*{G1S: Gold Check (attach to each claim of $\Monotone$)}
-\newenvironment{GOneSpec}{\begin{goldcheck}[G1 Monotone Entropy]}{\end{goldcheck}}
-
-\begin{GOneSpec}
-  \item \gpass\; Compatibility: $\pi'\circ\phi=\pi$; no merges on $\phi(\C)$ (Def.~\ref{def:observable}).
-  \item \gpass\; Witness: class injection $\iota([x])=[\phi(x)]$ is well-defined and injective (Lemma~\ref{lem:g1_injection}).
-  \item \gpass\; Claim: $\Entropy[\pi'](\C')-\Entropy[\pi](\C)\ge 0$.
-  \item \gpass\; Node log (if tracking): related IDs emit VNODE/VCHANGE entries.
-\end{GOneSpec}
-
-% =====================================================================
-% G2S CONTRACT (Variational Reciprocity and Spline Consistency)
-% =====================================================================
-
-\subsection*{G2S: Definitions and Obligations}
-
-\begin{definition}[Admissible Histories and Trial/Test Spaces]\label{def:g2_spaces}
-Let $(\C,\preceq)$ be locally finite and $\pi:\C\to\OmegaSet$ fixed.
-An admissible history is $u\in\Hspace$ (a normed linear space) encoding the observable field,
-with test space $\Test\subseteq\Hspace$ that respects boundary conditions $\bc$.
-\end{definition}
-
-\begin{definition}[Action and First Variation]\label{def:g2_action}
-An action is a Gateaux-differentiable functional $\Acal:\Hspace\to\mathbb{R}$ with
-\[
-  \deltaVar\Acal[u](v) \;=\; \left.\frac{d}{d\epsilon}\Acal[u+\epsilon v]\right|_{\epsilon=0},\quad v\in\Test,
-\]
-and associated linear operator $\Lin[u](v):=\deltaVar\Acal[u](v)$.
-\end{definition}
-
-\begin{definition}[Reciprocity/Bilinear Form]\label{def:g2_bilinear}
-A symmetric, coercive bilinear form $\Bform:\Test\times\Test\to\mathbb{R}$ satisfies
-$\Bform(v,w)=\Bform(w,v)$ and $\exists\,\alpha>0:\ \Bform(v,v)\ge \alpha\|v\|^2$.
-When $\Lin[u](v)=\Bform(u,v)$, reciprocity holds.
-\end{definition}
-
-\begin{definition}[Spline Refinement Consistency]\label{def:g2_spline}
-Let $u_{\mesh}\in\Hspace_{\mesh}$ be a discrete field on a refinement with scale $\mesh$.
-A spline/interpolant $\Spline_{\mesh}:\Hspace_{\mesh}\to\Hspace$ is consistent if
-$\|\Spline_{\mesh}u_{\mesh}-u^\star\|\to 0$ and
-$\Jcal[\Spline_{\mesh}u_{\mesh}]\to \Jcal[u^\star]$ for some $u^\star\in\Hspace$ as $\mesh\to 0$.
-\end{definition}
-
-\noindent\textbf{G2 Proof Obligation.}
-\begin{varobligation}
-  \item Stationarity: compute $\deltaVar\Acal[u](v)$ and require $\deltaVar\Acal[u](v)=0$ for all $v\in\Test$.
-  \item Reciprocity: provide symmetric, coercive $\Bform$ with $\Lin[u](v)=\Bform(u,v)$.
-  \item Weak Form: state $\Bform(u,v)=\Res(v)$ for all $v\in\Test$ with continuous linear $\Res$.
-  \item Refinement: define $\Hspace_{\mesh}$ and $\Spline_{\mesh}$; verify consistency (Def.~\ref{def:g2_spline}).
-\end{varobligation}
-
-\subsection*{G2S: Reference Lemmas and Theorem}
-
-\begin{lemma}[Stationarity iff Weak Form]\label{lem:g2_stationarity}
-If $\Acal$ is Gateaux-differentiable and $\Bform$ is symmetric with $\Lin[u](v)=\Bform(u,v)$,
-then $u$ is stationary iff the weak form holds: find $u\in\Hspace$ such that
-$\Bform(u,v)=\Res(v)$ for all $v\in\Test$, for some continuous linear $\Res$.
-\end{lemma}
-\begin{proof}
-For all $v\in\Test$, $\deltaVar\Acal[u](v)=\Lin[u](v)=\Bform(u,v)$.
-Stationarity is equivalent to $\Bform(u,v)=0$ up to sources; introducing $\Res$ gives the weak form.
-The converse is immediate.
-\end{proof}
-
-\begin{lemma}[Discrete Reciprocity and Convergence]\label{lem:g2_convergence}
-Let $\{\Hspace_{\mesh}\}$ be finite-dimensional subspaces with interpolant $\Spline_{\mesh}$.
-Assume $\Bform$ is symmetric, coercive, and consistent on $\Hspace_{\mesh}$, and $\Res$ is continuous.
-Then the Galerkin problem on $\Hspace_{\mesh}$ has a unique solution $u_{\mesh}$ and
-$\Spline_{\mesh}u_{\mesh}\to u^\star$ in $\Hspace$ as $\mesh\to 0$, where $u^\star$ is the unique stationary solution.
-\end{lemma}
-\begin{proof}
-Coercivity and continuity give well-posedness (Lax--Milgram). Standard Galerkin consistency yields
-$\Spline_{\mesh}u_{\mesh}\to u^\star$, the unique weak solution, which equals the stationary point by Lemma~\ref{lem:g2_stationarity}.
-\end{proof}
-
-\begin{theorem}[G2 Variational Reciprocity and Spline Consistency]\label{thm:g2_main}
-Under Defs.~\ref{def:g2_spaces}--\ref{def:g2_spline} with symmetric, coercive $\Bform$ and continuous $\Res$,
-there exists a unique stationary $u^\star\in\Hspace$ satisfying the weak form, and discrete refinements
-$u_{\mesh}$ converge to $u^\star$ under consistent $\Spline_{\mesh}$.
-\end{theorem}
-\begin{proof}
-Existence/uniqueness by Lax--Milgram; convergence by Lemma~\ref{lem:g2_convergence};
-equivalence of weak and stationary solutions by Lemma~\ref{lem:g2_stationarity}.
-\end{proof}
-
-\begin{remark}[G2 Failure Modes]\label{rem:g2_fail}
-Lack of symmetry or coercivity of $\Bform$, missing continuity of $\Res$, or inconsistent $\Spline_{\mesh}$ invalidates the contract.
-\end{remark}
-
-\subsection*{G2S: Gold Check (attach to each variational claim)}
-\newenvironment{GTwoSpec}{\begin{goldcheck}[G2 Variational Reciprocity]}{\end{goldcheck}}
-
-\begin{GTwoSpec}
-  \item \gpass\; Spaces: $\Hspace$ and $\Test$ defined; $\bc$ specified (Def.~\ref{def:g2_spaces}).
-  \item \gpass\; Action: $\Acal$ differentiable; first variation $\deltaVar\Acal[u](v)$ provided (Def.~\ref{def:g2_action}).
-  \item \gpass\; Reciprocity: symmetric, coercive $\Bform$; $\Lin[u](v)=\Bform(u,v)$ (Def.~\ref{def:g2_bilinear}).
-  \item \gpass\; Weak form: $\Bform(u,v)=\Res(v)$ for all $v\in\Test$; $\Res$ continuous.
-  \item \gpass\; Spline consistency: $\Spline_{\mesh}$ defined and consistent (Def.~\ref{def:g2_spline}).
-  \item \gpass\; Claim: apply Lemmas~\ref{lem:g2_stationarity}, \ref{lem:g2_convergence} to obtain Theorem~\ref{thm:g2_main}.
-  \item \gpass\; Node log (if tracking): related IDs emit VNODE/VCHANGE entries.
-\end{GTwoSpec}
-
-% =====================================================================
-% VERIFICATION LOOP AND NOTES
-% =====================================================================
-
-\section*{Verification Loop (Non-Invasive)}
 \begin{enumerate}
-  \item Interface Freeze: do not alter global proof macros outside this guarded layer.
-  \item G1: verify Defs.~\ref{def:refinement}, \ref{def:observable}; check injection witness and conclude $\Monotone$.
-  \item G2: verify Defs.~\ref{def:g2_spaces}--\ref{def:g2_bilinear}; state weak form; verify spline consistency.
-  \item Tracking (optional): enable \texttt{\textbackslash VenableTracking} and, if desired, \texttt{\textbackslash VwrapSections}.
+  \item $\U$: the \textbf{Universe tensor}, a measurable causal order supporting curvature and action evaluation.
+  \item $\mathbf{E}_k$: an \textbf{Event tensor}, a finite or $\sigma$-finite subset of $\U$ consistent with Event Selection.
+  \item $\Acal$: the \textbf{Informational Curvature Action}, $\Acal:\mathrm{Histories}\to\mathbb{R}\cup\{+\infty\}$,
+        lower semicontinuous under MA; its extremals encode reciprocity.
+  \item $\Bform$: the \textbf{Reciprocity Bilinear Form}, a symmetric bilinear form on the tangent space
+        $\mathcal{V}$ to admissible histories, non-degenerate on the quotient by gauge.
+  \item $\InjectiveMap$: the \textbf{Injective Class Map},
+        $\InjectiveMap:\mathcal{C}/\!\sim\;\hookrightarrow\;\mathrm{Rep}$,
+        injective and order-reflecting on equivalence classes of realizable histories.
 \end{enumerate}
+Each object satisfies its \emph{contract}: a list of pre- and post-conditions
+ensuring compatibility with Axiom~\ref{ax:foundation}.
+\end{definition}
 
-\section*{Fixed Point and Reporting}
-When all attached G1 and G2 gold checks pass, declare a fixed point tag $\FixedPoint$ for the respective module(s).
-Any failure voids the tag until the contract is satisfied.
+%---------------------------------------------------------
+\section{Keystone Results}
+
+\begin{theorem}[Reciprocity–Action Equivalence]
+\label{thm:reciprocity-action}
+Let $\Acal$ be the curvature/action functional on histories admissible under
+Event Selection. Under MA, any extremal of $\Acal$ induces a symmetric bilinear
+form $\Bform$ on the tangent space of admissible perturbations such that:
+\begin{enumerate}[(i)]
+  \item $\Bform$ is non-degenerate on the quotient by gauge;
+  \item Stationarity of $\Acal$ is equivalent to reciprocity,
+        $\Bform(\delta_1,\delta_2)=\Bform(\delta_2,\delta_1)$,
+        and to the Euler–Lagrange equations on the quotient space.
+\end{enumerate}
+\end{theorem}
+
+\begin{lemma}[Injective Class Map]
+\label{lem:injective}
+The map $\InjectiveMap$ from equivalence classes of realizable histories (modulo gauge)
+to representable objects is injective and order-reflecting:
+\[
+ (x \not\sim y)\Rightarrow
+   \InjectiveMap([x])\neq \InjectiveMap([y]),\qquad
+ x\preceq y \Rightarrow
+   \InjectiveMap([x])\preceq \InjectiveMap([y]).
+\]
+\end{lemma}
+
+\begin{theorem}[Coherence Implies Entropic Monotonicity]
+\label{thm:coherence-entropy}
+Assuming Axiom~\ref{ax:foundation} and the coherence constraint
+$U^{(4)} = 0$, the induced evolution on admissible histories satisfies
+$\Delta S \ge 0$ for the entropy functional $S$ defined on equivalence classes,
+with equality if and only if the reciprocity/gauge class is stationary.
+\end{theorem}
+
+%---------------------------------------------------------
+\section{Verification Workflow}
+
+\begin{definition}[Verification Steps]
+\label{def:verify-steps}
+Given a target file $\mathsf{F}$ (e.g.\ $P_{\text{clean}}$, $G1S$, or $G2S$),
+verification proceeds in three stages:
+\begin{enumerate}
+  \item \textbf{Type Check:} confirm that each object in Definition~\ref{def:coreobjects}
+        appears in $\mathsf{F}$ with its declared contract.
+  \item \textbf{Obligation Check:} ensure $\mathsf{F}$ discharges the hypotheses
+        of Theorems~\ref{thm:reciprocity-action}--\ref{thm:coherence-entropy}.
+  \item \textbf{Coherence Check:} verify that $\mathsf{F}$ preserves the
+        entropic monotonicity $\Delta S\ge0$ under its constructions.
+\end{enumerate}
+\end{definition}
 
 \end{document}
