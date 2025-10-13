@@ -1,143 +1,134 @@
 \documentclass[12pt]{article}
+
+% ---------------- Packages ----------------
 \usepackage{amsthm,amssymb,amsmath,mathtools,setspace}
-\usepackage{enumitem} % Added for custom enumeration environments
+\usepackage{enumitem}
+\usepackage{xcolor}
 \onehalfspacing
 
-% --- Theorem environments and macros (V.tex aligned) ---
-\newtheorem{theorem}{Theorem}
-\newtheorem{definition}{Definition}
-\newtheorem{proposition}{Proposition}
-\newcommand{\U}{\mathbf{U}}        % Universe tensor (admissible history)
-\newcommand{\V}{\mathbf{V}}        % Test function / variation
-\newcommand{\D}{\mathrm{D}}        % Derivative operator (for 1D)
-\newcommand{\Lap}{\Delta}          % Laplacian (ND generalization)
-\newcommand{\Acal}{\mathcal{A}}    % Informational curvature action (V.tex Def. 1)
-\newcommand{\Bform}{\mathsf{B}}    % Symmetric bilinear form (V.tex Def. 1)
-\newcommand{\Hspace}{\mathcal{H}}  % Trial space (e.g., H^2)
-\newcommand{\Test}{\mathcal{V}}    % Test/variation space
-\newcommand{\deltaVar}{\delta}     % First variation
-\newcommand{\Res}{\mathsf{R}}      % Residual (source)
-\newcommand{\mesh}{\mathsf{h}}     % Mesh scale (discrete)
-\newcommand{\Spline}{\mathsf{S}}   % Spline/interpolant
+% --------------- Version ------------------
+\newcommand{\Vversion}{2025-10-13-min}
 
-% --- Optional: Gold Check Harness (V.tex aligned) ---
-\newcounter{goldcheck}
-\newenvironment{goldcheck}[1][]{%
-  \refstepcounter{goldcheck}%
-  \par\medskip\noindent\textbf{Gold Check G\thegoldcheck. #1}\par\smallskip\noindent
-  \begin{enumerate}[leftmargin=2.2em,label=\arabic*.]
-}{%
-  \end{enumerate}\medskip
-}
-\newcommand{\gpass}{\textbf{[PASS]}}
-\newcommand{\gfail}{\textbf{[FAIL]}}
-\newenvironment{GTwoSpec}{\begin{goldcheck}[G2 Variational Reciprocity]}{\end{goldcheck}}
-\newenvironment{varobligation}[1][]{%
-  \par\medskip\noindent\textbf{G2 Proof Obligation.} #1\;\emph{(Provide stationarity, reciprocity, and refinement consistency.)}%
-  \begin{enumerate}[leftmargin=2.2em,label=\alph*.]
-}{%
-  \end{enumerate}\medskip
-}
+% ------ Theorem-like envs (guarded) -------
+\makeatletter
+\@ifundefined{theorem}{\newtheorem{theorem}{Theorem}}{}
+\@ifundefined{definition}{\newtheorem{definition}{Definition}}{}
+\@ifundefined{proposition}{\newtheorem{proposition}{Proposition}}{}
+\makeatother
 
-\title{\textbf{Module 2: Kinematic Closure and Splines}\\
-\large V.tex-Compliant Contract for G2S}
-\author{—}
+% --------- Shared symbols (guarded) -------
+\providecommand{\U}{\mathbf{U}}        % field / history
+\providecommand{\V}{\mathbf{V}}        % test / variation
+\providecommand{\Acal}{\mathcal{A}}    % action
+\providecommand{\Bform}{\mathsf{B}}    % bilinear form
+\providecommand{\Hspace}{\mathcal{H}}  % trial space (e.g., H^2)
+\providecommand{\Test}{\mathcal{V}}    % test space
+\providecommand{\D}{\mathrm{D}}        % 1D derivative
+\providecommand{\be}{\begin{equation}}
+\providecommand{\ee}{\end{equation}}
+\providecommand{\grad}{\nabla}
+
+% Entropy (safe shorthands)
+\providecommand{\Ent}{\mathrm{S}}
+\newcommand{\DeltaEnt}{\Delta\Ent}
+
+% Spline / mesh (lightweight)
+\providecommand{\Spline}{\mathsf{S}}
+\providecommand{\mesh}{h}
+
+% ---- Minimal variational semantics -------
+\providecommand{\AcalFunctional}[1]{\tfrac12 \int (\D^2 #1)^2\,dx}
+\providecommand{\BformDef}[2]{\int (\D^2 #1)(\D^2 #2)\,dx}
+\providecommand{\AcalOf}[1]{\AcalFunctional{#1}}
+\providecommand{\Bof}[2]{\BformDef{#1}{#2}}
+
+% ------------- vnode tagging --------------
+\makeatletter
+\@ifundefined{vnode}{
+  \newcommand{\vnode}[2][]{%
+    \begingroup
+      \edef\@id{#1}\ifx\@id\@empty\def\@id{unnamed}\fi
+      \expandafter\gdef\csname vnode@\@id\endcsname{}%
+    \endgroup
+    #2%
+  }
+}{}
+\makeatother
+
+% ----- Structural contract (warnings) -----
+\makeatletter
+\newcommand{\VRequireNode}[1]{%
+  \@ifundefined{vnode@#1}{%
+    \PackageWarning{V}{Missing required vnode id: `#1'. P_clean may be incomplete.}%
+  }{}%
+}
+\newcommand{\VCheckPcleanStructure}{%
+  \VRequireNode{abs}%
+  \VRequireNode{overview}%
+  \VRequireNode{chap:order}%
+  \VRequireNode{chap:reciprocity}%
+  \VRequireNode{chap:spline}%
+  \VRequireNode{chap:conservation}%
+  \VRequireNode{chap:entropy}%
+  \VRequireNode{chap:ledger}%
+}
+\makeatother
+
+% --------------- Document -----------------
+\title{\textbf{V.tex — Minimal Verification Contract}\\
+\large Keeps P\_clean correct without redefining it (V\Vversion)}
+\author{V (compatibility layer)}
 \date{\today}
 
 \begin{document}
 \maketitle
 
-% --- Working basis (aligns with V.tex half-step) ---
-\noindent\textbf{Working Basis.} We assume ZFC, Martin’s Axiom for relevant ccc posets,
-and the Axiom of Event Selection (locally finite, realizable histories).
+\section*{Purpose}
+This minimal layer:
+\begin{itemize}[leftmargin=2em]
+  \item defines shared macros only if missing,
+  \item pins two semantics used by \texttt{P\_clean}: entropy monotonicity and biharmonic closure,
+  \item and warns if required structural anchors are missing.
+\end{itemize}
 
-\section{Input Node: Reciprocity and Variational Setup}
-
-We formalize the unique analytic closure that minimally interpolates the discrete events guaranteed by consistency.
-Let the trial space be $\Hspace \subset H^2(I)$ on an interval $I$, with boundary or knot
-constraints enforcing interpolation/BCs; let the test space $\Test$ be the corresponding
-space of admissible variations (compact support or variations compatible with the BCs).
-
-\begin{definition}[Informational Curvature Action $\Acal$ (V.tex Def. 1)]\label{def:action}
-For $\U\in\Hspace$, the informational bending energy (or curvature action) is defined by
-\[
-  \Acal[\U] = \tfrac12 \int_I (\D^2 \U)^2\,dx.
-\]
-In 1D, the Euler–Lagrange operator for stationarity is $\D^4$ (biharmonic). In general, $\D^2$ represents the Laplacian operator $\Lap$ and $\D^4$ the biharmonic operator $\Lap^2$ (use $\Lap$ and $\Lap^2$ in ND).
+\section{G1: Monotone Entropy (Contract)}
+\begin{definition}[Observable Classes]
+For a causal structure $\mathcal{C}$ and observable $\pi$, let $\Omega(\mathcal{C})$ be the induced equivalence classes. Define entropy $\Ent[\pi](\mathcal{C})=\ln|\Omega(\mathcal{C})|$ (units absorbed).
 \end{definition}
 
-\begin{definition}[Reciprocity Bilinear Form $\Bform$ (V.tex Def. 1)]\label{def:bilinear}
-Define the symmetric bilinear form on admissible variations $\Bform:\Test\times\Test\to\mathbb{R}$ by
-\[
-  \Bform(\phi,\psi) := \int_I (\D^2 \phi)(\D^2 \psi)\,dx.
-\]
-The Action is recovered as $\Acal[\U] = \tfrac12\,\Bform(\U,\U)$ when identifying $\U$ with its variation in $\Test$. (use $\Lap$ and $\Lap^2$ in ND).
+\begin{definition}[Compatible Refinement]
+A refinement $\phi:\mathcal{C}\!\to\!\mathcal{C}'$ is compatible if it is order-embedding and non-merging at the level of classes.
 \end{definition}
 
-\begin{definition}[Residual $\Res$]\label{def:residual}
-The weak problem is to find $\U\in\Hspace$ such that
-\[
-  \Bform(\U,\V) = \Res(\V)\qquad\forall\,\V\in\Test.
-\]
-For the homogeneous problem of finding the minimal informational curvature (no external sources), $\Res\equiv 0$. Hence the weak form is homogeneous.
-\end{definition}
-
-\section{Theorem: Kinematic Closure (Validating G2S)}
-
-\begin{theorem}[Kinematic Closure $\,\D^4 \U=0$]\label{thm:kinematic-closure}
-The stationary point $\U^\star\in\Hspace$ of $\Acal$ satisfies the weak form $\Bform(\U^\star,\V)=0$ for all $\V\in\Test$, hence (under the stated boundary conditions, BCs) the strong form
-\[
-  \D^4 \U^\star = 0 \quad \text{in } I,
-\]
-i.e., the minimal-curvature condition (cubic spline segments between knots) required for Martin-consistent propagation.
-\end{theorem}
-
-\paragraph{BCs used for (IBP).}
-Either natural spline BCs ($\U''=\U'''=0$ at $I$'s endpoints) or clamped BCs
-($\U, \U'$ fixed at endpoints); variations $\V$ respect these BCs.
-
-\begin{proposition}[Affine kernel and coercivity]\label{prop:kernel-coercive}
-On $H^2(I)$ with the BCs above (and interpolation knots),
-$\ker \Bform = \{ a+bx : a,b\in\mathbb{R} \}$. Consequently, $\Bform$ is coercive
-on the constrained subspace (or on the quotient by this kernel), ensuring uniqueness of $\U^\star$.
+\begin{proposition}[Injective Class Map]
+Compatibility induces $\iota:\Omega(\mathcal{C})\to\Omega(\mathcal{C}')$, $\iota([x])=[\phi(x)]$, which is injective.
 \end{proposition}
 
-\begin{proof}[\textbf{G2 Proof Obligation Fulfillment}]
-\begin{varobligation}
-  \item \textbf{Stationarity (Euler–Lagrange).} For $\V\in\Test$, the first variation of the action is:
-  \[
-    \deltaVar\Acal[\U](\V)
-      = \left.\frac{d}{d\epsilon}\Acal[\U+\epsilon\V]\right|_{\epsilon=0}
-      = \int_I (\D^2\U)(\D^2\V)\,dx
-      = \Bform(\U,\V).
-  \]
-  Two integrations by parts (BCs eliminate boundary terms) yield the identity
-  $\deltaVar\Acal[\U](\V) = \int_I (\D^4\U)\,\V\,dx$. Stationarity (vanishing variation for all $\V$)
-  therefore implies the strong form $\D^4\U=0$.
-  \item \textbf{Reciprocity.} The bilinear form $\Bform(\phi,\psi)$ is symmetric by definition, reflecting reciprocity.
-  It is coercive on the constrained subspace (or on the quotient by the affine kernel)
-  induced by the boundary conditions and interpolation knots, guaranteeing the existence and uniqueness of $\U^\star$ (cf. Proposition \ref{prop:kernel-coercive}).
-  \item \textbf{Weak Form.} With the residual $\Res\equiv 0$ (Definition \ref{def:residual}), the problem is:
-  find $\U\in\Hspace$ such that $\Bform(\U,\V)=0$ for all $\V\in\Test$.
-  \item \textbf{Refinement Consistency.} Let $\U_\mesh$ be the discrete informational record and
-  $\Spline_\mesh$ the cubic spline interpolant. Then the convergence
-  $\|\Spline_\mesh\U_\mesh - \U^\star\|_{H^2(I)}\to 0$ as $\mesh\to 0$ holds (classical spline theory),
-  validating $\U^\star$ as the continuum limit of the discrete reciprocal updates.
-\end{varobligation}
-\end{proof}
+\begin{theorem}[Second Law (Minimal Form)]
+For any compatible refinement, $\DeltaEnt=\Ent[\pi'](\mathcal{C}')-\Ent[\pi](\mathcal{C})\ge 0$.
+\end{theorem}
 
-\section{Output Node: Gold Check}
+\section{G2: Kinematic Closure (Contract)}
+\begin{definition}[Action and Reciprocity]
+For $\U\in\Hspace$ and $\V\in\Test$,
+\[
+  \Acal[\U]=\AcalOf{\U},\qquad
+  \Bform(\U,\V)=\Bof{\U}{\V}.
+\]
+Stationarity of $\Acal$ gives the weak form $\Bform(\U,\V)=0$ for all $\V\in\Test$.
+\end{definition}
 
-\begin{GTwoSpec}
-  \item \gpass\; \textbf{Spaces}: $\Hspace\subset H^2(I)$ and $\Test$ specified; BCs/nodes fix the affine kernel.
-  \item \gpass\; \textbf{Action}: $\Acal[\U]=\tfrac12\int (\D^2\U)^2 dx$; $\deltaVar\Acal=\Bform(\U,\cdot)$.
-  \item \gpass\; \textbf{Reciprocity}: $\Bform$ symmetric; coercive on constrained space / quotient.
-  \item \gpass\; \textbf{Weak Form}: $\Bform(\U,\V)=0$ for all $\V\in\Test$.
-  \item \gpass\; \textbf{Spline Consistency}: $\Spline_\mesh\U_\mesh\to \U^\star$ as $\mesh\to 0$.
-\end{GTwoSpec}
+\begin{theorem}[Biharmonic Strong Form]
+Under appropriate BCs, stationarity implies the strong form $\D^{4}\U=0$.
+\end{theorem}
 
-\begin{center}
-\textit{Conclusion for Module 2: Smooth motion is the unique analytic form of consistency, established via a reciprocal variational principle.}
-\end{center}
+\paragraph{Spline Consistency (notational hook).}
+If $\U_{\mesh}$ is a discrete solution and $\Spline_{\mesh}$ a reconstruction, statements of the form
+$\|\Spline_{\mesh}\U_{\mesh}-\U^\star\|\to 0$ as $\mesh\to 0$
+are admissible and well-typed here.
+
+\bigskip
+% Run structure check late so P_clean has had a chance to set vnodes.
+\VCheckPcleanStructure
 
 \end{document}
