@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.16)  12 OCT 2025 19:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.16)  12 OCT 2025 21:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -303,7 +303,7 @@ s the fourth{order
 ] [2] (./hilbert.toc [3
 
 ]
-Overfull \hbox (1.00156pt too wide) in paragraph at lines 40--40
+Overfull \hbox (1.00156pt too wide) in paragraph at lines 41--41
  [][] []\OT1/cmr/m/n/12 Introduction: Mar-tin's Con-di-tion and the Con-ti-nu-i
 ty of Causal 
  []
@@ -316,10 +316,10 @@ ty of Causal
 showing example
 (./hilbert.loe
 
-LaTeX Warning: Citation `deBoor1978' on page vii undefined on input line 42.
+LaTeX Warning: Citation `deBoor1978' on page vii undefined on input line 43.
 
 
-Overfull \hbox (0.5099pt too wide) in paragraph at lines 54--54
+Overfull \hbox (0.5099pt too wide) in paragraph at lines 55--55
  [][] []\OT1/cmr/m/n/12 Thought Ex-per-i-ment (Mach--Zehnder In-ter-fer-om-e-te
 r as Causal 
  []
@@ -618,7 +618,7 @@ st/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/
 texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2023/te
 xmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on hilbert.pdf (146 pages, 629971 bytes).
+Output written on hilbert.pdf (146 pages, 631023 bytes).
 PDF statistics:
  613 PDF objects out of 1000 (max. 8388607)
  406 compressed objects within 5 object streams
