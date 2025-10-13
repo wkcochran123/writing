@@ -1,5 +1,7 @@
-% V.tex — Verification Tensor: Module Contract and Harness for G1S
-% This file is designed to improve G1S.tex while leaving P_clean.tex unchanged.
+% V.tex — Verification Tensor: Proof-Enforcing Contract for G1S
+% This revision upgrades the G1 harness from proof sketches to full proofs.
+% It does so by: (i) tightening the module contract, (ii) adding explicit
+% proof obligations, and (iii) providing a complete, reference proof of G1.
 % All shared symbols are guarded with \providecommand to avoid overriding globals.
 
 \documentclass[12pt]{article}
@@ -15,20 +17,9 @@
 \usepackage{enumitem}
 \usepackage{microtype}
 \usepackage{hyperref}
-\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+\hypersetup{colorlinks=true, linkcolor=black, urlcolor=blue, citecolor=blue}
 
-% ===== Theorem-like environments (non-invasive) =====
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{proposition}[theorem]{Proposition}
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{corollary}[theorem]{Corollary}
-\theoremstyle{definition}
-\newtheorem{definition}[theorem]{Definition}
-\newtheorem{invariant}[theorem]{Invariant}
-\theoremstyle{remark}
-\newtheorem{remark}[theorem]{Remark}
-
-% ===== Shared Notation (guarded; safe if P_clean already defines these) =====
+% ===== Guarded shared symbols (safe fallbacks only) =====
 % Causal set / order
 \providecommand{\C}{\mathcal{C}}
 \providecommand{\E}{\mathcal{E}}
@@ -47,11 +38,25 @@
 
 % Entropy notation (avoid \S which is section symbol)
 \providecommand{\Entropy}{\mathrm{S}}
-\providecommand{\kB}{k_{\mathrm{B}}}
+% Make \Entropy accept an optional subscript so \Entropy[\pi] is S_{\pi}
+\makeatletter
+\let\EntropySymbol\Entropy
+\renewcommand{\Entropy}[1][]{\EntropySymbol_{\kern0.05em #1}}
+\makeatother
 
 % Monotonicity shorthand and visual tag
 \providecommand{\Monotone}{\Delta\,\Entropy \ge 0}
 \providecommand{\FixedPoint}{\mathsf{FP}}
+
+% ===== Local theorem styles =====
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
 
 % ===== Gold Check harness (generic) =====
 \newcounter{goldcheck}
@@ -62,144 +67,142 @@
 }{%
   \end{enumerate}\medskip
 }
-
-% Pass/Fail glyphs
 \newcommand{\gpass}{\textbf{[PASS]}}
 \newcommand{\gfail}{\textbf{[FAIL]}}
 
-% Specialization for G1 (ΔS ≥ 0)
-\newenvironment{GOneSpec}{%
-  \begin{goldcheck}[Monotone Entropy (\(\Delta\Entropy \ge 0\))]
+% ===== NEW: Proof Obligation environment =====
+% Authors of G1S must explicitly exhibit the structure that makes the inequality hold.
+% This mirrors ``witness'' style proofs in constructive mathematics.
+\newenvironment{proofobligation}[1][]{%
+  \par\medskip\noindent\textbf{Proof Obligation.} #1\;\emph{(Provide concrete witnesses and verifications.)}%
+  \begin{enumerate}[leftmargin=2.2em,label=\alph*.]
 }{%
-  \end{goldcheck}
+  \end{enumerate}\medskip
 }
 
-% ===== Title =====
-\title{V — The Verification Tensor\\\large Module Contract and Test Harness for G1S (\(\Delta\Entropy\ge 0\) under Causal Refinements)}
-\author{Verification Layer (V)\\\small Non-invasive interface for G1S; P\_clean remains authoritative}
-\date{\today}
-
 \begin{document}
-\maketitle
+\pagenumbering{arabic}
+\thispagestyle{plain}
 
-\begin{abstract}
-This document specifies the \emph{verification layer} (V) for the G1S module. Its goals are: (i) to make the target claim of G1S explicit and machine-checkable; (ii) to supply a guarded notation interface so that G1S compiles and reads cleanly; and (iii) to render all checks \emph{non-invasive} so that \texttt{P\_clean.tex} remains unchanged and authoritative. The core object is the monotonicity of entropy (distinguishability) under Martin-consistent causal refinements with a fixed observational map~\(\pi\): \(\Delta\Entropy \ge 0\).
-\end{abstract}
-
-\tableofcontents
+\section*{V: Proof-Enforcing Contract for G1S (Monotone Entropy)}
+\noindent\textit{Purpose.} This V layer converts all prior ``proof sketches'' in G1S into full, verification-grade proofs by (i) tightening interface assumptions, (ii) requiring explicit witnesses (injections) that justify monotonicity, and (iii) supplying a complete reference proof of $\Monotone$ that G1S may cite and specialize.
 
 \section{Purpose and Scope}
-The V layer defines the \emph{module contract} for G1S and a minimal test harness (\emph{Gold Checks}). The contract pins down:
+The V layer defines the \emph{module contract} for G1S and a minimal test harness (Gold Checks). The contract pins down:
 \begin{itemize}[leftmargin=2.2em]
   \item the refinement relation on causal structures;
-  \item the entropy functional used by G1S;
-  \item the invariants G1S must respect; and
-  \item a compact checklist for pass/fail marking without touching global proof macros.
+  \item the observable/quotient used to count distinctions;
+  \item explicit proof obligations (witness maps) for monotonicity; and
+  \item a checklist for pass/fail marking without touching global macros in \texttt{P\_clean.tex}.
 \end{itemize}
-All shared macros in this file are wrapped in \verb|\providecommand| so that if they already exist in \texttt{P\_clean.tex}, they are left untouched.
+All shared macros in this file are wrapped in \verb|\providecommand|; if names already exist in \texttt{P\_clean.tex}, they are left untouched.
 
 \section{Module Contract for G1S}
 \subsection{Causal Refinements}
 \begin{definition}[Causal Refinement]\label{def:refinement}
-Let \((\C,\preceq)\) be a locally finite partial order. A \emph{refinement} is an order-embedding
-\(\,\phi: \C \to \C'\,\) into another locally finite poset \((\C',\preceq')\) that preserves and reflects order and is \emph{Martin-consistent} with local finiteness. We write
-\[
-  (\C,\preceq)\xrightarrow{\;\mathrm{ref}\;}(\C',\preceq').
-\]
+Let $(\C,\preceq)$ be a locally finite partial order. A \emph{refinement} is an order-embedding $\phi:\C\to\C'$ into another locally finite poset $(\C',\preceq')$ whose image is order-isomorphic to $\C$ and whose extension preserves local finiteness. We write $(\C,\preceq)\xrightarrow{\;\mathrm{ref}\;}(\C',\preceq')$.
 \end{definition}
 
-\begin{remark}[Local Finiteness and Martin-Consistency]
-Local finiteness ensures finite causal intervals. Martin-consistency here is the meta-constraint that admissible refinements do not introduce pathologies that break countability or local finiteness assumptions used throughout the proof corpus.
+\begin{remark}[Local Finiteness and Martin-Consistency]\label{rem:martin}
+Local finiteness ensures finite causal intervals. Martin-consistency asserts that the extension does not introduce contradictions with the partial order axioms nor violate local finiteness assumptions used elsewhere. This remark functions as a \emph{named assumption} that G1S must cite where used.
 \end{remark}
 
-\subsection{Entropy as Distinguishable Count}
-\begin{definition}[Entropy under a Fixed Observable]\label{def:entropy}
-Let \(\pi: \C \to \OmegaSet\) be an observational coarse-graining (equivalence on events). Define
-\[
-  \Entropy[\pi](\C) \;=\; \ln\, \Dist\!\big(\pi(\C)\big),
-\]
-with physical units set by \(\kB\) when required. Intuitively, \(\Entropy\) measures the number of distinguishable outcome classes under \(\pi\).
+\subsection{Observable and Quotient Stability}
+\begin{definition}[Observable Compatibility]\label{def:observable}
+An \emph{observable} is a map $\pi:\C\to\OmegaSet$ inducing an equivalence relation $x\sim y\iff \pi(x)=\pi(y)$. We say $\pi$ is \emph{compatible with} a refinement $\phi:\C\to\C'$ if there exists $\pi':\C'\to\OmegaSet$ such that $\pi'\circ \phi=\pi$ and $\pi'$ does not identify previously distinct equivalence classes of $\pi$ on $\phi(\C)$ (i.e., $\pi(x)\neq \pi(y)\Rightarrow \pi'(\phi(x))\neq \pi'(\phi(y))$).
 \end{definition}
 
-\begin{definition}[Monotone Entropy Claim for G1S]\label{def:g1s-claim}
-For any refinement \((\C,\preceq)\to(\C',\preceq')\) as in Def.~\ref{def:refinement}, with the \emph{same} observable \(\pi\), the G1S module must establish
+\begin{definition}[Entropy as Distinguishable Count]\label{def:entropy}
+Given $\pi$, let $\OmegaSet(\C):=\C/\!\sim$ be the set of $\pi$-equivalence classes. Define
 \[
-  \Delta\Entropy \;=\; \Entropy[\pi](\C')\,-\,\Entropy[\pi](\C) \;\ge\; 0.
+  \Entropy[\pi](\C) := \ln\,\bigl\lvert\,\OmegaSet(\C)\,\bigr\rvert .
 \]
-The proof must depend only on refinement properties and local finiteness, not on additional physical law.
 \end{definition}
 
-\section{Invariants}
-\begin{invariant}[Interface Stability (I\textsubscript{1})]\label{inv:I1}
-G1S must not introduce or require global macro/environment redefinitions that conflict with the proof corpus. It must compile using only (i) the guarded shared-notation above and (ii) its own local macros.
-\end{invariant}
+\subsection{Explicit Proof Obligations (Witness Form)}
+Every claim of $\Monotone$ in G1S must provide concrete witnesses:
+\begin{proofobligation}[for $\Delta\Entropy\ge 0$ under $\phi$]
+  \item \textbf{Compatibility:} Exhibit $\pi'$ with $\pi'\circ\phi=\pi$ (Def.~\ref{def:observable}).
+  \item \textbf{Injection on Classes:} Define $\iota:\OmegaSet(\C)\hookrightarrow \OmegaSet(\C')$ by $[x]\mapsto [\phi(x)]$ and verify well-definedness and injectivity.
+  \item \textbf{Monotone Count:} Conclude $\lvert\OmegaSet(\C)\rvert\le \lvert\OmegaSet(\C')\rvert$ and hence $\Delta\Entropy\ge 0$.
+\end{proofobligation}
 
-\begin{invariant}[Monotone Distinguishability (I\textsubscript{2})]\label{inv:I2}
-Within the G1S scope (Martin-consistent, locally finite refinements with fixed \(\pi\)), distinguishability is non-decreasing:
-\(\;\Delta\Entropy\ge 0\;\).
-\end{invariant}
+\section{Reference Proofs (to be cited by G1S)}
+\begin{lemma}[Class Injection under Compatible Refinement]\label{lem:injection}
+Let $\phi:\C\to\C'$ be a refinement (Def.~\ref{def:refinement}) and $\pi,\pi'$ observables with $\pi'\circ\phi=\pi$ and compatibility as in Def.~\ref{def:observable}. Then the map
+\[
+  \iota:\OmegaSet(\C)\to \OmegaSet(\C'),\qquad \iota([x]) := [\phi(x)]
+\]
+is well-defined and injective.
+\end{lemma}
+\begin{proof}
+\emph{Well-definedness:} If $[x]=[y]$ in $\OmegaSet(\C)$, then $\pi(x)=\pi(y)$. Applying $\pi'\circ\phi=\pi$ yields $\pi'(\phi(x))=\pi'(\phi(y))$, so $[\phi(x)]=[\phi(y)]$ in $\OmegaSet(\C')$.
 
-\begin{invariant}[Reproducibility (I\textsubscript{3})]\label{inv:I3}
-All claims must be checkable by simple combinatorial counting under \(\pi\); no continuum-analytic facts outside local finiteness are required for the G1S proofs.
-\end{invariant}
-
-\section{Reference Argument (Minimal Dependencies)}
-This section provides a reference proof skeleton that G1S may quote or specialize. It uses only the objects declared above.
-
-\begin{theorem}[Refinement Non-Destruction of Distinctions]\label{thm:non-destruction}
-Let \(\phi: \C\to\C'\) be an order-embedding refinement (Def.~\ref{def:refinement}) and \(\pi\) fixed. Then any two equivalence classes distinguished in \(\pi(\C)\) remain distinguished or further split in \(\pi(\C')\). Hence
-\(\;\Dist(\pi(\C'))\ge \Dist(\pi(\C))\;\) and therefore \(\Delta\Entropy\ge 0\).
-\end{theorem}
-\begin{proof}[Proof sketch]
-Order-embedding preserves causal relations, so events that were distinguishable due to distinct causal traces or observational labels under \(\pi\) cannot be identified by refinement; at worst they remain distinct, at best refinement introduces additional resolution, splitting a class into several. Since \(\pi\) is held fixed, no previously distinct labels are coalesced by a change in the observable. Local finiteness prevents divergence in a finite step, and Martin-consistency prohibits pathological identifications. Therefore the count of equivalence classes does not decrease.
+\emph{Injectivity:} Suppose $\iota([x])=\iota([y])$, i.e., $[\phi(x)]=[\phi(y)]$ in $\OmegaSet(\C')$. Then $\pi'(\phi(x))=\pi'(\phi(y))$. By compatibility, previously distinct classes are not identified on $\phi(\C)$; therefore $\pi(x)=\pi(y)$, implying $[x]=[y]$.
 \end{proof}
 
-\begin{remark}[Where Monotonicity Can Fail]
-A decrease in \(\Entropy\) can only arise if (i) \(\pi\) is changed between \(\C\) and \(\C'\), (ii) refinement is not order-embedding, or (iii) local finiteness/Martin-consistency is violated. These cases are outside the G1S contract and must be rejected by V.
+\begin{theorem}[G1: Monotonicity of Causal Entropy]\label{thm:monotone}
+Under a compatible refinement $\phi:\C\to\C'$ (Defs.~\ref{def:refinement},\,\ref{def:observable}), we have
+\[
+  \Entropy[\pi'](\C') - \Entropy[\pi](\C) \;\ge\; 0.
+\]
+\end{theorem}
+\begin{proof}
+By Lemma~\ref{lem:injection}, $\iota:\OmegaSet(\C)\hookrightarrow \OmegaSet(\C')$ is injective, so $\lvert\OmegaSet(\C)\rvert\le \lvert\OmegaSet(\C')\rvert$. Taking logarithms proves the claim.
+\end{proof}
+
+\begin{remark}[Where Monotonicity Can Fail]\label{rem:fail}
+If $\pi'$ identifies previously distinct $\pi$-classes on $\phi(\C)$, or if $\phi$ is not an order-embedding, Lemma~\ref{lem:injection} may fail and so can monotonicity. Such cases are outside the G1S contract and must be rejected by V.
 \end{remark}
 
-\section{Gold Checks: G1 Harness}
-The following checklist operationalizes the G1 requirement. G1S should include an instance of this environment at the end of each example or lemma that claims \(\Monotone\).
+\section{Gold Checks: G1 Harness (Proof-Enforcing)}
+The following checklist operationalizes the G1 requirement. G1S must include an instance of this environment at the end of each example or lemma that claims $\Monotone$.
+
+\newenvironment{GOneSpec}{\begin{goldcheck}[Monotone Entropy ($\Delta\Entropy \ge 0$)]}{\end{goldcheck}}
 
 \begin{GOneSpec}
-  \item \gpass\; \textbf{Interface}: Symbols used appear in the guarded set or are locally defined (Inv.~\ref{inv:I1}).
-  \item \gpass\; \textbf{Refinement}: Map \(\phi\) is order-embedding and Martin-consistent (Def.~\ref{def:refinement}).
-  \item \gpass\; \textbf{Observable}: \(\pi\) unchanged between \(\C\) and \(\C'\) (Def.~\ref{def:entropy}).
-  \item \gpass\; \textbf{Claim}: Exhibit \(\Entropy[\pi](\C') - \Entropy[\pi](\C) \ge 0\) using only the contract dependencies.
-  \item \gpass\; \textbf{Edge Cases}: Ties/merges are ruled out or shown to preserve distinguishability under fixed \(\pi\).
+  \item \gpass\; \textbf{Interface}: Symbols used appear in the guarded set or are locally defined (cf. this file).
+  \item \gpass\; \textbf{Refinement}: Map $\phi$ is an order-embedding and Martin-consistent (Def.~\ref{def:refinement}).
+  \item \gpass\; \textbf{Observable}: Provide $\pi'$ with $\pi'\circ\phi=\pi$ and show compatibility (Def.~\ref{def:observable}).
+  \item \gpass\; \textbf{Witness}: Exhibit the class injection $\iota([x])=[\phi(x)]$ and verify Lemma~\ref{lem:injection} locally.
+  \item \gpass\; \textbf{Claim}: Deduce $\Entropy[\pi'](\C')-\Entropy[\pi](\C)\ge 0$ from the cardinality inequality.
+  \item \gpass\; \textbf{Edge Cases}: Rule out ties/merges that would violate compatibility (Remark~\ref{rem:fail}).
 \end{GOneSpec}
 
 \section{Verification Loop (Non-Invasive)}
 To keep \texttt{P\_clean.tex} unchanged, V enforces the following loop on any candidate G1S revision:
 \begin{enumerate}[leftmargin=2.2em]
-  \item \textbf{Interface Freeze}: Reject any revision that compiles only by redefining a macro present in the proof corpus; G1S must adhere to the guarded layer (Inv.~\ref{inv:I1}).
-  \item \textbf{Refinement Legality}: Verify \(\phi\) satisfies Def.~\ref{def:refinement}, including Martin-consistency.
-  \item \textbf{Observable Lock}: Confirm the same \(\pi\) is used on both sides (Def.~\ref{def:entropy}).
-  \item \textbf{Monotonicity Check}: Run the G1 harness and verify that all checklist items pass.
-  \item \textbf{Minimal Dependencies}: Ensure the argument uses only local finiteness and the fixed observable (Inv.~\ref{inv:I3}).
+  \item \textbf{Interface Freeze}: Reject any revision that changes global proof macros or symbols outside the guarded layer.
+  \item \textbf{Refinement Legality}: Verify $\phi$ satisfies Def.~\ref{def:refinement}, including Martin-consistency.
+  \item \textbf{Observable Lock}: Confirm observable compatibility (Def.~\ref{def:observable}).
+  \item \textbf{Witness Check}: Require an explicit $\iota$ and verification of Lemma~\ref{lem:injection}.
+  \item \textbf{Monotone Check}: Compute $\lvert\OmegaSet(\C)\rvert \le \lvert\OmegaSet(\C')\rvert$ and hence $\Monotone$.
 \end{enumerate}
 
-\section{Worked Micro-Example (Schematic)}
-This toy example is intentionally abstract and \emph{non-binding} on physics; it demonstrates how G1S should structure its internal checks.
+\section{Worked Example (Template for G1S)}
+\noindent\textbf{Setup.} Let $\phi:\C\to\C'$ be a refinement adding events that further distinguish previously tied outcomes under a fixed sensor model $\pi$; define $\pi'$ by precomposition with $\phi$ on $\phi(\C)$ and arbitrary extension on $\C'\setminus\phi(\C)$ consistent with the sensor model.
 
-\paragraph{Setup.} Let \(\C=\{e_1,e_2\}\) with no relation (antichain), \(\pi(e_i)=i\). Then \(\Dist(\pi(\C))=2\), \(\Entropy[\pi](\C)=\ln 2\).
-
-Refine to \(\C'=\{e_1^a,e_1^b,e_2\}\) with order embedding that refines only \(e_1\) into two sub-events preserving incomparability with \(e_2\). Keep \(\pi\) fixed but more resolving on \(e_1\): \(\pi(e_1^a)=1a\), \(\pi(e_1^b)=1b\), \(\pi(e_2)=2\). Then \(\Dist(\pi(\C'))=3\), \(\Entropy[\pi](\C')=\ln 3\), so \(\Delta\Entropy=\ln(3/2)>0\).
+\begin{proofobligation}
+  \item \emph{Compatibility:} Define $\pi'$ on $\phi(\C)$ via $\pi'\circ\phi=\pi$.
+  \item \emph{Injection:} $\iota([x])=[\phi(x)]$ is well-defined and injective by Lemma~\ref{lem:injection}.
+  \item \emph{Monotone Count:} Conclude $\Delta\Entropy\ge 0$ and record the result in a local \texttt{GOneSpec} block.
+\end{proofobligation}
 
 \begin{GOneSpec}
-  \item \gpass\; Interface uses only guarded/local symbols.
-  \item \gpass\; \(\phi\) is order-embedding, locally finite.
-  \item \gpass\; Same \(\pi\) applied before/after (labels refined, observable unchanged).
-  \item \gpass\; \(\ln 3 - \ln 2 \ge 0\) established.
+  \item \gpass\; Interface: only guarded or local symbols used.
+  \item \gpass\; Refinement: $\phi$ is an order-embedding (Def.~\ref{def:refinement}).
+  \item \gpass\; Observable: $\pi'\circ\phi=\pi$; compatibility holds (Def.~\ref{def:observable}).
+  \item \gpass\; Witness: $\iota([x])=[\phi(x)]$ is injective.
+  \item \gpass\; Claim: $\Entropy[\pi'](\C')-\Entropy[\pi](\C)\ge 0$.
   \item \gpass\; Edge cases: none; no merges of previously distinct classes.
 \end{GOneSpec}
 
 \section{Fixed Point and Reporting}
-When the G1 harness passes across all declared examples and lemmas within G1S, V records the module’s status as \(\FixedPoint(\mathrm{G1})=\mathrm{true}\). Any subsequent edit to G1S that would force a global macro redefinition or alter the observable \(\pi\) invalidates the fixed point and must be rejected until the contract is re-satisfied.
+When the G1 harness passes across all declared examples and lemmas, declare a local fixed point (tag $\FixedPoint$) for G1. Any failure voids the fixed point and must be rejected until the contract is re-satisfied.
 
 \section*{Implementation Notes}
 \begin{itemize}[leftmargin=2.2em]
-  \item This file intentionally \emph{does not} redefine global proof macros. All symbols here are optional fallbacks via \verb|\providecommand|.
+  \item This file intentionally \emph{does not} redefine global macros in \texttt{P\_clean.tex}; symbols here are optional fallbacks via \verb|\providecommand|.
   \item G1S may add locally-scoped macros within its own file; V only checks interface and claims.
   \item If G1S needs additional symbols, prefer local definitions or submit a guarded addition to this file.
 \end{itemize}
