@@ -7,129 +7,100 @@
 \newtheorem{axiom}{Axiom}
 \newtheorem{definition}{Definition}
 \newtheorem{equivalence}{Equivalence}
-\newcommand{\U}{\mathbf{U}}        % Universe tensor
-\newcommand{\Ek}{\mathbf{E}_k}      % Event tensor
+[cite_start]\newcommand{\U}{\mathbf{U}}        % Universe tensor [cite: 1]
+[cite_start]\newcommand{\Ek}{\mathbf{E}_k}      % Event tensor [cite: 1]
 \newcommand{\grad}{\nabla}
-\newcommand{\T}{\mathbf{T}}        % Stress tensor
+[cite_start]\newcommand{\T}{\mathbf{T}}        % Stress tensor [cite: 1]
 
 % --- Title: Using the existing document information ---
-\title{\textbf{The Limits of Representation}\\ \large Volume I: The Conditions of $\Delta S \ge 0$}
-\author{The Constructive Proof}
-\date{\today}
+[cite_start]\title{\textbf{The Limits of Representation}\\ \large Volume I: The Conditions of $\Delta S \ge 0$} [cite: 1]
+[cite_start]\author{The Constructive Proof} [cite: 1]
+[cite_start]\date{\today} [cite: 1]
 
 \begin{document}
 \maketitle
 \frontmatter
 
-\chapter*{Abstract}
-% [Insert the core abstract text from P.tex, focusing on measurement,
-% Event Selection (MA-like), U(4)=0, and Delta S >= 0. This sets the formal tone.]
+[cite_start]\chapter*{Abstract} [cite: 1]
+% Abstract (content not provided, but chapter title is)
 
-\chapter*{Overview: The Six Chapters of Consistency}
-% [This is the critical linking section. It directly lists the
-% V.tex concept and the formal P.tex correlate, showing the flow.]
-
-The constructive proof is divided into six stages, corresponding directly to the hierarchy of necessity in a self-consistent universe. This progression links foundational axioms to physical law:
+[cite_start]\chapter*{Overview: The Six Chapters of Consistency} [cite: 1]
+[cite_start]The constructive proof is divided into six stages [cite: 2][cite_start], corresponding directly to the hierarchy of necessity in a self-consistent universe[cite: 2].
 
 \begin{enumerate}
-    \item \textbf{The Calculus of Measurement:} Defining the physical object (the finite event and the partial order).
-    \item \textbf{The Reciprocity Law:} Establishing the duality between observation and variation.
-    \item \textbf{Smoothness and Kinematic Closure:} Enforcing minimal informational curvature.
-    \item \textbf{Conservation and Coherence:} Deriving conserved laws from translational invariance.
-    \item \textbf{The Arrow of Time:} Proving the monotonicity of the set of distinctions ($\Delta S \ge 0$).
-    \item \textbf{The Proof Tensor and the Cosmic Ledger:} Unifying the structure as a global fixed point.
+    [cite_start]\item \textbf{The Calculus of Measurement:} Defining the physical object (the finite event and the partial order)[cite: 3].
+    [cite_start]\item \textbf{The Reciprocity Law:} Establishing the duality between observation and variation[cite: 4].
+    [cite_start]\item \textbf{Smoothness and Kinematic Closure:} Enforcing minimal informational curvature[cite: 4].
+    [cite_start]\item \textbf{Conservation and Coherence:} Deriving conserved laws from translational invariance[cite: 5].
+    [cite_start]\item \textbf{The Arrow of Time:} Proving the monotonicity of the set of distinctions ($\Delta S \ge 0$)[cite: 6].
+    [cite_start]\item \textbf{The Proof Tensor and the Cosmic Ledger:} Unifying the structure as a global fixed point[cite: 7].
 \end{enumerate}
 
 \mainmatter
 
 % =================================================================
-% The Six Core Chapters based on the V.tex structure
+% The Six Core Chapters and their core statements
 % =================================================================
 
 \chapter{The Calculus of Measurement: Defining Order}
-\label{chap:measurement}
-\section*{Core Idea: The Universe is a Process of Measurement}
+[cite_start]\label{chap:measurement} [cite: 8]
+[cite_start]\section*{Core Idea: The Universe is a Process of Measurement} [cite: 8]
 
-% **V.tex Formal Correlate:** Definition of events, order, and information.
-% **Task:** Introduce ZFC, Axiom of Order, Definition of Event Set E, Time as Ordinal Rank (k), Event Tensor E_k, and the Universe Tensor U_n.
-% The material comes primarily from P.tex Chapter 1 Introduction and Chapter 2, Section 2.1-2.2.
-
-\begin{axiom}[The Axiom of Order]
-Time is an ordinal rank ($k$) on the sequence of distinguishable events.
+[cite_start]\begin{axiom}[The Axiom of Order] [cite: 11]
+[cite_start]Time is an ordinal rank ($k$) on the sequence of distinguishable events[cite: 11].
 \end{axiom}
-\begin{definition}[Universe Tensor]
-The cumulative record of distinctions is the ordered fold $\U_n = \sum_{k=1}^n \Ek$.
+[cite_start]\begin{definition}[Universe Tensor] [cite: 12]
+[cite_start]The cumulative record of distinctions is the ordered fold $\U_n = \sum_{k=1}^n \Ek$[cite: 12].
 \end{definition}
 
 
 \chapter{The Reciprocity Law: Duality of Observation and Change}
-\label{chap:reciprocity}
-\section*{Core Idea: Observation and Change are Mirror Operations}
+[cite_start]\label{chap:reciprocity} [cite: 13]
+[cite_start]\section*{Core Idea: Observation and Change are Mirror Operations} [cite: 13]
 
-% **V.tex Formal Correlate:** The Reciprocity Condition, linking $\delta U$ and $\delta E$ as inverse transformations.
-% **Task:** Introduce Event Selection (MA-like, the selection rule for coherent history) and formally state the Reciprocity Law as the bijection $\Phi: \text{Variation} \leftrightarrow \text{Measurement}$. This establishes the dual system.
-% The material comes from P.tex Chapter 2, Section 2.3-2.5.
-
-\begin{axiom}[Axiom of Event Selection (MA-like)]
-Every countable family of admissible local causal choices admits a globally consistent extension.
+[cite_start]\begin{axiom}[Axiom of Event Selection (MA-like)] [cite: 16]
+[cite_start]Every countable family of admissible local causal choices admits a globally consistent extension[cite: 16].
 \end{axiom}
-\begin{equivalence}[The Reciprocity Law]
-Every physically admissible variation corresponds to a measurable distinction, and vice versa.
+[cite_start]\begin{equivalence}[The Reciprocity Law] [cite: 17]
+[cite_start]Every physically admissible variation corresponds to a measurable distinction, and vice versa[cite: 17].
 \end{equivalence}
 
 
 \chapter{Smoothness and Kinematic Closure}
-\label{chap:smoothness}
-\section*{Core Idea: Consistency Across Observations Requires Smooth Motion}
+[cite_start]\label{chap:smoothness} [cite: 18]
+[cite_start]\section*{Core Idea: Consistency Across Observations Requires Smooth Motion} [cite: 18]
 
-% **V.tex Formal Correlate:** The closure condition $U^{(4)} = 0$, the minimal-curvature spline rule.
-% **Task:** Prove the necessity of the minimal-curvature closure derived from minimizing the informational curvature functional $R[U] = \int (\Delta^{(2)} U)^2 dx$. This must yield the condition $U^{(4)}=0$.
-% The material comes from P.tex Chapter 2, Section 2.5-2.6 (Kinematics and Discrete-to-Continuum Limit).
-
-\begin{theorem}[Kinematic Closure]
-Minimal informational friction enforced by consistency yields the cubic-spline condition $\U^{(4)} = 0$.
+[cite_start]\begin{theorem}[Kinematic Closure] [cite: 21]
+[cite_start]Minimal informational friction enforced by consistency yields the cubic-spline condition $\U^{(4)} = 0$[cite: 21].
 \end{theorem}
 
 
 \chapter{Conservation and Coherence}
-\label{chap:conservation}
-\section*{Core Idea: Smooth Motion Implies Conservation}
+[cite_start]\label{chap:conservation} [cite: 23]
+[cite_start]\section*{Core Idea: Smooth Motion Implies Conservation} [cite: 23]
 
-% **V.tex Formal Correlate:** $\nabla_\mu T^{\mu\nu} = 0$, the conservation law as the bookkeeping rule of coherence.
-% **Task:** Introduce Noether's theorem in the continuum limit. Define the stress-energy tensor $T^{\mu\nu}$ as the conserved flow of distinguishability and show that $\nabla_\mu T^{\mu\nu} = 0$ is the consistency (bookkeeping) equation for a smooth system.
-% The material comes from P.tex Chapter 4 (Kinematics of Light) and Chapter 6 (Conservation/Noether).
-
-\begin{theorem}[Bookkeeping of Coherence]
-Translation invariance of the Causal Universe Tensor implies conservation of distinguishability, expressed differentially as $\grad_\mu T^{\mu\nu} = 0$.
+[cite_start]\begin{theorem}[Bookkeeping of Coherence] [cite: 25]
+[cite_start]Translation invariance of the Causal Universe Tensor implies conservation of distinguishability, expressed differentially as $\grad_\mu \T^{\mu\nu} = 0$[cite: 25].
 \end{theorem}
 
 
 \chapter{The Arrow of Time: The Second Law as a Theorem}
-\label{chap:arrow-of-time}
-\section*{Core Idea: A Consistent Record Must Grow}
+[cite_start]\label{chap:arrow-of-time} [cite: 27]
+[cite_start]\section*{Core Idea: A Consistent Record Must Grow} [cite: 27]
 
-% **V.tex Formal Correlate:** $\Delta S \ge 0$, the theorem of order and distinguishability.
-% **Task:** Synthesize the preceding four chapters. Define Entropy S as $k_B \ln |\Omega(\mathcal{C})|$ (the count of admissible orderings) and formally prove the monotonicity theorem $\Delta S \ge 0$.
-% The material comes from P.tex Chapter 5 (The Second Law) and Chapter 4.4 (Defining Entropy).
-
-\begin{theorem}[Second Law of Causal Order]
-For every Martin-consistent refinement of causal structure, the entropy of the system is non-decreasing: $\Delta S \ge 0$.
+[cite_start]\begin{theorem}[Second Law of Causal Order] [cite: 29]
+[cite_start]For every Martin-consistent refinement of causal structure, the entropy of the system is non-decreasing: $\Delta S \ge 0$[cite: 29].
 \end{theorem}
 
 
 \chapter{The Proof Tensor and the Cosmic Ledger}
-\label{chap:ledger}
-\section*{Core Idea: Unifying Structure as a Global Fixed Point}
-
-% **V.tex Formal Correlate:** $U(n)$ as the constructive fixed point linking the logical and physical layers.
-% **Task:** Provide a concluding summary, connecting the field equations (like the Einstein Equation, $G_{\mu\nu} \propto T_{\mu\nu}$ derived from the gauge of light/curvature as inconsistency) back to the foundation laid by the Proof Tensor U_n. Emphasize the closure of the argument.
-% The material comes from P.tex Chapter 4 and the final Epilogue.
+[cite_start]\label{chap:ledger} [cite: 31]
+[cite_start]\section*{Core Idea: Unifying Structure as a Global Fixed Point} [cite: 31]
 
 \begin{center}
-\textit{Quod erat demonstrandum. Order implies dynamics.}
+\textit{Quod erat demonstrandum. [cite_start]Order implies dynamics.} [cite: 33]
 \end{center}
 
 \backmatter
-% [Insert bibliography and any final appendices from P.tex]
 
 \end{document}

@@ -1,0 +1,113 @@
+\documentclass[12pt]{article}
+\usepackage{amsthm,amssymb,amsmath,mathtools,setspace}
+\onehalfspacing
+
+% --- Module Dependencies (Must align with main P.tex definitions) ---
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newcommand{\U}{\mathbf{U}}        % Universe tensor
+\newcommand{\Ek}{\mathbf{E}_k}      % Event tensor
+\newcommand{\grad}{\nabla}
+\newcommand{\T}{\mathbf{T}}        % Stress tensor
+
+\title{\textbf{Module 3: The Second Law as a Theorem} \\
+\large Proving $\Delta S \ge 0$ from Causal Consistency}
+\author{Independent Logical Section: Validating G1}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Input Node: The Coherence Invariant}
+
+The preceding module established the **conservation law** ($\grad_\mu \mathbf{T}^{\mu\nu} = 0$) as the consistency requirement for a smooth, kinematically closed system. This invariant serves as the necessary pre-condition for proving the monotonicity of causal order.
+
+\section{Entropy as the Count of Distinctions}
+
+To bridge the conservation of momentum (coherence) to the monotonicity of time, we must formally define entropy not as a thermodynamic postulate, but as a direct measure of order within the causal set $\mathcal{C}$.
+
+\begin{definition}[Entropy]
+Let $\mathcal{C}$ denote the causal set of distinguishable events accessible to an observer, and let $\Omega(\mathcal{C})$ be the set of all admissible micro–orderings of those events consistent with the Reciprocity Law.  
+The \emph{entropy} associated with $\mathcal{C}$ is the logarithm of this count:
+\[
+S[\mathcal{C}] = k_{\mathrm{B}} \ln |\Omega(\mathcal{C})|.
+\]
+Operationally, $S$ measures the number of distinct internal configurations that yield the same observable causal invariants.
+\end{definition}
+
+\section{Theorem: Monotonicity of Causal Entropy (G1)}
+
+This is the central assertion of the proof, derived from the axiomatic foundation and the resulting conservation structures.
+
+\begin{theorem}[Second Law of Causal Order: $\mathbf{G1}$]
+For any sequence of Martin–consistent causal set refinements $\mathcal{C}_1 \subseteq \mathcal{C}_2 \subseteq \cdots$ that preserves the conservation of coherence ($\grad_\mu \mathbf{T}^{\mu\nu} = 0$), the associated entropies satisfy:
+\[
+\Delta S_n \equiv S[\mathcal{C}_{n+1}] - S[\mathcal{C}_n] \ge 0.
+\]
+\end{theorem}
+
+\begin{proof}[Proof Idea (Monotonic Refinement)]
+Each causal refinement $\mathcal{C}_{n} \to \mathcal{C}_{n+1}$ is an enlargement of the observer's partition of distinguishable events. By the **Axiom of Event Selection** (Martin-like consistency), a new event must be either a refinement of a pre-existing block or the introduction of a new block. Since the refinement must preserve all previous causal orderings, the set of admissible micro-orderings can never decrease:
+\[
+\Omega(\mathcal{C}_{n}) \subseteq \Omega(\mathcal{C}_{n+1}).
+\]
+Taking the logarithm (the entropy function) preserves this monotonic relationship, guaranteeing $\Delta S \ge 0$. The **Arrow of Time** is thus a theorem of order preservation, not a statistical tendency.
+\end{proof}
+
+\section{Output Node: The Fixed Point}
+
+The proof of $\Delta S \ge 0$ establishes the necessary **monotonicity constraint** for the entire universe tensor. This result feeds directly into the final module (Chapter 6), where this monotonic growth is unified with geometry and fields.
+
+\begin{center}
+\textit{Conclusion for Module 3: Order implies dynamics, and dynamics imply monotonic order.}
+\end{center}
+
+\end{document}
+```
+eof
+
+## How to Glue `G1S.tex` to `P.tex`
+
+The goal of modular work is to treat `G1S.tex` as a new, highly detailed **Chapter 5** of your main work, `P.tex`.
+
+Here is the step-by-step process for integrating this module into `P.tex` while respecting the spline nodes:
+
+### 1. Identify the Splice Point
+
+In your main document, `P.tex`, you need to replace the original text for **Chapter 5** (The Second Law) with the external file.
+
+The section to **remove** (or comment out) is the content of `\chapter{The Arrow of Time: The Second Law as a Theorem}`.
+
+### 2. The Input Spline Node (The "Handshake")
+
+The input node ensures $G1S.tex$ starts where the preceding module (Chapter 4, Conservation) finished.
+
+* **Location in `P.tex`:** After the end of Chapter 4 (`\chapter{Conservation and Coherence}`).
+* **Action:** Ensure the first section of `G1S.tex` (`\section{Input Node: The Coherence Invariant}`) clearly references the completion of the conservation proof ($\grad_\mu \mathbf{T}^{\mu\nu} = 0$). This acts as the required dependency check.
+
+### 3. Inserting the Module (The `\input` Command)
+
+Since `G1S.tex` uses the `article` class, you cannot simply copy and paste it into the `book` class (`P.tex`). The most robust way to insert it as a chapter is to strip it down to its core content and use the `\input` command or manually wrap it.
+
+**Recommended Insertion Method:**
+
+1.  In `P.tex`, find the start of Chapter 5:
+    ```latex
+    \chapter{The Arrow of Time: The Second Law as a Theorem}
+    \label{chap:arrow-of-time}
+    \section*{Core Idea: A Consistent Record Must Grow}
+    ... (old content here) ...
+    ```
+2.  **Replace** the old content of Chapter 5 with a direct `\input` command:
+    ```latex
+    \chapter{The Arrow of Time: The Second Law as a Theorem}
+    \label{chap:arrow-of-time}
+    \section*{Core Idea: A Consistent Record Must Grow (Validating G1)}
+    
+    % --- Begin G1S.tex Content ---
+    \input{G1S_core.tex}
+    % --- End G1S.tex Content ---
+    
+    \chapter{The Proof Tensor and the Cosmic Ledger}
+    ...
+    
