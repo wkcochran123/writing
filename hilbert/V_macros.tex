@@ -1,0 +1,43 @@
+% ================================================================
+% V_macros.tex — Rosetta Layer (pure shim, safe to \input anywhere)
+% ---------------------------------------------------------------
+% This file provides a minimal, guarded symbol table and statement
+% "contracts" that unify notation across P_clean.tex, P.tex, G1S.tex,
+% G2S.tex, and G3S.tex. It does NOT declare packages or environments.
+% ================================================================
+
+% ---------- Core symbols (guarded) ----------
+\providecommand{\U}{\mathbf{U}}         % Admissible history / universe field
+\providecommand{\V}{\mathbf{V}}         % Test / variation
+\providecommand{\Acal}{\mathcal{A}}     % Action-like functional (name only)
+\providecommand{\Bform}{\mathsf{B}}     % Symmetric bilinear form (name only)
+\providecommand{\Hspace}{\mathcal{H}}   % Function space (e.g., H^2)
+\providecommand{\Test}{\mathcal{V}}     % Test space
+\providecommand{\grad}{\nabla}          % Gradient operator
+
+% Derivative shorthands used across modules
+\providecommand{\DTwo}{\mathbf{U}''}      % Continuous second derivative
+\providecommand{\DFour}{\mathbf{U}^{(4)}} % Continuous fourth derivative
+
+% Entropy fallback (G1S may provide its own)
+\providecommand{\Entropy}{\mathrm{S}}
+
+% Back-compat alias: unify any legacy \Vt to \V
+\providecommand{\Vt}{}%
+\renewcommand{\Vt}{\V}
+
+% Lightweight utilities
+\providecommand{\ip}[2]{\langle #1,\, #2 \rangle}
+\providecommand{\norm}[1]{\lVert #1 \rVert}
+
+% Named statement "contracts" (shared text handles; no semantics imposed)
+\providecommand{\GOneStatement}{\Delta\,\Entropy \ge 0}
+\providecommand{\GTwoStatement}{\DFour = 0}
+\providecommand{\GTwoWeakForm}{\Bform(\U,\varphi)=0\quad\forall\,\varphi\in\Test}
+\providecommand{\GThreeStatement}{\text{Discrete–continuum reciprocity holds via }\Bform}
+
+% Optional no-op editorial hooks (safe when not present elsewhere)
+\makeatletter
+\@ifundefined{vnode}{\newcommand{\vnode}[2][]{#2}}{}
+\@ifundefined{vnodechange}{\newcommand{\vnodechange}[3][]{}}{}
+\makeatother

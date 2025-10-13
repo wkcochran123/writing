@@ -1,0 +1,99 @@
+\documentclass[12pt]{article}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{amsthm,amssymb,amsmath,mathtools}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\geometry{margin=1in}
+\onehalfspacing
+
+% Import the Rosetta layer (guards only; safe if re-imported elsewhere)
+\input{V_macros.tex}
+
+% Theorem environments for the article
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+
+\title{\textbf{V: Reader’s Guide and Rosetta Layer}\\
+\large Causal Order, Reciprocity, and the Two Closures}
+\author{(Verification Tensor)}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+This document (\textbf{V}) serves as both a \emph{reader’s guide} and a \emph{Rosetta layer}.
+It states the minimal contracts that make the monograph legible across files:
+(1) the \emph{thermodynamic closure} (\(\GOneStatement\)),
+(2) the \emph{kinematic closure} (\(\GTwoStatement\)), and
+(3) \emph{reciprocity} as a weak-form bridge (\(\GTwoWeakForm\)) between discrete and continuous models.
+The same macros compile harmlessly when \texttt{V\_macros.tex} is \verb|\input| by other chapters.
+\end{abstract}
+
+\section{Purpose and Scope}
+\texttt{V\_macros.tex} provides a guarded symbol table and statement handles used by
+\texttt{P\_clean.tex}, \texttt{P.tex}, and the proof sketches \texttt{G1S.tex}, \texttt{G2S.tex}, \texttt{G3S.tex}.
+All commands are declared with \verb|\providecommand|, so no package or environment conflicts occur.
+
+\section{Causal Primitives and Notation}
+We write \(\U\) for the admissible history (or field) in a function space \(\Hspace\), and \(\V\) for test/variation in \(\Test\).
+For readability we use shorthands \(\DTwo = \U''\) and \(\DFour = \U^{(4)}\).
+Entropy is denoted \(\Entropy\) unless specialized elsewhere.
+We also expose lightweight utilities: \(\ip{\cdot}{\cdot}\) and \(\norm{\cdot}\).
+
+\paragraph{Contracts.} Three centralized statement handles avoid duplication:
+\begin{equation*}
+  \textbf{G1: }\GOneStatement,\qquad
+  \textbf{G2: }\GTwoStatement,\qquad
+  \textbf{G2 (weak): }\GTwoWeakForm,
+\end{equation*}
+and a reciprocity summary for discretizations:
+\begin{equation*}
+  \textbf{G3: }\GThreeStatement.
+\end{equation*}
+
+\section{The Two Closures}
+\subsection{Thermodynamic Closure (G1)}
+\textbf{Statement.} Along any admissible evolution of \(\U\), the entropy does not decrease:
+\begin{equation}\label{eq:G1}
+  \GOneStatement.
+\end{equation}
+\textbf{Interpretation.} Monotonic distinguishability: coarse-grainings and communications preserve or increase effective state count.
+
+\subsection{Kinematic Closure (G2)}
+\textbf{Strong form (minimal curvature).}
+\begin{equation}\label{eq:G2-strong}
+  \GTwoStatement.
+\end{equation}
+\textbf{Weak form via reciprocity.} For all \(\varphi\in\Test\),
+\begin{equation}\label{eq:G2-weak}
+  \GTwoWeakForm.
+\end{equation}
+Concrete realizations of \(\Bform\) (integral kernels, boundary terms) live in the chapters; \eqref{eq:G2-strong} follows from \eqref{eq:G2-weak} under standard regularity assumptions.
+
+\section{Reciprocity and Discrete--Continuum Alignment (G3)}
+Discretizations (e.g., finite elements, splines) inherit the weak form by Galerkin projection.
+The contract \(\GThreeStatement\) emphasizes symmetric, consistent discrete bilinear forms \(\Bform_h\) approximating \(\Bform\).
+
+\section{Crosswalk for Readers}
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{\texttt{P\_clean.tex}}: structured exposition referencing \(\Acal\), \(\Bform\), and closures.
+  \item \textbf{\texttt{G1S.tex}}: establishes \eqref{eq:G1}; use \verb|\GOneStatement| for consistency.
+  \item \textbf{\texttt{G2S.tex}}: develops \eqref{eq:G2-strong}/\eqref{eq:G2-weak}; use \verb|\GTwoStatement| and \verb|\GTwoWeakForm|.
+  \item \textbf{\texttt{G3S.tex}}: proves stability/consistency of discrete counterparts; use \verb|\GThreeStatement|.
+  \item \textbf{\texttt{P.tex}}: production build; inherits the same notation via \verb|\input{V_macros.tex}|.
+\end{itemize}
+
+\section{Implementation Notes}
+\begin{enumerate}[leftmargin=2em]
+  \item \texttt{V\_macros.tex} introduces no packages or environments.
+  \item Legacy \verb|\Vt| aliases to \verb|\V|.
+  \item \(\Acal\) and \(\Bform\) are names only; concrete forms belong in the chapters that prove them.
+\end{enumerate}
+
+\end{document}
