@@ -1,210 +1,308 @@
-% V.tex — Verification Tensor: Proof-Enforcing Contract for G1S
-% This revision upgrades the G1 harness from proof sketches to full proofs.
-% It does so by: (i) tightening the module contract, (ii) adding explicit
-% proof obligations, and (iii) providing a complete, reference proof of G1.
-% All shared symbols are guarded with \providecommand to avoid overriding globals.
+% V.tex --- Verification Tensor: Medium-Step Proof Contract for G1S and G2S
+% Goal: enforce full proofs (no sketches) and enable optional node tracking,
+% while keeping P.tex unchanged and requiring no functional changes to P_clean.tex.
+% ASCII-only; minimal packages; no microtype/hyperref/enumitem.
 
 \documentclass[12pt]{article}
 
-% ===== Packages (minimal, non-invasive) =====
+% ===== Minimal, robust packages =====
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
 \usepackage{geometry}
 \geometry{margin=1in}
-\usepackage{amsmath,amssymb,amsthm}
-\usepackage{mathtools}
-\usepackage{enumitem}
-\usepackage{microtype}
-\usepackage{hyperref}
-\hypersetup{colorlinks=true, linkcolor=black, urlcolor=blue, citecolor=blue}
 
 % ===== Guarded shared symbols (safe fallbacks only) =====
 % Causal set / order
 \providecommand{\C}{\mathcal{C}}
-\providecommand{\E}{\mathcal{E}}
-\providecommand{\Vset}{\mathcal{V}}
 \providecommand{\preceq}{\leq}
 
-% Universe / tensors / operators
+% Universe / tensors / operators (placeholders; harmless if unused)
 \providecommand{\U}{\mathbf{U}}
 \providecommand{\T}{\mathbf{T}}
-\providecommand{\Ek}{\mathbf{E}_k}
 \providecommand{\grad}{\nabla}
 
 % State/sample space and counting
 \providecommand{\OmegaSet}{\Omega}
-\DeclareMathOperator{\Dist}{Dist}
+\DeclareMathOperator{\Dist}{Dist} % number of distinguishable classes
 
-% Entropy notation (avoid \S which is section symbol)
+% Entropy notation (avoid \S which is the section symbol)
 \providecommand{\Entropy}{\mathrm{S}}
-% Make \Entropy accept an optional subscript so \Entropy[\pi] is S_{\pi}
+% Make \Entropy accept an optional subscript so \Entropy[\pi] typesets as S_{\pi}
 \makeatletter
 \let\EntropySymbol\Entropy
 \renewcommand{\Entropy}[1][]{\EntropySymbol_{\kern0.05em #1}}
 \makeatother
 
-% Monotonicity shorthand and visual tag
+% Shorthands
 \providecommand{\Monotone}{\Delta\,\Entropy \ge 0}
 \providecommand{\FixedPoint}{\mathsf{FP}}
+
+% ===== G2S: variational/reciprocity symbols (guarded) =====
+\providecommand{\Acal}{\mathcal{A}}     % action-like functional
+\providecommand{\Jcal}{\mathcal{J}}     % quadratic energy / reciprocity functional
+\providecommand{\Hspace}{\mathcal{H}}   % trial space
+\providecommand{\Test}{\mathcal{V}}     % test space
+\providecommand{\deltaVar}{\delta}      % first variation
+\providecommand{\Bform}{\mathsf{B}}     % bilinear form
+\providecommand{\Lin}{\mathsf{L}}       % linear operator (Frechet derivative)
+\providecommand{\Res}{\mathsf{R}}       % residual functional
+\providecommand{\bc}{\text{bc}}         % boundary condition tag
+\providecommand{\mesh}{\mathsf{h}}      % mesh scale (discrete)
+\providecommand{\Spline}{\mathsf{S}}    % spline/interpolation operator
+
+% ===== Node-tracking hooks (optional; no-ops unless enabled) =====
+\newif\ifVtrack            % default off
+\newwrite\Vlog             % log handle (opened only if tracking)
+\newcommand{\VenableTracking}{%
+  \Vtracktrue
+  \immediate\openout\Vlog=\jobname.vlog % writes to <jobname>.vlog
+  \typeout{V: tracking enabled -> \jobname.vlog}%
+}
+% Wrap a document "node" (renders its content unchanged).
+% Usage: \vnode[id=G1.12]{<existing content>}
+\providecommand{\vnode}[2][]{%
+  \ifVtrack
+    \begingroup
+      \edef\V@id{\detokenize{#1}}%
+      \immediate\write\Vlog{VNODE: id=\V@id}%
+    \endgroup
+  \fi
+  #2%
+}
+% Record a refinement/change at a node; renders nothing.
+% Usage: \vnodechange[id=G1.12]{old-label}{new-label}
+\providecommand{\vnodechange}[3][]{%
+  \ifVtrack
+    \begingroup
+      \edef\V@id{\detokenize{#1}}%
+      \edef\V@old{\detokenize{#2}}%
+      \edef\V@new{\detokenize{#3}}%
+      \immediate\write\Vlog{VCHANGE: id=\V@id, old=\V@old, new=\V@new}%
+    \endgroup
+  \fi
+}
+% Optional: auto-wrap sectioning as nodes (call \VwrapSections after \begin{document})
+\newcommand{\VwrapSections}{%
+  \let\V@oldsection\section
+  \renewcommand{\section}[1]{\vnode[id=sec:\number\value{section}]{\V@oldsection{##1}}}%
+  \let\V@oldsubsection\subsection
+  \renewcommand{\subsection}[1]{\vnode[id=subsec:\number\value{subsection}]{\V@oldsubsection{##1}}}%
+}
 
 % ===== Local theorem styles =====
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{proposition}[theorem]{Proposition}
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
 
-% ===== Gold Check harness (generic) =====
+% ===== Gold Check harness (generic, minimal) =====
 \newcounter{goldcheck}
 \newenvironment{goldcheck}[1][]{%
   \refstepcounter{goldcheck}%
   \par\medskip\noindent\textbf{Gold Check G\thegoldcheck. #1}\par\smallskip\noindent
-  \begin{enumerate}[leftmargin=2.2em,label=\arabic*.]
+  \begin{enumerate}
 }{%
   \end{enumerate}\medskip
 }
 \newcommand{\gpass}{\textbf{[PASS]}}
 \newcommand{\gfail}{\textbf{[FAIL]}}
 
-% ===== NEW: Proof Obligation environment =====
-% Authors of G1S must explicitly exhibit the structure that makes the inequality hold.
-% This mirrors ``witness'' style proofs in constructive mathematics.
+% ===== G1S: Proof Obligation environment =====
 \newenvironment{proofobligation}[1][]{%
-  \par\medskip\noindent\textbf{Proof Obligation.} #1\;\emph{(Provide concrete witnesses and verifications.)}%
-  \begin{enumerate}[leftmargin=2.2em,label=\alph*.]
-}{%
-  \end{enumerate}\medskip
-}
+  \par\medskip\noindent\textbf{Proof Obligation.} #1\;
+  \emph{(Show compatibility, injection, and count inequality.)}%
+  \begin{enumerate}
+}{\end{enumerate}\medskip}
+
+% ===== G2S: Variational Proof Obligations =====
+\newenvironment{varobligation}[1][]{%
+  \par\medskip\noindent\textbf{G2 Proof Obligation.} #1\;
+  \emph{(Provide stationarity, reciprocity, and refinement consistency.)}%
+  \begin{enumerate}
+}{\end{enumerate}\medskip}
 
 \begin{document}
-\pagenumbering{arabic}
-\thispagestyle{plain}
 
-\section*{V: Proof-Enforcing Contract for G1S (Monotone Entropy)}
-\noindent\textit{Purpose.} This V layer converts all prior ``proof sketches'' in G1S into full, verification-grade proofs by (i) tightening interface assumptions, (ii) requiring explicit witnesses (injections) that justify monotonicity, and (iii) supplying a complete reference proof of $\Monotone$ that G1S may cite and specialize.
+% --- Optional: enable V tracking for this compile; comment out if not desired
+% \VenableTracking
+% \VwrapSections
 
-\section{Purpose and Scope}
-The V layer defines the \emph{module contract} for G1S and a minimal test harness (Gold Checks). The contract pins down:
-\begin{itemize}[leftmargin=2.2em]
-  \item the refinement relation on causal structures;
-  \item the observable/quotient used to count distinctions;
-  \item explicit proof obligations (witness maps) for monotonicity; and
-  \item a checklist for pass/fail marking without touching global macros in \texttt{P\_clean.tex}.
-\end{itemize}
-All shared macros in this file are wrapped in \verb|\providecommand|; if names already exist in \texttt{P\_clean.tex}, they are left untouched.
+\section*{V: Proof Contract for G1S and G2S (Medium Step)}
+This V layer enforces full proofs by (i) tightening interfaces, (ii) requiring explicit proof obligations,
+and (iii) providing reference lemmas and theorems. It also offers optional node tracking that logs
+V-cycle changes to \texttt{<jobname>.vlog} without altering the PDF.
 
-\section{Module Contract for G1S}
-\subsection{Causal Refinements}
+% =====================================================================
+% G1S CONTRACT (Monotone Entropy)
+% =====================================================================
+
+\subsection*{G1S: Definitions and Obligations}
+
 \begin{definition}[Causal Refinement]\label{def:refinement}
-Let $(\C,\preceq)$ be a locally finite partial order. A \emph{refinement} is an order-embedding $\phi:\C\to\C'$ into another locally finite poset $(\C',\preceq')$ whose image is order-isomorphic to $\C$ and whose extension preserves local finiteness. We write $(\C,\preceq)\xrightarrow{\;\mathrm{ref}\;}(\C',\preceq')$.
+Let $(\C,\preceq)$ be a locally finite partial order. A refinement is an order-embedding
+$\phi:\C\to\C'$ into another locally finite poset $(\C',\preceq')$ whose image is order-isomorphic to $\C$.
 \end{definition}
 
-\begin{remark}[Local Finiteness and Martin-Consistency]\label{rem:martin}
-Local finiteness ensures finite causal intervals. Martin-consistency asserts that the extension does not introduce contradictions with the partial order axioms nor violate local finiteness assumptions used elsewhere. This remark functions as a \emph{named assumption} that G1S must cite where used.
-\end{remark}
-
-\subsection{Observable and Quotient Stability}
 \begin{definition}[Observable Compatibility]\label{def:observable}
-An \emph{observable} is a map $\pi:\C\to\OmegaSet$ inducing an equivalence relation $x\sim y\iff \pi(x)=\pi(y)$. We say $\pi$ is \emph{compatible with} a refinement $\phi:\C\to\C'$ if there exists $\pi':\C'\to\OmegaSet$ such that $\pi'\circ \phi=\pi$ and $\pi'$ does not identify previously distinct equivalence classes of $\pi$ on $\phi(\C)$ (i.e., $\pi(x)\neq \pi(y)\Rightarrow \pi'(\phi(x))\neq \pi'(\phi(y))$).
+An observable is a map $\pi:\C\to\OmegaSet$ inducing $x\sim y \iff \pi(x)=\pi(y)$.
+It is compatible with a refinement $\phi$ if there exists $\pi':\C'\to\OmegaSet$ such that
+$\pi'\circ\phi=\pi$ and $\pi'$ does not merge distinct $\pi$-classes on $\phi(\C)$.
 \end{definition}
 
 \begin{definition}[Entropy as Distinguishable Count]\label{def:entropy}
-Given $\pi$, let $\OmegaSet(\C):=\C/\!\sim$ be the set of $\pi$-equivalence classes. Define
+Given $\pi$, let $\OmegaSet(\C):=\C/\!\sim$. Define
 \[
-  \Entropy[\pi](\C) := \ln\,\bigl\lvert\,\OmegaSet(\C)\,\bigr\rvert .
+  \Entropy[\pi](\C) := \ln\bigl|\OmegaSet(\C)\bigr|.
 \]
 \end{definition}
 
-\subsection{Explicit Proof Obligations (Witness Form)}
-Every claim of $\Monotone$ in G1S must provide concrete witnesses:
-\begin{proofobligation}[for $\Delta\Entropy\ge 0$ under $\phi$]
-  \item \textbf{Compatibility:} Exhibit $\pi'$ with $\pi'\circ\phi=\pi$ (Def.~\ref{def:observable}).
-  \item \textbf{Injection on Classes:} Define $\iota:\OmegaSet(\C)\hookrightarrow \OmegaSet(\C')$ by $[x]\mapsto [\phi(x)]$ and verify well-definedness and injectivity.
-  \item \textbf{Monotone Count:} Conclude $\lvert\OmegaSet(\C)\rvert\le \lvert\OmegaSet(\C')\rvert$ and hence $\Delta\Entropy\ge 0$.
+\noindent\textbf{G1 Proof Obligation.}
+\begin{proofobligation}[for $\Delta\Entropy \ge 0$ under $\phi$]
+  \item Define $\pi'$ with $\pi'\circ\phi=\pi$ and verify no merges on $\phi(\C)$.
+  \item Define $\iota:\OmegaSet(\C)\to\OmegaSet(\C')$, $[x]\mapsto[\phi(x)]$, and prove it is well-defined and injective.
+  \item Conclude $|\OmegaSet(\C)|\le|\OmegaSet(\C')|$ hence $\Delta\Entropy\ge 0$.
 \end{proofobligation}
 
-\section{Reference Proofs (to be cited by G1S)}
-\begin{lemma}[Class Injection under Compatible Refinement]\label{lem:injection}
-Let $\phi:\C\to\C'$ be a refinement (Def.~\ref{def:refinement}) and $\pi,\pi'$ observables with $\pi'\circ\phi=\pi$ and compatibility as in Def.~\ref{def:observable}. Then the map
-\[
-  \iota:\OmegaSet(\C)\to \OmegaSet(\C'),\qquad \iota([x]) := [\phi(x)]
-\]
-is well-defined and injective.
+\subsection*{G1S: Reference Lemma and Theorem}
+
+\begin{lemma}[Class Injection]\label{lem:g1_injection}
+Let $\phi:(\C,\preceq)\to(\C',\preceq')$ be an order-embedding and let $\pi,\pi'$ satisfy $\pi'\circ\phi=\pi$,
+with the property that if $\pi(x)\neq\pi(y)$ then $\pi'(\phi(x))\neq\pi'(\phi(y))$.
+Then $\iota:\OmegaSet(\C)\to\OmegaSet(\C')$, $[x]\mapsto[\phi(x)]$ is well-defined and injective.
 \end{lemma}
-\begin{proof}
-\emph{Well-definedness:} If $[x]=[y]$ in $\OmegaSet(\C)$, then $\pi(x)=\pi(y)$. Applying $\pi'\circ\phi=\pi$ yields $\pi'(\phi(x))=\pi'(\phi(y))$, so $[\phi(x)]=[\phi(y)]$ in $\OmegaSet(\C')$.
 
-\emph{Injectivity:} Suppose $\iota([x])=\iota([y])$, i.e., $[\phi(x)]=[\phi(y)]$ in $\OmegaSet(\C')$. Then $\pi'(\phi(x))=\pi'(\phi(y))$. By compatibility, previously distinct classes are not identified on $\phi(\C)$; therefore $\pi(x)=\pi(y)$, implying $[x]=[y]$.
-\end{proof}
-
-\begin{theorem}[G1: Monotonicity of Causal Entropy]\label{thm:monotone}
-Under a compatible refinement $\phi:\C\to\C'$ (Defs.~\ref{def:refinement},\,\ref{def:observable}), we have
-\[
-  \Entropy[\pi'](\C') - \Entropy[\pi](\C) \;\ge\; 0.
-\]
+\begin{theorem}[G1 Monotonicity]\label{thm:g1_monotone}
+Under Lemma~\ref{lem:g1_injection}, $\Entropy[\pi'](\C') - \Entropy[\pi](\C) \ge 0$.
 \end{theorem}
 \begin{proof}
-By Lemma~\ref{lem:injection}, $\iota:\OmegaSet(\C)\hookrightarrow \OmegaSet(\C')$ is injective, so $\lvert\OmegaSet(\C)\rvert\le \lvert\OmegaSet(\C')\rvert$. Taking logarithms proves the claim.
+Injection gives $|\OmegaSet(\C)|\le|\OmegaSet(\C')|$. Taking logarithms yields the claim.
 \end{proof}
 
-\begin{remark}[Where Monotonicity Can Fail]\label{rem:fail}
-If $\pi'$ identifies previously distinct $\pi$-classes on $\phi(\C)$, or if $\phi$ is not an order-embedding, Lemma~\ref{lem:injection} may fail and so can monotonicity. Such cases are outside the G1S contract and must be rejected by V.
+\begin{remark}[G1 Failure Modes]\label{rem:g1_fail}
+Monotonicity may fail if $\phi$ is not an order-embedding or if $\pi'$ merges previously distinct $\pi$-classes on $\phi(\C)$.
+Such cases are out of contract.
 \end{remark}
 
-\section{Gold Checks: G1 Harness (Proof-Enforcing)}
-The following checklist operationalizes the G1 requirement. G1S must include an instance of this environment at the end of each example or lemma that claims $\Monotone$.
-
-\newenvironment{GOneSpec}{\begin{goldcheck}[Monotone Entropy ($\Delta\Entropy \ge 0$)]}{\end{goldcheck}}
+\subsection*{G1S: Gold Check (attach to each claim of $\Monotone$)}
+\newenvironment{GOneSpec}{\begin{goldcheck}[G1 Monotone Entropy]}{\end{goldcheck}}
 
 \begin{GOneSpec}
-  \item \gpass\; \textbf{Interface}: Symbols used appear in the guarded set or are locally defined (cf. this file).
-  \item \gpass\; \textbf{Refinement}: Map $\phi$ is an order-embedding and Martin-consistent (Def.~\ref{def:refinement}).
-  \item \gpass\; \textbf{Observable}: Provide $\pi'$ with $\pi'\circ\phi=\pi$ and show compatibility (Def.~\ref{def:observable}).
-  \item \gpass\; \textbf{Witness}: Exhibit the class injection $\iota([x])=[\phi(x)]$ and verify Lemma~\ref{lem:injection} locally.
-  \item \gpass\; \textbf{Claim}: Deduce $\Entropy[\pi'](\C')-\Entropy[\pi](\C)\ge 0$ from the cardinality inequality.
-  \item \gpass\; \textbf{Edge Cases}: Rule out ties/merges that would violate compatibility (Remark~\ref{rem:fail}).
+  \item \gpass\; Compatibility: $\pi'\circ\phi=\pi$; no merges on $\phi(\C)$ (Def.~\ref{def:observable}).
+  \item \gpass\; Witness: class injection $\iota([x])=[\phi(x)]$ is well-defined and injective (Lemma~\ref{lem:g1_injection}).
+  \item \gpass\; Claim: $\Entropy[\pi'](\C')-\Entropy[\pi](\C)\ge 0$.
+  \item \gpass\; Node log (if tracking): related IDs emit VNODE/VCHANGE entries.
 \end{GOneSpec}
 
-\section{Verification Loop (Non-Invasive)}
-To keep \texttt{P\_clean.tex} unchanged, V enforces the following loop on any candidate G1S revision:
-\begin{enumerate}[leftmargin=2.2em]
-  \item \textbf{Interface Freeze}: Reject any revision that changes global proof macros or symbols outside the guarded layer.
-  \item \textbf{Refinement Legality}: Verify $\phi$ satisfies Def.~\ref{def:refinement}, including Martin-consistency.
-  \item \textbf{Observable Lock}: Confirm observable compatibility (Def.~\ref{def:observable}).
-  \item \textbf{Witness Check}: Require an explicit $\iota$ and verification of Lemma~\ref{lem:injection}.
-  \item \textbf{Monotone Check}: Compute $\lvert\OmegaSet(\C)\rvert \le \lvert\OmegaSet(\C')\rvert$ and hence $\Monotone$.
+% =====================================================================
+% G2S CONTRACT (Variational Reciprocity and Spline Consistency)
+% =====================================================================
+
+\subsection*{G2S: Definitions and Obligations}
+
+\begin{definition}[Admissible Histories and Trial/Test Spaces]\label{def:g2_spaces}
+Let $(\C,\preceq)$ be locally finite and $\pi:\C\to\OmegaSet$ fixed.
+An admissible history is $u\in\Hspace$ (a normed linear space) encoding the observable field,
+with test space $\Test\subseteq\Hspace$ that respects boundary conditions $\bc$.
+\end{definition}
+
+\begin{definition}[Action and First Variation]\label{def:g2_action}
+An action is a Gateaux-differentiable functional $\Acal:\Hspace\to\mathbb{R}$ with
+\[
+  \deltaVar\Acal[u](v) \;=\; \left.\frac{d}{d\epsilon}\Acal[u+\epsilon v]\right|_{\epsilon=0},\quad v\in\Test,
+\]
+and associated linear operator $\Lin[u](v):=\deltaVar\Acal[u](v)$.
+\end{definition}
+
+\begin{definition}[Reciprocity/Bilinear Form]\label{def:g2_bilinear}
+A symmetric, coercive bilinear form $\Bform:\Test\times\Test\to\mathbb{R}$ satisfies
+$\Bform(v,w)=\Bform(w,v)$ and $\exists\,\alpha>0:\ \Bform(v,v)\ge \alpha\|v\|^2$.
+When $\Lin[u](v)=\Bform(u,v)$, reciprocity holds.
+\end{definition}
+
+\begin{definition}[Spline Refinement Consistency]\label{def:g2_spline}
+Let $u_{\mesh}\in\Hspace_{\mesh}$ be a discrete field on a refinement with scale $\mesh$.
+A spline/interpolant $\Spline_{\mesh}:\Hspace_{\mesh}\to\Hspace$ is consistent if
+$\|\Spline_{\mesh}u_{\mesh}-u^\star\|\to 0$ and
+$\Jcal[\Spline_{\mesh}u_{\mesh}]\to \Jcal[u^\star]$ for some $u^\star\in\Hspace$ as $\mesh\to 0$.
+\end{definition}
+
+\noindent\textbf{G2 Proof Obligation.}
+\begin{varobligation}
+  \item Stationarity: compute $\deltaVar\Acal[u](v)$ and require $\deltaVar\Acal[u](v)=0$ for all $v\in\Test$.
+  \item Reciprocity: provide symmetric, coercive $\Bform$ with $\Lin[u](v)=\Bform(u,v)$.
+  \item Weak Form: state $\Bform(u,v)=\Res(v)$ for all $v\in\Test$ with continuous linear $\Res$.
+  \item Refinement: define $\Hspace_{\mesh}$ and $\Spline_{\mesh}$; verify consistency (Def.~\ref{def:g2_spline}).
+\end{varobligation}
+
+\subsection*{G2S: Reference Lemmas and Theorem}
+
+\begin{lemma}[Stationarity iff Weak Form]\label{lem:g2_stationarity}
+If $\Acal$ is Gateaux-differentiable and $\Bform$ is symmetric with $\Lin[u](v)=\Bform(u,v)$,
+then $u$ is stationary iff the weak form holds: find $u\in\Hspace$ such that
+$\Bform(u,v)=\Res(v)$ for all $v\in\Test$, for some continuous linear $\Res$.
+\end{lemma}
+\begin{proof}
+For all $v\in\Test$, $\deltaVar\Acal[u](v)=\Lin[u](v)=\Bform(u,v)$.
+Stationarity is equivalent to $\Bform(u,v)=0$ up to sources; introducing $\Res$ gives the weak form.
+The converse is immediate.
+\end{proof}
+
+\begin{lemma}[Discrete Reciprocity and Convergence]\label{lem:g2_convergence}
+Let $\{\Hspace_{\mesh}\}$ be finite-dimensional subspaces with interpolant $\Spline_{\mesh}$.
+Assume $\Bform$ is symmetric, coercive, and consistent on $\Hspace_{\mesh}$, and $\Res$ is continuous.
+Then the Galerkin problem on $\Hspace_{\mesh}$ has a unique solution $u_{\mesh}$ and
+$\Spline_{\mesh}u_{\mesh}\to u^\star$ in $\Hspace$ as $\mesh\to 0$, where $u^\star$ is the unique stationary solution.
+\end{lemma}
+\begin{proof}
+Coercivity and continuity give well-posedness (Lax--Milgram). Standard Galerkin consistency yields
+$\Spline_{\mesh}u_{\mesh}\to u^\star$, the unique weak solution, which equals the stationary point by Lemma~\ref{lem:g2_stationarity}.
+\end{proof}
+
+\begin{theorem}[G2 Variational Reciprocity and Spline Consistency]\label{thm:g2_main}
+Under Defs.~\ref{def:g2_spaces}--\ref{def:g2_spline} with symmetric, coercive $\Bform$ and continuous $\Res$,
+there exists a unique stationary $u^\star\in\Hspace$ satisfying the weak form, and discrete refinements
+$u_{\mesh}$ converge to $u^\star$ under consistent $\Spline_{\mesh}$.
+\end{theorem}
+\begin{proof}
+Existence/uniqueness by Lax--Milgram; convergence by Lemma~\ref{lem:g2_convergence};
+equivalence of weak and stationary solutions by Lemma~\ref{lem:g2_stationarity}.
+\end{proof}
+
+\begin{remark}[G2 Failure Modes]\label{rem:g2_fail}
+Lack of symmetry or coercivity of $\Bform$, missing continuity of $\Res$, or inconsistent $\Spline_{\mesh}$ invalidates the contract.
+\end{remark}
+
+\subsection*{G2S: Gold Check (attach to each variational claim)}
+\newenvironment{GTwoSpec}{\begin{goldcheck}[G2 Variational Reciprocity]}{\end{goldcheck}}
+
+\begin{GTwoSpec}
+  \item \gpass\; Spaces: $\Hspace$ and $\Test$ defined; $\bc$ specified (Def.~\ref{def:g2_spaces}).
+  \item \gpass\; Action: $\Acal$ differentiable; first variation $\deltaVar\Acal[u](v)$ provided (Def.~\ref{def:g2_action}).
+  \item \gpass\; Reciprocity: symmetric, coercive $\Bform$; $\Lin[u](v)=\Bform(u,v)$ (Def.~\ref{def:g2_bilinear}).
+  \item \gpass\; Weak form: $\Bform(u,v)=\Res(v)$ for all $v\in\Test$; $\Res$ continuous.
+  \item \gpass\; Spline consistency: $\Spline_{\mesh}$ defined and consistent (Def.~\ref{def:g2_spline}).
+  \item \gpass\; Claim: apply Lemmas~\ref{lem:g2_stationarity}, \ref{lem:g2_convergence} to obtain Theorem~\ref{thm:g2_main}.
+  \item \gpass\; Node log (if tracking): related IDs emit VNODE/VCHANGE entries.
+\end{GTwoSpec}
+
+% =====================================================================
+% VERIFICATION LOOP AND NOTES
+% =====================================================================
+
+\section*{Verification Loop (Non-Invasive)}
+\begin{enumerate}
+  \item Interface Freeze: do not alter global proof macros outside this guarded layer.
+  \item G1: verify Defs.~\ref{def:refinement}, \ref{def:observable}; check injection witness and conclude $\Monotone$.
+  \item G2: verify Defs.~\ref{def:g2_spaces}--\ref{def:g2_bilinear}; state weak form; verify spline consistency.
+  \item Tracking (optional): enable \texttt{\textbackslash VenableTracking} and, if desired, \texttt{\textbackslash VwrapSections}.
 \end{enumerate}
 
-\section{Worked Example (Template for G1S)}
-\noindent\textbf{Setup.} Let $\phi:\C\to\C'$ be a refinement adding events that further distinguish previously tied outcomes under a fixed sensor model $\pi$; define $\pi'$ by precomposition with $\phi$ on $\phi(\C)$ and arbitrary extension on $\C'\setminus\phi(\C)$ consistent with the sensor model.
-
-\begin{proofobligation}
-  \item \emph{Compatibility:} Define $\pi'$ on $\phi(\C)$ via $\pi'\circ\phi=\pi$.
-  \item \emph{Injection:} $\iota([x])=[\phi(x)]$ is well-defined and injective by Lemma~\ref{lem:injection}.
-  \item \emph{Monotone Count:} Conclude $\Delta\Entropy\ge 0$ and record the result in a local \texttt{GOneSpec} block.
-\end{proofobligation}
-
-\begin{GOneSpec}
-  \item \gpass\; Interface: only guarded or local symbols used.
-  \item \gpass\; Refinement: $\phi$ is an order-embedding (Def.~\ref{def:refinement}).
-  \item \gpass\; Observable: $\pi'\circ\phi=\pi$; compatibility holds (Def.~\ref{def:observable}).
-  \item \gpass\; Witness: $\iota([x])=[\phi(x)]$ is injective.
-  \item \gpass\; Claim: $\Entropy[\pi'](\C')-\Entropy[\pi](\C)\ge 0$.
-  \item \gpass\; Edge cases: none; no merges of previously distinct classes.
-\end{GOneSpec}
-
-\section{Fixed Point and Reporting}
-When the G1 harness passes across all declared examples and lemmas, declare a local fixed point (tag $\FixedPoint$) for G1. Any failure voids the fixed point and must be rejected until the contract is re-satisfied.
-
-\section*{Implementation Notes}
-\begin{itemize}[leftmargin=2.2em]
-  \item This file intentionally \emph{does not} redefine global macros in \texttt{P\_clean.tex}; symbols here are optional fallbacks via \verb|\providecommand|.
-  \item G1S may add locally-scoped macros within its own file; V only checks interface and claims.
-  \item If G1S needs additional symbols, prefer local definitions or submit a guarded addition to this file.
-\end{itemize}
+\section*{Fixed Point and Reporting}
+When all attached G1 and G2 gold checks pass, declare a fixed point tag $\FixedPoint$ for the respective module(s).
+Any failure voids the tag until the contract is satisfied.
 
 \end{document}

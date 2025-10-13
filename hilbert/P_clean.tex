@@ -1,4 +1,3 @@
-
 \documentclass[12pt,oneside]{book}
 \usepackage{amsthm,amssymb,amsmath,mathtools,setspace}
 \onehalfspacing
@@ -8,100 +7,99 @@
 \newtheorem{axiom}{Axiom}
 \newtheorem{definition}{Definition}
 \newtheorem{equivalence}{Equivalence}
-[cite_start]\newcommand{\U}{\mathbf{U}}        % Universe tensor [cite: 1]
-[cite_start]\newcommand{\Ek}{\mathbf{E}_k}      % Event tensor [cite: 1]
-\newcommand{\grad}{\nabla}
-[cite_start]\newcommand{\T}{\mathbf{T}}        % Stress tensor [cite: 1]
+
+% --- Core symbols (guarded to avoid redefinition clashes) ---
+\providecommand{\U}{\mathbf{U}}        % Universe tensor 
+\providecommand{\Ek}{\mathbf{E}_k}      % Event tensor
+\providecommand{\grad}{\nabla}
+\providecommand{\T}{\mathbf{T}}         % Stress tensor 
+\providecommand{\Acal}{\mathcal{A}}     % Informational Curvature Action (from V)
+\providecommand{\Bform}{\mathsf{B}}     % Symmetric Bilinear Form (from V)
+\providecommand{\InjectiveMap}{\iota}   % Injective Class Map (from V)
+\providecommand{\OmegaSet}{\Omega}      % Set of equivalence classes
+
+% --- V hooks fallbacks (no-ops if V.tex isn't loaded) ---
+\makeatletter
+\@ifundefined{vnode}{\newcommand{\vnode}[2][]{#2}}{}
+\@ifundefined{vnodechange}{\newcommand{\vnodechange}[3][]{}}{}
+\makeatother
 
 % --- Title: Using the existing document information ---
-[cite_start]\title{\textbf{The Limits of Representation}\\ \large Volume I: The Conditions of $\Delta S \ge 0$} [cite: 1]
-[cite_start]\author{The Constructive Proof} [cite: 1]
-[cite_start]\date{\today} [cite: 1]
+\title{\textbf{The Limits of Representation}\\ \large Volume I: The Conditions of $\Delta S \ge 0$} 
+\author{The Constructive Proof (V.tex Compliant)} 
+\date{\today}
 
 \begin{document}
 \maketitle
 \frontmatter
 
-[cite_start]\chapter*{Abstract} [cite: 1]
-% Abstract (content not provided, but chapter title is)
+\vnode[id=abs]{\chapter*{Abstract}}
+% Abstract placeholder - Content derived from P.tex abstract summary.
 
-[cite_start]\chapter*{Overview: The Six Chapters of Consistency} [cite: 1]
-[cite_start]The constructive proof is divided into six stages [cite: 2][cite_start], corresponding directly to the hierarchy of necessity in a self-consistent universe[cite: 2].
-
+\vnode[id=overview]{\chapter*{Overview: The Six Chapters of Consistency}}
+The constructive proof is divided into six stages, corresponding directly to the hierarchy of necessity in a self-consistent universe.
 \begin{enumerate}
-    [cite_start]\item \textbf{The Calculus of Measurement:} Defining the physical object (the finite event and the partial order)[cite: 3].
-    [cite_start]\item \textbf{The Reciprocity Law:} Establishing the duality between observation and variation[cite: 4].
-    [cite_start]\item \textbf{Smoothness and Kinematic Closure:} Enforcing minimal informational curvature[cite: 4].
-    [cite_start]\item \textbf{Conservation and Coherence:} Deriving conserved laws from translational invariance[cite: 5].
-    [cite_start]\item \textbf{The Arrow of Time:} Proving the monotonicity of the set of distinctions ($\Delta S \ge 0$)[cite: 6].
-    [cite_start]\item \textbf{The Proof Tensor and the Cosmic Ledger:} Unifying the structure as a global fixed point[cite: 7].
+    \item \textbf{The Calculus of Measurement:} Defining the ordered set of events and the physical object $\U$.
+    \item \textbf{The Reciprocity Law:} Establishing the duality between observation and variation.
+    \item \textbf{Smoothness and Kinematic Closure:} Enforcing minimal informational curvature ($\U^{(4)}=0$).
+    \item \textbf{Conservation and Coherence:} Deriving conserved quantities ($\grad_\mu \T^{\mu\nu} = 0$).
+    \item \textbf{The Arrow of Time:} Proving the monotonicity of the set of distinctions ($\Delta S \ge 0$).
+    \item \textbf{The Proof Tensor and the Cosmic Ledger:} Unifying the fixed point structure.
 \end{enumerate}
 
 \mainmatter
 
 % =================================================================
-% The Six Core Chapters and their core statements
+% The Six Core Chapters with V-compliant claims
 % =================================================================
 
-\chapter{The Calculus of Measurement: Defining Order}
-[cite_start]\label{chap:measurement} [cite: 8]
-[cite_start]\section*{Core Idea: The Universe is a Process of Measurement} [cite: 8]
+\vnode[id=chap:order]{\chapter{The Calculus of Measurement: Defining Order}}
+\section*{Core Idea: The Universe is a Process of Measurement}
 
-[cite_start]\begin{axiom}[The Axiom of Order] [cite: 11]
-[cite_start]Time is an ordinal rank ($k$) on the sequence of distinguishable events[cite: 11].
+\begin{axiom}[The Axiom of Order]
+Time is an ordinal rank ($k$) on the sequence of distinguishable events.
 \end{axiom}
-[cite_start]\begin{definition}[Universe Tensor] [cite: 12]
-[cite_start]The cumulative record of distinctions is the ordered fold $\U_n = \sum_{k=1}^n \Ek$[cite: 12].
+\begin{definition}[Universe Tensor]
+The cumulative record of distinctions is the ordered fold $\U_n = \sum_{k=1}^n \Ek$.
 \end{definition}
 
+\vnode[id=chap:reciprocity]{\chapter{The Reciprocity Law: Duality of Observation and Change}}
+\section*{Core Idea: Observation and Change are Mirror Operations}
 
-\chapter{The Reciprocity Law: Duality of Observation and Change}
-[cite_start]\label{chap:reciprocity} [cite: 13]
-[cite_start]\section*{Core Idea: Observation and Change are Mirror Operations} [cite: 13]
-
-[cite_start]\begin{axiom}[Axiom of Event Selection (MA-like)] [cite: 16]
-[cite_start]Every countable family of admissible local causal choices admits a globally consistent extension[cite: 16].
+\begin{axiom}[Axiom of Event Selection (MA-like)]
+Every countable family of admissible local causal choices admits a globally consistent extension.
 \end{axiom}
-[cite_start]\begin{equivalence}[The Reciprocity Law] [cite: 17]
-[cite_start]Every physically admissible variation corresponds to a measurable distinction, and vice versa[cite: 17].
+\begin{equivalence}[The Reciprocity Law: Bilinear Symmetry]
+The duality between observation and variation defines the symmetric \textbf{Bilinear Form $\Bform$} (per V’s reciprocity definition), ensuring the consistency of measurable energy.
 \end{equivalence}
 
+\vnode[id=chap:spline]{\chapter{Smoothness and Kinematic Closure}}
+\section*{Core Idea: Consistency Across Observations Requires Smooth Motion}
 
-\chapter{Smoothness and Kinematic Closure}
-[cite_start]\label{chap:smoothness} [cite: 18]
-[cite_start]\section*{Core Idea: Consistency Across Observations Requires Smooth Motion} [cite: 18]
-
-[cite_start]\begin{theorem}[Kinematic Closure] [cite: 21]
-[cite_start]Minimal informational friction enforced by consistency yields the cubic-spline condition $\U^{(4)} = 0$[cite: 21].
+\begin{theorem}[Kinematic Closure: Euler Fixed Point]
+The minimizer of the \textbf{Informational Curvature Action $\Acal[\U]$} yields the Euler–Lagrange condition $\U^{(4)} = 0$, defining the minimal analytic closure (cf. V’s variational statement).
 \end{theorem}
 
+\vnode[id=chap:conservation]{\chapter{Conservation and Coherence}}
+\section*{Core Idea: Smooth Motion Implies Conservation}
 
-\chapter{Conservation and Coherence}
-[cite_start]\label{chap:conservation} [cite: 23]
-[cite_start]\section*{Core Idea: Smooth Motion Implies Conservation} [cite: 23]
-
-[cite_start]\begin{theorem}[Bookkeeping of Coherence] [cite: 25]
-[cite_start]Translation invariance of the Causal Universe Tensor implies conservation of distinguishability, expressed differentially as $\grad_\mu \T^{\mu\nu} = 0$[cite: 25].
+\begin{theorem}[Noether Conservation]
+The translational symmetry of the $\U^{(4)} = 0$ kinematic field yields the conserved Noether current $\mathbf{T}^{\mu\nu}$, satisfying the bookkeeping identity $\grad_\mu \T^{\mu\nu} = 0$.
 \end{theorem}
 
+\vnode[id=chap:entropy]{\chapter{The Arrow of Time: The Second Law as a Theorem}}
+\section*{Core Idea: A Consistent Record Must Grow}
 
-\chapter{The Arrow of Time: The Second Law as a Theorem}
-[cite_start]\label{chap:arrow-of-time} [cite: 27]
-[cite_start]\section*{Core Idea: A Consistent Record Must Grow} [cite: 27]
-
-[cite_start]\begin{theorem}[Second Law of Causal Order] [cite: 29]
-[cite_start]For every Martin-consistent refinement of causal structure, the entropy of the system is non-decreasing: $\Delta S \ge 0$[cite: 29].
+\begin{theorem}[Second Law: Injective Count Monotonicity]
+For every consistent refinement that maintains observable compatibility, there exists an \textbf{Injective Class Map $\InjectiveMap$} ensuring the cardinality of distinguishable classes is non-decreasing: $\Delta S \ge 0$.
 \end{theorem}
 
-
-\chapter{The Proof Tensor and the Cosmic Ledger}
-[cite_start]\label{chap:ledger} [cite: 31]
-[cite_start]\section*{Core Idea: Unifying Structure as a Global Fixed Point} [cite: 31]
+\vnode[id=chap:ledger]{\chapter{The Proof Tensor and the Cosmic Ledger}}
+\section*{Core Idea: Unifying Structure as a Global Fixed Point}
 
 \begin{center}
-\textit{Quod erat demonstrandum. [cite_start]Order implies dynamics.} [cite: 33]
+\textit{Quod erat demonstrandum. Order implies dynamics.}
 \end{center}
 
 \backmatter
-
 \end{document}
