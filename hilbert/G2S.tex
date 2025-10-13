@@ -1,0 +1,64 @@
+\documentclass[12pt]{article}
+\usepackage{amsthm,amssymb,amsmath,mathtools,setspace}
+\onehalfspacing
+
+% --- Module Dependencies (Must align with main P.tex definitions) ---
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newcommand{\U}{\mathbf{U}}        % Universe tensor
+\newcommand{\grad}{\nabla}
+
+\title{\textbf{Module 2: Kinematic Closure and Splines} \\
+\large Validating G2 and G3: The Minimal Curvature Condition}
+\author{Independent Logical Section: Validating G2/G3}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Input Node: Reciprocity and Selection}
+
+This module begins where the Duality Module (Chapter 2, Validating G5) ended: the universe is defined by the bijective mapping between variation ($\delta \U$) and measurable distinction ($\Phi$), where a consistent global extension is guaranteed by the **Axiom of Event Selection** ($\mathbf{G5}$).
+
+\begin{enumerate}
+    \item \textbf{Reciprocity:} $\Phi: \text{Variation} \leftrightarrow \text{Measurement}$
+    \item \textbf{Consistency:} $\exists$ globally consistent history meeting all local constraints (via G5).
+\end{enumerate}
+
+\section{The Informational Curvature Functional}
+
+To find the unique continuous field $\U(x)$ that minimally interpolates the discrete events guaranteed by consistency, we must minimize the "bending energy" of the informational record. This functional $\mathcal{R}[\U]$ measures the total informational curvature, or friction.
+
+\begin{definition}[Informational Curvature Functional]
+Let $\Delta^{(2)} \U$ be the discrete second-order difference operator on the Universe Tensor $\U$. The measure of informational friction over a causal domain is:
+\[
+\mathcal{R}[\U] = \int (\Delta^{(2)} \U)^2\, dx.
+\]
+Minimization of this quadratic functional selects the smoothest, least-biased analytic closure of the discrete data.
+\end{definition}
+
+\section{Theorem: Kinematic Closure (Validating G2 and G3)}
+
+The condition of minimal informational friction (stationarity of $\mathcal{R}$) uniquely determines the form of smooth motion.
+
+\begin{theorem}[Kinematic Closure $\mathbf{U}^{(4)} = 0$]
+The unique minimal-curvature solution compatible with Event Selection is found by minimizing the informational curvature functional $\mathcal{R}[\U]$, which yields the Euler-Lagrange equation:
+\[
+\frac{\delta \mathcal{R}}{\delta \U} = \Delta^{(4)} \U = 0.
+\]
+In the continuum limit, $\lim_{h \to 0} \frac{\Delta^{(4)} \U}{h^4} = \U^{(4)}(x)$.
+\end{theorem}
+
+\begin{proof}[Proof Idea (Spline $\Rightarrow$ Euler–Lagrange)]
+This minimization is mathematically identical to finding the \emph{cubic spline} that interpolates the discrete causal measurements. The solution, $\mathbf{U}^{(4)} = 0$, confirms that the **cubic polynomial** is the minimal analytic closure that maintains $C^2$ continuity across all overlapping causal neighborhoods. This vanishing fourth derivative is the necessary and sufficient condition for **Kinematic Closure** (G2) derived from the variational principle (G3).
+\end{proof}
+
+\section{Output Node: Input to Conservation}
+
+The established kinematic closure $\mathbf{U}^{(4)} = 0$ is the necessary structural input for the Noether derivation (Chapter 4). It defines the invariant under which subsequent translational symmetry ($\grad_\mu \mathbf{T}^{\mu\nu} = 0$) is proven.
+
+\begin{center}
+\textit{Conclusion for Module 2: Smooth motion is the unique analytic form of consistency.}
+\end{center}
+
+\end{document}

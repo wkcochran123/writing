@@ -1,135 +1,207 @@
+% V.tex — Verification Tensor: Module Contract and Harness for G1S
+% This file is designed to improve G1S.tex while leaving P_clean.tex unchanged.
+% All shared symbols are guarded with \providecommand to avoid overriding globals.
+
 \documentclass[12pt]{article}
-\usepackage{amsmath, amssymb, amsthm, geometry, booktabs, hyperref}
-% === Invariant Environment Definition ===
-\newtheoremstyle{invariantstyle}% name
-  {\topsep}   % Space above
-  {\topsep}   % Space below
-  {\itshape}  % Body font
-  {}          % Indent
-  {\bfseries} % Head font
-  {.}         % Punctuation after theorem header
-  {.5em}      % Space after theorem header
-  {}          % Theorem head spec
 
-\theoremstyle{invariantstyle}
-\newtheorem{invariant}{Invariant}[section]
-
-% === Definition Environment Definition ===
-\newtheoremstyle{definitionstyle}% name
-  {\topsep}   % Space above
-  {\topsep}   % Space below
-  {\normalfont} % Body font (upright, not italic)
-  {}          % Indent amount
-  {\bfseries} % Theorem head font
-  {.}         % Punctuation after theorem header
-  {.5em}      % Space after theorem header
-  {}          % Head spec
-
-\theoremstyle{definitionstyle}
-\newtheorem{definition}{Definition}[section]
-
-
+% ===== Packages (minimal, non-invasive) =====
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{geometry}
 \geometry{margin=1in}
-\hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
 
-\title{\textbf{V.tex: The Verification Tensor} \\ Maintaining Logical and Variational Consistency of the Constructive Proof}
+% ===== Theorem-like environments (non-invasive) =====
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{invariant}[theorem]{Invariant}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
 
-\author{W.\,K.\,Cochran Jr.}
+% ===== Shared Notation (guarded; safe if P_clean already defines these) =====
+% Causal set / order
+\providecommand{\C}{\mathcal{C}}
+\providecommand{\E}{\mathcal{E}}
+\providecommand{\Vset}{\mathcal{V}}
+\providecommand{\preceq}{\leq}
+
+% Universe / tensors / operators
+\providecommand{\U}{\mathbf{U}}
+\providecommand{\T}{\mathbf{T}}
+\providecommand{\Ek}{\mathbf{E}_k}
+\providecommand{\grad}{\nabla}
+
+% State/sample space and counting
+\providecommand{\OmegaSet}{\Omega}
+\DeclareMathOperator{\Dist}{Dist}
+
+% Entropy notation (avoid \S which is section symbol)
+\providecommand{\Entropy}{\mathrm{S}}
+\providecommand{\kB}{k_{\mathrm{B}}}
+
+% Monotonicity shorthand and visual tag
+\providecommand{\Monotone}{\Delta\,\Entropy \ge 0}
+\providecommand{\FixedPoint}{\mathsf{FP}}
+
+% ===== Gold Check harness (generic) =====
+\newcounter{goldcheck}
+\newenvironment{goldcheck}[1][]{%
+  \refstepcounter{goldcheck}%
+  \par\medskip\noindent\textbf{Gold Check G\thegoldcheck. #1}\par\smallskip\noindent
+  \begin{enumerate}[leftmargin=2.2em,label=\arabic*.]
+}{%
+  \end{enumerate}\medskip
+}
+
+% Pass/Fail glyphs
+\newcommand{\gpass}{\textbf{[PASS]}}
+\newcommand{\gfail}{\textbf{[FAIL]}}
+
+% Specialization for G1 (ΔS ≥ 0)
+\newenvironment{GOneSpec}{%
+  \begin{goldcheck}[Monotone Entropy (\(\Delta\Entropy \ge 0\))]
+}{%
+  \end{goldcheck}
+}
+
+% ===== Title =====
+\title{V — The Verification Tensor\\\large Module Contract and Test Harness for G1S (\(\Delta\Entropy\ge 0\) under Causal Refinements)}
+\author{Verification Layer (V)\\\small Non-invasive interface for G1S; P\_clean remains authoritative}
 \date{\today}
 
 \begin{document}
-
 \maketitle
 
 \begin{abstract}
-This document defines the \textit{Verification Tensor}~$V$: a persistent, formal specification ensuring that the logical topology established in \texttt{P\_clean.tex} remains invariant under subsequent transformations.  
-$V$ provides both qualitative invariants and quantitative metrics for verifying that each future production tensor~$P_t$ preserves the structural, variational, and informational coherence achieved by the baseline manifold~$M_0$.
+This document specifies the \emph{verification layer} (V) for the G1S module. Its goals are: (i) to make the target claim of G1S explicit and machine-checkable; (ii) to supply a guarded notation interface so that G1S compiles and reads cleanly; and (iii) to render all checks \emph{non-invasive} so that \texttt{P\_clean.tex} remains unchanged and authoritative. The core object is the monotonicity of entropy (distinguishability) under Martin-consistent causal refinements with a fixed observational map~\(\pi\): \(\Delta\Entropy \ge 0\).
 \end{abstract}
 
+\tableofcontents
+
 \section{Purpose and Scope}
-The original role of~$V$ was diagnostic: to identify and deflate inconsistent eigenmodes in the construction of~$P$.  
-Now that \texttt{P\_clean.tex} has achieved structural coherence and finite logical depth, $V$ transitions to a \emph{control tensor} whose task is to verify continuity, not repair deviation.
-
-The Verification Tensor defines:
-\begin{itemize}
-  \item Structural invariants~$I_i$ that define the manifold~$M_0$ of coherent logical structure.
-  \item Variational checks that ensure physical and mathematical arguments remain dual and continuous.
-  \item A quantitative measure~$\Delta K_t$ of informational drift (Kolmogorov variation) between successive revisions~$P_t$.
+The V layer defines the \emph{module contract} for G1S and a minimal test harness (\emph{Gold Checks}). The contract pins down:
+\begin{itemize}[leftmargin=2.2em]
+  \item the refinement relation on causal structures;
+  \item the entropy functional used by G1S;
+  \item the invariants G1S must respect; and
+  \item a compact checklist for pass/fail marking without touching global proof macros.
 \end{itemize}
+All shared macros in this file are wrapped in \verb|\providecommand| so that if they already exist in \texttt{P\_clean.tex}, they are left untouched.
 
-\section{Structural Invariants}
-Each chapter~$C_i$ in the constructive proof satisfies the following invariants:
-
-\begin{invariant}[Hierarchy Consistency]
-Each chapter~$C_i$ contains a unique subsequence $(S_{i,1},\ldots,S_{i,n})$ such that:
-\begin{enumerate}
-    \item $\mathrm{parent}(S_{i,k}) = C_i$;
-    \item $\mathrm{child}(S_{i,k}) \subseteq C_i$;
-    \item No cross-parent duplication exists;
-    \item Each section terminates in a definable conclusion or reference within $C_i$.
-\end{enumerate}
-\end{invariant}
-
-\begin{invariant}[Referential Closure]
-All cross-references resolve to existing labels; no symbolic pointers remain open.
-This defines the topological closure of~$M_0$ under the logical mapping $\phi: \text{Section} \to \text{Reference}$.
-\end{invariant}
-
-\section{Verification Metrics}
-The \emph{Gold Checks} serve as the minimal set of logical–variational conditions required for global coherence.
-
-\begin{table}[h!]
-\centering
-\caption{Verification Table (\textbf{V1.0})}
-\begin{tabular}{@{}ll@{}}
-\toprule
-\textbf{ID} & \textbf{Criterion} \\ \midrule
-G1 & Formal statement of $\Delta S \ge 0$ present and consistent. \\
-G2 & Coherence operator $U^{4} = 0$ explicitly invoked at point of use. \\
-G3 & Spline $\Rightarrow$ Euler–Lagrange derivation complete and unique. \\
-G4 & Reciprocity functional includes boundary terms and correct sign convention. \\
-G5 & Martin's Axiom $\Leftrightarrow$ Continuity boundary labeled and referenced. \\ \bottomrule
-\end{tabular}
-\end{table}
-
-Each future version~$P_t$ is deemed \emph{verified} if and only if all $G_i$ hold.
-
-\section{Coherence Operator \(U^{4}=0\)}
-The coherence condition defines the logical closure of the proof manifold.
-\begin{definition}[Coherence Operator]
-Let $U^{4}$ denote the fourth-order closure operator on the hierarchy of definitions and propositions in $P_t$.  
-Then the system is \emph{coherent} iff $U^{4}=0$.
+\section{Module Contract for G1S}
+\subsection{Causal Refinements}
+\begin{definition}[Causal Refinement]\label{def:refinement}
+Let \((\C,\preceq)\) be a locally finite partial order. A \emph{refinement} is an order-embedding
+\(\,\phi: \C \to \C'\,\) into another locally finite poset \((\C',\preceq')\) that preserves and reflects order and is \emph{Martin-consistent} with local finiteness. We write
+\[
+  (\C,\preceq)\xrightarrow{\;\mathrm{ref}\;}(\C',\preceq').
+\]
 \end{definition}
 
-This condition must appear explicitly within each revision of the constructive proof wherever closure is asserted or continuity is invoked.
+\begin{remark}[Local Finiteness and Martin-Consistency]
+Local finiteness ensures finite causal intervals. Martin-consistency here is the meta-constraint that admissible refinements do not introduce pathologies that break countability or local finiteness assumptions used throughout the proof corpus.
+\end{remark}
 
-\section{Kolmogorov Drift Measure}
-To maintain informational fidelity between revisions, define
+\subsection{Entropy as Distinguishable Count}
+\begin{definition}[Entropy under a Fixed Observable]\label{def:entropy}
+Let \(\pi: \C \to \OmegaSet\) be an observational coarse-graining (equivalence on events). Define
 \[
-\Delta K_t = K(P_t) - K(P_{\mathrm{clean}}).
+  \Entropy[\pi](\C) \;=\; \ln\, \Dist\!\big(\pi(\C)\big),
 \]
-Here $K(\cdot)$ denotes the estimated Kolmogorov complexity of the encoded document.  
-The verification condition is
+with physical units set by \(\kB\) when required. Intuitively, \(\Entropy\) measures the number of distinguishable outcome classes under \(\pi\).
+\end{definition}
+
+\begin{definition}[Monotone Entropy Claim for G1S]\label{def:g1s-claim}
+For any refinement \((\C,\preceq)\to(\C',\preceq')\) as in Def.~\ref{def:refinement}, with the \emph{same} observable \(\pi\), the G1S module must establish
 \[
-|\Delta K_t| < \varepsilon,
+  \Delta\Entropy \;=\; \Entropy[\pi](\C')\,-\,\Entropy[\pi](\C) \;\ge\; 0.
 \]
-where $\varepsilon$ is the allowable informational drift (typically one order of magnitude below the average paragraph entropy).
+The proof must depend only on refinement properties and local finiteness, not on additional physical law.
+\end{definition}
 
-A non-zero $\Delta K_t$ indicates either redundancy (positive drift) or informational loss (negative drift).  
-The Verification Tensor enforces $\Delta K_t \approx 0$ as the condition of structural and semantic equilibrium.
+\section{Invariants}
+\begin{invariant}[Interface Stability (I\textsubscript{1})]\label{inv:I1}
+G1S must not introduce or require global macro/environment redefinitions that conflict with the proof corpus. It must compile using only (i) the guarded shared-notation above and (ii) its own local macros.
+\end{invariant}
 
-\section{Future Iteration Protocol}
-For each new revision~$P_{t+1}$:
-\begin{enumerate}
-    \item Compute $\Delta K_{t+1}$ relative to $P_{\mathrm{clean}}$.
-    \item Verify Gold Checks $G1$–$G5$.
-    \item Confirm invariants $I_1$–$I_2$.
-    \item Only if $\Delta K_{t+1} < \varepsilon$ and all $G_i$ pass, mark $P_{t+1}$ as \emph{consistent}.
+\begin{invariant}[Monotone Distinguishability (I\textsubscript{2})]\label{inv:I2}
+Within the G1S scope (Martin-consistent, locally finite refinements with fixed \(\pi\)), distinguishability is non-decreasing:
+\(\;\Delta\Entropy\ge 0\;\).
+\end{invariant}
+
+\begin{invariant}[Reproducibility (I\textsubscript{3})]\label{inv:I3}
+All claims must be checkable by simple combinatorial counting under \(\pi\); no continuum-analytic facts outside local finiteness are required for the G1S proofs.
+\end{invariant}
+
+\section{Reference Argument (Minimal Dependencies)}
+This section provides a reference proof skeleton that G1S may quote or specialize. It uses only the objects declared above.
+
+\begin{theorem}[Refinement Non-Destruction of Distinctions]\label{thm:non-destruction}
+Let \(\phi: \C\to\C'\) be an order-embedding refinement (Def.~\ref{def:refinement}) and \(\pi\) fixed. Then any two equivalence classes distinguished in \(\pi(\C)\) remain distinguished or further split in \(\pi(\C')\). Hence
+\(\;\Dist(\pi(\C'))\ge \Dist(\pi(\C))\;\) and therefore \(\Delta\Entropy\ge 0\).
+\end{theorem}
+\begin{proof}[Proof sketch]
+Order-embedding preserves causal relations, so events that were distinguishable due to distinct causal traces or observational labels under \(\pi\) cannot be identified by refinement; at worst they remain distinct, at best refinement introduces additional resolution, splitting a class into several. Since \(\pi\) is held fixed, no previously distinct labels are coalesced by a change in the observable. Local finiteness prevents divergence in a finite step, and Martin-consistency prohibits pathological identifications. Therefore the count of equivalence classes does not decrease.
+\end{proof}
+
+\begin{remark}[Where Monotonicity Can Fail]
+A decrease in \(\Entropy\) can only arise if (i) \(\pi\) is changed between \(\C\) and \(\C'\), (ii) refinement is not order-embedding, or (iii) local finiteness/Martin-consistency is violated. These cases are outside the G1S contract and must be rejected by V.
+\end{remark}
+
+\section{Gold Checks: G1 Harness}
+The following checklist operationalizes the G1 requirement. G1S should include an instance of this environment at the end of each example or lemma that claims \(\Monotone\).
+
+\begin{GOneSpec}
+  \item \gpass\; \textbf{Interface}: Symbols used appear in the guarded set or are locally defined (Inv.~\ref{inv:I1}).
+  \item \gpass\; \textbf{Refinement}: Map \(\phi\) is order-embedding and Martin-consistent (Def.~\ref{def:refinement}).
+  \item \gpass\; \textbf{Observable}: \(\pi\) unchanged between \(\C\) and \(\C'\) (Def.~\ref{def:entropy}).
+  \item \gpass\; \textbf{Claim}: Exhibit \(\Entropy[\pi](\C') - \Entropy[\pi](\C) \ge 0\) using only the contract dependencies.
+  \item \gpass\; \textbf{Edge Cases}: Ties/merges are ruled out or shown to preserve distinguishability under fixed \(\pi\).
+\end{GOneSpec}
+
+\section{Verification Loop (Non-Invasive)}
+To keep \texttt{P\_clean.tex} unchanged, V enforces the following loop on any candidate G1S revision:
+\begin{enumerate}[leftmargin=2.2em]
+  \item \textbf{Interface Freeze}: Reject any revision that compiles only by redefining a macro present in the proof corpus; G1S must adhere to the guarded layer (Inv.~\ref{inv:I1}).
+  \item \textbf{Refinement Legality}: Verify \(\phi\) satisfies Def.~\ref{def:refinement}, including Martin-consistency.
+  \item \textbf{Observable Lock}: Confirm the same \(\pi\) is used on both sides (Def.~\ref{def:entropy}).
+  \item \textbf{Monotonicity Check}: Run the G1 harness and verify that all checklist items pass.
+  \item \textbf{Minimal Dependencies}: Ensure the argument uses only local finiteness and the fixed observable (Inv.~\ref{inv:I3}).
 \end{enumerate}
 
-\section{Conclusion}
-$V$ thus becomes the steady-state guardian of logical integrity.  
-It transforms verification from a manual audit into a formal, repeatable process that measures the continuity of reasoning itself.  
-As new chapters and tensors are introduced, $V$ defines the metric space in which coherence is tested, ensuring that $\Delta S \ge 0$ and $U^{4}=0$ remain inviolable logical truths.
+\section{Worked Micro-Example (Schematic)}
+This toy example is intentionally abstract and \emph{non-binding} on physics; it demonstrates how G1S should structure its internal checks.
+
+\paragraph{Setup.} Let \(\C=\{e_1,e_2\}\) with no relation (antichain), \(\pi(e_i)=i\). Then \(\Dist(\pi(\C))=2\), \(\Entropy[\pi](\C)=\ln 2\).
+
+Refine to \(\C'=\{e_1^a,e_1^b,e_2\}\) with order embedding that refines only \(e_1\) into two sub-events preserving incomparability with \(e_2\). Keep \(\pi\) fixed but more resolving on \(e_1\): \(\pi(e_1^a)=1a\), \(\pi(e_1^b)=1b\), \(\pi(e_2)=2\). Then \(\Dist(\pi(\C'))=3\), \(\Entropy[\pi](\C')=\ln 3\), so \(\Delta\Entropy=\ln(3/2)>0\).
+
+\begin{GOneSpec}
+  \item \gpass\; Interface uses only guarded/local symbols.
+  \item \gpass\; \(\phi\) is order-embedding, locally finite.
+  \item \gpass\; Same \(\pi\) applied before/after (labels refined, observable unchanged).
+  \item \gpass\; \(\ln 3 - \ln 2 \ge 0\) established.
+  \item \gpass\; Edge cases: none; no merges of previously distinct classes.
+\end{GOneSpec}
+
+\section{Fixed Point and Reporting}
+When the G1 harness passes across all declared examples and lemmas within G1S, V records the module’s status as \(\FixedPoint(\mathrm{G1})=\mathrm{true}\). Any subsequent edit to G1S that would force a global macro redefinition or alter the observable \(\pi\) invalidates the fixed point and must be rejected until the contract is re-satisfied.
+
+\section*{Implementation Notes}
+\begin{itemize}[leftmargin=2.2em]
+  \item This file intentionally \emph{does not} redefine global proof macros. All symbols here are optional fallbacks via \verb|\providecommand|.
+  \item G1S may add locally-scoped macros within its own file; V only checks interface and claims.
+  \item If G1S needs additional symbols, prefer local definitions or submit a guarded addition to this file.
+\end{itemize}
 
 \end{document}

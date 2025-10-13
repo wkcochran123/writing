@@ -1,0 +1,68 @@
+\documentclass[12pt]{article}
+\usepackage{amsthm,amssymb,amsmath,mathtools,setspace}
+\onehalfspacing
+
+% --- Module Dependencies (Must align with main P.tex definitions) ---
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newcommand{\U}{\mathbf{U}}        % Universe tensor
+\newcommand{\Uprime}{\mathbf{U}'}
+\newcommand{\Udoubleprime}{\mathbf{U}''}
+\newcommand{\grad}{\nabla}
+\newcommand{\Lag}{\mathcal{L}}
+
+\title{\textbf{Module 1/2 Bridge: Variational Closure} \\
+\large Validating G4/G5: Existence and Boundary Conditions}
+\author{Independent Logical Section: Validating G4}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Input Node: The Reciprocity Functional}
+
+The system seeks minimal informational curvature, defined by the functional $\mathcal{R}[\U]$. The core principle of Reciprocity (Module 1) requires that every variation $\delta \mathcal{R}$ must correspond to a measurable distinction $\Phi$. The canonical closure is achieved when the first variation vanishes, $\delta \mathcal{R} = 0$.
+
+The functional is defined as the integral of the squared informational curvature $\mathcal{R}[\U] = \int \mathcal{L}(\U'') \, dx$, where $\mathcal{L}(\U'') = \frac{1}{2} (\U'')^2$.
+
+\begin{proposition}[License for Variational Principle (Validating $\mathbf{G5}$)]
+The use of the continuous integral $\mathcal{R}[\U]$ is licensed by the **Axiom of Event Selection** (Martin-like consistency, $\mathbf{G5}$), which guarantees the non-constructive existence of a globally consistent extension. This existence allows the discrete reciprocal measure to be approximated by a continuous, minimal-curvature functional $\mathcal{R}[\U]$. This axiom is the required **Continuity Boundary**.
+\end{proposition}
+
+\section{Formal Variation and Integration by Parts}
+
+To obtain the Euler-Lagrange condition (the input for G2/G3), we compute the first variation $\delta \mathcal{R}$ over an interval $[x_1, x_2]$ and apply integration by parts. This step formally validates the necessary boundary terms and signs for $\mathbf{G4}$.
+
+\begin{proposition}[Closure of the Reciprocity Functional ($\mathbf{G4}$)]
+The first variation of the functional $\mathcal{R}[\U]$ is:
+\[
+\delta \mathcal{R} = \int_{x_1}^{x_2} \left( \frac{\partial \mathcal{L}}{\partial \U} - \frac{d}{dx} \left( \frac{\partial \mathcal{L}}{\partial \U'} \right) + \frac{d^2}{dx^2} \left( \frac{\partial \mathcal{L}}{\partial \U''} \right) \right) \delta \U \, dx + \text{Boundary Terms}.
+\]
+For $\mathcal{L} = \frac{1}{2} (\U'')^2$, the Euler-Lagrange equation (the integrand) reduces to $\U^{(4)} = 0$ (the input to G2).
+\end{proposition}
+
+\section{The Boundary Terms and Physical Constraint}
+
+The **Boundary Terms** resulting from the integration by parts must vanish for $\delta \mathcal{R} = 0$ to hold for arbitrary internal variations ($\delta \U$):
+
+\[
+\text{Boundary Terms} = \left[ \frac{\partial \mathcal{L}}{\partial \U'} - \frac{d}{dx} \left( \frac{\partial \mathcal{L}}{\partial \U''} \right) \right]_{x_1}^{x_2} \delta \U + \left[ \frac{\partial \mathcal{L}}{\partial \U''} \right]_{x_1}^{x_2} \delta \U'
+\]
+
+Substituting $\mathcal{L} = \frac{1}{2} (\U'')^2$:
+
+\[
+\text{Boundary Terms} = \left[ -\U''' \right]_{x_1}^{x_2} \delta \U + \left[ \U'' \right]_{x_1}^{x_2} \delta \U' = 0
+\]
+
+\textbf{Interpretation (Validating G4):} The vanishing of these terms enforces the dual system's closure at the measurement anchors ($x_1, x_2$). They confirm that the variation ($\delta \U$) and its slope ($\delta \U'$) at the boundaries must be either **fixed by measurement** (Dirichlet/Neumann conditions) or that the **natural conditions** ($\U''=0$ and $\U'''=0$) hold. This ensures the correct sign convention and closure needed to enforce $\mathbf{U}^{(4)}=0$ (G2) consistently across finite intervals.
+
+\section{Output Node: Input to Kinematic Closure}
+
+The successful closure of $\delta \mathcal{R} = 0$ via the necessary boundary terms (G4) confirms the validity of the **Euler-Lagrange Equation** $\mathbf{\U^{(4)}=0}$, which is the foundational starting point for Module 2 (Chapter 3, G2/G3).
+
+\begin{center}
+\textit{Conclusion for G4/G5: The continuity of the system is logically guaranteed and mechanically closed exactly at the boundaries of observation.}
+\end{center}
+
+\end{document}

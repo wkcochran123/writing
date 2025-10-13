@@ -1,0 +1,87 @@
+\documentclass[12pt]{article}
+\usepackage{amsthm,amssymb,amsmath,mathtools,setspace}
+\onehalfspacing
+
+% --- Module Dependencies (Must align with main P.tex definitions) ---
+\newtheorem{axiom}{Axiom}
+\newtheorem{equivalence}{Equivalence}
+\newcommand{\U}{\mathbf{U}}        % Universe tensor
+\newcommand{\Ek}{\mathbf{E}_k}      % Event tensor
+
+\title{\textbf{Module 1: Foundational Duality and Logical Continuity} \\
+\large Validating G5: The Reciprocity Law and the Continuity Boundary}
+\author{Independent Logical Section: Validating G5}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Input Node: The Defined Universe Tensor}
+
+This module begins with the foundation established in Chapter 1: the universe is a sequence of discrete, distinguishable events, aggregated into the ordered cumulative record $\mathbf{U}_n = \sum_{k=1}^n \mathbf{E}_k$.
+
+\section{The Reciprocity Law: Duality of Measurement and Variation}
+
+The system of finite events must define an internal coherence. This coherence arises from the necessary duality between an observer's two core actions: making a distinction and observing a change.
+
+\begin{equivalence}[The Reciprocity Law]
+Every physically admissible variation ($\delta \U$) corresponds to a measurable distinction ($\Phi$), and vice versa. Measurement and variation are exact inverse operations on the space of distinguishable events.
+\end{equivalence}
+
+\section{The Axiom of Event Selection (Validating G5)}
+
+The Reciprocity Law holds locally, but requires a non-trivial condition to extend globally. To prevent pathological extensions (overcounting or contradictions), we must impose a necessary logical constraint on the causal set $\mathcal{C}$.
+
+\begin{axiom}[Axiom of Event Selection (MA-like)]
+Every countable family of admissible local causal choices admits a globally consistent extension.
+\end{axiom}
+
+\textbf{Interpretation as the Continuity Boundary (G5):} This axiom is the logical guarantor of non-contradiction. It is non-constructive, asserting the \emph{existence} of a single, coherent history ($\mathbf{G5}$). This existence is the **minimal regularity condition** required to transition from the countable, discrete algebra of Chapter 1 to the continuous calculus required in Chapter 3. If this axiom failed, the analytic closure of $\mathbf{U}^{(4)}=0$ would not be logically guaranteed.
+
+\section{Output Node: Input to Kinematic Closure}
+
+The **Axiom of Event Selection** is the structural input for the next module. It ensures the space of possible field configurations is restricted to the subset that can be continuously represented.
+
+\begin{center}
+\textit{Conclusion for Module 1: The condition for smooth motion is logically guaranteed to exist.}
+\end{center}
+
+\end{document}
+```
+eof
+
+## How to Glue `G3S.tex` to `P.tex`
+
+This module is designed to replace the contents of **Chapter 2** in your main `P.tex` document.
+
+### 1. Identify the Splice Point
+
+The module should be inserted immediately after **Chapter 1** (`\chapter{The Calculus of Measurement: Defining Order}`) and immediately before **Chapter 3** (`\chapter{Smoothness and Kinematic Closure}`).
+
+### 2. Prepare the Core File
+
+Extract the content of `G3S.tex` (everything between `\begin{document}` and `\end{document}`) into a separate file, for example, `G3S_core.tex`.
+
+### 3. Inserting the Module (Chapter 2)
+
+In `P.tex`, you will replace the existing content of **Chapter 2** with the core content file, ensuring the chapter and section headers are correctly positioned for the `book` class:
+
+```latex
+...
+\chapter{The Calculus of Measurement: Defining Order}
+\label{chap:measurement}
+... (End of Chapter 1)
+% -----------------------------------------------------------------
+% START MODULE 1 / CHAPTER 2: Reciprocity and Continuity (Validating G5)
+% -----------------------------------------------------------------
+\chapter{The Reciprocity Law: Duality of Observation and Change}
+\label{chap:reciprocity}
+\section*{Core Idea: Observation and Change are Mirror Operations (Validating G5)}
+
+% --- Begin G3S.tex Content ---
+\input{G3S_core.tex}
+% --- End G3S.tex Content ---
+
+\chapter{Smoothness and Kinematic Closure}
+\label{chap:smoothness}
+...
