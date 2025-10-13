@@ -1,21 +1,31 @@
-% V_macros.tex — ultra-minimal, Gemini-safe Rosetta
+% V_macros.tex — ultra-minimal Rosetta (Gemini-safe)
+% Only simple \providecommand definitions. No packages, no \makeatletter.
 
-% --- core symbols used across G1S/G2S/G3S/P/V_article ---
-\providecommand{\U}{\mathbf{U}}
-\providecommand{\V}{\mathbf{V}}
-\providecommand{\ph}{\varphi}
-\providecommand{\Test}{\mathcal{V}}
-\providecommand{\Bform}{\mathsf{B}}
-\providecommand{\grad}{\nabla}
-\providecommand{\C}{\mathcal{C}}        % causal class / partition carrier
+% --- Core symbols used across G1S/G2S/G3S/P/V_article ---
+\providecommand{\U}{\mathbf{U}}         % Admissible history / universe field
+\providecommand{\V}{\mathbf{V}}         % Test / variation (generic handle)
+\providecommand{\ph}{\varphi}           % Test function (lowercase alias)
+\providecommand{\Test}{\mathcal{V}}     % Test space
+\providecommand{\Bform}{\mathsf{B}}     % Bilinear/reciprocity pairing (weak form)
+\providecommand{\grad}{\nabla}          % Gradient / abstract differential operator
+\providecommand{\C}{\mathcal{C}}        % Causal class / partition carrier
 
-% --- entropy & closures (title-safe via \ensuremath) ---
+% --- Entropy & closures (title-safe via \ensuremath) ---
 \providecommand{\EntropySymbol}{\mathrm{S}}
+% \Entropy[sub] -> S_sub (subscript optional), safe in text/headings
 \providecommand{\Entropy}[1][]{\ensuremath{\EntropySymbol_{\!#1}}}
+% Fourth derivative shorthand (1D strong closure)
 \providecommand{\DFour}{\U^{(4)}}
 
-% --- named statement handles (contracts), safe in text/headings ---
+% --- Named statement handles (contracts), safe in text/headings ---
 \providecommand{\GOneStatement}{\ensuremath{\Delta\,\Entropy \ge 0}}
 \providecommand{\GTwoStatement}{\ensuremath{\DFour = 0}}
 \providecommand{\GTwoWeakForm}{\ensuremath{\Bform(\U,\ph)=0\ \forall\,\ph\in\Test}}
 \providecommand{\GThreeStatement}{\ensuremath{\text{Discrete–continuum reciprocity via }\Bform}}
+
+% --- Noether bridge (index-free API primitives) ---
+\providecommand{\Xi}{\boldsymbol{\xi}}                                      % symmetry generator (abstract)
+\providecommand{\NoetherTensor}[3]{\mathsf{N}\!\left[#1,#2;#3\right]}       % N[L,U;Xi]
+\providecommand{\StressEnergy}{\mathbf{T}}                                   % stress–energy (abstract)
+\providecommand{\Current}{\mathbf{J}}                                        % Noether current (abstract)
+\providecommand{\Div}[1]{\ensuremath{\grad\!\cdot\! #1}}                     % divergence via ∇· (uses \grad)

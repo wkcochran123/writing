@@ -1,6 +1,6 @@
 \documentclass[12pt]{article}
 
-% minimal preamble
+% Minimal preamble
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
@@ -10,10 +10,10 @@
 \usepackage{amsmath,amssymb,mathtools}
 \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
 
-% load Rosetta (ultra-minimal, Gemini-safe)
+% Load Rosetta
 \input{V_macros.tex}
 
-% title (bookmark-safe with texorpdfstring)
+% Title (bookmark-safe with texorpdfstring)
 \title{V: Reader's Guide and Contract Layer\\
 \small (thermodynamic \texorpdfstring{\GOneStatement}{ΔS≥0},\;
        kinematic \texorpdfstring{\GTwoStatement}{U^{(4)}=0})}
@@ -24,9 +24,10 @@
 \maketitle
 
 \begin{abstract}
-This note declares the shared symbols and three contracts used across the build.
-All statement handles are made title-safe via \texttt{\string\ensuremath}, so they can be
-used directly in text, headings, and captions without extra math delimiters.
+This note declares the shared symbols and three contracts used across the build, and
+introduces an index-free Noether bridge (\NoetherTensor{L}{\U}{\Xi}) to connect the
+closure \GTwoStatement{} to conserved currents. All statement handles are title-safe
+(\verb|\ensuremath|), so they can be used directly in text, headings, and captions.
 \end{abstract}
 
 \section*{Contracts}
@@ -40,6 +41,19 @@ used directly in text, headings, and captions without extra math delimiters.
 \[
   \U,\ \V,\ \ph\in\Test,\ \grad,\ \C,\ \Bform(\cdot,\cdot),\ \Entropy,\ \DFour.
 \]
+
+\section*{Noether bridge (index-free API)}
+We introduce a lightweight primitive:
+\[
+  \NoetherTensor{L}{\U}{\Xi},
+\]
+mapping a local density \(L\), field \(\U\), and infinitesimal generator \(\Xi\) to an
+abstract current \(\Current\) (and, for translations, a stress–energy \(\StressEnergy\)),
+with conservation
+\[
+  \Div{\Current} = 0.
+\]
+The closure \GTwoStatement{} supplies the stationarity hypothesis needed to invoke this construction.
 
 \section*{Usage notes}
 The statement handles already include math mode. Prefer \verb|(\GOneStatement)| not \verb|\(\GOneStatement\)|.
