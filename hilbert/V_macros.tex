@@ -1,64 +1,21 @@
-% ================================================================
-% V_macros.tex — Rosetta Layer (pure shim, safe to \input anywhere)
-% ---------------------------------------------------------------
-% Minimal, guarded symbol table and shared "contracts" (statement handles)
-% used by P_clean.tex, P.tex, G1S.tex, G2S.tex, and G3S.tex.
-% No packages and no environments are declared here.
-% ================================================================
+% V_macros.tex — ultra-minimal, Gemini-safe Rosetta
 
-% ---------- Core symbols (guarded) ----------
-\providecommand{\U}{\mathbf{U}}         % Admissible history / universe field
-\providecommand{\V}{\mathbf{V}}         % Test / variation
-\providecommand{\Hspace}{\mathcal{H}}   % Function space (e.g., H^2)
-\providecommand{\Test}{\mathcal{V}}     % Test space
-\providecommand{\grad}{\nabla}          % Gradient operator
-\providecommand{\T}{\mathbf{T}}         % Stress / tensor (generic)
-\providecommand{\C}{\mathcal{C}}        % Causal class space / partition carrier
-\providecommand{\Top}{\mathcal{T}}      % Topology / admissible order structure
-\providecommand{\Domain}{\Omega}        % Spatial/temporal domain
-\providecommand{\OmegaSet}{\Omega}      % Equivalence-class carrier (G1S usage)
-\providecommand{\Ek}{\mathbf{E}_k}      % Event tensor / k-th event object
+% --- core symbols used across G1S/G2S/G3S/P/V_article ---
+\providecommand{\U}{\mathbf{U}}
+\providecommand{\V}{\mathbf{V}}
+\providecommand{\ph}{\varphi}
+\providecommand{\Test}{\mathcal{V}}
+\providecommand{\Bform}{\mathsf{B}}
+\providecommand{\grad}{\nabla}
+\providecommand{\C}{\mathcal{C}}        % causal class / partition carrier
 
-% ---------- Action / forms / bilinear pairings ----------
-\providecommand{\Acal}{\mathcal{A}}     % Action-like functional (name-only)
-\providecommand{\Bform}{\mathsf{B}}     % Symmetric bilinear form (weak form)
-\providecommand{\ip}[2]{\langle #1,\, #2 \rangle}
-\providecommand{\norm}[1]{\lVert #1 \rVert}
-
-% ---------- Entropy and constants ----------
-\providecommand{\kB}{k_{\mathrm{B}}}
+% --- entropy & closures (title-safe via \ensuremath) ---
 \providecommand{\EntropySymbol}{\mathrm{S}}
-% \Entropy[sub] -> S_sub  (subscript optional)
-\providecommand{\Entropy}[1][]{\EntropySymbol_{\!#1}}
+\providecommand{\Entropy}[1][]{\ensuremath{\EntropySymbol_{\!#1}}}
+\providecommand{\DFour}{\U^{(4)}}
 
-% ---------- Differential shorthands (continuous) ----------
-\providecommand{\DTwo}{\U''}            % 2nd derivative of U (1D shorthand)
-\providecommand{\DFour}{\U^{(4)}}       % 4th derivative of U (1D shorthand)
-
-% ---------- Discrete / h-grid shorthands (used in G3S) ----------
-\providecommand{\Uh}{\U_h}              % Discrete field
-\providecommand{\Vh}{\V_h}              % Discrete test space element
-\providecommand{\Acalh}{\Acal_h}        % Discrete action
-\providecommand{\Bformh}{\Bform_h}      % Discrete bilinear form
-\providecommand{\DeltaTwoh}{\Delta^{(2)}_h}   % Discrete 2nd-diff operator
-\providecommand{\DeltaFourh}{\Delta^{(4)}_h}  % Discrete 4th-diff operator
-
-% ---------- Thermo/notation helpers ----------
-\providecommand{\E}{\mathbb{E}}         % Expectation / averaging if needed
-\providecommand{\Talg}{\mathsf{T}}      % Algorithmic/typed tensor symbol (P.tex)
-\providecommand{\Spline}{\mathsf{S}}    % Spline symbol (G2S usage)
-\providecommand{\Phi}{\varphi}          % Test function alias
-\providecommand{\Psi}{\psi}             % Auxiliary function alias
-
-% ---------- Named statement "contracts" (shared textual handles) ----------
-% Keep these as *content handles* only; proofs live where they belong.
-\providecommand{\GOneStatement}{\Delta\,\Entropy \ge 0}
-\providecommand{\GTwoStatement}{\DFour = 0}
-\providecommand{\GTwoWeakForm}{\Bform(\U,\Phi)=0\quad\forall\,\Phi\in\Test}
-\providecommand{\GThreeStatement}{\text{Discrete–continuum reciprocity via }\Bform}
-
-% ---------- Optional no-op editorial hooks (safe when undefined elsewhere) ----------
-\makeatletter
-\@ifundefined{vnode}{\newcommand{\vnode}[2][]{#2}}{}          % \vnode[tag]{text}
-\@ifundefined{vnodechange}{\newcommand{\vnodechange}[3][]{}}{} % \vnodechange[tag]{from}{to}
-\makeatother
+% --- named statement handles (contracts), safe in text/headings ---
+\providecommand{\GOneStatement}{\ensuremath{\Delta\,\Entropy \ge 0}}
+\providecommand{\GTwoStatement}{\ensuremath{\DFour = 0}}
+\providecommand{\GTwoWeakForm}{\ensuremath{\Bform(\U,\ph)=0\ \forall\,\ph\in\Test}}
+\providecommand{\GThreeStatement}{\ensuremath{\text{Discrete–continuum reciprocity via }\Bform}}
