@@ -21,8 +21,7 @@
 \newcommand{\Un}{\mathbf{U}_n}          % Universe tensor (ordered fold)
 \newcommand{\grad}{\nabla}
 \newcommand{\T}{\mathbf{T}}             % Stress / bookkeeping tensor
-\newcommand{\g}{g}                      % Metric (components g_{\mu\nu} inline)
-\newcommand{\dd}{\mathrm{d}}
+\newcommand{\g}{g}                      % Metric (components 
 
 \title{\vspace{-1.0em}\textbf{The Calculus of Measurement and Causal Order}\\
 \large A Reader’s Guide to the Constructive Proof}
@@ -32,6 +31,21 @@
 \begin{document}
 \maketitle
 \vspace{-1.5em}
+\begin{table}[h]
+\centering
+\caption{Metric Tensor $g_{\mu\nu}$}
+\begin{tabular}{lll}
+\hline
+\textbf{Component} & \textbf{Physical (Contravariant)} & \textbf{Logical (Covariant)} \\
+\hline
+$T_{00}$ & Energy density & Informational density \\
+$T_{0i}$ & Momentum flux & Communication flux \\
+$T_{ij}$ & Stress tensor & Logical coupling \\
+\hline
+\end{tabular}
+\end{table}
+$g_{\mu\nu}$ inline)
+\newcommand{\dd}{\mathrm{d}}
 
 \section*{Purpose of this Companion}
 This short document (\textbf{V.tex}) is a navigable \emph{map} of the full constructive proof developed in \textbf{hilbert.tex}. It makes the resolution explicit: how minimal logical axioms (the \emph{coarse grid}) map covariantly to physical conclusions (the \emph{fine grid}). Use this as a one-sitting overview or as marginal scaffolding while reading the full text.
@@ -70,7 +84,10 @@ Let $g_{\mu\nu}$ be the \emph{metric of information} that keeps co-/contravarian
 \centering \textbf{Physical (Fine, $U^{\mu}$)} & $g_{\mu\nu}$ & \centering \textbf{Logical (Coarse, $U_{\mu}$)}\\
 \hline
 \centering Time/Duration $(t)$ & $\leftrightarrow$ & \centering Ordinal Rank $(k\in\mathbb{N})$\\
-\centering Kinematics $(U^{(4)}=0)$ & $\leftrightarrow$ & \centering Global Consistency (Event Selection / MA-like)\\
+\centering Kinematics $(\begin{theorem}[Metric Coherence]\label{thm:u4}
+Under the Axiom of Event Selection (MA-like), the universe tensor satisfies $U^{(4)}=0$.
+\end{theorem}
+U^{(4)}=0)$ & $\leftrightarrow$ & \centering Global Consistency (Event Selection / MA-like)\\
 \centering Entropy $(S)$ & $\leftrightarrow$ & \centering Count of Distinctions $(\ln N)$\\
 \centering Mass/Energy $(T_{\mu\nu})$ & $\leftrightarrow$ & \centering Conserved Bookkeeping $(\grad_\mu T^{\mu\nu}=0)$\\
 \hline
@@ -79,7 +96,10 @@ Let $g_{\mu\nu}$ be the \emph{metric of information} that keeps co-/contravarian
 \noindent\emph{Reading note.} The constructive proof is the process of \emph{resolving this metric} across domains so the same scalar invariants are preserved under representation changes.
 
 \section{The First Two Theorems (Immediate Consequences)}
-\begin{theorem}[Second Law of Causal Order]\label{thm:DeltaS}
+\begin{theorem}[\begin{theorem}[Second Law of Causal Order]\label{thm:deltaS}
+For all causal evolutions of a measurable system, $\Delta S \ge 0$.
+\end{theorem}
+Second Law of Causal Order]\label{thm:DeltaS}
 Under Event Selection (global consistency), any admissible refinement of a finite causal order increases distinguishability. Hence the entropy is monotone:
 \[
 \Delta S \;\ge\; 0.
