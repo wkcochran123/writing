@@ -1,224 +1,135 @@
 \documentclass[12pt]{article}
+\usepackage{amsmath, amssymb, amsthm, geometry, booktabs, hyperref}
+% === Invariant Environment Definition ===
+\newtheoremstyle{invariantstyle}% name
+  {\topsep}   % Space above
+  {\topsep}   % Space below
+  {\itshape}  % Body font
+  {}          % Indent
+  {\bfseries} % Head font
+  {.}         % Punctuation after theorem header
+  {.5em}      % Space after theorem header
+  {}          % Theorem head spec
 
-% --- Encoding & geometry ---
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[margin=1in]{geometry}
+\theoremstyle{invariantstyle}
+\newtheorem{invariant}{Invariant}[section]
 
-% --- Math & theorem envs ---
-\usepackage{amsmath,amssymb,amsthm,mathtools}
-\usepackage{bm}
+% === Definition Environment Definition ===
+\newtheoremstyle{definitionstyle}% name
+  {\topsep}   % Space above
+  {\topsep}   % Space below
+  {\normalfont} % Body font (upright, not italic)
+  {}          % Indent amount
+  {\bfseries} % Theorem head font
+  {.}         % Punctuation after theorem header
+  {.5em}      % Space after theorem header
+  {}          % Head spec
 
-% --- Lists, hyperlinks ---
-\usepackage{enumitem}
-\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\theoremstyle{definitionstyle}
+\newtheorem{definition}{Definition}[section]
 
-% --- Algorithms (kept simple/portable) ---
-\usepackage{algorithm}
-\usepackage{algpseudocode}
 
-% --- Nice tables (optional) ---
-\usepackage{booktabs}
+\geometry{margin=1in}
+\hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue}
 
-% --- Theorem-like environments ---
-\newtheorem{axiom}{Axiom}
-\newtheorem{definition}{Definition}
-\newtheorem{proposition}{Proposition}
-\newtheorem{lemma}{Lemma}
-\newtheorem{remark}{Remark}
+\title{\textbf{V.tex: The Verification Tensor} \\ Maintaining Logical and Variational Consistency of the Constructive Proof}
 
-% --- Macros aligned with P.tex (safe defaults here) ---
-\newcommand{\DeltaS}{\Delta S}
-\newcommand{\Ufour}{U^{(4)}}
-\newcommand{\Vop}{\mathcal{V}}     % Verifier operator
-\newcommand{\Pop}{\mathcal{P}}     % Production/Enumerator
-\newcommand{\Fres}{\mathcal{F}}    % Residual map
-\newcommand{\Krylov}{\mathcal{K}}  % Krylov subspace
-\newcommand{\RR}{\mathbb{R}}
-\newcommand{\ip}[2]{\left\langle #1,\,#2 \right\rangle}
-\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
-\newcommand{\pospart}[1]{\left[#1\right]_+}
-
-% --- Channel weights (edit here if you want different priorities) ---
-\newcommand{\wlogic}{10}     % logic dominates
-\newcommand{\wstruct}{4}
-\newcommand{\wnote}{3}
-\newcommand{\wcite}{2}
-
-\title{V.tex: The Verification Tensor\\[2pt]
-\large A Jacobian-Free Newton--Krylov (JFNK) Specification for Manuscript Verification}
-\author{}
+\author{W.\,K.\,Cochran Jr.}
 \date{\today}
 
 \begin{document}
+
 \maketitle
 
 \begin{abstract}
-This document formalizes a verifier $\Vop$ for a research manuscript produced by $\Pop$ as a nonlinear system $F(x)=\mathbf{0}$.
-We decompose $F$ into orthogonal residual channels (logic, structure, notation, citation), minimize a weighted norm, and solve the induced Newton step with a Jacobian-Free Newton--Krylov (JFNK) method using finite-difference Jacobian actions, block preconditioning, eigenmode deflation, and a trust-region line search.
-Gold checks (unit tests) on $\DeltaS\ge 0$, $\Ufour=0$, the spline$\Rightarrow$Euler--Lagrange chain, reciprocity, and MA$\leftrightarrow$continuity provide hard constraints for acceptance.
+This document defines the \textit{Verification Tensor}~$V$: a persistent, formal specification ensuring that the logical topology established in \texttt{P\_clean.tex} remains invariant under subsequent transformations.  
+$V$ provides both qualitative invariants and quantitative metrics for verifying that each future production tensor~$P_t$ preserves the structural, variational, and informational coherence achieved by the baseline manifold~$M_0$.
 \end{abstract}
 
-\section{State, Residual, and Objective}
-Let the manuscript state be $x\in\RR^n$, encoding a finite set of units (claims, lemmas, definitions, equations, figures, citations) plus a sparse dependency graph.
-The verifier maps $x$ to residuals
-\begin{equation}
-  F(x)\;=\;\Fres(x)\;=\;
-  \begin{bmatrix}
-    r_{\text{logic}}(x)\\
-    r_{\text{structure}}(x)\\
-    r_{\text{notation}}(x)\\
-    r_{\text{citation}}(x)
-  \end{bmatrix}
-  \;\in\;\RR^{m_\ell+m_s+m_n+m_c}.
-\end{equation}
-We minimize a composite norm
-\begin{equation}
-  \label{eq:composite-norm}
-  \|F(x)\| \;=\;
-  \wlogic\,\|r_{\text{logic}}(x)\|_2
-  + \wstruct\,\|r_{\text{structure}}(x)\|_2
-  + \wnote\,\|r_{\text{notation}}(x)\|_2
-  + \wcite\,\|r_{\text{citation}}(x)\|_2,
-\end{equation}
-with $\wlogic\gg\wstruct\ge\wnote\ge\wcite$ so logical soundness dominates.
+\section{Purpose and Scope}
+The original role of~$V$ was diagnostic: to identify and deflate inconsistent eigenmodes in the construction of~$P$.  
+Now that \texttt{P\_clean.tex} has achieved structural coherence and finite logical depth, $V$ transitions to a \emph{control tensor} whose task is to verify continuity, not repair deviation.
 
-\subsection{Channel Models (engineering forms)}
-\paragraph{Logic channel.}
-Let $B\in\RR^{E\times V}$ be the incidence matrix of the premise$\to$claim DAG and $s_i\in[0,1]$ a satisfaction score for premise $i$ (1 = stated \& proved, 0 = missing).
-For each edge $(i\to j)$ with threshold $\tau\in(0,1]$, define
-\begin{equation}
-  r_{\text{logic}}^{(i\to j)}(x) = \pospart{\tau - s_i}.
-\end{equation}
-Stack all edges to obtain $r_{\text{logic}}$.
-
-\paragraph{Structure channel.}
-Let $A_{\text{struct}}x=b$ encode linear placement/templating constraints
-(e.g.\ ``each theorem has exactly one statement and one proof block'').
-Then
-\begin{equation}
-  r_{\text{structure}}(x)=A_{\text{struct}}x-b.
-\end{equation}
-
-\paragraph{Notation channel.}
-Let $T$ be the symbol table; for symbol $\sigma$, $P_\sigma$ projects $x$ onto the components using $\sigma$ and $t_\sigma$ is the canonical anchor (definition+scope).
-With positive-definite weights $W_\sigma$,
-\begin{equation}
-  r_{\text{notation}}(x)\;=\;\sum_{\sigma\in T} W_\sigma\big(P_\sigma x - t_\sigma\big).
-\end{equation}
-
-\paragraph{Citation channel.}
-For obligations $Cx+\xi\ge d$ with slacks $\xi\ge 0$ (one inequality per claim that requires a cite), define
-\begin{equation}
-  r_{\text{citation}}(x) = \xi,\qquad \xi=\pospart{d - Cx}\ (\text{elementwise}).
-\end{equation}
-
-\section{Jacobian-Free Newton--Krylov}
-We seek a Newton step $\delta x$ solving $J(x)\delta x=-F(x)$.
-We do not form $J$ explicitly; we approximate its action via directional differencing.
-
-\subsection{Finite-difference Jacobian actions}
-For any direction $v$,
-\begin{equation}
-  \label{eq:jv}
-  J(x)v \;\approx\; \frac{F\big(x+\varepsilon v\big)-F(x)}{\varepsilon},
-  \qquad
-  \varepsilon \;=\; \varepsilon_0\,\frac{1+\|x\|_2}{1+\|v\|_2},
-\end{equation}
-with $\varepsilon_0\in[10^{-6},10^{-4}]$ (text-space is noisy; start at $10^{-4}$).
-
-\subsection{Krylov subspace and GMRES}
-Given $r_0=F(x)$, build
-\begin{equation}
-  \Krylov_m(J,r_0)=\mathrm{span}\{r_0, Jr_0, J^2r_0,\dots,J^{m-1}r_0\}
-\end{equation}
-using modified Gram--Schmidt (optionally blocked by channel).
-Solve the linearized system with (F)GMRES, right-preconditioned (next section).
-
-\begin{algorithm}[H]
-\caption{JFNK with Trust Region and Deflation (single outer iteration)}
-\begin{algorithmic}[1]
-\Require state $x$, tolerance $\tau$, max Krylov dim $m$, restart $m_r$, initial step cap $\alpha_{\max}$
-\State $r \gets F(x)$;\quad $r \gets \textsc{Deflate}(r)$
-\State Solve $J(x)\delta x = -r$ with (F)GMRES using actions \eqref{eq:jv} and preconditioner $M^{-1}$
-\State Choose $\alpha\in(0,\alpha_{\max}]$ by ratio test $\rho = \dfrac{\|r\| - \|F(x+\alpha\delta x)\|}{\text{model decrease}}$
-\If{$\rho < \rho_{\min}$} \State $\alpha \gets \alpha/2$ and retry (up to a few cuts) \EndIf
-\State $x^+ \gets x + \alpha\,\delta x$;\quad \textbf{return} $x^+$
-\end{algorithmic}
-\end{algorithm}
-
-\section{Preconditioning and Deflation}
-\subsection{Block preconditioner}
-Use a block-diagonal right preconditioner
-\begin{equation}
-  M^{-1}\approx
-  \begin{bmatrix}
-    M_{\ell}^{-1} & & & \\
-    & M_{s}^{-1} & & \\
-    & & M_{n}^{-1} & \\
-    & & & M_{c}^{-1}
-  \end{bmatrix},
-\end{equation}
-where:
-\begin{itemize}[leftmargin=2em]
-  \item $M_\ell^{-1}$: \emph{premise fill} (auto-insert missing premises if present elsewhere), \emph{cycle break} (promote/demote nodes to restore DAG);
-  \item $M_s^{-1}$: template normalization (Theorem$\to$Proof$\to$Corollary), duplicate squash (min-hash/cosine);
-  \item $M_n^{-1}$: symbol unification (single source-of-truth macros), conflict rename;
-  \item $M_c^{-1}$: obvious BibTeX fixes; otherwise mark \texttt{needs-cite}.
+The Verification Tensor defines:
+\begin{itemize}
+  \item Structural invariants~$I_i$ that define the manifold~$M_0$ of coherent logical structure.
+  \item Variational checks that ensure physical and mathematical arguments remain dual and continuous.
+  \item A quantitative measure~$\Delta K_t$ of informational drift (Kolmogorov variation) between successive revisions~$P_t$.
 \end{itemize}
 
-\subsection{Eigenmode deflation}
-Maintain a set $\{q_i\}$ of solved residual shapes (low-eigenvalue modes).
-Before Krylov builds, project them out:
-\begin{equation}
-  r \;\leftarrow\; r - \sum_{i}\frac{\ip{r}{q_i}}{\ip{q_i}{q_i}}\,q_i,
-  \qquad
-  v \;\leftarrow\; v - \sum_{i}\frac{\ip{v}{q_i}}{\ip{q_i}{q_i}}\,q_i.
-\end{equation}
+\section{Structural Invariants}
+Each chapter~$C_i$ in the constructive proof satisfies the following invariants:
 
-\section{Trust Region and Edit Budget}
-Accept $x^+=x+\alpha\,\delta x$ with $\alpha\in(0,1]$ chosen by the ratio test in Algorithm 1.
-Impose a per-iteration edit budget (\emph{e.g.}, $\le 2\%$ tokens changed; at most one theorem moved) to avoid overshoot.
+\begin{invariant}[Hierarchy Consistency]
+Each chapter~$C_i$ contains a unique subsequence $(S_{i,1},\ldots,S_{i,n})$ such that:
+\begin{enumerate}
+    \item $\mathrm{parent}(S_{i,k}) = C_i$;
+    \item $\mathrm{child}(S_{i,k}) \subseteq C_i$;
+    \item No cross-parent duplication exists;
+    \item Each section terminates in a definable conclusion or reference within $C_i$.
+\end{enumerate}
+\end{invariant}
 
-\section{Gold Checks (Hard Constraints)}
-These must pass for acceptance:
-\begin{enumerate}[label=\textbf{G\arabic*.}, leftmargin=2em]
-  \item Formal statement and scope of $\DeltaS\ge 0$ with explicit premises (discrete causal counting) and no hidden thermodynamic assumptions.
-  \item Coherence condition $\Ufour=0$ appears exactly where used; $\Ufour$ is defined once without symbol drift.
-  \item Spline $\Rightarrow$ Euler--Lagrange chain occurs once, cleanly:
-  \[
-    J[y]=\int \big(\lambda\|y''(t)\|^2+\phi(y(t))\big)\,dt
-    \ \Rightarrow\
-    \frac{d}{dt}\big(\partial_{y'}\mathcal{L}\big)-\partial_y\mathcal{L}=0.
-  \]
-  \item Reciprocity functional is stated with correct variational form and boundary terms; no sign inconsistencies.
-  \item MA $\leftrightarrow$ continuity boundary is clearly delimited; set-theoretic heuristics are annotated as meta-assumptions, not proof steps.
+\begin{invariant}[Referential Closure]
+All cross-references resolve to existing labels; no symbolic pointers remain open.
+This defines the topological closure of~$M_0$ under the logical mapping $\phi: \text{Section} \to \text{Reference}$.
+\end{invariant}
+
+\section{Verification Metrics}
+The \emph{Gold Checks} serve as the minimal set of logical–variational conditions required for global coherence.
+
+\begin{table}[h!]
+\centering
+\caption{Verification Table (\textbf{V1.0})}
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{ID} & \textbf{Criterion} \\ \midrule
+G1 & Formal statement of $\Delta S \ge 0$ present and consistent. \\
+G2 & Coherence operator $U^{4} = 0$ explicitly invoked at point of use. \\
+G3 & Spline $\Rightarrow$ Euler–Lagrange derivation complete and unique. \\
+G4 & Reciprocity functional includes boundary terms and correct sign convention. \\
+G5 & Martin's Axiom $\Leftrightarrow$ Continuity boundary labeled and referenced. \\ \bottomrule
+\end{tabular}
+\end{table}
+
+Each future version~$P_t$ is deemed \emph{verified} if and only if all $G_i$ hold.
+
+\section{Coherence Operator \(U^{4}=0\)}
+The coherence condition defines the logical closure of the proof manifold.
+\begin{definition}[Coherence Operator]
+Let $U^{4}$ denote the fourth-order closure operator on the hierarchy of definitions and propositions in $P_t$.  
+Then the system is \emph{coherent} iff $U^{4}=0$.
+\end{definition}
+
+This condition must appear explicitly within each revision of the constructive proof wherever closure is asserted or continuity is invoked.
+
+\section{Kolmogorov Drift Measure}
+To maintain informational fidelity between revisions, define
+\[
+\Delta K_t = K(P_t) - K(P_{\mathrm{clean}}).
+\]
+Here $K(\cdot)$ denotes the estimated Kolmogorov complexity of the encoded document.  
+The verification condition is
+\[
+|\Delta K_t| < \varepsilon,
+\]
+where $\varepsilon$ is the allowable informational drift (typically one order of magnitude below the average paragraph entropy).
+
+A non-zero $\Delta K_t$ indicates either redundancy (positive drift) or informational loss (negative drift).  
+The Verification Tensor enforces $\Delta K_t \approx 0$ as the condition of structural and semantic equilibrium.
+
+\section{Future Iteration Protocol}
+For each new revision~$P_{t+1}$:
+\begin{enumerate}
+    \item Compute $\Delta K_{t+1}$ relative to $P_{\mathrm{clean}}$.
+    \item Verify Gold Checks $G1$–$G5$.
+    \item Confirm invariants $I_1$–$I_2$.
+    \item Only if $\Delta K_{t+1} < \varepsilon$ and all $G_i$ pass, mark $P_{t+1}$ as \emph{consistent}.
 \end{enumerate}
 
-\section{Stopping Criteria and Acceptance}
-Stop when all hold:
-\begin{enumerate}[label=(\roman*), leftmargin=2em]
-  \item $\|F(x)\|\le \tau$ for \eqref{eq:composite-norm};
-  \item All \textbf{G1}--\textbf{G5} pass;
-  \item No high-severity logic items remain (logic channel empty);
-  \item Last accepted step has $\alpha=1$ or Krylov stagnates with negligible residual.
-\end{enumerate}
-
-\section{Audit Trail (Deterministic Handoff to \texorpdfstring{$\Pop$}{P})}
-Each iteration emits:
-\begin{itemize}[leftmargin=2em]
-  \item channel-wise residual summary and norms;
-  \item ranked findings with suggested local edits (preconditioner actions flagged);
-  \item updated deflation set $\{q_i\}$;
-  \item accepted step size $\alpha$ and observed decrease.
-\end{itemize}
-
-\begin{remark}[Minimal integration steps]
-To wire this into your loop:
-(1) build the four residual channels from the current manuscript graph and symbol/citation tables;
-(2) expose $F(\cdot)$ and the action oracle $v\mapsto J(x)v$ via \eqref{eq:jv};
-(3) enable the preconditioner blocks as cheap, local transforms;
-(4) enforce the edit budget and gold checks at accept time.
-\end{remark}
+\section{Conclusion}
+$V$ thus becomes the steady-state guardian of logical integrity.  
+It transforms verification from a manual audit into a formal, repeatable process that measures the continuity of reasoning itself.  
+As new chapters and tensors are introduced, $V$ defines the metric space in which coherence is tested, ensuring that $\Delta S \ge 0$ and $U^{4}=0$ remain inviolable logical truths.
 
 \end{document}
