@@ -2,58 +2,33 @@
 \usepackage{amsthm,amssymb,amsmath,mathtools,setspace}
 \onehalfspacing
 
-% --- Module Dependencies (Must align with main P.tex definitions) ---
+% --- Module Dependencies ---
 \newtheorem{theorem}{Theorem}
 \newtheorem{definition}{Definition}
 \newtheorem{proposition}{Proposition}
-\newcommand{\U}{\mathbf{U}}        % Universe tensor (Field / Admissible History)
-\newcommand{\V}{\mathbf{V}}        % Test Function / Variation (Local symbol)
-\newcommand{\grad}{\nabla}
-\newcommand{\DTwo}{\mathbf{U}''}   % Continuous Second Derivative
-\newcommand{\DFour}{\mathbf{U}^{(4)}} % Continuous Fourth Derivative
 
-% V.tex Variational Symbols
-\newcommand{\Acal}{\mathcal{A}}     % Action-like functional
-\newcommand{\Bform}{\mathsf{B}}     % Bilinear form (inner product of second derivatives)
-\newcommand{\Hspace}{\mathcal{H}}   % Trial Space (H^2 space of admissible histories)
-\newcommand{\Test}{\mathcal{V}}     % Test Space (Re-used as the space symbol)
-\newcommand{\deltaVar}{\delta}      % First variation symbol
-\newcommand{\Res}{\mathsf{R}}       % Residual (or source, here = 0)
-\newcommand{\mesh}{\mathsf{h}}      % Mesh scale (discrete)
-\newcommand{\Spline}{\mathsf{S}}    % Spline/interpolation operator
-\newcommand{\norm}[1]{\left\lVert #1 \right\rVert} % Norm definition
+% --- Load Rosetta Layer ---
+\input{V_macros.tex}
 
-% Boundary notation
-\newcommand{\NaturalBC}{\mathbf{U}''(x_0)=\mathbf{U}''(x_n)=0} % Natural Boundary Conditions
-\newcommand{\Domain}{[x_0, x_n]}
-\newcommand{\HZeroTwo}{H^2_0(\Domain)} % Sobolev Space with zero value/slope at boundary
+% Local Macro Definitions (if V_macros didn't load them)
+\providecommand{\DTwo}{\U''}
+\providecommand{\Domain}{\Omega}
+\providecommand{\NaturalBC}{\U''(x_0)=\U''(x_n)=0}
+\providecommand{\DFour}{\U^{(4)}}
+\providecommand{\ph}{\varphi}
+\providecommand{\Acal}{\mathcal{A}}
 
-% --- Optional Rosetta Layer Input (V_macros.tex compatibility) ---
-\IfFileExists{V_macros.tex}{\input{V_macros.tex}}{}
-
-% --- Gold Check Harness (Copied from V.tex) ---
-\newcounter{goldcheck}
-\newenvironment{goldcheck}[1][]{%
-  \refstepcounter{goldcheck}%
-  \par\medskip\noindent\textbf{Gold Check G\thegoldcheck. #1}\par\smallskip\noindent
-  \begin{enumerate}[leftmargin=2.2em,label=\arabic*.]
-}{%
-  \end{enumerate}\medskip
-}
-\newcommand{\gpass}{\textbf{[PASS]}}
-\newcommand{\gfail}{\textbf{[FAIL]}}
-\newenvironment{GTwoSpec}{\begin{goldcheck}[G2 Variational Reciprocity]}{\end{goldcheck}}
-
-% --- Proof Obligation environment (Copied from V.tex) ---
 \newenvironment{varobligation}[1][]{%
   \par\medskip\noindent\textbf{G2 Proof Obligation.} #1\;\emph{(Provide stationarity, reciprocity, and refinement consistency.)}%
   \begin{enumerate}[leftmargin=2.2em,label=\alph*.]
 }{%
   \end{enumerate}\medskip
 }
+\providecommand{\Rfunc}{\mathsf{R}}
+\providecommand{\Jfunc}{\mathsf{J}}
 
-\title{\textbf{Module 2: Kinematic Closure and Splines} \\
-\large Validating G2 and G3: The Minimal Curvature Condition}
+\title{\textbf{Module 2: Kinematic Closure, Weak Reciprocity, and Newton Linearization} \\
+\large Validating G2: The Minimal Curvature Condition \texorpdfstring{\GTwoStatement}{U^{(4)}=0}}
 \author{G2S — Module Contract Fulfillment (V.tex Compliant)}
 \date{\today}
 
@@ -62,170 +37,44 @@
 
 \section{Input Node: Reciprocity and Variational Setup}
 
-This module formalizes the unique analytic closure that minimally interpolates the discrete events guaranteed by consistency.
-The search for the unique smooth field $\U(x)$ is cast as a minimization problem on the space of admissible histories $\Hspace$.
-\begin{definition}[Informational Curvature Action $\Acal$]
-Let $\U \in \Hspace$ be an admissible history (Universe Tensor).
-The **analytic footing** for the homogeneous variational problem is the Hilbert space
-$$
-\Hspace = H^2_0(\Domain)
-$$
-equipped with the inner product $\Bform(\U, \V) = \int_{\Domain} \U'' \V'' dx$.
-The functional minimized by the causal-consistency requirement is:
-\[
-\Acal[\U] = \frac{1}{2} \int_{\Domain} (\DTwo)^2\, dx.
-\]
-The $\mathbf{Minimal\; Curvature\; Condition}$ is found by finding the stationary point of this action subject to fixed interpolation nodes and the $\mathbf{Natural\; Boundary\; Conditions}$: $\NaturalBC$.
-\end{definition}
+The unique analytic closure for the admissible history $\U$ minimizes the **Informational Curvature Action** $\Acal[\U]$:
+$$\Acal[\U] = \frac{1}{2} \int_{\Domain} (\DTwo)^2\, dx.$$
 
-\begin{definition}[Bilinear Form of Reciprocity]
-The symmetric bilinear form $\Bform: \Hspace \times \Hspace \to \mathbb{R}$ corresponding to the weak form of the variational principle is:
-\[
-\Bform(\U, \V) = \int_{\Domain} (\DTwo) (\V'')\, dx.
-\]
-\end{definition}
+\section{Theorem: Kinematic Closure and Reciprocity}
 
-\section{Theorem: Kinematic Closure $(\GTwoStatement)$}
-
-The condition of minimal informational friction (stationarity of $\Acal$) is mathematically identical to solving the cubic spline problem, ensuring unique analytic consistency.
-\begin{theorem}[Kinematic Closure $\mathbf{(\GTwoStatement)}$]
-The unique minimal-curvature solution $\U^\star$ compatible with Event Selection is the stationary point of $\Acal[\U]$, which yields the Euler-Lagrange strong form $\GTwoStatement$.
-This condition is the necessary and sufficient condition for Kinematic Closure (G2).
-\end{theorem}
-
-% Note: D^4 U = 0 denotes the Euler–Lagrange equation in strong form.
-\begin{proof}[\textbf{G2 Proof Obligation Fulfillment}]
-The minimization procedure must satisfy the four core requirements set forth in V.tex.
-\begin{varobligation}
-  \item \textbf{Reciprocity and Coercivity:} The bilinear form $\Bform(\U, \V)$ is inherently symmetric, satisfying the reciprocity condition.
-% Coercivity Justification
-    By the Poincaré inequality on $H^2_0(\Domain)$, the form is coercive: $\Bform(\U,\U) \ge C_P \norm{\U}^2_{H^2}$.
-  \item \textbf{Weak Form (Stationarity):} The minimization problem is to find $\U \in \Hspace$ that satisfies the interpolation constraints and the homogeneous condition.
-The variational principle requires that the first variation vanishes:
-    \[
-    \text{Find } \U \in \Hspace \text{ such that } \GTwoWeakForm.
-    \]
-  \item \textbf{Strong Form (Euler-Lagrange):} Applying integration by parts twice to the weak form and noting that the test function space (and the solution $\U$) satisfies the boundary conditions (including the interpolation constraints where applicable) yields:
-    \[
-    0 = \Bform(\U, \V) = \int_{\Domain} (\DFour) \V dx + \underbrace{\left[\DTwo \V' - (\U')'' \V\right]_{x_0}^{x_n}}_{\text{Boundary Terms} = 0}.
-    \]
-    Since this must hold for all $\V \in \Test$, it implies the Euler-Lagrange strong form $\GTwoStatement$.
-  \item \textbf{Refinement Consistency (Spline):} The cubic spline interpolant $\Spline_\mesh \U_\mesh$ is the classical result of this minimization.
-The discrete solution $\U_\mesh$ converges to the unique continuous stationary solution $\U^\star$ (i.e., $\|\Spline_{\mesh} \U_{\mesh} - \U^\star\|_{H^2}\to 0$ as $\mesh\to 0$), validating the continuum limit (G2.DiscCons).
-\end{varobligation}
-</proof>
-
-<hr>
-
-\begin{remark}[\textbf{G2.Kernel} and \textbf{G2.BC} Fulfillment]
-The homogeneous strong form $\GTwoStatement$
-admits a four-dimensional solution space of cubic polynomials $\mathrm{span}\{1, x, x^2, x^3\}$ (G2.Kernel).
-The imposition of the fixed interpolation nodes and the two $\mathbf{Natural\; Boundary\; Conditions}$ ($\NaturalBC$) serves to consume all degrees of freedom in this kernel, guaranteeing the \textbf{unique cubic spline solution} $\U^\star$.
-\end{remark}
-
-<hr>
-
-\section{Output Node: Conclusion and Gold Check}
-
-The established kinematic closure $\GTwoStatement$
-is the necessary structural input for subsequent Noether derivations (Chapter 4), defining the invariant under which translational symmetry is proven.
-\begin{GTwoSpec}
-  \item \gpass\; \textbf{Spaces}: $\Hspace = H^2_0(\Domain)$ is specified for analytic rigor (G2.BC).
-  \item \gpass\; \textbf{Action}: $\Acal[\U] = \frac{1}{2}\Bform(\U, \U)$ is quadratic; the strong form is derived as $\GTwoStatement$.
-  \item \gpass\; \textbf{Reciprocity}: $\Bfor\documentclass[12pt]{article}
-\usepackage{amsthm,amssymb,amsmath,mathtools,setspace}
-\onehalfspacing
-
-% --- Module Dependencies (Must align with main P.tex definitions) ---
-\newtheorem{theorem}{Theorem}
-\newtheorem{definition}{Definition}
-\newtheorem{proposition}{Proposition}
-\newcommand{\U}{\mathbf{U}}        
-\newcommand{\V}{\mathbf{V}}        
-\newcommand{\grad}{\nabla}
-\newcommand{\DTwo}{\mathbf{U}''}   
-\newcommand{\DFour}{\mathbf{U}^{(4)}} 
-\newcommand{\Acal}{\mathcal{A}}     
-\newcommand{\Bform}{\mathsf{B}}     
-\newcommand{\Hspace}{\mathcal{H}}   
-\newcommand{\Test}{\mathcal{V}}     
-\newcommand{\Domain}{[x_0, x_n]}
-\newcommand{\NaturalBC}{\mathbf{U}''(x_0)=\mathbf{U}''(x_n)=0} 
-
-% --- Optional Rosetta Layer Input ---
-\IfFileExists{V_macros.tex}{\input{V_macros.tex}}{}
-
-\newenvironment{varobligation}[1][]{%
-  \par\medskip\noindent\textbf{G2 Proof Obligation.} #1\;\emph{(Provide stationarity, reciprocity, and refinement consistency.)}%
-  \begin{enumerate}[leftmargin=2.2em,label=\alph*.]
-}{%
-  \end{enumerate}\medskip
-}
-
-\title{\textbf{Module 2: Kinematic Closure and Splines} \\
-\large Validating G2 and G3: The Minimal Curvature Condition}
-\author{G2S — Module Contract Fulfillment (V.tex Compliant)}
-\date{\today}
-
-\begin{document}
-\maketitle
-
-\section{Input Node: Reciprocity and Variational Setup}
-
-The search for the unique smooth field $\U(x)$ that minimally interpolates discrete events is cast as a minimization problem on the space of admissible histories $\Hspace$[cite: 5].
-
-\begin{definition}[Informational Curvature Action $\Acal$]
-The **analytic footing** is the Hilbert space $\Hspace = H^2_0(\Domain)$ [cite: 7] equipped with the inner product $\Bform(\U, \V) = \int_{\Domain} \U'' \V'' dx$. The functional minimized is[cite: 8]:
-\[
-\Acal[\U] = \frac{1}{2} \int_{\Domain} (\DTwo)^2\, dx.
-\]
-The $\mathbf{Minimal\; Curvature\; Condition}$ is the stationary point of $\Acal[\U]$ subject to fixed interpolation nodes and the $\mathbf{Natural\; Boundary\; Conditions}$[cite: 9, 10]: $\NaturalBC$.
-\end{definition}
-
-\begin{definition}[Bilinear Form of Reciprocity]
-The symmetric bilinear form $\Bform: \Hspace \times \Hspace \to \mathbb{R}$ corresponding to the weak form of the variational principle is[cite: 12]:
-\[
-\Bform(\U, \V) = \int_{\Domain} (\DTwo) (\V'')\, dx.
-\]
-\end{definition}
-
-\section{Theorem: Kinematic Closure $(\GTwoStatement)$}
-
-\begin{theorem}[Kinematic Closure $\mathbf{(\GTwoStatement)}$]
-The unique minimal-curvature solution $\U^\star$ compatible with Event Selection is the stationary point of $\Acal[\U]$, which yields the Euler-Lagrange strong form $\GTwoStatement$[cite: 14, 15].
+\begin{theorem}[Strong Kinematic Closure $\mathbf{(\GTwoStatement)}$]
+The unique minimal-curvature solution $\U^\star$ is the stationary point of $\Acal[\U]$, which yields the Euler-Lagrange strong form $\GTwoStatement$.
 \end{theorem}
 
 \begin{proof}[\textbf{G2 Proof Obligation Fulfillment}]
-\begin{varobligation}
-  \item \textbf{Reciprocity and Coercivity:} The bilinear form $\Bform(\U, \V)$ is inherently symmetric. Coercivity holds by the Poincaré inequality on $H^2_0(\Domain)$[cite: 18, 19].
-  \item \textbf{Weak Form (Stationarity):} The variational principle requires that the first variation vanishes[cite: 21]:
-    \[
-    \text{Find } \U \in \Hspace \text{ such that } \GTwoWeakForm.
-    \]
-  \item \textbf{Strong Form (Euler-Lagrange):} Applying integration by parts twice to the weak form and noting that boundary terms vanish yields[cite: 22, 23]:
-    \[
-    0 = \Bform(\U, \V) = \int_{\Domain} (\DFour) \V dx + \underbrace{\left[\DTwo \V' - (\U')'' \V\right]_{x_0}^{x_n}}_{\text{Boundary Terms} = 0}.
-    \]
-    This implies the Euler-Lagrange strong form: $\GTwoStatement$[cite: 23].
-  \item \textbf{Refinement Consistency (Spline):} The unique stationary solution $\U^\star$ is the cubic spline interpolant. Convergence of the discrete solution $\U_\mesh$ to $\U^\star$ confirms the continuum limit[cite: 24, 25].
-\end{varobligation}
+The weak form uses the bilinear reciprocity pairing $\Bform(\U, \ph) = \int_{\Domain} (\DTwo) (\ph'')\, dx$.
+\begin{enumerate}
+    \item \textbf{Weak Form (Reciprocity):} Stationarity $\delta \Acal = 0$ requires the condition:
+    $$\text{Find } \U \in \Hspace \text{ such that } \GTwoWeakForm.$$.
+    \item \textbf{Strong Form:} Double integration by parts on the weak form yields the strong closure: $\GTwoStatement$.
+\end{enumerate}
 \end{proof}
 
-\begin{remark}[\textbf{G2.Kernel} and \textbf{G2.BC} Fulfillment]
-The homogeneous strong form $\GTwoStatement$ admits the four-dimensional kernel $\mathrm{span}\{1, x, x^2, x^3\}$. The fixed interpolation nodes and $\NaturalBC$ consume all degrees of freedom, guaranteeing the $\mathbf{unique\; cubic\; spline\; solution}$ $\U^\star$[cite: 27, 28, 29].
-\end{remark}
+\section{G2: Newton Linearization and Noether Bridge}
 
-\end{document}m(\U, \V)$ is symmetric and coercivity is certified by the $H^2$ Poincaré inequality.
-  \item \gpass\; \textbf{Weak Form}: The condition $\Bform(\U, \V)=0$ is correctly derived and placed before the strong-form IBP.
-  \item \gpass\; \textbf{Kernel Elimination}: The polynomial kernel is \textbf{noted and eliminated} by the specified boundary conditions (G2.Kernel).
-  \item \gpass\; \textbf{Spline Consistency}: Convergence is asserted to confirm the continuum limit (G2.DiscCons).
-  \item \gpass\; \textbf{Claim}: $\GTwoStatement$
-results from stationarity, and existence/uniqueness is guaranteed.
-  \item \gpass\; \textbf{Edge Cases}: Symmetry and coercivity rule out failure cases (V.tex Remark 4).
-\end{GTwoSpec}
+\paragraph{Residual and Newton step (index-free).}
+The analytic closure $\GTwoStatement$ is a non-linear (in coordinates/metric) residual function $\Rfunc(\U)$. The iteration is driven by the Fréchet Jacobian $\Jfunc(\U)$:
+\[
+\Rfunc(\U) := \DFour,\qquad
+\Jfunc(\U) := \frac{\partial \Rfunc}{\partial \U}.
+\]
+The Newton update $\delta \U$ for an iterate $\U^{(k)}$ satisfies:
+\[
+\Jfunc(\U^{(k)})\,\delta \U \;=\; -\, \Rfunc(\U^{(k)}).
+\]
+This defines the computational implementation (the Newton rail) driven directly by the analytic closure $\DFour=0$.
 
-\begin{center}
-\textit{Conclusion for Module 2: Smooth motion is the unique analytic form of consistency, established via a reciprocal variational principle.}
-\end{center}
+\paragraph{Noether bridge (API-level, index-free).}
+The stationary action, $\delta \Acal = 0$, supplies the core hypothesis required to invoke Noether's theorem.
+The abstract conservation current $\Current$ (and stress-energy $\StressEnergy$) is derived from a local Lagrangian density $L$ and translational symmetry $\Xi$:
+$$
+\NoetherTensor{L}{\U}{\Xi} \quad \implies \quad \Div{\Current} = 0.
+$$
+The kinematic closure $\GTwoStatement$ is therefore the necessary structural input for the derivation of all subsequent conservation laws.
 
 \end{document}

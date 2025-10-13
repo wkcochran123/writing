@@ -2,72 +2,51 @@
 \usepackage{amsthm,amssymb,amsmath,setspace,mathtools}
 \onehalfspacing
 
-% --- Module Dependencies (Must align with main P.tex definitions) ---
+% --- Module Dependencies ---
 \newtheorem{theorem}{Theorem}
 \newtheorem{definition}{Definition}
 \newtheorem{axiom}{Axiom}
 
-% --- Core Symbols (Needed if V_macros.tex is missing) ---
-\newcommand{\kB}{k_{\mathrm{B}}}
-\newcommand{\U}{\mathbf{U}}
-\newcommand{\V}{\mathbf{V}}
-\newcommand{\EntropySymbol}{\mathrm{S}}
-
-% --- Optional Rosetta Layer Input ---
-\IfFileExists{V_macros.tex}{\input{V_macros.tex}}{}
+% --- Load Rosetta Layer ---
+\input{V_macros.tex}
 
 \title{\textbf{Module 1: Order Monotonicity and The Second Law} \\
-\large Validating G1: Thermodynamic Closure $\GOneStatement$}
+\large Validating G1: Thermodynamic Closure \texorpdfstring{\GOneStatement}{ΔS≥0}}
 \author{G1S — Module Contract Fulfillment (V.tex Compliant)}
 \date{\today}
 
 \begin{document}
 \maketitle
 
-\section{Axiomatic Foundation: Causal Order and Event Selection}
+\section{Axiomatic Foundation: Causal Order and Entropy}
 
-The proof begins by grounding the concepts of entropy and distinction within ZFC set theory, as outlined in \texttt{P.tex}[cite: 202, 211].
-
-\begin{definition}[Causal Set and Admissible Micro-Orderings]
-Let $\C$ be the causal set of distinguishable events accessible to an observer[cite: 881, 1004]. Let $\Omega(\C)$ be the set of all **admissible micro-orderings** of those events consistent with the Axiom of Event Selection (Martin-like consistency)[cite: 81, 881, 1328].
-\end{definition}
+The analysis begins with the locally finite causal order $\C$ of distinguishable events, whose structure is preserved by the Axiom of Event Selection (Martin-like consistency).
 
 \begin{definition}[Causal Entropy $\Entropy$]
-The $\mathbf{Entropy}$ associated with a causal set $\C$ is the logarithm of this count, where $\kB$ is Boltzmann's constant:
+The $\mathbf{Entropy}$ associated with a causal set $\C$ is defined via the number of admissible micro-orderings, $\Omega(\C)$:
 \[
-\Entropy[\C] = \kB \ln |\Omega(\C)|.
+\Entropy[\C] = k_{\mathrm{B}} \ln |\Omega(\C)|.
 \]
-Operationally, $\Entropy$ measures the number of distinct internal configurations that yield the same observable causal invariants[cite: 883].
+$\Entropy$ quantifies the number of distinct internal configurations consistent with the field $\U$.
 \end{definition}
 
-\section{Theorem: The Second Law of Causal Order $(\GOneStatement)$}
+\section{Theorem: The Second Law of Causal Order (\GOneStatement)}
 
-The principle that information, and thus entropy, can never decrease is proved as a theorem of causal consistency rather than assumed as a postulate[cite: 78, 79].
-
-\begin{theorem}[Monotonicity of Causal Entropy $\mathbf{(\GOneStatement)}$]
-In any extension of a finite causal order that remains globally consistent (via Event Selection/Martin-like consistency), the count of distinguishable states cannot decrease.
-\[
-\GOneStatement.
-\]
+\begin{theorem}[Monotonicity of Causal Entropy]
+In any admissible extension of a finite causal order, the count of distinguishable states cannot decrease.
+$$\GOneStatement.$$
 \end{theorem}
 
 \begin{proof}[\textbf{G1 Proof Obligation Fulfillment}]
-\begin{enumerate}
-    \item \textbf{Causal Refinement:} Let $\C_n$ be a causal set, and $\C_{n+1}$ be an admissible extension (refinement) that introduces new distinctions while remaining consistent with the Axiom of Event Selection[cite: 1306]. By definition, $\C_n \subseteq \C_{n+1}$.
-    \item \textbf{Monotonicity of $\Omega$:} Since the refinement preserves the partial order and is globally consistent, every micro-ordering that was admissible in $\C_n$ must remain admissible in $\C_{n+1}$[cite: 92]. Therefore, the set of admissible orderings cannot shrink:
-    $$
-    \Omega(\C_n) \subseteq \Omega(\C_{n+1}).
-    $$
-    \item \textbf{Logarithmic Closure:} Taking the natural logarithm and multiplying by $\kB$:
-    $$
-    \kB \ln |\Omega(\C_n)| \le \kB \ln |\Omega(\C_{n+1})|.
-    $$
-    \item \textbf{Conclusion (Entropy Invariance):} This directly implies that the entropy is non-decreasing[cite: 1307, 1308]:
-    $$
-    \Entropy[\C_{n+1}] - \Entropy[\C_n] = \Delta \Entropy \ge 0.
-    $$
-\end{enumerate}
-The equality holds only if the refinement $\C_{n+1}$ does not expose any previously indistinguishable configurations. Thus, the Arrow of Time is a theorem of order monotonicity[cite: 93].
+Let $\C_n$ be a causal set and $\C_{n+1}$ be an admissible refinement. By the Axiom of Event Selection, the set of admissible orderings is monotonically non-decreasing:
+$$
+\Omega(\C_n) \subseteq \Omega(\C_{n+1}).
+$$
+Taking the logarithm yields the constraint on the informational field $\U$:
+$$
+\Entropy[\C_{n+1}] - \Entropy[\C_n] = \Delta \Entropy \ge 0.
+$$
+The non-decreasing nature of $\Entropy$ is a theorem of order consistency, establishing thermodynamic closure.
 \end{proof}
 
 \end{document}
