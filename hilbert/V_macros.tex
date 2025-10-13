@@ -1,43 +1,64 @@
 % ================================================================
 % V_macros.tex — Rosetta Layer (pure shim, safe to \input anywhere)
 % ---------------------------------------------------------------
-% This file provides a minimal, guarded symbol table and statement
-% "contracts" that unify notation across P_clean.tex, P.tex, G1S.tex,
-% G2S.tex, and G3S.tex. It does NOT declare packages or environments.
+% Minimal, guarded symbol table and shared "contracts" (statement handles)
+% used by P_clean.tex, P.tex, G1S.tex, G2S.tex, and G3S.tex.
+% No packages and no environments are declared here.
 % ================================================================
 
 % ---------- Core symbols (guarded) ----------
 \providecommand{\U}{\mathbf{U}}         % Admissible history / universe field
 \providecommand{\V}{\mathbf{V}}         % Test / variation
-\providecommand{\Acal}{\mathcal{A}}     % Action-like functional (name only)
-\providecommand{\Bform}{\mathsf{B}}     % Symmetric bilinear form (name only)
 \providecommand{\Hspace}{\mathcal{H}}   % Function space (e.g., H^2)
 \providecommand{\Test}{\mathcal{V}}     % Test space
 \providecommand{\grad}{\nabla}          % Gradient operator
+\providecommand{\T}{\mathbf{T}}         % Stress / tensor (generic)
+\providecommand{\C}{\mathcal{C}}        % Causal class space / partition carrier
+\providecommand{\Top}{\mathcal{T}}      % Topology / admissible order structure
+\providecommand{\Domain}{\Omega}        % Spatial/temporal domain
+\providecommand{\OmegaSet}{\Omega}      % Equivalence-class carrier (G1S usage)
+\providecommand{\Ek}{\mathbf{E}_k}      % Event tensor / k-th event object
 
-% Derivative shorthands used across modules
-\providecommand{\DTwo}{\mathbf{U}''}      % Continuous second derivative
-\providecommand{\DFour}{\mathbf{U}^{(4)}} % Continuous fourth derivative
-
-% Entropy fallback (G1S may provide its own)
-\providecommand{\Entropy}{\mathrm{S}}
-
-% Back-compat alias: unify any legacy \Vt to \V
-\providecommand{\Vt}{}%
-\renewcommand{\Vt}{\V}
-
-% Lightweight utilities
+% ---------- Action / forms / bilinear pairings ----------
+\providecommand{\Acal}{\mathcal{A}}     % Action-like functional (name-only)
+\providecommand{\Bform}{\mathsf{B}}     % Symmetric bilinear form (weak form)
 \providecommand{\ip}[2]{\langle #1,\, #2 \rangle}
 \providecommand{\norm}[1]{\lVert #1 \rVert}
 
-% Named statement "contracts" (shared text handles; no semantics imposed)
+% ---------- Entropy and constants ----------
+\providecommand{\kB}{k_{\mathrm{B}}}
+\providecommand{\EntropySymbol}{\mathrm{S}}
+% \Entropy[sub] -> S_sub  (subscript optional)
+\providecommand{\Entropy}[1][]{\EntropySymbol_{\!#1}}
+
+% ---------- Differential shorthands (continuous) ----------
+\providecommand{\DTwo}{\U''}            % 2nd derivative of U (1D shorthand)
+\providecommand{\DFour}{\U^{(4)}}       % 4th derivative of U (1D shorthand)
+
+% ---------- Discrete / h-grid shorthands (used in G3S) ----------
+\providecommand{\Uh}{\U_h}              % Discrete field
+\providecommand{\Vh}{\V_h}              % Discrete test space element
+\providecommand{\Acalh}{\Acal_h}        % Discrete action
+\providecommand{\Bformh}{\Bform_h}      % Discrete bilinear form
+\providecommand{\DeltaTwoh}{\Delta^{(2)}_h}   % Discrete 2nd-diff operator
+\providecommand{\DeltaFourh}{\Delta^{(4)}_h}  % Discrete 4th-diff operator
+
+% ---------- Thermo/notation helpers ----------
+\providecommand{\E}{\mathbb{E}}         % Expectation / averaging if needed
+\providecommand{\Talg}{\mathsf{T}}      % Algorithmic/typed tensor symbol (P.tex)
+\providecommand{\Spline}{\mathsf{S}}    % Spline symbol (G2S usage)
+\providecommand{\Phi}{\varphi}          % Test function alias
+\providecommand{\Psi}{\psi}             % Auxiliary function alias
+
+% ---------- Named statement "contracts" (shared textual handles) ----------
+% Keep these as *content handles* only; proofs live where they belong.
 \providecommand{\GOneStatement}{\Delta\,\Entropy \ge 0}
 \providecommand{\GTwoStatement}{\DFour = 0}
-\providecommand{\GTwoWeakForm}{\Bform(\U,\varphi)=0\quad\forall\,\varphi\in\Test}
-\providecommand{\GThreeStatement}{\text{Discrete–continuum reciprocity holds via }\Bform}
+\providecommand{\GTwoWeakForm}{\Bform(\U,\Phi)=0\quad\forall\,\Phi\in\Test}
+\providecommand{\GThreeStatement}{\text{Discrete–continuum reciprocity via }\Bform}
 
-% Optional no-op editorial hooks (safe when not present elsewhere)
+% ---------- Optional no-op editorial hooks (safe when undefined elsewhere) ----------
 \makeatletter
-\@ifundefined{vnode}{\newcommand{\vnode}[2][]{#2}}{}
-\@ifundefined{vnodechange}{\newcommand{\vnodechange}[3][]{}}{}
+\@ifundefined{vnode}{\newcommand{\vnode}[2][]{#2}}{}          % \vnode[tag]{text}
+\@ifundefined{vnodechange}{\newcommand{\vnodechange}[3][]{}}{} % \vnodechange[tag]{from}{to}
 \makeatother
