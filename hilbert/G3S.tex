@@ -1,7 +1,7 @@
 \documentclass[12pt]{article}
 \usepackage{amsthm,amssymb,amsmath,mathtools,setspace}
+\usepackage{hyperref}
 \usepackage{enumitem}
-\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
 \onehalfspacing
 
 % --- Module Dependencies ---
@@ -42,6 +42,8 @@
 \section{Input Node: The Discrete Energy Functional}
 The minimized continuum action \(\mathcal{A}[\U]\) is the smooth limit of a discrete action \(\Acalh[\Uh]\), where \(\Uh\) represents the discrete field values on a mesh \(\mesh\).
 
+\bigskip\hrule\bigskip
+
 \begin{definition}[Discrete Curvature Action \(\Acalh\)]
 The discrete energy functional (informational bending energy) is the Riemann sum approximation of \(\mathcal{A}[\U]\):
 \[
@@ -51,14 +53,19 @@ Its stationary points, \(\delta \Acalh[\Uh] = 0\), yield the discrete Euler–La
 \(\DeltaFourh \Uh = 0\), where \(\DeltaFourh := \DeltaTwoh \circ \DeltaTwoh\) (unscaled).
 \end{definition}
 
+\bigskip\hrule\bigskip
+
 \section{Theorem: The Kinematic Closure Chain}
 
 \begin{theorem}[Discrete Kinematic Convergence]
 The discrete Euler–Lagrange operator converges to the continuous closure:
 \[
-  \DeltaFourh \Uh = 0 \quad \Longrightarrow \quad \lim_{\mesh\to 0} \frac{\DeltaFourh \Uh}{\mesh^4} = \DFour.
+  \DeltaFourh \Uh = 0 \quad \Longrightarrow \quad
+  \lim_{\mesh\to 0} \frac{\DeltaFourh \Uh}{\mesh^4} = \DFour.
 \]
 \end{theorem}
+
+\bigskip\hrule\bigskip
 
 \begin{proof}[\textbf{G3 Proof Obligation Fulfillment}]
 The proof relies on establishing the necessary stability and consistency of the discrete solution space \(\Sh\).

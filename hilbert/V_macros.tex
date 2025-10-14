@@ -1,48 +1,73 @@
-% V_macros.tex — ultra-minimal Rosetta (Gemini-safe)
-% Only \providecommand; no packages; all handles title-safe.
+% ============================================================
+% V_macros.tex — Rosetta layer (contracts + shared symbols)
+% Version: v1.1  (adds curvature-aware atomic moves)
+% PURE macro shim: ONLY \providecommand, no \usepackage, no envs
+% All math-y macros are title-safe via \ensuremath{...}
+% ============================================================
 
-% --- Core symbols shared across G1S/G2S/G3S/G4S/P/V_article ---
-\providecommand{\U}{\mathbf{U}}         % Admissible history / universe field
-\providecommand{\V}{\mathbf{V}}         % Test / variation (generic handle)
-\providecommand{\ph}{\varphi}           % Test function (lowercase alias)
-\providecommand{\Test}{\mathcal{V}}     % Test space
-\providecommand{\Bform}{\mathsf{B}}     % Bilinear/reciprocity pairing (weak form)
-\providecommand{\grad}{\nabla}          % Abstract differential operator
-\providecommand{\C}{\mathcal{C}}        % Causal class / partition carrier
+% ---------- Core continuum symbols ----------
+\providecommand{\U}{\ensuremath{\mathbf{U}}}          % history / field
+\providecommand{\V}{\ensuremath{\mathbf{V}}}          % variation
+\providecommand{\ph}{\ensuremath{\varphi}}            % test function
+\providecommand{\Test}{\ensuremath{\mathcal{V}}}      % test space
+\providecommand{\Bform}{\ensuremath{\mathsf{B}}}      % bilinear reciprocity
+\providecommand{\grad}{\ensuremath{\nabla}}           % abstract differential
+\providecommand{\C}{\ensuremath{\mathcal{C}}}         % causal class / partition
 
-% --- Entropy & kinematic closures (title-safe) ---
-\providecommand{\EntropySymbol}{\mathrm{S}}
-\providecommand{\Entropy}[1][]{\ensuremath{\EntropySymbol_{\!#1}}} % S_sub (optional)
-\providecommand{\DFour}{\U^{(4)}}                                  % Strong closure shorthand
+% ---------- Entropy & closures ----------
+\providecommand{\EntropySymbol}{\ensuremath{\mathrm{S}}}
+\providecommand{\Entropy}[1][]{\ensuremath{\EntropySymbol_{\!#1}}}
+\providecommand{\DFour}{\ensuremath{\U^{(4)}}}        % strong closure shorthand
 
-% --- Statement handles (contracts), safe in text/headings ---
+% ---------- Statement handles (contracts) ----------
 \providecommand{\GOneStatement}{\ensuremath{\Delta\,\Entropy \ge 0}}
 \providecommand{\GTwoStatement}{\ensuremath{\DFour = 0}}
 \providecommand{\GTwoWeakForm}{\ensuremath{\Bform(\U,\ph)=0\ \forall\,\ph\in\Test}}
 \providecommand{\GThreeStatement}{\ensuremath{\text{Discrete–continuum reciprocity via }\Bform}}
 
-% --- Noether bridge (index-free API) ---
-\providecommand{\Xi}{\boldsymbol{\xi}}                                      % Symmetry generator (abstract)
-\providecommand{\NoetherTensor}[3]{\mathsf{N}\!\left[#1,#2;#3\right]}       % N[L,U;Xi]
-\providecommand{\StressEnergy}{\mathbf{T}}                                   % Stress–energy (abstract)
-\providecommand{\Current}{\mathbf{J}}                                        % Noether current (abstract)
-\providecommand{\Div}[1]{\ensuremath{\grad\!\cdot\! #1}}                     % Divergence via ∇·
+% ---------- Noether bridge (index-free) ----------
+\providecommand{\Xi}{\ensuremath{\boldsymbol{\xi}}}                       % symmetry generator
+\providecommand{\NoetherTensor}[3]{\ensuremath{\mathsf{N}\!\left[#1,#2;#3\right]}} % N[L,U;Xi]
+\providecommand{\StressEnergy}{\ensuremath{\mathbf{T}}}                   % stress–energy (abstract)
+\providecommand{\Current}{\ensuremath{\mathbf{J}}}                        % conserved current
+\providecommand{\Div}[1]{\ensuremath{\grad\!\cdot\! #1}}                  % divergence ∇·
 
-% --- Volume 4: invariants & statistics (index-free, title-safe) ---
-\providecommand{\E}{\ensuremath{\mathbb{E}}}                                 % Expectation
-\providecommand{\Var}[1]{\ensuremath{\mathrm{Var}\!\left[#1\right]}}         % Variance
-\providecommand{\Estimator}[1]{\ensuremath{\widehat{#1}}}                     % Estimator, e.g. \Estimator{\theta}
-\providecommand{\Score}{\ensuremath{\mathcal{S}}}                             % Score function (abstract)
-\providecommand{\Fisher}{\ensuremath{\mathcal{I}}}                            % Fisher information (abstract)
-\providecommand{\KL}[2]{\ensuremath{\mathrm{D}_{\mathrm{KL}}\!\left(#1\!\parallel\!#2\right)}} % KL divergence
-\providecommand{\Invariant}[1]{\ensuremath{\mathsf{Inv}\!\left[#1\right]}}   % Invariant statistic
-\providecommand{\Res}{\ensuremath{\mathsf{R}}}                                % Residual (abstract)
-
-% --- V4 contract handles (title-safe one-liners) ---
+% ---------- Volume 4: invariants & statistics ----------
+\providecommand{\E}{\ensuremath{\mathbb{E}}}
+\providecommand{\Var}[1]{\ensuremath{\mathrm{Var}\!\left[#1\right]}}
+\providecommand{\Estimator}[1]{\ensuremath{\widehat{#1}}}
+\providecommand{\Score}{\ensuremath{\mathcal{S}}}
+\providecommand{\Fisher}{\ensuremath{\mathcal{I}}}
+\providecommand{\KL}[2]{\ensuremath{\mathrm{D}_{\mathrm{KL}}\!\left(#1\!\parallel\!#2\right)}}
+\providecommand{\Invariant}[1]{\ensuremath{\mathsf{Inv}\!\left[#1\right]}}
+\providecommand{\Res}{\ensuremath{\mathsf{R}}}
 \providecommand{\GFourDPI}{\ensuremath{\mathrm{D}_{\mathrm{KL}}\ \text{monotone under admissible coarse\kern0.1em graining}}}
 \providecommand{\GFourScoreZero}{\ensuremath{\E\!\left[\Score\right]=0}}
 
-% --- (Optional) Newton shims for prompt convenience ----------------
-% Uncomment if you want named symbols in text for residual/Jacobian:
-% \providecommand{\Rfunc}{\mathsf{R}}    % residual symbol (index-free)
-% \providecommand{\Jfunc}{\mathsf{J}}    % Jacobian symbol (index-free)
+% ---------- Numerics Rosetta (JFNK + Multigrid), index-free ----------
+\providecommand{\Rfunc}{\ensuremath{\mathsf{R}}}      % residual operator
+\providecommand{\Jfunc}{\ensuremath{\mathsf{J}}}      % Jacobian operator (abstract/Jv)
+
+% discrete operators (G3 alignment)
+\providecommand{\Uh}{\ensuremath{\U_{\!h}}}           % discrete field
+\providecommand{\Vh}{\ensuremath{\V_{\!h}}}           % discrete variation
+\providecommand{\Acalh}{\ensuremath{\mathcal{A}_{\!h}}}
+\providecommand{\Bformh}{\ensuremath{\Bform_{\!h}}}
+\providecommand{\DeltaTwoh}{\ensuremath{\Delta^{(2)}_{\!h}}}
+\providecommand{\DeltaFourh}{\ensuremath{\Delta^{(4)}_{\!h}}}
+\providecommand{\Restrict}{\ensuremath{\mathsf{R}}}   % restriction
+\providecommand{\Prolong}{\ensuremath{\mathsf{P}}}    % prolongation
+\providecommand{\Smoother}{\ensuremath{\mathsf{S}}}   % smoother step
+\providecommand{\MGVcycle}{\ensuremath{\mathsf{MG}}}  % one V-cycle (preconditioner)
+\providecommand{\Krylov}{\ensuremath{\mathsf{K}}}     % Krylov solver placeholder (GMRES/CG)
+\providecommand{\mesh}{\ensuremath{h}}                % mesh scale
+
+% ---------- Optional editorial stub ----------
+\providecommand{\Top}{\ensuremath{\mathcal{T}}}       % optional topology handle
+
+% ---------- Atomic moves / curvature-aware handles (v1.1) ----------
+\providecommand{\WeakForm}{\ensuremath{\Bform(\U,\ph)=0\ \forall\,\ph\in\Test}}
+\providecommand{\StrongForm}{\ensuremath{\DFour=0}}
+\providecommand{\NewtonStep}{\ensuremath{\Jfunc(\U)\,\delta\U=-\Rfunc(\U)}}
+\providecommand{\MGPrecond}{\ensuremath{\delta\U=\Krylov[\Jfunc,\MGVcycle]}}
+\providecommand{\ConcludeDivT}{\ensuremath{\Div{\StressEnergy}=0}}

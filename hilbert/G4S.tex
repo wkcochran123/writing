@@ -11,58 +11,63 @@
 % --- Load Rosetta Layer (Contracts & Shared Symbols) ---
 \input{V_macros.tex}
 
-% Local symbols for this module (index-free)
+% Local symbols defined via V_macros for use in the body
 \providecommand{\Lcal}{\mathcal{L}}
 \providecommand{\Scal}{\mathcal{S}}
+\providecommand{\Xi}{\boldsymbol{\xi}}
 
 \title{\textbf{Module 4: The Noether Bridge} \\
-\large Validating G4: Derivation of Conserved Currents
-\texorpdfstring{\Div{\StressEnergy}=0}{div T = 0}}
+\large Validating G4: Derivation of Conserved Currents \texorpdfstring{\Div{\StressEnergy}=0}{div T = 0}}
 \author{G4S — Proof of Conservation (V.tex Compliant)}
 \date{\today}
 
 \begin{document}
 \maketitle
 
-\section{Input Node: Stationarity from Kinematic Closure (G2)}
+\bigskip\hrule\bigskip
 
-The conservation law relies on the \emph{action principle} being stationary. The kinematic
-closure \(\GTwoStatement\) guarantees that the fundamental field \(\U\) is a solution to the
-Euler–Lagrange equations in the sense needed to invoke stationarity \(\delta \Scal = 0\).
+\section{Input Node: Stationarity from Kinematic Closure (G2)}
+The conservation law relies on the \emph{action principle} being stationary. The kinematic closure \(\GTwoStatement\) guarantees that the fundamental field \(\U\) is a solution to the Euler–Lagrange equations in the sense needed to invoke stationarity \(\delta \Scal = 0\).
+
+\bigskip\hrule\bigskip
 
 \begin{definition}[Action Functional \(\Scal\)]
-Let \(\Lcal\) be a local Lagrangian density encoding informational curvature. The action is
+The action functional is the integral of the local Lagrangian density \(\Lcal\) that encapsulates informational curvature:
 \[
   \Scal[\U] \;=\; \int \Lcal\!\big(\U,\, \grad \U\big)\, d\tau ,
 \]
 where the measure \(d\tau\) is left abstract (index-free).
 \end{definition}
 
+\bigskip\hrule\bigskip
+
 \section{Theorem: Conservation Law (Index-Free Noether)}
 
 \begin{theorem}[Noether Conservation]
-For every continuous symmetry \(\Xi\) that leaves the action invariant \((\delta \Scal = 0)\),
-there exists an associated current \(\Current\) whose divergence vanishes:
+For every continuous symmetry \(\Xi\) that leaves the action invariant \((\delta \Scal = 0)\), there exists an associated current \(\Current\) whose divergence vanishes:
 \[
   \Div{\Current} \;=\; 0.
 \]
 \end{theorem}
 
+\bigskip\hrule\bigskip
+
 \begin{proof}[\textbf{G4 Proof Obligation Fulfillment (Translational Case)}]
 \begin{enumerate}
   \item \textbf{Hypothesis (stationarity).} The closure \(\GTwoStatement\) positions \(\U\) at a stationary point: \(\delta \Scal = 0\).
-  \item \textbf{Symmetry selection.} Choose translational symmetry \(\Xi_{\mathrm{trans}}\).
+  \item \textbf{Symmetry selection.} We select the translational symmetry \(\Xi_{\mathrm{trans}}\).
   \item \textbf{Noether bridge (API).} Invoke the abstract construction
   \[
     \StressEnergy \;\leftarrow\; \NoetherTensor{\Lcal}{\U}{\Xi_{\mathrm{trans}}}.
   \]
-  \item \textbf{Conservation identity.} Symmetry implies the resulting current is conserved:
+  \item \textbf{Conservation identity.} Symmetry implies the resulting current is conserved, establishing the global bookkeeping constraint:
   \[
     \Div{\StressEnergy} \;=\; 0.
   \]
 \end{enumerate}
-Thus the Noether bridge carries the geometric constraint \(\GTwoStatement\) into the required
-conservation statement, furnishing the bookkeeping law for subsequent thermodynamic closure.
+Thus the Noether bridge carries the geometric constraint \(\GTwoStatement\) into the required structural conservation statement.
 \end{proof}
+
+\bigskip\hrule\bigskip
 
 \end{document}

@@ -1,6 +1,6 @@
 \documentclass[12pt]{article}
 
-% Minimal preamble
+% Minimal & safe preamble
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
@@ -13,11 +13,14 @@
 % Load Rosetta
 \input{V_macros.tex}
 
-% Title (bookmark-safe with texorpdfstring)
-\title{V: Reader's Guide and Contract Layer\\
-\small (thermodynamic \texorpdfstring{\GOneStatement}{Delta S >= 0},\;
-       kinematic \texorpdfstring{\GTwoStatement}{U^(4)=0},\;
-       reciprocity \texorpdfstring{\GTwoWeakForm}{B(U,varphi)=0})}
+% Version tag
+\newcommand{\VVersion}{v1.1}
+
+\title{V: Reader’s Guide \& Contract Layer (\VVersion)\\
+\small thermodynamic \texorpdfstring{\GOneStatement}{Delta S >= 0},\;
+kinematic \texorpdfstring{\GTwoStatement}{U^(4)=0},\;
+reciprocity \texorpdfstring{\GTwoWeakForm}{B(U,phi)=0},\;
+conservation \texorpdfstring{\ConcludeDivT}{div T = 0}}
 \author{Verification Tensor (V)}
 \date{\today}
 
@@ -25,59 +28,48 @@
 \maketitle
 
 \begin{abstract}
-This note declares the shared symbols and contracts (G1--G4), adds an index-free Noether
-bridge \(\NoetherTensor{L}{\U}{\Xi}\) linking stationarity to conserved currents, and introduces
-Volume~4 primitives for invariants and statistics. All handles are title-safe
-(\verb|\ensuremath|), so they can be used directly in text, headings, and captions.
+This note declares the shared \emph{contracts} (G1–G5) and an index-free \emph{Numerics Rosetta}
+for matrix-free Newton–Krylov with a multigrid preconditioner. All handles are title-safe
+(\verb|\ensuremath|) and may be used in text, headings, and captions.
 \end{abstract}
 
-\section*{Contracts (G1--G4)}
+\section*{Contracts (G1–G5)}
 \begin{itemize}
   \item \textbf{G1 thermodynamic closure:} \GOneStatement.
-  \item \textbf{G2 kinematic closure (strong):} \GTwoStatement.
-  \item \textbf{G2 weak/reciprocity:} \GTwoWeakForm; summarized as \GThreeStatement.
-  \item \textbf{G4 statistical invariants:}
-        \begin{itemize}
-          \item Data processing / coarse-graining: \GFourDPI.
-          \item Score unbiasedness at truth: \GFourScoreZero.
-        \end{itemize}
+  \item \textbf{G2 kinematic closure (strong):} \GTwoStatement\; i.e.\ \StrongForm.
+  \item \textbf{G2 weak/reciprocity:} \GTwoWeakForm\; i.e.\ \WeakForm; summarized by \GThreeStatement.
+  \item \textbf{G4 conservation (index-free):} \(\Div{\Current}=0\); translational case via \ConcludeDivT.
+  \item \textbf{G5 statistical invariants:} \GFourDPI \; and \; \GFourScoreZero.
 \end{itemize}
 
-\section*{Shared symbols}
+\section*{Shared symbols (continuum + statistics)}
 \[
-  \U,\ \V,\ \ph\in\Test,\ \grad,\ \C,\ \Bform(\cdot,\cdot),\ \Entropy,\ \DFour,\ 
+  \U,\ \V,\ \ph\in\Test,\ \grad,\ \C,\ \Bform,\ \Entropy,\ \DFour,\
   \Xi,\ \NoetherTensor{L}{\U}{\Xi},\ \Current,\ \StressEnergy,\ \Div{\Current},\
   \E,\ \Var{\cdot},\ \Estimator{\cdot},\ \Score,\ \Fisher,\ \KL{P}{Q},\ \Invariant{\cdot},\ \Res.
 \]
 
-\section*{Noether bridge (index-free API)}
-We introduce a lightweight primitive:
+\section*{Numerics Rosetta (JFNK + MG, index-free)}
+Abstract Newton–Krylov with a multigrid preconditioner is referenced via:
 \[
-  \NoetherTensor{L}{\U}{\Xi},
+  \Rfunc(\U) := \DFour,\qquad
+  \Jfunc(\U)\,v \approx \frac{\Rfunc(\U+\varepsilon v)-\Rfunc(\U)}{\varepsilon},\qquad
+  \delta\U \ \text{from}\ \Krylov\big[\Jfunc,\ \MGVcycle\big].
 \]
-mapping a local density \(L\), field \(\U\), and infinitesimal generator \(\Xi\) to an
-abstract current \(\Current\) (and, for translations, a stress--energy \(\StressEnergy\)),
-with conservation
+Discrete alignment (G3) supplies the hierarchy:
 \[
-  \Div{\Current} = 0.
+  \DeltaTwoh,\ \DeltaFourh,\ \Bformh,\ \Restrict,\ \Prolong,\ \Smoother,\ \MGVcycle,\ \mesh.
 \]
-The closure \GTwoStatement{} supplies the stationarity hypothesis required to invoke this construction.
+(Handles only; no stencil/indices are fixed in V.)
 
-\section*{Volume 4: invariants and statistical closure}
-Admissible coarse-grainings (consistent with \(\C\)) cannot increase distinguishability:
-\[
-  \KL{P}{Q}\ \text{does not increase under admissible maps.}
-\]
-At the true parameter, the score has zero mean:
-\[
-  \GFourScoreZero.
-\]
-Estimation accuracy is bounded via \(\Fisher\), while symmetry induces index-free invariants
-\(\Invariant{\Xi}\) consistent with \(\Div{\Current}=0\). Residual structure \(\Res\) is thereby
-interpreted as constrained noise under the established closures.
+\section*{Usage notes (do \& don’t)}
+\begin{itemize}
+  \item Use statement handles directly in text: “By (\GTwoStatement) and (\GTwoWeakForm) …”
+  \item Avoid \verb|\left...\right| unless both sides are present.
+  \item Do not redeclare V handles in modules; add local aliases only when necessary.
+\end{itemize}
 
-\section*{Usage notes}
-The statement handles already include math mode. Prefer \verb|(\GOneStatement)| not \verb|\(\GOneStatement\)|.
-Avoid \verb|\left...\right| unless you include both sides.
+\section*{Smoke test (text-mode safety)}
+In text: \WeakForm\ \(\Rightarrow\) IBP \(\times 2\) \(\Rightarrow\) \StrongForm; solve via \NewtonStep\ with \MGPrecond; conclude \ConcludeDivT.
 
 \end{document}
