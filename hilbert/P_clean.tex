@@ -8,7 +8,7 @@
 \usepackage{amsmath,amssymb,mathtools}
 \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
 \usepackage{setspace}
-\usepackage{pdfpages} % <-- FIX: Added for Option A
+\usepackage{pdfpages} % Required for Option A: Including compiled PDFs
 \onehalfspacing
 
 % --- Final Unified Macro Set (Source V_macros.tex) ---
@@ -24,7 +24,7 @@
 \maketitle
 
 \begin{abstract}
-This document synthesizes the core closure arguments (G1--G4). It shows that the foundational axiom of \textbf{Minimal Informational Curvature} (\GTwoStatement) supplies the structural hypothesis necessary to derive the \textbf{Conservation of Stress--Energy} (\(\Div{\StressEnergy} = 0\)), which rigorously enforces the \textbf{Second Law of Causal Order} (\GOneStatement) as a theorem of monotonicity. The full system is constrained by \textbf{Discrete--Continuum Reciprocity} (\GThreeStatement) and the \textbf{Causal Data Processing Inequality} (\GFourDPI), ensuring the integrity of measurement and prediction.
+This document synthesizes the core closure arguments (G1--G4). It shows that the foundational axiom of \textbf{Minimal Informational Curvature} (\texorpdfstring{\StrongForm}{U^{(4)}=0}) supplies the structural hypothesis necessary to derive the \textbf{Conservation of Stress--Energy} (\texorpdfstring{\ConcludeDivT}{div T = 0}), which rigorously enforces the \textbf{Second Law of Causal Order} (\GOneStatement) as a theorem of monotonicity. The full system is constrained by \textbf{Discrete--Continuum Reciprocity} (\GThreeStatement) and the \textbf{Causal Data Processing Inequality} (\GFourDPI), ensuring the integrity of measurement and prediction.
 \end{abstract}
 
 % --- TOC Inclusion (Stylistic Polish) ---
@@ -35,7 +35,7 @@ This document synthesizes the core closure arguments (G1--G4). It shows that the
 
 The argument's structure is a single dependency chain, demonstrating that physical laws emerge from consistency:
 \[
-  \GTwoStatement \quad \xrightarrow{\text{G4S: Noether Bridge}} \quad \Div{\StressEnergy} = 0 \quad \xrightarrow{\text{G1S: Constraint}} \quad \GOneStatement.
+  \StrongForm \quad \xrightarrow{\text{G4S: Noether Bridge}} \quad \ConcludeDivT \quad \xrightarrow{\text{G1S: Constraint}} \quad \GOneStatement.
 \]
 
 \section{Core Contracts and Closure Arguments}
@@ -46,12 +46,12 @@ The unique analytic closure for the admissible history \(\U\) minimizes the Info
 
 \paragraph{Strong Closure.} The minimization yields the Euler–Lagrange equation:
 \[
-  \GTwoStatement.
+  \StrongForm.
 \]
 
 \paragraph{Weak Reciprocity.} This closure is equivalent to the \textbf{Weak Reciprocity Form}, which utilizes the symmetric, coercive bilinear form \(\Bform\):
 \[
-  \GTwoWeakForm.
+  \WeakForm.
 \]
 
 \subsection{Conservation and Discrete Consistency (G3/G4S)}\label{sec:g34}
@@ -65,7 +65,7 @@ The stability established in G2 provides the foundation for all conservation law
 
 \paragraph{Noether Conservation (G4S).} The stationarity from G2 is the hypothesis for Noether's Theorem. Translational symmetry (\(\Xi\)) generates the conserved \textbf{Stress--Energy Tensor} (\(\StressEnergy\)):
 \[
-  \Div{\StressEnergy} = 0.
+  \ConcludeDivT.
 \]
 
 \subsection{Thermodynamic and Statistical Closure (G1/G5)}\label{sec:g15}
@@ -84,11 +84,11 @@ Admissible coarse-grainings consistent with \(\C\) cannot increase distinguishab
 \]
 Conservation links symmetry to stability,
 \[
-  \Div{\Current}=0 \;\Longrightarrow\; \text{stability of } \Invariant{\Xi},
+  \ConcludeDivT \;\Longrightarrow\; \text{stability of } \Invariant{\Xi},
 \]
 so any remaining structure is captured as constrained noise \(\Res\), and predictability is bounded by the invariant geometry implied by these closures.
 
-% --- Appendix Inclusion (Option A: Including Compiled PDFs) ---
+% --- Appendix Inclusion (Option A: Including Compiled PDFs with \addtotoc) ---
 \appendix
 \section*{Appendix: Validation Modules}
 \addcontentsline{toc}{section}{Appendix: Validation Modules}

@@ -1,6 +1,6 @@
 \documentclass[12pt]{article}
 
-% Minimal & safe preamble
+% Minimal, safe preamble
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
@@ -9,67 +9,116 @@
 \geometry{margin=1in}
 \usepackage{amsmath,amssymb,mathtools}
 \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{setspace}
+\usepackage{pdfpages} % for includepdf of supporting modules
+\onehalfspacing
 
-% Load Rosetta
+% Load Rosetta layer
 \input{V_macros.tex}
 
 % Version tag
-\newcommand{\VVersion}{v1.1}
+\newcommand{\VVersion}{v1.2}
 
-\title{V: Reader’s Guide \& Contract Layer (\VVersion)\\
-\small thermodynamic \texorpdfstring{\GOneStatement}{Delta S >= 0},\;
-kinematic \texorpdfstring{\GTwoStatement}{U^(4)=0},\;
-reciprocity \texorpdfstring{\GTwoWeakForm}{B(U,phi)=0},\;
-conservation \texorpdfstring{\ConcludeDivT}{div T = 0}}
-\author{Verification Tensor (V)}
+\title{Interpreting the Causal Closure Chain (\VVersion)\\
+\small kinematics \texorpdfstring{\StrongForm}{U^(4)=0}\,;\,
+reciprocity \texorpdfstring{\WeakForm}{B(U,phi)=0}\,;\,
+conservation \texorpdfstring{\ConcludeDivT}{div T = 0}\,;\,
+thermo \texorpdfstring{\GOneStatement}{Delta S >= 0}}
+\author{Interpretive Synthesis Module (V.tex Compliant)}
 \date{\today}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-This note declares the shared \emph{contracts} (G1–G5) and an index-free \emph{Numerics Rosetta}
-for matrix-free Newton–Krylov with a multigrid preconditioner. All handles are title-safe
-(\verb|\ensuremath|) and may be used in text, headings, and captions.
+This article explains the causal-closure arc using the V handle system:
+\emph{kinematics} (\StrongForm) $\Rightarrow$ \emph{conservation} (\ConcludeDivT) $\Rightarrow$ \emph{thermodynamic monotonicity} (\GOneStatement).
+It also bundles the validated G1S–G5S supporting modules in an appendix for one-file distribution.
 \end{abstract}
 
-\section*{Contracts (G1–G5)}
-\begin{itemize}
-  \item \textbf{G1 thermodynamic closure:} \GOneStatement.
-  \item \textbf{G2 kinematic closure (strong):} \GTwoStatement\; i.e.\ \StrongForm.
-  \item \textbf{G2 weak/reciprocity:} \GTwoWeakForm\; i.e.\ \WeakForm; summarized by \GThreeStatement.
-  \item \textbf{G4 conservation (index-free):} \(\Div{\Current}=0\); translational case via \ConcludeDivT.
-  \item \textbf{G5 statistical invariants:} \GFourDPI \; and \; \GFourScoreZero.
-\end{itemize}
-
-\section*{Shared symbols (continuum + statistics)}
+\section{The Arc of Closure}
 \[
-  \U,\ \V,\ \ph\in\Test,\ \grad,\ \C,\ \Bform,\ \Entropy,\ \DFour,\
-  \Xi,\ \NoetherTensor{L}{\U}{\Xi},\ \Current,\ \StressEnergy,\ \Div{\Current},\
-  \E,\ \Var{\cdot},\ \Estimator{\cdot},\ \Score,\ \Fisher,\ \KL{P}{Q},\ \Invariant{\cdot},\ \Res.
+  \StrongForm \quad \longrightarrow \quad \ConcludeDivT \quad \longrightarrow \quad \GOneStatement.
 \]
 
-\section*{Numerics Rosetta (JFNK + MG, index-free)}
-Abstract Newton–Krylov with a multigrid preconditioner is referenced via:
-\[
-  \Rfunc(\U) := \DFour,\qquad
-  \Jfunc(\U)\,v \approx \frac{\Rfunc(\U+\varepsilon v)-\Rfunc(\U)}{\varepsilon},\qquad
-  \delta\U \ \text{from}\ \Krylov\big[\Jfunc,\ \MGVcycle\big].
-\]
-Discrete alignment (G3) supplies the hierarchy:
-\[
-  \DeltaTwoh,\ \DeltaFourh,\ \Bformh,\ \Restrict,\ \Prolong,\ \Smoother,\ \MGVcycle,\ \mesh.
-\]
-(Handles only; no stencil/indices are fixed in V.)
+\section{Pillars of Interpretation}
 
-\section*{Usage notes (do \& don’t)}
-\begin{itemize}
-  \item Use statement handles directly in text: “By (\GTwoStatement) and (\GTwoWeakForm) …”
-  \item Avoid \verb|\left...\right| unless both sides are present.
-  \item Do not redeclare V handles in modules; add local aliases only when necessary.
-\end{itemize}
+\subsection{Kinematics and Reciprocity (G2)}
+\(\StrongForm\) follows from stationarity and is equivalent to the weak reciprocity statement \(\WeakForm\).
 
-\section*{Smoke test (text-mode safety)}
-In text: \WeakForm\ \(\Rightarrow\) IBP \(\times 2\) \(\Rightarrow\) \StrongForm; solve via \NewtonStep\ with \MGPrecond; conclude \ConcludeDivT.
+\paragraph{Stability from coercivity.}
+\noindent\InterpCoercivityToStability
+
+\paragraph{Physical meaning of the kernel.}
+\noindent\InterpKernelSignificance
+
+\subsection{Conservation (G4)}
+Noether bridge (index-free):
+\[
+  \StressEnergy \leftarrow \NoetherTensor{L}{\U}{\Xi},
+  \qquad
+  \ConcludeDivT.
+\]
+
+\subsection{Thermodynamics (G1)}
+Admissible refinement of \(\C\) yields
+\[
+  \GOneStatement.
+\]
+\noindent\InterpDPIThermo
+
+\subsection{Statistical Bounds (G5)}
+\[
+  \GFourDPI
+  \qquad\text{and}\qquad
+  \GFourScoreZero.
+\]
+Residual structure is captured as constrained noise \(\Res\); invariants \(\Invariant{\Xi}\) summarize what persists.
+
+\section{Computation (Index-Free, G3 Alignment)}
+Discrete reciprocity mirrors the continuum:
+\[
+  \frac{\DeltaFourh \Uh}{\mesh^4} \to \DFour \quad (\mesh \to 0),\qquad \Bformh \approx \Bform.
+\]
+\noindent\InterpDiscToContStability
+
+\paragraph{Newton rail (JFNK + MG).}
+\[
+  \Rfunc(\U):=\DFour,\quad \NewtonStep,\quad \MGPrecond.
+\]
+
+\section*{V-layer Discipline}
+\begin{enumerate}
+  \item Use handles (\StrongForm, \WeakForm, \ConcludeDivT, \GOneStatement); no indices/stencils in V.
+  \item Titles/headings are \texorpdfstring-safe; avoid \texttt{\textbackslash left...\textbackslash right} unless paired.
+  \item Prefer interpretation handles for meaning: \InterpCoercivityToStability, \InterpKernelSignificance, \InterpDPIThermo, \InterpDiscToContStability.
+\end{enumerate}
+
+% ===============================
+% Appendix: Supporting Modules
+% ===============================
+\appendix
+\section*{Appendix: Validation Modules (G1S–G5S)}
+\addcontentsline{toc}{section}{Appendix: Validation Modules}
+
+% --- Option A: include compiled PDFs (recommended) ---
+\includepdf[pages=-,addtotoc={1,subsection,1,{G1S: Order Monotonicity},sec:g1s}]{G1S.pdf}
+\includepdf[pages=-,addtotoc={1,subsection,1,{G2S: Kinematic Closure},sec:g2s}]{G2S.pdf}
+\includepdf[pages=-,addtotoc={1,subsection,1,{G3S: Discrete–Continuum Reciprocity},sec:g3s}]{G3S.pdf}
+\includepdf[pages=-,addtotoc={1,subsection,1,{G4S: Noether Bridge},sec:g4s}]{G4S.pdf}
+\includepdf[pages=-,addtotoc={1,subsection,1,{G5S: Statistical Closure},sec:g5s}]{G5S.pdf}
+
+% --- Option B: (fallback) include source .tex directly ---
+% Comment OUT Option A above, then UNcomment the block below if you prefer source inclusion.
+% \section*{G1S: Order Monotonicity}\addcontentsline{toc}{subsection}{G1S: Order Monotonicity}
+% \input{G1S.tex}
+% \section*{G2S: Kinematic Closure}\addcontentsline{toc}{subsection}{G2S: Kinematic Closure}
+% \input{G2S.tex}
+% \section*{G3S: Discrete–Continuum Reciprocity}\addcontentsline{toc}{subsection}{G3S: Discrete–Continuum Reciprocity}
+% \input{G3S.tex}
+% \section*{G4S: Noether Bridge}\addcontentsline{toc}{subsection}{G4S: Noether Bridge}
+% \input{G4S.tex}
+% \section*{G5S: Statistical Closure}\addcontentsline{toc}{subsection}{G5S: Statistical Closure}
+% \input{G5S.tex}
 
 \end{document}
