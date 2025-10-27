@@ -1,8 +1,14 @@
 \documentclass[12pt,oneside]{book}
-\usepackage{amsthm,amssymb,amsmath,mathtools,setspace,thmtools,titling}
+\usepackage{amsthm,amssymb,amsmath,mathtools,setspace,thmtools,titling,tocloft}
+\usepackage[nogroupskip,nonumberlist]{glossaries}
+\makeglossaries
+
 
 \newtheorem{theorem}{Theorem}
-\newtheorem{example}{Thought Experiment}
+\newtheorem{example}{Thought Experiment}[section]
+\makeatletter
+\def\@noftheorem#1#2{}
+\makeatother
 \newtheorem{axiom}{Axiom}
 \newtheorem{remark}{Remark}
 \newtheorem{definition}{Definition}
@@ -23,9 +29,15 @@
 % Define an abstract environment for the book class
 \onehalfspacing
 
+\newlistof{lotexp}{tex}{List of Thought Experiments}
+\newcommand{\thoughtexp}[1]{%
+  \refstepcounter{lotexp}%
+  \par\noindent\textbf{Thought Experiment~\thelotexp. #1}\addcontentsline{tex}{lotexp}{\protect\numberline{\thelotexp}#1}\par
+}
+
 
 % Title info
-\title{The Limits of Representation \\ \quad \\ \large Volume I \\ \quad \\ \large The Conditions of $\Delta S \ge 0$}
+\title{The Conditions of $\Delta S \ge 0$}
 \author{Bill Cochran\\wkcochran@gmail.com}
 \date{\today}
 
@@ -57,7 +69,7 @@ This work shows that measurement itself defines the metric structure of physics:
 
 We present a constructive proof that the entropy of any causally consistent universe is non-decreasing, $\Delta S \ge 0$. Within the axioms of Zermelo–Fraenkel set theory with Choice, we define a finite causal order of distinguishable events whose reciprocal operations—measurement and variation—form a dual pair under the \emph{Reciprocity Law of Physics}. Each measurement counts distinctions; each variation relates them. Their bijection guarantees that information cannot decrease under any admissible extension of order.
 
-Requiring global coherence under Martin’s Axiom enforces the fourth–order cancellation $U^{(4)} = 0$, identifying the cubic spline as the minimal analytic closure of the dual system. This closure produces the continuous calculus of variations as the smooth limit of finite causal measurement, and its algebraic dual defines the discrete logic of event selection. From this structure, the invariants of physics emerge successively: the wave equation as the propagation of reciprocal consistency, the metric as its gauge, and curvature as the residue of its global non-closure. 
+Requiring global coherence under Martin’s Axiom enforces the fourth--order cancellation $U^{(4)} = 0$, identifying the cubic spline as the minimal analytic closure of the dual system. This closure produces the continuous calculus of variations as the smooth limit of finite causal measurement, and its algebraic dual defines the discrete logic of event selection. From this structure, the invariants of physics emerge successively: the wave equation as the propagation of reciprocal consistency, the metric as its gauge, and curvature as the residue of its global non-closure. 
 Operationally, entropy measures the logarithm of the number of admissible distinguishable configurations consistent with the causal order.  When the causal field is interpreted as this count of distinctions, its curvature encodes the rate at which distinguishability grows.
 Coupling the causal field to entropy yields a constant-curvature stress tensor that defines the gravitational scale.
 
@@ -91,21 +103,21 @@ Thus, $\Delta S \ge 0$ is not a thermodynamic postulate but a theorem of causal 
 \end{center}
 
 \smallskip
-\noindent\emph{Reading note.} The metric $g_{\mu\nu}$ is the non-arbitrary operational map that keeps the co-/contra-variant duals of the Proof Tensor unified as a scalar invariant.
+\noindent\emph{Reading note.} The metric $g_{\mu\nu}$ is the non--arbitrary operational map that keeps the co--/contra--variant duals of the Proof Tensor unified as a scalar invariant.
 
 \bigskip
 
 \noindent\textbf{The Two First Theorems (immediate consequences of reciprocity + selection)}
 
 \medskip
-\noindent\textbf{Theorem 1 (Second Law of Causal Order).} In any extension of a finite causal order that remains globally consistent (Event Selection / MA-like), the count of distinguishable states cannot decrease. Hence
+\noindent\textbf{Theorem 1 (Second Law of Causal Order).} In any extension of a finite causal order that remains globally consistent (Event Selection / MA--like), the count of distinguishable states cannot decrease. Hence
 \[
 \Delta S \;\ge\; 0.
 \]
 \emph{Intuition.} Each admissible refinement preserves order and increases distinguishability; the Arrow of Time is a theorem of order monotonicity.
 
 \medskip
-\noindent\textbf{Theorem 2 (Kinematic Closure / Minimal Curvature).} The minimal-information closure enforced by Event Selection yields the cubic-spline condition
+\noindent\textbf{Theorem 2 (Kinematic Closure / Minimal Curvature).} The minimal--information closure enforced by Event Selection yields the cubic-spline condition
 \[
 U^{(4)} \;=\; 0,
 \]
@@ -115,11 +127,8 @@ i.e., smooth motion is the unique analytic closure compatible with global consis
 
 \noindent\textbf{Arc of the Proof (dependency chain)}
 \[
-\text{Axioms (ZFC + Event Selection)} \;\Rightarrow\; \text{Reciprocity} \;\Rightarrow\; U^{(4)}=0 \;\Rightarrow\; \nabla_\mu T^{\mu\nu}=0 \;\Rightarrow\; \Delta S \ge 0.
+\text{Axioms (ZFC + Event Selection)} \;\Rightarrow\; \text{Reciprocity} \;\Rightarrow\; U^{(4)}=0 \;\Rightarrow\; \\  \nabla_\mu T^{\mu\nu}=0 \;\Rightarrow\; \Delta S \ge 0.
 \]
-
-\noindent\emph{Forward pointer.} Vol.~II–IV resolve the computational ceiling: \; $P{=}NP\Rightarrow$ Weierstrass (continuity guaranteed) and the representation limit is fixed.
-% --- END BREAKPOINT PAGE ---
 
 
 \newpage
@@ -127,7 +136,7 @@ i.e., smooth motion is the unique analytic closure compatible with global consis
 \tableofcontents
 \newpage
 
-\listoftheorems[ignoreall, show={example}, title={List of Thought Experiments}]
+\listoftheorems[ignoreall,show={example},title={List of Thought Experiments}]
 \newpage
 
 \chapter*{Overview of the Argument}
@@ -139,13 +148,13 @@ In physical terms, Martin’s Axiom plays the role of a global consistency condi
 
 
 \paragraph{Part I — The Calculus of Measurement.}
-Beginning with Zermelo–Fraenkel set theory with Choice, we define a locally finite causal order of distinguishable events.  
+Beginning with Zermelo--Fraenkel set theory with Choice, we define a locally finite causal order of distinguishable events.  
 Two reciprocal operations arise naturally: \emph{measurement}, which counts distinctions, and \emph{variation}, which relates them.  
 Their bijective correspondence—the \emph{Reciprocity Law}—ensures that information can only increase as new distinctions are drawn.  
 In the continuum limit this reciprocity reproduces the calculus of variations; in the discrete limit it defines a logic of event selection that guarantees causal consistency.
 
 \paragraph{Part II — The Wave.}
-When the reciprocity relation is translation-invariant, its discrete updates form a Laplacian whose kernel represents the propagation of causal consistency.  
+When the reciprocity relation is translation--invariant, its discrete updates form a Laplacian whose kernel represents the propagation of causal consistency.  
 The wave equation emerges as the unique smooth limit preserving this invariance, and interference appears as the combinatorial superposition of indistinguishable causal paths.
 
 \paragraph{Part III — The Kinematics of Light.}
@@ -175,7 +184,7 @@ At every stage, a new invariant appears whenever distinction is preserved under 
 The sequence therefore builds the minimal structure required for a universe that records its own evolution without contradiction.
 
 Part~I defines the finite causal order and establishes the bijection between measurement and variation.  
-Part~II shows that translation-invariant updates propagate as waves—local proofs that reciprocity holds across causal intervals.  
+Part~II shows that translation--invariant updates propagate as waves—local proofs that reciprocity holds across causal intervals.  
 Part~III introduces global coherence through Martin’s Axiom, yielding the fourth-order cancellation $U^{(4)}=0$ and identifying the cubic spline as the analytic closure of causal measurement.  
 Part~IV extends this closure to conservation laws, gauge symmetry, and curvature.  
 Part~V completes the proof: any admissible extension of a finite causal order must increase the count of distinguishable states, implying $\Delta S \ge 0$.
@@ -323,17 +332,25 @@ light cones~\cite{minkowski1908}.  The only invariant quantity is the causal ord
 all observers concur on which event precedes which, even though they may count
 a different number of intermediate ticks~\cite{malament1977}.
 
-\begin{definition}[Rank time]\label{def:rank-time}
-Let $(E,\preceq)$ be a locally finite poset of events. A \emph{time rank} is an order-embedding
+\newglossaryentry{ranktime}{
+  name={rank time},
+  description={Order-embedding $\tau:E\to \text{Ord}$ assigning an ordinal rank to each event in a locally finite poset},
+  symbol={\tau},
+  sort=ranktime
+}
+
+\begin{definition}[Rank time~\cite{bombelli1987,davey2002}]\label{def:rank-time}
+Let $(E,\preceq)$ be a locally finite \emph{partially ordered set of events}. A \gls{ranktime} is an order-embedding
 \[
 \tau : E \to \mathrm{Ord}
 \]
-satisfying $e \prec f \implies \tau(e) < \tau(f)$. Local finiteness implies that for any observer's causal domain $D \subseteq E$, $\tau(D)$ is order-isomorphic to an initial segment of $\mathbb{N}$. We therefore define the \emph{duration} between anchors $a \prec b$ by
+satisfying $e \prec f \implies \tau(e) < \tau(f)$. Local finiteness implies that for any observer's causal domain $D \subseteq E$, $\tau(D)$ is order-isomorphic to an initial segment of $\mathbb{N}$. We therefore define the \emph{duration}, $|\delta t|$, between anchors $a \prec b$ by
 \[
 |\delta t|(a,b) \;=\; \#\{\, e \in E \mid a \prec e \prec b \,\}\in \mathbb{N}.
 \]
 Two rank functions $\tau,\tau'$ are \emph{equivalent} if there exists an order-isomorphism $\phi$ with $\tau'=\phi\circ\tau$; equivalent ranks yield identical durations.
 \end{definition}
+
 
 \begin{remark}[Operational content of time]
 Time is an ordinal rank on $E$, not an independent scalar field. All subsequent uses of ``$t$'' refer to an order-equivalence class of rank functions as in Definition~\ref{def:rank-time}. The additivity $|\delta t|(a,b)=|\delta t|(a,c)+|\delta t|(c,b)$ follows from local finiteness.
@@ -347,6 +364,12 @@ This work does not propose new physical phenomena or reinterpret existing
 experimental data.  Rather, it reformulates how measurable quantities are
 represented and reduces the number of degrees of freedom needed to describe
 the universe to a single parameter that can be curve–fit.
+\begin{example}[Planck's Constant as a Dimensional Anchor {\cite{Planck1901}}]
+Imagine a hypothetical measuring apparatus that records distinctions not by counting particles or intervals, but by tallying \emph{acts of discernment}—each act adding one quantum of distinguishability to the record. Suppose further that the calibration of such a device required only a single fixed scale to relate discrete counts to continuous units of measure. In physics, Planck’s constant $h$ serves precisely this purpose: it is not a force or an energy, but a bookkeeping factor that ensures continuity between discrete and continuous domains.
+
+In the present framework, the analogous constant plays no physical role—it merely fixes the \emph{dimensional scale} by which finite distinctions are rendered comparable. The constant’s existence affirms that measurement can be both discrete and metrically consistent without invoking any specific quantum postulate. As with $h$, the constant here is not discovered but \emph{defined}: a normalization that preserves coherence between counting and continuity.
+\end{example}
+
 
 The analysis concerns only the \emph{structure of measurement itself}:
 the mathematical relations among counts of distinguishable events that
@@ -374,6 +397,17 @@ order itself becomes measurable.
 
 
 The framework that follows formalizes this intuition.  The axioms of Zermelo--Fraenkel set theory with the Axiom of Choice, we construct an ordered set of events whose distinguishability relations reproduce the causal order implied by special relativity.  Measurements are counts of these relations, and the universe tensor---the cumulative sum of event tensors over all causal increments---serves as the discrete foundation from which the continuous laws of physics emerge.
+
+\paragraph{Historical context.}
+A measurement is defined operationally as the count of distinguishable
+events between two anchors---the minimal act of drawing a distinction
+in a finite causal order.  This definition echoes Boltzmann's use of
+distinguishable microstates as the foundation of entropy
+\cite{boltzmann1872}, Planck's quantization of action
+\cite{planck1901}, and Wheeler's dictum that "it from bit"
+\cite{wheeler1990}, but is here formalized as an axiom of order rather
+than an empirical postulate.
+
 
 
 \section{The Axioms of the Mathematical}
@@ -483,15 +517,21 @@ its edges, and the Universe Tensor the cumulative sum over all consistent
 orderings.  The remainder of the monograph simply formalizes this graphical
 intuition in set-theoretic and tensorial language, rather than using calculus.
 
-\begin{definition}[Partially Ordered Set]
-\label{def:poset}
-A \emph{partially ordered set} (poset) is a pair \((E, \leq)\) where \(\leq\) is a binary relation on \(E\) satisfying:
+\newglossaryentry{poset}{
+  name={partially ordered set},
+  description={A pair $(E,\leq)$ where $\leq$ is a binary relation on $E$ that is reflexive, antisymmetric, and transitive},
+  sort=poset
+}
+
+\begin{definition}[Partially Ordered Set~\cite{davey2002}]\label{def:poset}
+A \gls{poset} is a pair $(E,\leq)$ where $\leq$ is a binary relation on $E$ satisfying:
 \begin{enumerate}
-    \item \textbf{Reflexivity:} \(e \leq e\) for all \(e \in E\);
-    \item \textbf{Antisymmetry:} if \(e \leq f\) and \(f \leq e\), then \(e = f\);
-    \item \textbf{Transitivity:} if \(e \leq f\) and \(f \leq g\), then \(e \leq g\).
+  \item \textbf{Reflexivity:} $e \leq e$ for all $e \in E$
+  \item \textbf{Antisymmetry:} if $e \leq f$ and $f \leq e$, then $e = f$
+  \item \textbf{Transitivity:} if $e \leq f$ and $f \leq g$, then $e \leq g$
 \end{enumerate}
 \end{definition}
+
 
 Such an ordering always admits at least one maximal element~\cite{bombelli1987}:
 \begin{equation}
@@ -551,32 +591,76 @@ be recorded between them:
 \end{equation}
 \end{axiom}
 
-\begin{definition}[Time]
-\label{def:time}
-Time is not a variable, scalar, or independent measurement. Rather, it is an index into the 
-sorted list of events guaranteed by the Axiom of Order. Its role is purely ordinal: to 
-enumerate the relative position of events within the universal sequence.
+\newglossaryentry{time}{
+  name={time},
+  description={An ordinal index into the ordered list of events guaranteed by the Axiom of Order},
+  sort=time
+}
+
+\begin{definition}[Time (non-standard)]\label{def:time}
+\gls{time} is not a variable, scalar, or independent measurement. Rather, it is an index into the
+sorted list of events guaranteed by the Axiom of Order. Its role is purely ordinal: to
+enumerate the relative position of events within the universal sequence
 \end{definition}
 
-\begin{definition}[Event Tensor]\label{def:event_tensor}
-\label{def:eventtensor}
-Let $\V$ be a finite--dimensional real vector space of measurable quantities~\cite{golub2013}.  
-An \emph{event tensor} $\E_k \in \Talg$ encodes the distinguishable contribution 
-of the $k$-th event $e_k \in \Eset$ to the global state.  
-It is related to the logical event by a measurable embedding 
-$\Psi : \Eset \rightarrow \Talg$, where $\E_k = \Psi(e_k)$.
+\newglossaryentry{eventtensor}{
+  name={event tensor},
+  description={An element $\E_k \in \Talg$ encoding the measurable contribution of an event $e_k \in \Eset$ to the global state via an embedding $\Psi:\Eset\to\Talg$},
+  symbol={\E_k},
+  sort=eventtensor
+}
+
+\begin{definition}[Event Tensor~\cite{golub2013}]\label{def:eventtensor}
+Let $\V$ be a finite-dimensional real vector space of measurable quantities.
+An \gls{eventtensor} $\E_k \in \Talg$ encodes the distinguishable contribution
+of the $k$th event $e_k \in \Eset$ to the global state.
+It is related to the logical event by a measurable embedding
+\[
+\Psi:\Eset\to\Talg,\quad\E_k=\Psi(e_k)
+\]
 \end{definition}
 
-\begin{definition}[Ordered fold]\label{def:ordered-fold}
+\newglossaryentry{orderedfold}{
+  name={ordered fold},
+  description={An associative left fold over a totally ordered sequence of event tensors, preserving the order of composition in a non-commutative algebraic structure},
+  sort=orderedfold
+}
+
+\begin{definition}[Ordered Fold]\label{def:orderedfold}
+Let $(E,\preceq)$ be totally ordered as $\langle e_1,\dots,e_n\rangle$ on a finite prefix,
+and let $(\mathcal{A},\oplus)$ be an associative algebraic structure with identity $0$,
+not necessarily commutative.
+Given event tensors $E_k\in\mathcal{A}$, define the \gls{orderedfold} by
+\[
+\mathrm{Fold}_\oplus(E_1,\dots,E_n)
+\;:=\;
+(((0\oplus E_1)\oplus E_2)\cdots)\oplus E_n
+\]
+\end{definition}
+
+
+
+\begin{definition}[Ordered fold (non-standard)]\label{def:ordered-fold}
 Let $(E,\preceq)$ be totally ordered as $\langle e_1,\dots,e_n\rangle$ on a finite prefix, and let $(\mathcal{A},\oplus)$ be a (not-necessarily commutative) associative algebraic structure with identity $0$. Given event tensors $E_k\in\mathcal{A}$, define the ordered fold by
 \[
 \mathrm{Fold}_\oplus(E_1,\dots,E_n)\;:=\;(((0\oplus E_1)\oplus E_2)\cdots)\oplus E_n.
 \]
 \end{definition}
 
-\begin{definition}[Entanglement equivalence]\label{def:entanglement}
-Write $E_i \sim E_j$ if they lie in a subset on which $\oplus$ is commutative and which preserves all cyclic scalar invariants (e.g.\ traces of contractions). Two ordered lists are \emph{entanglement-equivalent} if they differ only by permutations inside such subsets. We write $\equiv$ for equality modulo entanglement equivalence.
+\newglossaryentry{entanglementequivalence}{
+  name={entanglement equivalence},
+  description={An equivalence relation between event tensors or ordered lists that differ only by permutations within commutative subsets preserving all cyclic scalar invariants such as traces of contractions},
+  sort=entanglementequivalence
+}
+
+\begin{definition}[Entanglement Equivalence (non-standard)]\label{def:entanglement}
+Write $E_i \sim E_j$ if they lie in a subset on which $\oplus$ is commutative and which preserves all
+cyclic scalar invariants (for example, traces of contractions).
+Two ordered lists are \emph{\gls{entanglementequivalence}} if they differ only by permutations
+inside such subsets.
+We write $\equiv$ for equality modulo entanglement equivalence
 \end{definition}
+
 
 \begin{proposition}[Causal Universe Tensor]\label{prop:universe-tensor}
 Let $E_1\prec\cdots\prec E_n$ be the event tensors in order, with $\oplus$ the addition in $T(V)$ (componentwise in the direct sum) and composition handled only by subsequent linear functionals. Define $U_0:=0$ and
@@ -640,14 +724,20 @@ ordering of indices guaranteed by the Axiom of~Order~\cite{bombelli1987,halmos19
 ``universe tensor'' $\U_n$ is the cumulative history of all event tensors up to
 ordinal~$n$.
 
-\begin{definition}[Tensor Algebra]\label{def:tensor_algebra}
-\label{def:tensor}
-The tensor algebra on $V$ is
+\newglossaryentry{tensoralgebra}{
+  name={tensor algebra},
+  description={The direct sum $\Talg=\bigoplus_{r=0}^{\infty}\V^{\otimes r}$ with componentwise addition and associative tensor product on a vector space $\V$},
+  sort=tensoralgebra
+}
+
+\begin{definition}[Tensor Algebra~\cite{golub2013}]\label{def:tensoralgebra}
+The \gls{tensoralgebra} on a vector space $\V$ is
 \[
-\Talg = \bigoplus_{r=0}^{\infty} \V^{\otimes r},
+\Talg=\bigoplus_{r=0}^{\infty}\V^{\otimes r}
 \]
-with componentwise addition and associative tensor product.
+with componentwise addition and associative tensor product
 \end{definition}
+
 
 \begin{remark}
 \label{rem:posetfrontier}
@@ -674,31 +764,36 @@ Formally, a subset \(S \subseteq \{E_1, \ldots, E_n\}\) is entangled if, for eve
 \end{equation}
 In this case, all contractions or scalar traces derived from \(U_n\) remain unchanged by reordering the elements of \(S\), even though the operator sequence itself may differ.
 
+\newglossaryentry{entanglement}{
+  name={entanglement},
+  description={A subset of event tensors whose reordering leaves all scalar invariants of the universe tensor unchanged},
+  sort=entanglement
+}
 
-\begin{definition}[Entanglement]
-\label{def:entangle}
+\begin{definition}[Entanglement~\cite{bombelli1987,dirac1958,einstein1935,peres1995,schrodinger1935,wheeler1983}]\label{def:entanglement}
 From the definition of the universe tensor
 \begin{equation}
 \label{eq:entangleuniverse}
-\U_n = \sum_{k=1}^n \E_k,
+\U_n=\sum_{k=1}^{n}\E_k,
 \end{equation}
-an \emph{entanglement} is a subset of events
+an \gls{entanglement} is a subset of events
 \begin{equation}
 \label{eq:entangleset}
-S \subseteq \{ \E_1, \ldots, \E_n \}
+S\subseteq\{\E_1,\ldots,\E_n\}
 \end{equation}
 such that for any permutation $\pi$ of $S$,
 \begin{equation}
 \label{eq:permute}
-\sum_{\E_i \in S} \E_i
+\sum_{\E_i\in S}\E_i
 =
-\sum_{\E_i \in S} \E_{\pi(i)},
+\sum_{\E_i\in S}\E_{\pi(i)},
 \end{equation}
 and therefore no invariant scalar derived from $\U_n$ is changed by
-reordering the events in $S$.
+reordering the events in $S$
 \end{definition}
 
-\begin{example}[Non-commutative event pair]
+
+\begin{example}[Non-commutative event pair~\cite{golub2013,strang2009,lax2007}]
 Let $V=\mathbb{R}^2$ and take event tensors as $2\times2$ matrices acting on $V$ with the usual (non-commutative) product. Define
 \[
 E_A=\begin{pmatrix}1&1\\0&1\end{pmatrix},\qquad
@@ -715,7 +810,7 @@ However, cyclic scalar invariants agree: $\mathrm{tr}(E_AE_B)=\mathrm{tr}(E_BE_A
 Hence order affects the \emph{operator} state but leaves cyclic scalars (our measurable invariants) unchanged.
 This illustrates how Event Selection can forbid reordering (no entanglement) while Martin-like consistency still preserves global scalar bookkeeping.
 \end{example}
-\begin{example}
+\begin{example}[Independent Event Chains~\cite{golub2013,strang2009,lax2007}]
 Consider two independent event chains \(A_1 \prec A_2\) and \(B_1 \prec B_2\), represented by \(2\times2\) event tensors
 \begin{equation}
 E_{A1} =
@@ -1569,7 +1664,7 @@ Now suppose we attempted degree $\le 2$ polynomials on each interval while maint
 Operationally, this says: the Euler closure $U^{(4)}=0$ forces cubic pieces, while $C^2$ stitching at knots and two boundary conditions consume all degrees of freedom except the $n\!+\!1$ needed to fit the data—no slack remains. Any higher degree would add superfluous parameters; any lower degree cannot generically maintain $C^2$ and interpolate the values. In your language, the spline is the \emph{fully relaxed} representative of the coincidence class.
 \end{remark}
 
-\subsection{2.4.6\quad The Free Parameter of the Third Variation}
+\subsection{The Free Parameter of the Third Variation}
 
 Having established that the fourth--order cancellation condition
 \[
@@ -3244,8 +3339,8 @@ distinguish another—remains unchanged.
 \textbf{Operational consequence.} Redshift is parallel transport of the causal gauge: invariants are preserved, but the local counting density transforms, observed as a shift in $\nu$.
 
 
-\chapter{Quantum Fields}
-\label{chap:quantum-fields}
+\chapter{The Residue of Inconsistency}
+\label{chap:residue}
 
 The gauge of light completes the classical description of the universe: it
 ensures that causal order is preserved at the limit of distinguishability.
@@ -3451,8 +3546,8 @@ P \;=\; -\,\frac{\pi^2}{240}\,\frac{\hbar c}{a^4}.
 	this, nothing remains to adjust—the gauge of light is complete.
 	\end{remark}
 
-\chapter{Quantum Fields}
-\label{chap:quantum-fields}
+\chapter{The Conservation of Symmetry: From Noether to Mass}
+\label{chap:mass}
 
 The gauge of light completes the classical description of the universe: it
 ensures that causal order is preserved at the limit of distinguishability.
@@ -4615,6 +4710,9 @@ by necessity, increase the count of what can be distinguished.
 
 \backmatter
 
+\chapter*{Glossary of Definitions and Axioms}
+\addcontentsline{toc}{chapter}{Glossary of Definitions and Axioms}
+\printglossary
 
 \bibliographystyle{plain}   % or abbrv, alpha, unsrt, etc.
 \bibliography{hilbert}   % where references.bib is your BibTeX file

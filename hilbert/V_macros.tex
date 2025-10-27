@@ -1,7 +1,6 @@
 % ================================================================
 % V_macros.tex — Rosetta Layer (pure shim, safe to \input anywhere)
 % Minimal, guarded symbol table + contracts used by P_clean, V_article, G*S.
-% No packages or environments are declared here.
 % ================================================================
 
 % ---------- Core symbols (guarded) ----------
@@ -56,11 +55,9 @@
 \providecommand{\Rfunc}{\mathsf{R}}
 \providecommand{\Jfunc}{\mathsf{J}}
 \providecommand{\MGVcycle}{\mathsf{V\!-\!cycle}}
-% Pretty-printer for Krylov calls; optional first arg unused (kept for readability)
 \providecommand{\Krylov}[2][]{\mathsf{Krylov}\!\left(#2\right)}
 
 % ---------- Named statement "contracts" ----------
-% Wrap in \ensuremath{} so they’re safe in text / titles / bookmarks.
 \providecommand{\GOneStatement}{\ensuremath{\Delta\,\Entropy \ge 0}}
 \providecommand{\GTwoStatement}{\ensuremath{\DFour = 0}}
 \providecommand{\GTwoWeakForm}{\ensuremath{\Bform(\U,\ph)=0\quad\forall\,\ph\in\Test}}
@@ -70,29 +67,9 @@
 \providecommand{\GFourDPI}{\ensuremath{\text{KL is non\mbox{-}increasing under coarse\mbox{-}graining}}}
 \providecommand{\GFourScoreZero}{\ensuremath{\E[\Score]=0}}
 
-% ---------- Micro-handles for P/V narrative ----------
+% Micro-handles used by P_clean/V_article
 \providecommand{\WeakForm}{\ensuremath{\Bform(\U,\ph)=0\ \forall\,\ph\in\Test}}
 \providecommand{\StrongForm}{\ensuremath{\DFour=0}}
-\providecommand{\NewtonStep}{\ensuremath{\Jfunc(\U)\,\delta\U=-\,\Rfunc(\U)}}
-\providecommand{\MGPrecond}{\ensuremath{\delta\U=\Krylov[\Jfunc,\MGVcycle]}}
 \providecommand{\ConcludeDivT}{\ensuremath{\Div{\StressEnergy}=0}}
 
-% ---------- Noether bridge (notation helper) ----------
-\providecommand{\NoetherTensor}[3]{\mathsf{Noether}\!\left[#1,\,#2,\,#3\right]}
-
-% ---------- Interpretive one-liners (expand to inline prose) ----------
-\providecommand{\InterpCoercivityToStability}{%
-\noindent\emph{Coercivity bridges math to physics: a symmetric positive form \(\Bform\) gives existence/uniqueness, which engineers read as stability—small input changes yield small, predictable output changes.}%
-}
-\providecommand{\InterpKernelSignificance}{%
-\noindent\emph{The kernel \(\mathrm{span}\{1,x,x^2,x^3\}\) is gauge freedom (position/slope/acceleration/jerk). Fixed nodes + natural BCs lock the gauge, making \(\U^\star\) physically unique and non-drifting.}%
-}
-\providecommand{\InterpDPIThermo}{%
-\noindent\emph{Monotone \(\mathrm{KL}\) is the statistical face of irreversibility: admissible coarse-graining only collapses distinctions, echoing \(\Delta\Entropy\!\ge\!0\).}%
-}
-\providecommand{\InterpDiscToContStability}{%
-\noindent\emph{Consistency + coercivity in the discrete form yield convergence: the discrete scheme is a stable approximation whose limit is the analytic solution.}%
-}
-
-% ---------- Title-safety fallback (harmless if hyperref absent in a submodule) ----------
-\providecommand{\texorpdfstring}[2]{#1}
+% --- End V_macros.tex ---

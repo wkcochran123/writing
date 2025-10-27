@@ -1,6 +1,4 @@
 \documentclass[12pt]{article}
-
-% Minimal, safe preamble
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
@@ -8,117 +6,127 @@
 \usepackage{geometry}
 \geometry{margin=1in}
 \usepackage{amsmath,amssymb,mathtools}
-\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
 \usepackage{setspace}
-\usepackage{pdfpages} % for includepdf of supporting modules
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{enumitem}
 \onehalfspacing
 
-% Load Rosetta layer
+% --- Rosetta Layer (contracts & shared symbols) ---
 \input{V_macros.tex}
 
-% Version tag
-\newcommand{\VVersion}{v1.2}
+% --- Minimal theorem setup (kept very light) ---
+\newtheorem{proposition}{Proposition}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+\newtheorem{example}{Example}
 
-\title{Interpreting the Causal Closure Chain (\VVersion)\\
-\small kinematics \texorpdfstring{\StrongForm}{U^(4)=0}\,;\,
-reciprocity \texorpdfstring{\WeakForm}{B(U,phi)=0}\,;\,
-conservation \texorpdfstring{\ConcludeDivT}{div T = 0}\,;\,
-thermo \texorpdfstring{\GOneStatement}{Delta S >= 0}}
-\author{Interpretive Synthesis Module (V.tex Compliant)}
+\title{\textbf{Interpreting the Causal Closure Chain}\\
+\large From Kinematic Minimality \texorpdfstring{\StrongForm}{U^{(4)}=0} to Conservation \texorpdfstring{\ConcludeDivT}{div T=0} and Order \texorpdfstring{\GOneStatement}{\Delta S \ge 0}}
+\author{Interpretive Synthesis (V-layer)}
 \date{\today}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-This article explains the causal-closure arc using the V handle system:
-\emph{kinematics} (\StrongForm) $\Rightarrow$ \emph{conservation} (\ConcludeDivT) $\Rightarrow$ \emph{thermodynamic monotonicity} (\GOneStatement).
-It also bundles the validated G1S–G5S supporting modules in an appendix for one-file distribution.
+This article narrates the closure chain using the \textbf{V} handles:
+\(\StrongForm \rightarrow \ConcludeDivT \rightarrow \GOneStatement\),
+with discrete--continuum reciprocity and statistical invariants (\(\GFourDPI\), \(\GFourScoreZero\)) providing the guardrails. It also shows the computational rail (\(\NewtonStep\), \(\KrylovStep\)) that makes the argument numerically tractable.
 \end{abstract}
 
-\section{The Arc of Closure}
+\tableofcontents
+\bigskip\hrule\bigskip
+
+% =========================================================
+\section{The Arc at a Glance}
+The causal closure chain is a single dependency path:
 \[
-  \StrongForm \quad \longrightarrow \quad \ConcludeDivT \quad \longrightarrow \quad \GOneStatement.
+  \StrongForm \quad \Longrightarrow \quad \ConcludeDivT \quad \Longrightarrow \quad \GOneStatement.
 \]
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{G2 (Kinematics).} Minimal informational curvature selects \(\StrongForm\), equivalently expressed as the weak reciprocity law \(\WeakForm\).
+  \item \textbf{G4 (Noether Bridge).} Stationarity under symmetry \(\Xi\) yields conserved currents via
+  \(\StressEnergy \leftarrow \NoetherTensor{L}{\U}{\Xi}\), hence \(\ConcludeDivT\).
+  \item \textbf{G1 (Order).} Conserved structure constrains admissible refinements, enforcing \(\GOneStatement\).
+\end{itemize}
 
-\section{Pillars of Interpretation}
+% =========================================================
+\section{Kinematics and Reciprocity (G2)}
+\label{sec:g2}
+The kinematic closure is captured by the strong condition \(\StrongForm\), which is equivalent to the weak reciprocity form \(\WeakForm\). The bilinear form \(\Bform\) encodes the pairing between \(\U\) and test variations \(\Phi\in\Test\).
 
-\subsection{Kinematics and Reciprocity (G2)}
-\(\StrongForm\) follows from stationarity and is equivalent to the weak reciprocity statement \(\WeakForm\).
+\paragraph{Well-posedness and physical meaning.}
+\InterpCoercivityToStability
 
-\paragraph{Stability from coercivity.}
-\noindent\InterpCoercivityToStability
+\begin{remark}[Kernel and boundary information]
+\InterpKernelSignificance
+\end{remark}
 
-\paragraph{Physical meaning of the kernel.}
-\noindent\InterpKernelSignificance
-
-\subsection{Conservation (G4)}
-Noether bridge (index-free):
+% =========================================================
+\section{Noether Bridge to Conservation (G4)}
+\label{sec:g4}
+When a local density \(L\) is invariant under a continuous symmetry \(\Xi\), the Noether construction produces a conserved current. In index-free form we write
 \[
-  \StressEnergy \leftarrow \NoetherTensor{L}{\U}{\Xi},
-  \qquad
+  \StressEnergy \;\leftarrow\; \NoetherTensor{L}{\U}{\Xi}
+  \qquad\Longrightarrow\qquad
   \ConcludeDivT.
 \]
+This is the global bookkeeping constraint: change is organized so that total flow remains consistent with the symmetry.
 
-\subsection{Thermodynamics (G1)}
-Admissible refinement of \(\C\) yields
+% =========================================================
+\section{Thermodynamic and Statistical Closure (G1/G5)}
+\label{sec:g15}
+Conservation constrains admissible causal refinements, yielding the order monotonicity law:
 \[
   \GOneStatement.
 \]
-\noindent\InterpDPIThermo
-
-\subsection{Statistical Bounds (G5)}
+On the statistical side, admissible coarse-grainings cannot create new distinctions and truthful inference remains unbiased:
 \[
-  \GFourDPI
-  \qquad\text{and}\qquad
-  \GFourScoreZero.
+  \GFourDPI \qquad \text{and} \qquad \GFourScoreZero.
 \]
-Residual structure is captured as constrained noise \(\Res\); invariants \(\Invariant{\Xi}\) summarize what persists.
+\InterpDPIThermo
 
-\section{Computation (Index-Free, G3 Alignment)}
-Discrete reciprocity mirrors the continuum:
+% =========================================================
+\section{Discrete--Continuum Reciprocity (G3)}
+\label{sec:g3}
+The discrete operators \(\DeltaTwoh\) and \(\DeltaFourh\) approximate their smooth counterparts, and with discrete coercivity the scheme converges to the continuum closure. 
+\InterpDiscToContStability
+
+\begin{example}[Reading reciprocity]
+Consistency of the discrete bilinear form \(\Bformh\) with \(\Bform\) ensures that solving the discrete weak problem yields, in the limit \(\mesh\to 0\), a solution approaching the smooth \(\U\) that satisfies \(\WeakForm\) and hence \(\StrongForm\).
+\end{example}
+
+% =========================================================
+\section{Computation: The Newton--Krylov Rail}
+\label{sec:compute}
+We solve the closure as a root-finding problem with residual \(\Rfunc\) and Jacobian \(\Jfunc\):
 \[
-  \frac{\DeltaFourh \Uh}{\mesh^4} \to \DFour \quad (\mesh \to 0),\qquad \Bformh \approx \Bform.
+  \NewtonStep \qquad\text{with}\qquad \delta\U \leftarrow \KrylovStep.
 \]
-\noindent\InterpDiscToContStability
-
-\paragraph{Newton rail (JFNK + MG).}
+A practical schematic combines Newton linearization with multigrid-preconditioned Krylov iterations:
 \[
-  \Rfunc(\U):=\DFour,\quad \NewtonStep,\quad \MGPrecond.
+  \NKRail.
 \]
+Here \(\KIter\) and \(\KTol\) are iteration and tolerance knobs; \(\MGVcycle\) indicates a V-cycle preconditioner.
 
-\section*{V-layer Discipline}
-\begin{enumerate}
-  \item Use handles (\StrongForm, \WeakForm, \ConcludeDivT, \GOneStatement); no indices/stencils in V.
-  \item Titles/headings are \texorpdfstring-safe; avoid \texttt{\textbackslash left...\textbackslash right} unless paired.
-  \item Prefer interpretation handles for meaning: \InterpCoercivityToStability, \InterpKernelSignificance, \InterpDPIThermo, \InterpDiscToContStability.
-\end{enumerate}
+% =========================================================
+\section{A Tiny Closure Proposition}
+\begin{proposition}[Chain soundness, index-free]
+If \(\WeakForm\) holds for all \(\Phi\in\Test\) and boundary information removes the kernel, then \(\StrongForm\) follows. If \(L\) is invariant under \(\Xi\), then \(\ConcludeDivT\). Under admissible causal refinement, distinguishability cannot decrease, hence \(\GOneStatement\).
+\end{proposition}
 
-% ===============================
-% Appendix: Supporting Modules
-% ===============================
-\appendix
-\section*{Appendix: Validation Modules (G1S–G5S)}
-\addcontentsline{toc}{section}{Appendix: Validation Modules}
+\begin{remark}[How to extend]
+To specialize, pick a concrete \(L\), a symmetry \(\Xi\) (e.g.\ translation), and a discrete family \((\DeltaTwoh,\DeltaFourh,\Bformh)\) with stability. The narrative above remains unchanged; only the concrete instantiation changes.
+\end{remark}
 
-% --- Option A: include compiled PDFs (recommended) ---
-\includepdf[pages=-,addtotoc={1,subsection,1,{G1S: Order Monotonicity},sec:g1s}]{G1S.pdf}
-\includepdf[pages=-,addtotoc={1,subsection,1,{G2S: Kinematic Closure},sec:g2s}]{G2S.pdf}
-\includepdf[pages=-,addtotoc={1,subsection,1,{G3S: Discrete–Continuum Reciprocity},sec:g3s}]{G3S.pdf}
-\includepdf[pages=-,addtotoc={1,subsection,1,{G4S: Noether Bridge},sec:g4s}]{G4S.pdf}
-\includepdf[pages=-,addtotoc={1,subsection,1,{G5S: Statistical Closure},sec:g5s}]{G5S.pdf}
-
-% --- Option B: (fallback) include source .tex directly ---
-% Comment OUT Option A above, then UNcomment the block below if you prefer source inclusion.
-% \section*{G1S: Order Monotonicity}\addcontentsline{toc}{subsection}{G1S: Order Monotonicity}
-% \input{G1S.tex}
-% \section*{G2S: Kinematic Closure}\addcontentsline{toc}{subsection}{G2S: Kinematic Closure}
-% \input{G2S.tex}
-% \section*{G3S: Discrete–Continuum Reciprocity}\addcontentsline{toc}{subsection}{G3S: Discrete–Continuum Reciprocity}
-% \input{G3S.tex}
-% \section*{G4S: Noether Bridge}\addcontentsline{toc}{subsection}{G4S: Noether Bridge}
-% \input{G4S.tex}
-% \section*{G5S: Statistical Closure}\addcontentsline{toc}{subsection}{G5S: Statistical Closure}
-% \input{G5S.tex}
+% =========================================================
+\section*{V-Layer Checklist (live doc)}
+\begin{itemize}[leftmargin=2em]
+  \item Uses core handles: \(\StrongForm\), \(\WeakForm\), \(\ConcludeDivT\), \(\GOneStatement\).
+  \item Employs reciprocity and kernel interpretation: \(\InterpCoercivityToStability\), \(\InterpKernelSignificance\).
+  \item Shows the Newton/Krylov rail: \(\NewtonStep\), \(\KrylovStep\), \(\NKRail\).
+  \item Respects discrete--continuum reciprocity: \(\InterpDiscToContStability\).
+  \item Title is \texttt{\string\texorpdfstring}-safe; no packages required by this file beyond standard.
+\end{itemize}
 
 \end{document}
