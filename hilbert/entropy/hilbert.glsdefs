@@ -26,6 +26,62 @@ parent={},%
 %
 }%
 
+\glsdefs@newdocentry{event}%
+{%
+name={event},%
+sort={event},%
+type={main},%
+first={event},%
+firstplural={events},%
+text={event},%
+plural={events},%
+description={A minimal refinement step in a distinguishability chain $\mathcal {P}=\{P_n\}$, represented by a pair $(B,\{B_i\}_{i\in I},n)$ where a block $B\in \Blocks {P_n}$ splits into a family of subblocks $\{B_i\}\subseteq \Blocks {P_{n+1}}$ with $|I|\ge 2$},%
+descriptionplural={A minimal refinement step in a distinguishability chain $\mathcal {P}=\{P_n\}$, represented by a pair $(B,\{B_i\}_{i\in I},n)$ where a block $B\in \Blocks {P_n}$ splits into a family of subblocks $\{B_i\}\subseteq \Blocks {P_{n+1}}$ with $|I|\ge 2$},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{distinguishabilitychain}%
+{%
+name={distinguishability chain},%
+sort={distinguishabilitychain},%
+type={main},%
+first={distinguishability chain},%
+firstplural={distinguishability chains},%
+text={distinguishability chain},%
+plural={distinguishability chains},%
+description={A sequence $\mathcal {P} = \{P_n\}$ of finite partitions of an observational domain, where each $P_{n+1}$ strictly refines $P_n$},%
+descriptionplural={A sequence $\mathcal {P} = \{P_n\}$ of finite partitions of an observational domain, where each $P_{n+1}$ strictly refines $P_n$},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
 \glsdefs@newdocentry{poset}%
 {%
 name={partially ordered set},%
@@ -205,62 +261,6 @@ text={entanglement},%
 plural={entanglements},%
 description={A subset of event tensors whose reordering leaves all scalar invariants of the universe tensor unchanged},%
 descriptionplural={A subset of event tensors whose reordering leaves all scalar invariants of the universe tensor unchanged},%
-symbol={\relax },%
-symbolplural={\relax },%
-user1={},%
-user2={},%
-user3={},%
-user4={},%
-user5={},%
-user6={},%
-long={},%
-longplural={},%
-short={},%
-shortplural={},%
-counter={page},%
-parent={},%
-%
-}%
-
-\glsdefs@newdocentry{distinguishabilitychain}%
-{%
-name={distinguishability chain},%
-sort={distinguishabilitychain},%
-type={main},%
-first={distinguishability chain},%
-firstplural={distinguishability chains},%
-text={distinguishability chain},%
-plural={distinguishability chains},%
-description={A sequence of partitions $\{P_n\}_{n\in \mathbb {Z}}$ on a nonempty set $\Omega $ such that each $P_{n+1}$ refines $P_n$, representing successively finer distinguishable structures on $\Omega $},%
-descriptionplural={A sequence of partitions $\{P_n\}_{n\in \mathbb {Z}}$ on a nonempty set $\Omega $ such that each $P_{n+1}$ refines $P_n$, representing successively finer distinguishable structures on $\Omega $},%
-symbol={\relax },%
-symbolplural={\relax },%
-user1={},%
-user2={},%
-user3={},%
-user4={},%
-user5={},%
-user6={},%
-long={},%
-longplural={},%
-short={},%
-shortplural={},%
-counter={page},%
-parent={},%
-%
-}%
-
-\glsdefs@newdocentry{event}%
-{%
-name={event},%
-sort={event},%
-type={main},%
-first={event},%
-firstplural={events},%
-text={event},%
-plural={events},%
-description={A minimal refinement step in a distinguishability chain $\mathcal {P}=\{P_n\}$, represented by a pair $(B,\{B_i\}_{i\in I},n)$ where a block $B\in \Blocks {P_n}$ splits into a family of subblocks $\{B_i\}\subseteq \Blocks {P_{n+1}}$ with $|I|\ge 2$},%
-descriptionplural={A minimal refinement step in a distinguishability chain $\mathcal {P}=\{P_n\}$, represented by a pair $(B,\{B_i\}_{i\in I},n)$ where a block $B\in \Blocks {P_n}$ splits into a family of subblocks $\{B_i\}\subseteq \Blocks {P_{n+1}}$ with $|I|\ge 2$},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%

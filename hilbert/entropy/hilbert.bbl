@@ -1,9 +1,22 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{100}
 
 \bibitem{ahlberg1967}
 J.~H. Ahlberg, E.~N. Nilson, and J.~L. Walsh.
 \newblock {\em The Theory of Splines and Their Applications}.
 \newblock Academic Press, New York, 1967.
+
+\bibitem{backus1959}
+John Backus.
+\newblock The syntax and semantics of {ALGOL}.
+\newblock In {\em Proceedings of the International Symposium on Symbolic
+  Languages}. IFIP, 1959.
+\newblock Introduced the notation later termed Backus--Naur Form.
+
+\bibitem{banach1924}
+Stefan Banach and Alfred Tarski.
+\newblock Sur la decomposition des ensembles de points en parties
+  respectivement congruentes.
+\newblock {\em Fundamenta Mathematicae}, 6:244--277, 1924.
 
 \bibitem{bell1964}
 John~S. Bell.
@@ -61,6 +74,11 @@ Gregory~J. Chaitin.
 \newblock {\em Algorithmic Information Theory}.
 \newblock Cambridge University Press, Cambridge, 1987.
 
+\bibitem{ciarlet1978}
+Philippe~G. Ciarlet.
+\newblock {\em The Finite Element Method for Elliptic Problems}.
+\newblock North-Holland, 1978.
+
 \bibitem{cook1974}
 R.~D. Cook.
 \newblock {\em Concepts and Applications of Finite Element Analysis}.
@@ -78,6 +96,11 @@ B.~A. Davey and H.~A. Priestley.
 \newblock {\em Introduction to Lattices and Order}.
 \newblock Cambridge University Press, 2nd edition, 2002.
 
+\bibitem{davis1975}
+Philip~J. Davis and Philip Rabinowitz.
+\newblock {\em Methods of Numerical Integration}.
+\newblock Academic Press, 1975.
+
 \bibitem{deboor1978}
 Carl de~Boor.
 \newblock {\em A Practical Guide to Splines}.
@@ -87,6 +110,11 @@ Carl de~Boor.
 P.~A.~M. Dirac.
 \newblock {\em The Principles of Quantum Mechanics}.
 \newblock Oxford University Press, Oxford, 4th edition, 1958.
+
+\bibitem{dowker2005}
+Fay Dowker.
+\newblock Causal sets and the deep structure of spacetime.
+\newblock {\em 100 Years of Relativity}, pages 445--464, 2005.
 
 \bibitem{earman1974}
 John Earman.
@@ -133,6 +161,12 @@ Abraham~A Fraenkel.
 \newblock {\em Einleitung in die Mengenlehre}.
 \newblock Springer, 1922.
 
+\bibitem{galerkin1915}
+Boris Galerkin.
+\newblock Series solution of some problems of elastic equilibrium of rods and
+  plates.
+\newblock {\em Vestnik Inzhenerov}, pages 897--908, 1915.
+
 \bibitem{gold1967}
 E.~Mark Gold.
 \newblock Language identification in the limit.
@@ -176,6 +210,12 @@ S.~W. Hawking and G.~F.~R. Ellis.
 Michael~T. Heath.
 \newblock {\em Scientific Computing: An Introductory Survey}.
 \newblock McGraw-Hill, New York, 2nd edition, 2002.
+
+\bibitem{henson2009}
+Joe Henson.
+\newblock Comparing causality principles.
+\newblock {\em Studies in History and Philosophy of Modern Physics},
+  40(3):303--312, 2009.
 
 \bibitem{hilbert1902geometry}
 David Hilbert.
@@ -260,6 +300,12 @@ Randall~J. LeVeque.
 \newblock Society for Industrial and Applied Mathematics (SIAM), Philadelphia,
   PA, 2007.
 
+\bibitem{lions1968}
+J.~L. Lions and E.~Magenes.
+\newblock {\em Non-Homogeneous Boundary Value Problems and Applications, Volume
+  1}.
+\newblock Springer, 1968.
+
 \bibitem{lorentz1904}
 Hendrik~A. Lorentz.
 \newblock Electromagnetic phenomena in a system moving with any velocity less
@@ -278,6 +324,11 @@ Fotini Markopoulou.
 \newblock The internal description of a causal set: What the universe looks
   like from the inside.
 \newblock {\em Communications in Mathematical Physics}, 211:559--583, 2000.
+
+\bibitem{martin1970}
+Donald~A. Martin and Robert~M. Solovay.
+\newblock Internal cohen extensions.
+\newblock {\em Annals of Mathematical Logic}, 2(2):143--178, 1970.
 
 \bibitem{martin1970cohen}
 Donald~A. Martin and Robert~M. Solovay.
@@ -302,12 +353,23 @@ K.~W. Morton and D.~F. Mayers.
   Introduction}.
 \newblock Cambridge University Press, Cambridge, 2nd edition, 2005.
 
+\bibitem{naur1963}
+Peter Naur.
+\newblock Revised report on the algorithmic language {ALGOL} 60.
+\newblock {\em Communications of the ACM}, 6(1):1--17, 1963.
+\newblock Standard reference defining Backus--Naur Form.
+
 \bibitem{newton1687}
 Isaac Newton.
 \newblock {\em Philosophi{\ae} Naturalis Principia Mathematica}.
 \newblock Royal Society of London, 1687.
 \newblock Translated as \emph{The Mathematical Principles of Natural
   Philosophy}, University of California Press, 1934.
+
+\bibitem{orourke1995}
+Joseph O'Rourke.
+\newblock {\em Computational Geometry in C}.
+\newblock Cambridge University Press, 1995.
 
 \bibitem{ortega1970}
 James~M. Ortega and Werner~C. Rheinboldt.
@@ -390,6 +452,17 @@ Claude~E. Shannon.
 \newblock A mathematical theory of communication.
 \newblock {\em Bell System Technical Journal}, 27:379--423, 623--656, 1948.
 
+\bibitem{simpson1743}
+Thomas Simpson.
+\newblock {\em Essays on Several Curious and Useful Subjects in Speculative and
+  Mix'd Mathematicks}.
+\newblock London, 1743.
+
+\bibitem{sipser1997}
+Michael Sipser.
+\newblock {\em Introduction to the Theory of Computation}.
+\newblock PWS Publishing, 1997.
+
 \bibitem{sorkin1991}
 Rafael~D. Sorkin.
 \newblock Finitary substitute for continuous topology.
@@ -433,6 +506,12 @@ John~C. Strikwerda.
 \newblock {\em Finite Difference Schemes and Partial Differential Equations}.
 \newblock Society for Industrial and Applied Mathematics (SIAM), Philadelphia,
   PA, 2nd edition, 2004.
+
+\bibitem{tarski1924}
+Alfred Tarski.
+\newblock Sur la decomposition des ensembles de points en parties
+  respectivement congruentes.
+\newblock {\em Fundamenta Mathematicae}, 6:244--277, 1924.
 
 \bibitem{tarski1933}
 Alfred Tarski.

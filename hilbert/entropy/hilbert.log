@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.16)  27 OCT 2025 23:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.4.16)  31 OCT 2025 19:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -408,6 +408,12 @@ Package: glossary-tree 2022/11/03 v4.52 (NLCT)
 \openout4 = `hilbert.glo'.
 
 Package glossaries Info: Writing glossary file hilbert.glo on input line 4.
+
+
+LaTeX Warning: \include should only be used after \begin{document} on input lin
+e 6.
+
+(./macros.tex
 \c@theorem=\count307
 \c@example=\count308
 \c@axiom=\count309
@@ -424,34 +430,37 @@ Package glossaries Info: Writing glossary file hilbert.glo on input line 4.
 \c@texdepth=\count317
 \cftbeforetextitleskip=\skip113
 \cftaftertextitleskip=\skip114
-
+)
 (/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count318
 \l__pdf_internal_box=\box60
 )
-(./hilbert.aux
+(./hilbert.aux (./front/abstract.aux) (./front/front.aux) (./chapters/one.aux)
+(./chapters/two.aux
 
 LaTeX Warning: Label `def:entanglement' multiply defined.
 
-)
+) (./chapters/three.aux) (./chapters/four.aux) (./chapters/five.aux)
+(./chapters/six.aux) (./chapters/seven.aux))
 \openout1 = `hilbert.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
- (/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/graphicx.sty
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+
+(/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/graphics/graphics.sty
@@ -495,13 +504,13 @@ e
 \Gin@req@width=\dimen174
 )
 (./hilbert.glsdefs)
-LaTeX Font Info:    Trying to load font information for U+msa on input line 48.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 15.
 
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 48.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 15.
 
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -511,24 +520,34 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout3 = `hilbert.ist'.
 
 
-{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [1] [1
+{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [1]
+\openout2 = `front/abstract.aux'.
+
+
+(./front/abstract.tex [1
 
 
 
-] [2]
-Underfull \hbox (badness 10000) in paragraph at lines 92--93
+]) [2]
+\openout2 = `front/front.aux'.
+
+ (./front/front.tex
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
 
  []
 
 
-Overfull \hbox (4.82507pt too wide) in paragraph at lines 95--105
+Overfull \hbox (4.82507pt too wide) in paragraph at lines 14--24
  [] 
  []
 
 [3
 
+
+
+
 ]
-Overfull \hbox (78.92415pt too wide) detected at line 133
+Overfull \hbox (78.92415pt too wide) detected at line 52
 []  \OMS/cmsy/m/n/12 )  []  )  \OML/cmm/m/it/12 U[] \OT1/cmr/m/n/12 = 0  \OMS/c
 msy/m/n/12 ) [] r[]\OML/cmm/m/it/12 T[] \OT1/cmr/m/n/12 = 0  \OMS/cmsy/m/n/12 )
   \OT1/cmr/m/n/12 ^^A\OML/cmm/m/it/12 S \OMS/cmsy/m/n/12 ^^U \OT1/cmr/m/n/12 0\
@@ -536,7 +555,7 @@ OML/cmm/m/it/12 :
  []
 
 [4] (./hilbert.toc [5]
-Overfull \hbox (1.00156pt too wide) in paragraph at lines 52--52
+Overfull \hbox (1.00156pt too wide) in paragraph at lines 59--59
  [][] []\OT1/cmr/m/n/12 Introduction: Mar-tin's Con-di-tion and the Con-ti-nu-i
 ty of Causal 
  []
@@ -548,49 +567,49 @@ ty of Causal
  [9]
 showing example
 (./hilbert.loe [10]
-Overfull \hbox (0.5099pt too wide) in paragraph at lines 59--59
+Overfull \hbox (0.5099pt too wide) in paragraph at lines 65--65
  [][] []\OT1/cmr/m/n/12 Thought Ex-per-i-ment (Mach--Zehnder In-ter-fer-om-e-te
 r as Causal 
  []
 
 
-Overfull \hbox (3.00272pt too wide) detected at line 101
-\OT1/cmr/m/n/12 3.10.1 
+Overfull \hbox (3.00272pt too wide) detected at line 107
+\OT1/cmr/m/n/12 4.10.1 
  []
 
 
-Overfull \hbox (3.00272pt too wide) detected at line 102
-\OT1/cmr/m/n/12 3.10.2 
+Overfull \hbox (3.00272pt too wide) detected at line 108
+\OT1/cmr/m/n/12 4.10.2 
  []
 
 
-Overfull \hbox (3.00272pt too wide) detected at line 103
-\OT1/cmr/m/n/12 3.10.3 
+Overfull \hbox (3.00272pt too wide) detected at line 109
+\OT1/cmr/m/n/12 4.10.3 
  []
 
 
-Overfull \hbox (3.00272pt too wide) detected at line 104
-\OT1/cmr/m/n/12 3.10.4 
+Overfull \hbox (3.00272pt too wide) detected at line 110
+\OT1/cmr/m/n/12 4.10.4 
  []
 
 
-Overfull \hbox (3.00272pt too wide) detected at line 105
-\OT1/cmr/m/n/12 3.10.5 
+Overfull \hbox (3.00272pt too wide) detected at line 111
+\OT1/cmr/m/n/12 4.10.5 
  []
 
 
-Overfull \hbox (2.66823pt too wide) in paragraph at lines 111--111
+Overfull \hbox (2.66823pt too wide) in paragraph at lines 117--117
  [][] []\OT1/cmr/m/n/12 Thought Ex-per-i-ment (Thought Ex-per-i-ment: The Shado
 w Pup- 
  []
 
 [11]
-Overfull \hbox (10.30565pt too wide) in paragraph at lines 124--124
+Overfull \hbox (10.30565pt too wide) in paragraph at lines 130--130
  [][] []\OT1/cmr/m/n/12 Thought Ex-per-i-ment (Ex-trap-o-la-tion: Ro-ta-tion Cu
 rves as Order- 
  []
 
-) [12] [13]
+[12]) [13]
 showing definition
 (./hilbert.loe [14
 
@@ -612,171 +631,208 @@ showing law
 
 ] [21
 
-] [22] [23] [24] [25]
+] [22] [23] [24] [25
+
+])
+\openout2 = `chapters/one.aux'.
+
+ (./chapters/one.tex
 Chapter 1.
 [1
 
 
-] [2]
+
+
+
+
+]
+Overfull \hbox (31.60178pt too wide) in paragraph at lines 43--43
+[]\OT1/cmr/bx/n/17.28 Event Se-lec-tion, Mar-tin's Ax-iom, and Count-
+ []
+
+[2] [3]
+Overfull \hbox (4.50377pt too wide) in paragraph at lines 133--139
+\OT1/cmr/m/it/12 Over the course of the jour-ney the recorder stores only three
+ events|departure,
+ []
+
+[4] [5] [6] [7] [8]) [9]
+\openout2 = `chapters/two.aux'.
+
+ (./chapters/two.tex
 Chapter 2.
-[3
+[10
+
+
+
 
 ]
 \@gls@deffile=\write6
 \openout6 = `hilbert.glsdefs'.
 
 
-Overfull \hbox (8.31656pt too wide) in paragraph at lines 407--408
+Overfull \hbox (8.31656pt too wide) in paragraph at lines 71--72
 \OT1/cmr/m/it/12 equivalence class of rank func-tions as in Def-i-ni-tion 1[]. 
 The ad-di-tiv-ity $\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 ^^Nt\OMS/cmsy/m/n/12 j\OT
 1/cmr/m/n/12 (\OML/cmm/m/it/12 a; b\OT1/cmr/m/n/12 ) =
  []
 
-[4]
-Overfull \hbox (1.0905pt too wide) in paragraph at lines 421--422
+[11]
+Overfull \hbox (1.0905pt too wide) in paragraph at lines 85--86
 []\OT1/cmr/m/it/12 In the present frame-work, the anal-o-gous con-stant plays n
 o phys-i-cal role|it
  []
 
-[5] [6] [7{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super
--ts1.enc}] [8] [9] [10] [11] [12] [13] [14] [15] [16]
+[12] [13] [14] [15{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/
+cm-super-ts1.enc}] [16] [17] [18] [19]
+Chapter 3.
+[20
 
-LaTeX Warning: Reference `prop:universe_tensor' on page 17 undefined on input l
-ine 914.
+] [21] [22] [23] [24] [25] [26]
 
-[17] [18] [19] [20]
-Overfull \hbox (0.32942pt too wide) in paragraph at lines 1099--1103
+LaTeX Warning: Reference `prop:universe_tensor' on page 27 undefined on input l
+ine 702.
+
+[27] [28] [29] [30]
+Overfull \hbox (0.32942pt too wide) in paragraph at lines 845--849
 []\OT1/cmr/m/it/12 Operationally, this is a Banach--Tarski-like over-count-ing:
  the causal struc-
  []
 
-[21] [22]
+[31]
 
-LaTeX Warning: Reference `def:selection-operator' on page 23 undefined on input
- line 1143.
+LaTeX Warning: Reference `def:selection-operator' on page 32 undefined on input
+ line 889.
 
-
-Overfull \hbox (11.0925pt too wide) in paragraph at lines 1167--1168
+[32]
+Overfull \hbox (11.0925pt too wide) in paragraph at lines 913--914
 \OT1/cmr/bx/n/12 Remark 4 \OT1/cmr/m/n/12 (Log-i-cal guar-an-tee, not a mech-a-
-nism)\OT1/cmr/bx/n/12 . \OT1/cmr/m/it/12 Ax-iom 4[] is non-constructive.
+nism)\OT1/cmr/bx/n/12 . \OT1/cmr/m/it/12 Ax-iom 5[] is non-constructive.
  []
 
-[23]
-Overfull \hbox (16.93542pt too wide) detected at line 1187
+
+Overfull \hbox (16.93542pt too wide) detected at line 933
 \OT1/cmr/bx/n/12 U[] \OT1/cmr/m/n/12 = \OT1/cmr/bx/n/12 U[] \OT1/cmr/m/n/12 + \
 OT1/cmr/bx/n/12 E[]\OML/cmm/m/it/12 ;  []\OT1/cmr/bx/n/12 E[][]
  []
 
-[24] [25] [26] [27]
+[33] [34] [35] [36]
 
-LaTeX Warning: Reference `ax:event-selection' on page 28 undefined on input lin
-e 1275.
+LaTeX Warning: Reference `ax:event-selection' on page 37 undefined on input lin
+e 1021.
 
-[28] [29] [30] [31]
-Overfull \hbox (125.5692pt too wide) detected at line 1431
+[37] [38] [39] [40] [41]
+Overfull \hbox (125.5692pt too wide) detected at line 1177
 []\OML/cmm/m/it/12 U \OMS/cmsy/m/n/12 ^^X \OML/cmm/m/it/12 V  \OMS/cmsy/m/n/12 
 ([])  []
  []
 
-[32]
-Overfull \hbox (1.01028pt too wide) in paragraph at lines 1476--1482
+[42]
+Overfull \hbox (1.01028pt too wide) in paragraph at lines 1222--1228
 \OT1/cmr/bx/n/12 Interpretation. \OT1/cmr/m/n/12 Within the space of mea-sur-ab
 le con-fig-u-ra-tions, ev-ery causal
  []
 
-[33] [34]
-Overfull \hbox (0.42125pt too wide) in paragraph at lines 1549--1552
+[43] [44]
+Overfull \hbox (0.42125pt too wide) in paragraph at lines 1295--1298
 []\OT1/cmr/m/n/12 Interpretation. \OT1/cmr/m/it/12 Re-versible up-dates ($\OML/
 cmm/m/it/12 U$\OT1/cmr/m/it/12 , $\OML/cmm/m/it/12 U[]$\OT1/cmr/m/it/12 ) cor-r
 e-spond to adi-a-batic trans-
  []
 
-[35]
-Overfull \hbox (9.06451pt too wide) detected at line 1575
+
+Overfull \hbox (9.06451pt too wide) detected at line 1321
 []\OT1/cmr/m/n/12 ^^H : \OML/cmm/m/it/12 V \OMS/cmsy/m/n/12 ! \OML/cmm/m/it/12 
 M;  \OT1/cmr/m/n/12 ^^H(\OML/cmm/m/it/12 ^^NU\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12
  e\OT1/cmr/m/n/12 ) = []
  []
 
 
-LaTeX Warning: Reference `def:selected-update' on page 36 undefined on input li
-ne 1583.
+LaTeX Warning: Reference `def:selected-update' on page 45 undefined on input li
+ne 1329.
+
+[45]
+
+LaTeX Warning: Reference `def:selected-update' on page 46 undefined on input li
+ne 1341.
+
+[46] [47] [48]
+
+LaTeX Warning: Reference `sec:closure' on page 49 undefined on input line 1474.
 
 
-LaTeX Warning: Reference `def:selected-update' on page 36 undefined on input li
-ne 1595.
 
-[36] [37] [38] [39]
-
-LaTeX Warning: Reference `sec:closure' on page 40 undefined on input line 1728.
-
-
-
-Overfull \hbox (15.90384pt too wide) in paragraph at lines 1726--1735
+Overfull \hbox (15.90384pt too wide) in paragraph at lines 1472--1481
 \OT1/cmr/m/it/12 this dis-crete rewrit-ing rule is an ex-plicit re-al-iza-tion 
 of the reciprocal-measurement
  []
 
-[40]
-Overfull \hbox (7.89374pt too wide) in paragraph at lines 1786--1789
+[49] [50]
+Overfull \hbox (7.89374pt too wide) in paragraph at lines 1532--1535
 \OT1/cmr/m/it/12 uum limit, this retro-constraint cor-re-sponds ex-actly to the
  the-o-ret-i-cal{numerical
  []
 
-[41] [42] [43] [44] [45] [46] [47] [48]
-Chapter 3.
+[51] [52] [53] [54] [55] [56]) [57]
+\openout2 = `chapters/three.aux'.
 
-Overfull \hbox (2.35774pt too wide) in paragraph at lines 1987--1987
+ (./chapters/three.tex
+Chapter 4.
+
+Overfull \hbox (2.35774pt too wide) in paragraph at lines 4--4
 []\OT1/cmr/bx/n/17.28 Introduction: Mar-tin's Con-di-tion and the
  []
 
-[49
+[58
+
+
+
 
 ]
-Overfull \hbox (5.12773pt too wide) in paragraph at lines 2041--2041
+Overfull \hbox (5.12773pt too wide) in paragraph at lines 58--58
 []\OT1/cmr/bx/n/17.28 Interaction: The Union of Or-dered Events 
  []
 
-[50]
-Overfull \hbox (16.08832pt too wide) in paragraph at lines 2068--2084
+[59]
+Overfull \hbox (16.08832pt too wide) in paragraph at lines 85--101
 \OT1/cmr/m/it/12 sure $\OML/cmm/m/it/12 x$ \OT1/cmr/m/it/12 then $\OML/cmm/m/it
 /12 z$\OT1/cmr/m/it/12 '' cor-re-sponds to the or-dered up-date $\OML/cmm/m/it/
 12 U[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^Z\OT1/cmr/m/n/12 ) = [][] \OML/cmm/m/
 it/12 P[]P[] ^^Z P[]P[];$
  []
 
-[51]
-Overfull \hbox (2.05426pt too wide) in paragraph at lines 2127--2140
+[60]
+Overfull \hbox (2.05426pt too wide) in paragraph at lines 144--157
 \OT1/cmr/m/n/12 mu-tual ad-just-ment prop-a-gates along both chains, en-forc-in
 g con-sis-tency across
  []
 
-[52] [53] [54]
-Overfull \hbox (1.2927pt too wide) in paragraph at lines 2211--2219
+[61] [62] [63]
+Overfull \hbox (1.2927pt too wide) in paragraph at lines 228--236
 \OT1/cmr/m/n/12 main. To a lo-cal ob-server, this ap-pears as in-stan-ta-neous 
 cor-re-la-tion|``spooky
  []
 
-[55] [56] [57] [58]
-Overfull \hbox (3.78203pt too wide) in paragraph at lines 2358--2362
+[64] [65] [66] [67]
+Overfull \hbox (3.78203pt too wide) in paragraph at lines 375--379
 []\OT1/cmr/m/n/12 Each sur-ro-gate event rep-re-sents the rec-on-cil-i-a-tion o
 f an un-re-solv-able causal
  []
 
 
-Overfull \hbox (1.31776pt too wide) in paragraph at lines 2390--2390
+Overfull \hbox (1.31776pt too wide) in paragraph at lines 407--407
 []\OT1/cmr/bx/n/17.28 Wave Am-pli-tude from In-ter-ac-tion Counts 
  []
 
-[59] [60]
-Overfull \hbox (1.54176pt too wide) in paragraph at lines 2457--2458
+[68] [69]
+Overfull \hbox (1.54176pt too wide) in paragraph at lines 474--475
 \OT1/cmr/bx/n/12 Proposition 12 \OT1/cmr/m/n/12 (Tri-an-gle--Type In-equal-ity)
 \OT1/cmr/bx/n/12 . \OT1/cmr/m/it/12 For any lo-cally fi-nite $\OML/cmm/m/it/12 
 E[]; E[]; E[]$\OT1/cmr/m/it/12 , 
  []
 
-[61] [62] [63] [64]
-Overfull \hbox (119.81583pt too wide) detected at line 2644
+[70] [71] [72] [73]
+Overfull \hbox (119.81583pt too wide) detected at line 661
 \OML/cmm/m/it/12 ^^N[]\OMS/cmsy/m/n/12 A\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E[]; 
 E[]\OT1/cmr/m/n/12 ) := \OML/cmm/m/it/12 ^^N[][]^^N[]\OMS/cmsy/m/n/12 A\OT1/cmr
 /m/n/12 (\OML/cmm/m/it/12 E[]; E[]\OT1/cmr/m/n/12 )[] = \OMS/cmsy/m/n/12 A\OT1/
@@ -789,315 +845,344 @@ mr/m/n/12 (\OML/cmm/m/it/12 E[] \OMS/cmsy/m/n/12 [ f\OML/cmm/m/it/12 f\OMS/cmsy
 /n/12 (\OML/cmm/m/it/12 E[]; E[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 :
  []
 
-[65] [66]
-Overfull \hbox (2.2438pt too wide) in paragraph at lines 2731--2731
+[74] [75]
+Overfull \hbox (2.2438pt too wide) in paragraph at lines 748--748
 []\OT1/cmr/bx/n/17.28 Advection as Order-Preserving Trans-port 
  []
 
-[67] [68] [69]
-Overfull \hbox (15.92354pt too wide) in paragraph at lines 2868--2872
+[76] [77] [78]
+Overfull \hbox (15.92354pt too wide) in paragraph at lines 885--889
 \OT1/cmr/m/n/12 The ``speed'' $\OML/cmm/m/it/12 c$ \OT1/cmr/m/n/12 is the rate 
 at which or-der con-straints tra-verse the poset|not
  []
 
-[70]
-Overfull \hbox (1.94443pt too wide) in paragraph at lines 2900--2902
-\OT1/cmr/bx/n/12 Definition 29 \OT1/cmr/m/n/12 (Adi-a-batic Trans-port)\OT1/cmr
+[79]
+Overfull \hbox (1.94443pt too wide) in paragraph at lines 917--919
+\OT1/cmr/bx/n/12 Definition 30 \OT1/cmr/m/n/12 (Adi-a-batic Trans-port)\OT1/cmr
 /bx/n/12 . \OT1/cmr/m/it/12 Let $\OMS/cmsy/m/n/12 C \OT1/cmr/m/n/12 = (\OML/cmm
 /m/it/12 E; \OMS/cmsy/m/n/12 ^^V\OT1/cmr/m/n/12 )$ \OT1/cmr/m/it/12 be a causal
  set equipped
  []
 
-[71]
-Overfull \hbox (6.15283pt too wide) in paragraph at lines 2930--2933
+[80]
+Overfull \hbox (6.15283pt too wide) in paragraph at lines 947--950
 \OT1/cmr/m/it/12 for all $\OML/cmm/m/it/12 x$ \OT1/cmr/m/it/12 in the lo-cal pr
 ed-i-cate space. Hence adi-a-batic trans-port is the first{order
  []
 
-[72] [73] [74] [75]
+[81] [82] [83] [84]
 
-LaTeX Warning: Citation `smoluchowski1906' on page 76 undefined on input line 3
-029.
+LaTeX Warning: Citation `smoluchowski1906' on page 85 undefined on input line 1
+046.
 
-[76]
-Overfull \hbox (1.98578pt too wide) in paragraph at lines 3071--3075
+[85]
+Overfull \hbox (1.98578pt too wide) in paragraph at lines 1088--1092
 \OT1/cmr/m/it/12 fu-sion con-stant $\OML/cmm/m/it/12 D$ \OT1/cmr/m/it/12 mea-su
 res the ob-server's coarse{graining band-width: smaller
  []
 
-[77]
+[86]
 
-LaTeX Warning: Citation `bohr1928' on page 78 undefined on input line 3090.
-
-
-LaTeX Warning: Citation `heisenberg1927' on page 78 undefined on input line 309
-0.
+LaTeX Warning: Citation `bohr1928' on page 87 undefined on input line 1107.
 
 
-Overfull \hbox (2.20462pt too wide) in paragraph at lines 3097--3098
+LaTeX Warning: Citation `heisenberg1927' on page 87 undefined on input line 110
+7.
+
+
+Overfull \hbox (2.20462pt too wide) in paragraph at lines 1114--1115
 []\OT1/cmr/m/n/12 Continuously\OT1/cmr/m/it/12 |refining the re-la-tional am-pl
 i-tudes be-tween ex-ist-ing events
  []
 
-[78] [79] [80] [81] [82]
-Overfull \hbox (5.18092pt too wide) in paragraph at lines 3259--3260
-\OT1/cmr/bx/n/12 Thought Ex-per-i-ment 3.10.1 \OT1/cmr/m/n/12 (Ex-trap-o-la-tio
+[87] [88] [89] [90] [91]
+Overfull \hbox (5.18092pt too wide) in paragraph at lines 1276--1277
+\OT1/cmr/bx/n/12 Thought Ex-per-i-ment 4.10.1 \OT1/cmr/m/n/12 (Ex-trap-o-la-tio
 n: The Casimir Ef-fect as Bound-
  []
 
-[83] [84] [85] [86] [87
+[92] [93] [94] [95] [96
 
-] [88]
-Chapter 4.
-[89
+]) [97]
+\openout2 = `chapters/four.aux'.
 
-] [90] [91] [92] [93]
-Overfull \hbox (5.97945pt too wide) in paragraph at lines 3611--3612
-\OT1/cmr/bx/n/12 Thought Ex-per-i-ment 4.1.1 \OT1/cmr/m/n/12 (Michel-son---Mor-
+ (./chapters/four.tex
+Chapter 5.
+[98
+
+
+
+
+] [99] [100] [101] [102]
+Overfull \hbox (5.97945pt too wide) in paragraph at lines 198--199
+\OT1/cmr/bx/n/12 Thought Ex-per-i-ment 5.1.1 \OT1/cmr/m/n/12 (Michel-son---Mor-
 ley as Gauge Isotropy of Causal
  []
 
-[94] [95] [96] [97]
-Overfull \hbox (6.1876pt too wide) in paragraph at lines 3759--3761
+[103] [104] [105] [106]
+Overfull \hbox (6.1876pt too wide) in paragraph at lines 346--348
 \OT1/cmr/bx/n/12 Remark 15 \OT1/cmr/m/n/12 (His-tor-i-cal Con-text: Noether Sym
 -me-try and Reci-procity)\OT1/cmr/bx/n/12 . \OT1/cmr/m/it/12 Emmy
  []
 
-[98] [99]
-Overfull \hbox (13.60991pt too wide) in paragraph at lines 3802--3808
-\OT1/cmr/bx/n/12 Thought Ex-per-i-ment 4.2.1 \OT1/cmr/m/n/12 (The Two Ob-server
+[107] [108]
+Overfull \hbox (13.60991pt too wide) in paragraph at lines 389--395
+\OT1/cmr/bx/n/12 Thought Ex-per-i-ment 5.2.1 \OT1/cmr/m/n/12 (The Two Ob-server
 s and the In-vari-ant Count [[],
  []
 
-[100] [101] [102] [103]
-Overfull \hbox (23.25404pt too wide) in paragraph at lines 3961--3965
+[109] [110] [111] [112]
+Overfull \hbox (23.25404pt too wide) in paragraph at lines 548--552
 \OT1/cmr/m/it/12 represents the in-finites-i-mal mea-sure of dis-tin-guisha-bil
 -ity be-tween these events|the
  []
 
-[104] [105]
-Chapter 5.
-[106
+[113]) [114]
+\openout2 = `chapters/five.aux'.
 
-] [107] [108] [109]
+ (./chapters/five.tex
+Chapter 6.
+[115
 
-LaTeX Warning: Citation `misner1973' on page 110 undefined on input line 4150.
 
 
-LaTeX Warning: Citation `finkelstein1988' on page 110 undefined on input line 4
-158.
 
-[110]
+] [116] [117] [118]
 
-LaTeX Warning: Citation `misner1973' on page 111 undefined on input line 4176.
+LaTeX Warning: Citation `misner1973' on page 119 undefined on input line 143.
 
-[111]
-Overfull \hbox (5.13582pt too wide) in paragraph at lines 4198--4198
+
+LaTeX Warning: Citation `finkelstein1988' on page 119 undefined on input line 1
+51.
+
+[119]
+
+LaTeX Warning: Citation `misner1973' on page 120 undefined on input line 169.
+
+[120]
+Overfull \hbox (5.13582pt too wide) in paragraph at lines 191--191
 []\OT1/cmr/bx/n/17.28 Empirical Test: Nor-mal Equa-tions for Ro-
  []
 
-[112] [113] [114] [115] [116]
-Chapter 6.
-[117
+[121] [122] [123] [124]) [125]
+\openout2 = `chapters/six.aux'.
+
+ (./chapters/six.tex
+Chapter 7.
+[126
+
+
+
 
 ]
 Overfull \hbox (79.77867pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 CHAPTER 6.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
- \OT1/cmr/m/n/12 118
- []
-
-[118]
-Overfull \hbox (79.77867pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 CHAPTER 6.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
- \OT1/cmr/m/n/12 119
- []
-
-[119]
-Overfull \hbox (79.77867pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 CHAPTER 6.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
- \OT1/cmr/m/n/12 120
- []
-
-[120]
-Overfull \hbox (79.77867pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 CHAPTER 6.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
- \OT1/cmr/m/n/12 121
- []
-
-[121]
-Overfull \hbox (79.77867pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 CHAPTER 6.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
- \OT1/cmr/m/n/12 122
- []
-
-[122]
-Overfull \hbox (79.77867pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 CHAPTER 6.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
- \OT1/cmr/m/n/12 123
- []
-
-[123]
-Overfull \hbox (79.77867pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 CHAPTER 6.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
- \OT1/cmr/m/n/12 124
- []
-
-[124]
-Overfull \hbox (79.77867pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 CHAPTER 6.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
- \OT1/cmr/m/n/12 125
- []
-
-[125]
-Overfull \hbox (79.77867pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 CHAPTER 6.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
- \OT1/cmr/m/n/12 126
- []
-
-[126]
-Overfull \hbox (79.77867pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 CHAPTER 6.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
+\OT1/cmr/m/sl/12 CHAPTER 7.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
  \OT1/cmr/m/n/12 127
  []
 
 [127]
 Overfull \hbox (79.77867pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 CHAPTER 6.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
+\OT1/cmr/m/sl/12 CHAPTER 7.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
  \OT1/cmr/m/n/12 128
  []
 
 [128]
 Overfull \hbox (79.77867pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 CHAPTER 6.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
+\OT1/cmr/m/sl/12 CHAPTER 7.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
  \OT1/cmr/m/n/12 129
  []
 
 [129]
 Overfull \hbox (79.77867pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 CHAPTER 6.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
+\OT1/cmr/m/sl/12 CHAPTER 7.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
  \OT1/cmr/m/n/12 130
  []
 
 [130]
 Overfull \hbox (79.77867pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 CHAPTER 6.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
+\OT1/cmr/m/sl/12 CHAPTER 7.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
  \OT1/cmr/m/n/12 131
  []
 
 [131]
 Overfull \hbox (79.77867pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 CHAPTER 6.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
+\OT1/cmr/m/sl/12 CHAPTER 7.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
  \OT1/cmr/m/n/12 132
  []
 
 [132]
 Overfull \hbox (79.77867pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 CHAPTER 6.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
+\OT1/cmr/m/sl/12 CHAPTER 7.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
  \OT1/cmr/m/n/12 133
  []
 
 [133]
 Overfull \hbox (79.77867pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 CHAPTER 6.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
+\OT1/cmr/m/sl/12 CHAPTER 7.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
  \OT1/cmr/m/n/12 134
  []
 
 [134]
 Overfull \hbox (79.77867pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 CHAPTER 6.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
+\OT1/cmr/m/sl/12 CHAPTER 7.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
  \OT1/cmr/m/n/12 135
  []
 
 [135]
-Overfull \hbox (2.30241pt too wide) in paragraph at lines 5116--5120
+Overfull \hbox (79.77867pt too wide) has occurred while \output is active
+\OT1/cmr/m/sl/12 CHAPTER 7.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
+ \OT1/cmr/m/n/12 136
+ []
+
+[136]
+Overfull \hbox (79.77867pt too wide) has occurred while \output is active
+\OT1/cmr/m/sl/12 CHAPTER 7.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
+ \OT1/cmr/m/n/12 137
+ []
+
+[137]
+Overfull \hbox (79.77867pt too wide) has occurred while \output is active
+\OT1/cmr/m/sl/12 CHAPTER 7.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
+ \OT1/cmr/m/n/12 138
+ []
+
+[138]
+Overfull \hbox (79.77867pt too wide) has occurred while \output is active
+\OT1/cmr/m/sl/12 CHAPTER 7.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
+ \OT1/cmr/m/n/12 139
+ []
+
+[139]
+Overfull \hbox (79.77867pt too wide) has occurred while \output is active
+\OT1/cmr/m/sl/12 CHAPTER 7.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
+ \OT1/cmr/m/n/12 140
+ []
+
+[140]
+Overfull \hbox (79.77867pt too wide) has occurred while \output is active
+\OT1/cmr/m/sl/12 CHAPTER 7.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
+ \OT1/cmr/m/n/12 141
+ []
+
+[141]
+Overfull \hbox (79.77867pt too wide) has occurred while \output is active
+\OT1/cmr/m/sl/12 CHAPTER 7.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
+ \OT1/cmr/m/n/12 142
+ []
+
+[142]
+Overfull \hbox (79.77867pt too wide) has occurred while \output is active
+\OT1/cmr/m/sl/12 CHAPTER 7.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
+ \OT1/cmr/m/n/12 143
+ []
+
+[143]
+Overfull \hbox (79.77867pt too wide) has occurred while \output is active
+\OT1/cmr/m/sl/12 CHAPTER 7.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
+ \OT1/cmr/m/n/12 144
+ []
+
+[144]
+Overfull \hbox (2.30241pt too wide) in paragraph at lines 775--779
 \OT1/cmr/m/n/12 ledger. Lo-cal in-vari-ance means that the ex-change rates be-t
 ween these columns
  []
 
 
 Overfull \hbox (79.77867pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 CHAPTER 6.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
- \OT1/cmr/m/n/12 136
+\OT1/cmr/m/sl/12 CHAPTER 7.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
+ \OT1/cmr/m/n/12 145
  []
 
-[136]
-Overfull \hbox (0.51817pt too wide) in paragraph at lines 5140--5147
+[145]
+Overfull \hbox (0.51817pt too wide) in paragraph at lines 799--806
 \OT1/cmr/m/n/12 Perfect causal sym-me-try im-plies mo-tion at the limit of dis-
 tin-guisha-bil-ity|the
  []
 
 
 Overfull \hbox (79.77867pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 CHAPTER 6.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
- \OT1/cmr/m/n/12 137
+\OT1/cmr/m/sl/12 CHAPTER 7.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
+ \OT1/cmr/m/n/12 146
  []
 
-[137]
+[146]
 Overfull \hbox (79.77867pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 CHAPTER 6.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
- \OT1/cmr/m/n/12 138
+\OT1/cmr/m/sl/12 CHAPTER 7.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
+ \OT1/cmr/m/n/12 147
  []
 
-[138]
+[147]
 Overfull \hbox (79.77867pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 CHAPTER 6.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
- \OT1/cmr/m/n/12 139
+\OT1/cmr/m/sl/12 CHAPTER 7.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
+ \OT1/cmr/m/n/12 148
  []
 
-[139]
+[148]
 Overfull \hbox (79.77867pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 CHAPTER 6.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
- \OT1/cmr/m/n/12 140
+\OT1/cmr/m/sl/12 CHAPTER 7.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
+ \OT1/cmr/m/n/12 149
  []
 
-[140]
+[149]
 Overfull \hbox (79.77867pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 CHAPTER 6.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
- \OT1/cmr/m/n/12 141
+\OT1/cmr/m/sl/12 CHAPTER 7.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
+ \OT1/cmr/m/n/12 150
  []
 
-[141]
+[150])
 Overfull \hbox (79.77867pt too wide) has occurred while \output is active
-\OT1/cmr/m/sl/12 CHAPTER 6.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
- \OT1/cmr/m/n/12 142
+\OT1/cmr/m/sl/12 CHAPTER 7.  THE CONSERVATION OF SYMMETRY: FROM NOETHER TO MASS
+ \OT1/cmr/m/n/12 151
  []
 
-[142]
-Chapter 7.
-[143
+[151]
+\openout2 = `chapters/seven.aux'.
+
+ (./chapters/seven.tex
+Chapter 8.
+[152
+
+
+
 
 ]
-Overfull \hbox (1.08379pt too wide) in paragraph at lines 5393--5398
+Overfull \hbox (1.08379pt too wide) in paragraph at lines 35--40
 \OT1/cmr/m/it/12 mea-sure-ment at-taches finer tags|subject, au-thor, edi-tion|
 refining the causal
  []
 
-[144] [145] [146] [147]
+[153] [154] [155] [156]
 
-LaTeX Warning: Citation `misner1973' on page 148 undefined on input line 5550.
+LaTeX Warning: Citation `misner1973' on page 157 undefined on input line 192.
 
 
-LaTeX Warning: Citation `finkelstein1988' on page 148 undefined on input line 5
-550.
+LaTeX Warning: Citation `finkelstein1988' on page 157 undefined on input line 1
+92.
 
-[148] [149] [150] [151] (./hilbert.gls
+[157] [158] [159]) [160] (./hilbert.gls
 Overfull \hbox (1.20566pt too wide) in paragraph at lines 17--20
 \OT1/cmr/m/n/12 event ten-sors, pre-serv-ing the or-der of com-po-si-tion in a 
 non-commutative
  []
 
-[152
+[161
 
 
 
-]) (./hilbert.bbl [153] [154
 
-] [155] [156] [157] [158] [159] [160] [161]
-[162])
+
+]) (./hilbert.bbl [162] [163
+
+] [164] [165] [166] [167] [168] [169] [170]
+[171] [172])
 \tf@loe=\write7
 \openout7 = `hilbert.loe'.
 
- [163] (./hilbert.aux)
+ [173] (./hilbert.aux (./front/abstract.aux) (./front/front.aux)
+(./chapters/one.aux) (./chapters/two.aux) (./chapters/three.aux)
+(./chapters/four.aux) (./chapters/five.aux) (./chapters/six.aux)
+(./chapters/seven.aux))
 
 LaTeX Warning: There were undefined references.
 
@@ -1106,13 +1191,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 9582 strings out of 476025
- 165747 string characters out of 5790017
+ 9869 strings out of 476025
+ 174183 string characters out of 5790017
  1861388 words of memory out of 5000000
- 29832 multiletter control sequences out of 15000+600000
- 530531 words of font info for 99 fonts, out of 8000000 for 9000
+ 30051 multiletter control sequences out of 15000+600000
+ 530878 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 94i,13n,90p,2251b,392s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 94i,13n,90p,2251b,367s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb><
 /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb>
@@ -1140,10 +1225,10 @@ st/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/
 texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2023/te
 xmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on hilbert.pdf (190 pages, 718900 bytes).
+Output written on hilbert.pdf (200 pages, 740123 bytes).
 PDF statistics:
- 754 PDF objects out of 1000 (max. 8388607)
- 502 compressed objects within 6 object streams
+ 786 PDF objects out of 1000 (max. 8388607)
+ 524 compressed objects within 6 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
