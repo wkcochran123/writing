@@ -1,0 +1,33 @@
+\newtheorem{theorem}{Theorem}
+\newtheorem{example}{Thought Experiment}[section]
+\makeatletter
+\def\@noftheorem#1#2{}
+\makeatother
+\newtheorem{axiom}{Axiom}
+\newtheorem{remark}{Remark}
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{equivalence}{Equivalence}
+\newtheorem{law}{Law}
+\newcommand{\Top}{\operatorname{Top}}
+\newcommand{\U}{\mathbf{U}}        % Universe tensor
+\newcommand{\T}{\mathbf{T}}        % Universe tensor
+\newcommand{\E}{\mathbf{E}}        % Event tensor
+\newcommand{\V}{\mathcal{V}}       % Variation space
+\newcommand{\M}{\mathcal{M}}       % Measurement space
+\newcommand{\Talg}{\mathcal{T}(\V)}    % Tensor algebra
+\newcommand{\Eset}{\mathcal{E}}    % Event set
+\newcommand{\Part}{\mathsf{Part}}
+% Entropy operator / functional
+\newcommand{\Entropy}{\mathcal{S}}
+\newcommand{\Blocks}[1]{\mathrm{Bl}(#1)}
+% Define an abstract environment for the book class
+\onehalfspacing
+
+\newlistof{lotexp}{tex}{List of Thought Experiments}
+\newcommand{\thoughtexp}[1]{%
+  \refstepcounter{lotexp}%
+  \par\noindent\textbf{Thought Experiment~\thelotexp. #1}\addcontentsline{tex}{lotexp}{\protect\numberline{\thelotexp}#1}\par
+}
+

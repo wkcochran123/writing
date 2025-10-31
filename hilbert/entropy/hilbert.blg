@@ -1,0 +1,56 @@
+This is BibTeX, Version 0.99d (TeX Live 2023)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: hilbert.aux
+The style file: plain.bst
+Database file #1: hilbert.bib
+Warning--I didn't find a database entry for "smoluchowski1906"
+Warning--I didn't find a database entry for "bohr1928"
+Warning--I didn't find a database entry for "heisenberg1927"
+Warning--I didn't find a database entry for "misner1973"
+Warning--I didn't find a database entry for "finkelstein1988"
+Warning--empty publisher in boltzmann1872
+Warning--empty publisher in cantor1895
+Warning--empty publisher in jaynes1957
+Warning--empty publisher in weyl1929
+You've used 93 entries,
+            2118 wiz_defined-function locations,
+            1010 strings with 15060 characters,
+and the built_in function-call counts, 25416 in all, are:
+= -- 2543
+> -- 839
+< -- 13
++ -- 362
+- -- 249
+* -- 1474
+:= -- 4319
+add.period$ -- 305
+call.type$ -- 93
+change.case$ -- 366
+chr.to.int$ -- 0
+cite$ -- 97
+duplicate$ -- 1138
+empty$ -- 2289
+format.name$ -- 249
+if$ -- 5370
+int.to.chr$ -- 0
+int.to.str$ -- 93
+missing$ -- 145
+newline$ -- 488
+num.names$ -- 192
+pop$ -- 478
+preamble$ -- 1
+purify$ -- 308
+quote$ -- 0
+skip$ -- 673
+stack$ -- 0
+substring$ -- 1461
+swap$ -- 145
+text.length$ -- 13
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 268
+warning$ -- 4
+while$ -- 267
+width$ -- 95
+write$ -- 1079
+(There were 9 warnings)

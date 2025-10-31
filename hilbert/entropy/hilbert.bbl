@@ -1,0 +1,526 @@
+\begin{thebibliography}{10}
+
+\bibitem{ahlberg1967}
+J.~H. Ahlberg, E.~N. Nilson, and J.~L. Walsh.
+\newblock {\em The Theory of Splines and Their Applications}.
+\newblock Academic Press, New York, 1967.
+
+\bibitem{bell1964}
+John~S. Bell.
+\newblock On the einstein podolsky rosen paradox.
+\newblock {\em Physics}, 1(3):195--200, 1964.
+
+\bibitem{bennett1973}
+Charles~H. Bennett.
+\newblock Logical reversibility of computation.
+\newblock {\em IBM Journal of Research and Development}, 17(6):525--532, 1973.
+
+\bibitem{berkeley1734}
+George Berkeley.
+\newblock {\em The Analyst: or, A Discourse Addressed to an Infidel
+  Mathematician}.
+\newblock London, 1734.
+\newblock Available in many reprints; see, e.g., Project Gutenberg (Eprint
+  \#27200).
+
+\bibitem{boltzmann1872}
+Ludwig Boltzmann.
+\newblock {\em Weitere Studien {\"u}ber das Wärmegleichgewicht unter
+  Gasmolek{\"u}len}, volume~66.
+\newblock 1872.
+
+\bibitem{boltzmann1896}
+Ludwig Boltzmann.
+\newblock {\em Vorlesungen {\"u}ber Gastheorie}.
+\newblock Johann Ambrosius Barth, Leipzig, 1896.
+
+\bibitem{bombelli1987}
+Luca Bombelli, Joohan Lee, David Meyer, and Rafael~D. Sorkin.
+\newblock Space-time as a causal set.
+\newblock {\em Physical Review Letters}, 59(5):521--524, 1987.
+
+\bibitem{braess2007}
+Dietrich Braess.
+\newblock {\em Finite Elements: Theory, Fast Solvers, and Applications in Solid
+  Mechanics}.
+\newblock Cambridge University Press, Cambridge, 3rd edition, 2007.
+
+\bibitem{cantor1895}
+Georg Cantor.
+\newblock {\em Beiträge zur Begründung der transfiniten Mengenlehre},
+  volume~46.
+\newblock 1895.
+
+\bibitem{chaitin1974}
+Gregory~J. Chaitin.
+\newblock Information-theoretic limitations of formal systems.
+\newblock {\em Journal of the ACM}, 21(3):403--424, 1974.
+
+\bibitem{chaitin1987}
+Gregory~J. Chaitin.
+\newblock {\em Algorithmic Information Theory}.
+\newblock Cambridge University Press, Cambridge, 1987.
+
+\bibitem{cook1974}
+R.~D. Cook.
+\newblock {\em Concepts and Applications of Finite Element Analysis}.
+\newblock John Wiley \& Sons, New York, 1974.
+
+\bibitem{courant1943}
+R.~Courant, K.~Friedrichs, and H.~Lewy.
+\newblock On the partial difference equations of mathematical physics.
+\newblock {\em IBM Journal of Research and Development (translation of original
+  1928 German paper)}, 11:215--234, 1943.
+\newblock Commonly cited as the CFL condition.
+
+\bibitem{davey2002}
+B.~A. Davey and H.~A. Priestley.
+\newblock {\em Introduction to Lattices and Order}.
+\newblock Cambridge University Press, 2nd edition, 2002.
+
+\bibitem{deboor1978}
+Carl de~Boor.
+\newblock {\em A Practical Guide to Splines}.
+\newblock Springer, New York, 1978.
+
+\bibitem{dirac1958}
+P.~A.~M. Dirac.
+\newblock {\em The Principles of Quantum Mechanics}.
+\newblock Oxford University Press, Oxford, 4th edition, 1958.
+
+\bibitem{earman1974}
+John Earman.
+\newblock An attempt to formulate a causal theory of time.
+\newblock {\em Journal of Philosophy}, 71(17):561--579, 1974.
+
+\bibitem{einstein1905}
+Albert Einstein.
+\newblock Zur elektrodynamik bewegter k{\"o}rper.
+\newblock {\em Annalen der Physik}, 17:891--921, 1905.
+\newblock English translation: "On the Electrodynamics of Moving Bodies".
+
+\bibitem{einstein1935}
+Albert Einstein, Boris Podolsky, and Nathan Rosen.
+\newblock Can quantum-mechanical description of physical reality be considered
+  complete?
+\newblock {\em Physical Review}, 47(10):777--780, 1935.
+
+\bibitem{feynman1948}
+Richard~P. Feynman.
+\newblock Space–time approach to non-relativistic quantum mechanics.
+\newblock {\em Reviews of Modern Physics}, 20:367--387, 1948.
+
+\bibitem{feynman1965}
+Richard~P. Feynman, Robert~B. Leighton, and Matthew Sands.
+\newblock {\em The Feynman Lectures on Physics}, volume 1--3.
+\newblock Addison-Wesley, Reading, MA, 1965.
+\newblock Classic introductory lectures on fundamental physics.
+
+\bibitem{finkelstein1988causal}
+David Finkelstein.
+\newblock Causal sets as the deep structure of spacetime.
+\newblock {\em International Journal of Theoretical Physics}, 27(4):473--484,
+  1988.
+
+\bibitem{finkelstein1996}
+David Finkelstein.
+\newblock {\em Quantum Relativity: A Synthesis of the Ideas of Einstein and
+  Heisenberg}.
+\newblock Springer, Berlin, 1996.
+
+\bibitem{fraenkel1922}
+Abraham~A Fraenkel.
+\newblock {\em Einleitung in die Mengenlehre}.
+\newblock Springer, 1922.
+
+\bibitem{gold1967}
+E.~Mark Gold.
+\newblock Language identification in the limit.
+\newblock {\em Information and Control}, 10(5):447--474, 1967.
+
+\bibitem{golub2013}
+Gene~H. Golub and Charles~F. Van~Loan.
+\newblock {\em Matrix Computations}.
+\newblock Johns Hopkins University Press, 4 edition, 2013.
+
+\bibitem{godel1931}
+Kurt Gödel.
+\newblock Über formal unentscheidbare sätze der principia mathematica und
+  verwandter systeme i.
+\newblock {\em Monatshefte für Mathematik und Physik}, 38:173--198, 1931.
+
+\bibitem{halmos1958}
+Paul~R. Halmos.
+\newblock {\em Finite‐Dimensional Vector Spaces}.
+\newblock Springer, 1958.
+
+\bibitem{halmos1974naive}
+Paul~R. Halmos.
+\newblock {\em Naive Set Theory}.
+\newblock Springer, 1974.
+\newblock Concise exposition of ZFC and its role in functional analysis.
+
+\bibitem{hawking1975}
+S.~W. Hawking.
+\newblock Particle creation by black holes.
+\newblock {\em Communications in Mathematical Physics}, 43:199--220, 1975.
+\newblock Introduced the concept of black hole radiation via quantum field
+  theory in curved spacetime.
+
+\bibitem{hawking1973}
+S.~W. Hawking and G.~F.~R. Ellis.
+\newblock {\em The Large Scale Structure of Space-Time}.
+\newblock Cambridge University Press, Cambridge, 1973.
+
+\bibitem{heath2002}
+Michael~T. Heath.
+\newblock {\em Scientific Computing: An Introductory Survey}.
+\newblock McGraw-Hill, New York, 2nd edition, 2002.
+
+\bibitem{hilbert1902geometry}
+David Hilbert.
+\newblock {\em Foundations of Geometry}.
+\newblock Open Court, Chicago, IL, 1902.
+\newblock English translation of \textit{Grundlagen der Geometrie},
+  establishing the axiomatic method in geometry.
+
+\bibitem{hilbert1902problems}
+David Hilbert.
+\newblock Mathematical problems.
+\newblock {\em Bulletin of the American Mathematical Society}, 8:437--479,
+  1902.
+\newblock English translation of Hilbert's 1900 address presenting 23 open
+  problems.
+
+\bibitem{hilbert1902}
+David Hilbert.
+\newblock Mathematical problems.
+\newblock {\em Bulletin of the American Mathematical Society}, 8(10):437--479,
+  1902.
+\newblock English translation of Hilbert's 1900 address.
+
+\bibitem{hossenfelder2018}
+Sabine Hossenfelder.
+\newblock {\em Lost in Math: How Beauty Leads Physics Astray}.
+\newblock Basic Books, New York, 2018.
+
+\bibitem{isaacson1966}
+Eugene Isaacson and Herbert~B. Keller.
+\newblock Analysis of numerical methods.
+\newblock {\em Wiley}, 1966.
+\newblock Classic text on finite difference stability and convergence.
+
+\bibitem{jaynes1957}
+Edwin~T. Jaynes.
+\newblock {\em Information Theory and Statistical Mechanics}, volume 106.
+\newblock 1957.
+
+\bibitem{jech2003}
+Thomas Jech.
+\newblock {\em Set Theory: The Third Millennium Edition, Revised and Expanded}.
+\newblock Springer, Berlin, 2003.
+
+\bibitem{kolmogorov1933}
+Andrey~N. Kolmogorov.
+\newblock {\em Grundbegriffe der Wahrscheinlichkeitsrechnung}.
+\newblock Springer, Berlin, 1933.
+\newblock English translation: \textit{Foundations of the Theory of
+  Probability}, Chelsea Publishing, 1950.
+
+\bibitem{kunen1980}
+Kenneth Kunen.
+\newblock {\em Set Theory: An Introduction to Independence Proofs}, volume 102
+  of {\em Studies in Logic and the Foundations of Mathematics}.
+\newblock North-Holland, Amsterdam, 1980.
+
+\bibitem{landau1976}
+L.~D. Landau and E.~M. Lifshitz.
+\newblock {\em Mechanics}, volume~1 of {\em Course of Theoretical Physics}.
+\newblock Pergamon Press, Oxford, 3rd edition, 1976.
+
+\bibitem{landauer1961}
+Rolf Landauer.
+\newblock Irreversibility and heat generation in the computing process.
+\newblock {\em IBM Journal of Research and Development}, 5(3):183--191, 1961.
+
+\bibitem{lang2002}
+Serge Lang.
+\newblock {\em Algebra}.
+\newblock Springer, New York, 3rd edition, 2002.
+
+\bibitem{lax2007}
+Peter~D. Lax.
+\newblock {\em Linear Algebra and Its Applications}.
+\newblock John Wiley and Sons, Hoboken, NJ, 2nd edition, 2007.
+
+\bibitem{leveque2007}
+Randall~J. LeVeque.
+\newblock {\em Finite Difference Methods for Ordinary and Partial Differential
+  Equations: Steady-State and Time-Dependent Problems}.
+\newblock Society for Industrial and Applied Mathematics (SIAM), Philadelphia,
+  PA, 2007.
+
+\bibitem{lorentz1904}
+Hendrik~A. Lorentz.
+\newblock Electromagnetic phenomena in a system moving with any velocity less
+  than that of light.
+\newblock {\em Proceedings of the Royal Netherlands Academy of Arts and
+  Sciences}, 6:809--831, 1904.
+
+\bibitem{malament1977}
+David~B. Malament.
+\newblock The class of continuous timelike curves determines the topology of
+  spacetime.
+\newblock {\em Journal of Mathematical Physics}, 18(7):1399--1404, 1977.
+
+\bibitem{markopoulou2000}
+Fotini Markopoulou.
+\newblock The internal description of a causal set: What the universe looks
+  like from the inside.
+\newblock {\em Communications in Mathematical Physics}, 211:559--583, 2000.
+
+\bibitem{martin1970cohen}
+Donald~A. Martin and Robert~M. Solovay.
+\newblock Internal cohen extensions.
+\newblock {\em Annals of Mathematical Logic}, 2:143--178, 1970.
+
+\bibitem{maturana1980}
+Humberto~R. Maturana and Francisco~J. Varela.
+\newblock {\em Autopoiesis and Cognition: The Realization of the Living}.
+\newblock Reidel, Dordrecht, 1980.
+
+\bibitem{minkowski1908}
+Hermann Minkowski.
+\newblock Raum und zeit.
+\newblock In {\em Physikalische Zeitschrift}, volume~10, pages 104--111, 1908.
+\newblock Lecture delivered at 80th Assembly of German Natural Scientists and
+  Physicians, Cologne, 1908. English translation: "Space and Time.".
+
+\bibitem{morton2005}
+K.~W. Morton and D.~F. Mayers.
+\newblock {\em Numerical Solution of Partial Differential Equations: An
+  Introduction}.
+\newblock Cambridge University Press, Cambridge, 2nd edition, 2005.
+
+\bibitem{newton1687}
+Isaac Newton.
+\newblock {\em Philosophi{\ae} Naturalis Principia Mathematica}.
+\newblock Royal Society of London, 1687.
+\newblock Translated as \emph{The Mathematical Principles of Natural
+  Philosophy}, University of California Press, 1934.
+
+\bibitem{ortega1970}
+James~M. Ortega and Werner~C. Rheinboldt.
+\newblock {\em Iterative Solution of Nonlinear Equations in Several Variables}.
+\newblock Academic Press, New York, 1970.
+
+\bibitem{penrose1972}
+Roger Penrose.
+\newblock {\em Techniques of Differential Topology in Relativity}.
+\newblock Society for Industrial and Applied Mathematics, Philadelphia, 1972.
+
+\bibitem{peres1995}
+Asher Peres.
+\newblock Separability criterion for density matrices.
+\newblock {\em Physical Review Letters}, 77(8):1413--1415, 1995.
+
+\bibitem{planck1901}
+Max Planck.
+\newblock Über das gesetz der energieverteilung im normalspektrum.
+\newblock {\em Annalen der Physik}, 4:553--563, 1901.
+
+\bibitem{planck1914}
+Max Planck.
+\newblock {\em The Theory of Heat Radiation}.
+\newblock P. Blakiston’s Son \& Co., Philadelphia, 1914.
+\newblock Translated by M. Masius. Reprinted by Dover Publications, 1959.
+
+\bibitem{quarteroni2008}
+Alfio Quarteroni and Alberto Valli.
+\newblock {\em Numerical Approximation of Partial Differential Equations}.
+\newblock Springer Series in Computational Mathematics. Springer, Berlin, 2nd
+  edition, 2008.
+
+\bibitem{quine1953}
+W.~V. Quine.
+\newblock Reference and modality.
+\newblock {\em Journal of Philosophy}, 50:113--127, 1953.
+\newblock Discusses the extensional treatment of predicates and modality.
+
+\bibitem{rasiowa1963}
+Helena Rasiowa and Roman Sikorski.
+\newblock {\em The Mathematics of Metamathematics}.
+\newblock Panstwowe Wydawnictwo Naukowe (PWN), Warsaw, 1963.
+\newblock See Theorem~3.6.4 for the Rasiowa--Sikorski lemma on generic filters.
+
+\bibitem{reddy1993}
+J.~N. Reddy.
+\newblock {\em An Introduction to the Finite Element Method}.
+\newblock McGraw–Hill, New York, 2nd edition, 1993.
+
+\bibitem{rideout1999}
+David Rideout and Rafael~D. Sorkin.
+\newblock A classical sequential growth dynamics for causal sets.
+\newblock {\em Physical Review D}, 61:024002, 1999.
+
+\bibitem{rideoutsorkin1999}
+David Rideout and Rafael~D. Sorkin.
+\newblock A classical sequential growth dynamics for causal sets.
+\newblock {\em Physical Review D}, 61:024002, 1999.
+
+\bibitem{rindler2006}
+Wolfgang Rindler.
+\newblock {\em Relativity: Special, General, and Cosmological}.
+\newblock Oxford University Press, 2nd edition, 2006.
+
+\bibitem{schoenberg1946}
+I.~J. Schoenberg.
+\newblock Contributions to the problem of approximation of equidistant data by
+  analytic functions.
+\newblock {\em Quarterly of Applied Mathematics}, 4(1):45--99, 1946.
+
+\bibitem{schrodinger1935}
+E.~Schroedinger.
+\newblock Discussion of probability relations between separated systems.
+\newblock {\em Mathematical Proceedings of the Cambridge Philosophical
+  Society}, 31:555--563, 1935.
+
+\bibitem{shannon1948}
+Claude~E. Shannon.
+\newblock A mathematical theory of communication.
+\newblock {\em Bell System Technical Journal}, 27:379--423, 623--656, 1948.
+
+\bibitem{sorkin1991}
+Rafael~D. Sorkin.
+\newblock Finitary substitute for continuous topology.
+\newblock In R.~Penrose and C.~J. Isham, editors, {\em Quantum Concepts in
+  Space and Time}, pages 254--275. Clarendon Press, Oxford, 1991.
+
+\bibitem{sorkin2003}
+Rafael~D. Sorkin.
+\newblock Causal sets: Discrete gravity.
+\newblock {\em Lectures on Quantum Gravity (Proceedings, Valdivia)}, 2003.
+
+\bibitem{sorkin2005}
+Rafael~D. Sorkin.
+\newblock Causal sets: Discrete gravity.
+\newblock In Andres Gomberoff and Donald Marolf, editors, {\em Lectures on
+  Quantum Gravity}, pages 305--327. Springer, Boston, MA, 2005.
+\newblock Foundational overview of the causal set approach to quantum gravity.
+
+\bibitem{spencerbrown1969}
+George Spencer-Brown.
+\newblock {\em Laws of Form}.
+\newblock George Allen and Unwin, London, 1969.
+
+\bibitem{stoerbulirsch2002}
+Josef Stoer and Roland Bulirsch.
+\newblock {\em Introduction to Numerical Analysis}.
+\newblock Springer, New York, 3rd edition, 2002.
+
+\bibitem{strang2009}
+Gilbert Strang.
+\newblock {\em Introduction to Linear Algebra}.
+\newblock Wellesley-Cambridge Press, Wellesley, MA, 4th edition, 2009.
+
+\bibitem{strang1973}
+Gilbert Strang and George Fix.
+\newblock An analysis of the finite element method.
+\newblock {\em Prentice--Hall Series in Automatic Computation}, 1973.
+
+\bibitem{strikwerda2004}
+John~C. Strikwerda.
+\newblock {\em Finite Difference Schemes and Partial Differential Equations}.
+\newblock Society for Industrial and Applied Mathematics (SIAM), Philadelphia,
+  PA, 2nd edition, 2004.
+
+\bibitem{tarski1933}
+Alfred Tarski.
+\newblock The concept of truth in formalized languages.
+\newblock In {\em Logic, Semantics, Metamathematics}. Oxford University Press,
+  Oxford, 1933.
+\newblock Introduced formal semantics and the definition of truth in model
+  theory.
+
+\bibitem{tarski1955}
+Alfred Tarski.
+\newblock Contributions to the theory of models.
+\newblock In {\em Proceedings of the 1954 International Congress of
+  Mathematicians}, pages 713--720. North-Holland, Amsterdam, 1955.
+
+\bibitem{taylor1992}
+Edwin~F. Taylor and John~Archibald Wheeler.
+\newblock {\em Spacetime Physics}.
+\newblock W. H. Freeman, 2nd edition, 1992.
+
+\bibitem{todorcevic2010}
+Stevo Todorcevic.
+\newblock {\em Introduction to Ramsey Spaces}.
+\newblock Princeton University Press, Princeton, NJ, 2010.
+
+\bibitem{unruh1976}
+W.~G. Unruh.
+\newblock Notes on black hole evaporation.
+\newblock {\em Physical Review D}, 14(4):870--892, 1976.
+\newblock Demonstrated the Unruh effect, showing thermal spectra from
+  accelerated frames.
+
+\bibitem{weyl1929}
+Hermann Weyl.
+\newblock {\em Elektron und Gravitation. I.}, volume~56.
+\newblock 1929.
+
+\bibitem{weyl1949}
+Hermann Weyl.
+\newblock {\em Philosophy of Mathematics and Natural Science}.
+\newblock Princeton University Press, 1949.
+
+\bibitem{wheeler1990}
+John~A. Wheeler.
+\newblock Information, physics, quantum: The search for links.
+\newblock In W.~H. Zurek, editor, {\em Complexity, Entropy, and the Physics of
+  Information}, pages 3--28. Addison-Wesley, Redwood City, CA, 1990.
+
+\bibitem{wheeler1983}
+John~A. Wheeler and Wojciech~H. Zurek.
+\newblock {\em Quantum Theory and Measurement}.
+\newblock Princeton University Press, Princeton, NJ, 1983.
+
+\bibitem{whitney1957}
+Hassler Whitney.
+\newblock {\em Geometric Integration Theory}.
+\newblock Princeton University Press, Princeton, NJ, 1957.
+
+\bibitem{wolfram2002}
+Stephen Wolfram.
+\newblock {\em A New Kind of Science}.
+\newblock Wolfram Media, Champaign, IL, 2002.
+\newblock Introduces computational irreducibility and cellular automata
+  foundations.
+
+\bibitem{yang1954}
+Chen~Ning Yang and Robert~L. Mills.
+\newblock Conservation of isotopic spin and isotopic gauge invariance.
+\newblock {\em Physical Review}, 96(1):191--195, 1954.
+
+\bibitem{zermelo1908}
+Ernst Zermelo.
+\newblock Investigations in the foundations of set theory i.
+\newblock {\em Mathematische Annalen}, 65(2):261--281, 1908.
+
+\bibitem{ziegler1963}
+Hans Ziegler.
+\newblock {\em An Introduction to Thermomechanics}.
+\newblock North-Holland, Amsterdam, 1963.
+
+\bibitem{zienkiewicz1977}
+O.~C. Zienkiewicz.
+\newblock {\em The Finite Element Method}.
+\newblock McGraw–Hill, London, 3rd edition, 1977.
+
+\bibitem{zurek1989}
+Wojciech~H. Zurek.
+\newblock Algorithmic randomness and physical entropy.
+\newblock {\em Physical Review A}, 40(8):4731--4751, 1989.
+
+\end{thebibliography}

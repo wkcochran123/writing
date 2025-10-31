@@ -1,0 +1,308 @@
+\glsdefs@newdocentry{ranktime}%
+{%
+name={rank time},%
+sort={ranktime},%
+type={main},%
+first={rank time},%
+firstplural={rank times},%
+text={rank time},%
+plural={rank times},%
+description={Order-embedding $\tau :E\to \text {Ord}$ assigning an ordinal rank to each event in a locally finite poset},%
+descriptionplural={Order-embedding $\tau :E\to \text {Ord}$ assigning an ordinal rank to each event in a locally finite poset},%
+symbol={\tau },%
+symbolplural={\tau },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{poset}%
+{%
+name={partially ordered set},%
+sort={poset},%
+type={main},%
+first={partially ordered set},%
+firstplural={partially ordered sets},%
+text={partially ordered set},%
+plural={partially ordered sets},%
+description={A pair $(E,\leq )$ where $\leq $ is a binary relation on $E$ that is reflexive, antisymmetric, and transitive},%
+descriptionplural={A pair $(E,\leq )$ where $\leq $ is a binary relation on $E$ that is reflexive, antisymmetric, and transitive},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{time}%
+{%
+name={time},%
+sort={time},%
+type={main},%
+first={time},%
+firstplural={times},%
+text={time},%
+plural={times},%
+description={An ordinal index into the ordered list of events guaranteed by the Axiom of Order},%
+descriptionplural={An ordinal index into the ordered list of events guaranteed by the Axiom of Order},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{eventtensor}%
+{%
+name={event tensor},%
+sort={eventtensor},%
+type={main},%
+first={event tensor},%
+firstplural={event tensors},%
+text={event tensor},%
+plural={event tensors},%
+description={An element $\E _k \in \Talg $ encoding the measurable contribution of an event $e_k \in \Eset $ to the global state via an embedding $\Psi :\Eset \to \Talg $},%
+descriptionplural={An element $\E _k \in \Talg $ encoding the measurable contribution of an event $e_k \in \Eset $ to the global state via an embedding $\Psi :\Eset \to \Talg $},%
+symbol={\E _k},%
+symbolplural={\E _k},%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{orderedfold}%
+{%
+name={ordered fold},%
+sort={orderedfold},%
+type={main},%
+first={ordered fold},%
+firstplural={ordered folds},%
+text={ordered fold},%
+plural={ordered folds},%
+description={An associative left fold over a totally ordered sequence of event tensors, preserving the order of composition in a non-commutative algebraic structure},%
+descriptionplural={An associative left fold over a totally ordered sequence of event tensors, preserving the order of composition in a non-commutative algebraic structure},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{entanglementequivalence}%
+{%
+name={entanglement equivalence},%
+sort={entanglementequivalence},%
+type={main},%
+first={entanglement equivalence},%
+firstplural={entanglement equivalences},%
+text={entanglement equivalence},%
+plural={entanglement equivalences},%
+description={An equivalence relation between event tensors or ordered lists that differ only by permutations within commutative subsets preserving all cyclic scalar invariants such as traces of contractions},%
+descriptionplural={An equivalence relation between event tensors or ordered lists that differ only by permutations within commutative subsets preserving all cyclic scalar invariants such as traces of contractions},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{tensoralgebra}%
+{%
+name={tensor algebra},%
+sort={tensoralgebra},%
+type={main},%
+first={tensor algebra},%
+firstplural={tensor algebras},%
+text={tensor algebra},%
+plural={tensor algebras},%
+description={The direct sum $\Talg =\bigoplus _{r=0}^{\infty }\V ^{\otimes r}$ with componentwise addition and associative tensor product on a vector space $\V $},%
+descriptionplural={The direct sum $\Talg =\bigoplus _{r=0}^{\infty }\V ^{\otimes r}$ with componentwise addition and associative tensor product on a vector space $\V $},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{entanglement}%
+{%
+name={entanglement},%
+sort={entanglement},%
+type={main},%
+first={entanglement},%
+firstplural={entanglements},%
+text={entanglement},%
+plural={entanglements},%
+description={A subset of event tensors whose reordering leaves all scalar invariants of the universe tensor unchanged},%
+descriptionplural={A subset of event tensors whose reordering leaves all scalar invariants of the universe tensor unchanged},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{distinguishabilitychain}%
+{%
+name={distinguishability chain},%
+sort={distinguishabilitychain},%
+type={main},%
+first={distinguishability chain},%
+firstplural={distinguishability chains},%
+text={distinguishability chain},%
+plural={distinguishability chains},%
+description={A sequence of partitions $\{P_n\}_{n\in \mathbb {Z}}$ on a nonempty set $\Omega $ such that each $P_{n+1}$ refines $P_n$, representing successively finer distinguishable structures on $\Omega $},%
+descriptionplural={A sequence of partitions $\{P_n\}_{n\in \mathbb {Z}}$ on a nonempty set $\Omega $ such that each $P_{n+1}$ refines $P_n$, representing successively finer distinguishable structures on $\Omega $},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{event}%
+{%
+name={event},%
+sort={event},%
+type={main},%
+first={event},%
+firstplural={events},%
+text={event},%
+plural={events},%
+description={A minimal refinement step in a distinguishability chain $\mathcal {P}=\{P_n\}$, represented by a pair $(B,\{B_i\}_{i\in I},n)$ where a block $B\in \Blocks {P_n}$ splits into a family of subblocks $\{B_i\}\subseteq \Blocks {P_{n+1}}$ with $|I|\ge 2$},%
+descriptionplural={A minimal refinement step in a distinguishability chain $\mathcal {P}=\{P_n\}$, represented by a pair $(B,\{B_i\}_{i\in I},n)$ where a block $B\in \Blocks {P_n}$ splits into a family of subblocks $\{B_i\}\subseteq \Blocks {P_{n+1}}$ with $|I|\ge 2$},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+
+\glsdefs@newdocentry{predicate}%
+{%
+name={predicate},%
+sort={predicate},%
+type={main},%
+first={predicate},%
+firstplural={predicates},%
+text={predicate},%
+plural={predicates},%
+description={A map $P:E\to \{0,1\}$ assigning a truth value to each event, used to indicate which events satisfy a specified property},%
+descriptionplural={A map $P:E\to \{0,1\}$ assigning a truth value to each event, used to indicate which events satisfy a specified property},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+

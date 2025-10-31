@@ -1,0 +1,73 @@
+\documentclass[12pt]{article}
+\usepackage{amsthm,amssymb,amsmath,mathtools,setspace}
+\usepackage{hyperref} 
+\onehalfspacing
+
+% --- Module Dependencies ---
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\input{V_macros.tex}
+
+\title{\textbf{Module 5: Statistical Closure}\\
+\large Validating G5: Predictability Bounds \texorpdfstring{\GFourDPI}{DPI}}
+\author{G5S — Statistical Closure (V.tex Compliant)}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section{Inputs: Conservation and Order Monotonicity}
+
+The statistical closure of the causal field relies on the global stability established by the preceding modules. The inputs are the $\mathbf{Conservation\; Law}$ (from G4S) and the $\mathbf{Thermodynamic\; Constraint}$ (from G1S). Both constraints must hold for the probability measures underlying the causal evolution:
+\[
+  \Div{\Current}=0 \qquad\text{and}\qquad \GOneStatement.
+\]
+
+\section{Contracts: Information-Theoretic Closures}
+
+The statistical foundation of the model is formalized by two main contracts governing the behavior of inference under causal refinement.
+\begin{itemize}
+  \item Data processing / coarse-graining: \GFourDPI.
+  \item Score unbiasedness at truth: \GFourScoreZero.
+\end{itemize}
+
+\section{Theorem: DPI under admissible coarse-graining}
+
+\begin{theorem}[Causal Data Processing Inequality]
+The divergence $\KL{P}{Q}$ does not increase under admissible maps consistent with $\C$.
+\end{theorem}
+
+\begin{proof}[Proof Sketch]
+Any admissible refinement of the causal partition $\C$ corresponds to an information-preserving, non-injective map between the sets of micro-orderings. Since information cannot be created by mere rearrangement of distinguishable elements, the distinguishability between any two probability distributions $P$ and $Q$ of these elements can only decrease or remain constant under the map. This is a direct consequence of the injective count monotonicity established in $\GOneStatement$.
+\end{proof}
+
+\section{Theorem: Unbiased score and Fisher lower bound}
+
+\begin{theorem}
+Estimation of causal parameters must adhere to the unbiased score constraint:
+\[
+  \GFourScoreZero.
+\]
+\end{theorem}
+
+Estimation accuracy is bounded via $\Fisher$; residual uncertainty $\Res$ remains. The structural stability imposed by the kinematic and Noether constraints ($\GTwoStatement$ and $\Div{\StressEnergy}=0$) ensures that parameter estimation efficiency is maximized, but is still fundamentally limited by the local informational curvature ($\Fisher$).
+
+\section{Invariance and Stable Statistics}
+
+The conservation laws established in G4S imply that conserved quantities must yield stable statistical estimates regardless of measurement location.
+
+Let $\Invariant{\Xi}$ denote an index-free invariant statistic associated with $\Xi$. The conservation law guarantees the stability of this invariant:
+\[
+  \Div{\Current}=0 \;\Longrightarrow\; \text{stability of } \Invariant{\Xi}.
+\]
+
+\section{Predictability Bounds}
+
+The combined closures define the limit of predictive power in the causal system.
+\[
+  \KL{P}{Q}\ \text{nonincreasing}, \quad \E[\Score]=0, \quad \text{residual } \Res \ \text{is constrained noise.}
+\]
+The thermodynamic constraint ($\GOneStatement$ / monotonicity) and the statistical constraint ($\GFourDPI$ / distinguishability cannot increase) together state that finer partitions cannot increase predictive power beyond the invariant structure defined by the conserved current. The remaining uncertainty is not random noise, but the structurally limited residual ($\Res$) dictated by the analytic closure $\GTwoStatement$.
+
+\end{document}
