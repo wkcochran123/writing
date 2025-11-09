@@ -26,17 +26,17 @@ parent={},%
 %
 }%
 
-\glsdefs@newdocentry{event}%
+\glsdefs@newdocentry{distinguishabilitychain}%
 {%
-name={event},%
-sort={event},%
+name={distinguishability chain},%
+sort={distinguishabilitychain},%
 type={main},%
-first={event},%
-firstplural={events},%
-text={event},%
-plural={events},%
-description={A minimal refinement step in a distinguishability chain $\mathcal {P}=\{P_n\}$, represented by a pair $(B,\{B_i\}_{i\in I},n)$ where a block $B\in \Blocks {P_n}$ splits into a family of subblocks $\{B_i\}\subseteq \Blocks {P_{n+1}}$ with $|I|\ge 2$},%
-descriptionplural={A minimal refinement step in a distinguishability chain $\mathcal {P}=\{P_n\}$, represented by a pair $(B,\{B_i\}_{i\in I},n)$ where a block $B\in \Blocks {P_n}$ splits into a family of subblocks $\{B_i\}\subseteq \Blocks {P_{n+1}}$ with $|I|\ge 2$},%
+first={distinguishability chain},%
+firstplural={distinguishability chains},%
+text={distinguishability chain},%
+plural={distinguishability chains},%
+description={A sequence $\mathcal {P} = \{P_n\}$ of finite partitions of an observational domain, where each $P_{n+1}$ strictly refines $P_n$},%
+descriptionplural={A sequence $\mathcal {P} = \{P_n\}$ of finite partitions of an observational domain, where each $P_{n+1}$ strictly refines $P_n$},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -54,17 +54,17 @@ parent={},%
 %
 }%
 
-\glsdefs@newdocentry{distinguishabilitychain}%
+\glsdefs@newdocentry{event}%
 {%
-name={distinguishability chain},%
-sort={distinguishabilitychain},%
+name={event},%
+sort={event},%
 type={main},%
-first={distinguishability chain},%
-firstplural={distinguishability chains},%
-text={distinguishability chain},%
-plural={distinguishability chains},%
-description={A sequence $\mathcal {P} = \{P_n\}$ of finite partitions of an observational domain, where each $P_{n+1}$ strictly refines $P_n$},%
-descriptionplural={A sequence $\mathcal {P} = \{P_n\}$ of finite partitions of an observational domain, where each $P_{n+1}$ strictly refines $P_n$},%
+first={event},%
+firstplural={events},%
+text={event},%
+plural={events},%
+description={A minimal refinement step in a distinguishability chain $\mathcal {P}=\{P_n\}$, represented by a pair $(B,\{B_i\}_{i\in I},n)$ where a block $B\in \Blocks {P_n}$ splits into a family of subblocks $\{B_i\}\subseteq \Blocks {P_{n+1}}$ with $|I|\ge 2$},%
+descriptionplural={A minimal refinement step in a distinguishability chain $\mathcal {P}=\{P_n\}$, represented by a pair $(B,\{B_i\}_{i\in I},n)$ where a block $B\in \Blocks {P_n}$ splits into a family of subblocks $\{B_i\}\subseteq \Blocks {P_{n+1}}$ with $|I|\ge 2$},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%
@@ -149,8 +149,8 @@ text={event tensor},%
 plural={event tensors},%
 description={An element $\E _k \in \Talg $ encoding the measurable contribution of an event $e_k \in \Eset $ to the global state via an embedding $\Psi :\Eset \to \Talg $},%
 descriptionplural={An element $\E _k \in \Talg $ encoding the measurable contribution of an event $e_k \in \Eset $ to the global state via an embedding $\Psi :\Eset \to \Talg $},%
-symbol={\E _k},%
-symbolplural={\E _k},%
+symbol={$\E _k$},%
+symbolplural={$\E _k$},%
 user1={},%
 user2={},%
 user3={},%
@@ -194,15 +194,15 @@ parent={},%
 %
 }%
 
-\glsdefs@newdocentry{entanglementequivalence}%
+\glsdefs@newdocentry{uncorrelantequivalence}%
 {%
-name={entanglement equivalence},%
-sort={entanglementequivalence},%
+name={uncorrelant equivalence},%
+sort={uncorrelantequivalence},%
 type={main},%
-first={entanglement equivalence},%
-firstplural={entanglement equivalences},%
-text={entanglement equivalence},%
-plural={entanglement equivalences},%
+first={uncorrelant equivalence},%
+firstplural={uncorrelant equivalences},%
+text={uncorrelant equivalence},%
+plural={uncorrelant equivalences},%
 description={An equivalence relation between event tensors or ordered lists that differ only by permutations within commutative subsets preserving all cyclic scalar invariants such as traces of contractions},%
 descriptionplural={An equivalence relation between event tensors or ordered lists that differ only by permutations within commutative subsets preserving all cyclic scalar invariants such as traces of contractions},%
 symbol={\relax },%
@@ -250,15 +250,15 @@ parent={},%
 %
 }%
 
-\glsdefs@newdocentry{entanglement}%
+\glsdefs@newdocentry{uncorrelant}%
 {%
-name={entanglement},%
-sort={entanglement},%
+name={uncorrelant},%
+sort={uncorrelant},%
 type={main},%
-first={entanglement},%
-firstplural={entanglements},%
-text={entanglement},%
-plural={entanglements},%
+first={uncorrelant},%
+firstplural={uncorrelants},%
+text={uncorrelant},%
+plural={uncorrelants},%
 description={A subset of event tensors whose reordering leaves all scalar invariants of the universe tensor unchanged},%
 descriptionplural={A subset of event tensors whose reordering leaves all scalar invariants of the universe tensor unchanged},%
 symbol={\relax },%

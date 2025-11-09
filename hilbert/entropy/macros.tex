@@ -22,12 +22,41 @@
 % Entropy operator / functional
 \newcommand{\Entropy}{\mathcal{S}}
 \newcommand{\Blocks}[1]{\mathrm{Bl}(#1)}
-% Define an abstract environment for the book class
-\onehalfspacing
+
+% --- House style for N.B. callouts (inline, bold, em-dash) ---
+\newcommand{\NB}[1]{%
+  \par\noindent\textbf{N.B.---}#1\par
+  }
+
 
 \newlistof{lotexp}{tex}{List of Thought Experiments}
 \newcommand{\thoughtexp}[1]{%
   \refstepcounter{lotexp}%
   \par\noindent\textbf{Thought Experiment~\thelotexp. #1}\addcontentsline{tex}{lotexp}{\protect\numberline{\thelotexp}#1}\par
 }
+
+\newcommand{\addfiletotoc}[1]{%
+\addcontentsline{toc}{section}{#1}%
+}
+
+% Proof (Sketch) environment
+\newcommand{\psklabel}{}
+\newenvironment{proofsketch}[1]{%
+  \renewcommand{\psklabel}{#1}%
+  \begin{proof}[Proof (Sketch)]%
+}{%
+  \end{proof}%
+  \medskip
+  \noindent\textit{A full proof is provided in Appendix~\ref{app:\psklabel}.}%
+}
+
+
+
+\newenvironment{coda}[1]{
+  \section*{Coda: #1}
+  \addcontentsline{toc}{section}{Coda: #1}
+}{
+}
+
+\hyphenation{treat-ed}
 

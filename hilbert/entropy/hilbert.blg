@@ -2,7 +2,10 @@ This is BibTeX, Version 0.99d (TeX Live 2023)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: hilbert.aux
 A level-1 auxiliary file: front/abstract.aux
-A level-1 auxiliary file: front/front.aux
+A level-1 auxiliary file: front/toc.aux
+A level-1 auxiliary file: front/roadmap.aux
+A level-1 auxiliary file: front/nb.aux
+A level-1 auxiliary file: front/harm.aux
 A level-1 auxiliary file: chapters/one.aux
 A level-1 auxiliary file: chapters/two.aux
 A level-1 auxiliary file: chapters/three.aux
@@ -10,56 +13,58 @@ A level-1 auxiliary file: chapters/four.aux
 A level-1 auxiliary file: chapters/five.aux
 A level-1 auxiliary file: chapters/six.aux
 A level-1 auxiliary file: chapters/seven.aux
+A level-1 auxiliary file: appendix/proofs.aux
 The style file: plain.bst
 Database file #1: hilbert.bib
-Warning--I didn't find a database entry for "smoluchowski1906"
-Warning--I didn't find a database entry for "bohr1928"
-Warning--I didn't find a database entry for "heisenberg1927"
-Warning--I didn't find a database entry for "misner1973"
-Warning--I didn't find a database entry for "finkelstein1988"
+Warning--entry type for "yoshida1980" isn't style-file defined
+--line 1630 of file hilbert.bib
+Warning--entry type for "warner1902" isn't style-file defined
+--line 1638 of file hilbert.bib
 Warning--empty publisher in boltzmann1872
 Warning--empty publisher in cantor1895
 Warning--empty publisher in jaynes1957
+Warning--empty publisher in ockham1323
+Warning--empty publisher in riemann1854
 Warning--empty publisher in weyl1929
-You've used 107 entries,
+You've used 104 entries,
             2118 wiz_defined-function locations,
-            1080 strings with 16617 characters,
-and the built_in function-call counts, 29348 in all, are:
-= -- 2943
-> -- 961
-< -- 15
-+ -- 414
-- -- 285
-* -- 1687
-:= -- 4971
-add.period$ -- 350
-call.type$ -- 107
-change.case$ -- 420
+            1087 strings with 16393 characters,
+and the built_in function-call counts, 28882 in all, are:
+= -- 2911
+> -- 922
+< -- 14
++ -- 399
+- -- 273
+* -- 1711
+:= -- 4861
+add.period$ -- 338
+call.type$ -- 104
+change.case$ -- 408
 chr.to.int$ -- 0
-cite$ -- 111
-duplicate$ -- 1319
-empty$ -- 2643
-format.name$ -- 285
-if$ -- 6212
+cite$ -- 110
+duplicate$ -- 1262
+empty$ -- 2602
+format.name$ -- 273
+if$ -- 6085
 int.to.chr$ -- 0
-int.to.str$ -- 107
-missing$ -- 165
-newline$ -- 560
-num.names$ -- 220
-pop$ -- 553
+int.to.str$ -- 104
+missing$ -- 149
+newline$ -- 544
+num.names$ -- 214
+pop$ -- 517
 preamble$ -- 1
-purify$ -- 354
+purify$ -- 342
 quote$ -- 0
-skip$ -- 791
+skip$ -- 776
 stack$ -- 0
-substring$ -- 1713
-swap$ -- 178
-text.length$ -- 15
+substring$ -- 1845
+swap$ -- 171
+text.length$ -- 14
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 312
-warning$ -- 4
-while$ -- 311
-width$ -- 110
-write$ -- 1231
-(There were 9 warnings)
+type$ -- 322
+warning$ -- 6
+while$ -- 321
+width$ -- 107
+write$ -- 1176
+(There were 8 warnings)
