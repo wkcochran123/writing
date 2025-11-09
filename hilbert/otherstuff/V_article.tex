@@ -1,0 +1,132 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{setspace}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{enumitem}
+\onehalfspacing
+
+% --- Rosetta Layer (contracts & shared symbols) ---
+\input{V_macros.tex}
+
+% --- Minimal theorem setup (kept very light) ---
+\newtheorem{proposition}{Proposition}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+\newtheorem{example}{Example}
+
+\title{\textbf{Interpreting the Causal Closure Chain}\\
+\large From Kinematic Minimality \texorpdfstring{\StrongForm}{U^{(4)}=0} to Conservation \texorpdfstring{\ConcludeDivT}{div T=0} and Order \texorpdfstring{\GOneStatement}{\Delta S \ge 0}}
+\author{Interpretive Synthesis (V-layer)}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This article narrates the closure chain using the \textbf{V} handles:
+\(\StrongForm \rightarrow \ConcludeDivT \rightarrow \GOneStatement\),
+with discrete--continuum reciprocity and statistical invariants (\(\GFourDPI\), \(\GFourScoreZero\)) providing the guardrails. It also shows the computational rail (\(\NewtonStep\), \(\KrylovStep\)) that makes the argument numerically tractable.
+\end{abstract}
+
+\tableofcontents
+\bigskip\hrule\bigskip
+
+% =========================================================
+\section{The Arc at a Glance}
+The causal closure chain is a single dependency path:
+\[
+  \StrongForm \quad \Longrightarrow \quad \ConcludeDivT \quad \Longrightarrow \quad \GOneStatement.
+\]
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{G2 (Kinematics).} Minimal informational curvature selects \(\StrongForm\), equivalently expressed as the weak reciprocity law \(\WeakForm\).
+  \item \textbf{G4 (Noether Bridge).} Stationarity under symmetry \(\Xi\) yields conserved currents via
+  \(\StressEnergy \leftarrow \NoetherTensor{L}{\U}{\Xi}\), hence \(\ConcludeDivT\).
+  \item \textbf{G1 (Order).} Conserved structure constrains admissible refinements, enforcing \(\GOneStatement\).
+\end{itemize}
+
+% =========================================================
+\section{Kinematics and Reciprocity (G2)}
+\label{sec:g2}
+The kinematic closure is captured by the strong condition \(\StrongForm\), which is equivalent to the weak reciprocity form \(\WeakForm\). The bilinear form \(\Bform\) encodes the pairing between \(\U\) and test variations \(\Phi\in\Test\).
+
+\paragraph{Well-posedness and physical meaning.}
+\InterpCoercivityToStability
+
+\begin{remark}[Kernel and boundary information]
+\InterpKernelSignificance
+\end{remark}
+
+% =========================================================
+\section{Noether Bridge to Conservation (G4)}
+\label{sec:g4}
+When a local density \(L\) is invariant under a continuous symmetry \(\Xi\), the Noether construction produces a conserved current. In index-free form we write
+\[
+  \StressEnergy \;\leftarrow\; \NoetherTensor{L}{\U}{\Xi}
+  \qquad\Longrightarrow\qquad
+  \ConcludeDivT.
+\]
+This is the global bookkeeping constraint: change is organized so that total flow remains consistent with the symmetry.
+
+% =========================================================
+\section{Thermodynamic and Statistical Closure (G1/G5)}
+\label{sec:g15}
+Conservation constrains admissible causal refinements, yielding the order monotonicity law:
+\[
+  \GOneStatement.
+\]
+On the statistical side, admissible coarse-grainings cannot create new distinctions and truthful inference remains unbiased:
+\[
+  \GFourDPI \qquad \text{and} \qquad \GFourScoreZero.
+\]
+\InterpDPIThermo
+
+% =========================================================
+\section{Discrete--Continuum Reciprocity (G3)}
+\label{sec:g3}
+The discrete operators \(\DeltaTwoh\) and \(\DeltaFourh\) approximate their smooth counterparts, and with discrete coercivity the scheme converges to the continuum closure. 
+\InterpDiscToContStability
+
+\begin{example}[Reading reciprocity]
+Consistency of the discrete bilinear form \(\Bformh\) with \(\Bform\) ensures that solving the discrete weak problem yields, in the limit \(\mesh\to 0\), a solution approaching the smooth \(\U\) that satisfies \(\WeakForm\) and hence \(\StrongForm\).
+\end{example}
+
+% =========================================================
+\section{Computation: The Newton--Krylov Rail}
+\label{sec:compute}
+We solve the closure as a root-finding problem with residual \(\Rfunc\) and Jacobian \(\Jfunc\):
+\[
+  \NewtonStep \qquad\text{with}\qquad \delta\U \leftarrow \KrylovStep.
+\]
+A practical schematic combines Newton linearization with multigrid-preconditioned Krylov iterations:
+\[
+  \NKRail.
+\]
+Here \(\KIter\) and \(\KTol\) are iteration and tolerance knobs; \(\MGVcycle\) indicates a V-cycle preconditioner.
+
+% =========================================================
+\section{A Tiny Closure Proposition}
+\begin{proposition}[Chain soundness, index-free]
+If \(\WeakForm\) holds for all \(\Phi\in\Test\) and boundary information removes the kernel, then \(\StrongForm\) follows. If \(L\) is invariant under \(\Xi\), then \(\ConcludeDivT\). Under admissible causal refinement, distinguishability cannot decrease, hence \(\GOneStatement\).
+\end{proposition}
+
+\begin{remark}[How to extend]
+To specialize, pick a concrete \(L\), a symmetry \(\Xi\) (e.g.\ translation), and a discrete family \((\DeltaTwoh,\DeltaFourh,\Bformh)\) with stability. The narrative above remains unchanged; only the concrete instantiation changes.
+\end{remark}
+
+% =========================================================
+\section*{V-Layer Checklist (live doc)}
+\begin{itemize}[leftmargin=2em]
+  \item Uses core handles: \(\StrongForm\), \(\WeakForm\), \(\ConcludeDivT\), \(\GOneStatement\).
+  \item Employs reciprocity and kernel interpretation: \(\InterpCoercivityToStability\), \(\InterpKernelSignificance\).
+  \item Shows the Newton/Krylov rail: \(\NewtonStep\), \(\KrylovStep\), \(\NKRail\).
+  \item Respects discrete--continuum reciprocity: \(\InterpDiscToContStability\).
+  \item Title is \texttt{\string\texorpdfstring}-safe; no packages required by this file beyond standard.
+\end{itemize}
+
+\end{document}

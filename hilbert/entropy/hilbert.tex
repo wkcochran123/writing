@@ -1,0 +1,63 @@
+\documentclass[12pt,oneside]{book}
+\usepackage{amsthm,amssymb,amsmath,mathtools,setspace,thmtools,titling,tocloft}
+\usepackage[nogroupskip,nonumberlist]{glossaries}
+\makeglossaries
+
+\include{macros}
+
+% Title info
+\title{A Set of Measurement Conditions Sufficient for $\Delta S \ge 0$}
+\author{Bill Cochran\\wkcochran@gmail.com}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+\vspace*{2em}
+\begin{center}
+\vspace*{2em}
+\textit{To Peano, who taught us how to count.}\\[0.4em]
+\textit{To Boltzmann, who first counted what could be distinguished.}\\[0.4em]
+\textit{To Planck, who taught us that the count is finite.}\\[0.4em]
+\textit{To Cantor, who showed us how to count the infinite.}\\[0.4em]
+\textit{To Kolmogorov, who showed us that information must be counted to be measured.}\\[0.4em]
+\textit{To William of Ockham, who insisted that we only count what is necessary.}
+\vspace*{6em}
+\begin{quote}
+``Je les possède, parce que jamais personne avant moi n’a songé à les posséder.''\\
+``Moi, je suis un homme sérieux. Je suis exact. J’aime que l’on soit exact.''\\
+\hfill---Antoine de Saint--Exup\'ery, \textit{Le Petit Prince} (1943)
+\end{quote}
+\end{center}
+
+\vspace*{2em}
+\end{center}
+
+\newpage
+\frontmatter
+\onehalfspacing
+\include{front/abstract}
+\include{front/toc}
+\include{front/roadmap}
+\include{front/nb}
+\include{front/harm}
+
+\mainmatter
+\include{chapters/one}
+\include{chapters/two}
+\include{chapters/three}
+\include{chapters/four}
+\include{chapters/five}
+\include{chapters/six}
+\include{chapters/seven}
+\backmatter
+\include{appendix/proofs}
+
+\addcontentsline{toc}{chapter}{Glossary of Definitions and Axioms}
+\printglossary
+
+\bibliographystyle{plain}   % or abbrv, alpha, unsrt, etc.
+\bibliography{hilbert}   % where references.bib is your BibTeX file
+\end{document}

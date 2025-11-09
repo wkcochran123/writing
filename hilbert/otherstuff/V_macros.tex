@@ -1,0 +1,75 @@
+% ================================================================
+% V_macros.tex — Rosetta Layer (pure shim, safe to \input anywhere)
+% Minimal, guarded symbol table + contracts used by P_clean, V_article, G*S.
+% ================================================================
+
+% ---------- Core symbols (guarded) ----------
+\providecommand{\U}{\mathbf{U}}                 % field / admissible history
+\providecommand{\V}{\mathbf{V}}                 % test / variation
+\providecommand{\ph}{\varphi}                   % test function alias
+\providecommand{\Test}{\mathcal{V}}             % test space (abstract)
+\providecommand{\Hspace}{\mathcal{H}}           % Hilbert space (abstract)
+\providecommand{\grad}{\nabla}                  % gradient
+\providecommand{\Domain}{\Omega}                % domain
+\providecommand{\C}{\mathcal{C}}                % causal class
+\providecommand{\Xi}{\boldsymbol{\xi}}          % symmetry generator (abstract)
+
+% ---------- Operators & helpers ----------
+\providecommand{\ip}[2]{\left\langle #1,\, #2 \right\rangle}
+\providecommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\providecommand{\Acal}{\mathcal{A}}             % action-like functional
+\providecommand{\Bform}{\mathsf{B}}             % bilinear pairing (weak form)
+\providecommand{\Bformh}{\mathsf{B}_{\!h}}      % discrete bilinear pairing
+\providecommand{\E}{\mathbb{E}}                 % expectation
+\providecommand{\Score}{\mathcal{S}}            % score (stats)
+\providecommand{\KL}[2]{\mathsf{D}_{\mathrm{KL}}\!\left(#1\,\Vert\,#2\right)}
+\providecommand{\Div}[1]{\operatorname{div}\!\left(#1\right)} % index-free divergence
+
+% ---------- Entropy & thermodynamics ----------
+\providecommand{\kB}{k_{\mathrm{B}}}
+\providecommand{\EntropySymbol}{\mathrm{S}}
+\providecommand{\Entropy}[1][]{\ensuremath{\EntropySymbol_{\!#1}}}
+
+% ---------- Derivative shorthands ----------
+\providecommand{\DTwo}{\U''}
+\providecommand{\DFour}{\U^{(4)}}
+
+% ---------- Discrete shorthands ----------
+\providecommand{\Uh}{\U_{h}}
+\providecommand{\mesh}{\mathsf{h}}
+\providecommand{\DeltaTwoh}{\Delta^{(2)}_{\!h}}
+\providecommand{\DeltaFourh}{\Delta^{(4)}_{\!h}}
+\providecommand{\Sh}{\mathcal{S}_{\!h}}         % discrete space (optional)
+
+% ---------- Noether / conservation layer ----------
+\providecommand{\Current}{\mathbf{J}}           % conserved current
+\providecommand{\StressEnergy}{\mathbf{T}}      % stress–energy (abstract)
+\providecommand{\Lcal}{\mathcal{L}}             % Lagrangian density
+\providecommand{\Scal}{\mathcal{S}}             % action
+
+% ---------- Statistical invariants & residual ----------
+\providecommand{\Invariant}[1]{\mathsf{Inv}\!\left(#1\right)}
+\providecommand{\Res}{\mathcal{R}}
+
+% ---------- Newton / numerics handles ----------
+\providecommand{\Rfunc}{\mathsf{R}}
+\providecommand{\Jfunc}{\mathsf{J}}
+\providecommand{\MGVcycle}{\mathsf{V\!-\!cycle}}
+\providecommand{\Krylov}[2][]{\mathsf{Krylov}\!\left(#2\right)}
+
+% ---------- Named statement "contracts" ----------
+\providecommand{\GOneStatement}{\ensuremath{\Delta\,\Entropy \ge 0}}
+\providecommand{\GTwoStatement}{\ensuremath{\DFour = 0}}
+\providecommand{\GTwoWeakForm}{\ensuremath{\Bform(\U,\ph)=0\quad\forall\,\ph\in\Test}}
+\providecommand{\GThreeStatement}{\ensuremath{\text{Discrete–continuum reciprocity via }\Bform}}
+
+% DPI & score-zero contracts used in P_clean’s statistical seed
+\providecommand{\GFourDPI}{\ensuremath{\text{KL is non\mbox{-}increasing under coarse\mbox{-}graining}}}
+\providecommand{\GFourScoreZero}{\ensuremath{\E[\Score]=0}}
+
+% Micro-handles used by P_clean/V_article
+\providecommand{\WeakForm}{\ensuremath{\Bform(\U,\ph)=0\ \forall\,\ph\in\Test}}
+\providecommand{\StrongForm}{\ensuremath{\DFour=0}}
+\providecommand{\ConcludeDivT}{\ensuremath{\Div{\StressEnergy}=0}}
+
+% --- End V_macros.tex ---
