@@ -1,7 +1,0 @@
-# latexmk configuration (kept minimal)
-$pdf_mode = 1;           # pdflatex
-$interaction = 'nonstopmode';
-$preview_continuous_mode = 1;
-# Uncomment to use lualatex or xelatex instead:
-# $pdflatex = 'lualatex %O %S';
-# $pdflatex = 'xelatex %O %S';
