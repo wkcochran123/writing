@@ -1,334 +1,594 @@
-\chapter{The Residue of Inconsistency}
-\label{chap:residue}
+\chapter{The Kinematics of Light}
+\label{chap:kinematics-of-light}
 
-The gauge of light completes the classical description of the universe: it
-ensures that causal order is preserved at the limit of distinguishability.
-But the universe we observe is not smooth.  Measurements are discrete,
-events occur finitely, and the invariants of the causal gauge fluctuate
-around their ideal values.  These fluctuations are not errors—they are the
-quantum fields of the theory.
+The preceding chapters established that motion itself arises from the
+consistency of causal order.  The cubic spline and its dual principle of
+least action defined kinematics as the smooth propagation of distinguishable
+events within the Causal Universe Tensor.  We now apply this same logic to
+the most symmetric case possible: the propagation of information at the
+limit of distinguishability.  In that limit, the kinematics of the universe
+\emph{is} the kinematics of light.
 
-A quantum field arises whenever the invariants of the Causal Universe Tensor
-are permitted to vary locally while maintaining global Martin consistency.
-Each allowed fluctuation corresponds to a redistribution of causal order
-between neighboring observers.  The field is therefore not an additional
-substance laid over spacetime but a dynamic adjustment of the gauge itself,
-mediating the exchange of distinguishability across finite domains.
+Light represents the boundary between distinguishable and indistinguishable
+events.  Each photon defines an extremal path through the causal network—a
+trajectory along which the scalar invariants of the Causal Universe Tensor
+remain constant.  Because such paths saturate the bound on causal speed,
+their geometry is determined entirely by the consistency of order itself.
+Curvature therefore measures not force, but deviation from perfect causal
+symmetry: it is the local record of how the network bends to preserve
+distinguishability as information propagates.
 
-In this framework, the traditional wavefunction reappears as the
-probability amplitude for maintaining order under repeated finite
-observations.  Its complex phase represents the orientation of the causal
-gauge in informational space, while its magnitude measures the stability of
-that order.  The principle of superposition follows directly from the
-linearity of causal combinations: multiple consistent histories can coexist
-until observation resolves a single extension of the network.
+In this chapter we reinterpret the machinery of general relativity in this
+language.  The metric tensor $g_{\mu\nu}$ appears as the continuous shadow of
+pairwise event separations; the connection coefficients $\Gamma^\lambda_{\mu\nu}$
+encode how those separations adjust to maintain Martin consistency across
+overlapping causal neighborhoods.  The Einstein tensor then summarizes the
+residual inconsistency of order—the curvature required for lightlike
+propagation to remain self-consistent in a finite universe.
 
-Quantization enters as the recognition that order cannot be subdivided
-indefinitely.  Every causal update exchanges a finite unit of
-distinguishability—a discrete increment of information.  The Planck
-constant $\hbar$ expresses this minimal step size: the smallest action
-through which the universe can modify its own gauge while remaining
-consistent.  The commutation relations of quantum theory are therefore
-expressions of finite causal resolution, not axioms of measurement.
+Thus general relativity emerges here not as a theory of gravitational force,
+but as the \emph{kinematics of light}: the unique geometry in which the
+scalar invariants of the Causal Universe Tensor remain stationary along all
+null directions.  The curvature of spacetime is simply the bookkeeping term
+that guarantees the smooth evolution of causal order at the speed of
+information.  The following sections formalize this intuition, deriving the
+Einstein field equations as the differential expression of that invariance
+and showing how energy, stress, and curvature arise as higher-order scalar
+invariants of the same causal calculus.
 
-This chapter develops these ideas systematically.  Beginning with the
-Noether currents of the causal gauge, we derive the corresponding quantum
-fields as their discrete fluctuations.  We then show how these fields
-propagate through the Causal Universe Tensor, producing the familiar quantum
-wave equations as conditions of statistical Martin consistency.  Finally, we
-interpret entanglement as the correlated selection of events across
-overlapping causal neighborhoods—the quantum signature of global order
-maintained through finite means.
+\subsection{Consequences and Outlook}
+\label{subsec:consequences-outlook}
+
+At this point, nothing unfamiliar has been assumed.  Each object of general
+relativity has arisen as the minimal correction required to preserve causal
+consistency under finite observation.  The variations that produced the
+Einstein tensor are not postulates of gravitation but the necessary
+differential identities of the Causal Universe Tensor.  Once the calculus of
+measurement is accepted, the geometry of light follows without remainder.
+
+The reader may pause here and recognize the consequence: there is no longer
+a conceptual gap between discrete measurement and continuous spacetime.
+Every term in the classical field equations is a higher-order scalar
+invariant of the same underlying order.  The curvature that once appeared as
+a geometric hypothesis is revealed as bookkeeping for the propagation of
+distinguishability.  There is, so far as the argument stands, no reason it
+should not work.
+
+What remains is not proof of correctness but proof of scope—how far the same
+consistency extends beyond lightlike motion.  The next chapter therefore
+turns from the kinematics of light to the dynamics of matter, asking how the
+gauge of causal order constrains systems that deviate from the null limit.
+
+\subsection{Arc of the Proof}
+\label{subsec:arc-of-proof}
+
+The goal of this chapter is to show that the geometry of spacetime arises
+as the unique gauge condition under which lightlike propagation remains
+Martin-consistent.  The proof proceeds in four stages.
+
+\paragraph{1. Construction of the metric as a gauge of separation.}
+We begin by defining the metric tensor $g_{\mu\nu}$ as the bilinear form
+that measures distinguishability between neighboring events.  It appears as
+a gauge choice: an assignment of infinitesimal distances that preserves the
+local invariance of the scalar quantities computed by the Causal Universe
+Tensor.  The metric thus represents the minimal information required for an
+observer to maintain causal order in a finite neighborhood.
+
+\paragraph{2. Connection as the rule of causal transport.}
+Next we introduce the connection $\Gamma^{\lambda}_{\mu\nu}$ as the operator
+that preserves these scalar invariants under parallel transport of
+distinguishable events.  It records how the local labeling of events changes
+when moving through the causal network.  The vanishing of the covariant
+derivative $\nabla_\mu T^{\mu\nu}=0$ expresses Martin consistency in this
+differential form: order is preserved under transport.
+
+\paragraph{3. Curvature as the residue of inconsistency.}
+Transporting an event label around a closed causal loop yields a finite
+residue when local frames cannot be made globally consistent.  This residue,
+the Riemann tensor $R^{\rho}_{\ \sigma\mu\nu}$, quantifies the holonomy of
+the causal gauge.  Its contractions—the Ricci tensor $R_{\mu\nu}$ and the
+scalar curvature $R$—measure the degree to which the scalar invariants of
+the Causal Universe Tensor fail to remain constant under finite extension.
+
+\paragraph{4. Einstein equation as the constraint of global consistency.}
+Finally we impose that the total scalar invariant of order, represented by
+the Einstein tensor $G_{\mu\nu}=R_{\mu\nu}-\tfrac{1}{2}Rg_{\mu\nu}$, balances
+the energy–momentum content encoded in the lower-order invariants of the
+Causal Universe Tensor:
+\[
+G_{\mu\nu} = 8\pi T_{\mu\nu}.
+\]
+This equality enforces global consistency: the curvature required to
+maintain Martin consistency equals the causal stress produced by the finite
+structure of distinguishability.  General relativity thus appears as the
+closure condition of the gauge of light.
 
 \begin{remark}
-Classical physics ends where the gauge of light closes; quantum physics
-begins where it wavers.  Every quantum field is a small deviation from
-perfect causal consistency, a harmonic of order itself.  The task of this
-chapter is to make that statement precise.
+In summary, the arc of this proof mirrors the logic of the entire work.
+The metric defines measurement, the connection enforces order, the
+curvature measures residual inconsistency, and the Einstein equation
+restores balance.  Each level is a higher-order invariant of the same causal
+calculus.  Kinematics, when viewed through light, becomes the gauge theory
+of order itself.
+\end{remark}
+
+\subsection{Defining Entropy}
+
+\begin{definition}[Entropy]
+Let $\mathcal{C}$ denote the causal set of distinguishable events accessible to an observer, and let $\Omega(\mathcal{C})$ be the set of all admissible micro–orderings of those events consistent with the Reciprocity Law.  
+The \emph{entropy} associated with $\mathcal{C}$ is the logarithm of this count:
+\[
+S[\mathcal{C}] = k_{\mathrm{B}} \ln |\Omega(\mathcal{C})|.
+\]
+Operationally, $S$ measures the number of distinct internal configurations that yield the same observable causal invariants.  
+In the continuum limit, variations in $S$ appear as gradients of informational curvature; coupling this quantity to the stress tensor defines the entropic contribution to spacetime geometry.
+\end{definition}
+
+\begin{remark}
+Entropy in this framework is not a measure of disorder but of indistinguishability: 
+it quantifies how many discrete causal configurations correspond to the same continuous geometry.
+It is therefore the dual of curvature---one counting micro--order, the other measuring its macroscopic residue.
 \end{remark}
 
 
-	\section{The Residue of Inconsistency}
-	\label{sec:residue-inconsistency}
 
-	No rule of transport can remain globally consistent on a finite causal
-	network.  When one carries a distinction around a closed loop of events,
-	the recovered configuration generally differs from the initial one.  This
-	difference is not an error but an invariant: the measurable residue of
-	inconsistency required to preserve local order within a global whole.  In
-	differential form, that residue is called curvature.
+\section{Metric as a Gauge of Separation}
+\label{sec:metric-gauge}
 
-	\subsection{Curvature as the Measure of Non-Closure}
+The metric tensor arises naturally once the act of distinguishing events is
+viewed as a gauge freedom.  Every observer maintains a local convention for
+labeling distinguishable events; what we call a \emph{distance} is merely the
+scalar quantity that remains invariant when those local conventions are
+changed.  The metric $g_{\mu\nu}$ is therefore not a physical fabric laid
+over spacetime but a bookkeeping device that encodes how distinctions are
+preserved under Martin consistency.
 
-	The connection $\Gamma^{\lambda}_{\ \mu\nu}$ prescribes how distinctions are
-	transported to preserve scalar invariants locally.  When the same
-	distinction is transported successively along different paths that enclose
-	a finite region, the final result may depend on the path taken.  The
-	difference between the two results defines the Riemann curvature tensor:
-	\[
-	R^{\rho}_{\ \sigma\mu\nu}
-	  = \partial_{\mu}\Gamma^{\rho}_{\ \sigma\nu}
-	  - \partial_{\nu}\Gamma^{\rho}_{\ \sigma\mu}
-	  + \Gamma^{\rho}_{\ \lambda\mu}\Gamma^{\lambda}_{\ \sigma\nu}
-	  - \Gamma^{\rho}_{\ \lambda\nu}\Gamma^{\lambda}_{\ \sigma\mu}.
-	\]
-	This object measures the infinitesimal failure of causal transport to
-	commute.  When $R^{\rho}_{\ \sigma\mu\nu}=0$, all paths yield the same
-	result and the causal network is globally flat; when it does not vanish,
-	the inconsistency cannot be removed by any gauge transformation.
+\subsection{From Distinction to Distance}
 
-% Placement: Part V (your §5.1 “The Residue of Inconsistency”), immediately after §5.1.1–§5.1.2
-\subsubsection*{Example: Casimir Effect as Measured Residue of Non-Closure}
+\subsection{Axiomatic Necessity}
 
-\textbf{Statement.} Boundary-induced mode restriction yields a measurable scalar from the residue of non-closure: the Casimir pressure.
-
-\textbf{Key relation (ideal plates, separation $a$).}
+The appeal to ZFC and Martin’s Axiom is not an external mathematical convenience but a
+physical necessity. Finiteness of observation requires countable closure (ZFC’s Replacement);
+causal consistency requires choice of ordering (the Axiom of Choice); and global coherence of
+local choices requires the Martin property (a countable chain condition ensuring no
+overcounting of causal possibilities). Thus each axiom corresponds to a measurable physical
+principle:
 \[
-P \;=\; -\,\frac{\pi^2}{240}\,\frac{\hbar c}{a^4}.
+\text{Finiteness} \leftrightarrow \mathrm{ZFC}, \qquad
+\text{Consistency} \leftrightarrow \mathrm{Martin}, \qquad
+\text{Reversibility} \leftrightarrow \mathrm{Choice}.
 \]
-\textbf{Reciprocity framing.} Plates impose selection on admissible causal updates (mode partitions). The contraction of the Universe Tensor over admissible modes produces a nonzero scalar residue—the pressure—interpretable as curvature from informational incompleteness.
+Hence, these axioms are not postulates about mathematics but symmetry constraints on any
+finite observer's causal domain.
 
-\textbf{Operational consequence.} Moving a plate changes the equivalence class (refines the partition), and the derivative of the class invariant yields a force, closing the loop between geometry and matter.
-
-	\subsection{Physical Interpretation}
-
-	In the context of the Causal Universe Tensor, curvature represents the
-	minimal informational adjustment required for the propagation of
-	distinguishability in a finite universe.  Each nonzero component of
-	$R^{\rho}_{\ \sigma\mu\nu}$ quantifies how much the local gauge of
-	separation must bend to remain self-consistent when extended around a
-	closed causal loop.  Curvature is thus the differential trace of the
-	universe correcting itself: the physical manifestation of the fact that
-	perfect global order is impossible, even though local order is preserved.
-
-	\subsection{Contractions and Scalar Invariants}
-
-	Contracting the curvature tensor yields quantities that summarize this
-	residual inconsistency at successively coarser levels.  The Ricci tensor
-	\[
-	R_{\mu\nu} = R^{\rho}_{\ \mu\rho\nu}
-	\]
-	measures the local divergence of geodesic families—the rate at which
-	neighboring causal paths converge or spread.  The scalar curvature
-	\[
-	R = g^{\mu\nu} R_{\mu\nu}
-	\]
-	compresses all such deviations into a single invariant of the causal gauge.
-	These contractions represent higher-order scalar invariants of the Causal
-	Universe Tensor, extending the chain of conserved quantities that began with
-	the spline and the principle of least action.
-
-	\subsection{The Meaning of Curvature in the Causal Framework}
-
-	Traditional geometry interprets curvature as a property of space.  Here it
-	is a property of information: a measure of how the network of
-	distinguishable events must deform to reconcile finite observation with
-	global consistency.  Flatness corresponds to exact commutativity of causal
-	updates; curvature, to their minimal non-commutativity.  The universe’s
-	curvature is therefore the bookkeeping of necessary inconsistency—the trace
-	left by causal order maintaining itself through finite means.
-
-	\begin{remark}
-	Curvature is the residue of inconsistency.  It is what remains when the
-	rule of causal transport cannot close perfectly, the irreducible difference
-	between local and global consistency.  In the language of the Causal
-	Universe Tensor, curvature represents the self-correcting property of the
-	universe: the differential response by which causal order preserves itself
-	in time.  The next section will show that this residue, when balanced
-	against the stress encoded in the tensor $T_{\mu\nu}$, yields the Einstein
-	equation—the equilibrium condition of the gauge of light.
-	\end{remark}
-
-\begin{example}[Extrapolation: Rotation Curves as Order-Preserving Transport]
-\textbf{N.B.} This is a conceptual extrapolation about \emph{measurement and causal bookkeeping}, not an astrophysical claim.  It illustrates how a curvature term may arise as the minimal correction that preserves an informational invariant under geometric dilution.  No inference about galaxies, dark matter, or dynamics is intended \cite{boltzmann1872, planck1901, cantor1895, wheeler1983, misner1973, jaynes1957}.
-
-\emph{Setup.}  Imagine a discrete causal disk partitioned into annuli $\{A_r\}$, each containing a locally finite set of events.  
-A predicate $P$ counts the distinguishable crossings of a reference ray within each annulus.  
-For two anchors $a \prec b$, define the measurement
+Let each infinitesimal event displacement be represented by the differential
+$dx^\mu$, denoting the local coordinates an observer assigns to successive
+measurements.  Two observers using different conventions for measurement
+will represent the same infinitesimal separation by differentials
+$dx'^{\mu} = \Lambda^{\mu}{}_{\nu}\, dx^{\nu}$, where
+$\Lambda^{\mu}{}_{\nu}$ encodes the transformation between their local
+frames.  To preserve the scalar invariants computed by the Causal Universe
+Tensor, we require that the inner product of these displacements remain
+unchanged:
 \[
-M_P[r;a,b] := \#\{\,e \in A_r \mid a \prec e \prec b,\, P(e)=1\,\}.
+ds^2 = g_{\mu\nu}\, dx^{\mu}\, dx^{\nu}
+      = g'_{\mu\nu}\, dx'^{\mu}\, dx'^{\nu}.
 \]
-Order-preserving advection (as in §3.6) requires that counts move without creation or loss: transport is conservative \cite{bombelli1987, finkelstein1988}.
+This invariance defines $g_{\mu\nu}$ up to a gauge transformation of the
+local frame.  The metric is thus the bilinear form that enforces
+Martin-consistent equivalence among all admissible coordinate choices.
 
-\begin{remark}[Observational Context: Vera Rubin and the Dark Matter Problem]
-The near-constant tangential velocities observed by Vera Rubin and W. Kent Ford (1970) in spiral galaxies revealed a striking departure from Newtonian expectations: orbital speed remained approximately flat with radius.  
-In this framework, that empirical fact is reinterpreted as an order-preserving transport condition rather than evidence for unseen mass.  
-The constancy of $v_\theta(r)$ follows from invariance in the count of distinguishable causal updates, not from an additional gravitational component.
-\end{remark}
+\subsection{The Metric as a Gauge Connection}
 
-
-\emph{Invariant to preserve.}  
-Let $\Phi(r)$ be the count per causal cycle,
+Under this interpretation, the metric field acts as the gauge potential of
+causal separation.  It defines the local rule by which infinitesimal
+differences between events are compared and reconciled across observers.
+If $T^{\mu\nu}$ denotes the Causal Universe Tensor, then maintaining the
+invariance of its scalar contractions,
 \[
-\Phi(r) = \frac{M_P[r;a,b]}{\text{cycles between } a \text{ and } b},
+\delta(g_{\mu\nu} T^{\mu\nu}) = 0,
 \]
-which serves as a flux of distinguishability.  Perfect bookkeeping demands $\partial_r \Phi(r)=0$.
+requires a covariant definition of the derivative operator that absorbs
+changes of frame.  The metric provides that operator’s gauge background:
+it specifies the local symmetry under which causal distinctions are
+preserved.
 
-\emph{Geometric tension.}  
-In a flat disk the circumference grows as $2\pi r$; if events are neutral parcels, their surface density falls as $1/r$.  
-Without correction, $\Phi(r)$ would decrease outward \cite{misner1973}.
+\begin{example}[Michelson--Morley as Gauge Isotropy of Causal Separation]
 
-\emph{Minimal fix.}  
-Introduce a compensating connection with curvature $K(r)$ such that
+\textbf{Statement.} The null fringe shift in the Michelson--Morley interferometer operationally enforces that the causal interval
 \[
-\partial_r\!\big(r\,\rho(r)\,v(r)\big)=0,
+ds^2 \;=\; -c^2 dt^2 + dx^2 + dy^2 + dz^2
 \]
-where $\rho(r)$ is the local count density and $v(r)$ the tangential update rate.  
-The least-bias (minimal-curvature) solution satisfying constant flux is
+is invariant under orthogonal transport of the measurement path, i.e.\ the gauge preserving reciprocity is isotropic.
+
+\textbf{Reciprocity framing.} Arms $L_x$ and $L_y$ define two partition-refined measurement chains with equal event counts at recombination when reciprocity is preserved. Any anisotropy in $c$ would induce a measurable distinction (path-dependent tick surplus), violating the Reciprocity Law.
+
+\textbf{Calculation sketch.} The phase difference is
 \[
-r\,\rho(r)\,v(r)=C \quad\Rightarrow\quad v(r)\approx \text{const.}
+\Delta\phi \;=\; \frac{2\pi}{\lambda}\,\Delta \ell_{\text{opt}}, \qquad 
+\Delta \ell_{\text{opt}} \equiv (n\,\ell)_x-(n\,\ell)_y.
 \]
-Thus a \emph{flat} tangential rate is the order-preserving closure of the bookkeeping rule \cite{jaynes1957, landauer1961}.
-
-\emph{Interpretation.}  
-Within this framework, a “flat rotation curve’’ is the informationally minimal configuration that maintains constant flux of distinguishable events as circumference grows.  
-The compensating $K(r)$ is simply the residue of non-closure that enforces causal consistency across radii \cite{wheeler1983, bombelli1987}.
-
-\emph{Scope.}  
-This extrapolation is purely formal.  It demonstrates how a constant tangential rate can emerge from an invariant-count condition, not how galaxies move.
+Empirically $\Delta\phi \approx 0$ over apparatus rotations, implying $\Delta \ell_{\text{opt}}=0$ and hence invariance of $ds^2$ under rotation of the apparatus frame. In our terms: the metric is the \emph{gauge of separation} that preserves the dual invariants of measurement and variation.
 \end{example}
 
-\section{Empirical Test: Normal Equations for Rotation Invariance}
-\label{sec:normal-eq-rotation}
+\begin{example}[Thought Experiment: The Shadow Puppet Theater and Gauge Selection]
+\textbf{N.B.} This experiment clarifies how the metric acts as a distinction gauge rather than a physical field.
 
-\textbf{N.B.} This section specifies a falsifiable data model for galaxy rotation curves derived from the
-order-preserving transport condition.  It implements the single-parameter limit implied by Chapter 2, where the calculus of measurement allows only one free constant to curve-fit any closed causal system.  The model therefore has a unique intercept but no tunable slope parameters.
+\emph{Setup.}  
+Project silhouettes of puppets (events) onto a wall (the Universe Tensor) using a lantern (causal order).  
+Tilting the lantern changes how separations appear on the wall—analogous to a gauge transformation.
 
-\paragraph{Invariant.}
-Order-preserving transport with constant flux of distinguishability implies
+\emph{Demonstration.}  
+When the wall is flat and illumination uniform, puppet overlaps map bijectively to coordinates.  
+Bend the wall or tilt the lantern: shadows distort, losing closure.  
+Only orientations preserving overlap correspond to admissible $g_{\mu\nu}$ selections.
+
+\emph{Interpretation.}  
+The metric is the rule ensuring that co- and contra-variant descriptions yield the same invariant shadow.  
+Parallel transport preserves distinguishability; distortion measures curvature—residue of inconsistency.
+\end{example}
+
+
+\subsection{Causal Interpretation}
+
+Physically, $g_{\mu\nu}$ encodes the rate at which the universe must
+``tilt'' its causal structure to maintain distinguishability at the limit of
+lightlike propagation.  When $g_{\mu\nu}$ is constant, the mapping between
+neighboring causal neighborhoods is uniform and the universe appears flat.
+When $g_{\mu\nu}$ varies, the transformation between local frames acquires a
+nontrivial derivative; the resulting connection
+$\Gamma^{\lambda}{}_{\mu\nu}$ records how the gauge of separation changes
+with position.
+
+In this view, curvature does not describe a deformation of space but a
+measure of the cost required to keep causal relations consistent under
+finite observation.  The metric therefore functions as the lowest-order
+field in a hierarchy of corrections that preserve the scalar invariants of
+the Causal Universe Tensor.  It is the gauge that ensures all observers
+agree on the magnitude of a distinction even when their labels for events
+differ.
+
+\begin{remark}
+To summarize: the metric is the gauge of separation.  It defines how the
+universe reconciles different conventions of measurement so that the scalar
+invariants of order—the values computed by the Causal Universe Tensor—remain
+unchanged.  Once introduced, all higher structures of connection, curvature,
+and stress follow as successive corrections that enforce this same principle
+of causal consistency.
+\end{remark}
+
+\begin{example}[Galileo's Free--Fall as the Flat--Space Limit of Causal Motion]
+In Galileo's experiment, two spheres of unequal mass are dropped from the
+same height and reach the ground simultaneously.  Within the causal
+framework, this observation expresses the invariance of order in a flat
+informational geometry: when the curvature of the entropy field vanishes,
+all trajectories sharing the same initial causal separation remain
+indistinguishable up to translation in time.
+
+Let the causal paths be $\gamma_1(t)$ and $\gamma_2(t)$, each governed by
 \[
-r\,\rho(r)\,v_\theta(r)=\Phi,\qquad \Phi>0\ \text{constant}.
+\frac{d^2 x}{dt^2} = g,
 \]
-Here $\rho(r)$ represents the local count density (a proxy for informational concentration) and $v_\theta(r)$ the observed tangential speed.
-
-\paragraph{Observables.}
-Let $I(r)$ denote surface brightness and $\kappa>0$ a proportionality linking brightness to count density, $\rho(r)\propto \kappa I(r)$.  
-Substituting gives the predicted profile
+where $g$ is constant.  Because the informational curvature
+$\nabla_i \nabla_j S$ is zero, the metric gauge $g_{ij}$ is uniform, and
+the Reciprocity Law preserves equality of causal intervals:
 \[
-v_\theta(r)=\frac{\Phi}{r\,\kappa\,I(r)}.
+\delta^2 x_1 = \delta^2 x_2.
 \]
-Taking logarithms produces a linear empirical relation:
+Hence both spheres follow identical causal updates regardless of mass.
+
+In this limit, the observer's partition $\mathcal{P}_n$ resolves all
+relevant distinctions—position, time, and acceleration—so the reciprocity
+mapping
 \[
-\underbrace{\log v_\theta(r)}_{y(r)}=\underbrace{\theta_0}_{\log\Phi-\log\kappa}-\log r-\log I(r)+\varepsilon(r),
+\Phi : V /{\sim_{\mathcal{P}_n}} \;\longleftrightarrow\;
+M /{\sim_{\mathcal{P}_n}}
 \]
-where $\mathbb{E}[\varepsilon(r)]=0$ under the invariant.
+is exact.  No refinement of the partition changes the outcome: the motion
+is deterministic.  Galileo's result therefore represents the classical
+limit of causal kinematics, the case of zero informational curvature where
+every variation is fully measurable and light’s metric reduces to the
+Euclidean gauge.
+\end{example}
 
-\paragraph{Normal equation (strict test).}
-Define $z_i:=\log r_i+\log I_i$ and $y_i:=\log v_i$.  
-The strict model is $y_i=\theta_0-z_i+\varepsilon_i$ with a fixed slope of $-1$ on both $\log r$ and $\log I$.  
-Only one constant, $\theta_0$, remains free in accordance with Chapter 2.  
-The ordinary-least-squares normal equation reduces to
+
+\begin{example}[Gravitational Lensing as Informational Curvature]
+When light passes near a massive object, its trajectory bends—not because
+space itself is a physical medium that deforms, but because the mapping that
+preserves causal order becomes nonuniform.  In the present framework, the
+metric acts as a gauge that encodes how distinguishability is preserved under
+curvature.  Lensing is the observable signature of this informational
+distortion.
+
+Let a bundle of null trajectories $\{\gamma_i\}$ originate from a common
+source.  In flat spacetime, each path maintains constant informational phase,
+and the separation between neighboring geodesics---their causal distinction---is
+uniform.  Introducing a local entropy gradient $S(x)$ modifies this gauge:
+the effective distance between successive events changes by
 \[
-\hat\theta_0=\frac{1}{n}\sum_{i=1}^n(y_i+z_i),
+\delta ds^2 \propto \nabla_i \nabla_j S,
 \]
-and falsification is assessed by testing for systematic structure in residuals
-$\hat\varepsilon_i=y_i-\hat\theta_0+z_i$.
-
-\paragraph{Relaxed model with curvature residue.}
-To capture permissible second-order deviations $K(r)$ due to geometric residue, extend to
+so that the extremal path satisfies
 \[
-y_i=\theta_0-z_i+\sum_{j=1}^mB_j(r_i)w_j+\varepsilon_i,
+\delta \!\int ds = 0 \quad \Longrightarrow \quad
+\frac{d^2 x^i}{d\lambda^2} + \Gamma^i_{jk}\frac{dx^j}{d\lambda}\frac{dx^k}{d\lambda} = 0,
 \]
-where $B_j$ are spline bases with penalty $\lambda\|Dw\|^2$.  
-The penalized normal equations are
+with $\Gamma^i_{jk}$ determined by the informational curvature $\partial_i
+\partial_j S$.  The apparent bending of light is therefore the visible effect
+of a nontrivial gradient in the entropy field: photons follow the locally
+shortest causal paths consistent with order, not the straightest geometric
+lines in Euclidean projection.
+
+Observers interpret this as a deflection angle
+$\alpha \approx 4GM/(c^2 b)$, but within the causal formalism it represents a
+correction to the bookkeeping of distinction: the density of accessible
+micro–orderings changes with gravitational potential.  Lensing thus measures
+how informational curvature couples to geometry---a macroscopic manifestation
+of the same reciprocity that defines the metric itself.
+\end{example}
+
+\begin{example}[The Three--Body Problem as Computational Reciprocity]
+Consider three point masses $m_1,m_2,m_3$ interacting gravitationally with
+positions $r_i(t)\in\mathbb{R}^3$.  Newtonian dynamics gives
 \[
-\begin{bmatrix}
-n & \mathbf{1}^\top B\\
-B^\top \mathbf{1} & B^\top B+\lambda D^\top D
-\end{bmatrix}
-\begin{bmatrix}
-\theta_0\\ w
-\end{bmatrix}
-=
-\begin{bmatrix}
-\sum_i(y_i+z_i)\\ B^\top(y+z)
-\end{bmatrix}.
+m_i\ddot r_i
+  \;=\; G\sum_{j\neq i} \frac{m_i m_j}{\|r_j-r_i\|^3}\,(r_j-r_i),
+  \qquad i=1,2,3.
 \]
-When $w=0$ the invariant holds exactly; significant $w$ indicates structured departure.
+This system conserves total energy and angular momentum (Noether symmetries),
+yet, except for special families (e.g.\ Euler and Lagrange configurations), it
+admits no closed-form solution.  In the present framework, this means the
+reciprocity map closes \emph{only computationally}: the admissible update that
+preserves order and invariants exists, but it must be realized by an iterative,
+order-preserving scheme.
 
-\paragraph{Population form.}
-Across galaxies $g$, intercepts $\theta_{0,g}$ vary but slopes remain fixed:
+\begin{remark}[Historical Context: Noether Symmetry and Reciprocity]
+Emmy Noether’s theorem (1918) formalized the equivalence between invariance under continuous transformation and the conservation of a measurable quantity.  
+Within this framework, that equivalence becomes a corollary of the Reciprocity Law: each symmetry of the causal measure corresponds to an invariant distinction preserved under evolution.
+\end{remark}
+
+
+Let $U(t)$ encode the joint state of the three trajectories as an element of
+the universe tensor.  Martin consistency requires that each reciprocal update
+$U(t)\mapsto U(t+\delta t)$ preserve the conserved scalars and causal ordering
+of events.  Analytic spline closure ($U^{(4)}\!=0$) is insufficient here:
+interactions couple the segments so that local cubic envelopes do not
+globally commute.  The correct closure is \emph{algorithmic}: a reversible,
+symplectic, order-preserving integrator (e.g.\ velocity Verlet/leapfrog) that
+implements the reciprocity step without violating the invariants,
 \[
-y_{ig}=\theta_{0,g}-\log r_{ig}-\log I_{ig}+\varepsilon_{ig}.
+\Phi_{\delta t}^{\text{symp}}:\; U(t)\longmapsto U(t+\delta t),\qquad
+\delta E=0,\;\;\delta L=0 \;\text{(to integrator accuracy)}.
 \]
-A mixed-effects regression with random intercepts but common slopes tests universality of the invariant; a slope differing from $-1$ falsifies it.
+Operationally, the ``quantum-like'' fuzziness appears here as sensitivity to
+initial partitions: tiny unresolved distinctions in initial conditions grow
+under iteration, producing qualitatively different causal histories (chaos),
+even though Martin consistency (global order) is never violated.
 
-\paragraph{Falsifiable predictions.}
-\begin{enumerate}
-\item \textbf{Fixed slopes:} Coefficients on $\log r$ and $\log I$ are $-1$ within uncertainty; deviation falsifies the invariant.
-\item \textbf{White residuals:} Adjusted residuals $\hat\varepsilon_i$ show no systematic radial trend.
-\item \textbf{Cross-sample invariance:} Slopes are common to all galaxies; intercepts vary only by normalization.
-\item \textbf{Low-brightness scaling:} Lower $I$ implies higher $v$ at fixed $r$; violation falsifies order-preserving transport.
-\end{enumerate}
-
-\paragraph{Scope.}
-This regression embodies the Chapter 2 principle that a consistent measurement law introduces at most one free constant.  
-Its acceptance or rejection is therefore directly falsifiable: systematic deviations in slope or curvature constitute empirical evidence against the order-preserving flux hypothesis.
+Thus the three--body problem exemplifies a domain where physics \emph{requires}
+computation: reciprocity and consistency still govern the update, but their
+closure cannot be written in elementary functions.  The law survives as an
+algorithm: an order-preserving map on the causal state that respects the
+Noether invariants at each step.
+\end{example}
 
 
-	\section{Global Constraint as the Einstein Equation}
-	\label{sec:global-constraint}
+\section{The Rule of Causal Transport}
+\label{sec:rule-causal-transport}
 
-	The final step is to impose global consistency on the causal network.
-	Local rules of separation and transport guarantee Martin consistency within
-	each neighborhood, but finite observation requires that these neighborhoods
-	overlap.  The residual curvature computed in the previous section measures
-	the degree to which local order fails to close globally.  The Einstein
-	equation expresses the condition under which that failure is exactly
-	balanced by the stress encoded in the Causal Universe Tensor.
+Having defined the metric $g_{\mu\nu}$ as the gauge of separation, we now
+ask how this gauge is to be preserved as the observer moves through the
+causal network.  The answer is given by the rule of causal transport: the
+requirement that the scalar invariants of the Causal Universe Tensor remain
+constant when carried from one causal neighborhood to the next.
 
-	\subsection{From Local Residue to Global Balance}
+\subsection{From Gauge Preservation to Connection}
+\begin{example}[The Two Observers and the Invariant Count~\cite{lorentz1904,einstein1905,minkowski1908,weyl1929,yang1954}]
+\label{ex:two-observers}
 
-	Let the scalar invariants of the Causal Universe Tensor be denoted
-	$T_{\mu\nu}$—the symmetric bilinear form that measures the density and flux
-	of distinguishability.  The curvature invariants of the causal gauge are
-	summarized by the Einstein tensor,
-	\[
-	G_{\mu\nu} = R_{\mu\nu} - \tfrac{1}{2} R g_{\mu\nu}.
-	\]
-	Both tensors share the same divergence-free property,
-	$\nabla^{\mu}G_{\mu\nu} = \nabla^{\mu}T_{\mu\nu} = 0$, a differential
-	expression of Martin consistency.  The only admissible global solution is
-	therefore their proportional equality,
-	\[
-	G_{\mu\nu} = 8\pi\, T_{\mu\nu}.
-	\]
-	This is the Einstein field equation, reinterpreted as the global constraint
-	that restores balance between the residue of inconsistency (curvature) and
-	the finite structure of distinguishability (stress).
+\textbf{Concept.}
+This experiment reinterprets Lorentz contraction as a gauge effect.
+Rather than a physical shortening of rods or slowing of clocks, it is
+seen as a mathematical contraction of the gauge components themselves,
+required to preserve the invariant scalar---the total count of causal
+distinctions---for all observers.
 
-	\subsection{Interpretation in the Causal Framework}
+\textbf{Setup.}
+Consider a fundamental causal interval: the emission and absorption of a
+light pulse.  This interval consists of an invariant number $N$ of
+distinguishable ``ticks'' or events.  This $N$ is the true physical
+reality upon which all observers agree.  In the continuum limit, the
+corresponding invariant is the line element
+\[
+ds^{2} = g_{\mu\nu}\,dx^{\mu}dx^{\nu}.
+\]
 
-	The Einstein equation states that curvature is not an independent source of
-	force but the universe’s adjustment to maintain causal coherence.  Energy
-	and stress arise from the finiteness of measurement; curvature arises from
-	the impossibility of reconciling all such measurements globally.  The
-	equation $G_{\mu\nu} = 8\pi T_{\mu\nu}$ enforces that these two forms of
-	inconsistency—informational and geometric—cancel exactly.  When they do,
-	the propagation of light remains Martin-consistent throughout the entire
-	network.
+\textbf{Observer $\mathcal{O}$ (Rest Frame).}
+This observer is at rest relative to the interval.  Her gauge---her
+coordinate system---is aligned with the events.  She measures
+\[
+N_t = N,\qquad N_x = 0,
+\]
+so that
+\[
+ds^{2} \propto N_t^{2} - N_x^{2} = N^{2}.
+\]
 
-	In this view, gravitation is the manifestation of the universe correcting
-	its own bookkeeping of distinctions.  Mass–energy is simply the local
-	density of finite observation, and curvature the global compensation that
-	restores order.  Spacetime bends not because matter exerts force, but
-	because causal consistency demands it.
+\textbf{Observer $\mathcal{O}'$ (Moving Frame).}
+A second observer moves at constant velocity $v$ relative to
+$\mathcal{O}$.  Both observers describe the same physical interval but
+with different gauge components.  In the traditional interpretation of
+special relativity, $\mathcal{O}'$ observes time dilation and length
+contraction:
+\[
+N_t' \neq N_t,\qquad N_x' \neq N_x,
+\]
+yet the invariant
+\[
+(N_t')^{2} - (N_x')^{2} = N^{2}
+\]
+remains unchanged.
 
-	\subsection{The Closure of the Gauge of Light}
+\textbf{New View (Gauge Contraction).}
+In the informational picture developed here, the observers' clocks and
+rods are not physically distorted.  Rather, their \emph{gauges}---their
+coordinate mappings of causal distinction---are related by the Lorentz
+transformation $\Lambda^{\mu}{}_{\nu}$, which enforces invariance of the
+scalar count:
+\[
+g'_{\mu\nu} = \Lambda^{\rho}{}_{\mu}\Lambda^{\sigma}{}_{\nu} g_{\rho\sigma}.
+\]
+The Lorentz transformation thus acts as a gauge update preserving the
+invariant number of distinctions.  What appears as ``contraction'' is
+simply the compensation required to maintain consistency under
+relabelling~\cite{einstein1905,minkowski1908,weyl1929}.
 
-	The Einstein equation thus completes the gauge of light.  Beginning with
-	the metric as the gauge of separation, the connection as the rule of causal
-	transport, and curvature as the residue of inconsistency, the global
-	constraint closes the system.  All four structures arise from a single
-	requirement: that the scalar invariants of the Causal Universe Tensor
-	remain self-consistent under extension to the entire causal domain.
+\textbf{Conclusion.}
+The phenomenon of Lorentz contraction therefore migrates from the
+physical measuring apparatus to the mathematical gauge itself.
+The metric $g_{\mu\nu}$ is a bookkeeping device ensuring that each
+observer's local representation yields the same invariant scalar---the
+same informational count $N$.  Spacetime kinematics thus emerge as the
+consistency rules of an informational gauge: a structure ensuring global
+agreement on what is distinguishable.
+\end{example}
+
+
+Consider the transport of a vector field $V^{\mu}$ representing a direction
+in the space of distinguishable events.  To maintain Martin consistency,
+the change in $V^{\mu}$ along an infinitesimal displacement $dx^{\nu}$ must
+not alter any scalar quantities computed from the tensor
+$g_{\mu\nu}V^{\mu}V^{\nu}$.  The differential form of this requirement is
+\[
+\nabla_{\nu} g_{\mu\sigma} = 0,
+\]
+which defines the Levi–Civita connection
+$\Gamma^{\lambda}_{\ \mu\nu}$.  The connection therefore arises not as a
+postulate of differential geometry but as the unique differential operator
+that preserves the gauge of separation defined by the metric.  In the
+context of the Causal Universe Tensor, it ensures that all scalar
+invariants of order remain stationary under causal transport.
+
+\subsection{Operational Meaning}
+
+Each component $\Gamma^{\lambda}_{\ \mu\nu}$ records how the act of
+distinction must be adjusted when an observer translates a local rule of
+measurement from one event to its neighbor.  It is, in essence, the
+differential bookkeeping of consistency.  When the metric is uniform,
+$\Gamma^{\lambda}_{\ \mu\nu}=0$, and the mapping of causal neighborhoods is
+trivial: straight lines remain straight.  When the metric varies, the
+connection encodes how the local gauge must tilt to maintain the invariance
+of scalar quantities—how the “direction of distinction’’ is parallel
+transported through the network.
+
+\subsection{Parallel Transport and Martin Consistency}
+
+Parallel transport expresses Martin consistency in differential form.  A
+vector is said to be parallel transported along a curve $x^{\mu}(s)$ if it
+satisfies
+\[
+\frac{DV^{\lambda}}{Ds} = 
+\frac{dV^{\lambda}}{ds} + 
+\Gamma^{\lambda}_{\ \mu\nu}\,
+V^{\mu}\,\frac{dx^{\nu}}{ds} = 0.
+\]
+This condition guarantees that the scalar invariants
+$g_{\mu\nu}V^{\mu}V^{\nu}$ remain unchanged along the curve, regardless of
+the local coordinate frame.  The connection therefore enforces the
+\emph{covariant constancy} of the causal gauge: every observer’s
+measurements can differ, but the underlying order they describe remains
+identical.
+\begin{example}[Non-Abelian transport and curvature]
+Let $A_\mu(x)$ be a matrix-valued connection (local gauge of distinction). Parallel transport along a path $\gamma$ uses the path-ordered exponential
+\[
+U[\gamma]=\mathcal{P}\exp\!\left(\int_\gamma A_\mu\,dx^\mu\right).
+\]
+For an infinitesimal rectangle spanned by $\delta x^\mu,\delta x^\nu$,
+\[
+U[\square]=I+F_{\mu\nu}\,\delta x^\mu\delta x^\nu+O(\delta^3),\qquad
+F_{\mu\nu}=\partial_\mu A_\nu-\partial_\nu A_\mu+[A_\mu,A_\nu].
+\]
+The $[A_\mu,A_\nu]$ term \emph{is} the non-commutative residue of transporting in different orders around the loop.
+Thus, failure of local updates to commute produces a measurable scalar (via contractions of $F_{\mu\nu}$) that records global non-closure—our curvature as informational residue.
+This ties the reciprocity-preserving gauge to the field strength that appears in the continuum limit.
+\end{example}
+
+
+	\subsection{Causal Interpretation}
+
+	Physically, the rule of causal transport states that the universe updates
+	its own coordinate assignments to maintain distinguishability as
+	information propagates.  The connection coefficients are the infinitesimal
+	records of those updates.  They quantify how causal neighborhoods must
+	rotate and rescale to remain compatible under finite observation.  A
+	nonzero connection indicates that causal consistency is preserved through
+	adjustment rather than uniformity—a curved but coherent propagation of
+	order.
 
 	\begin{remark}
-	In this formulation, general relativity is not a separate physical theory
-	but the closure condition of the causal calculus.  The Einstein tensor is
-	the final differential form of Martin consistency; the stress–energy tensor
-	is the discrete record of finite distinction.  Their equality marks the
-	point at which the universe’s description becomes self-consistent.  Beyond
-	this, nothing remains to adjust—the gauge of light is complete.
+	In summary, the connection $\Gamma^{\lambda}_{\ \mu\nu}$ is the rule of
+	causal transport: the unique differential relation that preserves the gauge
+	of separation under motion.  It translates the logical demand of Martin
+	consistency into a local dynamical law.  Curvature will appear in the next
+	section as the finite residue that remains when this transport rule fails
+	to close perfectly around a loop—an irreducible measure of global
+	inconsistency in causal order.
 	\end{remark}
+\begin{example}[Invariance of the Causal Interval \(ds^2\)]
+Consider two observers, $\mathcal{O}$ and $\mathcal{O}'$, who each assign
+coordinates to the same pair of infinitesimally separated events.  Their
+local labels differ by a gauge transformation of the form
+\[
+dx'^{\mu} = \Lambda^{\mu}{}_{\nu}\, dx^{\nu},
+\]
+where $\Lambda^{\mu}{}_{\nu}$ preserves the ordering of causal relations as
+required by Martin’s Axiom.  The scalar quantity
+\[
+ds^2 = g_{\mu\nu}\, dx^{\mu}\, dx^{\nu}
+\]
+represents the infinitesimal measure of distinguishability between these
+events—the local contraction of the Causal Universe Tensor with the gauge
+of separation.
+
+Under the gauge transformation, the differentials and metric transform as
+\[
+g'_{\mu\nu} = 
+\Lambda^{\alpha}{}_{\mu}\, 
+\Lambda^{\beta}{}_{\nu}\,
+g_{\alpha\beta},
+\qquad
+dx'^{\mu} = \Lambda^{\mu}{}_{\sigma}\, dx^{\sigma}.
+\]
+Substituting these into the definition of the interval yields
+\[
+ds'^2 = g'_{\mu\nu}\, dx'^{\mu}\, dx'^{\nu}
+       = g_{\alpha\beta}\, dx^{\alpha}\, dx^{\beta}
+       = ds^2.
+\]
+Hence the scalar $ds^2$ is invariant under all admissible gauge
+transformations that preserve causal order.  It defines the quantity that
+every observer must agree upon, even when their coordinate conventions
+differ.
+
+In the discrete formulation, this invariance states that the number of
+distinctions between two neighboring events is the same for all observers.
+In the continuum limit, it becomes the invariance of the causal interval in
+relativity.  Both express the same principle: the universe may bend,
+accelerate, or dilate, but the order of events—the fact that one event can
+distinguish another—remains unchanged.
+\end{example}
+
+% Placement: Part III §4.2 after “The Rule of Causal Transport” (ideal after §4.2.3 “Parallel Transport and Martin Consistency”)
+\subsubsection*{Example: Pound--Rebka Gravitational Redshift as Entropic Transport}
+
+\textbf{Statement.} Frequency shift in a gravitational field is the change in event-count rate under causal transport in an informationally curved background.
+
+\textbf{Key relation (weak field).}
+\[
+\frac{\Delta \nu}{\nu} \;\approx\; \frac{\Delta \Phi_{\text{grav}}}{c^2} \;=\; \frac{g\,h}{c^2}.
+\]
+\textbf{Reciprocity framing.} Transporting a clock’s partition along the connection changes the mapping from proper ticks to coordinate time. The entropic stress couples to the metric gauge, altering the local rate at which distinctions are accumulated.
+
+\textbf{Operational consequence.} Redshift is parallel transport of the causal gauge: invariants are preserved, but the local counting density transforms, observed as a shift in $\nu$.
+
 
