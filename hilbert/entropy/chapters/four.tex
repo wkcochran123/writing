@@ -1,892 +1,1491 @@
-\chapter{The Kinematics of Matter}
-\label{chap:wave}
+\chapter{Motion}
 
-\section{Introduction: Martin's Condition and the Continuity of Causal Propagation}
+Motion requires a mechanism for comparing one record of distinction with another. In the
+causal framework, that mechanism is the clock: a source of admissible refinements that
+allow two observers to construct ordered sequences of events. A clock does not measure
+duration, velocity, or geometry. It only asserts that one event occurred after another, and
+that this ordering is invariant under refinement. Its utility is purely ordinal. Whether the
+clock is an atomic transition, a quartz oscillator, a binary counter, or a list of threshold
+crossings, its output is the same kind of object: a finite record of distinguishable ticks.
 
-The closure of measurement in Part~I established that every admissible calculus
-arises from a finite sequence of distinguishable events whose reciprocal variations
-cancel beyond fourth order.
-The resulting smooth field $U(x)$ represents not an assumption of continuity,
-but the unique extension that preserves causal consistency under the
-\emph{Axiom of Event Selection}.
-Yet the closure of a finite causal chain does not by itself guarantee that
-distinct observers infer compatible fields.
-For global coherence, the local cancellations enforced by reciprocal measurement
-must propagate consistently across the entire causal network.
-This propagation is the content of \emph{Martin's Condition}.
+\begin{definition}[Clock (non-standard)]
+\label{def:clock}
+\NB{This is a \emph{formal} definition of a clock. No physical assumption is made that
+clocks exist, or that any particular mechanism generates the ticks. In this framework, a
+clock is only a logical instrument that emits distinguishable events, allowing the causal
+order to be indexed. Its existence is a definition inside the mathematics of admissible
+distinctions, not a physical postulate about quantum systems, atomic transitions, or
+relativistic matter.}
 
-\begin{definition}[Martin's Condition (Conceptual)]
-A causal network satisfies \emph{Martin's Condition}
-if every locally finite subset of events can be extended to a globally
-consistent ordering without introducing new distinguishabilities.
-Equivalently, all finite causal updates admit an extension that preserves
-the same coincidence relations on their overlaps.
+A \emph{clock} is an instrument that emits a sequence of distinguishable events. Each emitted
+event is admissible under Axiom~\ref{ax:planck}: it produces a finite refinement of the causal
+record. A clock is therefore not a continuous variable or a dynamical law; it is a device
+that guarantees the existence of a countable chain of ordered distinctions. The function
+of a clock is to certify an ordering on the events of a measurement, nothing more.
 \end{definition}
 
-Intuitively, Martin's Condition demands that information created in one region
-does not contradict information measured in another.
-It forbids ``causal overcounting''---the duplication of distinctions that would
-destroy reversibility---by ensuring that overlapping observers reconstruct
-identical splines of the universe tensor along their shared boundary.
-Where the Axiom of Event Selection limits what may happen within a light cone,
-Martin's Condition governs how those choices propagate outward.
-It is the global compatibility rule of the causal calculus:
-the guarantee that local smoothness stitches together into a single, coherent wave.
+From this perspective, a clock is not a dynamical primitive. It is a logical instrument. The
+act of ticking establishes a chain of events, and the absence of extra ticks is a data
+constraint. If a clock recorded no intermediate events between two ticks, then no
+admissible description may contain structure that would have produced one. In particular,
+acceleration, oscillation, or curvature that would create additional ticks are ruled out by
+informational minimality. Motion is therefore not inferred from a continuous trajectory,
+but from the consistency of the tick record itself.
 
-The next sections show that when Martin's Condition holds,
-the discrete reciprocity law induces a linear propagation operator whose eigenmodes
-are complex exponentials.
-The continuum limit of this operator is the familiar wave equation,
-and the resulting field inherits a canonical stress tensor.
-Thus the same closure that produced calculus in Part~I now produces
-the continuous propagation of energy and information---%
-the universal phenomenon we recognize as a \emph{wave}.
+Because clocks produce ordered events, two observers may compare their records by
+merging their tick sequences under global coherence. When the merge produces no
+contradiction, a single coherent history exists, and the count of ordered refinements
+defines the relative motion of their systems. In the smooth limit, the unique continuous
+interpolant between ticked events is the cubic extremal with no unobserved structure. Thus,
+classical kinematics is the shadow of a discrete bookkeeping process: a clock provides
+order, informational minimality removes hidden curvature, and the continuum appears only
+as the completion of finite refinements.
 
-\subsubsection*{Example: Davisson--Germer and the Universality of Causal Waves}
+In what follows, motion will be defined as the reconciliation of two causal records produced
+by clocks. Relative velocity, proper time, and inertial behavior arise not from geometry or
+differential equations, but from the minimal continuous shadow consistent with their
+countable tick sequences. Motion is what ordered distinction looks like when refinement
+tends to the smooth limit.
 
-\textbf{Statement.} Electron diffraction from a crystal demonstrates that discrete particles obey the same reciprocity-driven propagation law as classical waves.
+\begin{example}[Laser Tracking and Informational Dilation]
+\label{te:laser-tracking}
+Two identical observers, A and B, begin co-located with synchronized clocks. Observer B
+embarks on a journey involving periods of acceleration, while observer A remains at the
+origin of an idealized inertial frame. We \emph{explicitly neglect} the gravitational and
+relativistic influence of Earth, the Sun, Sagittarius~A*, and all other bodies; spacetime is
+treated as Minkowski over the region of interest.
 
-\textbf{Key relation.} Bragg condition with de\,Broglie wavelength:
-\[
-2d\,\sin\theta \;=\; m\,\lambda, \qquad \lambda \;=\; \frac{h}{p}.
-\]
-\textbf{Reciprocity framing.} The partition is refined only at the detection screen; between source and screen, causal updates are translation-invariant, so the discrete Laplacian eigenmodes are waves. Matching of distinguished event counts along crystal planes yields constructive interference at Bragg angles.
+Rather than waiting for reunion, A continuously tracks B by emitting a stream of
+monochromatic laser pulses. Each pulse is timestamped in A’s notebook when fired, and
+timestamped again when the reflected pulse is received from B’s retroreflector.
 
-\textbf{Operational consequence.} Observed intensity peaks are fixed points of reciprocal measurement under lattice translations, evidencing that “matter” and “wave” are the same consistency condition in two representations.
+Every fired pulse is a distinguishable event; every received pulse is another. If B follows a
+complicated accelerative path, then the return times of the pulses form a more densely
+refined sequence than the symmetric record A would observe if B were inertial. The point
+is not energy or Doppler shift. The informational content of the record increases: each
+round-trip establishes a new ordered pair of emission and reception, constraining B’s
+admissible motion.
 
+If B were inertial, the spacings of the returned timestamps would follow the unique minimal
+interpolant that introduces no unobserved curvature. But acceleration forces extra
+refinements: the return times become uneven in a way that cannot be reconciled with a
+coasting trajectory. These “irregularities’’ are not interpreted through differential
+equations; they are simply distinct events that must be merged into A’s causal record.
 
-\section{Interaction: The Union of Ordered Events}
+When B returns, both observers merge their sequences. A’s laser notebook contains a much
+longer chain: every emission and every reflection has already placed constraints on B’s path.
+B’s local clock, by contrast, has recorded only its own internal ticks and those refinements
+forced by onboard events. The merge therefore requires A to reconcile a larger
+informational workload, while B performs a smaller one. Consistent ordering assigns the
+larger count of admissible distinctions to A, and the smaller to B. The result is that A’s
+proper time is larger---she has the denser causal record.
 
-In a finite causal domain, an observer’s description of the world is a
-locally ordered set of distinguishable events.
-When two such domains overlap, the question of \emph{interaction} arises:
-how are their separate orderings reconciled into a single consistent history?
-Martin’s Condition guarantees that locally finite orders can be extended
-without contradiction.
-Interaction is the constructive realization of that extension.
+In the smooth limit, the same count enforces the classical dilation formula of relativity. But
+here the conclusion is purely informational: acceleration introduces refinements, refinements
+create more events, and more events imply more work when histories are coherently merged.
+Time dilation is the bookkeeping of laser-certified distinctions, not a geometric postulate.
 
-\begin{definition}[Interaction of Causal Sets]
-Let $(E_1,\preceq_1)$ and $(E_2,\preceq_2)$ be locally finite posets of events,
-each satisfying Martin’s Condition on its own domain.
-Their \emph{interaction} is the smallest poset
-\[
-(E_{12},\preceq_{12}), \qquad
-E_{12} = E_1 \cup E_2,
-\]
-whose order $\preceq_{12}$ is the transitive closure of
-$\preceq_1 \cup \preceq_2$ restricted by the requirement that all overlaps
-$E_1 \cap E_2$ remain consistent:
-\[
-\forall\, e,f \in E_1 \cap E_2,\;
-e \preceq_1 f \;\Leftrightarrow\; e \preceq_2 f .
-\]
-\end{definition}
-\begin{example}[Non-commuting measurements as event selection]
-Let the event tensor act on a qubit. Take Pauli operators $\sigma_x,\sigma_z$ and projective predicates
-\(
-P_x^\pm=\tfrac{1}{2}(I\pm \sigma_x),\quad
-P_z^\pm=\tfrac{1}{2}(I\pm \sigma_z).
-\)
-The selection ``measure $x$ then $z$'' corresponds to the ordered update
-\(
-U_{xz}(\rho)=\sum_{a,b\in\{\pm\}} P_z^b P_x^a\,\rho\, P_x^a P_z^b,
-\)
-while ``measure $z$ then $x$'' is
-\(
-U_{zx}(\rho)=\sum_{a,b} P_x^a P_z^b\,\rho\, P_z^b P_x^a.
-\)
-Because $[\sigma_x,\sigma_z]\neq 0$, one has $U_{xz}\neq U_{zx}$ in general; order changes the post-measurement state and the subsequent event statistics.
-Yet the scalar count of admissible outcomes over the full branch set is preserved (the total probability $=1$), reflecting that the measurable bookkeeping across the causal domain remains consistent even when the micro-updates do not commute.
-This realizes Event Selection as a non-commutative refinement of the distinguishability chain.
+This informational mechanism therefore recovers the ability to compute the Lorentz
+contraction posed in Thought Experiment~\ref{te:boosting-velocity} through the update rule
+\(E_k = \Psi\!\bigl(e_k \cap \Rhat(e_{k-1})\bigr)\), using only the observers’ laboratory notebooks.
 \end{example}
 
+\section{Relative Motion}
+\label{se:relative-motion}
 
-The overlap $E_1 \cap E_2$ represents events recognized by both observers.
-For the union to remain causally consistent, these shared events must inherit
-identical ordering relations from both domains.
-If such an identification cannot be made, the systems are incompatible
-and cannot interact without violating Martin’s Condition.
-
-\begin{definition}[Interaction Event]
-An event $e \in E_1 \cap E_2$ is called an \emph{interaction event}
-if it is maximal in one order and minimal in the other:
+With a clock in hand, an observer constructs an ordered sequence of admissible events
+\(\{e_k\}\). The Causal Universe Tensor encodes this growing record through the recursive
+update
 \[
-e \in \mathrm{Top}(E_1) \cap \mathrm{Min}(E_2)
-\quad \text{or} \quad
-e \in \mathrm{Top}(E_2) \cap \mathrm{Min}(E_1).
+E_k = \Psi\!\bigl(e_k \cap \Rhat(e_{k-1})\bigr),
 \]
-Such an event terminates one causal chain and initiates another.
+where \(\Rhat\) restricts all admissible continuations to those consistent with the most recent
+distinguishable event. For a single inertial frame, this produces a monotone refinement of
+information: each step eliminates histories that would contradict the record.
+
+To describe motion, no new structure is required. Consider two inertial observers, A and B,
+each with their own clock and their own causal universe tensors:
+\[
+E^A_k = \Psi\!\bigl(e^A_k \cap \Rhat(e^A_{k-1})\bigr),
+\qquad
+E^B_\ell = \Psi\!\bigl(e^B_\ell \cap \Rhat(e^B_{\ell-1})\bigr).
+\]
+Each observer possesses a complete and self-consistent history of admissible distinctions.
+Relative motion is nothing more than the reconciliation of these two histories under the rule
+of global coherence. When A and B compare notebooks, every admissible refinement recorded
+by one must also be admissible to the other. In the absence of contradiction, a merge exists,
+and the merged list induces a partial ordering on the pair \(\{E^A_k\} \cup \{E^B_\ell\}\).
+
+If the merged record is strictly longer than either individual record, the observers infer that
+their clocks have accumulated refinements at different rates. By Axiom~\ref{ax:cantor}, the
+merged history cannot discard any admissible distinction: every recorded refinement must be
+preserved. Consequently, the observer whose notebook produces the \emph{denser} merged
+record corresponds to the \emph{longer} proper time. The informational work of reconciling
+those refinements is the measure of duration. Thus,
+\begin{equation}
+\lvert\,e^A_k \cap \Rhat(e^A_{k-1})\,\rvert > \lvert\,e^B_\ell \cap \Rhat(e^B_{\ell-1})\,\rvert
+\end{equation}
+implies that A has the longer proper time. No metric, coordinate chart, or differential
+equation is required; the relative motion is encoded entirely in the informational asymmetry
+of their merged causal histories.
+
+
+In the smooth limit, the unique continuous interpolant of the merged record is the cubic
+extremal with no unobserved structure. Classical kinematics---relative velocity, time dilation,
+and Lorentz contraction---appears as the shadow of this merge. The Causal Universe Tensor
+does not simulate motion; it enforces consistency. Relative motion is what two coherent
+universe tensors look like when compared under refinement.
+
+\subsection{Merging a Single Event}
+\label{se:merging-single-event}
+
+Referring to Thought Experiment~\ref{te:laser-tracking}, consider the merging of a single
+event: the moment a reflected photon is absorbed by A’s detector. This absorption is a
+distinguishable refinement of A’s record and therefore constitutes an admissible event
+\(e^A_{k+1}\). The photon has traveled to B, interacted with the retroreflector, and returned.
+Whatever else the experimenter may imagine, this exchange contains one certified fact: the
+causal distance between A and B has changed in a way detectable by A’s clock.
+
+In the language of the causal universe tensor, the absorption is merged via
+\[
+E^A_{k+1} = \Psi\!\bigl(e^A_{k+1} \cap \Rhat(e^A_k)\bigr).
+\]
+Nothing more is required. The event contributes only the distinction that A received a
+photon at that moment. The return time rules out any hypothetical motion of B that would
+have prevented this arrival, and it rules out any curvature or oscillation that would have
+produced additional admissible pulses. The refinement therefore narrows A’s admissible
+histories to those consistent with both emission and reception.
+
+When B later inspects A’s notebook, the same absorption event must be admissible within
+B’s causal universe tensor:
+\[
+E^B_{\ell+1} = \Psi\!\bigl(e^A_{k+1} \cap \Rhat(e^B_\ell)\bigr).
+\]
+If a contradiction were forced---for example, if B’s notebook implied the photon could not
+have returned at that time---global coherence would fail, and the combined record would be
+inadmissible. But if the merge succeeds, the joint history becomes strictly more refined,
+and the updated tensors\footnote{No physical model of a photon is required. The “photon’’
+only represents a distinguishable event transmitted between observers.} encode a new
+restriction on their relative motion.
+
+A single merged photon event therefore eliminates an entire family of hypothetical motions.
+It narrows the admissible set of configurations and extends the causal record without
+introducing any continuous structure. In the smooth limit, repeated merges of this form
+force the cubic extremal between emission and reception times---the unique interpolant with
+no unobserved structure. Classical distance, velocity, and Lorentz contraction appear as the
+continuous shadow of this discrete bookkeeping.
+
+\subsection{Measurement of Acceleration as Counts of Events}
+\label{se:acceleration-as-counts}
+
+Acceleration does not require forces, masses, or differential equations. In the causal
+framework, acceleration is nothing more than a second refinement: a change in the
+distinguishable difference between successive admissible events. To detect such a change, a
+single measurement is insufficient. At least two refined measurements are needed so that the
+difference between them can itself be distinguished.
+
+Suppose A emits two photons at events \(e^A_k\) and \(e^A_{k+1}\), and later receives their
+reflections at \(e^A_{k+r}\) and \(e^A_{k+s}\). Each absorption is merged by
+\[
+E^A_{k+r} = \Psi\!\bigl(e^A_{k+r} \cap \Rhat(e^A_{k+r-1})\bigr),
+\qquad
+E^A_{k+s} = \Psi\!\bigl(e^A_{k+s} \cap \Rhat(e^A_{k+s-1})\bigr).
+\]
+If B is in uniform motion relative to A, the refinements contributed by these two events are
+consistent with a unique minimal interpolant: the admissible histories require that the
+difference in reception times is itself constant under refinement. Any hidden curvature or
+oscillation would have produced additional admissible events---extra pulses, missed reflections,
+or altered return order---and is therefore ruled out by the Axiom of Planck.
+
+However, if the spacing between \(e^A_{k+r}\) and \(e^A_{k+s}\) cannot be reconciled by a
+single coasting history, then the admissible set must be further restricted. The causal
+universe tensor eliminates all hypothetical configurations in which B remained inertial. What
+remains are those histories in which the separation of the events changes in a way that is
+itself distinguishable. The second refinement is the signature of acceleration.
+
+In this sense, acceleration is not a postulated quantity. It is the discovery that two
+refinements cannot be merged into a single coasting interpolant without contradiction. A
+sequence of such measurements produces a chain of eliminations: each return time excludes
+admissible events that would require an invisible change in curvature. The remaining histories
+are the ones in which acceleration has occurred.
+
+In the smooth limit, repeated second refinements force a unique continuous extremal whose
+second variation is nonzero. Classical acceleration appears as the shadow of a finite
+bookkeeping process: acceleration is the count of distinguishable failures of coasting to
+explain the merged record. No forces, masses, or trajectories are assumed. The event counts
+alone enforce curvature in the admissible histories.
+
+Thus, we have recovered the ability to verify Newton’s second law---again, with apologies to
+Lord Berkeley. Acceleration is not a substance but the second variation of admissible
+refinements in the merged event record.
+
+\subsection{The Equations of Motion}
+\label{se:equations-of-motion}
+
+The remainder of this chapter examines the equations of motion that arise when finite
+records of admissible distinctions are merged without contradiction. Nothing further is
+assumed. Each equation appears as the continuous shadow of informational minimality: the
+unique smooth extremal that contains no unrecorded structure.
+
+We begin with heat transport. Although commonly divided into conduction, convection,
+and radiation, all three arise here from distinct constraints on admissible refinements.
+When refinements diffuse symmetrically through a medium with no hidden variations, the
+smooth limit forces the diffusion equation. When refinements are transported coherently
+through the medium, the extremal satisfies the advective transport law. When refinements
+propagate at the maximal admissible speed, the continuous shadow is radiative transport
+governed by the wave equation. No model of heat is assumed; each law is simply the
+completion of a finite notebook of events.
+
+Annealing appears when a ledger repeatedly reconciles its own coarse description. The
+iterated application of the merge operator eliminates sharp distinctions that would predict
+unobserved refinements. As the sequence of folds converges, the smooth limit is diffusion.
+Annealing is therefore informational smoothing: the heat equation is its continuous shadow
+when the coarse ledger is refined to closure.
+
+Adiabatic transport arises when the ledger evolves without creating or destroying admissible
+distinctions. In the smooth limit, this invariance forces the classical adiabatic law.
+Nothing dynamical is postulated; an adiabatic process is simply a sequence of refinements
+that preserves the global count of admissible configurations.
+
+Even quantum phenomena admit the same treatment. The Casimir effect appears when the
+merged record forbids a continuous family of admissible configurations between two
+boundaries. The elimination of those histories produces an informational pressure, and the
+smooth limit recovers the familiar expression for Casimir energy.
+
+Alpha decay appears in its original form: the Mott problem~\cite{mott1929}. The ledger of the nucleus
+contains two nearly indistinguishable configurations---one in which the alpha cluster remains
+bound, and one in which it escapes. Over time, these dual descriptions drift out of
+alignment. The moment of decay is not the passage of a particle through a barrier, but the
+repair of a contradiction: the merged record eliminates all configurations in which the two
+descriptions diverge. The resulting refinement is recorded as a distinct decay event. In the
+smooth limit, this informational repair produces the exponential law of radioactive decay
+without invoking forces, potentials, or tunneling particles.  No dice are rolled.
+
+In each case, the classical equation of motion is not assumed. It is what consistency looks
+like in the smooth limit of finite measurement. Motion is bookkeeping; the laws that follow
+are shadows of refinement.
+
+\subsection{Martin’s Condition and the Propagation of Order}
+\label{se:martins-condition}
+
+Up to this point, motion has been defined locally: two observers exchange admissible
+events, merge their records, and eliminate any hypothetical history that would have
+produced unrecorded refinements. This closure guarantees that each observer maintains a
+coherent ledger. It does not yet guarantee that their ledgers are mutually compatible.
+
+For observable physics, local coherence is not enough. Distinct observers must be able to
+reconcile their refinements along their shared boundary without introducing new
+distinguishabilities. The requirement that every locally finite patch of causal order extends
+to a globally consistent history is Martin’s Condition.
+
+\begin{definition}[Martin’s Condition (Non-standard)]
+\label{def:martins-condition}
+A causal network (Definition~\ref{def:causal-network}) satisfies Martin’s Condition if every locally finite subset of events can be
+extended to a globally consistent ordering without introducing new admissible distinctions.
+Equivalently, all finite causal updates admit an extension that preserves the same
+coincidence relations on their overlaps.
 \end{definition}
 
-Intuitively, an interaction occurs when the future boundary of one local
-ordering meets the past boundary of another.
-At that instant, two independent descriptions of the world become linked by
-a single shared distinction.
-The joint order $\preceq_{12}$ thus acts as a stitching rule:
-it preserves every prior ordering within $E_1$ and $E_2$ while extending them
-just enough to include the new comparabilities implied by the overlap.
+Intuitively, Martin’s Condition demands that information created in one region does not
+contradict information measured in another. It forbids causal overcounting---the duplication
+of distinctions that would destroy reversibility---by ensuring that overlapping observers
+reconstruct identical splines of the causal universe tensor along their shared boundary. The
+Axiom of Event Selection limits what may happen within a light cone; Martin’s Condition
+governs how those choices propagate outward.
 
-\begin{proposition}[Union Consistency]
-If $(E_1,\preceq_1)$ and $(E_2,\preceq_2)$ satisfy Martin’s Condition and
-agree on all relations within $E_1 \cap E_2$, then their union
-$(E_{12},\preceq_{12})$ also satisfies Martin’s Condition.
+Once Martin’s Condition holds, the closure of finite refinements induces a global
+propagation rule. Locally symmetric overlaps enforce a second variation and yield the
+wave operator. Oriented overlaps enforce a first variation and yield advection. When
+variations are eliminated by repeated projection, the smooth limit is diffusion. The familiar
+equations of motion---waves, advection, diffusion, and later curvature---are therefore the
+continuous shadows of global consistency under Martin’s Condition.
+
+\begin{example}[Davisson--Germer and the Universality of Causal Waves~\cite{davisson1927}]
+\label{te:davisson-germer}
+
+\emph{[Waves are the continuous shadows of Martin–consistent propagation]}
+
+Imagine an electron gun firing individual electrons toward a crystalline
+nickel target. A distant screen records the arrival of scattered electrons as
+distinguishable events. Between gun, crystal, and screen, no internal
+distinctions are measured; the observers record only the emission, the
+scattering plane, and the pattern of impacts. Each detection on the screen
+is therefore an admissible refinement of the joint causal ledger of gun,
+crystal, and detector.
+
+Under Martin’s Condition, every locally finite segment of this ledger must
+extend to a globally consistent history. The crystal introduces a periodic
+partition: successive lattice planes represent indistinguishable choices,
+except at angles where the merged ledger would predict additional or
+missing refinements. Along these planes, reciprocal measurement enforces
+translation invariance: if one segment of the ledger is shifted by a lattice
+spacing, the count of admissible refinements must remain unchanged.
+
+The only smooth extremals compatible with this translation invariance are
+wave modes. Among these, the constructive modes are precisely those whose
+wavelength $\lambda$ satisfies Bragg’s relation~\cite{bragg1913}
+\[
+2 d \sin \theta = m \lambda,
+\qquad
+\lambda = \frac{h}{p},
+\]
+where $d$ is the lattice spacing, $\theta$ the scattering angle, $m$ an
+integer, and $h/p$ encodes the count of distinguishabilities preserved along
+the oriented Martin bridges. At those angles, no hidden refinements are
+predicted; outside them, the merged ledger would contain missing or extra
+distinguishable events, contradicting Martin’s Condition.
+
+Operationally, the bright peaks on the screen are fixed points of reciprocal
+measurement under lattice translations. What physicists call “electron
+diffraction’’ is simply the bookkeeping consequence of demanding that
+indistinguishable causal neighborhoods propagate consistently across the
+crystal. No wavefunction is assumed. The ``wave’’ is the unique smooth
+extension of discrete, Martin–consistent event counts.
+
+Thus, the Davisson--Germer experiment does not demonstrate that electrons
+are waves or particles. It demonstrates that any causal history satisfying
+Martin’s Condition must propagate its indistinguishabilities as waves. The
+universality of wave behavior is a consequence of global consistency, not a
+special property of matter.
+\end{example}
+
+\section{The Algebra of Interaction}
+\label{se:algebra-interaction}
+
+Each system $X$ carries an accumulated causal universe tensor as a left--fold of update
+factors:
+\[
+\U^X_{1} = E^X_{1},\qquad
+\U^X_{n+1} = E^X_{n+1}\,\U^X_{n},\qquad
+E^X_{n+1} := \Psi\!\bigl(e^X_{n+1} \cap \Rhat(e^X_{n})\bigr).
+\]
+
+
+\begin{definition}[Interaction operator]
+\label{def:interaction-operator}
+Given two ledgers (tensors) $\U^A$ and $\U^B$, the \emph{interaction operator}
+\[
+f:\ (\U^A,\U^B)\ \longmapsto\ \U^{AB}
+\]
+returns the minimal accumulated state $\U^{AB}$ that extends both inputs and is Martin–consistent
+on their overlap. Equivalently, $\U^{AB}$ is obtained by left–folding the common update
+factors (the jointly admissible events) in observed order so that no unrecorded refinements
+are invented (Axiom of Planck) and none already recorded are erased (Axiom of Cantor).
+Let $E(\U)$ denote the underlying event set of $\U$ and define the newly contributed
+distinctions by
+\[
+\J^{AB}\ :=\ E(\U^{AB})\setminus\bigl(E(\U^A)\cup E(\U^B)\bigr).
+\]
+\end{definition}
+
+\begin{definition}[Length on the common boundary]
+\label{def:length-boundary}
+Let $\partial(\U^A,\U^B)$ denote the common boundary (overlap) of the ledgers $\U^A$ and $\U^B$.
+The \emph{length on the boundary} is the number of folded factors from a ledger that lie on
+this overlap:
+\[
+\len_{\partial}(\U^A,\U^B) \;:=\; \len\!\bigl(\U^A \upharpoonright_{\partial(\U^A,\U^B)}\bigr),
+\qquad
+\len_{\partial}(\U^B,\U^A) \;:=\; \len\!\bigl(\U^B \upharpoonright_{\partial(\U^A,\U^B)}\bigr).
+\]
+Equality $\len_{\partial}(\U^A,\U^B)=\len_{\partial}(\U^B,\U^A)$ expresses informational
+equilibrium on the shared frontier.
+\end{definition}
+
+
+\begin{proposition}[Anti–symmetry]
+\label{prop:antisym}
+In general $f(\U^A,\U^B)\neq f(\U^B,\U^A)$. Symmetry holds iff the overlap carries equal
+refinement counts:
+\[
+f(\U^A,\U^B)=f(\U^B,\U^A)\quad\Longleftrightarrow\quad
+\len_{\partial}(\U^A,\U^B)=\len_{\partial}(\U^B,\U^A).
+\]
 \end{proposition}
 
-\begin{proof}[Idea of Proof]
-Each finite subset $S \subseteq E_{12}$ lies within finitely many overlapping
-domains $E_i$ that already satisfy Martin’s Condition.
-Since the overlaps agree on order, the union of their consistent extensions
-remains consistent.
-Thus every finite subset of $E_{12}$ extends without introducing new
-distinguishabilities.
-\end{proof}
+\begin{proposition}[Transitivity]
+\label{prop:transitive}
+For any Martin–consistent triple $\U_n,\U_{n+1},\U_{n+2}$,
+\[
+f(\U^A,\U_{n+2})\ =\ f\!\bigl(\U^A,\ f(\U_n,\U_{n+1})\bigr).
+\]
+That is, folding via the intermediate ledger equals folding directly into $\U_{n+2}$.
+\end{proposition}
 
-\noindent
-\textbf{Interpretation.}
-Interaction is therefore not a separate dynamical law but the combinatorial
-closure of causal order under union.
-Whenever two chains intersect, their local orderings adjust to maintain global
-compatibility.
-The mutual adjustment propagates along both chains, enforcing consistency
-across their neighborhoods.
-Viewed iteratively, this propagation behaves as a \emph{wave of ordering}:
-a disturbance that travels through the poset whenever new overlaps are formed.
-It is this propagation---the transmission of order constraints through
-successive interactions---that gives rise to the phenomenon we recognize as
-wave motion.
+\begin{proposition}[Commutativity $\Rightarrow$ relativistic simultaneity]
+\label{prop:simultaneity}
+If
+\[
+f\!\bigl(f(\U^A,\U^B),\ f(\U^C,\U^D)\bigr)\;=\;
+f\!\bigl(f(\U^C,\U^D),\ f(\U^A,\U^B)\bigr),
+\]
+then the pairs $(A,B)$ and $(C,D)$ are \emph{relativistically simultaneous}: exchanging block
+order introduces no new admissible distinctions on the shared boundary; the merged tensor is
+invariant under the swap.
+\end{proposition}
 
-\subsection{Spooky Action as a Dantzig Pivot}
+\begin{remark}
+\item \emph{Idempotence:} $f(\U^A,\U^A)=\U^A$.
+\item \emph{Monotonicity:} $\U^{AB}$ is a monotone extension of both inputs; no recorded
+      refinement is removed.
+\item \emph{Locality:} Joint refinements lie in the common causal neighborhood; fold order is
+      the observed order; reordering is forbidden unless the corresponding factors commute.
+\item \emph{Operational link:} Bi–directional folds yield the wave operator; oriented folds
+      yield advection; iterated projection yields diffusion. These are smooth shadows of the
+      discrete left–fold $\U_{n+1}=E_{n+1}\U_n$ under $f$.
+\end{remark}
+
+\begin{example}[The Dantzig Pivot~\cite{dantzig1963} of Entanglement~\cite{einstein1935}]
+\label{te:dantzig-pivot}
+\NB{The Dantzig Pivot is not a physical process. Nothing travels, no signal is sent, and no
+mechanism propagates. The pivot is bookkeeping: boundary consistency is enough to eliminate
+incompatible histories without scanning the interior of the ledger.}
+
+
+Two spacelike-separated laboratories, $A$ and $B$, each maintain their own causal universe
+tensor. A single preparation event produces two admissible refinements, $e_i$ and $e_j$, that
+are indistinguishable in causal order: both
+\[
+\langle e_i \prec e_j \rangle
+\quad\text{and}\quad
+\langle e_j \prec e_i \rangle
+\]
+generate the same accumulated state. No scalar invariant recorded in either ledger can tell
+which ordering occurred. This is a state of \emph{causal degeneracy}: two distinct histories
+produce the same observational content.
+
+At time $n{+}1$, laboratory $A$ measures $e_i$. By the Axiom of Planck, this refinement must be
+folded into the accumulated state. The interaction operator $f$ computes
+\[
+\U_{n+1} = f(\U_n, e_i),
+\]
+which is a strict update: $e_i$ now has a definite position in the record relative to all prior
+events.
+
+Because $e_i$ and $e_j$ were degenerate, this update triggers a global repair. The merged ledger
+must eliminate every history in which $e_j$ is ordered incompatibly with $e_i$ under Martin’s
+Condition. No signal is sent from $A$ to $B$; instead, the causal universe tensor performs a
+\emph{pivot}: it selects the unique ordering of $(e_i,e_j)$ that avoids introducing new
+distinguishabilities. The ambiguous pair collapses to a single admissible ordering.
+
+\emph{Critically}, this repair is not a search over an entire volume of possible histories.
+Martin’s Condition requires agreement only on the \emph{boundary} of the overlap: the parts of
+$\U^A$ and $\U^B$ that already coincide. The pivot therefore acts on the smallest region where
+a contradiction could occur. Only the boundary is inspected, and only the incompatible
+orderings are removed. There is no need to re-evaluate the entire causal universe; the ledger
+verifies consistency by checking the joint frontier. Interaction is thus \emph{computable}:
+global coherence is enforced by local boundary repair, not by scanning an exponential set of
+histories.
+
+Thus, the “instantaneous” correlation is not a physical transmission. It is the bookkeeping
+consequence of a non-degenerate refinement. Entanglement is the existence of causal
+degeneracy; the apparent nonlocal update is the pivot that removes it by repairing the
+boundary of the overlap.
+
+The name “pivot’’ is not accidental. In Dantzig’s algorithm, a degenerate solution is resolved
+by moving along the boundary of admissible configurations until a single vertex remains
+consistent with all constraints. The search never explores the interior volume of the
+feasible set; it advances only along the frontier where inconsistency can appear. The causal
+pivot behaves the same way. When a non-degenerate refinement is recorded, the ledger
+examines only the boundary of the overlap and removes incompatible orderings. The result is a
+unique, globally coherent history selected by local boundary repair. In both settings, the
+pivot is a boundary operation, not a volume search: global consistency is enforced without
+scanning an exponential family of possibilities.
+\end{example}
 
 \begin{example}[Mach--Zehnder Interferometer as Causal Superposition]
-Consider a photon entering a Mach--Zehnder interferometer.  
-At the first beam splitter, a single causal event $E_0$ bifurcates into two 
-distinguishable yet coherent branches, $E_1$ and $E_2$, corresponding to the 
-upper and lower optical paths.  Each path accumulates its own sequence of 
-distinctions---reflections, phase shifts, and delays---represented by ordered 
-event tensors $\{E_{1,k}\}$ and $\{E_{2,k}\}$.
+\label{te:mach-zehnder-updated}
+\NB{Interference is a bookkeeping result. The ledger compares two admissible histories and
+keeps only the one that preserves Martin's Condition at the boundary. No wavefunction,
+no probability amplitude, no transmission is assumed.}
 
-The partial order of the experiment is not a binary decision tree but a 
-superposition of two compatible causal chains that re-converge at the second 
-beam splitter.  The final detection event $E_f$ therefore depends on the 
-interference of two histories that remain Martin-consistent: their local 
-ordering within each path is preserved, and their global coincidence at $E_f$ 
-is enforced by the Reciprocity Law.
 
-Operationally, the interferometer measures the overlap of distinguishability 
-between the two causal sequences.  When their accumulated phase difference 
-$\Delta\phi$ equals an integer multiple of $2\pi$, the two histories are 
-indistinguishable and the universe tensor records them as a single causal 
-extension; when $\Delta\phi = \pi$, the histories cancel, producing a node of 
-zero probability.  Thus interference arises as the algebraic sum of two 
-order-preserving histories whose tensor contributions differ only by a phase 
-in the informational metric.
+A single photon enters a Mach--Zehnder interferometer. At the first beam splitter, a single
+input event $e_0$ leads to two admissible refinements, $e_1$ (upper path) and $e_2$ (lower
+path). Both produce valid causal chains: each path accumulates its own ordered list of
+refinements---reflections, delays, and phase shifts---and each yields an accumulated tensor
+$\U^{(1)}$ and $\U^{(2)}$ satisfying Martin's Condition. No experiment in either arm can
+distinguish which refinement is ``real'': both histories are admissible and neither produces a
+contradiction. The interferometer therefore carries two coexisting, consistent ledgers.
 
-In this framing, the Mach--Zehnder interferometer is the simplest laboratory 
-realization of causal superposition: two distinguishable sequences whose 
-difference is purely informational, revealing that interference is not a 
-mystery of waves but a bookkeeping property of order under the Reciprocity 
-Law.
+At the second beam splitter, the detection event $e_f$ must be recorded as a strict update.
+By the Axiom of Planck, the refinement $e_f$ must fold into the accumulated state. The
+interaction operator computes
+\[
+\U_{\mathrm{final}} = f(\U^{(1)},\U^{(2)}),
+\]
+the minimal accumulated tensor consistent with both paths. All hypothetical histories in
+which the arrival at $e_f$ contradicts either ledger are removed.
+
+Interference is the informational comparison of the two causal chains. If their accumulated
+phase---a bookkept record of distinguishability---is equal modulo $2\pi$, the paths are
+informationally indistinguishable at the boundary. The fold produces a single ledger: both
+paths merge without creating new refinements. If the accumulated phase differs by $\pi$, the
+asymmetric parts of the update factors cancel under the fold, and $e_f$ becomes inadmissible.
+No destructive force is invoked; the cancellation expresses the fact that no consistent
+ledger can be formed with that ordering.
+
+Thus, ``superposition'' is the coexistence of multiple valid, Martin-consistent refinements
+until detection forces a non-degenerate fold. The Mach--Zehnder interferometer does not show
+a particle traveling two paths; it shows that causal histories can remain distinct and
+simultaneously admissible until the interaction operator selects the unique ordering that
+avoids contradiction at the boundary.
+\end{example}
+
+\begin{example}[Bell--Aspect Tests as Global Martin Consistency]
+\label{te:bell-aspect}
+
+Two spacelike-separated laboratories, $A$ and $B$, share a preparation event that produces
+an entangled pair. Each maintains its own causal universe tensor. The preparation is such
+that multiple ordered refinements remain admissible: different measurement settings at $A$
+and $B$ produce distinct, yet individually consistent, ledgers. Before either measurement is
+recorded, the global state is degenerate: many joint histories remain compatible with all
+previous refinements, and no scalar invariant distinguishes among them.
+
+A local hidden-variable model assumes that this degeneracy can be resolved purely by local
+rules. In ledger language, it assumes that the update
+\[
+(\text{measure at }A,\text{ measure at }B)
+\]
+can be decomposed into separate, predetermined refinements in each ledger. That is,
+the merged state could be written as a fold of two independent maps acting only on local
+records, with no global repair.
+
+The Bell--Aspect tests show this is impossible. When $A$ records a refinement corresponding
+to setting $a$ and $B$ records one corresponding to $b$, the accumulated tensor must be
+updated by the interaction operator,
+\[
+\U_{\mathrm{final}} = f(\U^A,\U^B).
+\]
+For many setting pairs $(a,b)$, the resulting ledger eliminates histories that would have
+remained admissible under any local rule. The violation of Bell inequalities is the empirical
+statement that no decomposition of $f$ into independent, local updates can preserve all
+observed distinctions. The fold is intrinsically global.
+
+Operationally, a new refinement at $A$ forces a pivot on the boundary shared with $B$,
+eliminating joint histories that contradict the updated record. No signal travels between the
+laboratories; no mechanism carries information. The ledger simply performs the minimal
+boundary repair required by Martin's Condition. The observed ``nonlocal'' correlations are
+the bookkeeping consequence of enforcing a single, globally consistent causal ordering.
+
+Thus, the Bell--Aspect tests reveal that entanglement is not a hidden influence. It is the
+fact that the causal universe must repair its boundary globally when a non-degenerate
+refinement is recorded. Local hidden variables fail because they deny the existence of this
+global pivot.
+\end{example}
+
+\begin{example}[The Qubit as a Causal Doublet]
+\label{te:qubit-doublet}
+
+Consider a system whose next admissible refinement may proceed in one of two distinct ways,
+$e_0$ or $e_1$. Both are individually consistent with all recorded events. Neither produces a
+new distinguishability. The ledger therefore admits two possible causal updates,
+\[
+\U_{n+1}=E_0\,\U_n
+\qquad\text{or}\qquad
+\U_{n+1}=E_1\,\U_n,
+\]
+and nothing in the accumulated tensor resolves which will occur. The pair
+$S=\{e_0,e_1\}$ is a \emph{causal doublet}: two equally admissible refinements, each extending
+the history without contradiction. The system is not undecided; it simply has more than one
+globally consistent continuation.
+
+This is the minimal unit of causal degeneracy. A \emph{qubit} is a causal doublet whose two
+refinements remain admissible until a non-degenerate event forces a decision. When a
+measurement is recorded, the new refinement must be folded into the ledger. The interaction
+operator computes
+\[
+\U_{n+1}=f(\U_n,e_b)
+\qquad\text{for a unique } b\in\{0,1\},
+\]
+and all hypothetical histories in which the other refinement contradicts the updated ledger
+are removed. The doublet collapses to a single admissible ordering.
+
+Nothing physical “chooses’’ $e_0$ or $e_1$. No hidden variable pre-selects the outcome. The
+pivot is bookkeeping: Planck forbids invisible refinements, Cantor forbids erasure, and
+Martin enforces global consistency. Until the pivot, $S$ remains a superposed causal state:
+two admissible orderings, both equally consistent with all observations.
+\end{example}
+
+\begin{example}[Hawking Radiation Revisited]
+\label{te:hawking-radiation-revisited}
+\NB{No physical emission is assumed. Surrogate refinements are bookkeeping: the minimal
+distinctions required to restore Martin consistency when the boundary saturates.}
+
+An external laboratory maintains a causal universe tensor $\U^{\mathrm{out}}$ recording all
+admissible events visible from outside a black hole. The horizon $H$ is the frontier of
+distinguishability: an informational boundary beyond which no finite extension of
+$\U^{\mathrm{out}}$ can include internal and external refinements in a single, Martin-consistent
+ordering. Events remain locally finite, but the reconciliation problem saturates: the external
+ledger cannot compute a consistent extension that includes both sides.
+
+As an infalling system approaches $H$, its internal refinements accelerate. By the Axiom of
+Cantor, $\U^{\mathrm{out}}$ may not erase distinctions it has already recorded; by the Axiom of
+Planck, it may not invent invisible refinements. When the bridge of admissible overlap
+collapses—when no joint ordering of internal and external updates remains feasible—the
+external ledger must perform a repair. Martin’s Condition demands a globally consistent
+ordering on the accessible side.
+
+The repair introduces \emph{surrogate refinements} $e_{\mathrm{rad}}$:
+\[
+\U^{\mathrm{out}}_{n+1} = e_{\mathrm{rad}}\;\U^{\mathrm{out}}_{n},
+\]
+a compensatory update that restores coherence without referencing inaccessible events. These
+surrogates are not particles escaping from behind the horizon; they are the unique refinements
+that preserve global order when the boundary can no longer reconcile the missing interior.
+The exponential spectrum attributed to Hawking radiation reflects the combinatorial
+multiplicity of admissible surrogate updates once the informational channel saturates.
+
+Thus, Hawking radiation is not a quantum field effect in curved spacetime. It is the minimal
+bookkeeping required to maintain Martin consistency on the visible side of an informational
+boundary. The horizon enforces a holographic constraint: global order must remain representable
+on the surface that separates what can be reconciled from what cannot.
+\end{example}
+
+\section{The Law of Boundary Consistency}
+\label{se:law-boundary}
+
+Every example in this chapter has the same structure. When a new admissible refinement is
+recorded, the ledger does not alter the interior of the accumulated state. Instead, it repairs
+only the frontier where two descriptions overlap. The Causal Folding Operator updates the
+boundary and leaves the interior fixed. This pattern is universal and admits a formal
+statement.
+
+\begin{law}[The Law of Boundary Consistency]
+\label{law:boundary-consistency}
+In any locally finite causal domain, every admissible update to the accumulated causal
+universe tensor $\U$ arises from boundary refinement. The interior of $\U$ is fixed by
+previously recorded distinctions: altering it would introduce an invisible refinement (Axiom
+of Planck) or remove a recorded one (Axiom of Cantor), both of which are forbidden. When a
+new admissible event is observed, the ledger repairs only the frontier where two descriptions
+overlap, enforcing Martin’s Condition on the boundary of the accumulated state.
+
+Therefore all dynamics---propagation, interaction, interference, and decay---are the shadows
+of boundary reconciliation. Nothing propagates through the interior; motion is the smooth limit
+of reconciling admissible distinctions at the frontier of $\U$.
+\end{law}
+
+\begin{remark}
+\item \emph{No interior modification.} Once folded, the interior of $\U$ contains no
+      unobserved structure. Any change to it would imply either an invisible refinement or the
+      erasure of a recorded one, violating Planck or Cantor.
+\item \emph{Minimal repair.} When ledgers overlap, the operator updates only the smallest
+      region where a contradiction could occur. This is a boundary operation, not a volume
+      operation.
+\item \emph{Computability.} Martin’s Condition is enforced by checking only the joint frontier:
+      the causal surface where two descriptions must agree. No global search or
+      re-evaluation of the interior is required.
+\item \emph{Operational meaning.} Waves, interference, scattering, advection, and diffusion
+      appear in the smooth limit of boundary reconciliation. The equations of motion arise
+      from the unique completion that preserves the folded boundary without altering the
+      interior.
+\end{remark}
+
+This law closes the algebra of interaction. The Causal Folding Operator enforces global
+consistency by repairing only the frontier of the accumulated state. Every dynamic phenomenon
+considered in this chapter---the Dantzig pivot of entanglement, the Mach--Zehnder interference
+fold, the Bell--Aspect repair, and the surrogate refinements of a causal horizon---is an
+instance of the same rule: the ledger changes only at the boundary.
+
+This statement is the discrete analogue of Gauss’s Theorem. In the continuum, specifying the
+value of a field on a closed boundary determines its interior uniquely. The Law of Boundary
+Consistency asserts the same principle for causal ledgers: every admissible refinement enters
+through the frontier where two descriptions overlap, and the interior is fixed by previously
+recorded distinctions. Nothing propagates through the volume of $\U$; every update is a
+boundary repair.
+
+All examples in this chapter—velocity boosts, interference, entanglement, and surrogate
+events near a causal horizon—share this structure. A new admissible event forces only the
+minimal reconciliation on the overlap. The interior never changes. Motion is the continuum
+shadow of this purely discrete principle.
+
+At this point nothing further is required. Once every admissible update is confined to the
+boundary, the smooth limit follows automatically: the interior is fixed, and all variation
+arises from finite differences on the frontier. The familiar equations of motion are just the
+continuum shadow of these discrete boundary repairs. Writing them down is a matter of
+expressing the boundary updates in finite–difference form and passing to the smooth limit.
+
+\section{Classical Transport}
+\label{sec:classical-transport}
+\NB{Nothing in this construction asserts that a differential equation
+\emph{must} govern the data.  We show only that if the ledger admits a smooth
+completion consistent with the axioms, then the corresponding differential
+equation appears as its unique smooth shadow.  The calculus is a consequence
+of measurement consistency, not an independent postulate.}
+
+Classical transport is the process by which refinement differences reconcile across
+space.  In the discrete ledger, this appears as iterated boundary smoothing:
+sharp discontinuities trigger local folds until no admissible repair remains.
+In the smooth limit, these reconciliation rules generate the transport
+equations of classical thermodynamics.  The organizing principle is the
+variational order of the correction.
+
+\subsection{First Variation: Slope-Level Ledger Corrections}
+\label{sec:heat-first-variation}
+
+First-variation updates alter only the slope of the admissible spline
+representation.  Informational minimality forbids the creation of new turning
+points between event anchors: any correction that introduced a fresh extremum
+would constitute an unrecorded event.  All admissible first-order updates are
+therefore monotone.  Their smooth limit yields irreversible transport.
+
+\subsubsection{Annealing and Conduction (Symmetric Reconciliation)}
+\label{sec:heat-conduction}
+
+Conduction appears when a ledger repeatedly reconciles a coarse description of
+itself.  A sharp difference in refinement counts across a boundary triggers a
+sequence of local folds, each of which reduces the discrepancy without
+altering the interior.  This iterative process is \emph{annealing}:
+informational tension is monotonically released until no further repair is
+admissible.
+
+Under the Law of Spline Sufficiency, symmetric reconciliation introduces no
+oscillation and no hidden curvature.  The discrete flux is governed by the
+centered jump between neighboring cells, and the update rule is a symmetric
+projection back into the admissible class.  In the smooth limit, these finite
+differences converge to the classical diffusion equation.
+
+\paragraph{Discrete Ledger Update and the Flux Form.}
+
+Let $u_i^k$ denote the normalized refinement count recorded on cell $i$ at
+discrete time $t_k$, with spatial spacing $\Delta x$ and time step $\Delta t$.
+The update must obey informational conservation in a conservative flux form:
+\begin{equation}
+  u_i^{k+1}
+  \;=\;
+  u_i^{k}
+  \;-\;
+  \frac{\Delta t}{\Delta x}
+  \bigl(F_{i+\frac12}^k - F_{i-\frac12}^k\bigr).
+  \label{eq:conduction-conservative}
+\end{equation}
+
+\emph{Symmetric reconciliation} uses the centered jump as the flux.  If
+$\kappa$ is the informational diffusion coefficient,
+\begin{equation}
+  F_{i+\frac12}^k
+  \;=\;
+  -\,\kappa\,
+  \frac{u_{i+1}^k - u_i^k}{\Delta x}.
+  \label{eq:conduction-flux}
+\end{equation}
+Substituting \eqref{eq:conduction-flux} into
+\eqref{eq:conduction-conservative} yields the standard symmetric smoothing
+rule:
+\begin{equation}
+  u_i^{k+1}
+  \;=\;
+  u_i^k
+  \;+\;
+  \frac{\kappa\,\Delta t}{\Delta x^2}
+  \bigl(u_{i+1}^k - 2u_i^k + u_{i-1}^k\bigr).
+  \label{eq:conduction-update}
+\end{equation}
+
+\begin{proof}[Proof Sketch: Convergence to $u_t = D u_{xx}$]
+Approximate the temporal derivative using a forward difference:
+\[
+  u_t(x_i,t_k)
+  \;\approx\;
+  \frac{u_i^{k+1} - u_i^k}{\Delta t}.
+\]
+Substituting \eqref{eq:conduction-update} and rearranging,
+\[
+  \frac{u_i^{k+1} - u_i^k}{\Delta t}
+  \;=\;
+  \frac{\kappa}{\Delta x^2}\,
+  \bigl(u_{i+1}^k - 2u_i^k + u_{i-1}^k\bigr).
+\]
+The spatial term on the right is the standard centered approximation of the
+second derivative,
+\[
+  u_{xx}(x_i,t_k)
+  \;\approx\;
+  \frac{u_{i+1}^k - 2u_i^k + u_{i-1}^k}{\Delta x^2}.
+\]
+Thus
+\[
+  u_t(x_i,t_k)
+  \;=\;
+  \kappa\,u_{xx}(x_i,t_k).
+\]
+Taking the continuous limit $\Delta x,\Delta t\to 0$ and letting
+$\kappa \to D$ yields the diffusion equation
+\[
+  u_t = D\,u_{xx}.
+\]
+\end{proof}
+
+The convergence is admissible because the Law of Spline Sufficiency guarantees
+that the solution remains $\mathcal{C}^2$ and introduces no hidden curvature.
+The symmetric finite-difference update is therefore a monotone, stable
+smoothing process: the smooth shadow of informational annealing.
+
+
+\subsubsection{Convection and Oriented Transport (Boundary Consistency)}
+\label{sec:heat-convection}
+
+Convection models the directed transport of distinctions, where the orientation
+of the flow is realized as a preferred direction in the causal refinement
+process.  When a boundary carries an orientation, reconciliation must respect
+that direction: smoothing from the downstream side would create unrecorded
+structure on the wrong side of the interface.
+
+\paragraph{Oriented Boundary Reconciliation.}
+
+Let $u_i^k$ be the normalized refinement count on cell $i$ at time $t_k$.
+When the interface $(i,i{+}1)$ has a known inflow direction, the Law of
+Boundary Consistency requires that the ledger flux across that interface be
+determined solely by the state on the inflow side:
+\begin{equation}
+  F_{i+\frac12}^k = c\,u_i^k,
+  \label{eq:convection-flux}
+\end{equation}
+where $c$ is the order speed.  Substituting \eqref{eq:convection-flux} into
+the conservative update
+\begin{equation}
+  u_i^{k+1}
+  \;=\;
+  u_i^{k}
+  \;-\;
+  \frac{\Delta t}{\Delta x}
+  \bigl(F_{i+\frac12}^k - F_{i-\frac12}^k\bigr)
+  \label{eq:conservative-update-again}
+\end{equation}
+yields the upwind rule
+\begin{equation}
+  u_i^{k+1}
+  \;=\;
+  u_i^k
+  \;-\;
+  \frac{c\,\Delta t}{\Delta x}\,
+  \bigl(u_i^k - u_{i-1}^k\bigr).
+  \label{eq:convection-update}
+\end{equation}
+
+\begin{proof}[Proof Sketch: Convergence to $u_t + c\,u_x = 0$]
+Divide \eqref{eq:convection-update} by $\Delta t$ to obtain
+\[
+  \frac{u_i^{k+1} - u_i^k}{\Delta t}
+  \;=\;
+  -\,c\,
+  \frac{u_i^k - u_{i-1}^k}{\Delta x}.
+\]
+As $\Delta t,\Delta x \to 0$, the left side is the forward difference
+approximation of the time derivative $\partial_t u$, and the right side is the
+backward difference approximation of the space derivative $\partial_x u$.
+Taking the smooth limit yields the advection equation
+\[
+  u_t + c\,u_x = 0.
+\]
+\end{proof}
+
+The update \eqref{eq:convection-update} is admissible only when it remains
+monotone, which is guaranteed by the CFL condition
+$0 \le c\,\Delta t/\Delta x \le 1$.  Under this constraint no new turning
+points are introduced, so the Law of Spline Sufficiency is respected: the
+directed transport is a projection back into the admissible spline class.
+
+\NB{Boundary Consistency selects the upwind flux, and Spline Sufficiency
+forbids oscillatory corrections; the advection equation is the smooth shadow
+of oriented ledger reconciliation.}
+
+
+
+\subsubsection{Advection--Diffusion (Mixed Closure)}
+\label{sec:heat-advection-diffusion}
+
+In many settings, admissible reconciliation requires both symmetric
+homogenization and directed transport.  The ledger must smooth local
+inconsistencies while simultaneously respecting boundary orientation.  The
+resulting update combines the symmetric and upwind fluxes.
+
+\paragraph{Combined Flux.}
+
+Let the oriented flux be given by
+\[
+  F^{\text{adv}}_{i+\frac12} = c\,u_i^k,
+\]
+and the symmetric flux by
+\[
+  F^{\text{diff}}_{i+\frac12}
+  = -\,\kappa\,\frac{u_{i+1}^k - u_i^k}{\Delta x}.
+\]
+The total flux across the interface is their sum:
+\begin{equation}
+  F_{i+\frac12}^k
+  = c\,u_i^k
+  - \kappa\,\frac{u_{i+1}^k - u_i^k}{\Delta x}.
+  \label{eq:ad-mixed-flux}
+\end{equation}
+Substituting \eqref{eq:ad-mixed-flux} into the conservative update
+\begin{equation}
+  u_i^{k+1}
+  \;=\;
+  u_i^{k}
+  - \frac{\Delta t}{\Delta x}
+    \bigl(F_{i+\frac12}^k - F_{i-\frac12}^k\bigr)
+  \label{eq:ad-mixed-conservative}
+\end{equation}
+yields the discrete advection--diffusion rule
+\begin{equation}
+  u_i^{k+1}
+  =
+  u_i^k
+  - \frac{c\,\Delta t}{\Delta x}\,(u_i^k - u_{i-1}^k)
+  + \frac{\kappa\,\Delta t}{\Delta x^2}
+     (u_{i+1}^k - 2u_i^k + u_{i-1}^k).
+  \label{eq:ad-mixed-update}
+\end{equation}
+
+\begin{proof}[Proof Sketch: Convergence to $u_t + c\,u_x = D\,u_{xx}$]
+Divide \eqref{eq:ad-mixed-update} by $\Delta t$ to obtain
+\[
+  \frac{u_i^{k+1} - u_i^k}{\Delta t}
+  =
+  -\,c\,\frac{u_i^k - u_{i-1}^k}{\Delta x}
+  + \kappa\,\frac{u_{i+1}^k - 2u_i^k + u_{i-1}^k}{\Delta x^2}.
+\]
+In the limit $\Delta x,\Delta t \to 0$, the left side becomes
+$\partial_t u$, the first term becomes $-c\,\partial_x u$, and the second
+becomes $\kappa\,\partial_{xx} u$.  Setting $D=\kappa$ gives
+\[
+  u_t + c\,u_x = D\,u_{xx},
+\]
+the advection--diffusion equation.
+\end{proof}
+
+The mixed closure is the most general first-order reconciliation of the
+refinement record.  Information spreads down gradients (diffusion) while
+coherent packets of distinction are carried along oriented interfaces
+(advection).  The process is irreversible in either mode, and no additional
+structure is assumed beyond the slope-level correction forced by the axioms.
+
+\NB{In every case, first-variation closure is a projection back into the
+admissible spline class: no new extrema are introduced, and no hidden
+structure appears under refinement.  The differential equations are the smooth
+shadows of monotone reconciliation.}
+
+
+\subsection{Second Variation: Curvature-Level Ledger Corrections}
+\label{sec:heat-second-variation}
+
+Second-variation updates alter curvature while preserving slope and anchor
+values.  These corrections are reversible: they propagate distinctions without
+loss and produce no additional smoothing.  Their smooth limit yields wave
+transport.
+
+\subsubsection{Radiation (Symmetric Curvature Smoothing)}
+\label{sec:heat-radiation}
+
+Radiation represents the propagation of distinction at the maximal admissible
+speed.  Unlike the first--order corrections of
+Sections~\ref{sec:heat-conduction}--\ref{sec:heat-advection}, radiation is
+reversible: once the ledger has reconciled curvature symmetrically, no net
+informational gain or loss remains.  The process is the smooth shadow of
+\emph{symmetric curvature smoothing}.
+
+\paragraph{Vanishing Second Variation.}
+
+Let $\mathcal{A}$ denote the amplitude of distinction recorded over a finite
+causal neighborhood.  The second variation $\delta^2\mathcal{A}$ measures the
+change in $\mathcal{A}$ under two sequential, infinitesimal perturbations of
+the record.  Radiation occurs when these perturbations commute exactly:
+\begin{equation}
+  \delta^2\mathcal{A} = 0.
+  \label{eq:radiation-second-variation}
+\end{equation}
+No net expansion or contraction of distinguishability can remain; curvature
+differences are repaired symmetrically and without directional bias.  This is
+the reversible complement of annealing: where first--order correction removes
+slope--level inconsistencies, second--order correction removes curvature--level
+tension.
+
+\paragraph{Discrete Curvature Laplacian.}
+
+In the discrete domain, the sum of all pairwise second variations over
+neighboring events defines the discrete Laplacian on event sets:
+\[
+  \nabla_E^2 \mathcal{A}
+  \;=\;
+  \sum_{f \in \mathrm{Nbr}(e)} \bigl(\mathcal{A}(f) - \mathcal{A}(e)\bigr).
+\]
+Martin's Condition enforces that this curvature vanishes:
+\begin{equation}
+  \nabla_E^2 \mathcal{A} = 0,
+  \label{eq:radiation-discrete-laplace}
+\end{equation}
+so that symmetric curvature smoothing is locally maximal and globally neutral.
+
+\paragraph{Smooth Shadow.}
+
+In the continuum limit, the second--order symmetric closure converges to the
+homogeneous wave equation.  If $u(x,t)$ is the smooth completion of the
+refinement record, then
+\begin{equation}
+  u_{tt} = c^2\,u_{xx},
+  \label{eq:wave-equation}
+\end{equation}
+where $c$ is the order speed---the combinatorial rate at which causal
+constraints traverse the event network.  Equation~\eqref{eq:wave-equation}
+expresses reversible propagation: local expansions and contractions of
+distinguishability cancel globally, so that information moves without net
+amplification or dissipation.
+
+\NB{Second--variation closure enforces symmetric curvature repair and forbids
+net informational gain or loss.  The wave equation is therefore the unique
+smooth shadow of reversible curvature smoothing, derived solely from the
+axioms of causal refinement.}
+
+
+\subsubsection{Adiabatic Transport (Curvature Invariance)}
+\label{sec:heat-adiabatic}
+
+Adiabatic transport is the ideal limit of reversible motion in the causal
+record.  Distinctions are neither created nor destroyed: informational entropy
+remains constant, and the curvature of the smooth completion is preserved.
+This process is the logical dual of annealing, establishing the boundary
+condition for zero informational work.
+
+\paragraph{Invariance of Distinguishability.}
+
+Let $\lambda$ parameterize a smooth evolution of an admissible history
+$\Psi(\lambda)$.  The history undergoes adiabatic transport when the
+informational entropy is invariant:
+\begin{equation}
+  \frac{d}{d\lambda}\,\mathcal{S}(\Psi) = 0.
+  \label{eq:adiabatic-entropy}
+\end{equation}
+Equivalently, the update operator satisfies
+\[
+  U_{\lambda+\delta\lambda}
+  =
+  U_{\lambda} + \mathcal{O}(\delta\lambda^2),
+\]
+so the leading--order change in the refinement record vanishes.  The motion is
+norm--preserving and informationally reversible: the ledger drifts without loss
+of distinction.
+
+\paragraph{Curvature Invariance.}
+
+Because $\mathcal{S}$ counts admissible configurations, the condition
+\eqref{eq:adiabatic-entropy} forces the evolution to proceed along a path of
+constant informational curvature.  Locally,
+\begin{equation}
+  \frac{d}{d\lambda}\,\Psi'' = 0,
+  \label{eq:adiabatic-curvature}
+\end{equation}
+so that no curvature--level tension is released or accumulated.  This is the
+reversible complement to the symmetric curvature smoothing of
+Section~\ref{sec:heat-radiation}.
+
+\paragraph{Smooth Shadow.}
+
+Under the Law of Spline Sufficiency ($\Psi^{(4)}=0$), curvature invariance
+selects the unique extremal that transports distinctions without dissipation:
+the geodesic or undamped wave.  Informational entropy remains constant,
+and the ledger evolves along the smooth completion $\Psi$ without net repair or
+decay.  Nothing dynamical is postulated; the law is a theorem of informational
+conservation.
+
+\NB{Adiabatic transport is the limit of causal motion that preserves
+informational order.  It connects reversible evolution ($d\mathcal{S}=0$) with
+the requirement that distinguishability cannot decrease.  The geodesic
+structure is therefore a consequence of informational invariance, not an
+independent physical postulate.}
+
+
+\section{Quantum Transport}
+\label{se:quantum-transport}
+
+Some transport phenomena do not appear as flows of a substance, but as discrete repairs of
+nearly degenerate descriptions. When two ledgers support multiple admissible extensions,
+the Causal Folding Operator must select the unique completion that preserves all recorded
+distinctions. The familiar quantum effects arise as the smooth shadows of this repair.
+
+\subsection{The Casimir Effect: Boundary-Limited Distinction}
+\label{sec:heat-casimir}
+
+The Casimir effect is the boundary expression of informational pressure.  When
+admissible refinements are restricted by geometry, the ledger must perform a
+compensatory update to preserve global distinguishability.  In the smooth
+limit, this boundary repair appears as a physical force.
+
+\paragraph{Boundary--Induced Asymmetry.}
+
+Consider two parallel constraints that restrict the admissible causal updates
+in the interior region.  Each admissible field mode corresponds to a
+distinguishable refinement of the causal record.  The plates suppress many
+of these modes, so the interior ledger records fewer admissible distinctions
+than the exterior.  Outside the plates, no such suppression occurs; the ledger
+remains unrestricted.  This produces an imbalance in refinement counts across
+the boundary: the exterior supports strictly more admissible updates than the
+interior.
+
+\paragraph{Compensatory Boundary Update.}
+
+The Second Law of Causal Order requires that global distinguishability must
+not decrease.  The imbalance therefore creates informational tension.  Because
+no additional interior modes are admissible, the only possible repair is a
+boundary update that restores global consistency without altering the
+restricted interior.  The unique correction is an outward curvature of the
+boundary ledger: refinements accumulate on the exterior frontier, pushing the
+constraints toward one another.
+
+In the smooth limit, this boundary curvature appears as the Casimir pressure.
+No mechanical postulate is introduced; the force is the smooth shadow of a
+compensatory update that restores consistency between the restricted interior
+and unrestricted exterior ledgers.
+
+\NB{In this interpretation, the Casimir effect is a holographic phenomenon:
+the minimal boundary correction enforced by global distinguishability.  The
+pressure is not a hypothesis about zero--point energy, but the unique repair
+consistent with the axioms of causal refinement.}
+
+
+\subsection{Alpha Decay: Repair of a Causal Contradiction}
+\label{sec:quantum-alpha}
+
+Alpha decay is the irreversible repair of a causal contradiction on the
+boundary of the nuclear ledger.  The nucleus admits two nearly indistinguishable
+continuations of its refinement record:
+\[
+  \Psi_{\mathrm{bound}}
+  \qquad\text{and}\qquad
+  \Psi_{\mathrm{unbound}}.
+\]
+Both are initially admissible: each agrees with all external anchors and
+differs only within a bounded interior neighborhood.
+
+\paragraph{Causal Degeneracy and Symmetry Drift.}
+
+Over informational time, unresolved curvature accumulates and the two ledgers
+drift out of alignment.  Their boundary descriptions become incompatible with
+Martin Consistency: the overlap cannot be reconciled without introducing
+unrecorded structure.  A repair is required to preserve the global order of
+the causal record.
+
+\paragraph{Removal of an Inconsistent Branch.}
+
+The Causal Folding Operator $f$ performs the minimal corrective update by
+removing the inconsistent branch:
+\[
+  f:\;
+  \Psi_{\mathrm{bound}}
+  \longrightarrow
+  \Psi_{\mathrm{unbound}}
+  \;+\;
+  \alpha.
+\]
+The emitted alpha particle is the recorded trace of this boundary repair.  The
+interior ledger returns to an admissible configuration, and the causal record
+evolves on the remaining branch.
+
+\paragraph{Smooth Shadow.}
+
+In the continuum limit, the finite differences of this irreversible repair
+produce the exponential law of radioactive decay.  No hidden forces or
+tunneling mechanism is assumed: alpha decay is the unique boundary update that
+eliminates a causal contradiction while preserving global distinguishability.
+
+\NB{Alpha decay is the irreversible removal of an inconsistent branch from the
+refinement record.  The emitted particle is the holographic trace of the
+boundary correction, not a postulated tunneling object.}
+
+
+\subsection{Gamma Decay (Restoration of Causal Symmetry)}
+\label{sec:quantum-gamma}
+
+Gamma decay is a reversible repair of internal causal symmetry.  An excited
+nuclear state corresponds to an admissible configuration whose internal
+refinement record is nearly, but not exactly, consistent with the minimal
+ground state.  Over time, unresolved curvature accumulates, producing a small
+informational asymmetry in the internal ledger.
+
+\paragraph{Informational Synchronization.}
+
+Let $\Psi^{*}$ denote the smooth completion of the excited state and $\Psi$
+that of the ground state.  Both are admissible: they agree on all external
+anchors and differ only in a bounded internal neighborhood.  The difference is
+a phase drift in the internal causal partition---a small curvature that
+violates informational minimality.  The nucleus must perform a repair that
+restores the unique, globally consistent ground state.
+
+The minimal symmetric repair is the emission of a gamma photon:
+\[
+  \Psi^{*} \;\longrightarrow\; \Psi \;+\; \gamma.
+\]
+The photon is the propagated correction: a reversible wave of order that
+carries the excess curvature away from the nucleus while leaving the internal
+ledger in its minimal configuration.
+
+\paragraph{Zero--Mass Boundary Repair.}
+
+Unlike alpha decay (Section~\ref{sec:quantum-alpha}), which removes an entire
+inconsistent branch from the record, gamma decay preserves the identity of the
+nucleus.  It is informationally reversible: no new branches are created, and
+no admissible distinctions are destroyed.  The process is the smooth shadow of
+symmetric curvature repair:
+\[
+  \delta^{2}\mathcal{A} = 0
+  \quad\Longrightarrow\quad
+  \text{emission of }\gamma\text{ with } E=h\nu.
+\]
+
+The energy of the photon measures the amount of curvature removed from the
+internal ledger.  No mechanical postulate is required; gamma decay is the
+unique boundary update that restores global distinguishability without
+altering the underlying causal identity of the system.
+
+\NB{In this interpretation, gamma decay is not a force--mediated transition,
+but a minimal holographic correction: a reversible synchronization event that
+propagates excess curvature as a photon and restores Martin Consistency in the
+internal ledger without altering the causal identity of the nucleus.}
+
+
+
+\subsection{Brownian Motion: Diffusive Boundary Uncertainty}
+\subsubsection{Brownian Motion as Quantized Uncertainty}
+\label{sec:brownian-quantum}
+
+Brownian motion can be interpreted as a quantum informational phenomenon in
+the present framework.  The source of randomness is not mechanical noise but
+\emph{finite causal resolution}: each refinement step leaves a family of
+equally admissible micro--orderings that the ledger cannot distinguish.  The
+coarse record therefore evolves stochastically.
+
+\paragraph{Stochastic Reconciliation at Finite Resolution.}
+
+Let $u_i^k$ be the normalized refinement count on cell $i$ at time $t_k$.
+When the observer cannot resolve all admissible distinctions at scale
+$\Delta x$, the symmetric smoothing update acquires an irreducible stochastic
+term:
+\begin{equation}
+  u_i^{k+1}
+  =
+  u_i^k
+  +
+  \frac{\kappa\,\Delta t}{\Delta x^2}
+  (u_{i+1}^k - 2u_i^k + u_{i-1}^k)
+  +
+  \sqrt{2D\,\Delta t}\;\xi_i^k,
+  \qquad \mathbb{E}[\xi_i^k]=0,\;\mathbb{E}[(\xi_i^k)^2]=1.
+  \label{eq:brownian-update}
+\end{equation}
+The deterministic part is the symmetric reconciliation enforced by the Law of
+Spline Sufficiency; the random term is the ledger's irreducible uncertainty at
+the observation scale.
+
+\paragraph{Smooth Shadow: Diffusion as Quantum Measure.}
+
+Under refinement $\Delta x,\Delta t\to 0$ with $D$ fixed, the central limit
+theorem implies convergence of \eqref{eq:brownian-update} to the diffusion
+equation for the coarse density $u(x,t)$:
+\begin{equation}
+  u_t = D\,u_{xx}.
+  \label{eq:brownian-diffusion}
+\end{equation}
+Here $D$ is the \emph{informational diffusion coefficient}: the effective
+bandwidth of unresolved distinctions per unit time.
+
+\paragraph{Bridge to Schr\"odinger via Analytic Continuation.}
+
+The free Schr\"odinger equation is related to diffusion by analytic
+continuation of time.  Setting
+\(
+  D = \tfrac{\hbar}{2m}
+\)
+and $t \mapsto -\,i t$ maps \eqref{eq:brownian-diffusion} to
+\begin{equation}
+  i\,\hbar\,\partial_t \Psi = -\,\frac{\hbar^2}{2m}\,\partial_{xx}\Psi,
+  \label{eq:schrodinger-free}
+\end{equation}
+i.e., the smooth shadow of unresolved, symmetric refinement at fixed
+informational bandwidth equals the quantum free evolution with Planck scale
+$\hbar$.  In this sense, Brownian motion is \emph{quantized uncertainty}:
+$\hbar$ calibrates the minimal unresolved action, while $D$ measures the rate
+at which that unresolved structure propagates statistically.
+
+\paragraph{Consistency with the Two Laws.}
+
+- \emph{Spline Sufficiency} ensures no spurious extrema: the stochastic update
+  remains a projection into the admissible class almost surely.
+- \emph{Boundary Consistency} fixes oriented interfaces; adding an upwind
+  drift $c$ to \eqref{eq:brownian-update} yields the standard
+  advection--diffusion (Fokker--Planck) limit.
+
+\NB{This construction shows \emph{how} quantum evolution can arise from
+measurement limits: if the ledger's unresolved bandwidth $D$ is fixed by a
+Planck scale, diffusion analytically continues to Schr\"odinger dynamics.  It
+does not assert that nature must realize this identification in every regime.}
+
+
+
+\section{First Quantization as an Application of the Two Laws}
+\label{sec:first-quantization}
+
+The classical picture of quantization treats the wavefunction, Hilbert space,
+and operator algebra as new physical axioms.  In the present framework they
+arise automatically from the two kinematic consistency laws:
+
+\begin{itemize}
+\item \textbf{Law of Spline Sufficiency:} no admissible refinement may
+      introduce unrecorded structure; smooth closure is $\mathcal{C}^{2}$
+      and satisfies $\Psi^{(4)} = 0$,
+\item \textbf{Law of Boundary Consistency:} oriented boundaries must be
+      reconciled from the inflow side; no correction may propagate across a
+      boundary in the wrong direction.
+\end{itemize}
+
+Together, these laws force the structure known in physics as \emph{first
+quantization}.  Nothing new is added: the quantized theory is the smooth
+shadow of informational bookkeeping.
+
+\subsection{Hilbert Structure from Spline Closure}
+\label{sec:hilbert-from-splines}
+
+Under Spline Sufficiency, every admissible history has a unique smooth
+representative $\Psi$ that is cubic between anchors and $\mathcal{C}^{2}$
+globally.  Any two admissible histories $\Psi$ and $\Phi$ differ only in their
+recorded curvature.  Their overlap is therefore measured by the curvature
+functional
+\[
+  \langle \Psi,\,\Phi \rangle
+  = \int \Psi''(x)\,\Phi''(x)\,dx.
+\]
+This inner product is positive definite on the admissible class and yields a
+complete inner-product space: the Hilbert space of admissible closures.  The
+``wavefunction'' is nothing more than $\Psi$ viewed as an element of this
+space.
+
+\subsection{Canonical Structure from Boundary Consistency}
+\label{sec:canonical-structure}
+
+The curvature functional determines a unique conjugate operator.  Integration
+by parts yields
+\[
+  \langle \Psi,\,x\,\Phi \rangle
+  - \langle x\,\Psi,\,\Phi \rangle
+  = \int \Psi(x)\,\Phi'(x)\,dx,
+\]
+where the boundary term is fixed in sign by the inflow rule of Boundary
+Consistency.  The operator that realizes this antisymmetry is
+\[
+  \hat{p} = -\,i\,\partial_x,
+\]
+the momentum operator of canonical quantization.  No new axiom is required:
+the oriented boundary rule uniquely determines the self-adjoint generator of
+translations.
+
+\subsection{Energy Levels from Informational Minimality}
+
+Consider an admissible history constrained by a restoring boundary (a fold
+that always returns toward the anchor).  Under Spline Sufficiency the closure
+is cubic between anchors and $\Psi^{(4)}=0$; under Boundary Consistency the
+inflow rule forces the curvature to alternate monotonically between turning
+points.  The Galerkin limit of this curvature balance is the harmonic
+oscillator:
+\[
+  -\,\Psi''(x) + x^{2}\Psi(x) = \lambda \Psi(x),
+\]
+whose eigenvalues are discrete because no new turning points may be added
+between anchors.  The spectrum is the familiar
+\[
+  \lambda_n = (2n+1), \qquad n=0,1,2,\dots
+\]
+Quantization is therefore a \emph{restriction of admissible curvature}, not a
+postulate about nature.
+
+\subsection{Summary}
+
+\begin{itemize}
+\item Spline Sufficiency $\Rightarrow$ Hilbert space of smooth closures,
+\item Boundary Consistency $\Rightarrow$ canonical commutators,
+\item Discrete curvature balance $\Rightarrow$ quantized energy levels.
+\end{itemize}
+
+\begin{equation*}
+  \text{finite ledger}
+  \;\xrightarrow{\text{spline closure}}\;
+  \Psi
+  \;\xrightarrow{\text{boundary consistency}}\;
+  \hat{x},\,\hat{p}
+  \;\xrightarrow{\text{curvature balance}}\;
+  \text{quantized energies}.
+\end{equation*}
+
+Thus the apparatus of ``first quantization'' is not a new physics.  It is the
+smooth bookkeeping of the two kinematic laws applied to finite informational
+records.
+
+\NB{In this sense, quantization is not an independent hypothesis.  It is the
+minimal correction rule forced by informational sufficiency and boundary
+orientation.}
+
+
+\section*{Coda: The Informational Harmonic Oscillator}
+\addcontentsline{toc}{section}{Coda: The Informational Harmonic Oscillator}
+
+\begin{example}[Coda: The Informational Harmonic Oscillator]
+\textbf{N.B.} This coda introduces the simplest reversible dynamics permitted by the Second Law of Causal Order.  
+It shows that oscillation---in its most abstract sense---arises whenever information alternates between two complementary forms: record and prediction.  
+No physical mass, force, or energy is implied.  
+The oscillator here is entirely informational: a minimal closed loop of distinguishability \cite{planck1901,landauer1961,wheeler1983}.
+
+\emph{Setup.}  
+Let $(x,p)$ denote a conjugate pair of informational coordinates on a two–dimensional causal phase space.  
+$x$ represents the observer’s recorded distinctions (the state of knowledge);  
+$p$ represents the predictive momentum (the rate at which distinctions are changing).  
+Define the informational Hamiltonian
+\[
+\Entropy(x,p) = \tfrac{1}{2}\,(\alpha x^{2} + \beta p^{2}),
+\]
+where $\alpha$ and $\beta$ are positive constants measuring informational stiffness and inertia.  
+The reversible evolution equations are
+\[
+\dot{x} =  \phantom{-}\frac{\partial \Entropy}{\partial p} = \beta p,
+\qquad
+\dot{p} = -\frac{\partial \Entropy}{\partial x} = -\alpha x.
+\]
+Eliminating $p$ yields
+\[
+\ddot{x} + \omega^{2} x = 0, \qquad \omega^{2} = \alpha\beta.
+\]
+Thus the observer’s state executes harmonic motion in informational phase space with constant total measure $\Entropy(x,p)$.
+
+\emph{Interpretation.}  
+At each turning point of the oscillation, information is maximally localized: the record $x$ is fixed, the prediction $p$ vanishes.  
+At each midpoint, prediction dominates and the record is momentarily indeterminate.  
+The system alternately \emph{stores} and \emph{transmits} distinguishability, maintaining constant total informational entropy.  
+The cycle expresses the complementarity of knowledge and expectation: every complete measurement must eventually swing back toward uncertainty to preserve $\Delta S \ge 0$.
+
+\emph{Relation to Transport.}  
+The four informational transport regimes appear as limiting cases of this oscillator:
+\begin{itemize}
+  \item \textbf{Adiabatic transport:} small, continuous oscillations with $\dot S = 0$ (reversible exchange of information).
+  \item \textbf{Annealing:} inclusion of damping $\gamma > 0$, giving $\ddot{x} + \gamma\dot{x} + \omega^{2}x = 0$, a monotonic relaxation to equilibrium.
+  \item \textbf{Brownian motion:} addition of stochastic forcing $\xi(t)$, $\ddot{x} + \omega^{2}x = \xi(t)$, producing diffusive variance growth.
+  \item \textbf{Wave/particle duality:} interpretation of $(x,p)$ as the conjugate pair of localization and amplitude---dual views of the same informational invariant.
+\end{itemize}
+Each regime preserves causal consistency and satisfies $\Delta S \ge 0$; only the mode of information exchange changes.
+
+\emph{Scope.}  
+This oscillator is the canonical closed system of the informational universe:  
+a bounded transformation in which every increase in record precision is offset by a proportional loss of predictive capacity, and vice versa.  
+It represents the minimal rhythm of causal order---the reversible heartbeat of information itself.
 \end{example}
 
 
-Consider an entanglement $S = \{E_i, E_j\}$ of two spatially separated
-measurement events.  By definition, the order of $E_i$ and $E_j$ may be
-permuted without changing any invariant scalar of the universe tensor:
-\[
-E_i + E_j = E_j + E_i. \tag{15}
-\]
-Each pair of entangled events therefore constitutes a \emph{degenerate
-basis} of the global causal structure: multiple local orderings are
-consistent with the same global invariants.
+\begin{center}
+\textit{Motion, in this theory, is not caused by energy.  
+It is the preservation of order under Martin’s Condition.}
+\end{center}
 
-\paragraph{Degeneracy and Feasibility.}
-Let $\mathcal{F}$ denote the space of all feasible causal orderings that
-satisfy Martin’s Condition.  Every element of $\mathcal{F}$ is a
-physically admissible extension of the partial order of events.  When
-two or more orderings yield the same invariants, the corresponding
-configurations form a \emph{degenerate face} of $\mathcal{F}$—analogous
-to a flat ridge in a linear‐programming polytope where the objective is
-constant.  Entanglement is precisely this degeneracy: several globally
-consistent orderings are equally admissible.
 
-\paragraph{Selection as Pivot.}
-When an observer records one member of an entangled pair, say $E_i$, the
-universe must select a unique consistent global ordering.  This
-selection is equivalent to a \emph{pivot operation} in the sense of
-Dantzig: a transition from one feasible vertex of $\mathcal{F}$ to
-another that preserves all constraints while choosing a particular
-basis.  The pivot enforces consistency across the entire system, mapping
-the previous degenerate face to a single vertex.  The resulting update
-\[
-U_{n+1} = \Phi_{\text{sel}}(U_n)
-\]
-is the causal analog of Dantzig’s step toward optimality: a global
-reorganization that leaves all invariants unchanged but redefines which
-variables are active.
 
-\paragraph{Nonlocal Consistency.}
-Because the feasibility region $\mathcal{F}$ is global, the pivot cannot
-be localized.  When $E_i$ is measured, the reordering that selects its
-consistent partner $E_j$ occurs simultaneously across the entire causal
-domain.  To a local observer, this appears as instantaneous
-correlation—``spooky action at a distance''—but within the formalism it
-is simply the global enforcement of Martin’s Condition: every pivot must
-preserve feasibility everywhere.  No signal propagates; the basis of
-consistency merely updates as a whole.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
+%% rough draft below this line
 
-\paragraph{Interpretation.}
-Spooky action is therefore not a mysterious nonlocal force but the
-\emph{global pivot of consistency} required to maintain a single
-feasible ordering of the universe tensor.  Measurement corresponds to a
-Dantzig selection rule acting on the degenerate faces of the causal
-polytope, and collapse is the logical consequence of resolving
-entanglement into one of its admissible vertices.  The Einstein–Podolsky–Rosen
-paradox thus reduces to a combinatorial theorem:
-\[
-\text{Nonlocal correlation} \;=\; \text{Global preservation of feasibility}.
-\]
-
-% Placement: Part II §3.2.1 “Spooky Action as a Dantzig Pivot” or immediately after; ties to Martin consistency explicitly
-\subsubsection*{Example: Bell--Aspect Tests as Global Martin Consistency}
-
-\textbf{Statement.} Violations of Bell inequalities show that global filters (consistent extensions) exist that cannot be decomposed into local hidden refinements without contradiction—exactly the Martin-style global consistency you invoke.
-
-\textbf{Key relation (CHSH).}
-\[
-S \;=\; |E(a,b)+E(a,b')+E(a',b)-E(a',b')| \;\le\; 2 \quad (\text{local}) \quad \text{vs}\quad S_{\text{QM}}\le 2\sqrt{2}.
-\]
-\textbf{Reciprocity framing.} A single global entanglement class $S$ allows reassociation (permutation) before refinement. Local pre-assignments would violate dense-set meeting across settings; the observed $S>2$ indicates that only a \emph{global} selection (filter meeting all dense constraints) is admissible.
-
-\textbf{Operational consequence.} “Nonlocality” is reinterpreted as \emph{global order-preserving selection}: the event filter meets all dense subsets (settings) without a jointly measurable pre-partition.
-
-
-\subsection{The Qubit as an Example of Event Selection}
-
-The Axiom of Event Selection ensures that, from any countable family of
-potential events, a consistent subset is chosen so that the causal order
-remains distinguishable and globally coherent.
-When two events $E_0$ and $E_1$ are equally admissible until such a
-selection is made, the pair forms the minimal unit of causal degeneracy.
-
-\begin{definition}[Qubit as a Causal Doublet]
-Let $S=\{E_0,E_1\}$ be an entangled subset of events satisfying
-$E_0+E_1 = E_1+E_0$.
-Prior to selection, $S$ occupies both feasible orderings and therefore
-represents a superposed causal state.
-Applying the selection operator $\Phi_{\mathrm{sel}}$ resolves this
-degeneracy:
-\[
-\Phi_{\mathrm{sel}}(S) = E_b , \qquad b\in\{0,1\}.
-\]
-In the continuum limit this relation corresponds to the quantum state
-\[
-|\psi\rangle = \alpha|0\rangle + \beta|1\rangle ,
-\]
-where the coefficients $(\alpha,\beta)$ encode the relative weights of the
-feasible orderings prior to event selection.
-\end{definition}
-
-Thus a \emph{qubit} is the simplest instance of the Event Selection
-process---the minimal pair of distinguishable yet unselected events.
-Measurement, represented by the Dantzig pivot $\Phi_{\mathrm{sel}}$,
-corresponds to choosing one consistent ordering within this causal doublet,
-mirroring the projection of a quantum superposition onto a definite basis
-state.
-
-
-\subsection{Hawking Radiation as the Loss and Restoration of Order}
-
-In a locally finite causal network, every interaction extends the partial
-order by introducing new comparabilities while maintaining Martin's
-Condition. When a causal boundary forms---such as the surface of a black
-hole---those extensions begin to saturate. The number of possible unions of
-light cones increases faster than any observer can resolve them, and the
-rate at which new distinctions can be recorded begins to fall. What we call
-a \emph{horizon} is the surface beyond which the reconciliation of causal
-updates exceeds the observer's computational capacity to process them.
-
-\begin{definition}[Causal Horizon]
-Let $(E,\preceq)$ be a locally finite poset.  
-A subset $H \subset E$ is a \emph{causal horizon} for an observer if there
-exist events $e,f \in E$ such that $e \preceq h$ for some $h \in H$ but
-$f \not\preceq h$ for any $h \in H$, and no finite extension of the
-observer's order can include both $e$ and $f$.  
-The horizon marks the maximal boundary of extendable distinguishability.
-\end{definition}
-
-When an infalling system approaches this boundary, its local causal cones
-continue to expand, but the external observer's ability to register those
-expansions diminishes. The total number of events on the infaller's
-worldline grows rapidly, while the observer's \emph{distinct} reception
-count grows only logarithmically. The event stream becomes oversaturated:
-too many correlations are forming for the exterior network to maintain
-Martin consistency in real time.
-
-\paragraph{Observer--Side Perception of Order.}
-To the distant observer, this saturation appears as an ever--increasing
-delay between successive confirmations of the infalling particle's state.
-Each emitted distinction must traverse an ever--widening intersection of
-causal cones before it can be reconciled with the external order. Because
-the unions $E_{\mathrm{obs}} \cup E_{\mathrm{infall}}(t)$ grow
-super--linearly in size as the infaller approaches the horizon, the cost of
-maintaining order consistency rises faster than the causal network can
-propagate it.
-
-Let $N_{\mathrm{ext}}(t)$ be the number of distinguishable updates received
-before coordinate time $t$.  If $|E(t)|$ denotes the size of the causal
-union at that instant, then
-\[
-\frac{dN_{\mathrm{ext}}}{dt}
-\;\propto\;
-\frac{1}{|E(t)|}\,\frac{d|E(t)|}{dt}.
-\]
-Near the horizon, $|E(t)| \sim (1 - r_s/r)^{-1}$, so as $r \to r_s$,
-\[
-\lim_{t \to \infty} \frac{dN_{\mathrm{ext}}}{dt} = 0.
-\]
-The apparent ``freezing'' of the particle in time is therefore not an
-illusion of geometry but a property of information flow: the observer's
-frame can no longer complete the reconciliation of causal updates as the
-interior domain's informational density diverges.
-
-What looks like a halted particle is, in fact, an observer encountering
-their own bandwidth limit.  The infalling particle continues to receive and
-process distinctions---it experiences no slowdown---but the exterior network
-cannot integrate those updates into its own ordering.  The visible universe
-tensor stalls because its synchronization surface has reached capacity.
-
-The lag, then, is the \emph{signature of finite computation}: the universe
-enforcing the Axiom of Order by denying further updates until all active
-causal cones can be reconciled.  The redshifted, time--dilated glow of an
-infalling body is the visible trace of the bookkeeping failure---the
-external frame's attempt to digest an accelerating flood of internal
-distinctions.
-
-\begin{definition}[Order Collapse and Restoration]
-Given a Martin bridge $R \subset E_{\mathrm{in}} \times E_{\mathrm{out}}$,
-its \emph{collapse} occurs when all $e_{\mathrm{in}} \in E_{\mathrm{in}}$
-become causally unreachable.  The induced order on $E_{\mathrm{out}}$ is
-restored by introducing surrogate events $E_{\mathrm{rad}}$ and relations
-$R' \subset E_{\mathrm{out}} \times E_{\mathrm{rad}}$ such that
-$(E_{\mathrm{out}} \cup E_{\mathrm{rad}},\preceq')$ again satisfies
-Martin's Condition.
-\end{definition}
-
-Each surrogate event represents the reconciliation of an unresolvable causal
-update---a compensatory distinction emitted to preserve order on the
-accessible side.  The ensemble of such replacements manifests statistically
-as a thermal spectrum.
-
-\begin{proposition}[Hawking Radiation as Order Completion]
-The apparent radiation observed at the horizon corresponds to the
-distribution of surrogate events $E_{\mathrm{rad}}$ required to restore
-Martin consistency after the collapse of a causal bridge.  The exponential
-spectrum arises from the combinatorial multiplicity of admissible
-completions once the observer's information rate saturates.
-\end{proposition}
-
-\paragraph{Relation to Holographic Consistency.}
-The informational asymptote described above is the discrete analogue of the
-holographic correspondence between bulk and boundary theories.  The
-interior causal domain $E_{\mathrm{in}}$ plays the role of the bulk, its
-rapidly expanding unions of light cones encoding the fine--grained local
-order.  The exterior domain $E_{\mathrm{out}}$, bounded by the horizon,
-functions as the boundary field theory whose finite causal capacity
-reconstructs that interior.  The Martin bridge
-$R \subset E_{\mathrm{in}} \times E_{\mathrm{out}}$ acts as the holographic
-map: a discrete correspondence ensuring that every admissible bulk update
-has a representable boundary image.  When the bridge collapses, the boundary
-compensates by emitting the surrogate events $E_{\mathrm{rad}}$, analogous
-to boundary degrees of freedom restoring consistency in the AdS/CFT duality.
-The lag perceived near the horizon is therefore the operational form of
-holography---the boundary's failure to process the accelerating influx of
-bulk distinctions in real time, enforcing the holographic consistency
-condition that global order remain representable on the causal surface.
-
-
-\section{Wave Amplitude from Interaction Counts}
-
-Interaction between two locally finite causal domains $(E_1,\preceq_1)$ and $(E_2,\preceq_2)$
-creates new distinguishabilities while identifying shared ones.
-We define the \emph{wave amplitude} as the net number of new, non-overlapping events produced by the union,
-i.e. the cardinality of the set difference between union and intersection.
-
-\begin{definition}[Amplitude of Interaction]
-Let $E_{12}=E_1\cup E_2$ be the union poset obtained under Martin's Condition,
-with overlap $E_{1\cap 2}=E_1\cap E_2$ order-consistent.
-The \emph{amplitude} of the interaction is
-\[
-\mathcal{A}(E_1,E_2)
-:= \bigl| (E_1 \cup E_2) \setminus (E_1 \cap E_2) \bigr|
-= |E_1| + |E_2| - 2|E_1 \cap E_2|.
-\]
-Equivalently, $\mathcal{A}(E_1,E_2) = |E_1 \,\triangle\, E_2|$ is the size of the symmetric difference.
-\end{definition}
-
-\noindent
-\textbf{Interpretation.}
-$\mathcal{A}(E_1,E_2)$ counts exactly the distinguishabilities that are \emph{new to the union}:
-it removes anything already shared (the intersection) and keeps only the net additions.
-Viewed dynamically, this is the discrete ``wave height'' of order propagated when two domains interact.
-
-\subsection*{Basic Properties}
-
-\begin{proposition}[Symmetry and Nonnegativity]
-For any locally finite $E_1,E_2$,
-\[
-\mathcal{A}(E_1,E_2) = \mathcal{A}(E_2,E_1) \ge 0,
-\qquad
-\mathcal{A}(E_1,E_2)=0 \iff E_1=E_2.
-\]
-\end{proposition}
-
-\begin{proof}[Proof sketch]
-Symmetry follows from the symmetry of union, intersection, and cardinality.
-Nonnegativity is immediate from the definition as a set cardinality.
-If $E_1=E_2$, the symmetric difference is empty, hence amplitude $0$.
-Conversely, if the symmetric difference is empty, the sets coincide.
-\end{proof}
-
-\begin{proposition}[Upper and Lower Bounds]
-\[
-\bigl||E_1|-|E_2|\bigr| \;\le\; \mathcal{A}(E_1,E_2) \;\le\; |E_1|+|E_2|.
-\]
-\end{proposition}
-
-\begin{proof}[Proof sketch]
-Use $|E_1\cap E_2|\le \min\{|E_1|,|E_2|\}$ and
-$\mathcal{A}=|E_1|+|E_2|-2|E_1\cap E_2|$ for the upper bound.
-For the lower bound, observe $|E_1\cap E_2|\ge \max\{0,\,|E_1|+|E_2|-|E_1\cup E_2|\}$ and $|E_1\cup E_2|\le |E_1|+|E_2|$.
-\end{proof}
-
-\begin{proposition}[Additivity on Disjoint Domains]
-If $E_1\cap E_2=\varnothing$, then
-\[
-\mathcal{A}(E_1,E_2)=|E_1|+|E_2|.
-\]
-\end{proposition}
-
-\begin{proof}[Proof sketch]
-With empty intersection, $(E_1\cup E_2)\setminus(E_1\cap E_2)=E_1\cup E_2$, so the amplitude is the size of the disjoint union.
-\end{proof}
-
-\begin{proposition}[Triangle-Type Inequality]
-For any locally finite $E_1,E_2,E_3$,
-\[
-\mathcal{A}(E_1,E_3) \;\le\; \mathcal{A}(E_1,E_2) + \mathcal{A}(E_2,E_3).
-\]
-\end{proposition}
-
-\begin{proof}[Proof sketch]
-$\mathcal{A}$ is the cardinality of the symmetric difference, which is the Hamming distance on indicator functions of subsets.
-The triangle inequality for Hamming distance yields the claim.
-\end{proof}
-
-\subsection*{Order-Sensitive Refinement}
-
-The amplitude defined above counts events.
-We now relate it to the number of \emph{new comparabilities} created by the interaction.
-
-\begin{definition}[Frontiers and New Comparabilities]
-For a poset $(E,\preceq)$, write $\mathrm{Top}(E)$ for maximal elements and $\mathrm{Min}(E)$ for minimal elements.
-Given $(E_1,\preceq_1)$ and $(E_2,\preceq_2)$ with order-consistent overlap and union order $\preceq_{12}$, define
-\[
-\Delta_{\!\prec}(E_1,E_2)
-:= \#\bigl\{(e,f)\in (E_1\setminus E_2)\times (E_2\setminus E_1)\;:\; e \prec_{12} f \text{ or } f \prec_{12} e \bigr\}.
-\]
-This counts the \emph{newly created} comparabilities across the interface.
-\end{definition}
-
-\begin{proposition}[Amplitude Bounds New Comparabilities]
-\[
-\Delta_{\!\prec}(E_1,E_2) \;\le\; \mathcal{A}(E_1,E_2)\cdot \min\{|E_1\setminus E_2|,\,|E_2\setminus E_1|\}.
-\]
-Moreover, if the interface is ``thin'' (only frontier elements interact), then
-\[
-\Delta_{\!\prec}(E_1,E_2) \;\asymp\; |\mathrm{Top}(E_1)\cap(E_1\setminus E_2)| \cdot |\mathrm{Min}(E_2)\cap(E_2\setminus E_1)|
-\]
-up to a factor determined by Martin-consistent tie-breaking.
-\end{proposition}
-
-\begin{proof}[Proof sketch]
-Each new comparability pairs one element from the left difference with one from the right difference.
-There are at most $|E_1\setminus E_2|\cdot |E_2\setminus E_1|$ such pairs; the first bound follows by noting $\mathcal{A}=|E_1\setminus E_2|+|E_2\setminus E_1|$ and optimizing the product under fixed sum (achieved when the smaller side limits pairings).
-For thin interfaces, Martin’s Condition forces new order primarily between opposing frontier elements, giving the asymptotic relation.
-\end{proof}
-
-\subsection*{Superposition over Multiple Domains}
-
-\begin{proposition}[First-Order Superposition]
-For three domains $E_1,E_2,E_3$ with small triple-overlap,
-\[
-\bigl|\, \mathcal{A}(E_1\cup E_2, E_3) - \bigl(\mathcal{A}(E_1,E_3)+\mathcal{A}(E_2,E_3)\bigr) \,\bigr|
-\;\le\; 2\,|E_1\cap E_2 \cap E_3|.
-\]
-\end{proposition}
-
-\begin{proof}[Proof sketch]
-Use inclusion--exclusion on unions and intersections to expand both sides and cancel terms.
-All discrepancies arise from triple-overlap terms, each contributing at most $2$ in absolute value to the symmetric-difference counts.
-\end{proof}
-
-\subsection*{Operational Meaning}
-
-The count
-\[
-\mathcal{A}(E_1,E_2)= |E_1 \triangle E_2|
-\]
-is the minimal number of event insertions/deletions needed to transform one local history into the other while preserving the common core.
-Under Martin’s Condition, this is precisely the amount of order that must \emph{propagate} across the interface to maintain global consistency.
-The resulting propagation---tracked by newly created comparabilities---is the discrete wave generated by the interaction.
-
-\section{First Variation of Amplitude}
-
-The amplitude $\mathcal{A}(E_1,E_2)$ measures the net number of new distinctions
-created by the interaction of two causal domains.
-The \emph{first variation} describes how that amplitude changes when either
-domain gains or loses a single event.
-This variation quantifies the local sensitivity of the wave of order.
-
-\begin{definition}[Infinitesimal Variation of an Event Set]
-Let $(E,\preceq)$ be a locally finite poset.
-An \emph{elementary variation} $\delta E$ is the addition or removal of a single
-event $e$ together with its admissible relations that preserve Martin’s Condition:
-\[
-E' = E \cup \{e\}
-\quad\text{or}\quad
-E' = E \setminus \{e\},
-\qquad
-(E',\preceq') \text{ satisfies Martin's Condition.}
-\]
-\end{definition}
-
-\begin{definition}[First Variation of Amplitude]
-Given two interacting domains $E_1,E_2$ and a small perturbation
-$E_1' = E_1 \cup \delta E_1$ or $E_2' = E_2 \cup \delta E_2$,
-the first variation of the amplitude is
-\[
-\delta\mathcal{A}
-= \mathcal{A}(E_1',E_2) - \mathcal{A}(E_1,E_2)
-\quad\text{or}\quad
-\delta\mathcal{A}
-= \mathcal{A}(E_1,E_2') - \mathcal{A}(E_1,E_2).
-\]
-Expanding from the definition,
-\[
-\delta\mathcal{A}
-= \bigl| (E_1 \cup \delta E_1) \triangle E_2 \bigr| - |E_1 \triangle E_2|.
-\]
-\end{definition}
-
-\begin{proposition}[Local Variation Formula]
-If $\delta E_1 = \{e\}$ adds a single event $e$ not in $E_2$,
-then
-\[
-\delta\mathcal{A} =
-\begin{cases}
-+1, & e \notin E_1 \cup E_2, \\[4pt]
--1, & e \in E_2 \setminus E_1, \\[4pt]
-0, & e \in E_1 \cap E_2.
-\end{cases}
-\]
-\end{proposition}
-
-\begin{proof}[Proof sketch]
-Each event contributes $\pm1$ to the symmetric difference depending on whether
-it creates or resolves a unique distinction.
-If $e$ is entirely new, the amplitude increases by one.
-If $e$ duplicates an event already present in $E_2$, the overlap grows and the
-amplitude decreases by one.
-If $e$ already exists in both, no new distinguishability is created.
-\end{proof}
-
-
-\begin{proposition}[First Variation as Discrete Derivative]
-Let $\mathcal{A}$ be viewed as a function on the lattice of finite subsets of a fixed event universe $\Omega$.
-Then the mapping
-\[
-\delta_e \mathcal{A}(E_1,E_2)
-:= \mathcal{A}(E_1\cup\{e\},E_2)-\mathcal{A}(E_1,E_2)
-\]
-is the discrete directional derivative of $\mathcal{A}$ along $e$.
-It satisfies the antisymmetry relation
-\[
-\delta_e \mathcal{A}(E_1,E_2) = -\,\delta_e \mathcal{A}(E_2,E_1).
-\]
-\end{proposition}
-
-\begin{proof}[Proof sketch]
-Direct expansion using $\mathcal{A}=|E_1|+|E_2|-2|E_1\cap E_2|$
-shows that the increment in $E_1$ produces the negative of the increment in $E_2$
-for the same event.
-Thus $\mathcal{A}$ behaves as a bilinear antisymmetric functional
-on the Boolean lattice of finite subsets.
-\end{proof}
-
-\noindent
-\textbf{Interpretation.}
-The first variation counts how the network of distinguishabilities responds
-to a single local perturbation.
-Adding an event outside the shared overlap increases the amplitude:
-a ripple of new order propagates.
-Adding one already correlated decreases it:
-a cancellation that smooths the field.
-Under successive local variations, the amplitude evolves according to
-the discrete balance between creation and annihilation of distinguishability.
-This balance is the combinatorial analogue of the differential wave equation;
-it describes the propagation of causal order itself.
-
-\section{Second Variation of Amplitude}
-
-The first variation measured how the distinguishability between two causal domains
-changes when a single event is added or removed.
-The \emph{second variation} captures how those incremental changes themselves
-interact.
-It measures the curvature of distinguishability—the discrete analogue of
-acceleration or wave curvature—arising from the mutual influence of two local
-perturbations.
-
-\begin{definition}[Second Variation]
-Let $\delta_{e}$ and $\delta_{f}$ denote first variations with respect to
-elementary event insertions $e$ and $f$.
-The \emph{second variation of amplitude} is defined as the symmetric difference
-of the corresponding first variations:
-\[
-\delta^2_{e,f}\mathcal{A}(E_1,E_2)
-:= \delta_f\bigl(\delta_e\mathcal{A}(E_1,E_2)\bigr)
-= \mathcal{A}(E_1\cup\{e,f\},E_2)
-- \mathcal{A}(E_1\cup\{e\},E_2)
-- \mathcal{A}(E_1\cup\{f\},E_2)
-+ \mathcal{A}(E_1,E_2).
-\]
-\end{definition}
-
-This operator measures the change in the local propagation rate
-caused by introducing two distinct events.
-When $\delta^2_{e,f}\mathcal{A}=0$, their effects are independent:
-the propagation is linear.
-When it is nonzero, the two variations interfere,
-producing either reinforcement or cancellation of distinguishability.
-
-\begin{proposition}[Symmetry]
-\[
-\delta^2_{e,f}\mathcal{A}(E_1,E_2)
-= \delta^2_{f,e}\mathcal{A}(E_1,E_2),
-\qquad
-\delta^2_{e,e}\mathcal{A}(E_1,E_2)=0.
-\]
-\end{proposition}
-
-\begin{proof}[Proof sketch]
-Both $\delta_e$ and $\delta_f$ are finite-difference operators on the Boolean lattice of subsets.
-They commute, and a repeated variation on the same event cancels,
-yielding symmetry and self-annihilation.
-\end{proof}
-
-\begin{proposition}[Explicit Form]
-If $e\neq f$ are not contained in $E_2$, then
-\[
-\delta^2_{e,f}\mathcal{A}(E_1,E_2)
-=
-\begin{cases}
--2, & e,f\in E_2\setminus E_1, \\[4pt]
-+2, & e,f\notin E_1\cup E_2, \\[4pt]
-0,  & \text{otherwise.}
-\end{cases}
-\]
-\end{proposition}
-
-\begin{proof}[Proof sketch]
-Expand the four amplitude terms in the definition using
-$\mathcal{A}=|E_1|+|E_2|-2|E_1\cap E_2|$ and compute the finite difference.
-Each event contributes $\pm1$ to the first variation depending on overlap.
-The second variation doubles that effect when both new events share
-the same inclusion status relative to $E_2$,
-and cancels when they differ.
-\end{proof}
-
-\begin{definition}[Discrete Laplacian on Event Sets]
-Let $\nabla^2_E\mathcal{A}$ denote the sum of all pairwise second variations over
-neighboring events in a locally finite causal domain:
-\[
-\nabla^2_E \mathcal{A}(E_1,E_2)
-:= \sum_{\substack{e,f\in E_1\\ e\prec f\text{ or }f\prec e}} 
-\delta^2_{e,f}\mathcal{A}(E_1,E_2).
-\]
-\end{definition}
-
-\begin{proposition}[Wave Equation for Order]
-Under Martin’s Condition, the amplitude on any locally finite causal domain
-satisfies
-\[
-\nabla^2_E \mathcal{A} = 0
-\]
-as the condition for global consistency.
-\end{proposition}
-
-\begin{proof}[Proof sketch]
-Each pairwise second variation measures the net curvature of distinguishability
-between causally related events.
-Martin’s Condition enforces that all finite subsets extend consistently,
-which requires the total curvature over each closed causal neighborhood to vanish.
-Summing over all connected pairs yields $\nabla^2_E\mathcal{A}=0$,
-the discrete Laplace equation for order propagation.
-\end{proof}
-
-\noindent
-\textbf{Interpretation.}
-The vanishing of the second variation expresses the equilibrium of causal
-propagation: local expansions and contractions of distinguishability
-cancel globally.
-Where the first variation gave the \emph{slope} of causal change,
-the second variation fixes the \emph{curvature}—the shape of the wave.
-The condition $\nabla^2_E \mathcal{A}=0$ is therefore the causal-set form
-of the homogeneous wave equation:
-a statement that information, once created, propagates through the network
-of events without net amplification or loss.
-
-\section{Advection as Order-Preserving Transport}
-
-The first variation counts how distinguishability propagates when new events
-are introduced; the second variation vanishes at equilibrium, yielding wave
-closure.  When propagation is \emph{directional}—because Martin bridges
-select a consistent orientation of overlaps along a chain—the resulting
-closure is \emph{first–order}: advection.
-
-\subsection*{Setup: a Translation–Invariant Causal Strip}
-
-Let $\Lambda = \{(n,i) : n\in\mathbb{Z},\, i\in\mathbb{Z}\}$ index a locally
-finite event strip with “time” levels $n$ (ordinals of measurement steps)
-and spatial indices $i$ along a chain of overlaps.  Write $E_n=\{(n,i)\}_i$
-and suppose overlaps are oriented so that interaction at level $n$ feeds
-level $n\!+\!1$ predominantly from the left neighbor:
-\[
-(n,i-1)\;\rightarrow\;(n+1,i).
-\]
-Let $A^n_i\in\mathbb{N}$ denote the \emph{amplitude density} (count of new
-distinguishabilities) measured on site $i$ at level $n$.
-
-\begin{definition}[Order–Preserving Transport (Upwind Selection)]
-A Martin–consistent, order–preserving update on $\Lambda$ with orientation
-to the right is a map $T$ such that
-\[
-A^{n+1}_i \;=\; (1-\lambda)\,A^n_i \;+\; \lambda\,A^n_{i-1},
-\qquad 0\le \lambda \le 1,
-\]
-with $\lambda$ the \emph{bridge fraction}: the proportion of next–step
-distinguishability at $(n\!+\!1,i)$ sourced from the left overlap.
-\end{definition}
-
-\noindent
-\textbf{Interpretation.}
-$\lambda=1$ gives pure shift $A^{n+1}_i=A^n_{i-1}$ (deterministic transport
-one site per update). $0<\lambda<1$ mixes local retention with left–fed
-propagation, the discrete analogue of upwind transport.  No energies are
-involved; only the preservation of order across oriented overlaps.
-
-\subsection*{Discrete Continuity and Characteristics}
-
-\begin{proposition}[Discrete Continuity Law]
-For any finite index set $I\subset\mathbb{Z}$,
-\[
-\sum_{i\in I} A^{n+1}_i - \sum_{i\in I} A^{n}_i
-= \lambda\!\left(A^{n}_{\min(I)-1}-A^{n}_{\max(I)}\right).
-\]
-\end{proposition}
-
-\begin{proof}[Proof sketch]
-Telescoping sum of the upwind update across $I$ cancels interior fluxes and
-leaves only boundary contributions, expressing conservation of distinguishability
-modulo oriented boundary flow.
-\end{proof}
-
-\begin{proposition}[Order Characteristics]
-If $\lambda=1$, then along lines $i-n=\text{const}$ one has
-$A^{n+1}_i=A^n_{i-1}$, hence $A^n_i = A^0_{i-n}$.
-Thus distinguishability is constant on the discrete characteristics
-$i-n=\mathrm{const}$.
-\end{proposition}
-
-\begin{proof}[Proof sketch]
-Iterate the shift relation $n$ times.
-\end{proof}
-
-\subsection*{Continuum Limit: The Advection Equation}
-
-Let spatial mesh be $h>0$ and step size $\Delta t>0$.
-Define a smooth interpolant $a(t_n,x_i)=A^n_i$ with
-$t_n=n\,\Delta t$, $x_i=i\,h$, and take
-\[
-\lambda \;=\; \frac{c\,\Delta t}{h}\quad (0\le \lambda \le 1),
-\]
-where $c$ is the \emph{order speed} fixed by the oriented Martin bridges.
-
-\begin{theorem}[Advection from Upwind Selection]
-Assume $a\in C^2$ and the oriented update
-\[
-A^{n+1}_i = (1-\lambda)A^n_i + \lambda A^n_{i-1}.
-\]
-Then, under the scaling $\lambda=\frac{c\Delta t}{h}$ with fixed $c$ and
-$\Delta t,h\to 0$ satisfying the Courant condition $0\le \lambda \le 1$,
-the interpolant $a$ satisfies
-\[
-\partial_t a + c\,\partial_x a \;=\; 0 \qquad \text{(advection)}
-\]
-to first order in $(\Delta t,h)$.
-\end{theorem}
-
-\begin{proof}[Proof sketch]
-Taylor-expand
-$a(t+\Delta t,x)=a+\Delta t\,a_t+\mathcal{O}(\Delta t^2)$ and
-$a(t,x-h)=a-h\,a_x+\mathcal{O}(h^2)$, then substitute in
-\[
-a(t+\Delta t,x)=(1-\lambda)a(t,x)+\lambda\,a(t,x-h).
-\]
-Divide by $\Delta t$ and use $\lambda=\frac{c\Delta t}{h}$:
-\[
-a_t + \frac{\lambda}{\Delta t}\bigl(a(t,x-h)-a(t,x)\bigr)
-= a_t - \frac{c}{h}\bigl(h\,a_x + \mathcal{O}(h^2)\bigr)
-= a_t + c\,a_x + \mathcal{O}(h,\Delta t).
-\]
-Letting $\Delta t,h\to 0$ yields $\partial_t a + c\,\partial_x a = 0$.
-\end{proof}
-
-\subsection*{Order–Theoretic Meaning}
-
-\begin{proposition}[Advection as Oriented Martin Flow]
-The advection equation expresses invariance of distinguishability along
-order–preserving characteristics $x-ct=\mathrm{const}$ induced by a fixed
-orientation of Martin bridges.  Equivalently, for any smooth test function
-$\varphi$ compactly supported,
-\[
-\frac{d}{dt}\!\int a(t,x)\,\varphi(x+ct)\,dx = 0.
-\]
-\end{proposition}
-
-\begin{proof}[Proof sketch]
-Use the weak form of $\partial_t a + c\,\partial_x a = 0$ and integrate
-by parts along translated test functions; the quantity is conserved because
-propagation is a pure shift along characteristics.
-\end{proof}
-
-\subsection*{Remarks on Stability and Causality}
-
-\begin{itemize}
-\item \textbf{CFL as Martin Bound.}
-$0\le \lambda \le 1$ is exactly the requirement that next–step order at site $i$
-is determined by current order from \emph{within} its causal neighborhood,
-matching Martin’s Condition (no overreach).
-
-\item \textbf{Asymmetry $\Rightarrow$ Advection.}
-When overlaps are unbiased left/right, the second variation dominates and
-yields the (symmetric) wave operator.  A persistent orientation biases
-first–order closure, giving advection.
-
-\item \textbf{No Energetics.}
-All statements concern counts and comparabilities.  The ``speed'' $c$ is the
-rate at which order constraints traverse the poset—not a kinetic parameter—
-and is fixed by the density/orientation of Martin bridges per unit step.
-\end{itemize}
 
 \begin{example}[Thought Experiment: The Knot-Tying Puzzle and Cubic Spline Closure]
 \textbf{N.B.} This experiment visualizes why $U^{(4)} = 0$ is the natural limit of causal smoothness.
@@ -902,203 +1501,9 @@ Hence the minimal global closure corresponds to cubic continuity: $U^{(4)} = 0$.
 
 \emph{Interpretation.}  
 The lattice stands for the causal tensor.  
-Minimal curvature ensures bijective mapping of distinctions—no “loose ends.”  
+Minimal curvature ensures bijective mapping of distinctions---no “loose ends.”  
 The physical limit is the geodesic; the logical limit is consistency under finite observation.
 \end{example}
-
-\section{Adiabatic Transport}
-\label{sec:adiabatic-transport}
-
-\textbf{N.B.} This section concerns the preservation of distinguishability under slow, order–preserving transformation of causal structure.  
-It defines \emph{adiabatic transport} as informational invariance under continuous refinement, not as a thermodynamic process.  
-No physical energy, temperature, or momentum is invoked \cite{landauer1961,jaynes1957,wheeler1983}.
-
-\begin{definition}[Adiabatic Transport]
-Let $\mathcal{C}=(E,\preceq)$ be a causal set equipped with a local update rule $T_\lambda : E \to E$ parameterized by a continuous scalar $\lambda$.  
-We say that $T_\lambda$ defines \emph{adiabatic transport} if, for every finite subdomain $E_p\subset E$, there exists $\varepsilon>0$ such that for all $|\delta\lambda|<\varepsilon$,
-\[
-\text{dist}\big(T_{\lambda+\delta\lambda}(E_p),\,T_\lambda(E_p)\big)=0,
-\]
-where $\text{dist}$ measures distinguishability in the logical sense (i.e., the number of predicate values altered).  
-Equivalently, no distinctions are created or destroyed under infinitesimal parameter variation:
-\[
-\frac{d}{d\lambda}\,\Delta S(E_p;\lambda) = 0.
-\]
-\end{definition}
-
-\begin{law}[Adiabatic Invariance of Information]
-For every causal system evolving under order–preserving refinement, the informational entropy $\Entropy(E_p)$ is invariant under adiabatic transport:
-\[
-\frac{d}{d\lambda}\Entropy(E_p) = 0,
-\]
-provided that $\Delta S \ge 0$ globally.  
-This expresses the condition that reversible evolution preserves the count of distinguishable states while redistributing them across the parameter domain \cite{boltzmann1872,planck1901}.
-\end{law}
-
-\begin{proposition}[Adiabatic Transport as Minimal Update]
-Let $U_\lambda$ denote the linear update operator acting on the state vector of local predicates.  
-Then $U_\lambda$ is adiabatic iff
-\[
-U_{\lambda+\delta\lambda} = U_\lambda + \mathcal{O}(\delta\lambda^2),
-\]
-and $U_\lambda$ is norm–preserving:
-\[
-\langle U_\lambda x, U_\lambda x \rangle = \langle x, x \rangle,
-\]
-for all $x$ in the local predicate space.  
-Hence adiabatic transport is the first–order limit of informationally reversible evolution—a continuous deformation with zero local entropy production.
-\end{proposition}
-
-\begin{proof}[Sketch]
-By definition, $\frac{d}{d\lambda}\,\Delta S(E_p;\lambda)=0$ for adiabatic flow.  
-Expanding $U_{\lambda+\delta\lambda}$ in $\delta\lambda$ and applying the invariance of the inner product gives
-\[
-\langle x, (U_{\lambda+\delta\lambda}^\ast U_{\lambda+\delta\lambda} - I)x \rangle = \mathcal{O}(\delta\lambda^2),
-\]
-so $U_\lambda$ is unitary up to second order, corresponding to zero first–order entropy production.  
-This identifies adiabatic transport as the minimal (information-neutral) path in operator space. \qedhere
-\end{proof}
-
-\begin{example}[Adiabatic Drift of a Boundary Predicate]
-Consider a boundary event $e_b(\lambda)$ parameterized by $\lambda$, marking the interface between recorded and unrecorded regions of a causal set.  
-If the mapping $\lambda\mapsto e_b(\lambda)$ is adiabatic, then every increment $\delta\lambda$ changes only the labeling of boundary events, not the count of distinguishable outcomes.  
-Thus the observer’s entropy measure remains invariant while the locus of observation drifts—formally, a causal analog of quasi-static expansion in thermodynamics, but without energy exchange.
-\end{example}
-
-\emph{Interpretation.}  
-Adiabatic transport represents the \emph{limit of causal motion that preserves informational order}.  
-It connects reversible evolution (zero $\dot{S}$) with the necessary global condition $\Delta S \ge 0$: the system may drift without loss of information but not contract beyond its recorded distinctions.  
-This concept bridges the local invariance of measurement with the global monotonicity of the Second Law of Causal Order.
-
-\emph{Scope.}  
-All references to “slow” or “continuous” change are formal, referring to the topology of predicate transformations, not to temporal rate or physical smoothness.  
-The adiabatic condition ensures that causal curvature may evolve without violating informational invariance.
-
-
-\section{Annealing}
-\label{sec:annealing}
-
-\textbf{N.B.} This section treats \emph{annealing} as an informational process of relaxation toward maximal distinguishability under causal constraint, not as a physical heat exchange.  
-It describes how a causal domain progressively eliminates inconsistent configurations while preserving the monotonic law $\Delta S \ge 0$ \cite{landauer1961,jaynes1957,wheeler1983}.
-
-\begin{definition}[Annealing in the Causal Domain]
-Let $\mathcal{C}=(E,\preceq)$ be a causal structure with a family of admissible configurations $\mathcal{H}$ (partial histories) and an informational potential function
-\[
-\Phi : \mathcal{H} \to \mathbb{R}_{\ge 0},
-\]
-measuring local inconsistency or ``tension'' between distinguishable records.  
-A sequence $\{h_t\}_{t \in \mathbb{N}} \subset \mathcal{H}$ is said to undergo \emph{annealing} if
-\begin{enumerate}
-  \item $\Phi(h_{t+1}) \le \Phi(h_t)$ for all $t$ (monotonic relaxation), and
-  \item $\lim_{t\to\infty}\Phi(h_t)=0$ corresponds to a globally consistent configuration $h_\infty$ satisfying the Event Selection Axiom.
-\end{enumerate}
-\end{definition}
-
-\begin{law}[Informational Annealing Law]
-A causal domain subject to finite observation evolves toward a configuration minimizing informational tension while preserving distinguishability:
-\[
-\frac{d\Phi}{dt} \le 0, \quad \frac{dS}{dt} \ge 0,
-\]
-with equality only at global consistency ($\Phi=0$).  
-Thus annealing is the formal complement of adiabatic transport: instead of preserving information exactly, it monotonically reorganizes distinctions to reduce redundancy without loss of order \cite{boltzmann1872,planck1901}.
-\end{law}
-
-\begin{proposition}[Annealing as Iterated Projection]
-Let $U_t$ be the local update operator at iteration $t$, and let $\Pi$ denote the projector onto the subspace of order–consistent states.  
-If
-\[
-h_{t+1} = \Pi(U_t h_t),
-\]
-then the sequence $\{h_t\}$ is annealing iff the composition $\Pi U_t$ is contractive in the informational metric:
-\[
-\|\Pi U_t h - \Pi U_t k\| \le \|h - k\| \quad \forall h,k \in \mathcal{H}.
-\]
-Contractivity ensures that successive refinements move closer to a consistent fixed point while never decreasing the total number of distinguishable predicates.  
-\end{proposition}
-
-\begin{proof}[Sketch]
-Under contractivity, Banach’s fixed–point theorem guarantees convergence to a unique $h_\infty = \Pi U_\infty h_\infty$.  
-Because $\Pi$ only removes logical contradictions and never merges distinct equivalence classes, $S(h_{t+1}) \ge S(h_t)$, while $\Phi(h_{t+1}) \le \Phi(h_t)$.  
-Hence the dual monotonic conditions above are satisfied. \qedhere
-\end{proof}
-
-\begin{example}[Causal Annealing as Refinement of Observation]
-Suppose an observer repeatedly reconciles conflicting records of events $e_i$ and $e_j$ under finite resolution.  
-Each reconciliation step eliminates one inconsistency in ordering while maintaining all prior distinctions.  
-As $t$ increases, the observer’s causal field ``anneals'' toward a self-consistent partial order: the informational potential $\Phi$ decreases, but $\Delta S$ remains nonnegative.  
-The limit corresponds to the observer’s stable record—a causal equilibrium in the informational sense.
-\end{example}
-
-\emph{Interpretation.}  
-Adiabatic transport corresponds to reversible motion along an iso-entropic surface in informational phase space; annealing describes the relaxation onto that surface.  
-Both obey $\Delta S \ge 0$: adiabatic evolution keeps $\Delta S = 0$ locally, annealing makes $\Delta S > 0$ globally until consistency is achieved.  
-Together, they constitute the two limiting behaviors of informational dynamics: perfect preservation and convergent refinement.
-
-\emph{Scope.}  
-The term ``temperature'' is deliberately avoided; no thermodynamic substrate is implied.  
-Annealing here refers solely to the controlled reduction of inconsistency within the logical structure of events, ensuring that the system approaches global causal coherence without violating the monotonic growth of distinguishability.
-
-\section{Brownian Motion}
-\label{sec:brownian-motion}
-
-\textbf{N.B.} This section presents \emph{Brownian motion} as the limit of informational diffusion within a causal set, not as molecular kinetics.  
-It formalizes randomness as the unresolved superposition of admissible distinctions under finite observation.  
-The stochastic character arises from incomplete causal specification, not from physical noise \cite{einstein1905,smoluchowski1906,jaynes1957,wheeler1983}.
-
-\begin{definition}[Brownian Motion in the Causal Framework]
-Let $(E,\preceq)$ be a locally finite causal domain and $X_t : E \to \mathbb{R}^n$ a random field assigning numerical observables to events at discrete rank $t$.  
-We call $\{X_t\}$ a \emph{Brownian process on the causal domain} if, for every finite set of events $F \subset E$,
-\[
-\mathbb{E}[X_{t+1}(e) - X_t(e)] = 0, 
-\quad 
-\mathbb{E}[(X_{t+1}(e) - X_t(e))^2] = 2D\,\delta t,
-\]
-where $D$ is the informational diffusion coefficient and $\delta t$ the discrete causal increment.  
-The expectation is taken over the ensemble of admissible event refinements consistent with the observer’s finite resolution.
-\end{definition}
-
-\begin{law}[Causal Diffusion Law]
-Let $\rho(e,t)$ denote the probability density over distinguishable states at event $e$ and causal rank $t$.  
-Then informational conservation under local diffusion implies
-\[
-\frac{\partial \rho}{\partial t} 
-= D\,\nabla^2 \rho,
-\]
-where the Laplacian $\nabla^2$ acts on the combinatorial adjacency of $E$.  
-This is the causal analogue of the classical diffusion equation, expressing the randomization of distinctions subject to $\sum_e \rho(e,t)=1$.
-\end{law}
-
-\begin{proposition}[Variance Growth and Informational Pressure]
-Under the Causal Diffusion Law,
-\[
-\mathbb{E}[(X_t - X_0)^2] = 2 D t.
-\]
-Thus the variance of informational displacement grows linearly with causal depth.  
-Equivalently, uncertainty in the record expands at a constant informational ``pressure'' proportional to $D$.  
-This represents the minimal stochastic perturbation compatible with $\Delta S \ge 0$: entropy increases strictly due to unresolved refinement of order.
-\end{proposition}
-
-\begin{proof}[Sketch]
-Applying the law above to the mean and variance gives $\frac{d}{dt}\mathbb{E}[X_t]=0$ and $\frac{d}{dt}\mathbb{E}[X_t^2]=2D$.  
-Integrating yields the linear variance relation.  
-Because the process is unbiased and conservative, entropy increases monotonically while total distinguishability (probability normalization) remains invariant. \qedhere
-\end{proof}
-
-\begin{example}[Informational Brownian Motion]
-Consider an observer recording the position of a causal signal with finite temporal resolution $\delta t$.  
-Each interval introduces an unresolved set of micro–orderings among sub–events, which appear as random displacements of the observed value $X_t$.  
-As the record refines, the unresolved components average to zero drift but nonzero variance, giving the signature of Brownian motion.  
-The diffusion constant $D$ measures the observer’s coarse–graining bandwidth: smaller $D$ corresponds to higher informational precision.
-\end{example}
-
-\emph{Interpretation.}  
-Brownian motion represents the \emph{limit of stochastic refinement}—the regime where information is preserved on average but redistributed unpredictably within causal bounds.  
-Where adiabatic transport is reversible ($\dot S=0$) and annealing directed ($\dot S>0$ with convergence), Brownian evolution is \emph{neutral on average} yet entropic in expectation ($\mathbb{E}[\Delta S]>0$).  
-It captures the statistical character of finite observation: even without physical noise, the logical uncertainty of incomplete distinction propagates diffusively.
-
-\emph{Scope.}  
-All references to ``randomness'' or ``diffusion'' are formal.  
-The process described is informational, not mechanical; it models how a finite observer’s record spreads under repeated partial measurement, consistent with the Second Law of Causal Order.
 
 
 \begin{example}[Thought Experiment: The Dual Transport of Measurement]
@@ -1110,8 +1515,8 @@ It serves to illustrate how an informational system can exhibit both particle–
 Consider an observer maintaining a causal record $\mathcal{R}$ of distinguishable events $\{e_i\}$.  
 Each update corresponds to an informational transport operator $U_t$, which may act:
 \begin{enumerate}
-  \item \emph{Discretely}—selecting a new event and appending it to $\mathcal{R}$ (particle limit), or
-  \item \emph{Continuously}—refining the relational amplitudes between existing events (wave limit).
+  \item \emph{Discretely}---selecting a new event and appending it to $\mathcal{R}$ (particle limit), or
+  \item \emph{Continuously}---refining the relational amplitudes between existing events (wave limit).
 \end{enumerate}
 In a regime of finite observation, these two descriptions coexist:  
 the discrete record $e_i$ is a sample of a continuous causal amplitude that itself evolves under adiabatic, annealing, or Brownian mechanisms.
@@ -1151,7 +1556,7 @@ In this sense, the collapse of the wave function is not physical, but the act of
 \emph{Scope.}  
 This thought experiment is purely formal.  
 It demonstrates how the coexistence of discrete and continuous transport mechanisms follows from the structure of causal information, not from any underlying quantum field.  
-Wave–particle duality here is the logical complementarity of refinement and selection—the informational shadow of the observer’s bandwidth limit.
+Wave–particle duality here is the logical complementarity of refinement and selection---the informational shadow of the observer’s bandwidth limit.
 \end{example}
 
 
@@ -1272,87 +1677,12 @@ The remainder of this work develops those invariants explicitly,
 showing how the metric tensor, stress tensor, and curvature of spacetime
 are the continuous shadows of a discrete causal calculus.
 
-\begin{example}[Extrapolation: The Casimir Effect as Boundary-Limited Distinction]
-\textbf{N.B.} This extrapolation is formal. It shows how vacuum energy differences emerge as a consequence of boundary-imposed limits on distinguishability, not as a mechanical “force” between conducting plates.
-
-\emph{Setup.}
-In quantum field theory, the Casimir effect arises when two parallel plates constrain the allowable electromagnetic modes between them, yielding a measurable pressure proportional to $1/d^4$, where $d$ is the separation.
-Conventionally, this is interpreted as the difference between zero-point energies inside and outside the cavity:
-\[
-F/A = -\frac{\pi^2 \hbar c}{240 d^4}.
-\]
-
-\emph{Formal interpretation.}
-In the informational framework, each admissible field mode corresponds to a distinguishable causal update.
-When boundary conditions restrict the available modes, the count of consistent updates between the plates decreases relative to the unbounded field.
-The universe enforces $\Delta S \ge 0$ by compensating this local loss with an outward pressure—an adjustment that restores global distinguishability.
-
-\emph{Analogy.}
-The Casimir pressure is thus an informational curvature: the gradient of admissible state density imposed by constraints in the causal manifold.
-It represents the same reciprocity principle found in adiabatic transport and annealing—an equilibrium restoring term that keeps the overall measure consistent.
-
-\emph{Scope.}
-This extrapolation demonstrates that apparent “vacuum energy” phenomena can be reinterpreted as rebalancing within the global distinction count.
-No change to established quantum electrodynamics is implied; the Casimir effect merely exemplifies how informational consistency reproduces the observed form of boundary-induced pressure.
-\end{example}
-
-\begin{example}[Extrapolation: Quantum Tunneling as the Repair of a Broken Correlation]
-\textbf{N.B.} This extrapolation is formal. It treats tunneling as the restoration of informational continuity across a boundary where the causal correlation appears classically broken. No claim about subatomic mechanism is made.
-
-\emph{Setup.}
-In conventional quantum mechanics, a particle encountering a potential barrier of height $V_0$ and width $d$ exhibits a finite transmission probability even when its energy $E < V_0$.  
-The standard explanation attributes this to the non-zero overlap of an exponentially decaying wavefunction across the barrier:
-\[
-T \propto e^{-2\kappa d}, \quad \kappa = \frac{\sqrt{2m(V_0-E)}}{\hbar}.
-\]
-Classically, the trajectory would terminate; quantum mechanically, correlation persists.
-
-\emph{Formal interpretation.}
-In the causal framework, measurement defines correlations—ordered distinctions that must remain globally consistent under $\Delta S \ge 0$.  
-When a barrier divides the causal manifold, the mapping between pre- and post-barrier distinctions momentarily fails: a “broken correlation.”  
-To preserve informational continuity, the universe extends the correlation through the barrier as a minimal repair—an *extrapolated distinction* that restores bijection.  
-The exponential attenuation reflects the cost of maintaining that minimal correlation across a region forbidden to classical propagation.
-
-\emph{Analogy.}
-Brownian motion represents spontaneous fluctuation within consistent order; tunneling represents the inverse—the system’s attempt to prevent discontinuity in the causal mapping.  
-It is the informational equivalent of a snapped thread reconnecting under tension: continuity is statistically unlikely but globally mandatory.
-
-\emph{Scope.}
-This extrapolation is formal. It shows that tunneling can be viewed as the minimal act required to prevent a breach of causal order—an informational necessity that ensures no correlation, once established, terminates inconsistently.  The observed transmission coefficient quantifies the “cost” of that repair.
-\end{example}
-
-\begin{example}[Extrapolation: The Hyperfine Transition as Periodic Reconciliation of Causal Order]
-\textbf{N.B.} This extrapolation is formal. It interprets hyperfine transitions as periodic acts of informational reconciliation between nearly degenerate causal configurations, not as dynamical spin flips.
-
-\emph{Setup.}
-In the hydrogen atom, the ground state comprises two configurations distinguished only by the relative orientation of the proton and electron spins.  
-The energy difference,
-\[
-\Delta E = h\nu_{21} \approx 5.9\times10^{-6}\ \mathrm{eV},
-\]
-corresponds to the 21\,cm line ($\nu_{21}=1.420\,405\,751\ \mathrm{GHz}$).  
-Quantum electrodynamics treats this as the magnetic dipole interaction between two spin moments.
-
-\emph{Formal interpretation.}
-Within the causal framework, the two spin configurations represent adjacent but distinct informational states—nearly indistinguishable under ordinary resolution.  
-Over time, their causal descriptions drift out of phase due to accumulated measurement asymmetry.  
-The spontaneous emission of a 21 cm photon restores alignment: it is a *reconciliation event* that re-synchronizes the dual description and preserves the global bijection required by $\Delta S \ge 0$.
-
-\emph{Analogy.}
-Where tunneling repaired a local breach in continuity, the hyperfine transition performs global bookkeeping.  
-It is the metronome of causal coherence—a self-correcting tick ensuring that near-identical representations do not diverge beyond the system’s tolerance.  
-Each photon marks the closure of an informational loop, a return to consistency.
-
-\emph{Scope.}
-This extrapolation is formal.  It demonstrates how spontaneous emission at the hyperfine scale can be viewed as the minimal act by which the universe re-aligns nearly degenerate causal states.  
-The 21 cm line thus records the maintenance of informational equilibrium, not merely atomic magnetism.
-\end{example}
 
 \begin{example}[Extrapolation: Correlation Drift and the Redshift of Atomic Clocks]
 \textbf{N.B.} This extrapolation is formal. It treats redshift as a change in the density of consistent correlations rather than a mechanical stretching of spacetime.
 
 \emph{Setup.}
-Atomic clocks mark the periodic reconciliation of nearly degenerate states—the hyperfine transition.  
+Atomic clocks mark the periodic reconciliation of nearly degenerate states---the hyperfine transition.  
 When two clocks occupy regions with differing correlation densities $\rho_c$, the rate of reconciliation differs:
 \[
 \frac{\nu}{\nu_0} = \frac{\rho_c}{\rho_{c,0}}.
@@ -1370,61 +1700,3 @@ It demonstrates that atomic clocks red-shift because their reconciliation rate i
 
 
 \cleardoublepage
-\section*{Coda: The Informational Harmonic Oscillator}
-\addcontentsline{toc}{section}{Coda: The Informational Harmonic Oscillator}
-
-\begin{example}[Coda: The Informational Harmonic Oscillator]
-\textbf{N.B.} This coda introduces the simplest reversible dynamics permitted by the Second Law of Causal Order.  
-It shows that oscillation—in its most abstract sense—arises whenever information alternates between two complementary forms: record and prediction.  
-No physical mass, force, or energy is implied.  
-The oscillator here is entirely informational: a minimal closed loop of distinguishability \cite{planck1901,landauer1961,wheeler1983}.
-
-\emph{Setup.}  
-Let $(x,p)$ denote a conjugate pair of informational coordinates on a two–dimensional causal phase space.  
-$x$ represents the observer’s recorded distinctions (the state of knowledge);  
-$p$ represents the predictive momentum (the rate at which distinctions are changing).  
-Define the informational Hamiltonian
-\[
-\Entropy(x,p) = \tfrac{1}{2}\,(\alpha x^{2} + \beta p^{2}),
-\]
-where $\alpha$ and $\beta$ are positive constants measuring informational stiffness and inertia.  
-The reversible evolution equations are
-\[
-\dot{x} =  \phantom{-}\frac{\partial \Entropy}{\partial p} = \beta p,
-\qquad
-\dot{p} = -\frac{\partial \Entropy}{\partial x} = -\alpha x.
-\]
-Eliminating $p$ yields
-\[
-\ddot{x} + \omega^{2} x = 0, \qquad \omega^{2} = \alpha\beta.
-\]
-Thus the observer’s state executes harmonic motion in informational phase space with constant total measure $\Entropy(x,p)$.
-
-\emph{Interpretation.}  
-At each turning point of the oscillation, information is maximally localized: the record $x$ is fixed, the prediction $p$ vanishes.  
-At each midpoint, prediction dominates and the record is momentarily indeterminate.  
-The system alternately \emph{stores} and \emph{transmits} distinguishability, maintaining constant total informational entropy.  
-The cycle expresses the complementarity of knowledge and expectation: every complete measurement must eventually swing back toward uncertainty to preserve $\Delta S \ge 0$.
-
-\emph{Relation to Transport.}  
-The four informational transport regimes appear as limiting cases of this oscillator:
-\begin{itemize}
-  \item \textbf{Adiabatic transport:} small, continuous oscillations with $\dot S = 0$ (reversible exchange of information).
-  \item \textbf{Annealing:} inclusion of damping $\gamma > 0$, giving $\ddot{x} + \gamma\dot{x} + \omega^{2}x = 0$, a monotonic relaxation to equilibrium.
-  \item \textbf{Brownian motion:} addition of stochastic forcing $\xi(t)$, $\ddot{x} + \omega^{2}x = \xi(t)$, producing diffusive variance growth.
-  \item \textbf{Wave/particle duality:} interpretation of $(x,p)$ as the conjugate pair of localization and amplitude—dual views of the same informational invariant.
-\end{itemize}
-Each regime preserves causal consistency and satisfies $\Delta S \ge 0$; only the mode of information exchange changes.
-
-\emph{Scope.}  
-This oscillator is the canonical closed system of the informational universe:  
-a bounded transformation in which every increase in record precision is offset by a proportional loss of predictive capacity, and vice versa.  
-It represents the minimal rhythm of causal order—the reversible heartbeat of information itself.
-\end{example}
-
-
-\begin{center}
-\textit{Motion, in this theory, is not caused by energy.  
-It is the preservation of order under Martin’s Condition.}
-\end{center}
-

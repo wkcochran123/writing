@@ -1,157 +1,381 @@
 \chapter{The Calculus of Dynamics}
 \label{chap:dynamics}
 
+In the previous chapter, motion was described entirely as a sequence of
+admissible distinctions---a finite notebook of observable updates. No
+geometry, metric, or continuum was assumed. Refinement revealed additional
+events, but the history of any physical process remained a countable record
+that could be reconciled into a globally coherent ledger.
+
+This chapter introduces dynamics in the same spirit. By ``dynamics'' we do
+not mean a force law or a geometric trajectory. We mean the rule that
+selects, from all admissible histories, those that are physically possible.
+The key observation is that a physical history cannot contain unexplained
+motion. Any segment of a worldline must be consistent with the measurements
+that precede and follow it. When a history can be refined without altering
+its predictions at the recorded events, the refined history contains no
+additional information. In this sense, the physically admissible refinement
+is the one that introduces no new distinctions beyond those required by the
+data.
+
+This principle has a classical name. In the continuum limit, the requirement
+that refinements add no “hidden motion” is precisely the Euler–Lagrange
+condition: an admissible trajectory introduces no superfluous curvature beyond
+that certified by observed events \cite{ciarlet1978,courant1953,lanczos1970}.
+A trajectory of least informational content is a trajectory of least action,
+in the classical sense of Maupertuis, Euler, Lagrange, Hamilton, and their
+modern successors \cite{demaupertuis1744,euler1744,goldstein2002,hamilton1834,lagrange1788}.
+In the calculus of dynamics, smooth solutions arise not from
+geometry but from the demand that no further admissible distinctions can be
+discovered between measurements. The spline that leaves nothing to correct is
+the one nature selects.
+
+
+The remainder of this chapter develops this idea formally. Starting from a
+finite set of measurements, we construct the weak form of the problem and
+show that the unique refinement consistent with all observed distinctions is
+the cubic spline. Its extremality in the continuum reproduces the
+Euler--Lagrange equations familiar from classical mechanics and field theory.
+Dynamics are not imposed at the outset; they emerge as the limit in which
+refinement ceases to yield new information.
+
+\begin{example}{Euler--Lagrange as Minimizing Variation}
+\NB{For a comprehensive treatment of the calculus of variations, see Brenner and Scott~\cite{brenner2008}
+and Courant and Hilbert~\cite{courant1953}.}
+
+We consider the functional
+\[
+J[x] = \int_a^b f\bigl(t,x(t),\dot{x}(t)\bigr)\, dt,
+\]
+where $x$ is a twice continuously differentiable function with fixed
+endpoints $x(a)=x_a$ and $x(b)=x_b$. Let $\eta(t)$ be an admissible
+perturbation with $\eta(a)=\eta(b)=0$, and define the variation
+\[
+x_\varepsilon(t) = x(t) + \varepsilon\,\eta(t), \qquad \varepsilon\in\mathbb{R}.
+\]
+The directional derivative of $J$ at $x$ in the direction $\eta$ is
+\[
+\delta J[x;\eta]
+  = \left.\frac{d}{d\varepsilon} J[x_\varepsilon]\right|_{\varepsilon=0}
+  = \left.\frac{d}{d\varepsilon}
+       \int_a^b f\bigl(t, x_\varepsilon(t), \dot{x}_\varepsilon(t)\bigr)\, dt
+    \right|_{\varepsilon=0}.
+\]
+Since the integration limits do not depend on $\varepsilon$, the
+derivative may be moved inside:
+\[
+\delta J[x;\eta]
+  = \int_a^b
+      \left.\frac{\partial}{\partial\varepsilon}
+      f\bigl(t, x_\varepsilon(t), \dot{x}_\varepsilon(t)\bigr)
+      \right|_{\varepsilon=0} dt.
+\]
+By the chain rule,
+\[
+\frac{\partial}{\partial\varepsilon}
+ f\bigl(t, x_\varepsilon(t), \dot{x}_\varepsilon(t)\bigr)
+ = f_x(t,x(t),\dot{x}(t))\,\eta(t)
+ + f_{\dot{x}}(t,x(t),\dot{x}(t))\,\dot{\eta}(t).
+\]
+Thus
+\[
+\delta J[x;\eta]
+  = \int_a^b \Bigl(
+      f_x(t,x,\dot{x})\,\eta(t)
+      + f_{\dot{x}}(t,x,\dot{x})\,\dot{\eta}(t)
+    \Bigr)\, dt.
+\]
+Integrate the second term by parts:
+\[
+\int_a^b f_{\dot{x}}\,\dot{\eta}\, dt
+  = \bigl[f_{\dot{x}}\eta\bigr]_{a}^{b}
+    - \int_a^b \frac{d}{dt}\bigl(f_{\dot{x}}\bigr)\,\eta(t)\, dt.
+\]
+Because $\eta(a)=\eta(b)=0$, the boundary term vanishes. Therefore
+\[
+\delta J[x;\eta]
+  = \int_a^b
+       \left(
+         f_x - \frac{d}{dt} f_{\dot{x}}
+       \right)\eta(t)\, dt.
+\]
+If $x$ is a stationary point of $J$, then $\delta J[x;\eta]=0$ for all
+admissible $\eta$. The fundamental lemma of the calculus of variations
+implies
+\[
+f_x(t,x,\dot{x}) - \frac{d}{dt}f_{\dot{x}}(t,x,\dot{x}) = 0,
+\]
+for all $t\in(a,b)$. This is the Euler--Lagrange equation.
+
+This derivation demonstrates that the Euler--Lagrange equation selects the
+trajectory with no first-order change under admissible perturbations. No
+hidden motion can be inserted without altering the notebook. The path is
+stationary in its informational curvature.
+\end{example}
+
 \section{Emergent Dynamics}
 \label{sec:emergent-dynamics}
 
-The discrete Causal Universe Tensor defines a finite informational measure
-on admissible configurations.  When these configurations are refined, any
-replacement of an admissible history by one with additional unrecorded
-structure is forbidden by Axiom~\ref{ax:boltzmann}.  As a consequence,
-the physical notion of ``dynamics’’ is not an independent postulate: it
-arises only as the unique continuous shadow of informational extremality.
+In the discrete setting, the Causal Universe Tensor assigns a finite
+informational weight to every admissible history.  Refinement increases
+this weight only when new distinctions are recorded.  Any replacement of
+an admissible history by one containing additional, unobserved structure
+violates Axiom~\ref{ax:boltzmann}.  Consequently, dynamics is not an
+independent physical postulate.  It is the unique continuous shadow of
+informational extremality: the smooth curve is simply the history for
+which no further admissible distinctions can be revealed.
+
+In the discrete domain, \emph{anchor points} are the only places where the universe has
+committed to a specific value.  Between anchors the record is silent: the
+data permit many possible continuations, but most would introduce
+unobserved structure.  Any admissible configuration must therefore agree
+at the anchor points and remain free of additional distinguishable
+features in between.  The role of the anchors is not geometric; it is
+informational.  They fix the admissible boundary data against which all
+variations are tested.  A candidate variation that disagrees at an anchor
+is rejected immediately, because it contradicts an established event.  A
+variation that agrees at the anchors but inserts additional oscillation,
+curvature, or ``hidden motion'' is rejected by
+Axiom~\ref{ax:boltzmann}, because those features would have produced
+additional anchors that do not appear in the record.
+
+\begin{definition}[Anchor Points]
+\label{def:anchors}
+A finite set of \emph{anchor points} is the collection of measured
+events at which admissible configurations must agree.  Two candidate
+histories $\psi$ and $\phi$ are said to share the same anchors if they
+record identical distinguishable values at those events. Axiom~\ref{ax:ockham}
+requires that any refinement of a history preserve agreement
+on the anchors: no admissible configuration may contradict an observed
+event.
+\end{definition}
+
+In the discrete setting, reciprocity arises from a simple counting fact.
+A refinement of $\psi$ by a test configuration $\phi$ is admissible only
+when the resulting history contains no additional distinguishable events.
+If $\phi$ were to introduce extra curvature, oscillation, or ``hidden
+motion,'' the refinement would increase the causal count and violate
+Axiom~\ref{ax:boltzmann}.  The reciprocity pairing
+$\psi^{\!*}\mathcal{L}\phi$ measures this change: it evaluates whether
+$\phi$ is informationally neutral relative to $\psi$.
+
+Crucially, the dual $\psi^{\!*}$ is not a geometric adjoint; it is the
+reflection of $\psi$ in the informational algebra.  It answers the
+question: \emph{If $\psi$ is perturbed by $\phi$, does the universe record
+new distinguishable structure?}  If the reciprocity pairing vanishes for
+all admissible $\phi$ that share the anchors, then $\psi$ is extremal.
+Any remaining variation would imply new recorded events, and therefore be
+inadmissible.
+
+\begin{definition}[Reciprocity Map]
+\label{def:reciprocity}
+\NB{In settings where a geometric or Hilbert space structure is present, the
+reciprocity map reduces to the familiar adjoint (or complex conjugate)
+with respect to the underlying inner product.  Here it is defined purely
+informationally, without assuming any geometric primitives.}
+
+Let $\psi$ be an admissible configuration and let $\phi$ be a test
+variation that agrees with $\psi$ at the anchor points.  The
+\emph{reciprocity map} is the linear evaluation
+\[
+\langle \psi,\phi\rangle_{\mathcal{L}}
+  := \psi^{\!*}\,\mathcal{L}\,\phi,
+\]
+where $\mathcal{L}$ counts distinguishable causal increments and
+$\psi^{\!*}$ denotes the adjoint of $\psi$ with respect to this count.
+Two configurations are reciprocals if their pairing produces the same
+causal measure:
+\[
+\langle \psi,\phi\rangle_{\mathcal{L}}
+  = \langle \phi,\psi\rangle_{\mathcal{L}}.
+\]
+The map $\psi \mapsto \psi^{\!*}$ is called the \emph{reciprocity dual}.
+It encodes the informational response of $\psi$ to an infinitesimal
+variation $\phi$ without assuming any differential structure.
+\end{definition}
+
+In the continuum shadow, the reciprocity pairing becomes the usual weak
+inner product of variational calculus~\cite{brenner2008,evans2010}.  Integration by parts moves the
+variation from $\psi$ onto the test functions, producing natural boundary
+terms determined by the anchors.  The condition
+\[
+\langle \psi,\phi\rangle_{\mathcal{L}}
+  = \langle \phi,\psi\rangle_{\mathcal{L}}
+\]
+is then the classical reciprocity of the Euler--Lagrange operator: the
+dynamics are self-adjoint under the informational measure.  This equality
+holds not because symmetry is assumed, but because any antisymmetric
+contribution would encode unrecorded distinctions and be eliminated by
+Axiom~\ref{ax:boltzmann}.
+
+
 
 \subsection{Weak Formulation on Space--Time}
 \label{sec:weak-formulation}
 
-Let $\psi$ denote an admissible configuration consistent with a fixed set of
-event anchors, and let $\phi$ be any test configuration sharing those
-anchors.  Informational minimality requires that replacing $\psi$ by $\phi$
-cannot decrease causal consistency.  In the finite domain, this condition
-appears as the weak relation
+Let $\psi$ be an admissible configuration consistent with a fixed set of
+event anchors, and let $\phi$ be any test configuration that agrees with
+$\psi$ at those anchors.  Replacing $\psi$ by $\phi$ is permissible only if
+it does not reduce causal consistency.  In the discrete algebra this means
+that $\psi$ introduces no superfluous refinements relative to $\phi$; any
+additional curvature, oscillation, or ``hidden motion’’ would imply
+unrecorded events and thus be inadmissible.
+
+In the dense limit of refinement, this constraint appears as a weak
+relation
 \begin{equation}
-\psi^{\!*}\,\mathcal{L}\,\psi \;\approx\; \psi^{\!*}\,\mathcal{L}\,\phi,
-\label{eq:weak-form}
+  \psi^{\!*}\,\mathcal{L}\,\psi
+  \;\leq\;
+  \psi^{\!*}\,\mathcal{L}\,\phi,
+  \label{eq:weak-form}
 \end{equation}
-where $\mathcal{L}$ counts distinguishable causal increments and
-$\psi^{\!*}$ is the reciprocity dual.  No derivatives are assumed; smooth
-structure enters only as the completion of refinement.
+where $\mathcal{L}$ is the informational count of distinguishable
+increments, and $\psi^{\!*}$ denotes its reciprocity dual.  The weak
+inequality asserts that $\psi$ is extremal among all admissible
+perturbations $\phi$.  No differential operators are assumed: the weak
+form arises because refinement limits the class of permissible discrete
+variations.
+
+Completing this refinement yields the continuous counterpart of
+\eqref{eq:weak-form}.  Integration by parts shifts variations from $\psi$
+onto the test functions, producing natural boundary conditions and a weak
+Euler--Lagrange statement.  The continuum calculus therefore does not
+describe an independently assumed physical law; it is the smooth completion
+of informational minimality on the discrete domain.
 
 \subsection{Reciprocity and the Adjoint Map}
 \label{sec:reciprocity-adjoint}
 
 The weak extremality relation~\eqref{eq:weak-form} compares an admissible
-configuration $\psi$ against a test configuration $\phi$ that shares the same
-event anchors.  In the discrete domain, replacing $\psi$ by $\phi$ is encoded
-by a \emph{selected update} of the event record: only those increments that
-alter distinguishable curvature are allowed.  This update is represented by
-the Selection Operator $\mathcal{S}$ of
-Definition~\ref{def:selection-operator}, which maps admissible configurations
-to admissible refinements.
+configuration $\psi$ against a test configuration $\phi$ that shares the
+same event anchors.  In the discrete domain, replacing $\psi$ by $\phi$
+means refining the event record: only those local changes that introduce
+new, distinguishable curvature would alter the admissible history.  Any
+such change must correspond to additional recorded events; if none are
+present, the refinement is informationally neutral.  Thus $\phi$ is an
+admissible variation of $\psi$ precisely when it agrees at the anchors and
+introduces no distinctions beyond those already encoded in $\psi$.  The
+weak extremality condition~\eqref{eq:weak-form} is the continuous shadow of
+this discrete refinement rule.
 
-To every such operator there is an associated \emph{reciprocity map}
-$\psi^{\!*}$, defined as the adjoint of $\mathcal{S}$ with respect to the
-informational measure $\mathcal{L}$:
-\[
+
+The weak comparison between $\psi$ and $\phi$ admits a natural dual
+representation.  For any admissible configuration $\psi$, there exists a
+\emph{reciprocity map} $\psi^{\!*}$ such that the informational pairing
+\begin{equation}
 \psi^{\!*}\,\mathcal{L}\,\phi
-\;=\;
-\mathcal{L}\,\bigl(\mathcal{S}[\psi],\,\phi\bigr),
-\]
-for all admissible test configurations $\phi$.  Intuitively, $\psi^{\!*}$
-records the ``shadow'' of an update when viewed from the perspective of
-informational minimality: any component of $\phi$ that would introduce an
-unobserved distinction is suppressed by the adjoint action.
+\end{equation}
+measures the change in distinguishability that would result from locally
+replacing $\psi$ by $\phi$ between the anchors.  Intuitively, $\psi^{\!*}$
+captures the ``shadow'' of $\psi$ when viewed from the perspective of
+informational minimality: components of $\phi$ that would introduce new,
+unrecorded distinctions are suppressed by the adjoint action, while
+components that are informationally neutral remain.  In the dense limit,
+this pairing becomes the standard weak inner product of variational
+calculus.
 
-Because $\mathcal{S}$ admits only refinements that do not create hidden
-structure, the reciprocity map annihilates variations invisible at the event
-anchors.  Formally, if $\phi$ and $\psi$ agree at the anchors and differ only
-by an undetectable perturbation, then
+Because admissible configurations cannot contain hidden structure, the
+reciprocity map annihilates variations that are invisible at the event
+anchors.  If $\phi$ and $\psi$ agree at the anchors and differ only by an
+undetectable perturbation, then refining the event record yields no new
+distinctions, and the informational pairing remains unchanged:
 \[
 \psi^{\!*}\,\mathcal{L}\,\phi
 \;=\;
 \psi^{\!*}\,\mathcal{L}\,\psi.
 \]
-This is exactly the weak relation~\eqref{eq:weak-form}.  In this sense,
-$\psi^{\!*}$ enforces closure: it guarantees that the extremal configuration
-carries no latent curvature that would be revealed under refinement.
+This equality is precisely the weak relation~\eqref{eq:weak-form}.  In this
+sense, $\psi^{\!*}$ enforces closure: the extremal configuration carries no
+latent curvature that would be revealed by further refinement.
+
 
 The ``variation'' of $\psi$ is therefore not a differential operation but a
-selected refinement of the causal record.  The reciprocity map is the dual
-constraint that removes any component of that refinement which would violate
-informational minimality.  Together, they generate the weak Euler--Lagrange
-structure entirely within the discrete domain, without assuming
-differentiability or a continuum of states.
+refinement of the causal record consistent with the event anchors.  The
+reciprocity map acts as the dual constraint, suppressing any component of
+that refinement which would introduce unrecorded distinctions.  Taken
+together, admissible refinements and their reciprocity dual generate the weak
+Euler--Lagrange structure entirely within the discrete domain, without
+assuming differentiability or a continuum of states.
 
-In this way, the reciprocity map guarantees that any admissible update of
+
+In this way, the reciprocity map ensures that any admissible refinement of
 $\psi$ corresponds to an interpolant $f(\psi)$ that introduces no new
-distinguishable structure.
-Under refinement, every such interpolant
-converges to the same smooth closure $\Psi$.  Because the event tensor
-defines a finite labeled partition of the causal domain, $\Psi$ preserves
-anchor order and is injective on each partition element.  Its inverse
-$\Psi^{-1}$ therefore exists trivially: applying $\Psi$ and then
-$\Psi^{-1}$ recovers exactly the original discrete record $\psi$.  The
-interpolant and its smooth limit are thus informationally equivalent
-representations of the same causal structure.
+distinguishable structure.  As refinement becomes dense, all such
+interpolants converge to the same smooth closure $\Psi$.  Since the event
+record defines a finite labeled partition of the causal domain, $\Psi$
+preserves anchor order and is injective on each partition element.  Its
+inverse $\Psi^{-1}$ therefore recovers exactly the original discrete record:
 \begin{equation}
-f(\psi) \rightarrow \Psi^{-1}.
+  f(\psi) \;\longrightarrow\; \Psi^{-1}.
 \end{equation}
+Thus the interpolant and its smooth limit are informationally equivalent
+representations of the same causal structure.
 
 
 \subsection{Dense Limit and Euler--Lagrange Closure}
-\label{sec:euler-lagrange-closure}
+\label{sec:dense-limit}
 
-In the classical calculus of variations, a weak extremum of a smooth functional implies the Euler--Lagrange equation in strong form; see Courant
-\cite{courant1943var} or Ciarlet \cite{ciarlet1978}.  There, differentiability is assumed a priori and the weak form is obtained by integrating by parts.
+In the present framework no differentiability is assumed.  The weak
+extremality relation~\eqref{eq:weak-form} is defined entirely in the discrete
+domain, where each term counts distinguishable causal increments.  A
+``variation'' of $\psi$ is therefore not a differential operator but a
+refinement of the event record that leaves the anchors unchanged.
 
-In the present framework no differentiability is assumed.  The weak relation \eqref{eq:weak-form} is defined entirely in the discrete domain,
-where each term counts distinguishable causal increments.  When the causal grid is refined, informational minimality forces cubic continuity at each
-event anchor.  In the dense limit, the discrete extremal coincides with the classical Euler--Lagrange closure,
-\[
-U^{(4)} = 0,
-\]
-but this appears only as the smooth completion of a countable sequence of refinements, not as an assumed differential equation.
+In the discrete domain, such refinements appear as finite differences: each
+admissible update replaces a segment of the causal history by one with
+strictly greater resolution.  Because informational minimality forbids
+unobserved curvature, every admissible refinement corresponds to a
+piecewise-linear or piecewise-polynomial interpolant that agrees with $\psi$
+on the anchors and introduces no new distinguishable structure.  As
+refinements become arbitrarily dense, the finite differences form a Cauchy
+sequence in the space of admissible interpolants, and their limit is the
+unique smooth closure $\Psi$ established in the previous subsection.
 
-\begin{proposition}[Discrete extremality implies Euler--Lagrange closure]
-\label{prop:discrete-to-euler}
-Let $U$ be an admissible configuration on a finite causal grid, and assume
-it satisfies the weak extremality condition~\eqref{eq:weak-form} against all
-test configurations $\phi$ sharing the same event anchors.  Then $U$ is a
-piecewise cubic interpolant with global $C^2$ continuity.  In the dense
-refinement limit of the causal grid, the discrete extremal satisfies
-\[
-  U^{(4)} = 0.
-  \]
-  Thus the classical Euler--Lagrange closure arises as the smooth completion of
-  a countable sequence of informational refinements, not as an assumed
-  differential equation.
-  \end{proposition}
+Applying the reciprocity pairing to successive refinements yields the
+discrete extremality condition: no admissible finite difference can reduce
+the informational measure $\mathcal{L}$.  In the dense limit, the weak
+relation~\eqref{eq:weak-form} becomes the standard variational identity of
+Euler--Lagrange calculus, obtained entirely from finite differences.  The
+weak derivative enters only as the completion of refinement; it is not
+assumed \emph{a priori}.
 
-  \begin{proof}[Proof sketch]
-  The argument proceeds in four steps.
+When the causal grid is refined, informational minimality forces cubic
+continuity at each event anchor: jumps in slope or curvature would constitute
+new observable events and are therefore inadmissible.  In the dense limit,
+the discrete extremal coincides with the classical Euler--Lagrange closure.
+This structure is summarized in the following proposition.
 
-  \emph{(1) Discrete admissible configurations.}
-  On a finite causal grid, $U$ is specified by its values on a countable set of
-  event anchors.  Between consecutive anchors, any interpolant with hidden
-  curvature would imply additional distinguishable events.  Therefore the
-  admissible interpolant on each interval is a polynomial of minimal degree,
-  and $U$ is piecewise polynomial.
+\begin{proposition}
+\label{prop:fourth-derivative}
+Let $\psi$ be an admissible configuration with smooth closure $\Psi$.  If no
+admissible refinement reduces the informational measure $\mathcal{L}$, then
+$\Psi$ is $C^{2}$ and satisfies
+\begin{equation}
+\Psi^{(4)} = 0.
+\end{equation}
+\end{proposition}
 
-  \emph{(2) Weak extremality and hidden curvature.}
-  The weak relation~\eqref{eq:weak-form} forbids any replacement of $U$ by a
-  test configuration $\phi$ that reduces informational consistency.  A
-  polynomial of degree greater than three contains latent inflection points
-  that would be detected at sufficient refinement.  Thus the extremal is
-  piecewise cubic.
+\begin{proof}[Proof Sketch]
+Between anchors, $\Psi$ must be polynomial, since any additional inflection
+would imply unrecorded structure.  Polynomials of degree greater than three
+contain latent turning points and are therefore excluded.  Hence each segment
+is cubic.  At the anchors, the interpolants must glue with $C^2$ continuity:
+jumps in slope or curvature would constitute new observable events.  As the
+grid of anchors is refined, the third derivative $\Psi'''$ must be constant
+on every shrinking interval.  In the dense limit that interval has zero
+measure, so $\Psi'''$ is constant everywhere.  A constant third derivative
+implies $\Psi^{(4)} = 0$.  Thus the smooth closure of any informationally
+extremal configuration satisfies the Euler--Lagrange condition.
+\end{proof}
 
-  \emph{(3) Matching conditions at anchors.}
-  Informational minimality disallows jumps in value, slope, or bending moment
-  at an anchor, since each would constitute a new observable event.  Hence the
-  piecewise cubic segments glue together with continuous value, first
-  derivative, and second derivative.  The third derivative is piecewise
-  constant.
+Proposition~\ref{prop:fourth-derivative} shows that the Euler--Lagrange
+equation is not postulated.  It is the continuous shadow of discrete
+informational extremality.  Finite differences do not approximate the
+differential equation; they \emph{generate} it.  The unique admissible smooth
+representative is cubic on each partition element, $C^2$ at the event
+anchors, and satisfies $\Psi^{(4)}=0$ everywhere.  Smooth calculus appears
+solely as the completion of refinement in the discrete causal record.
 
-  \emph{(4) Dense limit and smooth closure.}
-  As the grid is refined, the intervals shrink and the piecewise constant third
-  derivative converges to a continuous function.  The only continuous function
-  whose integral vanishes on every shrinking interval is zero.  Therefore the
-  fourth derivative of the limit vanishes and the discrete extremal satisfies
-  $U^{(4)} = 0$.
-
-  This recovers the classical Euler--Lagrange form without assuming
-  differentiability: the differential equation is the smooth shadow of finite
-  informational constraints.
-  \end{proof}
 
 \begin{example}[Repeatability of Invisible Motion~\cite{bacon1620}]
 \label{ex:repeatability}
@@ -184,439 +408,348 @@ are therefore the unique histories that leave no trace.
 \end{example}
 
 
+\subsection{The Law of Spline Sufficiency}
+\label{sec:spline-sufficiency}
 
+The preceding analysis shows that every admissible refinement of the event
+record corresponds to a piecewise-cubic interpolant that preserves the event
+anchors and introduces no new distinguishable structure.  In the dense
+limit, these interpolants converge to a unique smooth closure $\Psi$ that is
+$\mathcal{C}^{2}$ and satisfies $\Psi^{(4)} = 0$.  The discrete causal record
+and its smooth completion are therefore informationally equivalent
+representations of the same history.
 
-\subsubsection{Interpretation: No Physics Assumed}
-\label{sec:no-physics-assumed}
+\begin{law}[The Law of Spline Sufficiency]
+\label{law:spline-sufficiency}
+Let $\psi$ be any finite, non-contradictory record of admissible events.
+There exists a unique continuous completion $\Psi$ such that:
+\begin{enumerate}
+\item $\Psi$ agrees with $\psi$ at every event anchor,
+\item $\Psi$ is piecewise cubic and $\mathcal{C}^{2}$ on its domain,
+\item $\Psi$ introduces no new distinguishable structure beyond $\psi$, and
+\item $\Psi$ satisfies the Euler--Lagrange closure $\Psi^{(4)} = 0$.
+\end{enumerate}
+The cubic spline is therefore \emph{sufficient} to represent all admissible
+distinctions in the data: no higher-order model encodes additional
+information available to measurement.
+\end{law}
 
-The quantity $\mathcal{L}$ is not a physical density but an informational
-measure of distinguishable curvature.  The ``action'' is a cumulative count
-of admissible distinctions, and its extremal is the only configuration that
-introduces no unobserved structure.  Classical dynamics therefore arise as a
-mathematical consequence of measurement, not as a physical postulate.
-
-\section{Galerkin Solutions to Weak Equations}
-\label{sec:galerkin-solutions}
-
-The weak extremality condition~\eqref{eq:weak-form} can be interpreted in the
-classical language of Galerkin methods.  In this formulation, admissible
-variations are taken from a finite trial space of functions that agree with
-the event anchors.  For the curvature functional
+The Law of Spline Sufficiency justifies the use of Galerkin methods~\cite{galerkin1915} in this
+framework.  By choosing the functional 
 \begin{equation}
-  \mathcal{J}[U] = \int (U''(x))^2 \, dx,
-  \label{eq:curvature-functional}
-\end{equation}
-the Galerkin weak form is
-\begin{equation}
-  \int U''(x)\,\phi''(x)\,dx = 0,
-  \label{eq:galerkin-weak}
-\end{equation}
-for all admissible $\phi$.  Integrating~\eqref{eq:galerkin-weak} by parts twice
-and using the fact that the variations vanish at the anchors eliminates all
-boundary terms and produces the strong Euler--Lagrange equation
-\begin{equation}
-  \frac{d^2}{dx^2}\bigl(2U''(x)\bigr) = 0,
-  \label{eq:strong-euler}
-\end{equation}
-and therefore
-\begin{equation}
-  U^{(4)}(x) = 0.
-  \label{eq:u4-zero}
-\end{equation}
-Thus, the Galerkin extremals of the curvature functional are exactly the cubic
-polynomials on each interval of the partition.  This establishes the classical
-equivalence between weak variational solutions and their strong differential
-form.
+\mathcal{J}[\Psi] = \int (\Psi'')^2
+\,dx
+\end{equation} as a measure of curvature, the Galerkin extremal selects the simplest
+admissible interpolant consistent with the event anchors.  Because every
+sequence of admissible refinements converges to the unique $\mathcal{C}^{2}$
+cubic closure, the Galerkin solution coincides with the informationally
+extremal configuration.  No additional degrees of freedom are required.
 
-\subsection{Weierstrass Convergence of Galerkin Extremals}
-\label{sec:weierstrass-galerkin}
+In this sense, spline sufficiency provides the logical bridge between
+discrete measurement and continuous dynamics:
+\[
+\text{discrete measurement}
+\;\xrightarrow{\;\text{spline sufficiency}\;}\;
+\Psi
+\;\xrightarrow{\;\text{closure}\;}\;
+\Psi^{(4)} = 0.
+\]
+Finite differences do not approximate the Euler--Lagrange equation; they
+\emph{generate} it.  Smooth calculus enters only as the completion of
+refinement in the causal record, not as an assumed geometric primitive.
 
-Let $[a,b]$ be compact and let $\{\mathcal{T}_n\}$ be a sequence of nested
-partitions with mesh size $h_n \to 0$.  For each $n$, let $U_n$ be the
-Galerkin extremal of the curvature functional
+\section{Galerkin Methods}
+\label{sec:galerkin}
+\NB{This argument applies the Law of Spline Sufficiency.  We do not assume
+that Euler--Lagrange dynamics exist \emph{a priori}.  Rather, we show that
+if the data admit a smooth completion, then a cubic spline exists which
+reproduces the Euler--Lagrange solution to arbitrary accuracy.  In this
+sense, observing a spline is sufficient to infer Euler--Lagrange dynamics:
+the differential equation models the behavior only insofar as the data
+allow it, and no additional geometric or differentiable structure is
+assumed.}
+
+
+The Law of Spline Sufficiency establishes that cubic splines contain all
+admissible distinguishable structure.  In this section we assume the
+existence of a smooth Euler--Lagrange solution and show that a Galerkin
+projection onto a spline basis produces a sequence of spline functions that
+converges to it.  This suffices to justify the use of splines as the
+representatives of continuous dynamics: if Euler--Lagrange motion exists,
+Galerkin refinement will recover it to arbitrary accuracy.
+
+\subsection{Galerkin Projection onto a Spline Basis}
+
+Let $\Psi$ be the smooth solution to an Euler--Lagrange boundary value
+problem.  Choose a finite spline basis $\{\varphi_k\}$ that satisfies the
+boundary constraints and let
+\[
+  \Psi_n(x) = \sum_{k=1}^{n} a_k\,\varphi_k(x)
+\]
+be the Galerkin projection of $\Psi$ onto this space.  The coefficients
+$a_k$ are chosen so that the residual of the Euler--Lagrange equation is
+orthogonal to the spline basis:
 \begin{equation}
-  \mathcal{J}[U] \;=\; \int_a^b \bigl(U''(x)\bigr)^2\,dx,
-  \label{eq:curvature-functional-weierstrass}
+  \int \Psi_n''(x)\,\varphi_k''(x)\,dx = \int \Psi''(x)\,\varphi_k''(x)\,dx,
+  \qquad k = 1,\dots,n.
+  \label{eq:galerkin-projection}
 \end{equation}
-subject to the anchor constraints induced by the event record on $\mathcal{T}_n$.
+This is the standard spline Galerkin formulation \cite{ciarlet1978,brenner2008}:
+the weak form enforces the Euler--Lagrange condition in the finite
+dimensional subspace spanned by the splines.
 
-\begin{theorem}
-\label{thm:weierstrass-galerkin}
-There exists a unique smooth closure $\Psi$ satisfying
-\begin{equation}
-  \Psi^{(4)}(x) \;=\; 0 \quad \text{on each element of every }\mathcal{T}_n,
-  \label{eq:psi-four-zero}
-\end{equation}
-and the sequence of Galerkin extremals $\{U_n\}$ converges to $\Psi$
-uniformly on $[a,b]$:
-\begin{equation}
-  \lim_{n\to\infty}\;\sup_{x\in[a,b]} \bigl|U_n(x) - \Psi(x)\bigr| \;=\; 0.
-  \label{eq:uniform-convergence}
-\end{equation}
-\end{theorem}
+Solving \eqref{eq:galerkin-projection} yields a unique spline $\Psi_n$ that
+agrees with the smooth solution at all knot points and is $\mathcal{C}^2$ on
+the domain.  No higher-order degrees of freedom are necessary; the curvature
+functional ensures that splines are the minimal weak extremals.
 
-\begin{proof}[Proof sketch]
-Energy monotonicity and nonnegativity imply $\{\mathcal{J}[U_n]\}$ is bounded,
-so $\{U_n''\}$ is bounded in $L^2(a,b)$.  In one dimension, cubic--spline trial
-spaces are stable and yield uniform bounds on $U_n$ and $U_n'$.  Hence
-$\{U_n\}$ is equicontinuous and uniformly bounded on $[a,b]$.  By
-Arzel\`a--Ascoli, there exists a uniformly convergent subsequence.
-Any uniform limit $U$ satisfies the weak form on every subinterval, and
-integrating by parts recovers the strong Euler--Lagrange condition
-\begin{equation}
-  U^{(4)}(x) = 0,
-  \label{eq:u-four-zero}
-\end{equation}
-together with the anchor constraints.  Uniqueness of the smooth closure $\Psi$
-forces $U = \Psi$, so the full sequence converges uniformly, establishing
-\eqref{eq:uniform-convergence}.
-\end{proof}
+\subsection{Convergence of the Galerkin Sequence}
 
-This establishes Weierstrass (uniform) convergence of the Galerkin extremals
-to the unique cubic spline closure dictated by informational minimality.
-
-In particular, any admissible interpolant $f(\psi)$ refined through nested
-Galerkin spaces converges uniformly to the unique smooth closure $\Psi$, and
-the inverse $\Psi^{-1}$ recovers exactly the original anchor data $\psi$.
-Thus $f(\psi) \to \Psi$ and $\Psi^{-1} = \psi$.
+By the Weierstrass Approximation Theorem, cubic splines form a dense
+subspace of continuous functions on a compact interval.  As the mesh is
+refined and more basis functions are added, the sequence $\{\Psi_n\}$
+converges uniformly to $\Psi$:
+\[
+  \Psi_n \;\xrightarrow[n\to\infty]{}\; \Psi.
+\]
+Because the Euler--Lagrange operator is continuous in the weak topology,
+convergence of $\Psi_n$ implies convergence of all weak derivatives:
+\[
+  \Psi_n'' \;\xrightarrow[n\to\infty]{}\; \Psi''.
+\]
+Thus the Galerkin sequence yields arbitrarily good spline approximations of
+the Euler--Lagrange solution.  In particular, $\Psi_n$ satisfies
+\[
+  \Psi_n^{(4)} = 0
+\]
+on each spline element, up to a boundary residual that vanishes as the mesh
+is refined.
 
 \begin{corollary}
-For any admissible interpolant $f(\psi)$ consistent with the event anchors,
-the Galerkin refinements satisfy
-\begin{equation}
-  \lim_{n\to\infty} f_n(\psi) = \Psi,
-\end{equation}
-and $\Psi^{-1}$ restricted to the anchors recovers $\psi$ exactly.  Hence
-$f(\psi) \to \Psi^{-1}$ in the sense of uniform convergence on $[a,b]$.
+If a smooth Euler--Lagrange solution $\Psi$ exists, a sequence of cubic
+splines $\{\Psi_n\}$ constructed by Galerkin projection converges uniformly
+to $\Psi$.  Since cubic splines represent all admissible distinguishable
+structure, observing a spline solution is sufficient to infer the underlying
+Euler--Lagrange dynamics.
 \end{corollary}
 
+In summary:
+\[
+  \Psi
+  \xrightarrow{\text{Galerkin projection}}
+  \Psi_n
+  \xrightarrow[n\to\infty]{\text{Weierstrass}}
+  \Psi,
+\]
+so splines not only represent all admissible distinctions, but converge to
+the unique extremal of the Euler--Lagrange equation whenever one exists.  The
+Galerkin method therefore completes the argument of spline sufficiency in the
+continuum: if continuous dynamics exist, spline solutions will recover them
+to arbitrary accuracy.
 
-\section{Point-wise Agreement of the Galerkin Closure}
-\label{sec:pointwise-galerkin}
+The Galerkin refinement therefore recovers smooth calculus without assuming
+infinitesimal increments or geometric primitives.  The classical paradox of
+the fluxion may now be revisited in this light.
 
-Let $[a,b]$ be compact and let $\{\mathcal{T}_n\}$ be a sequence of nested
-partitions with mesh size $h_n \to 0$.  For each $n$, let $U_n$ be the
-Galerkin extremal of the curvature functional
-\begin{equation}
-  \mathcal{J}[U] \;=\; \int_a^b \bigl(U''(x)\bigr)^2\,dx,
-  \label{eq:curvature-functional-pwa}
-\end{equation}
-subject to the anchor constraints induced by the event record on
-$\mathcal{T}_n$.
 
-\begin{theorem}[Uniform convergence of Galerkin extremals]
-\label{thm:uniform-galerkin}
-There exists a unique smooth closure $\Psi$ satisfying
-\begin{equation}
-  \Psi^{(4)}(x) = 0
-  \qquad \text{on each element of every } \mathcal{T}_n,
-  \label{eq:psi-four-zero-pwa}
-\end{equation}
-and the Galerkin sequence $\{U_n\}$ converges to $\Psi$ uniformly:
-\begin{equation}
-  \lim_{n\to\infty}\;
-    \sup_{x\in[a,b]}
-      \bigl|U_n(x) - \Psi(x)\bigr|
-      \;=\; 0.
-  \label{eq:uniform-convergence-pwa}
-\end{equation}
-\end{theorem}
+\begin{example}[Newton's Ghost and the Fluxion Paradox]
+\label{te:newtonian-ghost}
 
-\begin{proof}[Proof sketch]
-Energy monotonicity and nonnegativity imply $\{\mathcal{J}[U_n]\}$ is
-bounded, so $\{U_n''\}$ is bounded in $L^2(a,b)$.  One-dimensional spline
-spaces provide uniform bounds on $U_n$ and $U_n'$, so $\{U_n\}$ is
-equicontinuous and uniformly bounded.  By Arzel\`a--Ascoli, a uniformly
-convergent subsequence exists.  Any uniform limit must satisfy the weak form
-on every subinterval, and integrating by parts recovers the strong condition
-\eqref{eq:psi-four-zero-pwa}.  Uniqueness of the cubic closure forces the
-entire sequence to converge uniformly to $\Psi$.
-\end{proof}
+\NB{The classical paradox of the fluxion treats an infinitesimal $\mathrm{d}t$
+as a quantity that is neither zero nor nonzero.  In the present framework,
+the limit is defined without invoking infinitesimals: smooth structure appears
+only as the unique completion of finite distinctions.}
 
-We now show that agreement at the event anchors forces agreement everywhere.
+In the 18th century, Bishop Berkeley criticized Newton's calculus of
+\emph{fluxions} ($\dot{x},\dot{y}$) for relying on quantities that vanish in
+one step of a proof and are treated as nonzero in the preceding step.  If
+$\dot{x}$ and $\dot{y}$ are the ghost-like ``increments'' of position, the
+question arises: \emph{How can a finite, observable change emerge from the
+vanishing difference of infinitesimal quantities?}
 
-\begin{proposition}[Point-wise uniqueness]
-\label{prop:pointwise-unique}
-Let $\Psi$ and $\Phi$ be smooth closures of admissible interpolants of the
-same event record $\psi$.  If
-\begin{equation}
-  \Psi(x_i) = \Phi(x_i)
-  \qquad\text{for all event anchors } \{x_i\},
-  \label{eq:agreement-anchors-pwa}
-\end{equation}
-then
-\begin{equation}
-  \Psi(x) = \Phi(x)
-  \qquad\text{for all } x \in [a,b].
-  \label{eq:agreement-global-pwa}
-\end{equation}
-\end{proposition}
+In the causal accounting used here, this is not a paradox of quantity but a
+limitation of informational resolution.  The fluxion
+\[
+  \dot{x} = \frac{\Delta x}{\Delta t}
+  \]
+  is a ratio of two sequentially recorded distinctions: the number of spatial
+  ticks $\Delta x$ versus the number of temporal ticks $\Delta t$ between two
+  anchors.  Both are finite, integer-valued measurements.
 
-\begin{proof}[Proof sketch]
-On each interval $[x_i,x_{i+1}]$, both $\Psi$ and $\Phi$ satisfy
-\eqref{eq:psi-four-zero-pwa} and are therefore cubic polynomials.  A cubic
-is determined by its value, first derivative, and second derivative at a
-point.  Informational minimality forbids discontinuities of $U$, $U'$, or
-$U''$ at the anchors, so $\Psi$ and $\Phi$ match these quantities at every
-$x_i$.  They must therefore coincide on each interval, giving
-\eqref{eq:agreement-global-pwa}.
-\end{proof}
+  The classical paradox appears only when $\Delta t \to 0$ is interpreted as a
+  transition through a nonphysical intermediate state.  In the present
+  framework, no such state is required.  The smooth completion $\Psi$
+  constructed in the dense limit satisfies $\Psi^{(4)}=0$ and is the unique
+  curvature-free extension of the data.  As the anchor spacing shrinks, the
+  ratio $\frac{\Delta x}{\Delta t}$ converges to the unique $\mathcal{C}^{2}$
+  slope $\Psi'$ of the cubic interpolant determined by the neighboring anchors.
 
-Finally, since $\Psi$ is cubic on each interval, all derivatives above third
-order vanish point-wise.
+  No ghost-like infinitesimal is invoked.  The derivative is the continuous
+  shadow of finite bookkeeping: the single value required to prevent the
+  appearance of new, unrecorded events as resolution increases.  Smooth
+  calculus arises not by manipulating vanished quantities, but as the unique
+  function consistent with every refinement of the observable record.
 
-\begin{corollary}[Point-wise agreement of derivatives]
-\label{cor:taylor-pointwise}
-For every anchor $x_i$ and for every integer $k \ge 4$,
-\begin{equation}
-  \Psi^{(k)}(x_i) = 0,
-  \label{eq:higher-derivatives-zero}
-\end{equation}
-and on each interval $[x_i,x_{i+1}]$,
-\begin{equation}
-  \Psi(x)
-  \;=\;
-  \Psi(x_i)
-  + \Psi'(x_i)(x-x_i)
-  + \tfrac{1}{2}\Psi''(x_i)(x-x_i)^2
-  + \tfrac{1}{6}\Psi'''(x_i)(x-x_i)^3.
-  \label{eq:cubic-taylor}
-\end{equation}
-Thus $\Psi$ and its Taylor expansion agree to all orders point-wise at each
-anchor.
-\end{corollary}
+  \end{example}
 
-Together, \eqref{eq:uniform-convergence-pwa},
-\eqref{eq:agreement-global-pwa}, and \eqref{eq:cubic-taylor} show that every
-admissible interpolant converges to the same cubic closure $\Psi$, and that
-$\Psi^{-1}$ recovers the original anchor data~$\psi$.
 
-\subsection{$C^{2}$ and Piecewise Analytic Solutions}
-\label{sec:c2-analytic}
-
-The uniform convergence in
-Section~\ref{sec:pointwise-galerkin} shows that the Galerkin sequence
-$\{U_n\}$ has a unique smooth limit $\Psi$ satisfying $\Psi^{(4)}(x)=0$ on
-each element of the partition.  Since a function with vanishing fourth
-derivative is a cubic polynomial on that interval, the closure $\Psi$ is
-given by
-\begin{equation}
-  \Psi(x)
-  =
-  \Psi(x_i)
-  + \Psi'(x_i)(x-x_i)
-  + \tfrac{1}{2}\Psi''(x_i)(x-x_i)^2
-  + \tfrac{1}{6}\Psi'''(x_i)(x-x_i)^3
-  \label{eq:cubic-local}
-\end{equation}
-on every subinterval $[x_i,x_{i+1}]$.
-
-Because each such polynomial is infinitely differentiable on the open
-interval, $\Psi$ is analytic on $(x_i,x_{i+1})$.  Moreover, cubic continuity
-at the anchors enforces agreement of value, slope, and curvature across
-interval boundaries, so $\Psi$ is globally $C^{2}$:
-\begin{equation}
-  \Psi \in C^{2}([a,b]).
-  \label{eq:c2-global}
-\end{equation}
-Higher derivatives exist piecewise but need not be continuous across
-anchors, and for all $k\ge 4$
-\begin{equation}
-  \Psi^{(k)}(x) = 0
-  \qquad \text{for } x\in(x_i,x_{i+1}).
-  \label{eq:higher-derivatives-zero-analytic}
-\end{equation}
-
-Thus the Galerkin limit is a classical $C^{2}$ solution of the strong
-Euler--Lagrange form, and is analytic on each element of the partition.  No
-additional smoothness or structure is present beyond the cubic representation,
-and every admissible interpolant converges to this same piecewise analytic
-closure.
-
-\subsection{Equivalence of Discrete and Smooth Representations}
+\section{Equivalence of Discrete and Smooth Representations}
 \label{sec:equivalence-principle}
+\subsection{Equivalence of Discrete and Smooth Representations}
+\label{sec:equivalence}
 
-Let $\psi$ denote an admissible discrete record supported on event anchors
-$\{x_i\}$, and let $f(\psi)$ be any admissible interpolant that introduces no
-new distinguishable structure between anchors.  Refining the interpolant over
-nested partitions $\{\mathcal{T}_n\}$ produces a Galerkin sequence
-$\{U_n\}$.  By Theorem~\ref{thm:uniform-galerkin},
-\begin{equation}
-  U_n \;\longrightarrow\; \Psi
-  \quad\text{uniformly on } [a,b],
-  \label{eq:fn-to-psi}
-\end{equation}
-where $\Psi$ satisfies the classical closure condition
-\begin{equation}
-  \Psi^{(4)}(x) = 0
-  \quad\text{on each element of every } \mathcal{T}_n.
-  \label{eq:psi-four-zero-equivalence}
-\end{equation}
+The preceding results establish the final closure of the Calculus of Dynamics.
+An admissible measurement record $\psi$ supported on event anchors
+$\{x_i\}$ is informationally equivalent to its smooth completion $\Psi$.
+The smooth calculus does not introduce new structure; it is the completion of
+refinement in the discrete domain.
 
-By Proposition~\ref{prop:pointwise-unique}, any two smooth closures that
-agree at the anchors coincide point-wise on $[a,b]$.  Thus the limit
-$\Psi$ is uniquely determined by the anchor data of $\psi$:
-\begin{equation}
-  \Psi(x_i) = \psi(x_i)
-  \quad\text{for every anchor } x_i.
-  \label{eq:psi-matches-psi}
-\end{equation}
+Let $\psi$ be an admissible event record and let $f(\psi)$ denote any
+interpolant that preserves the anchors and introduces no distinguishable
+features between them.  Refining the interpolant over nested partitions
+$\{\mathcal{T}_n\}$ produces a Galerkin sequence $\{\,\Psi_n\,\}$.  By the
+convergence theorems, this sequence converges uniformly to a unique $\mathcal{C}^{2}$
+cubic function $\Psi$:
+\[
+  \Psi_n \;\xrightarrow[n\to\infty]{}\; \Psi.
+\]
+Informational minimality ensures that $\Psi$ is uniquely determined by the
+anchors: for every event point $x_i$,
+\[
+  \Psi(x_i) = \psi(x_i).
+\]
+Because $\Psi$ is cubic on each partition element, preserves anchor order, and
+is globally $\mathcal{C}^{2}$, it is injective on each interval.  Its inverse
+therefore recovers the original record:
+\[
+  \Psi^{-1}(x_i) = \psi(x_i).
+\]
+Thus the discrete record $\psi$ and the smooth completion $\Psi$ contain
+exactly the same information.  The interpolant and its limit are
+informationally equivalent representations of a single causal history.
 
-Since $\Psi$ is cubic on each interval, all higher-order derivatives vanish on
-$(x_i,x_{i+1})$, and $\Psi$ is analytic there.  Cubic continuity across the
-anchors implies
-\begin{equation}
-  \Psi \in C^{2}([a,b]).
-  \label{eq:psi-c2-equivalence}
-\end{equation}
+\subsection{Recovery of the Euler--Lagrange Form}
 
-Finally, $\Psi$ preserves the anchor ordering and is strictly monotone on each
-interval.  Therefore its inverse exists on $[a,b]$ and, when restricted to the
-anchor set, satisfies
-\begin{equation}
-  \Psi^{-1}(x_i) = x_i,
-  \qquad
-  \text{so }
-  \Psi^{-1} = \psi
-  \text{ on the event record}.
-  \label{eq:psi-inverse-recovers-psi}
-\end{equation}
-
-Together, \eqref{eq:fn-to-psi}--\eqref{eq:psi-inverse-recovers-psi} show that
-any admissible interpolant $f(\psi)$ refined by Galerkin methods converges to
-the same $C^{2}$, piecewise analytic closure $\Psi$, and that $\Psi^{-1}$
-recovers the original discrete record.  In this sense the discrete and smooth
-representations are informationally equivalent: refinement introduces no
-additional structure, and the smooth closure contains exactly the information
-encoded in $\psi$.
-
-\subsection{Recovery of the Euler--Lagrange Equation}
-\label{sec:recovered-euler-lagrange}
-
-The previous sections established that any admissible interpolant of the
-event record, when refined over nested partitions, converges uniformly to a
-unique $C^{2}$ closure $\Psi$.  On each element of the partition, this
-closure satisfies
-\begin{equation}
-  \Psi^{(4)}(x) = 0,
-  \label{eq:psi-u4-reveal}
-\end{equation}
-and is therefore cubic between anchors.
-
-The corresponding weak extremality condition,
-\begin{equation}
-  \int \Psi''(x)\,\phi''(x)\,dx = 0
-  \qquad\text{for all admissible }\phi,
-  \label{eq:weak-var-reveal}
-\end{equation}
-was obtained directly from refinements of the discrete event record.
-Integrating~\eqref{eq:weak-var-reveal} by parts twice eliminates boundary
-contributions at the anchors and yields the strong Euler--Lagrange form
-\begin{equation}
-  \frac{d^2}{dx^2}\bigl(2\Psi''(x)\bigr) = 0
-  \quad\Leftrightarrow\quad
+The weak extremality condition was obtained entirely from finite differences
+in the discrete domain.  In the Galerkin formulation this appears as
+\[
+  \int \Psi''(x)\,\phi''(x)\,dx = 0,
+  \qquad\text{for all admissible test functions }\phi.
+\]
+Integrating this identity twice yields the strong closure
+\[
   \Psi^{(4)}(x) = 0.
-  \label{eq:strong-euler-reveal}
-\end{equation}
+\]
+No differentiability was assumed \emph{a priori}: smoothness appears only as
+the completion of refinement in the Galerkin limit.  The Euler--Lagrange
+equation is therefore a \emph{recovered} description of the data, not an
+independent postulate.  It is sufficient to model the discrete record because
+every admissible refinement converges to the same $\mathcal{C}^{2}$ cubic
+function.
 
-No differentiability was assumed a priori; smoothness appears only after the
-Galerkin limit exists and is unique.  Thus, from a discrete record and the
-requirement that refinements introduce no new distinguishable structure, we
-can safely infer the Euler--Lagrange equation.  The strong differential form
-follows as a consequence of measurement and refinement, rather than as an
-assumed property of the underlying system.
+In this sense the epistemic direction is inverted.  We do not derive
+Euler--Lagrange dynamics and then discretize them.  We begin with finite
+measurements, enforce informational minimality, and recover the
+Euler--Lagrange operator as the unique smooth shadow of refinement:
+\[
+  \text{measurement}
+  \;\xrightarrow{\text{refinement}}\;
+  \Psi
+  \;\xrightarrow{\text{closure}}\;
+  \Psi^{(4)} = 0.
+\]
+In this sense the epistemic direction is inverted.  We do not derive
+Euler--Lagrange dynamics and then discretize them.  We begin with finite
+measurements, enforce informational minimality, and recover the
+Euler--Lagrange operator as the unique smooth shadow of refinement:
+\[
+  \text{measurement}
+  \;\xrightarrow{\text{refinement}}\;
+  \Psi
+  \;\xrightarrow{\text{closure}}\;
+  \Psi^{(4)} = 0.
+\]
+Smooth calculus is therefore compatible with the axioms because it contains
+exactly the information present in the discrete causal record and no more.
 
-\section{Inference Without Assumption}
-\label{sec:inference-without-assumption}
+\NB{With apologies to Bishop Berkeley: smooth dynamics are not prior to
+measurement; they are merely the grammar of its consistent refinement.}
 
-The analysis above does not derive the Euler--Lagrange equation from the
-axioms of the discrete calculus of measurement.  Rather, it shows that the
-Euler--Lagrange form can be inferred without violating those axioms.  From a
-finite event record and admissible refinements, the Galerkin sequence
-converges uniformly to a unique $C^{2}$ closure $\Psi$ that satisfies
-\begin{equation}
-  \Psi^{(4)}(x) = 0
-  \qquad\text{on each element of the partition,}
-  \label{eq:inference-u4}
-\end{equation}
-and therefore admits the classical weak relation
-\begin{equation}
-  \int \Psi''(x)\,\phi''(x)\,dx = 0
-  \qquad\text{for all admissible }\phi.
-  \label{eq:inference-weak}
-\end{equation}
-Integrating~\eqref{eq:inference-weak} by parts twice produces the strong
-Euler--Lagrange form
-\begin{equation}
-  \frac{d^2}{dx^2}\bigl(2\Psi''(x)\bigr) = 0,
-  \label{eq:inference-strong}
-\end{equation}
-with no additional assumptions.  Smoothness and differentiability arise only
-after the Galerkin limit exists and is unique; neither is introduced as an
-axiom of the theory.
-
-Thus, the Euler--Lagrange equation is not postulated, but can be recovered
-consistently from the refinement of discrete measurements.  The continuum is
-compatible with the axioms: if one wishes to represent the discrete record by
-a smooth function, the resulting closure obeys the classical variational
-condition.  The framework allows the Euler--Lagrange equation to be inferred
-from measurement, while remaining agnostic about any underlying differential
-structure.
 
 \section{The Free Parameter of the Cubic Spline}
+\label{sec:free-parameter}
 
-A cubic spline appears, at first glance, to introduce three independent
-degrees of freedom at each point: the value of the function, its slope, and
-its curvature. In classical analysis these are treated as arbitrary boundary
-data. In the present framework they have a different meaning: each arises as
-a finite record of measurement.
+The Law of Spline Sufficiency requires that the smooth completion
+$\Psi$ of any admissible record be $\mathcal{C}^{2}$ and satisfy
+$\Psi^{(4)}=0$.  Each segment of $\Psi$ is therefore a cubic polynomial,
+\[
+  \Psi(x) = a_0 + a_1 x + a_2 x^2 + a_3 x^3,
+\]
+but informational minimality collapses the apparent local degrees of freedom
+to a single global parameter.
 
-Let $u(x)$ be the smooth limit of a countable refinement of finite
-measurements. The discrete extremality principle established earlier shows
-that any interpolant with unrecorded curvature violates informational
-minimality. In the dense limit this forces
+\subsection{Fixing the Lower--Order Coefficients}
 
-\begin{equation}
-u^{(4)}(x) = 0.
-\end{equation}
+The value $a_0$ is fixed by the anchors: $\Psi(x_i)=\psi(x_i)$ for every
+event point $x_i$.  The first derivative $\Psi'$ must be continuous across
+anchors; a jump in slope would constitute a new observable event, so $a_1$ is
+likewise determined.  The curvature $\Psi''$ must also be continuous; any
+discontinuity would represent an unobserved acceleration and violate
+informational minimality.  Thus $a_2$ is fixed by $\mathcal{C}^{2}$
+continuity at the anchors.
 
-Every admissible smooth function is therefore locally a cubic polynomial. A
-general solution to (2.?) takes the form
+These constraints ensure that adjacent cubic segments glue together without
+introducing new distinguishable structure.  The only remaining coefficient,
+$a_3$, controls the third derivative of $\Psi$:
+\[
+  \Psi'''(x) = 6a_3.
+\]
 
-\begin{equation}
-u(x) = a_0 + a_1 x + a_2 x^2 + a_3 x^3 .
-\end{equation}
+\subsection{The Single Free Parameter}
 
-The coefficients $a_0, a_1, a_2, a_3$ are determined by three local
-parameters: the value $u$, the slope $u'$, and the curvature $u''$. The
-derivative of curvature,
+Because $\Psi^{(4)} = 0$, the third derivative $\Psi'''$ is constant on every
+interval of the causal domain.  Informational minimality permits this
+quantity to vary from interval to interval only when the variation is itself
+detectable as a recorded event.  Absent such detection, $\Psi'''$ is the sole
+unconstrained degree of freedom.
 
-\begin{equation}
-u'''(x) = 6 a_3 ,
-\end{equation}
+\begin{proposition}
+The smooth completion $\Psi$ contains exactly one free parameter: the global
+scale of its third derivative $\Psi'''$.  All lower--order coefficients are
+fixed by anchor data and continuity constraints.
+\end{proposition}
 
-is piecewise constant. This $u'''$ is the only quantity that may vary from
-interval to interval without introducing fourth–order structure.
+\begin{proof}[Proof Sketch]
+Cubic structure follows from $\Psi^{(4)}=0$.  Values and derivatives up to
+order two are fixed by $\mathcal{C}^{2}$ boundary matching; any jump would be
+observable.  Hence the only quantity not determined by anchor data is the
+constant third derivative on each interval, which is governed by $a_3$.  No
+other freedom remains.
+\end{proof}
 
-Locally this suggests three degrees of freedom. Globally this is not the
-case. Because adjacent spline pieces must meet with no unrecorded
-structure, they agree in value, slope, and curvature at every shared
-boundary. All but one parameter are fixed by the causal structure of
-measurement itself. The apparent local freedom collapses to a single global
-scale factor: the magnitude of the consistent curvature field.
+\subsection{Physical Interpretation}
 
-Thus the cubic spline does not introduce three physical constants; it
-produces a single degree of freedom that expresses how strongly the record
-of measurement bends. In this framework the continuum contains only one
-free parameter: the global curvature scale that allows a countable record of
-distinctions to be represented as a smooth function with no unrecorded
-features. All subsequent quantities—second derivatives, wave speeds, stress
-tensors, and curvature—are determined by this single parameter.
+The single free parameter $\Psi'''$ represents the entire informational
+content of smooth kinematics.  All subsequent dynamical quantities---wave
+speed, stress, curvature, and eventually mass---are determined by this one
+global scale.  The Law of Spline Sufficiency therefore reduces the continuum
+to its minimal informational foundation: a $\mathcal{C}^{2}$ cubic universe
+with one degree of freedom.
+
+\[
+  \text{finite record}
+  \;\xrightarrow{\text{closure}}\;
+  \Psi
+  \;\xrightarrow{\text{spline law}}\;
+  \Psi''' = \text{constant on intervals}.
+\]
+
+Smooth dynamics contain no structure beyond what is already present in the
+discrete causal record.  The apparent infinity of the continuum collapses to
+a single free parameter.
 
 
-
-\section{Coda: Navier--Stokes as a Finite Third Parameter}
-\addcontentsline{toc}{section}{Coda: Navier--Stokes as a Finite Third Parameter}
+\begin{coda}{Navier--Stokes as a Finite Third Parameter}
 
 We do not derive the Navier--Stokes equations. Rather, we show how the
 measurement calculus constrains any smooth limit of finite records to a
@@ -708,6 +841,6 @@ program the obstruction to smoothness is concentrated in a single quantity,
 the third parameter of the cubic spline representation. The classical
 regularity question is thus equivalent, in this calculus, to the finiteness
 of $\Theta$.
-
+\end{coda}
 
 

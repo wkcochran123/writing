@@ -1,0 +1,126 @@
+\chapter{Notation}
+
+This appendix summarizes the symbols and conventions used throughout the
+monograph. The goal is clarity. Every notation corresponds to an operational
+procedure: recording events, merging ledgers, composing systems, or evolving
+a notebook of admissible distinctions forward in time.
+
+\subsection*{Events and Ledgers}
+
+\begin{itemize}
+  \item An \emph{event} is a measurable, irreversible update to a system's
+  state. A finite set of observations produces a finite, ordered record of
+  events.
+
+  \item A \emph{ledger} is the notebook containing this ordered record.
+  Ledgers are denoted by calligraphic symbols $(\mathcal{L},\mathcal{M},\dots)$.
+
+  \item The \emph{Axiom of Order} guarantees that every ledger is a countable,
+  totally ordered sequence of events.
+\end{itemize}
+
+\subsection*{Tensor Composition}
+
+\begin{itemize}
+  \item Independent ledgers compose via the tensor product
+  \[
+    \mathcal{L} \otimes \mathcal{M},
+  \]
+  which produces a joint ledger with no implied evolution. The tensor product
+  is symmetric up to canonical isomorphism and carries no time direction.
+
+  \item The tensor product \emph{does not} imply interaction. It merely
+  constructs a space capable of recording joint events.
+\end{itemize}
+
+\subsection*{Merge Operator}
+
+\begin{itemize}
+  \item Compatible ledgers merge by addition, written
+  \[
+    \mathcal{L} + \mathcal{M}.
+  \]
+  This operation is commutative and introduces no new events. It simply
+  coalesces distinctions already present in the two ledgers.
+
+  \item Because $+$ is commutative and order-independent, no commutator is
+  defined on $+$.
+\end{itemize}
+
+\subsection*{Evolution (Fold) Operators}
+
+\begin{itemize}
+  \item A \emph{fold} is an evolution operator that acts on a ledger,
+  \[
+    F : \mathcal{L} \to \mathcal{L}.
+  \]
+  A fold updates the ledger forward in time, reconciling the existing record
+  with a new admissible distinction.
+
+  \item Successive folds are composed using standard function composition,
+  \[
+    G \circ F : \mathcal{L} \to \mathcal{L}.
+  \]
+  Only folds carry a time direction.
+
+  \item When the sequence of folds varies with time,
+  \[
+    \bigcirc_{i=1}^{n} F_i
+    \;\;=\;\;
+    F_n \circ F_{n-1} \circ \cdots \circ F_1.
+  \]
+  This is the \emph{iterated fold}.
+
+  \item When the fold is identical at each step, we write
+  \[
+    F^{\circ n}
+    \;\;=\;\;
+    \underbrace{F \circ F \circ \cdots \circ F}_{n\text{ times}}.
+  \]
+  We avoid the notation $F^n$ to prevent confusion with contravariant tensor
+  indices.
+\end{itemize}
+
+\subsection*{Commutators}
+
+\begin{itemize}
+  \item The commutator measures the failure of two folds to commute:
+  \[
+    [F,G] = F\circ G - G\circ F.
+  \]
+  Because the tensor product and addition introduce no time ordering, the
+  commutator is defined only for folds.
+
+  \item Nonzero commutators represent informational curvature: different
+  orders of reconciliation produce different ledgers.
+\end{itemize}
+
+\subsection*{Functionals and Variations}
+
+\begin{itemize}
+  \item A functional on a ledger-refined trajectory is written
+  \[
+    J[x] = \int_a^b f(t,x(t),\dot{x}(t))\, dt.
+  \]
+
+  \item An admissible variation is of the form
+  \[
+    x_\varepsilon(t) = x(t) + \varepsilon \eta(t),
+  \qquad \eta(a)=\eta(b)=0.
+  \]
+
+  \item The first variation is the directional derivative
+  \[
+    \delta J[x;\eta]
+      = \left. \frac{d}{d\varepsilon} J[x_\varepsilon] \right|_{\varepsilon=0}.
+  \]
+
+  \item The Euler--Lagrange equation is the condition that $\delta J[x;\eta]=0$
+  for all admissible $\eta$.
+\end{itemize}
+
+These conventions are used consistently in later chapters. No symbol is
+overloaded, and every operator corresponds to a physical or informational
+procedure: composition, merging, or evolution. All results follow from these
+definitions and the axioms introduced in Chapter~1.
+

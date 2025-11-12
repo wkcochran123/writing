@@ -1,3 +1,48 @@
+% ======================================================================
+% INSTRUCTIONS WHEN EDITING THIS PROJECT
+% ======================================================================
+%
+% 1. Do not guess labels or numbers.
+%    Always use \ref{...} exactly as requested. Never invent labels.
+%
+% 2. When asked to insert a reference, write it literally as
+%       Thought Experiment~\ref{te:lorentz}
+%    or whichever label is given, without adding chapter, section, or numbers.
+%
+% 3. Use exact hierarchy:
+%       \chapter{...}
+%       \section{...}
+%       \subsection{...}
+%       \subsubsection{...}
+%    Never invent section names or change levels.
+%
+% 4. Single, clean LaTeX block output only.
+%    No prose, no explanation, no commentary outside the code block.
+%
+% 5. ASCII only in body text. No Unicode punctuation.
+%
+% 6. BibTeX citation keys are lastnameYYYY and must be sorted alphabetically
+%    inside each citation command.
+%
+% 7. SOFT MARGINS OF 100 characters for all generated prose.
+%
+% 8. Never write explanations, apologies, or meta-text unless the user asks.
+%    Do not self-justify, speculate, question instructions, or add commentary.
+%    The output should assume the user already knows what they want and expects
+%    exact compliance, not discussion.
+%
+% 9. Add labels to all equations, definitions, sections, chapters, and thought experiments:
+%      \label{eq:[SHORT-NAME-WITH-DASHES]}
+%      \label{def:[SHORT-NAME-WITH-DASHES]}
+%      \label{se:[SHORT-NAME-WITH-DASHES]}
+%      \label{chap:[SHORT-NAME-WITH-DASHES]}
+%      \label{te:[SHORT-NAME-WITH-DASHES]}
+% ======================================================================
+% END OF INSTRUCTIONS
+% ======================================================================
+
+
+
 \newtheorem{theorem}{Theorem}
 \newtheorem{example}{Thought Experiment}[section]
 \makeatletter
@@ -11,21 +56,24 @@
 \newtheorem{equivalence}{Equivalence}
 \newtheorem{law}{Law}
 \newcommand{\Top}{\operatorname{Top}}
+\newcommand{\J}{\mathbf{J}}        % Universe tensor
 \newcommand{\U}{\mathbf{U}}        % Universe tensor
 \newcommand{\T}{\mathbf{T}}        % Universe tensor
 \newcommand{\E}{\mathbf{E}}        % Event tensor
 \newcommand{\V}{\mathcal{V}}       % Variation space
-\newcommand{\M}{\mathcal{M}}       % Measurement space
+\newcommand{\Rhat}{\hat{R}}       % Measurement space
 \newcommand{\Talg}{\mathcal{T}(\V)}    % Tensor algebra
 \newcommand{\Eset}{\mathcal{E}}    % Event set
 \newcommand{\Part}{\mathsf{Part}}
 % Entropy operator / functional
 \newcommand{\Entropy}{\mathcal{S}}
 \newcommand{\Blocks}[1]{\mathrm{Bl}(#1)}
+\newcommand{\fold}{\mathop{\bigcirc}}
+
 
 % --- House style for N.B. callouts (inline, bold, em-dash) ---
 \newcommand{\NB}[1]{%
-  \par\noindent\textbf{N.B.---}#1\par
+  \par\noindent\textbf{N.B.---}#1\hfill$\square$\par
   }
 
 
@@ -59,4 +107,12 @@
 }
 
 \hyphenation{treat-ed}
+
+% Length operator (number of folded factors)
+\DeclareMathOperator{\len}{len}
+
+% Common boundary notation and restriction to boundary
+\newcommand{\Boundary}[2]{\partial(#1,#2)} % usage: \Boundary{\U^A}{\U^B}
+\newcommand{\RestrictToBoundary}[2]{#1\!\upharpoonright_{\Boundary{#2}{#1}}}
+% Example: \U^A\!\upharpoonright_{\partial(\U^A,\U^B)}
 

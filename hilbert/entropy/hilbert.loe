@@ -2,170 +2,135 @@
 \contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}1.2.1\else \numberline {1.2.1}Thought Experiment\fi \thmtformatoptarg {The Invisible Curve\nobreakspace {}\cite {simpson1743}}}{5}{}%
 \contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}1.2.2\else \numberline {1.2.2}Thought Experiment\fi \thmtformatoptarg {Global Coherence as a Merge of Light Cones {\cite {knuth1998}}}}{6}{}%
 \addvspace {10\p@ }
-\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}1\else \numberline {1}Definition\fi \thmtformatoptarg {Rank time\nobreakspace {}\cite {bombelli1987,davey2002}}}{15}{}%
-\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}1\else \numberline {1}Remark\fi \thmtformatoptarg {Operational content of time}}{15}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}2.1.1\else \numberline {2.1.1}Thought Experiment\fi \thmtformatoptarg {Planck's Constant as a Dimensional Anchor {\cite {planck1901}}}}{16}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}2.1.2\else \numberline {2.1.2}Thought Experiment\fi \thmtformatoptarg {Measurement as a BNF Grammar\nobreakspace {}\cite {backus1959,naur1963}}}{17}{}%
-\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}2\else \numberline {2}Definition\fi \thmtformatoptarg {Distinguishability Chain\nobreakspace {}\cite {kolmogorov1933}}}{18}{}%
-\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}3\else \numberline {3}Definition\fi \thmtformatoptarg {Event\nobreakspace {}\cite {kolmogorov1933,sorkin2005}}}{18}{}%
-\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}4\else \numberline {4}Definition\fi \thmtformatoptarg {Proper Time\nobreakspace {}\cite {misner1973}}}{18}{}%
-\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}2\else \numberline {2}Remark\fi }{19}{}%
-\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}3\else \numberline {3}Remark\fi }{19}{}%
-\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}4\else \numberline {4}Remark\fi \thmtformatoptarg {Smooth limit\nobreakspace {}\cite {riemann1854}}}{19}{}%
-\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}5\else \numberline {5}Definition\fi \thmtformatoptarg {Uncorrelant\nobreakspace {}\cite {bombelli1987,sorkin1991}}}{20}{}%
-\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}5\else \numberline {5}Remark\fi }{20}{}%
-\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}6\else \numberline {6}Remark\fi }{20}{}%
-\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}7\else \numberline {7}Remark\fi }{20}{}%
-\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}6\else \numberline {6}Definition\fi \thmtformatoptarg {Causal Order\nobreakspace {}\cite {bombelli1987}}}{20}{}%
-\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}8\else \numberline {8}Remark\fi \thmtformatoptarg {Index is an order--embedding, not an equivalence}}{21}{}%
-\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}9\else \numberline {9}Remark\fi \thmtformatoptarg {Uncorrelants and permutation invariance}}{21}{}%
-\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}7\else \numberline {7}Definition\fi \thmtformatoptarg {Partially Ordered Set\nobreakspace {}\cite {davey2002}}}{21}{}%
-\contentsline {axiom}{\ifthmt@listswap Axiom\nobreakspace {}1\else \numberline {1}Axiom\fi \thmtformatoptarg {The Axiom of Kolmogorov: Measurement as a Formal Record\nobreakspace {}\cite {kolmogorov1933}}}{23}{}%
-\contentsline {axiom}{\ifthmt@listswap Axiom\nobreakspace {}2\else \numberline {2}Axiom\fi \thmtformatoptarg {The Axiom of Peano: Counting as the Tool of Information\nobreakspace {}\cite {fraenkel1922,kunen1980,zermelo1908}}}{24}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}2.2.1\else \numberline {2.2.1}Thought Experiment\fi \thmtformatoptarg {The Speedometer\nobreakspace {}\cite {warner1902,yoshida1980}}}{24}{}%
-\contentsline {axiom}{\ifthmt@listswap Axiom\nobreakspace {}3\else \numberline {3}Axiom\fi \thmtformatoptarg {The Axiom of Ockham: Informational Minimality\nobreakspace {}\cite {ockham1323})}}{26}{}%
-\contentsline {axiom}{\ifthmt@listswap Axiom\nobreakspace {}4\else \numberline {4}Axiom\fi \thmtformatoptarg {The Axiom of Causal Set Theory}}{27}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}2.3.1\else \numberline {2.3.1}Thought Experiment\fi \thmtformatoptarg {The Laboratory Procedure\nobreakspace {}\cite {ockham1323,wheeler1983}}}{28}{}%
-\contentsline {axiom}{\ifthmt@listswap Axiom\nobreakspace {}5\else \numberline {5}Axiom\fi \thmtformatoptarg {The Axiom of Cantor: Events are Ordered Countably\nobreakspace {}\cite {cantor1895, earman1974}}}{30}{}%
-\contentsline {axiom}{\ifthmt@listswap Axiom\nobreakspace {}6\else \numberline {6}Axiom\fi \thmtformatoptarg {The Axiom of Planck: Observations are Finite\nobreakspace {}\cite {planck1901}}}{31}{}%
-\contentsline {axiom}{\ifthmt@listswap Axiom\nobreakspace {}7\else \numberline {7}Axiom\fi \thmtformatoptarg {The Axiom of Boltzmann: Events are Selected to be Coherent}}{32}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}2.5.1\else \numberline {2.5.1}Thought Experiment\fi \thmtformatoptarg {Feynman Diagram as a Causal Network\nobreakspace {}\cite {feynman1965}}}{33}{}%
-\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}8\else \numberline {8}Definition\fi \thmtformatoptarg {Time (non-standard)}}{35}{}%
-\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}9\else \numberline {9}Definition\fi \thmtformatoptarg {Event Tensor\nobreakspace {}\cite {golub2013}}}{36}{}%
-\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}10\else \numberline {10}Definition\fi \thmtformatoptarg {Ordered fold (non-standard)}}{36}{}%
-\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}11\else \numberline {11}Definition\fi \thmtformatoptarg {Uncorrelant Equivalence}}{36}{}%
-\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}12\else \numberline {12}Definition\fi \thmtformatoptarg {Selection Operator}}{36}{}%
-\contentsline {proposition}{\ifthmt@listswap Proposition\nobreakspace {}1\else \numberline {1}Proposition\fi \thmtformatoptarg {Causal Universe Tensor}}{37}{}%
-\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}10\else \numberline {10}Remark\fi \thmtformatoptarg {Ordinal determinacy}}{38}{}%
-\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}13\else \numberline {13}Definition\fi \thmtformatoptarg {Tensor Algebra\nobreakspace {}\cite {golub2013}}}{39}{}%
-\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}11\else \numberline {11}Remark\fi }{39}{}%
-\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}12\else \numberline {12}Remark\fi \thmtformatoptarg {Algebraic Characterization of Uncorrelants}}{40}{}%
-\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}14\else \numberline {14}Definition\fi \thmtformatoptarg {Commutator}}{40}{}%
-\contentsline {proposition}{\ifthmt@listswap Proposition\nobreakspace {}2\else \numberline {2}Proposition\fi \thmtformatoptarg {Extension Invariance up to Commutators}}{40}{}%
-\contentsline {corollary}{\ifthmt@listswap Corollary\nobreakspace {}1\else \numberline {1}Corollary\fi \thmtformatoptarg {Scalar Observables are Extension-Invariant}}{41}{}%
-\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}13\else \numberline {13}Remark\fi \thmtformatoptarg {Consistency with Thought Experiment 2.4.1}}{42}{}%
-\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}14\else \numberline {14}Remark\fi \thmtformatoptarg {Where Minimality Acts}}{42}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}2.5.2\else \numberline {2.5.2}Thought Experiment\fi \thmtformatoptarg {Non-commutative event pair\nobreakspace {}\cite {hawking1973}}}{42}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}2.5.3\else \numberline {2.5.3}Thought Experiment\fi \thmtformatoptarg {Independent Event Chains\nobreakspace {}\cite {langevin1911}}}{42}{}%
-\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}15\else \numberline {15}Definition\fi \thmtformatoptarg {Kolmogorov Complexity {\cite {kolmogorov1965,chaitin1975}}}}{44}{}%
-\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}16\else \numberline {16}Definition\fi \thmtformatoptarg {Admissible Extension {\cite {li1997}}}}{44}{}%
-\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}17\else \numberline {17}Definition\fi \thmtformatoptarg {Information Minimality {\cite {kolmogorov1965,li1997}}}}{44}{}%
-\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}15\else \numberline {15}Remark\fi }{45}{}%
-\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}16\else \numberline {16}Remark\fi }{45}{}%
-\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}18\else \numberline {18}Definition\fi \thmtformatoptarg {Unobserved Structure}}{45}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}2.7.1\else \numberline {2.7.1}Thought Experiment\fi \thmtformatoptarg {Spooky Action at a Distance\nobreakspace {}\cite {bell1964,einstein1935,sorkin2005}}}{47}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}2.7.2\else \numberline {2.7.2}Thought Experiment\fi \thmtformatoptarg {Hawking Radiation\nobreakspace {}\cite {hawking1975,unruh1976}}}{47}{}%
-\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}19\else \numberline {19}Definition\fi \thmtformatoptarg {Predicate on Events\nobreakspace {}\cite {tarski1933,quine1953}}}{48}{}%
-\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}20\else \numberline {20}Definition\fi \thmtformatoptarg {Measurement}}{48}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}2.7.3\else \numberline {2.7.3}Thought Experiment\fi \thmtformatoptarg {Pathological Extension Without Event Selection\nobreakspace {}\cite {lewis1976}}}{49}{}%
-\contentsline {proposition}{\ifthmt@listswap Proposition\nobreakspace {}3\else \numberline {3}Proposition\fi \thmtformatoptarg {Minimal informational closure}}{51}{}%
-\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}17\else \numberline {17}Remark\fi \thmtformatoptarg {Logical guarantee, not a mechanism}}{52}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}2.7.4\else \numberline {2.7.4}Thought Experiment\fi \thmtformatoptarg {Algorithmic analogies are illustrative only}}{52}{}%
-\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}18\else \numberline {18}Remark\fi }{52}{}%
-\contentsline {corollary}{\ifthmt@listswap Corollary\nobreakspace {}2\else \numberline {2}Corollary\fi \thmtformatoptarg {Martin consistency from Event Selection (domain version)}}{53}{}%
-\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}19\else \numberline {19}Remark\fi \thmtformatoptarg {Scope}}{54}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}2.0.1\else \numberline {2.0.1}Thought Experiment\fi }{16}{}%
+\contentsline {axiom}{\ifthmt@listswap Axiom\nobreakspace {}1\else \numberline {1}Axiom\fi \thmtformatoptarg {The Axiom of Kolmogorov\nobreakspace {}\cite {kolmogorov1933}}}{18}{}%
+\contentsline {axiom}{\ifthmt@listswap Axiom\nobreakspace {}2\else \numberline {2}Axiom\fi \thmtformatoptarg {The Axiom of Peano\nobreakspace {}\cite {fraenkel1922,martin1970,zermelo1908}}}{19}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}2.1.1\else \numberline {2.1.1}Thought Experiment\fi \thmtformatoptarg {The Speedometer\nobreakspace {}\cite {warner1902,yoshida1980}}}{19}{}%
+\contentsline {axiom}{\ifthmt@listswap Axiom\nobreakspace {}3\else \numberline {3}Axiom\fi \thmtformatoptarg {The Axiom of Ockham\nobreakspace {}\cite {ockham1323})}}{22}{}%
+\contentsline {axiom}{\ifthmt@listswap Axiom\nobreakspace {}4\else \numberline {4}Axiom\fi \thmtformatoptarg {The Axiom of Causal Sets\nobreakspace {}\cite {bombelli1987}}}{23}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}2.2.1\else \numberline {2.2.1}Thought Experiment\fi \thmtformatoptarg {The Laboratory Procedure\nobreakspace {}\cite {ockham1323,wheeler1983}}}{23}{}%
+\contentsline {axiom}{\ifthmt@listswap Axiom\nobreakspace {}5\else \numberline {5}Axiom\fi \thmtformatoptarg {Axiom of Cantor\nobreakspace {}\cite {cantor1895,earman1974}}}{26}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}2.3.1\else \numberline {2.3.1}Thought Experiment\fi \thmtformatoptarg {Relativistic simultaneity\nobreakspace {}\cite {einstein1905}.}}{26}{}%
+\contentsline {axiom}{\ifthmt@listswap Axiom\nobreakspace {}6\else \numberline {6}Axiom\fi \thmtformatoptarg {The Axiom of Planck\nobreakspace {}\cite {planck1901}}}{27}{}%
+\contentsline {axiom}{\ifthmt@listswap Axiom\nobreakspace {}7\else \numberline {7}Axiom\fi \thmtformatoptarg {The Axiom of Boltzmann\nobreakspace {}\cite {boltzmann1877,martin1970}}}{28}{}%
+\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}1\else \numberline {1}Definition\fi \thmtformatoptarg {Causal Precedence\nobreakspace {}\cite {bombelli1987}}}{29}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}2.4.1\else \numberline {2.4.1}Thought Experiment\fi \thmtformatoptarg {Feynman Diagram as a Causal Network\nobreakspace {}\cite {feynman1965}}}{30}{}%
+\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}2\else \numberline {2}Definition\fi \thmtformatoptarg {Partially Ordered Set\nobreakspace {}\cite {davey2002}}}{31}{}%
+\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}3\else \numberline {3}Definition\fi \thmtformatoptarg {Top of a Poset}}{31}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}2.4.2\else \numberline {2.4.2}Thought Experiment\fi \thmtformatoptarg {Boosting Velocity\nobreakspace {}\cite {einstein1905}}}{33}{}%
+\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}4\else \numberline {4}Definition\fi \thmtformatoptarg {Rank time\nobreakspace {}\cite {bombelli1987,davey2002}}}{34}{}%
+\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}1\else \numberline {1}Remark\fi \thmtformatoptarg {Operational content of time}}{34}{}%
+\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}5\else \numberline {5}Definition\fi \thmtformatoptarg {Measurement}}{35}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}2.4.3\else \numberline {2.4.3}Thought Experiment\fi \thmtformatoptarg {Planck's Constant as a Dimensional Anchor {\cite {planck1901}}}}{36}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}2.4.4\else \numberline {2.4.4}Thought Experiment\fi \thmtformatoptarg {Measurement as a BNF Grammar\nobreakspace {}\cite {backus1959,naur1963}}}{36}{}%
+\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}6\else \numberline {6}Definition\fi \thmtformatoptarg {Distinguishability Chain\nobreakspace {}\cite {kolmogorov1933}}}{37}{}%
+\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}7\else \numberline {7}Definition\fi \thmtformatoptarg {Event\nobreakspace {}\cite {kolmogorov1933,sorkin2005}}}{38}{}%
+\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}8\else \numberline {8}Definition\fi \thmtformatoptarg {Proper Time\nobreakspace {}\cite {misner1973}}}{38}{}%
+\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}2\else \numberline {2}Remark\fi }{38}{}%
+\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}3\else \numberline {3}Remark\fi }{39}{}%
+\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}4\else \numberline {4}Remark\fi \thmtformatoptarg {Smooth limit\nobreakspace {}\cite {riemann1854}}}{39}{}%
+\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}9\else \numberline {9}Definition\fi \thmtformatoptarg {Uncorrelant\nobreakspace {}\cite {bombelli1987,sorkin1991}}}{39}{}%
+\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}5\else \numberline {5}Remark\fi }{40}{}%
+\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}6\else \numberline {6}Remark\fi }{40}{}%
+\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}7\else \numberline {7}Remark\fi }{40}{}%
+\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}10\else \numberline {10}Definition\fi \thmtformatoptarg {Causal Network}}{40}{}%
+\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}11\else \numberline {11}Definition\fi \thmtformatoptarg {Causal Order\nobreakspace {}\cite {bombelli1987}}}{41}{}%
+\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}8\else \numberline {8}Remark\fi \thmtformatoptarg {Index is an order--embedding, not an equivalence}}{42}{}%
+\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}9\else \numberline {9}Remark\fi \thmtformatoptarg {Uncorrelants and permutation invariance}}{42}{}%
+\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}12\else \numberline {12}Definition\fi \thmtformatoptarg {Event Tensor\nobreakspace {}\cite {golub2013}}}{43}{}%
+\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}13\else \numberline {13}Definition\fi \thmtformatoptarg {Partition of the Event Set}}{45}{}%
+\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}14\else \numberline {14}Definition\fi \thmtformatoptarg {Restriction Operator}}{45}{}%
+\contentsline {proposition}{\ifthmt@listswap Proposition\nobreakspace {}1\else \numberline {1}Proposition\fi \thmtformatoptarg {Causal Universe Tensor}}{45}{}%
+\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}10\else \numberline {10}Remark\fi \thmtformatoptarg {Ordinal determinacy}}{47}{}%
+\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}15\else \numberline {15}Definition\fi \thmtformatoptarg {Tensor Algebra\nobreakspace {}\cite {golub2013}}}{48}{}%
+\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}11\else \numberline {11}Remark\fi }{48}{}%
+\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}16\else \numberline {16}Definition\fi \thmtformatoptarg {Commutator and Commutator Ideal\nobreakspace {}\cite {dummit2004}}}{49}{}%
+\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}12\else \numberline {12}Remark\fi \thmtformatoptarg {Algebraic Characterization of Informational Independence}}{49}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}2.4.5\else \numberline {2.4.5}Thought Experiment\fi \thmtformatoptarg {Non-commutative Event Pair\nobreakspace {}\cite {hawking1973}}}{49}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}2.4.6\else \numberline {2.4.6}Thought Experiment\fi \thmtformatoptarg {Independent Event Chains\nobreakspace {}\cite {langevin1911}}}{50}{}%
+\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}17\else \numberline {17}Definition\fi \thmtformatoptarg {Kolmogorov Complexity {\cite {kolmogorov1965,chaitin1975}}}}{52}{}%
+\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}18\else \numberline {18}Definition\fi \thmtformatoptarg {Admissible Extension {\cite {li1997}}}}{52}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}2.5.1\else \numberline {2.5.1}Thought Experiment\fi \thmtformatoptarg {Pathological Extension Without Event Selection\nobreakspace {}\cite {lewis1976}}}{52}{}%
+\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}19\else \numberline {19}Definition\fi \thmtformatoptarg {Information Minimality {\cite {kolmogorov1965,li1997}}}}{54}{}%
+\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}13\else \numberline {13}Remark\fi }{54}{}%
+\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}14\else \numberline {14}Remark\fi }{54}{}%
+\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}20\else \numberline {20}Definition\fi \thmtformatoptarg {Unobserved Structure}}{55}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}2.6.1\else \numberline {2.6.1}Thought Experiment\fi \thmtformatoptarg {Spooky Action at a Distance\nobreakspace {}\cite {bell1964,einstein1935,sorkin2005}}}{56}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}2.6.2\else \numberline {2.6.2}Thought Experiment\fi \thmtformatoptarg {Hawking Radiation\nobreakspace {}\cite {hawking1975,unruh1976}}}{57}{}%
 \addvspace {10\p@ }
-\contentsline {proposition}{\ifthmt@listswap Proposition\nobreakspace {}4\else \numberline {4}Proposition\fi \thmtformatoptarg {Discrete extremality implies Euler--Lagrange closure}}{58}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}3.1.1\else \numberline {3.1.1}Thought Experiment\fi \thmtformatoptarg {Repeatability of Invisible Motion\nobreakspace {}\cite {bacon1620}}}{60}{}%
-\contentsline {theorem}{\ifthmt@listswap Theorem\nobreakspace {}1\else \numberline {1}Theorem\fi }{62}{}%
-\contentsline {corollary}{\ifthmt@listswap Corollary\nobreakspace {}3\else \numberline {3}Corollary\fi }{63}{}%
-\contentsline {theorem}{\ifthmt@listswap Theorem\nobreakspace {}2\else \numberline {2}Theorem\fi \thmtformatoptarg {Uniform convergence of Galerkin extremals}}{63}{}%
-\contentsline {proposition}{\ifthmt@listswap Proposition\nobreakspace {}5\else \numberline {5}Proposition\fi \thmtformatoptarg {Point-wise uniqueness}}{64}{}%
-\contentsline {corollary}{\ifthmt@listswap Corollary\nobreakspace {}4\else \numberline {4}Corollary\fi \thmtformatoptarg {Point-wise agreement of derivatives}}{64}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}3.0.1\else \numberline {3.0.1}Thought Experiment\fi }{62}{}%
+\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}21\else \numberline {21}Definition\fi \thmtformatoptarg {Anchor Points}}{64}{}%
+\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}22\else \numberline {22}Definition\fi \thmtformatoptarg {Reciprocity Map}}{65}{}%
+\contentsline {proposition}{\ifthmt@listswap Proposition\nobreakspace {}2\else \numberline {2}Proposition\fi }{69}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}3.1.1\else \numberline {3.1.1}Thought Experiment\fi \thmtformatoptarg {Repeatability of Invisible Motion\nobreakspace {}\cite {bacon1620}}}{70}{}%
+\contentsline {law}{\ifthmt@listswap Law\nobreakspace {}1\else \numberline {1}Law\fi \thmtformatoptarg {The Law of Spline Sufficiency}}{71}{}%
+\contentsline {corollary}{\ifthmt@listswap Corollary\nobreakspace {}1\else \numberline {1}Corollary\fi }{74}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}3.2.1\else \numberline {3.2.1}Thought Experiment\fi \thmtformatoptarg {Newton's Ghost and the Fluxion Paradox}}{75}{}%
+\contentsline {proposition}{\ifthmt@listswap Proposition\nobreakspace {}3\else \numberline {3}Proposition\fi }{79}{}%
 \addvspace {10\p@ }
-\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}21\else \numberline {21}Definition\fi \thmtformatoptarg {Martin's Condition (Conceptual)}}{74}{}%
-\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}22\else \numberline {22}Definition\fi \thmtformatoptarg {Interaction of Causal Sets}}{76}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}4.2.1\else \numberline {4.2.1}Thought Experiment\fi \thmtformatoptarg {Non-commuting measurements as event selection}}{76}{}%
-\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}23\else \numberline {23}Definition\fi \thmtformatoptarg {Interaction Event}}{77}{}%
-\contentsline {proposition}{\ifthmt@listswap Proposition\nobreakspace {}6\else \numberline {6}Proposition\fi \thmtformatoptarg {Union Consistency}}{77}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}4.2.2\else \numberline {4.2.2}Thought Experiment\fi \thmtformatoptarg {Mach--Zehnder Interferometer as Causal Superposition}}{78}{}%
-\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}24\else \numberline {24}Definition\fi \thmtformatoptarg {Qubit as a Causal Doublet}}{81}{}%
-\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}25\else \numberline {25}Definition\fi \thmtformatoptarg {Causal Horizon}}{82}{}%
-\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}26\else \numberline {26}Definition\fi \thmtformatoptarg {Order Collapse and Restoration}}{83}{}%
-\contentsline {proposition}{\ifthmt@listswap Proposition\nobreakspace {}7\else \numberline {7}Proposition\fi \thmtformatoptarg {Hawking Radiation as Order Completion}}{84}{}%
-\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}27\else \numberline {27}Definition\fi \thmtformatoptarg {Amplitude of Interaction}}{85}{}%
-\contentsline {proposition}{\ifthmt@listswap Proposition\nobreakspace {}8\else \numberline {8}Proposition\fi \thmtformatoptarg {Symmetry and Nonnegativity}}{85}{}%
-\contentsline {proposition}{\ifthmt@listswap Proposition\nobreakspace {}9\else \numberline {9}Proposition\fi \thmtformatoptarg {Upper and Lower Bounds}}{85}{}%
-\contentsline {proposition}{\ifthmt@listswap Proposition\nobreakspace {}10\else \numberline {10}Proposition\fi \thmtformatoptarg {Additivity on Disjoint Domains}}{86}{}%
-\contentsline {proposition}{\ifthmt@listswap Proposition\nobreakspace {}11\else \numberline {11}Proposition\fi \thmtformatoptarg {Triangle-Type Inequality}}{86}{}%
-\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}28\else \numberline {28}Definition\fi \thmtformatoptarg {Frontiers and New Comparabilities}}{86}{}%
-\contentsline {proposition}{\ifthmt@listswap Proposition\nobreakspace {}12\else \numberline {12}Proposition\fi \thmtformatoptarg {Amplitude Bounds New Comparabilities}}{87}{}%
-\contentsline {proposition}{\ifthmt@listswap Proposition\nobreakspace {}13\else \numberline {13}Proposition\fi \thmtformatoptarg {First-Order Superposition}}{87}{}%
-\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}29\else \numberline {29}Definition\fi \thmtformatoptarg {Infinitesimal Variation of an Event Set}}{88}{}%
-\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}30\else \numberline {30}Definition\fi \thmtformatoptarg {First Variation of Amplitude}}{88}{}%
-\contentsline {proposition}{\ifthmt@listswap Proposition\nobreakspace {}14\else \numberline {14}Proposition\fi \thmtformatoptarg {Local Variation Formula}}{89}{}%
-\contentsline {proposition}{\ifthmt@listswap Proposition\nobreakspace {}15\else \numberline {15}Proposition\fi \thmtformatoptarg {First Variation as Discrete Derivative}}{89}{}%
-\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}31\else \numberline {31}Definition\fi \thmtformatoptarg {Second Variation}}{90}{}%
-\contentsline {proposition}{\ifthmt@listswap Proposition\nobreakspace {}16\else \numberline {16}Proposition\fi \thmtformatoptarg {Symmetry}}{90}{}%
-\contentsline {proposition}{\ifthmt@listswap Proposition\nobreakspace {}17\else \numberline {17}Proposition\fi \thmtformatoptarg {Explicit Form}}{91}{}%
-\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}32\else \numberline {32}Definition\fi \thmtformatoptarg {Discrete Laplacian on Event Sets}}{91}{}%
-\contentsline {proposition}{\ifthmt@listswap Proposition\nobreakspace {}18\else \numberline {18}Proposition\fi \thmtformatoptarg {Wave Equation for Order}}{91}{}%
-\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}33\else \numberline {33}Definition\fi \thmtformatoptarg {Order–Preserving Transport (Upwind Selection)}}{93}{}%
-\contentsline {proposition}{\ifthmt@listswap Proposition\nobreakspace {}19\else \numberline {19}Proposition\fi \thmtformatoptarg {Discrete Continuity Law}}{93}{}%
-\contentsline {proposition}{\ifthmt@listswap Proposition\nobreakspace {}20\else \numberline {20}Proposition\fi \thmtformatoptarg {Order Characteristics}}{93}{}%
-\contentsline {theorem}{\ifthmt@listswap Theorem\nobreakspace {}3\else \numberline {3}Theorem\fi \thmtformatoptarg {Advection from Upwind Selection}}{94}{}%
-\contentsline {proposition}{\ifthmt@listswap Proposition\nobreakspace {}21\else \numberline {21}Proposition\fi \thmtformatoptarg {Advection as Oriented Martin Flow}}{95}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}4.6.1\else \numberline {4.6.1}Thought Experiment\fi \thmtformatoptarg {Thought Experiment: The Knot-Tying Puzzle and Cubic Spline Closure}}{95}{}%
-\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}34\else \numberline {34}Definition\fi \thmtformatoptarg {Adiabatic Transport}}{96}{}%
-\contentsline {law}{\ifthmt@listswap Law\nobreakspace {}1\else \numberline {1}Law\fi \thmtformatoptarg {Adiabatic Invariance of Information}}{97}{}%
-\contentsline {proposition}{\ifthmt@listswap Proposition\nobreakspace {}22\else \numberline {22}Proposition\fi \thmtformatoptarg {Adiabatic Transport as Minimal Update}}{97}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}4.7.1\else \numberline {4.7.1}Thought Experiment\fi \thmtformatoptarg {Adiabatic Drift of a Boundary Predicate}}{98}{}%
-\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}35\else \numberline {35}Definition\fi \thmtformatoptarg {Annealing in the Causal Domain}}{98}{}%
-\contentsline {law}{\ifthmt@listswap Law\nobreakspace {}2\else \numberline {2}Law\fi \thmtformatoptarg {Informational Annealing Law}}{99}{}%
-\contentsline {proposition}{\ifthmt@listswap Proposition\nobreakspace {}23\else \numberline {23}Proposition\fi \thmtformatoptarg {Annealing as Iterated Projection}}{99}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}4.8.1\else \numberline {4.8.1}Thought Experiment\fi \thmtformatoptarg {Causal Annealing as Refinement of Observation}}{100}{}%
-\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}36\else \numberline {36}Definition\fi \thmtformatoptarg {Brownian Motion in the Causal Framework}}{101}{}%
-\contentsline {law}{\ifthmt@listswap Law\nobreakspace {}3\else \numberline {3}Law\fi \thmtformatoptarg {Causal Diffusion Law}}{101}{}%
-\contentsline {proposition}{\ifthmt@listswap Proposition\nobreakspace {}24\else \numberline {24}Proposition\fi \thmtformatoptarg {Variance Growth and Informational Pressure}}{101}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}4.9.1\else \numberline {4.9.1}Thought Experiment\fi \thmtformatoptarg {Informational Brownian Motion}}{102}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}4.9.2\else \numberline {4.9.2}Thought Experiment\fi \thmtformatoptarg {Thought Experiment: The Dual Transport of Measurement}}{103}{}%
-\contentsline {law}{\ifthmt@listswap Law\nobreakspace {}4\else \numberline {4}Law\fi }{106}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}4.10.1\else \numberline {4.10.1}Thought Experiment\fi \thmtformatoptarg {Extrapolation: The Casimir Effect as Boundary-Limited Distinction}}{108}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}4.10.2\else \numberline {4.10.2}Thought Experiment\fi \thmtformatoptarg {Extrapolation: Quantum Tunneling as the Repair of a Broken Correlation}}{109}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}4.10.3\else \numberline {4.10.3}Thought Experiment\fi \thmtformatoptarg {Extrapolation: The Hyperfine Transition as Periodic Reconciliation of Causal Order}}{110}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}4.10.4\else \numberline {4.10.4}Thought Experiment\fi \thmtformatoptarg {Extrapolation: Correlation Drift and the Redshift of Atomic Clocks}}{111}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}4.10.5\else \numberline {4.10.5}Thought Experiment\fi \thmtformatoptarg {Coda: The Informational Harmonic Oscillator}}{112}{}%
+\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}23\else \numberline {23}Definition\fi \thmtformatoptarg {Clock (non-standard)}}{83}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}4.0.1\else \numberline {4.0.1}Thought Experiment\fi \thmtformatoptarg {Laser Tracking and Informational Dilation}}{84}{}%
+\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}24\else \numberline {24}Definition\fi \thmtformatoptarg {Martin’s Condition (Non-standard)}}{92}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}4.1.1\else \numberline {4.1.1}Thought Experiment\fi \thmtformatoptarg {Davisson--Germer and the Universality of Causal Waves\nobreakspace {}\cite {davisson1927}}}{92}{}%
+\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}25\else \numberline {25}Definition\fi \thmtformatoptarg {Interaction operator}}{94}{}%
+\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}26\else \numberline {26}Definition\fi \thmtformatoptarg {Length on the common boundary}}{94}{}%
+\contentsline {proposition}{\ifthmt@listswap Proposition\nobreakspace {}4\else \numberline {4}Proposition\fi \thmtformatoptarg {Anti–symmetry}}{95}{}%
+\contentsline {proposition}{\ifthmt@listswap Proposition\nobreakspace {}5\else \numberline {5}Proposition\fi \thmtformatoptarg {Transitivity}}{95}{}%
+\contentsline {proposition}{\ifthmt@listswap Proposition\nobreakspace {}6\else \numberline {6}Proposition\fi \thmtformatoptarg {Commutativity $\Rightarrow $ relativistic simultaneity}}{95}{}%
+\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}15\else \numberline {15}Remark\fi }{95}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}4.2.1\else \numberline {4.2.1}Thought Experiment\fi \thmtformatoptarg {The Dantzig Pivot\nobreakspace {}\cite {dantzig1963} of Entanglement\nobreakspace {}\cite {einstein1935}}}{95}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}4.2.2\else \numberline {4.2.2}Thought Experiment\fi \thmtformatoptarg {Mach--Zehnder Interferometer as Causal Superposition}}{97}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}4.2.3\else \numberline {4.2.3}Thought Experiment\fi \thmtformatoptarg {Bell--Aspect Tests as Global Martin Consistency}}{98}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}4.2.4\else \numberline {4.2.4}Thought Experiment\fi \thmtformatoptarg {The Qubit as a Causal Doublet}}{99}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}4.2.5\else \numberline {4.2.5}Thought Experiment\fi \thmtformatoptarg {Hawking Radiation Revisited}}{100}{}%
+\contentsline {law}{\ifthmt@listswap Law\nobreakspace {}2\else \numberline {2}Law\fi \thmtformatoptarg {The Law of Boundary Consistency}}{102}{}%
+\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}16\else \numberline {16}Remark\fi }{102}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}4.6.1\else \numberline {4.6.1}Thought Experiment\fi \thmtformatoptarg {Coda: The Informational Harmonic Oscillator}}{120}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}4.6.2\else \numberline {4.6.2}Thought Experiment\fi \thmtformatoptarg {Thought Experiment: The Knot-Tying Puzzle and Cubic Spline Closure}}{122}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}4.6.3\else \numberline {4.6.3}Thought Experiment\fi \thmtformatoptarg {Thought Experiment: The Dual Transport of Measurement}}{123}{}%
+\contentsline {law}{\ifthmt@listswap Law\nobreakspace {}3\else \numberline {3}Law\fi }{126}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}4.7.1\else \numberline {4.7.1}Thought Experiment\fi \thmtformatoptarg {Extrapolation: Correlation Drift and the Redshift of Atomic Clocks}}{128}{}%
 \addvspace {10\p@ }
-\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}20\else \numberline {20}Remark\fi }{117}{}%
-\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}37\else \numberline {37}Definition\fi \thmtformatoptarg {Entropy}}{117}{}%
-\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}21\else \numberline {21}Remark\fi }{118}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}5.1.1\else \numberline {5.1.1}Thought Experiment\fi \thmtformatoptarg {Michelson--Morley as Gauge Isotropy of Causal Separation}}{119}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}5.1.2\else \numberline {5.1.2}Thought Experiment\fi \thmtformatoptarg {Thought Experiment: The Shadow Puppet Theater and Gauge Selection}}{120}{}%
-\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}22\else \numberline {22}Remark\fi }{121}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}5.1.3\else \numberline {5.1.3}Thought Experiment\fi \thmtformatoptarg {Galileo's Free--Fall as the Flat--Space Limit of Causal Motion}}{121}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}5.1.4\else \numberline {5.1.4}Thought Experiment\fi \thmtformatoptarg {Gravitational Lensing as Informational Curvature}}{122}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}5.1.5\else \numberline {5.1.5}Thought Experiment\fi \thmtformatoptarg {The Three--Body Problem as Computational Reciprocity}}{123}{}%
-\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}23\else \numberline {23}Remark\fi \thmtformatoptarg {Historical Context: Noether Symmetry and Reciprocity}}{123}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}5.2.1\else \numberline {5.2.1}Thought Experiment\fi \thmtformatoptarg {The Two Observers and the Invariant Count\nobreakspace {}\cite {lorentz1904,einstein1905,minkowski1908,weyl1929,yang1954}}}{125}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}5.2.2\else \numberline {5.2.2}Thought Experiment\fi \thmtformatoptarg {Non-Abelian transport and curvature}}{127}{}%
-\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}24\else \numberline {24}Remark\fi }{128}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}5.2.3\else \numberline {5.2.3}Thought Experiment\fi \thmtformatoptarg {Invariance of the Causal Interval \(ds^2\)}}{128}{}%
+\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}17\else \numberline {17}Remark\fi }{132}{}%
+\contentsline {definition}{\ifthmt@listswap Definition\nobreakspace {}27\else \numberline {27}Definition\fi \thmtformatoptarg {Entropy}}{132}{}%
+\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}18\else \numberline {18}Remark\fi }{133}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}5.1.1\else \numberline {5.1.1}Thought Experiment\fi \thmtformatoptarg {Michelson--Morley as Gauge Isotropy of Causal Separation}}{134}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}5.1.2\else \numberline {5.1.2}Thought Experiment\fi \thmtformatoptarg {Thought Experiment: The Shadow Puppet Theater and Gauge Selection}}{135}{}%
+\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}19\else \numberline {19}Remark\fi }{136}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}5.1.3\else \numberline {5.1.3}Thought Experiment\fi \thmtformatoptarg {Galileo's Free--Fall as the Flat--Space Limit of Causal Motion}}{136}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}5.1.4\else \numberline {5.1.4}Thought Experiment\fi \thmtformatoptarg {Gravitational Lensing as Informational Curvature}}{137}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}5.1.5\else \numberline {5.1.5}Thought Experiment\fi \thmtformatoptarg {The Three--Body Problem as Computational Reciprocity}}{138}{}%
+\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}20\else \numberline {20}Remark\fi \thmtformatoptarg {Historical Context: Noether Symmetry and Reciprocity}}{138}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}5.2.1\else \numberline {5.2.1}Thought Experiment\fi \thmtformatoptarg {The Two Observers and the Invariant Count\nobreakspace {}\cite {lorentz1904,einstein1905,minkowski1908,weyl1929,yang1954}}}{140}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}5.2.2\else \numberline {5.2.2}Thought Experiment\fi \thmtformatoptarg {Non-Abelian transport and curvature}}{142}{}%
+\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}21\else \numberline {21}Remark\fi }{143}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}5.2.3\else \numberline {5.2.3}Thought Experiment\fi \thmtformatoptarg {Invariance of the Causal Interval \(ds^2\)}}{143}{}%
 \addvspace {10\p@ }
-\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}25\else \numberline {25}Remark\fi }{132}{}%
-\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}26\else \numberline {26}Remark\fi }{135}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}6.1.1\else \numberline {6.1.1}Thought Experiment\fi \thmtformatoptarg {Extrapolation: Rotation Curves as Order-Preserving Transport}}{135}{}%
-\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}27\else \numberline {27}Remark\fi \thmtformatoptarg {Observational Context: Vera Rubin and the Dark Matter Problem}}{135}{}%
-\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}28\else \numberline {28}Remark\fi }{141}{}%
+\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}22\else \numberline {22}Remark\fi }{147}{}%
+\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}23\else \numberline {23}Remark\fi }{150}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}6.1.1\else \numberline {6.1.1}Thought Experiment\fi \thmtformatoptarg {Extrapolation: Rotation Curves as Order-Preserving Transport}}{150}{}%
+\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}24\else \numberline {24}Remark\fi \thmtformatoptarg {Observational Context: Vera Rubin and the Dark Matter Problem}}{150}{}%
+\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}25\else \numberline {25}Remark\fi }{156}{}%
 \addvspace {10\p@ }
-\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}29\else \numberline {29}Remark\fi }{143}{}%
-\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}30\else \numberline {30}Remark\fi }{145}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}7.2.1\else \numberline {7.2.1}Thought Experiment\fi \thmtformatoptarg {The Harmonic Oscillator as a Closed Loop of Reciprocal Measurement}}{147}{}%
-\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}31\else \numberline {31}Remark\fi }{149}{}%
-\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}32\else \numberline {32}Remark\fi }{152}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}7.2.2\else \numberline {7.2.2}Thought Experiment\fi \thmtformatoptarg {Conservation of Energy for a Free Scalar Field}}{152}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}7.2.3\else \numberline {7.2.3}Thought Experiment\fi \thmtformatoptarg {Feynman Diagram as a Tensor Expansion of the Field}}{154}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}7.3.1\else \numberline {7.3.1}Thought Experiment\fi \thmtformatoptarg {Spin--$\tfrac {1}{2}$ as Two--Valued Causal Orientation}}{155}{}%
-\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}33\else \numberline {33}Remark\fi }{158}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}7.4.1\else \numberline {7.4.1}Thought Experiment\fi \thmtformatoptarg {Aharonov--Bohm Effect as a Test of Causal Gauge Consistency}}{160}{}%
-\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}34\else \numberline {34}Remark\fi }{161}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}7.5.1\else \numberline {7.5.1}Thought Experiment\fi \thmtformatoptarg {Mexican Hat Potential and the Breaking of Informational Symmetry}}{163}{}%
-\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}35\else \numberline {35}Remark\fi }{165}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}7.5.2\else \numberline {7.5.2}Thought Experiment\fi \thmtformatoptarg {Semiconductors as Partially Broken Informational Lattices}}{165}{}%
-\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}36\else \numberline {36}Remark\fi }{167}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}7.6.1\else \numberline {7.6.1}Thought Experiment\fi \thmtformatoptarg {Thought Experiment: The Echo Chamber Maze and Curvature Residue}}{167}{}%
+\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}26\else \numberline {26}Remark\fi }{158}{}%
+\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}27\else \numberline {27}Remark\fi }{160}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}7.2.1\else \numberline {7.2.1}Thought Experiment\fi \thmtformatoptarg {The Harmonic Oscillator as a Closed Loop of Reciprocal Measurement}}{162}{}%
+\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}28\else \numberline {28}Remark\fi }{164}{}%
+\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}29\else \numberline {29}Remark\fi }{167}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}7.2.2\else \numberline {7.2.2}Thought Experiment\fi \thmtformatoptarg {Conservation of Energy for a Free Scalar Field}}{167}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}7.2.3\else \numberline {7.2.3}Thought Experiment\fi \thmtformatoptarg {Feynman Diagram as a Tensor Expansion of the Field}}{169}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}7.3.1\else \numberline {7.3.1}Thought Experiment\fi \thmtformatoptarg {Spin--$\tfrac {1}{2}$ as Two--Valued Causal Orientation}}{170}{}%
+\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}30\else \numberline {30}Remark\fi }{173}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}7.4.1\else \numberline {7.4.1}Thought Experiment\fi \thmtformatoptarg {Aharonov--Bohm Effect as a Test of Causal Gauge Consistency}}{175}{}%
+\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}31\else \numberline {31}Remark\fi }{176}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}7.5.1\else \numberline {7.5.1}Thought Experiment\fi \thmtformatoptarg {Mexican Hat Potential and the Breaking of Informational Symmetry}}{178}{}%
+\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}32\else \numberline {32}Remark\fi }{180}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}7.5.2\else \numberline {7.5.2}Thought Experiment\fi \thmtformatoptarg {Semiconductors as Partially Broken Informational Lattices}}{180}{}%
+\contentsline {remark}{\ifthmt@listswap Remark\nobreakspace {}33\else \numberline {33}Remark\fi }{182}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}7.6.1\else \numberline {7.6.1}Thought Experiment\fi \thmtformatoptarg {Thought Experiment: The Echo Chamber Maze and Curvature Residue}}{182}{}%
 \addvspace {10\p@ }
-\contentsline {theorem}{\ifthmt@listswap Theorem\nobreakspace {}4\else \numberline {4}Theorem\fi \thmtformatoptarg {Monotonicity of Causal Entropy}}{168}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}8.1.1\else \numberline {8.1.1}Thought Experiment\fi \thmtformatoptarg {Thought Experiment: The Library Catalog and the Arrow of Distinction}}{169}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}8.2.1\else \numberline {8.2.1}Thought Experiment\fi \thmtformatoptarg {Maxwell's Demon as Non-commutative Selection}}{170}{}%
-\contentsline {theorem}{\ifthmt@listswap Theorem\nobreakspace {}5\else \numberline {5}Theorem\fi \thmtformatoptarg {The Second Law of Causal Order}}{173}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}8.6.1\else \numberline {8.6.1}Thought Experiment\fi \thmtformatoptarg {Extrapolation: Leavitt’s Ladder and the Hubble Constant}}{175}{}%
+\contentsline {theorem}{\ifthmt@listswap Theorem\nobreakspace {}1\else \numberline {1}Theorem\fi \thmtformatoptarg {Monotonicity of Causal Entropy}}{183}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}8.1.1\else \numberline {8.1.1}Thought Experiment\fi \thmtformatoptarg {Thought Experiment: The Library Catalog and the Arrow of Distinction}}{184}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}8.2.1\else \numberline {8.2.1}Thought Experiment\fi \thmtformatoptarg {Maxwell's Demon as Non-commutative Selection}}{185}{}%
+\contentsline {theorem}{\ifthmt@listswap Theorem\nobreakspace {}2\else \numberline {2}Theorem\fi \thmtformatoptarg {The Second Law of Causal Order}}{188}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment\nobreakspace {}8.6.1\else \numberline {8.6.1}Thought Experiment\fi \thmtformatoptarg {Extrapolation: Leavitt’s Ladder and the Hubble Constant}}{190}{}%
