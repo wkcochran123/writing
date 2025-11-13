@@ -1,7 +1,10 @@
 \documentclass[12pt,oneside]{book}
 \usepackage{amsthm,amssymb,amsmath,mathtools,setspace,thmtools,titling,tocloft}
-\usepackage[nogroupskip,nonumberlist]{glossaries}
-\makeglossaries
+\usepackage{tocloft}
+
+% remove extra vertical space before chapters in ToC
+\setlength{\cftbeforechapskip}{0pt}
+
 
 \include{macros}
 
@@ -40,6 +43,7 @@
 \onehalfspacing
 \include{front/abstract}
 \include{front/toc}
+\tableofcontents
 \include{front/roadmap}
 \include{front/nb}
 \include{front/harm}
@@ -53,13 +57,15 @@
 \include{chapters/six}
 \include{chapters/seven}
 \include{chapters/eight}
-\backmatter
+\cleardoublepage
+\appendix
+\renewcommand{\chaptername}{Appendix}
+\addcontentsline{toc}{part}{Appendices}
 \include{appendix/proofs}
 \include{appendix/notation}
 
-\addcontentsline{toc}{chapter}{Glossary of Definitions and Axioms}
-\printglossary
+\backmatter
 
-\bibliographystyle{plain}   % or abbrv, alpha, unsrt, etc.
-\bibliography{hilbert}   % where references.bib is your BibTeX file
+\bibliographystyle{plain}  
+\bibliography{hilbert}   
 \end{document}

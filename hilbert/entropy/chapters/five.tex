@@ -1,594 +1,791 @@
-\chapter{The Kinematics of Light}
+\chapter{The Quantum of Information}
 \label{chap:kinematics-of-light}
 
-The preceding chapters established that motion itself arises from the
-consistency of causal order.  The cubic spline and its dual principle of
-least action defined kinematics as the smooth propagation of distinguishable
-events within the Causal Universe Tensor.  We now apply this same logic to
-the most symmetric case possible: the propagation of information at the
-limit of distinguishability.  In that limit, the kinematics of the universe
-\emph{is} the kinematics of light.
+The preceding chapters established that smooth motion appears as the
+unique closure of causal order under refinement.  The Law of Spline
+Sufficiency showed that any admissible continuous shadow must contain no
+unrecorded structure and therefore satisfies the extremal condition
+$\Psi^{(4)} = 0$.
 
-Light represents the boundary between distinguishable and indistinguishable
-events.  Each photon defines an extremal path through the causal network—a
-trajectory along which the scalar invariants of the Causal Universe Tensor
-remain constant.  Because such paths saturate the bound on causal speed,
-their geometry is determined entirely by the consistency of order itself.
-Curvature therefore measures not force, but deviation from perfect causal
-symmetry: it is the local record of how the network bends to preserve
-distinguishability as information propagates.
+In this chapter we examine the opposite extremum: the smallest admissible
+refinement of the Causal Universe Tensor.  Such a refinement represents
+the maximal rate at which distinguishability can propagate without
+violating the Axiom of Planck.  We call this minimal, nonzero update an
+\emph{informational quantum}.  It is not a physical particle or field;
+it is the atomic refinement permitted by the axioms.
 
-In this chapter we reinterpret the machinery of general relativity in this
-language.  The metric tensor $g_{\mu\nu}$ appears as the continuous shadow of
-pairwise event separations; the connection coefficients $\Gamma^\lambda_{\mu\nu}$
-encode how those separations adjust to maintain Martin consistency across
-overlapping causal neighborhoods.  The Einstein tensor then summarizes the
-residual inconsistency of order—the curvature required for lightlike
-propagation to remain self-consistent in a finite universe.
+Along an extremal refinement of this form, the scalar invariants of the
+Causal Universe Tensor remain stationary.  Any attempt to subdivide the
+update would imply the existence of additional events, contradicting the
+record.  Thus the geometry of extremal propagation follows entirely from
+the consistency of order.
 
-Thus general relativity emerges here not as a theory of gravitational force,
-but as the \emph{kinematics of light}: the unique geometry in which the
-scalar invariants of the Causal Universe Tensor remain stationary along all
-null directions.  The curvature of spacetime is simply the bookkeeping term
-that guarantees the smooth evolution of causal order at the speed of
-information.  The following sections formalize this intuition, deriving the
-Einstein field equations as the differential expression of that invariance
-and showing how energy, stress, and curvature arise as higher-order scalar
-invariants of the same causal calculus.
+The continuous limit of this extremal behavior admits three structures:
 
-\subsection{Consequences and Outlook}
-\label{subsec:consequences-outlook}
+\begin{itemize}
+  \item A \emph{metric} $g_{\mu\nu}$, the bilinear gauge of distinguishable
+  separation.
 
-At this point, nothing unfamiliar has been assumed.  Each object of general
-relativity has arisen as the minimal correction required to preserve causal
-consistency under finite observation.  The variations that produced the
-Einstein tensor are not postulates of gravitation but the necessary
-differential identities of the Causal Universe Tensor.  Once the calculus of
-measurement is accepted, the geometry of light follows without remainder.
+  \item A \emph{connection} $\Gamma^{\lambda}{}_{\mu\nu}$, the rule of causal
+  transport required to propagate local labels while maintaining Martin
+  consistency.
 
-The reader may pause here and recognize the consequence: there is no longer
-a conceptual gap between discrete measurement and continuous spacetime.
-Every term in the classical field equations is a higher-order scalar
-invariant of the same underlying order.  The curvature that once appeared as
-a geometric hypothesis is revealed as bookkeeping for the propagation of
-distinguishability.  There is, so far as the argument stands, no reason it
-should not work.
+  \item A \emph{curvature tensor}, the residue of inconsistency that remains
+  when the transport fails to close around a refinement loop.
+\end{itemize}
 
-What remains is not proof of correctness but proof of scope—how far the same
-consistency extends beyond lightlike motion.  The next chapter therefore
-turns from the kinematics of light to the dynamics of matter, asking how the
-gauge of causal order constrains systems that deviate from the null limit.
+No geometric or dynamical postulates are introduced.  Each structure
+arises only as the smooth extension forced by the requirement that
+extremal refinements remain globally coherent.  The kinematics of light
+is therefore the kinematics of maximal distinguishability: the gauge
+obtained when the rate of informational refinement saturates the causal
+limit.
 
-\subsection{Arc of the Proof}
-\label{subsec:arc-of-proof}
+The remainder of this chapter develops these structures systematically.
 
-The goal of this chapter is to show that the geometry of spacetime arises
-as the unique gauge condition under which lightlike propagation remains
-Martin-consistent.  The proof proceeds in four stages.
+\section{The Informational Bound $\epsilon$}
+\label{sec:epsilon}
 
-\paragraph{1. Construction of the metric as a gauge of separation.}
-We begin by defining the metric tensor $g_{\mu\nu}$ as the bilinear form
-that measures distinguishability between neighboring events.  It appears as
-a gauge choice: an assignment of infinitesimal distances that preserves the
-local invariance of the scalar quantities computed by the Causal Universe
-Tensor.  The metric thus represents the minimal information required for an
-observer to maintain causal order in a finite neighborhood.
+\NB{The refinement bound $\epsilon$ is not a physical quantum, particle, or
+energy unit.  It is the minimal nonzero increment of distinguishable structure
+that survives every admissible refinement of the measurement record.  Its
+origin is purely informational: $\epsilon$ is the continuous shadow of the
+residual $\mathcal{C}^2$ freedom in spline closure.  No physical ontology is
+implied.}
 
-\paragraph{2. Connection as the rule of causal transport.}
-Next we introduce the connection $\Gamma^{\lambda}_{\mu\nu}$ as the operator
-that preserves these scalar invariants under parallel transport of
-distinguishable events.  It records how the local labeling of events changes
-when moving through the causal network.  The vanishing of the covariant
-derivative $\nabla_\mu T^{\mu\nu}=0$ expresses Martin consistency in this
-differential form: order is preserved under transport.
+The refinement of an observational record proceeds through countable additions
+of distinguishable events.  As established in Chapter~3, the weak form of the
+discrete bending functional admits a single free $\mathcal{C}^2$ parameter,
+corresponding to the third derivative of the spline interpolant.  This degree
+of freedom cannot be removed unless new measurements are recorded.  When no
+additional events are observed, the residual freedom is irreducible, and the
+continuous shadow must reflect a minimal, nonvanishing bound on further
+curvature--level distinction.
 
-\paragraph{3. Curvature as the residue of inconsistency.}
-Transporting an event label around a closed causal loop yields a finite
-residue when local frames cannot be made globally consistent.  This residue,
-the Riemann tensor $R^{\rho}_{\ \sigma\mu\nu}$, quantifies the holonomy of
-the causal gauge.  Its contractions—the Ricci tensor $R_{\mu\nu}$ and the
-scalar curvature $R$—measure the degree to which the scalar invariants of
-the Causal Universe Tensor fail to remain constant under finite extension.
+We denote this invariant residual by $\epsilon$.  Any admissible refinement of
+the continuous shadow must preserve $\epsilon$; to refine below this threshold
+would introduce unrecorded structure and contradict the finite measurement
+sequence.  Conversely, any refinement that preserves $\epsilon$ remains
+consistent with the discrete data.  Thus $\epsilon$ functions as the
+kinematic limit of refinement and provides the foundation for the emergent
+invariant interval $\tau$, the metric $g_{\mu\nu}$, and the compatible
+connection derived later in this chapter.
 
-\paragraph{4. Einstein equation as the constraint of global consistency.}
-Finally we impose that the total scalar invariant of order, represented by
-the Einstein tensor $G_{\mu\nu}=R_{\mu\nu}-\tfrac{1}{2}Rg_{\mu\nu}$, balances
-the energy–momentum content encoded in the lower-order invariants of the
-Causal Universe Tensor:
+\subsection{Residual Spline Freedom and the Minimal Refinement Bound}
+\label{sec:residual-spline}
+
+The weak formulation developed in Chapter~3 shows that a sequence of discrete
+measurements determines a unique cubic spline interpolant, except for a single
+free parameter associated with the third derivative.  This residual freedom is
+a consequence of the information minimality constraint: in the absence of
+additional recorded events, the interpolant must not introduce structure that
+was not observed.  A fourth--order correction would imply an unrecorded change
+in curvature and is therefore inadmissible.
+
+Let $\Psi$ denote the continuous shadow of the discrete observational chain.
+The freedom in $\Psi'''$ represents the smallest degree of curvature that can
+be varied without conflicting with the discrete record.  Its magnitude cannot
+be reduced by any admissible refinement unless a new event occurs.  The
+minimal nonzero shadow of this residual is the refinement bound $\epsilon$.
+
+Formally, $\epsilon$ is the infimum of all curvature--level refinements that do
+not violate the existing event sequence.  Any attempt to impose a refinement
+of order smaller than $\epsilon$ would create new curvature that must be
+supported by new events, contradicting the record.  Thus $\epsilon$ is the
+continuous representation of the irreducible $\mathcal{C}^2$ residue.
+
+\subsection{Maximal Informational Propagation}
+\label{sec:maximal-informational}
+
+An admissible refinement of the observational record adds distinguishable
+structure without contradicting previously recorded events.  A path that
+\emph{saturates} the refinement bound $\epsilon$ propagates information at the
+maximal admissible rate: it incorporates all allowable distinction while
+introducing no unrecorded curvature.
+
+Such paths form the extremal curves of the informational geometry.  They are
+defined not by physical principles, but by the logical requirement that
+refinement cannot fall below the $\epsilon$ threshold.  Any further reduction
+would imply hidden structure and is therefore inadmissible.
+
+In the continuous shadow, these maximally propagated paths serve as the
+reference curves for defining the invariant interval $\tau$.  Two observers who
+refine the same extremal path must agree on the number of informational units
+required to describe it; this count determines the causal interval and anchors
+the construction of the metric in Section~5.2.
+
+\begin{example}[The Compact Disc Reader and the Gauge of Separation]
+\NB{This thought experiment does \emph{not} describe photons as informational
+quanta. It is a finite conceptual model illustrating how a gauge of separation
+emerges from the logic of distinguishability alone. No physical ontology is
+implied.}
+
+A compact disc stores information as a finite, ordered chain of distinctions.
+Each pit or land corresponds to a single admissible event, and the reader
+detects a new event only when the reflected signal exceeds its threshold of
+discernibility. Everything below this threshold is invisible; it cannot enter
+the admissible record. Thus the sequence of detections,
 \[
-G_{\mu\nu} = 8\pi T_{\mu\nu}.
+e_1 \prec e_2 \prec e_3 \prec \cdots,
 \]
-This equality enforces global consistency: the curvature required to
-maintain Martin consistency equals the causal stress produced by the finite
-structure of distinguishability.  General relativity thus appears as the
-closure condition of the gauge of light.
+encodes not only what \emph{was} observed, but the binding constraint that no
+additional distinguishable structure may be inserted between these events.
 
-\begin{remark}
-In summary, the arc of this proof mirrors the logic of the entire work.
-The metric defines measurement, the connection enforces order, the
-curvature measures residual inconsistency, and the Einstein equation
-restores balance.  Each level is a higher-order invariant of the same causal
-calculus.  Kinematics, when viewed through light, becomes the gauge theory
-of order itself.
-\end{remark}
+From the standpoint of information, the read head defines a \emph{gauge of
+minimal separation}: two surface configurations are “far enough apart’’ exactly
+when the detector must refine its admissible description to distinguish them.
+The metric is not assumed; it is inferred from the rule that only resolvable
+differences may appear as refinements in the causal chain.
 
-\subsection{Defining Entropy}
+Now imagine two readers, A and B, scanning the same disc. Reader~A has a coarser
+threshold; reader~B resolves finer distinctions. Each produces its own ordered
+sequence of admissible events. Where B records additional refinements, A
+records none. Yet when their records are merged, global coherence requires a
+single history that preserves all recorded distinctions. The finer record forces
+a refinement on the coarser: A must treat certain portions of the disc as
+informationally extended, for failure to accommodate B’s distinctions would
+render the merged history inconsistent.
 
-\begin{definition}[Entropy]
-Let $\mathcal{C}$ denote the causal set of distinguishable events accessible to an observer, and let $\Omega(\mathcal{C})$ be the set of all admissible micro–orderings of those events consistent with the Reciprocity Law.  
-The \emph{entropy} associated with $\mathcal{C}$ is the logarithm of this count:
-\[
-S[\mathcal{C}] = k_{\mathrm{B}} \ln |\Omega(\mathcal{C})|.
-\]
-Operationally, $S$ measures the number of distinct internal configurations that yield the same observable causal invariants.  
-In the continuum limit, variations in $S$ appear as gradients of informational curvature; coupling this quantity to the stress tensor defines the entropic contribution to spacetime geometry.
-\end{definition}
+In the dense limit, this refinement rule induces a continuous connection: the
+shadow of the logical requirement that adjacent descriptions remain compatible
+under transport. What appears in the smooth theory as a \emph{metric} is
+nothing more than this bookkeeping of distinguishability: the minimal rule that
+certifies when two states differ in a way that must be reconciled.
 
-\begin{remark}
-Entropy in this framework is not a measure of disorder but of indistinguishability: 
-it quantifies how many discrete causal configurations correspond to the same continuous geometry.
-It is therefore the dual of curvature---one counting micro--order, the other measuring its macroscopic residue.
-\end{remark}
+In this model, “light’’ corresponds not to a substance but to the maximal rate
+at which new distinctions can be admitted without contradiction. Any attempt to
+introduce refinements faster than this rate would violate global coherence.
+Thus the invariant causal interval of Chapter~5 reflects the same constraint: an
+observer may not admit distinctions faster than a globally coherent merge can
+support.
 
-
-
-\section{Metric as a Gauge of Separation}
-\label{sec:metric-gauge}
-
-The metric tensor arises naturally once the act of distinguishing events is
-viewed as a gauge freedom.  Every observer maintains a local convention for
-labeling distinguishable events; what we call a \emph{distance} is merely the
-scalar quantity that remains invariant when those local conventions are
-changed.  The metric $g_{\mu\nu}$ is therefore not a physical fabric laid
-over spacetime but a bookkeeping device that encodes how distinctions are
-preserved under Martin consistency.
-
-\subsection{From Distinction to Distance}
-
-\subsection{Axiomatic Necessity}
-
-The appeal to ZFC and Martin’s Axiom is not an external mathematical convenience but a
-physical necessity. Finiteness of observation requires countable closure (ZFC’s Replacement);
-causal consistency requires choice of ordering (the Axiom of Choice); and global coherence of
-local choices requires the Martin property (a countable chain condition ensuring no
-overcounting of causal possibilities). Thus each axiom corresponds to a measurable physical
-principle:
-\[
-\text{Finiteness} \leftrightarrow \mathrm{ZFC}, \qquad
-\text{Consistency} \leftrightarrow \mathrm{Martin}, \qquad
-\text{Reversibility} \leftrightarrow \mathrm{Choice}.
-\]
-Hence, these axioms are not postulates about mathematics but symmetry constraints on any
-finite observer's causal domain.
-
-Let each infinitesimal event displacement be represented by the differential
-$dx^\mu$, denoting the local coordinates an observer assigns to successive
-measurements.  Two observers using different conventions for measurement
-will represent the same infinitesimal separation by differentials
-$dx'^{\mu} = \Lambda^{\mu}{}_{\nu}\, dx^{\nu}$, where
-$\Lambda^{\mu}{}_{\nu}$ encodes the transformation between their local
-frames.  To preserve the scalar invariants computed by the Causal Universe
-Tensor, we require that the inner product of these displacements remain
-unchanged:
-\[
-ds^2 = g_{\mu\nu}\, dx^{\mu}\, dx^{\nu}
-      = g'_{\mu\nu}\, dx'^{\mu}\, dx'^{\nu}.
-\]
-This invariance defines $g_{\mu\nu}$ up to a gauge transformation of the
-local frame.  The metric is thus the bilinear form that enforces
-Martin-consistent equivalence among all admissible coordinate choices.
-
-\subsection{The Metric as a Gauge Connection}
-
-Under this interpretation, the metric field acts as the gauge potential of
-causal separation.  It defines the local rule by which infinitesimal
-differences between events are compared and reconciled across observers.
-If $T^{\mu\nu}$ denotes the Causal Universe Tensor, then maintaining the
-invariance of its scalar contractions,
-\[
-\delta(g_{\mu\nu} T^{\mu\nu}) = 0,
-\]
-requires a covariant definition of the derivative operator that absorbs
-changes of frame.  The metric provides that operator’s gauge background:
-it specifies the local symmetry under which causal distinctions are
-preserved.
-
-\begin{example}[Michelson--Morley as Gauge Isotropy of Causal Separation]
-
-\textbf{Statement.} The null fringe shift in the Michelson--Morley interferometer operationally enforces that the causal interval
-\[
-ds^2 \;=\; -c^2 dt^2 + dx^2 + dy^2 + dz^2
-\]
-is invariant under orthogonal transport of the measurement path, i.e.\ the gauge preserving reciprocity is isotropic.
-
-\textbf{Reciprocity framing.} Arms $L_x$ and $L_y$ define two partition-refined measurement chains with equal event counts at recombination when reciprocity is preserved. Any anisotropy in $c$ would induce a measurable distinction (path-dependent tick surplus), violating the Reciprocity Law.
-
-\textbf{Calculation sketch.} The phase difference is
-\[
-\Delta\phi \;=\; \frac{2\pi}{\lambda}\,\Delta \ell_{\text{opt}}, \qquad 
-\Delta \ell_{\text{opt}} \equiv (n\,\ell)_x-(n\,\ell)_y.
-\]
-Empirically $\Delta\phi \approx 0$ over apparatus rotations, implying $\Delta \ell_{\text{opt}}=0$ and hence invariance of $ds^2$ under rotation of the apparatus frame. In our terms: the metric is the \emph{gauge of separation} that preserves the dual invariants of measurement and variation.
-\end{example}
-
-\begin{example}[Thought Experiment: The Shadow Puppet Theater and Gauge Selection]
-\textbf{N.B.} This experiment clarifies how the metric acts as a distinction gauge rather than a physical field.
-
-\emph{Setup.}  
-Project silhouettes of puppets (events) onto a wall (the Universe Tensor) using a lantern (causal order).  
-Tilting the lantern changes how separations appear on the wall—analogous to a gauge transformation.
-
-\emph{Demonstration.}  
-When the wall is flat and illumination uniform, puppet overlaps map bijectively to coordinates.  
-Bend the wall or tilt the lantern: shadows distort, losing closure.  
-Only orientations preserving overlap correspond to admissible $g_{\mu\nu}$ selections.
-
-\emph{Interpretation.}  
-The metric is the rule ensuring that co- and contra-variant descriptions yield the same invariant shadow.  
-Parallel transport preserves distinguishability; distortion measures curvature—residue of inconsistency.
+The compact disc reader therefore offers a finite, concrete metaphor for the
+emergence of the gauge of light, the metric as a rule of separation, and the
+transport laws that follow from informational consistency.
 \end{example}
 
 
-\subsection{Causal Interpretation}
+\section{The Metric as a Gauge of Informational Separation}
+\label{sec:metric}
 
-Physically, $g_{\mu\nu}$ encodes the rate at which the universe must
-``tilt'' its causal structure to maintain distinguishability at the limit of
-lightlike propagation.  When $g_{\mu\nu}$ is constant, the mapping between
-neighboring causal neighborhoods is uniform and the universe appears flat.
-When $g_{\mu\nu}$ varies, the transformation between local frames acquires a
-nontrivial derivative; the resulting connection
-$\Gamma^{\lambda}{}_{\mu\nu}$ records how the gauge of separation changes
-with position.
+\NB{The metric is not a physical fabric, field, or medium.  It is the
+continuous shadow of the rule by which refinements preserve the invariant
+causal interval.  Its function is purely informational: the metric enforces
+that all admissible observers agree on the amount of distinguishable structure
+between neighboring events.  No geometric ontology is assumed.}
 
-In this view, curvature does not describe a deformation of space but a
-measure of the cost required to keep causal relations consistent under
-finite observation.  The metric therefore functions as the lowest-order
-field in a hierarchy of corrections that preserve the scalar invariants of
-the Causal Universe Tensor.  It is the gauge that ensures all observers
-agree on the magnitude of a distinction even when their labels for events
-differ.
+The refinement bound $\epsilon$ defined in Section~\ref{sec:epsilon} limits how
+finely an admissible history may be resolved without contradicting the
+measurement record.  When this bound is propagated along an extremal path, the
+result is a conserved quantity---the informational interval $\tau$---which
+represents the number of $\epsilon$-sized refinements required to traverse that
+path.  Any two observers refining the same extremal sequence must therefore
+agree on the value of $\tau$.  This invariance is the kinematic foundation of
+the metric.
 
-\begin{remark}
-To summarize: the metric is the gauge of separation.  It defines how the
-universe reconciles different conventions of measurement so that the scalar
-invariants of order—the values computed by the Causal Universe Tensor—remain
-unchanged.  Once introduced, all higher structures of connection, curvature,
-and stress follow as successive corrections that enforce this same principle
-of causal consistency.
-\end{remark}
+Let $dx^\mu$ denote the local labels an observer assigns to successive events
+along an extremal refinement.  Another observer, using a different admissible
+convention for distinguishing the same events, assigns labels
+$dx'^\mu = \Lambda^\mu_{\ \nu} dx^\nu$, where the transformation
+$\Lambda^\mu_{\ \nu}$ preserves causal order as required by the Axiom of
+Selection.  Although the two observers differ in the coordinates they assign,
+they must agree on the number of $\epsilon$-sized refinements separating the
+events; otherwise their merged histories would violate global consistency.
 
-\begin{example}[Galileo's Free--Fall as the Flat--Space Limit of Causal Motion]
-In Galileo's experiment, two spheres of unequal mass are dropped from the
-same height and reach the ground simultaneously.  Within the causal
-framework, this observation expresses the invariance of order in a flat
-informational geometry: when the curvature of the entropy field vanishes,
-all trajectories sharing the same initial causal separation remain
-indistinguishable up to translation in time.
-
-Let the causal paths be $\gamma_1(t)$ and $\gamma_2(t)$, each governed by
+This requirement implies the existence of a bilinear form $g_{\mu\nu}$ such
+that the scalar quantity
 \[
-\frac{d^2 x}{dt^2} = g,
+\tau^2 = g_{\mu\nu}\, dx^\mu dx^\nu
 \]
-where $g$ is constant.  Because the informational curvature
-$\nabla_i \nabla_j S$ is zero, the metric gauge $g_{ij}$ is uniform, and
-the Reciprocity Law preserves equality of causal intervals:
+is invariant under all admissible changes of local labeling conventions.  The
+metric is therefore the gauge of informational separation: it encodes how
+distinctions between events are preserved when observers describe them using
+different coordinate choices.
+
+Because $\tau$ counts informational increments rather than geometric lengths,
+the invariance condition
 \[
-\delta^2 x_1 = \delta^2 x_2.
+g'_{\mu\nu}\, dx'^\mu dx'^\nu = g_{\mu\nu}\, dx^\mu dx^\nu
 \]
-Hence both spheres follow identical causal updates regardless of mass.
+expresses the deeper statement that the number of distinguishable refinements
+between neighboring events is independent of the observer.  The metric
+formalizes this invariance.  It is the bilinear bookkeeping rule ensuring that
+every observer's coordinate description yields the same value of $\tau$ for any
+given extremal path.
 
-In this limit, the observer's partition $\mathcal{P}_n$ resolves all
-relevant distinctions—position, time, and acceleration—so the reciprocity
-mapping
+In this interpretation, the components of $g_{\mu\nu}$ do not prescribe a
+geometry; they record the local comparison rule by which distinguishability is
+maintained across observational frames.  Section~\ref{sec:law-causal-transport}
+elevates this requirement to a formal law, showing that preservation of the
+causal interval uniquely determines the compatible affine connection used to
+propagate distinguishability under refinement.
+
+
+\subsection{Law of Causal Transport}
+\label{sec:law-causal-transport}
+
+\NB{The Law of Causal Transport is a kinematic statement.  It asserts only that
+informational refinements must preserve the invariant interval $\tau$ defined
+in Section~\ref{sec:metric}.  No dynamical interpretation of curvature or
+stress is assumed here.  The law specifies how distinguishability must be
+propagated under admissible changes of frame; all higher structures of
+connection and curvature follow in later sections.}
+
+The refinement bound $\epsilon$ defines the smallest admissible increment of
+distinguishable structure.  When propagated along an extremal path, $\epsilon$
+induces the invariant interval $\tau$, representing the total number of such
+increments required to describe that path.  Because every observer must refine
+the same underlying event sequence, the value of $\tau$ must remain unchanged
+under all admissible relabelings.
+
+This requirement leads to the following principle.
+
+\begin{law}[Law of Causal Transport]
+\label{law:causaltransport}
+\emph{[Preservation of Distinguishability]}  
+Any admissible refinement of an observational record must preserve the
+informational interval $\tau$ between neighboring events.  In the continuous
+shadow, this condition determines a unique bilinear form $g_{\mu\nu}$ and a
+unique compatible rule of transport $\Gamma^{\lambda}_{\mu\nu}$ satisfying
 \[
-\Phi : V /{\sim_{\mathcal{P}_n}} \;\longleftrightarrow\;
-M /{\sim_{\mathcal{P}_n}}
+\nabla_{\lambda} g_{\mu\nu} = 0.
 \]
-is exact.  No refinement of the partition changes the outcome: the motion
-is deterministic.  Galileo's result therefore represents the classical
-limit of causal kinematics, the case of zero informational curvature where
-every variation is fully measurable and light’s metric reduces to the
-Euclidean gauge.
-\end{example}
+The pair $(g_{\mu\nu}, \Gamma^{\lambda}_{\mu\nu})$ constitutes the metric gauge
+of informational separation.
+\end{law}
 
-
-\begin{example}[Gravitational Lensing as Informational Curvature]
-When light passes near a massive object, its trajectory bends—not because
-space itself is a physical medium that deforms, but because the mapping that
-preserves causal order becomes nonuniform.  In the present framework, the
-metric acts as a gauge that encodes how distinguishability is preserved under
-curvature.  Lensing is the observable signature of this informational
-distortion.
-
-Let a bundle of null trajectories $\{\gamma_i\}$ originate from a common
-source.  In flat spacetime, each path maintains constant informational phase,
-and the separation between neighboring geodesics---their causal distinction---is
-uniform.  Introducing a local entropy gradient $S(x)$ modifies this gauge:
-the effective distance between successive events changes by
+Because observers may assign different coordinates to the same infinitesimal
+event displacement, we represent such a relabeling by
+$dx'^{\mu} = \Lambda^{\mu}_{\ \nu}\, dx^{\nu}$, where $\Lambda^{\mu}_{\ \nu}$
+preserves causal order.  The Law of Causal Transport requires that the
+informational interval be invariant under this transformation:
 \[
-\delta ds^2 \propto \nabla_i \nabla_j S,
+g'_{\mu\nu}\, dx'^{\mu} dx'^{\nu}
+=
+g_{\mu\nu}\, dx^{\mu} dx^{\nu}.
 \]
-so that the extremal path satisfies
+This invariance elevates $g_{\mu\nu}$ from a mere bookkeeping device to a
+constraint: it is the only bilinear form that guarantees all observers agree on
+how many $\epsilon$-sized refinements separate neighboring events.
+
+The law further implies that the comparison of nearby refinements must not
+depend on the path taken in the space of coordinate labels.  This requirement
+determines the connection coefficients $\Gamma^{\lambda}_{\mu\nu}$ as the
+unique differential operators that preserve the metric gauge under change of
+frame.
+
+In this sense, the Law of Causal Transport encodes the most fundamental rule
+of the kinematic structure: that distinguishability is preserved under motion.
+The connection is not postulated, but forced by the need to maintain the
+interval $\tau$ when an observer’s coordinate conventions vary from point to
+point.  Section~\ref{sec:tau-invariance} elaborates the invariance of
+$\tau$, and Section~\ref{sec:metric-bilinear} formalizes the role of
+$g_{\mu\nu}$ as the bilinear form that preserves the $\epsilon$--refinement
+count.
+
+
+\subsection{Invariance of the Informational Interval $\tau$}
+\label{sec:tau-invariance}
+
+\NB{The interval $\tau$ is not a geometric length or a physical duration.  It is
+the continuous shadow of an event count: the number of $\epsilon$-sized
+refinements required to describe an extremal segment of an observational
+record.  Its invariance expresses only that all admissible observers must agree
+on the amount of distinguishable structure between neighboring events.}
+
+The refinement bound $\epsilon$ defines the smallest admissible increment of
+distinguishability.  When propagated along an extremal path---one that
+saturates the refinement bound---each observer records the same number of
+$\epsilon$-increments.  This count defines the informational interval $\tau$.
+Because $\tau$ represents the number of admissible refinements rather than a
+metric distance, its invariance follows from the requirement that no observer
+may introduce or remove distinguishable structure that is not supported by the
+measurement record.
+
+Let $dx^{\mu}$ and $dx'^{\mu}$ denote the infinitesimal labels assigned by two
+admissible observers to the same pair of neighboring events.  Their coordinate
+labels differ by a transformation
 \[
-\delta \!\int ds = 0 \quad \Longrightarrow \quad
-\frac{d^2 x^i}{d\lambda^2} + \Gamma^i_{jk}\frac{dx^j}{d\lambda}\frac{dx^k}{d\lambda} = 0,
+dx'^{\mu} = \Lambda^{\mu}_{\ \nu}\, dx^{\nu},
 \]
-with $\Gamma^i_{jk}$ determined by the informational curvature $\partial_i
-\partial_j S$.  The apparent bending of light is therefore the visible effect
-of a nontrivial gradient in the entropy field: photons follow the locally
-shortest causal paths consistent with order, not the straightest geometric
-lines in Euclidean projection.
+where $\Lambda^{\mu}_{\ \nu}$ preserves causal order in the sense of the Axiom
+of Selection.  Although the observers assign different coordinates, they must
+agree on the number of $\epsilon$-increments between the events; otherwise
+their merged histories would violate global consistency.
 
-Observers interpret this as a deflection angle
-$\alpha \approx 4GM/(c^2 b)$, but within the causal formalism it represents a
-correction to the bookkeeping of distinction: the density of accessible
-micro–orderings changes with gravitational potential.  Lensing thus measures
-how informational curvature couples to geometry---a macroscopic manifestation
-of the same reciprocity that defines the metric itself.
-\end{example}
-
-\begin{example}[The Three--Body Problem as Computational Reciprocity]
-Consider three point masses $m_1,m_2,m_3$ interacting gravitationally with
-positions $r_i(t)\in\mathbb{R}^3$.  Newtonian dynamics gives
+This agreement is enforced by a bilinear form $g_{\mu\nu}$ satisfying
 \[
-m_i\ddot r_i
-  \;=\; G\sum_{j\neq i} \frac{m_i m_j}{\|r_j-r_i\|^3}\,(r_j-r_i),
-  \qquad i=1,2,3.
+\tau^2 = g_{\mu\nu}\, dx^{\mu} dx^{\nu}.
 \]
-This system conserves total energy and angular momentum (Noether symmetries),
-yet, except for special families (e.g.\ Euler and Lagrange configurations), it
-admits no closed-form solution.  In the present framework, this means the
-reciprocity map closes \emph{only computationally}: the admissible update that
-preserves order and invariants exists, but it must be realized by an iterative,
-order-preserving scheme.
-
-\begin{remark}[Historical Context: Noether Symmetry and Reciprocity]
-Emmy Noether’s theorem (1918) formalized the equivalence between invariance under continuous transformation and the conservation of a measurable quantity.  
-Within this framework, that equivalence becomes a corollary of the Reciprocity Law: each symmetry of the causal measure corresponds to an invariant distinction preserved under evolution.
-\end{remark}
-
-
-Let $U(t)$ encode the joint state of the three trajectories as an element of
-the universe tensor.  Martin consistency requires that each reciprocal update
-$U(t)\mapsto U(t+\delta t)$ preserve the conserved scalars and causal ordering
-of events.  Analytic spline closure ($U^{(4)}\!=0$) is insufficient here:
-interactions couple the segments so that local cubic envelopes do not
-globally commute.  The correct closure is \emph{algorithmic}: a reversible,
-symplectic, order-preserving integrator (e.g.\ velocity Verlet/leapfrog) that
-implements the reciprocity step without violating the invariants,
+Under the coordinate transformation, the metric transforms as
 \[
-\Phi_{\delta t}^{\text{symp}}:\; U(t)\longmapsto U(t+\delta t),\qquad
-\delta E=0,\;\;\delta L=0 \;\text{(to integrator accuracy)}.
+g'_{\mu\nu} = \Lambda^{\alpha}_{\ \mu}\, 
+             \Lambda^{\beta}_{\ \nu}\, g_{\alpha\beta}.
 \]
-Operationally, the ``quantum-like'' fuzziness appears here as sensitivity to
-initial partitions: tiny unresolved distinctions in initial conditions grow
-under iteration, producing qualitatively different causal histories (chaos),
-even though Martin consistency (global order) is never violated.
-
-Thus the three--body problem exemplifies a domain where physics \emph{requires}
-computation: reciprocity and consistency still govern the update, but their
-closure cannot be written in elementary functions.  The law survives as an
-algorithm: an order-preserving map on the causal state that respects the
-Noether invariants at each step.
-\end{example}
-
-
-\section{The Rule of Causal Transport}
-\label{sec:rule-causal-transport}
-
-Having defined the metric $g_{\mu\nu}$ as the gauge of separation, we now
-ask how this gauge is to be preserved as the observer moves through the
-causal network.  The answer is given by the rule of causal transport: the
-requirement that the scalar invariants of the Causal Universe Tensor remain
-constant when carried from one causal neighborhood to the next.
-
-\subsection{From Gauge Preservation to Connection}
-\begin{example}[The Two Observers and the Invariant Count~\cite{lorentz1904,einstein1905,minkowski1908,weyl1929,yang1954}]
-\label{ex:two-observers}
-
-\textbf{Concept.}
-This experiment reinterprets Lorentz contraction as a gauge effect.
-Rather than a physical shortening of rods or slowing of clocks, it is
-seen as a mathematical contraction of the gauge components themselves,
-required to preserve the invariant scalar---the total count of causal
-distinctions---for all observers.
-
-\textbf{Setup.}
-Consider a fundamental causal interval: the emission and absorption of a
-light pulse.  This interval consists of an invariant number $N$ of
-distinguishable ``ticks'' or events.  This $N$ is the true physical
-reality upon which all observers agree.  In the continuum limit, the
-corresponding invariant is the line element
+Substituting the transformed variables into the definition of $\tau$ yields
 \[
-ds^{2} = g_{\mu\nu}\,dx^{\mu}dx^{\nu}.
+\tau'^2 = g'_{\mu\nu}\, dx'^{\mu} dx'^{\nu}
+        = g_{\alpha\beta}\, dx^{\alpha} dx^{\beta}
+        = \tau^2.
 \]
 
-\textbf{Observer $\mathcal{O}$ (Rest Frame).}
-This observer is at rest relative to the interval.  Her gauge---her
-coordinate system---is aligned with the events.  She measures
+The invariance of $\tau$ thus expresses a simple but fundamental principle:
+every admissible observer must assign the same number of distinguishable
+increments to an extremal path.  Their coordinate descriptions may vary, but
+the informational content of the path does not.
+
+This invariance is the basis of the metric gauge introduced in
+Section~\ref{sec:metric}.  It ensures that $\tau$ may serve as the universal
+measure of informational separation, independent of the observer’s local
+labeling conventions.  Section~\ref{sec:metric-bilinear} develops the metric
+$g_{\mu\nu}$ as the bilinear form that enforces this invariance in the
+continuous shadow.
+
+
+\subsection{$g_{\mu\nu}$ as the Bilinear Form Preserving the $\epsilon$--Refinement Count}
+\label{sec:metric-bilinear}
+
+\NB{The metric $g_{\mu\nu}$ is not a geometric field on a manifold.  It is the
+continuous shadow of the rule ensuring that all admissible observers preserve
+the same count of $\epsilon$--sized refinements between neighboring events.
+The components of $g_{\mu\nu}$ do not describe a physical medium or curvature;
+they encode the invariant comparison rule required by informational
+consistency.}
+
+The interval $\tau$ defined in Section~\ref{sec:tau-invariance} expresses
+the number of $\epsilon$--refinements along an extremal segment of the
+measurement record.  Since this number must remain invariant under all
+admissible relabelings of events, there must exist a bilinear form
+$g_{\mu\nu}$ such that
 \[
-N_t = N,\qquad N_x = 0,
+\tau^{2} = g_{\mu\nu}\, dx^{\mu} dx^{\nu}
 \]
-so that
+holds for every observer.  This expression is not a postulate but the unique
+structure that enforces the preservation of $\tau$ under coordinate changes
+that respect causal order.
+
+To see this, consider two observers who assign infinitesimal labels
+$dx^{\mu}$ and $dx'^{\mu} = \Lambda^{\mu}_{\ \nu}\, dx^{\nu}$ to the same pair of
+neighboring events.  The Law of Causal Transport requires
 \[
-ds^{2} \propto N_t^{2} - N_x^{2} = N^{2}.
+\tau'^2 = \tau^2,
 \]
-
-\textbf{Observer $\mathcal{O}'$ (Moving Frame).}
-A second observer moves at constant velocity $v$ relative to
-$\mathcal{O}$.  Both observers describe the same physical interval but
-with different gauge components.  In the traditional interpretation of
-special relativity, $\mathcal{O}'$ observes time dilation and length
-contraction:
+so we must have
 \[
-N_t' \neq N_t,\qquad N_x' \neq N_x,
+g'_{\mu\nu}\, dx'^{\mu} dx'^{\nu}
+=
+g_{\mu\nu}\, dx^{\mu} dx^{\nu}.
 \]
-yet the invariant
+Substituting $dx'^{\mu}$ and requiring equality for all admissible
+transformations $\Lambda^{\mu}_{\ \nu}$ yields the transformation rule
 \[
-(N_t')^{2} - (N_x')^{2} = N^{2}
+g'_{\mu\nu}
+=
+\Lambda^{\alpha}_{\ \mu}\,
+\Lambda^{\beta}_{\ \nu}\,
+g_{\alpha\beta}.
 \]
-remains unchanged.
+Thus the metric is exactly the object that ensures agreement on the number of
+$\epsilon$--sized refinements between neighboring events, regardless of the
+coordinates used to describe them.
 
-\textbf{New View (Gauge Contraction).}
-In the informational picture developed here, the observers' clocks and
-rods are not physically distorted.  Rather, their \emph{gauges}---their
-coordinate mappings of causal distinction---are related by the Lorentz
-transformation $\Lambda^{\mu}{}_{\nu}$, which enforces invariance of the
-scalar count:
+In this informational framework, $g_{\mu\nu}$ plays a role analogous to that of
+a gauge potential: it specifies how infinitesimal refinements are compared
+locally so that the global invariant $\tau$ remains unchanged.  The metric does
+not specify “distance’’ in any geometric or physical sense; it enforces the
+equivalence of all admissible measurement conventions.
+
+Once $g_{\mu\nu}$ is introduced, the need to propagate these comparison rules
+from point to point forces a unique notion of compatibility.  This requirement
+determines the affine connection in Section~\ref{sec:connection} through the
+condition
 \[
-g'_{\mu\nu} = \Lambda^{\rho}{}_{\mu}\Lambda^{\sigma}{}_{\nu} g_{\rho\sigma}.
+\nabla_{\lambda} g_{\mu\nu} = 0,
 \]
-The Lorentz transformation thus acts as a gauge update preserving the
-invariant number of distinctions.  What appears as ``contraction'' is
-simply the compensation required to maintain consistency under
-relabelling~\cite{einstein1905,minkowski1908,weyl1929}.
+which expresses that the metric gauge is preserved under refinement and
+transport.  The next section illustrates this invariance with a concrete
+thought experiment.
 
-\textbf{Conclusion.}
-The phenomenon of Lorentz contraction therefore migrates from the
-physical measuring apparatus to the mathematical gauge itself.
-The metric $g_{\mu\nu}$ is a bookkeeping device ensuring that each
-observer's local representation yields the same invariant scalar---the
-same informational count $N$.  Spacetime kinematics thus emerge as the
-consistency rules of an informational gauge: a structure ensuring global
-agreement on what is distinguishable.
-\end{example}
+\begin{example}[Thought Experiment: Michelson--Morley as Gauge Isotropy]
+\label{sec:michelson-morley}
 
+\NB{This thought experiment does not appeal to optical physics, wave
+interference, or the existence of a medium.  It is a finite informational model
+illustrating that the metric gauge must assign the same refinement cost
+$\epsilon$ to extremal paths in all admissible directions.  No physical claims
+about light or propagation are implied.}
 
-Consider the transport of a vector field $V^{\mu}$ representing a direction
-in the space of distinguishable events.  To maintain Martin consistency,
-the change in $V^{\mu}$ along an infinitesimal displacement $dx^{\nu}$ must
-not alter any scalar quantities computed from the tensor
-$g_{\mu\nu}V^{\mu}V^{\nu}$.  The differential form of this requirement is
+Consider an observer attempting to refine two extremal segments of equal
+informational content, but aligned in different coordinate directions.  Let
+$dx^{\mu}$ and $dy^{\mu}$ denote the local labels assigned to the two
+segments.  Each segment is chosen such that its refinement requires the same
+number of $\epsilon$--increments when described in the observer's own frame.
+
+Now suppose the observer rotates their coordinate system.  After rotation, the
+new labels are $dx'^{\mu} = \Lambda^{\mu}_{\ \nu} dx^{\nu}$ and
+$dy'^{\mu} = \Lambda^{\mu}_{\ \nu} dy^{\nu}$.  The rotation
+$\Lambda^{\mu}_{\ \nu}$ preserves causal order, so it is an admissible
+transformation.  The question is whether the observer must still assign the
+same informational interval $\tau$ to both segments after the rotation.
+
+The Law of Causal Transport requires that the $\epsilon$--refinement counts for
+both segments remain invariant:
 \[
-\nabla_{\nu} g_{\mu\sigma} = 0,
-\]
-which defines the Levi–Civita connection
-$\Gamma^{\lambda}_{\ \mu\nu}$.  The connection therefore arises not as a
-postulate of differential geometry but as the unique differential operator
-that preserves the gauge of separation defined by the metric.  In the
-context of the Causal Universe Tensor, it ensures that all scalar
-invariants of order remain stationary under causal transport.
-
-\subsection{Operational Meaning}
-
-Each component $\Gamma^{\lambda}_{\ \mu\nu}$ records how the act of
-distinction must be adjusted when an observer translates a local rule of
-measurement from one event to its neighbor.  It is, in essence, the
-differential bookkeeping of consistency.  When the metric is uniform,
-$\Gamma^{\lambda}_{\ \mu\nu}=0$, and the mapping of causal neighborhoods is
-trivial: straight lines remain straight.  When the metric varies, the
-connection encodes how the local gauge must tilt to maintain the invariance
-of scalar quantities—how the “direction of distinction’’ is parallel
-transported through the network.
-
-\subsection{Parallel Transport and Martin Consistency}
-
-Parallel transport expresses Martin consistency in differential form.  A
-vector is said to be parallel transported along a curve $x^{\mu}(s)$ if it
-satisfies
-\[
-\frac{DV^{\lambda}}{Ds} = 
-\frac{dV^{\lambda}}{ds} + 
-\Gamma^{\lambda}_{\ \mu\nu}\,
-V^{\mu}\,\frac{dx^{\nu}}{ds} = 0.
-\]
-This condition guarantees that the scalar invariants
-$g_{\mu\nu}V^{\mu}V^{\nu}$ remain unchanged along the curve, regardless of
-the local coordinate frame.  The connection therefore enforces the
-\emph{covariant constancy} of the causal gauge: every observer’s
-measurements can differ, but the underlying order they describe remains
-identical.
-\begin{example}[Non-Abelian transport and curvature]
-Let $A_\mu(x)$ be a matrix-valued connection (local gauge of distinction). Parallel transport along a path $\gamma$ uses the path-ordered exponential
-\[
-U[\gamma]=\mathcal{P}\exp\!\left(\int_\gamma A_\mu\,dx^\mu\right).
-\]
-For an infinitesimal rectangle spanned by $\delta x^\mu,\delta x^\nu$,
-\[
-U[\square]=I+F_{\mu\nu}\,\delta x^\mu\delta x^\nu+O(\delta^3),\qquad
-F_{\mu\nu}=\partial_\mu A_\nu-\partial_\nu A_\mu+[A_\mu,A_\nu].
-\]
-The $[A_\mu,A_\nu]$ term \emph{is} the non-commutative residue of transporting in different orders around the loop.
-Thus, failure of local updates to commute produces a measurable scalar (via contractions of $F_{\mu\nu}$) that records global non-closure—our curvature as informational residue.
-This ties the reciprocity-preserving gauge to the field strength that appears in the continuum limit.
-\end{example}
-
-
-	\subsection{Causal Interpretation}
-
-	Physically, the rule of causal transport states that the universe updates
-	its own coordinate assignments to maintain distinguishability as
-	information propagates.  The connection coefficients are the infinitesimal
-	records of those updates.  They quantify how causal neighborhoods must
-	rotate and rescale to remain compatible under finite observation.  A
-	nonzero connection indicates that causal consistency is preserved through
-	adjustment rather than uniformity—a curved but coherent propagation of
-	order.
-
-	\begin{remark}
-	In summary, the connection $\Gamma^{\lambda}_{\ \mu\nu}$ is the rule of
-	causal transport: the unique differential relation that preserves the gauge
-	of separation under motion.  It translates the logical demand of Martin
-	consistency into a local dynamical law.  Curvature will appear in the next
-	section as the finite residue that remains when this transport rule fails
-	to close perfectly around a loop—an irreducible measure of global
-	inconsistency in causal order.
-	\end{remark}
-\begin{example}[Invariance of the Causal Interval \(ds^2\)]
-Consider two observers, $\mathcal{O}$ and $\mathcal{O}'$, who each assign
-coordinates to the same pair of infinitesimally separated events.  Their
-local labels differ by a gauge transformation of the form
-\[
-dx'^{\mu} = \Lambda^{\mu}{}_{\nu}\, dx^{\nu},
-\]
-where $\Lambda^{\mu}{}_{\nu}$ preserves the ordering of causal relations as
-required by Martin’s Axiom.  The scalar quantity
-\[
-ds^2 = g_{\mu\nu}\, dx^{\mu}\, dx^{\nu}
-\]
-represents the infinitesimal measure of distinguishability between these
-events—the local contraction of the Causal Universe Tensor with the gauge
-of separation.
-
-Under the gauge transformation, the differentials and metric transform as
-\[
-g'_{\mu\nu} = 
-\Lambda^{\alpha}{}_{\mu}\, 
-\Lambda^{\beta}{}_{\nu}\,
-g_{\alpha\beta},
+\tau_x^{2}
+=
+g_{\mu\nu}\, dx^{\mu} dx^{\nu},
 \qquad
-dx'^{\mu} = \Lambda^{\mu}{}_{\sigma}\, dx^{\sigma}.
+\tau_y^{2}
+=
+g_{\mu\nu}\, dy^{\mu} dy^{\nu}.
 \]
-Substituting these into the definition of the interval yields
+After rotation, the transformed intervals are
 \[
-ds'^2 = g'_{\mu\nu}\, dx'^{\mu}\, dx'^{\nu}
-       = g_{\alpha\beta}\, dx^{\alpha}\, dx^{\beta}
-       = ds^2.
+\tau_x'^{\,2}
+=
+g'_{\mu\nu}\, dx'^{\mu} dx'^{\nu},
+\qquad
+\tau_y'^{\,2}
+=
+g'_{\mu\nu}\, dy'^{\mu} dy'^{\nu}.
 \]
-Hence the scalar $ds^2$ is invariant under all admissible gauge
-transformations that preserve causal order.  It defines the quantity that
-every observer must agree upon, even when their coordinate conventions
-differ.
+Substituting the transformation rules for $dx'^{\mu}$, $dy'^{\mu}$, and
+$g'_{\mu\nu}$ gives
+\[
+\tau_x'^{\,2}
+=
+g_{\alpha\beta}\, dx^{\alpha} dx^{\beta}
+=
+\tau_x^{2},
+\qquad
+\tau_y'^{\,2}
+=
+g_{\alpha\beta}\, dy^{\alpha} dy^{\beta}
+=
+\tau_y^{2}.
+\]
 
-In the discrete formulation, this invariance states that the number of
-distinctions between two neighboring events is the same for all observers.
-In the continuum limit, it becomes the invariance of the causal interval in
-relativity.  Both express the same principle: the universe may bend,
-accelerate, or dilate, but the order of events—the fact that one event can
-distinguish another—remains unchanged.
+Thus the observer must continue to assign the same informational interval to
+the two extremal segments under any admissible rotation.  There is no freedom
+to deform the refinement counts directionally: doing so would imply that
+$\epsilon$--sized increments depend on orientation and would violate the
+requirement that informational refinement be globally coherent.
+
+This invariance is the informational analogue of isotropy.  It expresses that
+the metric gauge $g_{\mu\nu}$ must refine extremal paths uniformly in all
+directions: the number of $\epsilon$--increments needed to resolve a segment of
+given informational content cannot depend on the coordinate orientation.
+
+The Michelson--Morley experiment is therefore understood here not as a test of
+a physical medium, but as a finite illustration of the isotropy of the metric
+gauge.  The invariance of $\tau$ under rotations forces $g_{\mu\nu}$ to encode
+a direction--independent refinement rule.  Section~\ref{sec:connection} develops
+the compatible connection that propagates this rule under changes of frame.
 \end{example}
 
-% Placement: Part III §4.2 after “The Rule of Causal Transport” (ideal after §4.2.3 “Parallel Transport and Martin Consistency”)
-\subsubsection*{Example: Pound--Rebka Gravitational Redshift as Entropic Transport}
+\section{The Connection as Informational Bookkeeping}
+\label{sec:connection}
 
-\textbf{Statement.} Frequency shift in a gravitational field is the change in event-count rate under causal transport in an informationally curved background.
+\NB{The affine connection $\Gamma^{\lambda}_{\mu\nu}$ is not a force field or a
+physical interaction.  It is the continuous shadow of an informational rule:
+the minimal differential adjustment required to preserve the metric gauge
+$g_{\mu\nu}$ as an observer moves from one event to its neighbor.  Its role is
+purely kinematic.  The connection records how local measurement conventions
+must tilt to maintain the invariant interval $\tau$; no dynamical content or
+geometric ontology is assumed.}
 
-\textbf{Key relation (weak field).}
+The metric $g_{\mu\nu}$, introduced in Section~\ref{sec:metric}, guarantees that
+all admissible observers assign the same informational interval $\tau$ to an
+extremal displacement at a single event.  This invariance is enforced by the
+bilinear form $g_{\mu\nu}\, dx^{\mu} dx^{\nu}$, which preserves the
+$\epsilon$--refinement count under changes of coordinates.  However, the metric
+by itself does not specify how these comparison rules extend from one event to
+its neighbors.  To describe how distinguishability is maintained along a path,
+we require a differential notion of consistency.
+
+The connection $\Gamma^{\lambda}_{\mu\nu}$ provides this rule.  It specifies how
+tensor components must be adjusted when an observer translates a local
+measurement convention from one event to an infinitesimally adjacent one.  In
+particular, the connection determines the covariant derivative, which measures
+change in a way that respects the metric gauge.  Imposing that the metric
+remain invariant under such differential updates leads to the condition
+$\nabla_{\lambda} g_{\mu\nu} = 0$, known as covariant constancy of the metric.
+
+In the informational picture, this condition is the statement that the act of
+refinement may not create or destroy distinguishable structure as an observer
+moves through the network of events.  The connection is the unique differential
+bookkeeping device that satisfies this constraint.  When the metric is uniform,
+the connection vanishes and no adjustment is needed: straight paths remain
+informationally straight.  When the metric varies, a nonzero connection encodes
+how local gauges must be rotated and rescaled so that scalar quantities built
+from $g_{\mu\nu}$ remain unchanged.
+
+The remainder of this section develops the connection as the compatibility
+condition implied by covariant constancy of the metric and interprets parallel
+transport as the differential expression of Martin consistency.  In this way,
+the Law of Causal Transport acquires its full kinematic content: it is the rule
+that propagates the gauge of separation through the continuous shadow of the
+Causal Universe Tensor.
+
+
+\subsection{Covariant Constancy and the Compatibility Condition}
+\label{ec:covariant-constancy}
+
+\NB{Covariant constancy is not a physical conservation law.  It is the
+informational requirement that the metric gauge $g_{\mu\nu}$, which preserves
+the $\epsilon$--refinement count at a single event, must continue to preserve
+that count as the observer moves to a neighboring event.  The affine connection
+$\Gamma^{\lambda}_{\mu\nu}$ is therefore not introduced by assumption; it is
+forced by the requirement that informational invariants remain invariant under
+differential refinement.}
+
+The metric $g_{\mu\nu}$ ensures that all admissible observers agree on the
+informational interval $\tau$ at a point.  But as the observer moves from an
+event $x$ to a nearby event $x + dx$, the local coordinate basis changes.
+Under such a shift, the numerical components of $g_{\mu\nu}$ may appear to
+change due to the alteration in basis, even if the underlying structure of
+distinguishability remains the same.  To prevent this apparent change from
+contaminating the informational interval, the transformation of $g_{\mu\nu}$
+must be corrected by an additional adjustment term.
+
+This correction is encoded by the covariant derivative.  The condition that the
+metric gauge remain invariant under differential displacement is expressed as
 \[
-\frac{\Delta \nu}{\nu} \;\approx\; \frac{\Delta \Phi_{\text{grav}}}{c^2} \;=\; \frac{g\,h}{c^2}.
+\nabla_{\lambda} g_{\mu\nu}
+=
+\partial_{\lambda} g_{\mu\nu}
+-
+\Gamma^{\sigma}_{\mu\lambda} g_{\sigma\nu}
+-
+\Gamma^{\sigma}_{\nu\lambda} g_{\mu\sigma}
+=
+0.
 \]
-\textbf{Reciprocity framing.} Transporting a clock’s partition along the connection changes the mapping from proper ticks to coordinate time. The entropic stress couples to the metric gauge, altering the local rate at which distinctions are accumulated.
+The partial derivative $\partial_{\lambda} g_{\mu\nu}$ captures how the metric
+components vary when written in the shifted coordinate system.  The remaining
+terms subtract off this apparent variation by compensating for the tilt and
+scale of the basis vectors themselves.  The equation $\nabla_{\lambda} g_{\mu\nu} = 0$
+thus expresses the requirement that the informational interval $\tau$ remain
+unchanged under any infinitesimal update of the observational coordinates.
 
-\textbf{Operational consequence.} Redshift is parallel transport of the causal gauge: invariants are preserved, but the local counting density transforms, observed as a shift in $\nu$.
+This compatibility condition uniquely determines the connection when torsion is
+absent.  As established in Chapter~3, the spline representation of admissible
+histories carries no fourth--order freedom and is therefore torsion-free.  Under
+this constraint, the metric compatibility condition fixes the connection to be
+the Levi--Civita connection:
+\[
+\Gamma^{\lambda}_{\mu\nu}
+=
+\frac{1}{2}\,
+g^{\lambda\sigma}
+\left(
+\partial_{\mu} g_{\nu\sigma}
++
+\partial_{\nu} g_{\mu\sigma}
+-
+\partial_{\sigma} g_{\mu\nu}
+\right).
+\]
+This expression is not a postulate; it is the only operator that ensures the
+metric gauge remains intact under transport.  It is the continuous shadow of
+the discrete requirement that refinement cannot introduce or eliminate
+distinguishable structure beyond the $\epsilon$ bound.
+
+With the connection now fixed by kinematic necessity, we may interpret its role
+operationally.  The connection coefficients specify the adjustments required to
+compare tensorial quantities at neighboring events, ensuring that the
+informational interval $\tau$ and the refinement bound $\epsilon$ remain
+consistent throughout the observer’s path.  The next subsection formalizes this
+process as parallel transport.
+
+
+\subsection{Parallel Transport as Differential Martin Consistency}
+\label{sec:parallel-transport}
+
+\NB{Parallel transport is not a physical motion of a vector through space.  It
+is the informational requirement that the meaning of a direction---a rule for
+distinguishing one infinitesimal refinement from another---remain consistent as
+an observer updates coordinates from one event to the next.  In this framework,
+a “vector’’ is an instruction for refinement, and parallel transport ensures
+that such instructions are not distorted by changes in local labeling
+conventions.}
+
+The metric compatibility condition $\nabla_{\lambda} g_{\mu\nu} = 0$ determines
+how the metric must be preserved under infinitesimal displacement.  Parallel
+transport extends this requirement to all tensorial quantities, ensuring that
+any object used to encode refinements of the observational record is carried
+through the continuous shadow without introducing contradictions.
+
+Let $V^{\mu}$ represent such a refinement direction.  When an observer moves
+along a curve $x^{\mu}(s)$ in the event network, the numerical components of
+$V^{\mu}$ change because the local coordinate basis changes.  The naive
+derivative $d V^{\mu} / ds$ therefore incorporates both the intrinsic change in
+the refinement direction and the apparent change induced by the shifting
+coordinates.  To isolate the intrinsic change---the part that affects
+distinguishability---we must subtract off the bookkeeping contribution provided
+by the connection.
+
+The covariant derivative along the path is thus defined as
+\[
+\frac{D V^{\mu}}{D s}
+=
+\frac{d V^{\mu}}{d s}
++
+\Gamma^{\mu}_{\ \nu\lambda}\,
+V^{\nu}\,
+\frac{d x^{\lambda}}{d s}.
+\]
+Parallel transport requires that the intrinsic change vanish:
+\[
+\frac{D V^{\mu}}{D s}
+=
+0.
+\]
+This equation expresses the differential form of Martin consistency.  It states
+that the instruction encoded by $V^{\mu}$ must retain its informational meaning
+as the observer moves.  All coordinate-induced distortions of $V^{\mu}$ must be
+canceled by the corresponding connection terms, ensuring that the refinement
+direction does not acquire unrecorded structure.
+
+The geometric interpretation of parallel transport as preserving “straightness’’
+is replaced here by a purely informational one: parallel transport guarantees
+that refinement instructions remain compatible with the metric gauge
+$g_{\mu\nu}$ throughout the observer’s path.  Whenever the metric varies from
+event to event, the connection coefficients encode the cost of adjusting the
+observer’s basis to ensure that scalar comparisons built from $g_{\mu\nu}$ and
+$V^{\mu}$ remain invariant.
+
+In regions where $g_{\mu\nu}$ is uniform, the connection vanishes and the
+informational meaning of $V^{\mu}$ is preserved without adjustment.  Where
+$g_{\mu\nu}$ varies, nonzero connection coefficients encode the minimal
+bookkeeping needed to keep the refinement count consistent.  This adjustment is
+the kinematic origin of effects such as frequency shifts between observers in
+different informational environments, which we examine in the following
+subsection.
+
+\section{Observable Consequence: Refinement--Adjusted Transport}
+\label{sec:refinement-transport}
+
+\NB{The frequency shift examined in this section is not a postulated effect.
+It is the kinematic consequence of maintaining the invariant informational
+interval $\tau$ across regions in which the metric gauge $g_{\mu\nu}$ varies.
+No physical ontology is assumed.  The observable change in clock rates reflects
+the differential bookkeeping enforced by the connection $\Gamma^{\lambda}_{\mu\nu}$.}
+
+The previous sections established the chain of informational structure:
+the refinement bound $\epsilon$ fixes the local increment of distinguishable
+structure; the metric $g_{\mu\nu}$ expresses how these increments are compared
+between observers; and the connection $\Gamma^{\lambda}_{\mu\nu}$ preserves this
+comparison under differential displacement.  When the metric varies from one
+location to another, this preservation requires that the local rate of event
+counting---the clock frequency---adjusts so that the invariant interval remains
+consistent across observers.
+
+This section derives that adjustment and exhibits its observable consequence.
+
+\subsection{The Invariant Causal Tally}
+\label{sec:causal-tally}
+
+\NB{An atomic clock does not measure a geometric length or a physical time.
+It measures a count of distinguishable events.  The proper interval $\tau$ is
+the continuous shadow of this count, expressed in units of the refinement bound
+$\epsilon$.}
+
+Consider an observer whose worldline is described by coordinates $(t, x^{i})$.
+If the observer is at rest in their coordinate system ($dx^{i} = 0$), the
+informational interval between neighboring events satisfies
+\[
+d\tau^{2} = g_{00}(x)\, dt^{2}.
+\]
+Thus the locally measured period of the clock is
+\[
+d\tau = \sqrt{g_{00}(x)}\, dt.
+\]
+Because $\tau$ counts $\epsilon$--sized refinements, the local clock frequency
+$\nu(x)$ is inversely proportional to the size of this interval:
+\[
+\nu(x) = \frac{1}{d\tau}
+        = \frac{1}{\sqrt{g_{00}(x)}}\,\frac{1}{dt}.
+\]
+
+Two observers at rest in different metric gauges therefore experience different
+informational intervals for the same coordinate increment $dt$.  The
+relationship between their locally recorded counts is fixed entirely by the
+metric gauge.
+
+\subsection{Derivation of Frequency Adjustment}
+\label{sec:frequency-adjustment}
+
+\NB{The global parameter $t$ is not a physical time.  It is the auxiliary
+labeling parameter that all admissible observers must agree upon when their
+records are merged.  Its increments must match across observers in order for
+their $\epsilon$--counts to be reconciled.}
+
+Let observers $A$ and $B$ be stationary in regions with metric components
+$g_{00}(A)$ and $g_{00}(B)$.  Over a shared coordinate increment $\Delta t$,
+their locally recorded proper intervals are
+\[
+\Delta \tau_{A} = \sqrt{g_{00}(A)}\, \Delta t,
+\qquad
+\Delta \tau_{B} = \sqrt{g_{00}(B)}\, \Delta t.
+\]
+Since a clock’s frequency is the inverse of the proper interval it records,
+\[
+\nu_{A}
+=
+\frac{1}{\Delta \tau_{A}}
+=
+\frac{1}{\sqrt{g_{00}(A)}}\,\frac{1}{\Delta t},
+\qquad
+\nu_{B}
+=
+\frac{1}{\sqrt{g_{00}(B)}}\,\frac{1}{\Delta t}.
+\]
+
+The ratio of their observed frequencies is therefore
+\[
+\frac{\nu_{A}}{\nu_{B}}
+=
+\frac{\sqrt{g_{00}(B)}}{\sqrt{g_{00}(A)}}.
+\]
+This expression is the kinematic consequence of the Law of Causal Transport.
+When $g_{00}$ varies, the connection $\Gamma^{0}_{00}$ compensates by adjusting
+the local rate of $\epsilon$--counting so that the merged observational record
+remains consistent.  The observed frequency shift is thus the operational
+signature of nonzero connection coefficients.
+
+\section{Conclusion: The Kinematic Foundation of Geometry}
+\label{sec:kinematic-closure}
+
+\NB{This chapter derived the continuous kinematic structures---the metric
+$g_{\mu\nu}$ and the connection $\Gamma^{\lambda}_{\mu\nu}$---from the
+informational requirement that refinements remain globally consistent.  No
+forces, fields, or dynamical assumptions were introduced.}
+
+The development of this chapter followed the informational chain of emergence:
+\[
+\epsilon
+\;\longrightarrow\;
+\tau
+\;\longrightarrow\;
+g_{\mu\nu}
+\;\longrightarrow\;
+\Gamma^{\lambda}_{\mu\nu}.
+\]
+The refinement bound $\epsilon$ fixed the minimal increment of admissible
+structure.  The interval $\tau$ encoded the invariant tally of such increments.
+The metric $g_{\mu\nu}$ enforced this invariance across observers, and the
+connection $\Gamma^{\lambda}_{\mu\nu}$ preserved it under differential
+refinement.  The observable consequence of this structure is the redshift
+effect, where nonuniformity of the metric gauge requires a corresponding
+adjustment of the local $\epsilon$--counting rate.
+
+This completes the kinematic description of informational geometry.  The next
+chapter introduces the dynamic concept of curvature, defined as the obstruction
+to transporting refinement instructions consistently around a closed loop.  In
+this way, the ``Curvature of Information'' becomes the natural extension of the
+kinematic structures developed here.
+
+
 
 

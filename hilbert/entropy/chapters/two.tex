@@ -26,7 +26,7 @@ by refinement.
 This chapter formalizes that structure.  We build the algebra of
 measurement itself.  Rather than treating observations as values of
 continuous functions, we adopt the combinatorial viewpoint forced by
-the Axioms of Planck and Cantor: every admissible experimental record
+the Axioms~\ref{ax:planck} and~\ref{ax:cantor}: every admissible experimental record
 is finite or countable, and every refinement is a restriction of
 admissible outcomes.  The central object of this chapter---the
 \emph{Causal Universe Tensor}---expresses the fact that history is
@@ -83,7 +83,7 @@ The remainder of the chapter introduces the axioms, operators, and
 tensor structures that make this viewpoint precise, culminating in the
 formal definition of the causal universe tensor.
 
-\begin{example}{Statistical Process Control~\cite{shewhart1931}}
+\begin{example}[Statistical Process Control~\cite{shewhart1931}]
 \NB{Observational records have been used to understand and control complex
 processes to remarkable success.  Statistical process control
 demonstrates that measurement does not estimate a continuous parameter
@@ -438,7 +438,7 @@ global scalar representation of temporal duration. Rather, special relativity pe
 \emph{list} all events in the universe in their proper causal order. It is this ordered list that 
 we elevate to the first physical principle:
 
-\begin{axiom}[Axiom of Cantor~\cite{cantor1895,earman1974}]
+\begin{axiom}[The Axiom of Cantor~\cite{cantor1895,earman1974}]
 \label{ax:cantor}
 \emph{[Events are Ordered and Countable]}
 The only invariant agreement in time guaranteed between two observers is
@@ -740,7 +740,7 @@ by a finite tensor of interactions---local updates to a global state---that toge
 continuity only through cancellation across countable events~\cite{bombelli1987, sorkin2003}.
 
 \begin{example}[Boosting Velocity~\cite{einstein1905}]
-\label{ref:boosting-velocity}
+\label{te:boosting-velocity}
 \NB{The Lorentz equations are presented here only as an illustrative model
 of the local causal structure.  They are not derived from the axioms in
 this chapter, and no subsequent argument depends on them.}
@@ -1252,7 +1252,7 @@ contradict the new distinction.
 
 We now present the \emph{Causal Universe Tensor}.
 
-\begin{proposition}[Causal Universe Tensor]
+\begin{proposition}[The Existence of a Causal Universe Tensor]
 \label{prop:universe-tensor}
 Let $(E,\prec)$ be a locally finite partially ordered set of events, and let
 $\Psi : E \to \mathcal{T}(V)$ be the measurable embedding.  For each event
@@ -1304,7 +1304,7 @@ order-insensitive accumulation of factors.
 \end{enumerate}
 \end{proposition}
 
-\begin{proofsketch}
+\begin{proofsketch}{universe-tensor}
 (1) By definition $\mathbf{F}(e)=\Psi(\hat{R}(e))$, so the left update is the
 representation of the discrete restriction; this is $R\circ\Psi=\Psi\circ\hat{R}$
 on ${\rm im}\,\Psi$. (2) Associativity of multiplication in $\mathcal{T}(V)$
@@ -1627,7 +1627,7 @@ is the continuum limit of Kolmogorov minimality.
 \subsection{Inadmissibility of Unobserved Structure}
 
 Let $E=\{e_0\prec e_1\prec\cdots\prec e_n\}$ be the finite set of recorded
-events produced by a measurement process. By Definition~\ref(def:measurement),
+events produced by a measurement process. By Definition~\ref{def:measurement},
 each event corresponds to a distinguishable update of state: a change that
 crossed a detection threshold and became causally recorded.
 

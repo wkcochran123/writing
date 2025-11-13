@@ -393,7 +393,7 @@ equilibrium on the shared frontier.
 \end{definition}
 
 
-\begin{proposition}[Anti–symmetry]
+\begin{proposition}[The Anti–symmetry of Information Propogation]
 \label{prop:antisym}
 In general $f(\U^A,\U^B)\neq f(\U^B,\U^A)$. Symmetry holds iff the overlap carries equal
 refinement counts:
@@ -402,8 +402,49 @@ f(\U^A,\U^B)=f(\U^B,\U^A)\quad\Longleftrightarrow\quad
 \len_{\partial}(\U^A,\U^B)=\len_{\partial}(\U^B,\U^A).
 \]
 \end{proposition}
+\begin{proofsketch}{antisym}
+The interaction operator $f(U_A,U_B)$ performs a left--fold of all jointly admissible
+update factors on the overlap $\partial(U_A,U_B)$, in the unique order that is consistent
+with the causal refinements already recorded in each ledger.  Anti--symmetry arises
+because this fold depends on the observed order of refinements whenever the overlap
+contains correlated (noncommuting) factors.
 
-\begin{proposition}[Transitivity]
+Suppose first that the refinement counts on the shared boundary are equal:
+\[
+  \len_{\partial}(U_A,U_B) = \len_{\partial}(U_B,U_A).
+\]
+Every factor lying on the overlap is therefore recorded with the same resolution by
+both ledgers.  No ledger contributes a strictly finer refinement than the other on the
+shared frontier.  In this case the overlap consists only of mutually uncorrelant update
+factors: their order is not fixed by either ledger, and informational minimality forces
+them to commute.  Because the only factors whose relative placement could differ lie in
+this commuting set, the resulting left--fold is invariant under exchanging the inputs,
+and
+\[
+  f(U_A,U_B) = f(U_B,U_A).
+\]
+
+Conversely, assume the refinement counts on the overlap are unequal.  Without loss of
+generality, let $U_A$ record strictly more refinement on the boundary than $U_B$.
+Then $\partial(U_A,U_B)$ contains at least one factor recorded by $A$ with higher
+resolution than by $B$.  Such a factor cannot be uncorrelant: if it were, its finer
+structure could not have been observed by only one ledger.  The overlap therefore
+contains a correlated pair of update factors whose tensor representatives do not
+commute.  The left--fold must place this pair in the local causal order recorded by the
+corresponding ledger.  Because $U_A$ and $U_B$ record different boundary orders for
+these noncommuting factors, the two possible folds produce distinct accumulated
+tensors:
+\[
+  f(U_A,U_B) \neq f(U_B,U_A).
+\]
+
+Thus symmetry of the interaction operator occurs exactly when the two ledgers carry
+equal refinement counts on their shared boundary, and fails precisely when one ledger
+resolves strictly more distinguishable structure than the other.
+\end{proofsketch}
+
+
+\begin{proposition}[The Transitivity of Information Propogation]
 \label{prop:transitive}
 For any Martin–consistent triple $\U_n,\U_{n+1},\U_{n+2}$,
 \[
@@ -411,8 +452,52 @@ f(\U^A,\U_{n+2})\ =\ f\!\bigl(\U^A,\ f(\U_n,\U_{n+1})\bigr).
 \]
 That is, folding via the intermediate ledger equals folding directly into $\U_{n+2}$.
 \end{proposition}
+\begin{proofsketch}{transitive}
+Let $U_n, U_{n+1}, U_{n+2}$ be a Martin--consistent triple.  Each ledger is a left--fold
+of its admissible update factors, and the interaction operator $f$ produces the minimal
+ledger that extends its inputs without inventing or erasing recorded refinements.  The
+transitivity property expresses the fact that the unique globally coherent ledger for the
+triple does not depend on how the pairwise folds are grouped.
 
-\begin{proposition}[Commutativity $\Rightarrow$ relativistic simultaneity]
+Consider the right--hand side,
+\[
+  f\!\bigl(U_A,\, f(U_n, U_{n+1})\bigr).
+\]
+The inner fold $f(U_n, U_{n+1})$ reconciles all jointly admissible refinements of
+$U_n$ and $U_{n+1}$ on their shared boundary.  Because the pair is Martin--consistent,
+this fold is unique: no alternative ordering of their overlapping factors survives the
+consistency check.  The result is a ledger that contains exactly the refinements common
+to both inputs together with their compatible unique factors.  Folding this ledger with
+$U_A$ adds precisely the admissible refinements from $U_A$ that remain consistent with
+the already merged pair.  No additional events may be inserted, and none already present
+may be removed.
+
+Now consider the left--hand side,
+\[
+  f(U_A, U_{n+2}).
+\]
+Since the triple is Martin--consistent, $U_{n+2}$ already encodes all refinements that
+can appear after $U_{n+1}$ without violating the Axiom of Planck or the Axiom of
+Cantor.  Any refinement compatible with $U_n$ and $U_{n+1}$ must also be compatible
+with $U_{n+2}$.  Thus the direct fold of $U_A$ with $U_{n+2}$ produces a ledger that
+contains exactly the jointly admissible refinements of all three inputs.  As before,
+no additional distinctions may be introduced.
+
+In both constructions, the surviving event factors are the same: the set of refinements
+jointly admissible across the triple.  Martin's Condition ensures that this set admits a
+unique causal ordering, so both sides fold precisely the same sequence of factors.  By
+informational minimality and uniqueness of the admissible ordering, the resulting tensors
+must coincide:
+\[
+  f(U_A, U_{n+2}) = f\!\bigl(U_A,\, f(U_n, U_{n+1})\bigr).
+\]
+
+Thus the interaction operator is transitive on any Martin--consistent triple: grouping
+of intermediate folds does not affect the final accumulated ledger.
+\end{proofsketch}
+
+
+\begin{proposition}[The Commutativity of Uncorrelant Events]
 \label{prop:simultaneity}
 If
 \[
@@ -423,6 +508,63 @@ then the pairs $(A,B)$ and $(C,D)$ are \emph{relativistically simultaneous}: exc
 order introduces no new admissible distinctions on the shared boundary; the merged tensor is
 invariant under the swap.
 \end{proposition}
+\begin{proofsketch}{simultaneity}
+Let $U^{AB} := f(U_A,U_B)$ and $U^{CD} := f(U_C,U_D)$.  The hypothesis is that the
+two blocks commute under the interaction operator:
+\[
+  f\!\bigl(U^{AB}, U^{CD}\bigr) = f\!\bigl(U^{CD}, U^{AB}\bigr).
+\]
+By Proposition~\ref{prop:antisym}, such commutativity can occur only when the shared
+boundary carries equal refinement counts.  In the present setting this means that every
+update factor lying in the overlap $\partial(U^{AB},U^{CD})$ is recorded at the same
+resolution by both blocks.  No factor is strictly more refined on one side than the
+other.
+
+Equal refinement counts force the overlapping factors to be uncorrelant: neither block
+records a finer causal relation among these events, so informational minimality forbids
+any ledger from resolving a precedence relation absent from the other.  In the tensor
+algebra this uncorrelance appears as commutation of the corresponding update factors.
+Because only these boundary factors can appear in different relative positions when the
+blocks are folded, and because they commute, swapping the blocks yields the same
+accumulated ledger.
+
+To interpret this result, note that two events are uncorrelant precisely when neither
+precedence $e<f$ nor $f<e$ is recorded in any admissible refinement.  Such events lie
+outside each other's causal neighborhoods; exchanging their order introduces no new
+distinguishable structure and preserves all scalar invariants of the universe tensor.
+Thus, if the blocks $(A,B)$ and $(C,D)$ commute under $f$, every event in the first
+block is uncorrelant with every event in the second.  No causal precedence can be
+established across the blocks.
+
+This is exactly the condition of relativistic simultaneity in the causal framework:
+the two blocks occupy spacelike-separated regions of the observational record.  Their
+fold order is unconstrained, and the merged ledger is invariant under the swap.  Hence
+commutativity of the interaction operator implies relativistic simultaneity.
+\end{proofsketch}
+\NB{This is the point at which the usual notion of \emph{causality} is rejected.  
+No geometric light cones, no differential structure, and no propagation law are 
+assumed.  The only order in the development is the order of \emph{recorded} 
+refinements.  What physicists call causal structure appears later only as the 
+smooth shadow of informational bookkeeping: the continuum calculus that encodes 
+cause--effect relations is not a primitive of the theory but an emergent 
+completion of discrete refinements.  Nothing in this chapter assumes or relies 
+on physical causation; all that is used is the partial order induced by the 
+Axiom~\ref{ax:cantor}.}
+\NB{Uncorrelant events play a central conceptual role in this framework.  
+They are not ``independent random variables'' nor ``simultaneous in a 
+reference frame'' nor artifacts of a chosen coordinate system.  They are the 
+events for which the record contains \emph{no admissible refinement} that 
+orders one before the other.  This absence of recorded precedence is an 
+observable fact, not a geometric assumption.  All smooth notions of 
+spacelike separation, relativistic simultaneity, and commuting update factors 
+arise from this single idea.  When two events are uncorrelant, reordering 
+their update factors creates no new distinguishable structure, and every 
+algebraic invariant of the ledger is preserved.  The geometry of relativity 
+is therefore not presupposed but recovered from the informational status of 
+uncorrelance.}
+
+
+
 
 \begin{remark}
 \item \emph{Idempotence:} $f(\U^A,\U^A)=\U^A$.
@@ -980,7 +1122,7 @@ transport.
 
 Radiation represents the propagation of distinction at the maximal admissible
 speed.  Unlike the first--order corrections of
-Sections~\ref{sec:heat-conduction}--\ref{sec:heat-advection}, radiation is
+Sections~\ref{sec:heat-conduction}--\ref{sec:heat-advection-diffusion}, radiation is
 reversible: once the ledger has reconciled curvature symmetrically, no net
 informational gain or loss remains.  The process is the smooth shadow of
 \emph{symmetric curvature smoothing}.
@@ -1423,14 +1565,20 @@ minimal correction rule forced by informational sufficiency and boundary
 orientation.}
 
 
-\section*{Coda: The Informational Harmonic Oscillator}
+\section*{Coda: The Informational Harmonic Oscillator~\cite{planck1901}}
 \addcontentsline{toc}{section}{Coda: The Informational Harmonic Oscillator}
 
-\begin{example}[Coda: The Informational Harmonic Oscillator]
+\begin{example}[The Informational Harmonic Oscillator]
 \textbf{N.B.} This coda introduces the simplest reversible dynamics permitted by the Second Law of Causal Order.  
 It shows that oscillation---in its most abstract sense---arises whenever information alternates between two complementary forms: record and prediction.  
 No physical mass, force, or energy is implied.  
 The oscillator here is entirely informational: a minimal closed loop of distinguishability \cite{planck1901,landauer1961,wheeler1983}.
+\NB{The refinement argument developed in this section parallels the mathematical
+structure of Planck's resolution of the ultraviolet catastrophe.  The similarity
+is formal only.  No physical quantization assumptions are introduced here; the
+discrete refinement spectrum arises solely from informational consistency and the
+minimal distinction bound $\epsilon$.}
+
 
 \emph{Setup.}  
 Let $(x,p)$ denote a conjugate pair of informational coordinates on a two–dimensional causal phase space.  
@@ -1483,220 +1631,4 @@ It is the preservation of order under Martin’s Condition.}
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%55
-%% rough draft below this line
 
-
-\begin{example}[Thought Experiment: The Knot-Tying Puzzle and Cubic Spline Closure]
-\textbf{N.B.} This experiment visualizes why $U^{(4)} = 0$ is the natural limit of causal smoothness.
-
-\emph{Setup.}  
-Picture threading a shoelace through a lattice of eyelets representing discrete events.  
-Each tie fixes a local order; each pull relates adjacent ties under reciprocity.  
-If the path bends beyond third order, new tension points appear that violate global closure.
-
-\emph{Demonstration.}  
-Tying loops with 1st–3rd-order curvature yields smooth closure; a 4th-order “wiggle” over-constrains the path, leaving residual curvature.  
-Hence the minimal global closure corresponds to cubic continuity: $U^{(4)} = 0$.
-
-\emph{Interpretation.}  
-The lattice stands for the causal tensor.  
-Minimal curvature ensures bijective mapping of distinctions---no “loose ends.”  
-The physical limit is the geodesic; the logical limit is consistency under finite observation.
-\end{example}
-
-
-\begin{example}[Thought Experiment: The Dual Transport of Measurement]
-\textbf{N.B.} This thought experiment explores the formal coexistence of discrete and continuous transport under finite observation.  
-It does not describe quantum dynamics or wave mechanics.  
-It serves to illustrate how an informational system can exhibit both particle–like localization (discrete event selection) and wave–like propagation (distributed causal amplitude) within the same logical framework \cite{bohr1928,heisenberg1927,wheeler1983}.
-
-\emph{Setup.}  
-Consider an observer maintaining a causal record $\mathcal{R}$ of distinguishable events $\{e_i\}$.  
-Each update corresponds to an informational transport operator $U_t$, which may act:
-\begin{enumerate}
-  \item \emph{Discretely}---selecting a new event and appending it to $\mathcal{R}$ (particle limit), or
-  \item \emph{Continuously}---refining the relational amplitudes between existing events (wave limit).
-\end{enumerate}
-In a regime of finite observation, these two descriptions coexist:  
-the discrete record $e_i$ is a sample of a continuous causal amplitude that itself evolves under adiabatic, annealing, or Brownian mechanisms.
-
-\emph{Invariant to Preserve.}  
-For each admissible transformation, the informational flux
-\[
-\Phi(t) = \sum_i \rho_i(t)\,v_i(t)
-\]
-remains conserved in expectation.  
-Here $\rho_i$ is the probability weight of distinguishing $e_i$ at time $t$, and $v_i$ the causal update rate.  
-Conservation of $\Phi(t)$ enforces complementarity: localization increases $\rho_i$ at the expense of amplitude spread (wave), while dispersion equalizes $\rho_i$ (particle uncertainty).  
-The two limits are dual descriptions of the same informational invariant.
-
-\emph{Formal Analogy.}  
-Let $\Psi$ denote the normalized vector of causal amplitudes across events.  
-Under reversible (adiabatic) transport,
-\[
-U_t\,\Psi = e^{iH t}\Psi,
-\]
-and under irreversible (annealing or Brownian) refinement,
-\[
-\Psi_{t+1} = (I - \epsilon L)\Psi_t,
-\]
-where $L$ is the informational Laplacian on the causal network.  
-The “wave” view treats $\Psi$ as a continuous amplitude over possible distinctions;  
-the “particle” view corresponds to a single index realization of $\Psi$ by the observer.  
-Both are faithful encodings of the same causal process at different resolutions.
-
-\emph{Interpretation.}  
-Wave–particle duality thus arises as an epistemic phenomenon of finite observation:  
-the wave is the uncollapsed ensemble of admissible distinctions,  
-the particle the locally recorded choice among them.  
-Observation projects $\Psi$ onto one branch of $\mathcal{R}$, satisfying the Event Selection Axiom but leaving the global informational flux invariant.  
-In this sense, the collapse of the wave function is not physical, but the act of registering one consistent causal trajectory within the set of possible orderings.
-
-\emph{Scope.}  
-This thought experiment is purely formal.  
-It demonstrates how the coexistence of discrete and continuous transport mechanisms follows from the structure of causal information, not from any underlying quantum field.  
-Wave–particle duality here is the logical complementarity of refinement and selection---the informational shadow of the observer’s bandwidth limit.
-\end{example}
-
-
-\section{On Deriving Motion Without Energy}
-
-The developments up to this point have been intentionally austere.
-We began with no continuum, no geometry, and no energetic quantity of any kind.
-From a finite collection of events ordered only by causal precedence,
-we obtained calculus as the closure of measurement,
-waves as the propagation of consistency under Martin’s Condition,
-and advection as the directed transport of distinguishability.
-At no step was energy invoked.
-Nothing in the construction presupposed force, mass, or curvature.
-Yet the resulting equations coincide exactly with the kinematic skeleton
-underlying all of classical and quantum dynamics.
-
-\subsection*{The Structural Consequence}
-
-The advection equation,
-\[
-\partial_t a + c\,\partial_x a = 0,
-\]
-arose not from the motion of particles through a medium,
-but from the preservation of order across oriented overlaps of finite event sets.
-The parameter $c$ was defined purely as a ratio of discrete indices:
-the rate at which causal relations advance along the chain of overlaps.
-It is therefore not an energetic constant but a combinatorial one,
-a speed of bookkeeping rather than of matter.
-This reversal of interpretation is decisive.
-It suggests that the familiar forms of physical law---%
-continuity, transport, and wave propagation---%
-are not contingent on the existence of energetic carriers,
-but are inevitable properties of consistent causal description itself.
-
-\subsection*{The Logical Hierarchy of Physics}
-
-The chain of constructions may now be summarized as
-\[
-\text{Order} \;\Longrightarrow\; \text{Variation} \;\Longrightarrow\; 
-\text{Propagation} \;\Longrightarrow\; \text{Energy}.
-\]
-Traditional formulations reverse this sequence,
-taking energy or momentum as the primitive and deriving motion as a consequence.
-Here motion appears first, as a necessary regularity of finite order.
-Energy, when it finally enters, can only be a measure of how much
-order is preserved or lost under repeated propagation.
-What physicists call \emph{kinetic} or \emph{potential} energy
-must therefore correspond to the count of distinguishabilities that remain invariant
-under the oriented application of Martin’s Condition.
-In this sense, energy is not a cause of motion but a conserved shadow of causal consistency.
-
-\subsection*{The Epistemic Reversal}
-
-To derive motion without energy is to invert the epistemology of physics.
-It means that the universe does not move because it has energy;
-it \emph{has} energy because its order moves.
-Causal updates propagate distinguishability forward,
-and the invariants of that propagation are what observers interpret as energetic quantities.
-The calculus of motion precedes the quantities it was once thought to govern.
-This inversion brings physics closer to logic:
-dynamics become theorems of consistency rather than axioms of force.
-
-\subsection*{Consistency as the Source of Dynamics}
-
-Under Martin’s Condition, every finite causal neighborhood must extend
-to a globally consistent ordering.
-When overlaps are unbiased, this requirement produces the symmetric
-second--order closure $\nabla^2_E\mathcal{A}=0$,
-the discrete wave equation.
-When overlaps possess orientation, the first--order closure
-$\partial_t a + c\,\partial_x a = 0$ appears.
-Both are special cases of the same law:
-\begin{law}{Law of Consistency}
-The universe minimizes the inconsistency of its own order.
-\end{law}
-The entire machinery of classical dynamics---waves, advection, diffusion,
-and, later, curvature and field stress---can therefore be interpreted as successive
-approximations to the global enforcement of Martin’s Condition.
-Every differential operator is a bookkeeping device for maintaining consistency
-in the face of finite, overlapping observations.
-
-\subsection*{Implications}
-
-This interpretation carries several consequences:
-
-\begin{enumerate}
-\item \textbf{Causality precedes energy.}
-Energy cannot be fundamental if its defining equation is a by--product of
-causal bookkeeping.
-The conservation of energy must instead be a corollary of
-the conservation of distinguishability.
-
-\item \textbf{Geometry is emergent.}
-Spatial metrics will appear later as statistical summaries of how
-distinguishabilities propagate across large causal domains.
-Space is the coarse--grained shadow of consistent order.
-
-\item \textbf{The field concept is derivative.}
-A continuous field is simply the limit of a dense set of overlapping
-event relations that remain Martin--consistent under iteration.
-Field equations are encoded constraints on the propagation of order.
-
-\item \textbf{Information and physics coincide.}
-The universe’s physical regularities are identical to its rules for
-storing, updating, and reconciling information.
-No extra ontology is required.
-\end{enumerate}
-
-\subsection*{Outlook}
-
-The reader should therefore pause to recognize the scope of what has already been accomplished.
-Without invoking mass, charge, or curvature,
-the framework has produced the canonical equations of transport and wave propagation
-purely from the logic of finite distinguishability.
-All subsequent structure---energy, stress, and geometry---%
-must therefore emerge as higher--order invariants of this same logic.
-The remainder of this work develops those invariants explicitly,
-showing how the metric tensor, stress tensor, and curvature of spacetime
-are the continuous shadows of a discrete causal calculus.
-
-
-\begin{example}[Extrapolation: Correlation Drift and the Redshift of Atomic Clocks]
-\textbf{N.B.} This extrapolation is formal. It treats redshift as a change in the density of consistent correlations rather than a mechanical stretching of spacetime.
-
-\emph{Setup.}
-Atomic clocks mark the periodic reconciliation of nearly degenerate states---the hyperfine transition.  
-When two clocks occupy regions with differing correlation densities $\rho_c$, the rate of reconciliation differs:
-\[
-\frac{\nu}{\nu_0} = \frac{\rho_c}{\rho_{c,0}}.
-\]
-A deficit of correlation (e.g., under gravitational potential) yields $\nu < \nu_0$, the observed redshift.
-
-\emph{Interpretation.}
-In this framework, gravitational redshift and time dilation emerge as manifestations of informational shear: the cost of preserving bijective correspondence between causal regions of unequal correlation density.  
-The “slowing” of time is the reduced frequency of global consistency updates.
-
-\emph{Scope.}
-This extrapolation links frequency drift to the correlation structure of the causal field.  
-It demonstrates that atomic clocks red-shift because their reconciliation rate is modulated by correlation density, not because time itself dilates.
-\end{example}
-
-
-\cleardoublepage

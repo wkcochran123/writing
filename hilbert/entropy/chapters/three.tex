@@ -345,7 +345,7 @@ new observable events and are therefore inadmissible.  In the dense limit,
 the discrete extremal coincides with the classical Euler--Lagrange closure.
 This structure is summarized in the following proposition.
 
-\begin{proposition}
+\begin{proposition}[The Spline Condition of Information]
 \label{prop:fourth-derivative}
 Let $\psi$ be an admissible configuration with smooth closure $\Psi$.  If no
 admissible refinement reduces the informational measure $\mathcal{L}$, then
@@ -355,7 +355,7 @@ $\Psi$ is $C^{2}$ and satisfies
 \end{equation}
 \end{proposition}
 
-\begin{proof}[Proof Sketch]
+\begin{proofsketch}{fourth-derivative}
 Between anchors, $\Psi$ must be polynomial, since any additional inflection
 would imply unrecorded structure.  Polynomials of degree greater than three
 contain latent turning points and are therefore excluded.  Hence each segment
@@ -366,7 +366,7 @@ on every shrinking interval.  In the dense limit that interval has zero
 measure, so $\Psi'''$ is constant everywhere.  A constant third derivative
 implies $\Psi^{(4)} = 0$.  Thus the smooth closure of any informationally
 extremal configuration satisfies the Euler--Lagrange condition.
-\end{proof}
+\end{proofsketch}
 
 Proposition~\ref{prop:fourth-derivative} shows that the Euler--Lagrange
 equation is not postulated.  It is the continuous shadow of discrete
@@ -713,19 +713,20 @@ quantity to vary from interval to interval only when the variation is itself
 detectable as a recorded event.  Absent such detection, $\Psi'''$ is the sole
 unconstrained degree of freedom.
 
-\begin{proposition}
+\begin{proposition}[The Free Parameter of Information]
+\label{prop:free-parameter}
 The smooth completion $\Psi$ contains exactly one free parameter: the global
 scale of its third derivative $\Psi'''$.  All lower--order coefficients are
 fixed by anchor data and continuity constraints.
 \end{proposition}
 
-\begin{proof}[Proof Sketch]
+\begin{proofsketch}{free-parameter}
 Cubic structure follows from $\Psi^{(4)}=0$.  Values and derivatives up to
 order two are fixed by $\mathcal{C}^{2}$ boundary matching; any jump would be
 observable.  Hence the only quantity not determined by anchor data is the
 constant third derivative on each interval, which is governed by $a_3$.  No
 other freedom remains.
-\end{proof}
+\end{proofsketch}
 
 \subsection{Physical Interpretation}
 
