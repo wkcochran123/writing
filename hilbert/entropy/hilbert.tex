@@ -1,9 +1,6 @@
 \documentclass[12pt,oneside]{book}
 \usepackage{amsthm,amssymb,amsmath,mathtools,setspace,thmtools,titling,tocloft}
-\usepackage{tocloft}
 
-% remove extra vertical space before chapters in ToC
-\setlength{\cftbeforechapskip}{0pt}
 
 
 \include{macros}
@@ -43,10 +40,10 @@
 \onehalfspacing
 \include{front/abstract}
 \include{front/toc}
-\tableofcontents
 \include{front/roadmap}
 \include{front/nb}
 \include{front/harm}
+\tableofcontents
 
 \mainmatter
 \include{chapters/one}

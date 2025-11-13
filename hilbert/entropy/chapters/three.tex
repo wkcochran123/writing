@@ -39,7 +39,7 @@ Euler--Lagrange equations familiar from classical mechanics and field theory.
 Dynamics are not imposed at the outset; they emerge as the limit in which
 refinement ceases to yield new information.
 
-\begin{example}{Euler--Lagrange as Minimizing Variation}
+\begin{example}[Minimizing Variations~\cite{courant1953}]
 \NB{For a comprehensive treatment of the calculus of variations, see Brenner and Scott~\cite{brenner2008}
 and Courant and Hilbert~\cite{courant1953}.}
 
@@ -105,7 +105,11 @@ implies
 \[
 f_x(t,x,\dot{x}) - \frac{d}{dt}f_{\dot{x}}(t,x,\dot{x}) = 0,
 \]
-for all $t\in(a,b)$. This is the Euler--Lagrange equation.
+for all $t\in(a,b)$. This is the Euler--Lagrange equation, more commonly
+represented as
+\begin{equation}
+\frac{\partial f}{\partial x} = \frac{d}{dt}\frac{\partial f}{\partial\dot{x}}.
+\end{equation}
 
 This derivation demonstrates that the Euler--Lagrange equation selects the
 trajectory with no first-order change under admissible perturbations. No
@@ -552,7 +556,7 @@ infinitesimal increments or geometric primitives.  The classical paradox of
 the fluxion may now be revisited in this light.
 
 
-\begin{example}[Newton's Ghost and the Fluxion Paradox]
+\begin{example}[Fluxions~\cite{berkeley1734,newton1687}]
 \label{te:newtonian-ghost}
 
 \NB{The classical paradox of the fluxion treats an infinitesimal $\mathrm{d}t$

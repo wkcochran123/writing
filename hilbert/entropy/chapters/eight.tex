@@ -1,8 +1,9 @@
-\chapter{The Second Law of Causal Order}
+\chapter{The Monotonicity of Entropy}
 
 \section{Statement of the Law}
 
-\begin{theorem}[Monotonicity of Causal Entropy]
+\begin{proposition}[Monotonicity of Causal Entropy]
+\label{prop:monotone}
 For any sequence of Martin–consistent causal sets
 \[
 \mathcal{C}_1 \subseteq \mathcal{C}_2 \subseteq \cdots,
@@ -16,9 +17,9 @@ satisfy
 \Delta S_n \equiv S[\mathcal{C}_{n+1}] - S[\mathcal{C}_n] \ge 0,
 \]
 with equality only for informationally complete partitions.
-\end{theorem}
+\end{proposition}
 
-\begin{proof}
+\begin{proofsketch}{monotone}
 Each causal refinement $\mathcal{C}_{n}\!\to\!\mathcal{C}_{n+1}$ corresponds to an enlargement of the observer's partition of distinguishable events.
 By the Axiom of Finite Observation, refinement cannot reduce the set of admissible micro–orderings:
 \[
@@ -26,9 +27,9 @@ By the Axiom of Finite Observation, refinement cannot reduce the set of admissib
 \]
 Taking logarithms gives $S[\mathcal{C}_{n+1}] \ge S[\mathcal{C}_{n}]$.
 The inequality is strict whenever the refinement exposes previously indistinguishable configurations.
-\end{proof}
+\end{proofsketch}
 
-\begin{example}[Thought Experiment: The Library Catalog and the Arrow of Distinction]
+\begin{example}[The Library Catalog and the Arrow of Distinction]
 \textbf{N.B.} This experiment illustrates Theorem 1 as a theorem of causal order, not a postulate of thermodynamics.  
 It shows how monotonic distinguishability ($\Delta S \ge 0$) arises naturally from the structure of consistent extension.
 
@@ -122,7 +123,8 @@ Hence $\Delta S > 0$ corresponds to a net positive contribution of informational
 
 \section{Conclusion}
 
-The Second Law of Causal Order may be stated succinctly:
+\begin{law}[The Law of Causal Order]
+The Law of Causal Order may be stated succinctly:
 \[
 \boxed{\Delta S \ge 0 \quad \text{for every Martin–consistent refinement of causal structure.}}
 \]
@@ -130,8 +132,9 @@ Entropy is not a measure of disorder but of latent order yet unresolved.
 Every act of measurement refines the universe’s partition,
 and each refinement enlarges the count of admissible configurations.
 The universe evolves by distinguishing itself.
+\end{law}
 
-\section{Epiloge}
+\section{\emph{Quod erat demonstrandem}}
 
 We began with the observation that every act of physics is an act of
 distinction: to measure is to separate one possibility from another.
