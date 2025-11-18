@@ -1,4 +1,4 @@
-\chapter{The Conservation of Symmetry: From Noether to Mass}
+\chapter{Informational Strain}
 \label{chap:mass}
 
 The gauge of light completes the classical description of the universe: it
@@ -134,6 +134,52 @@ sum over self-consistent paths, each differing from the others by integral
 multiples of the minimal action $\hbar$.  Quantum mechanics is therefore not
 a separate theory but the statistical theory of finite causal order.
 \end{remark}
+
+\section{The Law of Combinatorial Symmetry}
+\label{sec:combinatorial-symmetry}
+
+The informational framework developed thus far admits no geometric structure
+and assumes no group-theoretic symmetries. Nevertheless, when two finite
+records are mutually compatible, their joint refinement exhibits a canonical
+structure: the set of distinguishable events in one record can be placed in
+bijection with the distinguishable events of the other in a way that preserves
+refinement, ordering, and consistency. This bijection is unique and is
+determined entirely by the combinatorial structure of the records.
+
+\begin{law}[The Law of Combinatorial Symmetry]
+\label{law:combinatorial-symmetry}
+Let $\psi$ and $\phi$ be two finite, non-contradictory records that admit a
+globally coherent merge under the Axiom of Event Selection. Then there exists
+a unique bijection
+\[
+\chi : \mathrm{Ref}(\psi) \to \mathrm{Ref}(\phi)
+\]
+with the following properties:
+
+(1) $\chi$ preserves distinguishability: $e_1 \neq e_2$ in $\psi$ if and only
+if $\chi(e_1) \neq \chi(e_2)$ in $\phi$.
+
+(2) $\chi$ preserves refinement order: if $e_1 \prec e_2$ in $\psi$ then
+$\chi(e_1) \prec \chi(e_2)$ in $\phi$.
+
+(3) $\chi$ preserves admissibility: for every admissible refinement $e'$ of an
+event $e$ in $\psi$, the event $\chi(e')$ is an admissible refinement of
+$\chi(e)$ in $\phi$.
+
+(4) Any other bijection between $\mathrm{Ref}(\psi)$ and $\mathrm{Ref}(\phi)$
+violates refinement compatibility or introduces distinguishable structure
+inconsistent with the axioms.
+
+Thus all observable symmetries arise from the unique combinatorial structure
+of refinement: symmetry is not geometric or algebraic but a bijection on the
+poset of distinguishable events.
+\end{law}
+
+\NB{This law identifies symmetry as an informational phenomenon. No metric,
+manifold, or group structure is assumed or required. Apparent continuous
+symmetries emerge only as the limiting shadows of these combinatorial
+bijections under refinement.}
+
 
 \section{The Application of Noether}
 \label{sec:application-noether}

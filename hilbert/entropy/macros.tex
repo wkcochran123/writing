@@ -45,6 +45,7 @@
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{example}{Thought Experiment}[section]
+\newtheorem{phenomenon}{Phenomenon}[section]
 \makeatletter
 \def\@noftheorem#1#2{}
 \makeatother
@@ -119,4 +120,14 @@
 \makeatletter
 \renewcommand{\l@chapter}{\@dottedtocline{0}{0em}{1.5em}}
 \makeatother
+
+% Usage: \PropositionSection{universe-tensor}
+% Produces:
+%   \section{Proposition~\ref{prop:universe-tensor}}
+%   \label{app:universe-tensor}
+%
+\newcommand{\propproof}[1]{%
+\section{Proposition~\ref{prop:#1}}%
+\label{app:#1}%
+}
 

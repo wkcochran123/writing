@@ -1,4 +1,4 @@
-\chapter{Motion}
+\chapter{Informational Motion}
 
 Motion requires a mechanism for comparing one record of distinction with another. In the
 causal framework, that mechanism is the clock: a source of admissible refinements that
@@ -8,7 +8,7 @@ that this ordering is invariant under refinement. Its utility is purely ordinal.
 clock is an atomic transition, a quartz oscillator, a binary counter, or a list of threshold
 crossings, its output is the same kind of object: a finite record of distinguishable ticks.
 
-\begin{definition}[Clock (non-standard)]
+\begin{definition}[Clock]
 \label{def:clock}
 \NB{This is a \emph{formal} definition of a clock. No physical assumption is made that
 clocks exist, or that any particular mechanism generates the ticks. In this framework, a
@@ -47,7 +47,7 @@ differential equations, but from the minimal continuous shadow consistent with t
 countable tick sequences. Motion is what ordered distinction looks like when refinement
 tends to the smooth limit.
 
-\begin{example}[Laser Tracking and Informational Dilation]
+\begin{example}[LiDAR~\cite{christian2013}]
 \label{te:laser-tracking}
 Two identical observers, A and B, begin co-located with synchronized clocks. Observer B
 embarks on a journey involving periods of acceleration, while observer A remains at the
@@ -89,6 +89,99 @@ This informational mechanism therefore recovers the ability to compute the Loren
 contraction posed in Thought Experiment~\ref{te:boosting-velocity} through the update rule
 \(E_k = \Psi\!\bigl(e_k \cap \Rhat(e_{k-1})\bigr)\), using only the observers’ laboratory notebooks.
 \end{example}
+
+\section{Historical Context}
+
+Aaronson and others have demonstrated that quantum mechanics, when viewed
+through the lens of information theory, admits far less structure than the
+continuum formalism suggests~\cite{aaronson2013}.  Their results show that quantum states do not
+encode arbitrary real-valued data, that only finitely many distinctions can be
+operationally extracted from any finite system, and that quantum correlations
+have deep combinatorial and complexity-theoretic origins rather than geometric
+ones.
+
+More concretely, Aaronson’s work on the complexity of quantum states shows that
+almost all vectors in Hilbert space are physically meaningless: they cannot be
+prepared, distinguished, or even approximately specified without exponential
+resources.  In practice, only a tiny, finitely describable subset of states
+ever arises in nature.  This directly parallels the Axiom of Kolmogorov, which
+asserts that measurement produces only finite, countable information and that
+no refinement may introduce distinctions that cannot be operationally supported.
+
+Similarly, Aaronson’s results on shadow tomography establish that measurement
+itself imposes strict limits on what can be learned.  Even with unlimited
+computational power, only a bounded amount of information about a quantum state
+can be extracted without an exponential number of queries.  This mirrors the
+Axiom of Planck: distinguishability has a minimal scale, and refinements cannot
+probe below it.
+
+Finally, the modern complexity-theoretic analysis of entanglement shows that
+quantum correlations arise from constraints on how information may be shared
+and refined across subsystems.  These correlations are not geometric artifacts
+but restrictions on admissible joint refinements.  This observation aligns with
+the notion developed in this chapter that entanglement is the smooth shadow of
+\emph{uncorrelant} event pairs—events whose informational ordering cannot be
+determined and whose refinements may fail to commute.
+
+The informational constraints emphasized by Aaronson and others also carry
+direct implications for the concept of motion.  If quantum states contain only
+finitely many operationally accessible distinctions, then the evolution of a
+system cannot be a continuous geometric flow through an uncountable state
+space; it must be the refinement of a finite informational record.  Motion is
+therefore the process by which distinguishable events accumulate in a manner
+consistent with the Axioms of Kolmogorov, Peano, and Planck.  In this view,
+trajectories are not primitive curves but the dense limits of these discrete
+refinement steps, and kinematics emerges only after enforcing Ockham
+minimality and Boltzmann coherence.  The core insight is that bounded
+distinguishability and limited extractable information constrain how histories
+may evolve, and the resulting admissible refinements form precisely the
+minimal-structure extremals that appear as smooth worldlines in the continuum
+limit.  Thus, the informational limits identified by Aaronson do not merely
+illuminate quantum phenomena; they determine the very structure of motion
+itself.
+
+\begin{phenomenon}[Shadow Tomography~\cite{aaronson2013}]
+\NB{This informational phenomenon reflects results by Aaronson and others
+showing that only a bounded amount of operationally accessible information
+about a quantum system can be extracted, regardless of the continuum
+descriptions allowed by Hilbert-space formalism.  The argument below does not
+use physical tomography; it expresses the same limitation in the language of
+refinement and distinguishability.}
+
+Consider a system whose underlying measurement record consists of a discrete
+chain of refinements.  Let $\{O_1,\ldots,O_m\}$ be a family of admissible tests
+that the observer may apply.  Classically, one might expect that by probing the
+system with sufficiently many such tests, one could reconstruct an arbitrarily
+detailed internal description.  Shadow tomography demonstrates that this is not
+the case: only a small, coarse projection of the underlying informational
+structure can ever be distinguished.
+
+From the standpoint of the Axioms of Measurement, the reason is immediate.
+Each test $O_j$ extracts only the distinctions resolvable at the minimal
+increment dictated by the Axiom of Planck.  The Axiom of Kolmogorov ensures
+that each measurement outcome has finite informational content, and the Axiom
+of Peano ensures that these outcomes accumulate discretely.  Thus, even an
+exponentially large sequence of tests cannot expose distinctions that lie below
+the minimum resolvable scale or that require refinements forbidden by the
+Axiom of Ockham.
+
+Operationally, the observer does not recover the internal structure of the
+system's full refinement history.  Instead, they recover a \emph{shadow}: the
+projection of that history onto the small set of distinctions probed by the
+tests $\{O_j\}$.  Two systems whose internal refinements differ but whose
+shadows coincide are operationally indistinguishable.  In the language of this
+manuscript, they represent distinct admissible histories that yield the same
+externally visible refinement pattern.
+
+This phenomenon clarifies why the continuum description of quantum states
+contains far more degrees of freedom than can ever appear in practice.  Shadow
+tomography reveals that measurement accesses only the coarse-grained shadow of
+the underlying informational structure, never its complete refinement.  It
+provides an operational reason why uncorrelant events, informational decoherence,
+and refinement non-commutation arise naturally: the observer sees only the
+shadow, while the full informational record remains inaccessible.
+\end{phenomenon}
+
 
 \section{Relative Motion}
 \label{se:relative-motion}
@@ -195,7 +288,7 @@ If B is in uniform motion relative to A, the refinements contributed by these tw
 consistent with a unique minimal interpolant: the admissible histories require that the
 difference in reception times is itself constant under refinement. Any hidden curvature or
 oscillation would have produced additional admissible events---extra pulses, missed reflections,
-or altered return order---and is therefore ruled out by the Axiom of Planck.
+or altered return order---and is therefore ruled out by Axiom~\ref{ax:planck}.
 
 However, if the spacing between \(e^A_{k+r}\) and \(e^A_{k+s}\) cannot be reconciled by a
 single coasting history, then the admissible set must be further restricted. The causal
@@ -278,8 +371,16 @@ reconcile their refinements along their shared boundary without introducing new
 distinguishabilities. The requirement that every locally finite patch of causal order extends
 to a globally consistent history is Martin’s Condition.
 
-\begin{definition}[Martin’s Condition (Non-standard)]
+\begin{definition}[Martin’s Condition]
 \label{def:martins-condition}
+\NB{The formulation of Martin's Condition used here is not a single axiom from
+set theory or forcing, but an operational synthesis of the requirements imposed
+by Axioms~\ref{ax:ockham}, \ref{ax:cantor}, and~\ref{ax:boltzmann}.  It echoes the role of
+Martin's Axiom in ensuring consistent extensions of locally compatible partial
+structures, but is adapted to the causal network of distinguishable events.
+The condition should therefore be understood as a consolidated operational rule
+rather than a direct quotation of any single classical axiom.}
+
 A causal network (Definition~\ref{def:causal-network}) satisfies Martin’s Condition if every locally finite subset of events can be
 extended to a globally consistent ordering without introducing new admissible distinctions.
 Equivalently, all finite causal updates admit an extension that preserves the same
@@ -289,8 +390,8 @@ coincidence relations on their overlaps.
 Intuitively, Martin’s Condition demands that information created in one region does not
 contradict information measured in another. It forbids causal overcounting---the duplication
 of distinctions that would destroy reversibility---by ensuring that overlapping observers
-reconstruct identical splines of the causal universe tensor along their shared boundary. The
-Axiom of Event Selection limits what may happen within a light cone; Martin’s Condition
+reconstruct identical splines of the causal universe tensor along their shared boundary. 
+Axiom~\ref{ax:boltzmann} limits what may happen within a light cone; Martin’s Condition
 governs how those choices propagate outward.
 
 Once Martin’s Condition holds, the closure of finite refinements induces a global
@@ -300,10 +401,15 @@ variations are eliminated by repeated projection, the smooth limit is diffusion.
 equations of motion---waves, advection, diffusion, and later curvature---are therefore the
 continuous shadows of global consistency under Martin’s Condition.
 
-\begin{example}[Davisson--Germer and the Universality of Causal Waves~\cite{davisson1927}]
+\begin{example}[The Davisson--Germer Effect~\cite{davisson1927}]
 \label{te:davisson-germer}
+\NB{This label refers only to the informational structure of the example.
+No physical wave, field, or substrate is assumed. The “wave” described here
+is the smooth shadow of a refinement sequence whose admissible extensions
+satisfy Martin--consistency. The phenomenon is therefore informational:
+a pattern enforced by the logic of distinguishability, not by any physical
+mechanism of diffraction or interference.}
 
-\emph{[Waves are the continuous shadows of Martin–consistent propagation]}
 
 Imagine an electron gun firing individual electrons toward a crystalline
 nickel target. A distant screen records the arrival of scattered electrons as
@@ -370,7 +476,7 @@ f:\ (\U^A,\U^B)\ \longmapsto\ \U^{AB}
 returns the minimal accumulated state $\U^{AB}$ that extends both inputs and is Martin–consistent
 on their overlap. Equivalently, $\U^{AB}$ is obtained by left–folding the common update
 factors (the jointly admissible events) in observed order so that no unrecorded refinements
-are invented (Axiom of Planck) and none already recorded are erased (Axiom of Cantor).
+are invented (Axiom~\ref{ax:cantor}) and none already recorded are erased (Axiom~\ref{ax:planck}).
 Let $E(\U)$ denote the underlying event set of $\U$ and define the newly contributed
 distinctions by
 \[
@@ -477,8 +583,8 @@ Now consider the left--hand side,
   f(U_A, U_{n+2}).
 \]
 Since the triple is Martin--consistent, $U_{n+2}$ already encodes all refinements that
-can appear after $U_{n+1}$ without violating the Axiom of Planck or the Axiom of
-Cantor.  Any refinement compatible with $U_n$ and $U_{n+1}$ must also be compatible
+can appear after $U_{n+1}$ without violating Axioms~\ref{ax:planck} or~\ref{ax:cantor}
+Any refinement compatible with $U_n$ and $U_{n+1}$ must also be compatible
 with $U_{n+2}$.  Thus the direct fold of $U_A$ with $U_{n+2}$ produces a ledger that
 contains exactly the jointly admissible refinements of all three inputs.  As before,
 no additional distinctions may be introduced.
@@ -548,7 +654,7 @@ refinements.  What physicists call causal structure appears later only as the
 smooth shadow of informational bookkeeping: the continuum calculus that encodes 
 cause--effect relations is not a primitive of the theory but an emergent 
 completion of discrete refinements.  Nothing in this chapter assumes or relies 
-on physical causation; all that is used is the partial order induced by the 
+on physical causation; all that is used is the partial order induced by 
 Axiom~\ref{ax:cantor}.}
 \NB{Uncorrelant events play a central conceptual role in this framework.  
 They are not ``independent random variables'' nor ``simultaneous in a 
@@ -577,9 +683,9 @@ uncorrelance.}
       discrete left–fold $\U_{n+1}=E_{n+1}\U_n$ under $f$.
 \end{remark}
 
-\begin{example}[The Dantzig Pivot~\cite{dantzig1963} of Entanglement~\cite{einstein1935}]
+\begin{phenomenon}[Entanglement~\cite{einstein1935}]
 \label{te:dantzig-pivot}
-\NB{The Dantzig Pivot is not a physical process. Nothing travels, no signal is sent, and no
+\NB{The Dantzig Pivot~\cite{dantzig1963} is not a physical process. Nothing travels, no signal is sent, and no
 mechanism propagates. The pivot is bookkeeping: boundary consistency is enough to eliminate
 incompatible histories without scanning the interior of the ledger.}
 
@@ -596,7 +702,7 @@ generate the same accumulated state. No scalar invariant recorded in either ledg
 which ordering occurred. This is a state of \emph{causal degeneracy}: two distinct histories
 produce the same observational content.
 
-At time $n{+}1$, laboratory $A$ measures $e_i$. By the Axiom of Planck, this refinement must be
+At time $n{+}1$, laboratory $A$ measures $e_i$. By Axiom~\ref{ax:planck}, this refinement must be
 folded into the accumulated state. The interaction operator $f$ computes
 \[
 \U_{n+1} = f(\U_n, e_i),
@@ -633,14 +739,16 @@ examines only the boundary of the overlap and removes incompatible orderings. Th
 unique, globally coherent history selected by local boundary repair. In both settings, the
 pivot is a boundary operation, not a volume search: global consistency is enforced without
 scanning an exponential family of possibilities.
-\end{example}
+\end{phenomenon}
 
-\begin{example}[Mach--Zehnder Interferometer as Causal Superposition]
+\begin{phenomenon}[Mach--Zehnder Interferometer~\cite{zehnder1891}]
 \label{te:mach-zehnder-updated}
-\NB{Interference is a bookkeeping result. The ledger compares two admissible histories and
-keeps only the one that preserves Martin's Condition at the boundary. No wavefunction,
-no probability amplitude, no transmission is assumed.}
-
+\NB{Although the Mach--Zehnder device originates in optical physics, the
+informational structure it exhibits does not depend on any physical
+mechanism.  The branching and recombination of admissible refinements is a
+purely combinatorial phenomenon: it arises whenever two indistinguishable
+paths diverge, evolve under independent refinements, and reunite at a shared
+boundary.  No metric, phase, or wave dynamics are assumed.}
 
 A single photon enters a Mach--Zehnder interferometer. At the first beam splitter, a single
 input event $e_0$ leads to two admissible refinements, $e_1$ (upper path) and $e_2$ (lower
@@ -651,7 +759,7 @@ distinguish which refinement is ``real'': both histories are admissible and neit
 contradiction. The interferometer therefore carries two coexisting, consistent ledgers.
 
 At the second beam splitter, the detection event $e_f$ must be recorded as a strict update.
-By the Axiom of Planck, the refinement $e_f$ must fold into the accumulated state. The
+By Axiom~\ref{ax:planck}, the refinement $e_f$ must fold into the accumulated state. The
 interaction operator computes
 \[
 \U_{\mathrm{final}} = f(\U^{(1)},\U^{(2)}),
@@ -672,9 +780,9 @@ until detection forces a non-degenerate fold. The Mach--Zehnder interferometer d
 a particle traveling two paths; it shows that causal histories can remain distinct and
 simultaneously admissible until the interaction operator selects the unique ordering that
 avoids contradiction at the boundary.
-\end{example}
+\end{phenomenon}
 
-\begin{example}[Bell--Aspect Tests as Global Martin Consistency]
+\begin{phenomenon}[Bell--Aspect Tests~\cite{bell1964}]
 \label{te:bell-aspect}
 
 Two spacelike-separated laboratories, $A$ and $B$, share a preparation event that produces
@@ -714,42 +822,9 @@ Thus, the Bell--Aspect tests reveal that entanglement is not a hidden influence.
 fact that the causal universe must repair its boundary globally when a non-degenerate
 refinement is recorded. Local hidden variables fail because they deny the existence of this
 global pivot.
-\end{example}
+\end{phenomenon}
 
-\begin{example}[The Qubit as a Causal Doublet]
-\label{te:qubit-doublet}
-
-Consider a system whose next admissible refinement may proceed in one of two distinct ways,
-$e_0$ or $e_1$. Both are individually consistent with all recorded events. Neither produces a
-new distinguishability. The ledger therefore admits two possible causal updates,
-\[
-\U_{n+1}=E_0\,\U_n
-\qquad\text{or}\qquad
-\U_{n+1}=E_1\,\U_n,
-\]
-and nothing in the accumulated tensor resolves which will occur. The pair
-$S=\{e_0,e_1\}$ is a \emph{causal doublet}: two equally admissible refinements, each extending
-the history without contradiction. The system is not undecided; it simply has more than one
-globally consistent continuation.
-
-This is the minimal unit of causal degeneracy. A \emph{qubit} is a causal doublet whose two
-refinements remain admissible until a non-degenerate event forces a decision. When a
-measurement is recorded, the new refinement must be folded into the ledger. The interaction
-operator computes
-\[
-\U_{n+1}=f(\U_n,e_b)
-\qquad\text{for a unique } b\in\{0,1\},
-\]
-and all hypothetical histories in which the other refinement contradicts the updated ledger
-are removed. The doublet collapses to a single admissible ordering.
-
-Nothing physical “chooses’’ $e_0$ or $e_1$. No hidden variable pre-selects the outcome. The
-pivot is bookkeeping: Planck forbids invisible refinements, Cantor forbids erasure, and
-Martin enforces global consistency. Until the pivot, $S$ remains a superposed causal state:
-two admissible orderings, both equally consistent with all observations.
-\end{example}
-
-\begin{example}[Hawking Radiation Revisited]
+\begin{phenomenon}[Hawking Radiation Revisited]
 \label{te:hawking-radiation-revisited}
 \NB{No physical emission is assumed. Surrogate refinements are bookkeeping: the minimal
 distinctions required to restore Martin consistency when the boundary saturates.}
@@ -761,9 +836,9 @@ $\U^{\mathrm{out}}$ can include internal and external refinements in a single, M
 ordering. Events remain locally finite, but the reconciliation problem saturates: the external
 ledger cannot compute a consistent extension that includes both sides.
 
-As an infalling system approaches $H$, its internal refinements accelerate. By the Axiom of
-Cantor, $\U^{\mathrm{out}}$ may not erase distinctions it has already recorded; by the Axiom of
-Planck, it may not invent invisible refinements. When the bridge of admissible overlap
+As an infalling system approaches $H$, its internal refinements accelerate. By Axiom~\ref{ax:cantor},
+$\U^{\mathrm{out}}$ may not erase distinctions it has already recorded; by Axiom~\ref{ax:planck},
+it may not invent invisible refinements. When the bridge of admissible overlap
 collapses—when no joint ordering of internal and external updates remains feasible—the
 external ledger must perform a repair. Martin’s Condition demands a globally consistent
 ordering on the accessible side.
@@ -782,7 +857,9 @@ Thus, Hawking radiation is not a quantum field effect in curved spacetime. It is
 bookkeeping required to maintain Martin consistency on the visible side of an informational
 boundary. The horizon enforces a holographic constraint: global order must remain representable
 on the surface that separates what can be reconciled from what cannot.
-\end{example}
+\end{phenomenon}
+
+
 
 \section{The Law of Boundary Consistency}
 \label{se:law-boundary}
@@ -797,8 +874,8 @@ statement.
 \label{law:boundary-consistency}
 In any locally finite causal domain, every admissible update to the accumulated causal
 universe tensor $\U$ arises from boundary refinement. The interior of $\U$ is fixed by
-previously recorded distinctions: altering it would introduce an invisible refinement (Axiom
-of Planck) or remove a recorded one (Axiom of Cantor), both of which are forbidden. When a
+previously recorded distinctions: altering it would introduce an invisible refinement (Axiom~\ref{ax:planck})
+or remove a recorded one (Axiom~\ref{ax:cantor}), both of which are forbidden. When a
 new admissible event is observed, the ledger repairs only the frontier where two descriptions
 overlap, enforcing Martin’s Condition on the boundary of the accumulated state.
 
@@ -847,7 +924,95 @@ arises from finite differences on the frontier. The familiar equations of motion
 continuum shadow of these discrete boundary repairs. Writing them down is a matter of
 expressing the boundary updates in finite–difference form and passing to the smooth limit.
 
-\section{Classical Transport}
+\section{Informational Phenomenon: Qubit Decoherence}
+The language of ``coherence'' and ``decoherence'' originates in the physical
+literature, where it refers to the loss of phase relations between components
+of a quantum state\cite{zurek2003}.  In standard treatments, this loss is
+attributed to dynamical interactions with an external environment, often
+modeled through diffusion, noise, or stochastic drift.  Although the present
+framework makes no physical or geometric assumptions of this kind, the
+terminology remains useful.  What is called ``decoherence'' here is the purely
+informational process by which a locally admissible degeneracy is resolved
+when new measurements are recorded.  The mechanism is not environmental
+coupling, but the logical requirement that admissible refinements remain
+consistent under Martin's Condition and Axiom~\ref{ax:ockham}.  The resulting
+collapse of a causal doublet is therefore an informational phenomenon: a
+pattern that emerges whenever distinguishable events are appended to a
+degenerate causal record.  Its observed ``rate'' is a smooth shadow of the
+stochastic drift inherent in finite causal resolution, and not a dynamical
+property of any physical substrate.
+
+
+\begin{phenomenon}[Qubit Decoherence~\cite{joos2003,zurek2003}]
+\NB{This informational phenomenon does not rely on physical decoherence
+mechanisms, environmental coupling, or geometric dynamics.  It arises solely
+because measurements are recorded and admissible refinements must remain
+consistent with the axioms of event selection, refinement compatibility, and
+Ockham minimality.}
+
+A \emph{causal doublet} is the minimal unit of informational degeneracy: a
+system admitting two equally admissible refinement paths $S=\{e_0,e_1\}$.
+Such a structure represents a qubit in the informational sense: a pair of
+distinct updates that are locally indistinguishable and jointly admissible.
+
+Decoherence occurs when a new event is recorded that is inconsistent with
+one of the branches.  The Interaction Operator $f$ performs a \emph{pivot} on
+the shared boundary, eliminating all incompatible orderings and collapsing the
+doublet to a single admissible history.  This collapse satisfies Martin's
+Condition, ensuring that the refined ledger extends the earlier one without
+introducing new admissible distinctions.
+
+The observed \emph{rate} of this collapse is a smooth shadow of two underlying
+informational constraints:
+
+\begin{enumerate}
+\item \textbf{Finite Causal Resolution.}
+Irreducible uncertainty in the ordering of micro-events at scale $\Delta x$
+induces a stochastic drift in the admissible refinements.  This drift arises
+whenever unresolved orderings accumulate faster than they can be anchored by
+distinguishable events.
+
+\item \textbf{Informational Diffusion ($D$).}
+The propagation of unresolved distinctions obeys a diffusion law: coarse
+records evolve stochastically under refinement, with an effective diffusion
+coefficient $D$ determined by the informational bandwidth of the system.
+\end{enumerate}
+
+Together, these constraints imply that decoherence is the statistical failure
+to maintain a causal degeneracy in the presence of new distinctions.  The
+macroscopic decoherence rate emerges as the smooth shadow of this
+irreversible informational process and is governed by the informational
+diffusion coefficient $D$ and the minimal unresolved action $\hbar$.  No
+physical environment or geometric postulate is required.
+\end{phenomenon}
+
+\begin{proposition}[The Rate of Informational Decoherence]
+\label{prop:informational-decoherence}
+Let a causal doublet consist of two equally admissible refinement paths
+$S=\{e_0,e_1\}$.  Let unresolved micro-orderings accumulate at an average rate
+$\lambda$ per unit refinement depth, and let informational diffusion have
+coefficient $D$.  The probability that the doublet remains unresolved after
+refinement depth $t$ is
+\[
+P_{\mathrm{coh}}(t)=\exp(-\gamma t),
+\]
+where the informational decoherence rate is the product
+\[
+\gamma=\frac{\lambda^2}{2D}.
+\]
+\end{proposition}
+
+\NB{A complete derivation of the decoherence rate is deferred until the end of
+the chapter, where informational Brownian motion is developed.  The rate law
+arises as a first--passage property of unresolved refinements undergoing
+informational diffusion.  In the smooth shadow this corresponds to the
+classical diffusion equation, and Ito--style arguments become available.  The
+derivation given later relies on these stochastic tools and therefore is not
+presented at this stage.}
+
+
+
+\section{Newtonian Transport}
 \label{sec:classical-transport}
 \NB{Nothing in this construction asserts that a differential equation
 \emph{must} govern the data.  We show only that if the ledger admits a smooth
@@ -1564,70 +1729,286 @@ records.
 minimal correction rule forced by informational sufficiency and boundary
 orientation.}
 
+\section{Resolution of Qubit Decoherence}
+The analysis of informational decoherence highlights a recurring theme in
+this framework: when a finite record is refined, the admissible continuous
+extensions must adjust in ways that are not captured by ordinary
+deterministic calculus. Each refinement introduces new distinctions that
+must be merged with the existing record, and the comparison between the
+old and new minimal extensions reveals systematic second–order effects.
+These effects do not arise from physical noise or stochastic input; they
+are forced by the axioms of refinement compatibility, informational
+minimality, and Martin consistency.
+
+Whenever a quantity is represented by its minimal spline extension, the
+act of incorporating a new event alters not only the value of the
+interpolant but also its curvature. The discrepancy between the old and
+new extensions produces a correction term whose structure is universal:
+it depends only on the geometry of minimal refinements, not on the nature
+of the underlying system. In classical settings this correction is masked
+by probabilistic notation, but in the informational setting it emerges as
+an intrinsic feature of refinement itself.
+
+The phenomenon described below captures this behavior. It is the general
+informational form of what, in conventional stochastic calculus, appears
+as It\^o's Lemma.
+
+
+\begin{phenomenon}[It\^o's Lemma~\cite{ito1944,ito1951}]
+\label{ph:ito}
+\NB{It\^o's Lemma appears here not as a theorem of stochastic calculus,
+nor as a property of diffusion processes, but as a structural consequence
+of informational refinement. When a finite record is repeatedly refined,
+the admissible interpolants must update according to Martin consistency
+and Ockham minimality. These updates produce the same correction terms
+that, in classical settings, are associated with stochastic differentials.
+No probabilistic or physical assumptions are used; the result is purely
+algebraic.}
+
+Let $X_t$ denote the minimal continuous extension of a finite record
+obtained by Spline Sufficiency. Suppose that between two refinements,
+the record admits a locally smooth representation
+\[
+X_{t + \Delta t} = X_t + \Delta X_t.
+\]
+Refinement compatibility requires that any function $f(X_t)$ be updated
+by comparing the old and new admissible extensions. The refinement
+\[
+f(X_{t+\Delta t}) - f(X_t)
+\]
+must be consistent with the joint refinement of $X_t$ and $f$ under the
+axioms of order, minimality, and Martin consistency. Expanding to second
+order in the refinement step and discarding inadmissible terms produces
+\[
+df = f'(X_t)\,dX_t + \tfrac{1}{2} f''(X_t)\,(dX_t)^2,
+\]
+where $(dX_t)^2$ is the second-order correction forced by the comparison
+of successive minimal interpolants. This quadratic term is not a physical
+noise term but an informational artifact: the unavoidable discrepancy
+between two successive minimal refinements of the same record.
+
+Thus It\^o's Lemma arises as the continuous shadow of discrete,
+consistent refinements of observational data.
+\end{phenomenon}
+
+\subsection{Informational Decoherence as Forced Refinement}
+\label{ph:decoherence}
+Decoherence is treated here not as a physical process, nor as an
+interaction with an environment, but as the informational consequence
+of refining a causal record. When new distinctions are appended to a
+history, the minimal continuous extension of that history must be updated
+in accordance with the axioms of refinement compatibility, Ockham
+minimality, and Martin consistency. The resulting adjustment introduces
+a second--order correction identical in structure to the It\^o term that
+appears in stochastic calculus, though no
+probabilistic or physical assumptions are made.
+
+We now present the proof to Proposition~\ref{prop:informational-decoherence}
+
+\begin{proofsketch}{informational-decoherence}
+Consider a causal doublet $(X_t,Y_t)$ whose minimal extension is given by
+the spline interpolant determined by the current observational record.
+Before refinement, the joint extension encodes the admissible correlations
+between $X_t$ and $Y_t$. When a new event is added to the record,
+the refinements
+\[
+X_{t+\Delta t} = X_t + \Delta X_t, \qquad
+Y_{t+\Delta t} = Y_t + \Delta Y_t
+\]
+must be merged into a single globally coherent history.
+
+By Spline Sufficiency, the new extension is the unique minimal function
+matching all observations. The comparison between the old and new
+extensions yields
+\[
+d(XY) = X_t\,dY_t + Y_t\,dX_t + (dX_t)(dY_t),
+\]
+where the cross--term $(dX_t)(dY_t)$ is the informational correction
+forced by the discrepancy between successive minimal interpolants.
+This term does not represent physical noise; it is the algebraic
+signature of refinement.
+
+When the refinements of $X_t$ and $Y_t$ are uncorrelant under the
+refinement order, the cross--terms collapse in the merge and the joint
+extension factorizes. The apparent ``loss'' of coherent structure is thus
+an informational effect: the minimal extension can no longer sustain the
+curvature required to preserve the off--diagonal components of the doublet.
+\end{proofsketch}
+
+In conventional quantum language this behavior is described as
+decoherence. In the informational setting it is a direct consequence of
+how causal records are updated: coherence is maintained only when the
+refinement structure supports the cross--terms required by the minimal
+extension. When refinements fail to align, these terms vanish, and the
+record resolves into independent components.
+
+Thus decoherence arises not from dynamics but from the combinatorics of
+consistent refinement.
+
 
 \section*{Coda: The Informational Harmonic Oscillator~\cite{planck1901}}
 \addcontentsline{toc}{section}{Coda: The Informational Harmonic Oscillator}
 
-\begin{example}[The Informational Harmonic Oscillator]
-\textbf{N.B.} This coda introduces the simplest reversible dynamics permitted by the Second Law of Causal Order.  
-It shows that oscillation---in its most abstract sense---arises whenever information alternates between two complementary forms: record and prediction.  
-No physical mass, force, or energy is implied.  
-The oscillator here is entirely informational: a minimal closed loop of distinguishability \cite{planck1901,landauer1961,wheeler1983}.
-\NB{The refinement argument developed in this section parallels the mathematical
-structure of Planck's resolution of the ultraviolet catastrophe.  The similarity
-is formal only.  No physical quantization assumptions are introduced here; the
-discrete refinement spectrum arises solely from informational consistency and the
-minimal distinction bound $\epsilon$.}
+Before introducing the informational harmonic oscillator, it is worth noting
+that nothing genuinely new is being added.  The construction does not assume
+a force, a potential, or a dynamical law.  It is simply the closed loop of
+reciprocity already present in the calculus of motion: recorded distinction
+feeds the prediction of its own refinement, and that prediction, when made
+admissible, returns to update the record.
+
+When this reciprocal exchange is traced around a single loop, the result can
+only be periodic.  A reversible refinement cycle has nowhere to go; it merely
+propagates its informational content back into itself.  The oscillator is
+therefore the minimal self-consistent refinement process—a bookkeeping loop
+that preserves its own measure while shuttling distinguishability between its
+record and prediction components.
+
+What follows is not a physical oscillator but the simplest closed circuit of
+informational propagation permitted by the axioms.
+In the informational framework, prediction is the purpose of the differential
+equations of physics.  A differential equation is nothing more than a rule
+for extending a record: it specifies how a small, admissible refinement of the
+present state must constrain the next distinguishable event.  Laboratory
+experiments exploit this fact directly.  By preparing controlled initial
+conditions and observing how a system responds to a tiny perturbation, the
+experimenter samples the local refinement structure encoded by the governing
+equation.  The resulting data do not unveil a hidden dynamical mechanism; they
+merely reveal how the differential law organizes small predictions into a
+coherent chain of distinguishable events.  In this sense, every differential
+equation is a predictive device: a compact description of how an observer may
+extend the current record without contradiction.
+
+\begin{definition}[Prediction~\cite{einstein1915,hamilton1834,hilbert1924,lagrange1788,maxwell1865,newton1687,schroedinger1926} et alii plures]\label{def:prediction}
+\NB{The formulation of prediction as an inverse update draws on a long
+tradition of differential equations, whose modern corpus reflects centuries of
+mathematical effort.  From Newton's original method of fluxions through the
+developments of Euler, Lagrange, Cauchy, Riemann, Hilbert, Noether, and
+countless others, differential equations have served as the principal tools for
+expressing how small refinements constrain admissible continuation.  The
+informational framework does not alter or reinterpret this body of work; it
+simply recognizes that the purpose of these equations has always been
+predictive.  They encode how an observer may extend a record without
+contradiction.  The present treatment stands on the shoulders of these
+and countless other historical achievements and uses classical forms only as the smooth shadow
+of the discrete axioms of measurement.}
+
+\NB{The argument above demonstrates the necessary existence of an inverse
+refinement operator $\Psi^{-1}$ in the informational sense: it identifies the
+set of admissible preimages that, if selected as future events, preserve
+consistency with the existing record.  No analytic inverse is required.  The
+existence follows from the axioms of event selection, refinement compatibility,
+and global coherence, all of which operate on finite combinatorial data.
+
+Because these axioms do not depend on smooth structure, continuum limits, or
+geometric assumptions, the construction applies without modification to
+finite, agent-based models.  Any system in which agents record distinguishable
+events and update their local states through restricted refinements admits the
+same inverse-update mechanism.  The operator $\Psi^{-1}$ therefore exists in
+every finite, discrete setting that satisfies the informational axioms, and
+the results extend directly to agent-based dynamics without additional
+assumptions.}
 
 
-\emph{Setup.}  
-Let $(x,p)$ denote a conjugate pair of informational coordinates on a two–dimensional causal phase space.  
-$x$ represents the observer’s recorded distinctions (the state of knowledge);  
-$p$ represents the predictive momentum (the rate at which distinctions are changing).  
-Define the informational Hamiltonian
+Let $e_k$ denote the most recent recorded event, and let
+\(
+U_k
+\)
+be its continuous representation under the update rule
 \[
-\Entropy(x,p) = \tfrac{1}{2}\,(\alpha x^{2} + \beta p^{2}),
+U_{k+1} = \Psi\!\left(e_{k+1} \cap \hat{R}(e_k)\right)\, U_k.
 \]
-where $\alpha$ and $\beta$ are positive constants measuring informational stiffness and inertia.  
-The reversible evolution equations are
+A \emph{prediction} is the admissible pre-image of the next update under
+$\Psi$.  Formally, a prediction is an element
+\(
+p_k \in \hat{R}(e_k)
+\)
+such that
 \[
-\dot{x} =  \phantom{-}\frac{\partial \Entropy}{\partial p} = \beta p,
-\qquad
-\dot{p} = -\frac{\partial \Entropy}{\partial x} = -\alpha x.
+\Psi(p_k)\, U_k
 \]
-Eliminating $p$ yields
+represents the expected refinement of the current record.  In this sense,
+prediction is the inverse action of the update operator: it identifies those
+refinements which, if later selected as events, will preserve consistency with
+all prior records.  No physical evolution is implied; prediction is the logical
+anticipation of admissible extensions of the causal history.
+\end{definition}
+
+
+\textbf{This definition closes the Hilbertian foundation of the theory.  With 
+prediction identified as the inverse update $\Psi^{-1}$, the list of primitive 
+notions is complete in the sense of Hilbert's program~\cite{hilbert1922}.  
+No further assumptions will be introduced.  The remainder of the physical 
+apparatus will now be derived from these primitives alone.}
+
+We now derive the simplest of motion, the informational harmonic oscillator.
+
+
+\begin{phenomenon}[The Harmonic Oscillator~\cite{planck1900}]
+
+\NB{This phenomenon describes the minimal reversible dynamics admitted by the 
+axioms of event selection, refinement compatibility, and informational 
+minimality. No metric, geometry, or dynamical law is assumed. Oscillation 
+arises solely from the alternation between recorded distinction and predicted 
+distinction under the reciprocity map.}
+
+Consider the two--dimensional informational phase space spanned by a 
+conjugate pair $(x,p)$, where $x$ records the observer's current 
+distinguishable state and $p$ represents the rate at which that 
+distinguishability is expected to change under an admissible extension.  
+These are not geometric coordinates; they are the dual bookkeeping variables 
+arising from the reciprocity map of Definition~\ref{def:reciprocity}.
+
+Define the minimal informational action density
 \[
-\ddot{x} + \omega^{2} x = 0, \qquad \omega^{2} = \alpha\beta.
+S(x,p) = \tfrac12(\alpha x^2 + \beta p^2),
 \]
-Thus the observer’s state executes harmonic motion in informational phase space with constant total measure $\Entropy(x,p)$.
-
-\emph{Interpretation.}  
-At each turning point of the oscillation, information is maximally localized: the record $x$ is fixed, the prediction $p$ vanishes.  
-At each midpoint, prediction dominates and the record is momentarily indeterminate.  
-The system alternately \emph{stores} and \emph{transmits} distinguishability, maintaining constant total informational entropy.  
-The cycle expresses the complementarity of knowledge and expectation: every complete measurement must eventually swing back toward uncertainty to preserve $\Delta S \ge 0$.
-
-\emph{Relation to Transport.}  
-The four informational transport regimes appear as limiting cases of this oscillator:
-\begin{itemize}
-  \item \textbf{Adiabatic transport:} small, continuous oscillations with $\dot S = 0$ (reversible exchange of information).
-  \item \textbf{Annealing:} inclusion of damping $\gamma > 0$, giving $\ddot{x} + \gamma\dot{x} + \omega^{2}x = 0$, a monotonic relaxation to equilibrium.
-  \item \textbf{Brownian motion:} addition of stochastic forcing $\xi(t)$, $\ddot{x} + \omega^{2}x = \xi(t)$, producing diffusive variance growth.
-  \item \textbf{Wave/particle duality:} interpretation of $(x,p)$ as the conjugate pair of localization and amplitude---dual views of the same informational invariant.
-\end{itemize}
-Each regime preserves causal consistency and satisfies $\Delta S \ge 0$; only the mode of information exchange changes.
-
-\emph{Scope.}  
-This oscillator is the canonical closed system of the informational universe:  
-a bounded transformation in which every increase in record precision is offset by a proportional loss of predictive capacity, and vice versa.  
-It represents the minimal rhythm of causal order---the reversible heartbeat of information itself.
-\end{example}
+where $\alpha,\beta > 0$ quantify the informational stiffness and 
+informational inertia enforced by minimality.  
+Stationarity under reversible exchange of $(x,p)$ forces the reciprocal 
+update rules
+\[
+\dot{x} = \beta p, \qquad 
+\dot{p} = -\alpha x.
+\]
+Eliminating $p$ yields the continuous shadow
+\[
+\ddot{x} + \omega^2 x = 0, \qquad \omega^2 = \alpha\beta.
+\]
+Thus the observer's state executes harmonic motion in informational phase 
+space with invariant $S(x,p)$.
 
 
-\begin{center}
-\textit{Motion, in this theory, is not caused by energy.  
-It is the preservation of order under Martin’s Condition.}
-\end{center}
+At each turning point the record $x$ is maximal and predictive momentum 
+$p$ vanishes.  
+At each midpoint prediction dominates and the present record is momentarily 
+indeterminate.  
+The system alternately stores and transmits distinguishability, preserving 
+its total informational measure in the reversible limit.  
+No physical oscillation is implied; this is the unique reversible pattern 
+consistent with reciprocal refinement.
+
+\begin{remark}{Consequence: Quantization.}
+
+By the Axiom of Planck, only discrete counts of distinguishable refinements 
+fit within one causal cycle.  
+Applying informational minimality to the action produces the familiar 
+spectrum
+\[
+E_n = \hbar\omega\,(n+\tfrac12),
+\]
+where $n$ counts the number of admissible informational quanta per cycle.  
+The residual half--count reflects that no finite causal distinction can 
+eliminate the boundary ambiguity forced by refinement compatibility.
+\end{remark}
+
+The informational harmonic oscillator is the canonical closed system of the 
+informational universe.  
+Its invariants arise from consistency, not from assumed conservation laws.  
+Its oscillatory form is the only reversible extension of a two--variable 
+reciprocity pair compatible with Martin consistency and the axioms of event 
+selection.
+
+\end{phenomenon}
 
 
 

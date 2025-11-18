@@ -143,7 +143,7 @@ curvature, or ``hidden motion'' is rejected by
 Axiom~\ref{ax:boltzmann}, because those features would have produced
 additional anchors that do not appear in the record.
 
-\begin{definition}[Anchor Points]
+\begin{definition}[Anchor Points~\cite{deboor1978}]
 \label{def:anchors}
 A finite set of \emph{anchor points} is the collection of measured
 events at which admissible configurations must agree.  Two candidate
@@ -173,30 +173,69 @@ inadmissible.
 
 \begin{definition}[Reciprocity Map]
 \label{def:reciprocity}
-\NB{In settings where a geometric or Hilbert space structure is present, the
-reciprocity map reduces to the familiar adjoint (or complex conjugate)
-with respect to the underlying inner product.  Here it is defined purely
-informationally, without assuming any geometric primitives.}
+\NB{In geometric settings equipped with a metric or inner product, the
+reciprocity map reduces to the familiar adjoint or complex conjugate, and
+the operation $\psi\mapsto\psi^{\!*}$ is often interpreted as a covariant or
+contravariant dual.  No such geometric structure is assumed here.  The
+reciprocity dual is defined purely informationally, as the configuration that
+symmetrizes the causal pairing.  It should not be confused with metric
+adjoints that appear in geometric representation theory, such as the Dirac
+adjoint of a spinor or the dual of a Weyl field.  Those constructions depend on
+Lorentz symmetry, Clifford algebras, and an invariant bilinear form; none of
+these structures are present at the informational level.}
 
-Let $\psi$ be an admissible configuration and let $\phi$ be a test
-variation that agrees with $\psi$ at the anchor points.  The
-\emph{reciprocity map} is the linear evaluation
+
+Let $\psi$ be an admissible configuration and let $\phi$ be a test variation
+that agrees with $\psi$ at the anchor points.  The \emph{reciprocity map} is
+the linear evaluation
 \[
 \langle \psi,\phi\rangle_{\mathcal{L}}
   := \psi^{\!*}\,\mathcal{L}\,\phi,
 \]
-where $\mathcal{L}$ counts distinguishable causal increments and
-$\psi^{\!*}$ denotes the adjoint of $\psi$ with respect to this count.
-Two configurations are reciprocals if their pairing produces the same
-causal measure:
+where $\mathcal{L}$ counts distinguishable causal increments.  A configuration
+$\chi$ is called a \emph{reciprocity dual} of $\psi$ if it satisfies
 \[
 \langle \psi,\phi\rangle_{\mathcal{L}}
-  = \langle \phi,\psi\rangle_{\mathcal{L}}.
+  = \langle \phi,\chi\rangle_{\mathcal{L}}
+  \quad\text{for all test variations }\phi.
 \]
-The map $\psi \mapsto \psi^{\!*}$ is called the \emph{reciprocity dual}.
-It encodes the informational response of $\psi$ to an infinitesimal
-variation $\phi$ without assuming any differential structure.
+When it exists, such a $\chi$ is denoted by $\psi^{\!*}$.
+The reciprocity dual encodes the informational response of $\psi$ to an
+infinitesimal variation $\phi$ without assuming any differential structure.
 \end{definition}
+
+\begin{proposition}[The Uniqueness of the Reciprocity Dual]
+\label{prop:reciprocity-unique}
+Assume the causal pairing $\langle \cdot,\cdot\rangle_{\mathcal{L}}$ is
+nondegenerate in the second slot: if
+\[
+\langle \phi,\chi\rangle_{\mathcal{L}} = 0
+\quad\text{for all test variations }\phi,
+\]
+then $\chi$ is the trivial (null) configuration.  If $\chi_1$ and $\chi_2$
+are both reciprocity duals of the same configuration $\psi$, then
+$\chi_1 = \chi_2$.  In particular, whenever a reciprocity dual exists, it is
+unique.
+\end{proposition}
+
+\begin{proofsketch}{reciprocity-unique}
+Let $\chi_1$ and $\chi_2$ be reciprocity duals of $\psi$.  By definition,
+\[
+\langle \psi,\phi\rangle_{\mathcal{L}}
+  = \langle \phi,\chi_1\rangle_{\mathcal{L}}
+  = \langle \phi,\chi_2\rangle_{\mathcal{L}}
+\quad\text{for all test variations }\phi.
+\]
+Subtracting the two expressions gives
+\[
+\langle \phi,\chi_1 - \chi_2\rangle_{\mathcal{L}} = 0
+\quad\text{for all }\phi.
+\]
+By nondegeneracy in the second slot, this implies $\chi_1 - \chi_2$ is the
+null configuration, hence $\chi_1 = \chi_2$.  Thus any reciprocity dual, if
+it exists, is unique.
+\end{proofsketch}
+
 
 In the continuum shadow, the reciprocity pairing becomes the usual weak
 inner product of variational calculus~\cite{brenner2008,evans2010}.  Integration by parts moves the
@@ -381,7 +420,7 @@ anchors, and satisfies $\Psi^{(4)}=0$ everywhere.  Smooth calculus appears
 solely as the completion of refinement in the discrete causal record.
 
 
-\begin{example}[Repeatability of Invisible Motion~\cite{bacon1620}]
+\begin{phenomenon}[Repeatability of Invisible Motion~\cite{bacon1620}]
 \label{ex:repeatability}
 Consider two independent observers, $A$ and $B$, who record the motion of a
 particle between the same event anchors $x_i \prec x_{i+1}$.  Each observer
@@ -409,10 +448,10 @@ Thus repeatability demands the Euler--Lagrange closure: if two observers can
 refine their measurements indefinitely without producing new events, their
 reconstructions must converge to the same cubic extremal.  Smooth dynamics
 are therefore the unique histories that leave no trace.
-\end{example}
+\end{phenomenon}
 
 
-\subsection{The Law of Spline Sufficiency}
+\section{The Law of Spline Sufficiency}
 \label{sec:spline-sufficiency}
 
 The preceding analysis shows that every admissible refinement of the event
@@ -556,7 +595,7 @@ infinitesimal increments or geometric primitives.  The classical paradox of
 the fluxion may now be revisited in this light.
 
 
-\begin{example}[Fluxions~\cite{berkeley1734,newton1687}]
+\begin{phenomenon}[Fluxions~\cite{berkeley1734,newton1687}]
 \label{te:newtonian-ghost}
 
 \NB{The classical paradox of the fluxion treats an infinitesimal $\mathrm{d}t$
@@ -594,7 +633,375 @@ limitation of informational resolution.  The fluxion
   calculus arises not by manipulating vanished quantities, but as the unique
   function consistent with every refinement of the observable record.
 
-  \end{example}
+  \end{phenomenon}
+
+\section{The Physical Impossibility of Spline Necessity}
+\label{subsec:impossibility-spline-law}
+
+A law of spline necessity \emph{would} describe the continuous limit of an
+ideal refinement process. In such a limit, where arbitrarily fine
+distinguishable refinements are permitted, the unique smooth closure
+compatible with informational minimality would necessarily coincide with a
+cubic spline satisfying $\Psi^{(4)} = 0$ between all anchors. This behavior
+would characterize the limiting object toward which all admissible
+refinements converge.
+
+However, this description is inherently conditional. The existence of such a
+law requires access to refinements at arbitrarily small scales. In the
+informational setting developed here, no such refinement process exists:
+every record admits only finitely many distinguishable refinements. As a
+consequence, the continuum limit in which an exact spline law \emph{would}
+hold is never attainable. The law does not fail; rather, it is not a
+law of the finite world.
+
+\NB{The idea of a spline necessity law is meaningful only as a limiting
+construct. It does not apply to any finite record because no observational
+process can instantiate the infinite refinement depth the law presupposes.}
+
+This observation motivates an approximate interpretation. Although an exact
+law cannot hold, the Galerkin convergence results of
+Section~\ref{subsec:approx-spline-necessity} imply that finite-dimensional
+closures can be made arbitrarily close to the ideal spline closure. Thus,
+while a spline necessity law describes an unattainable limit, its behavior
+is still relevant: finite informational models approach that limit as their
+resolution increases. The continuum spline is therefore best understood as
+the \emph{attractor} of refinement-compatible approximations, not as a law
+governing finite observational structure.
+
+\subsection{Indistinguishability of Approximate and Ideal Spline Closures}
+\label{subsec:indistinguishability-spline}
+
+A law of spline necessity would characterize the exact continuous limit of an
+ideal refinement process. In practice, however, only approximate spline closures
+exist, obtained through refinement-compatible approximations such as Galerkin
+methods. This raises a natural question: could any measurement distinguish between
+an approximate closure and the ideal spline attractor it converges toward?
+
+The answer is no. Under the axioms of event selection, refinement compatibility,
+and informational minimality, no admissible measurement can separate the two. Any
+measurement capable of distinguishing an approximate spline from the ideal one
+would require detecting differences at scales finer than the minimum resolvable
+distinction allowed by the record. Such a measurement would necessarily violate
+the axioms by introducing new refinements below the Planck scale.
+
+\NB{There exists no admissible observational procedure, consistent with the axioms
+of measurement, that can differentiate between the approximate spline obtained at a
+finite refinement scale and the ideal spline that would appear in the continuum
+limit. Any attempt to do so requires forbidden refinements and is therefore
+inadmissible.}
+
+Let $(\Psi_N)$ be a sequence of refinement-compatible approximations converging
+toward an ideal spline $\Psi$ in the sense of
+Section~\ref{subsec:approx-spline-necessity}. For any fixed resolution scale
+permitted by the record, there exists $N$ such that
+\[
+\|\Psi_N - \Psi\| < \delta,
+\]
+where $\delta$ is the smallest distinguishable refinement allowed by the axioms.
+Because no measurement can detect variation smaller than $\delta$, the outputs of
+$\Psi_N$ and $\Psi$ are observationally identical. To distinguish them would
+require a measurement refining the domain below $\delta$, which the axioms forbid.
+
+\begin{definition}[Observational Indistinguishability]
+\label{def:indistinguishability}
+A finite-dimensional closure $\Psi_N$ is observationally indistinguishable from the
+ideal spline closure $\Psi$ if, for the minimum refinement scale $\delta$ of the
+record,
+\[
+|\Psi_N(x) - \Psi(x)| < \delta
+\quad\text{for all admissible measurement points } x.
+\]
+No admissible measurement can detect any discrepancy of magnitude less than
+$\delta$.
+\end{definition}
+
+\subsection{Indistinguishability of Infinite Refinement}
+\label{subsec:pigeonhole-indistinguishability}
+
+Axiom~\ref{ax:kolmogorov} states that every measurement produces a symbol from a finite or
+countable alphabet and that all refinements are bounded below by a minimum
+distinguishable scale~$\delta > 0$. A measurement record is therefore a finite
+string over an alphabet whose effective base is determined by the refinement
+scale. In this setting, the pigeonhole principle implies that only finitely many
+distinct measurement outcomes are possible at resolution~$\delta$.
+
+Let $\Psi$ be an ideal closure that would be obtained in an infinite-refinement
+limit, and let $\Psi_\delta$ be any finite-resolution approximation consistent
+with the refinement scale~$\delta$. If $\Psi$ and $\Psi_\delta$ differ only on
+sub-\,$\delta$ scales, then no admissible measurement can distinguish them.
+Their projections into the measurement alphabet coincide, and therefore they
+produce the same finite string of observations.
+
+\begin{proposition}[Pigeonhole Indistinguishability of Infinite Refinement~\cite{dirichlet1834,hardy1938}]
+\label{prop:pigeonhole}
+Let $\Sigma_\delta$ be the finite set of symbols distinguishable at refinement
+scale~$\delta$, and let $\mathcal{M}$ denote the measurement map
+\[
+\mathcal{M} : \{\text{closures}\} \to \Sigma_\delta^*.
+\]
+If two closures $\Psi$ and $\Phi$ differ only at scales smaller than~$\delta$,
+then
+\[
+\mathcal{M}(\Psi) = \mathcal{M}(\Phi).
+\]
+In particular, any infinitely refined closure is observationally
+indistinguishable from a sufficiently refined finite approximation.
+\end{proposition}
+
+\begin{proofsketch}{pigeonhole}
+This result follows directly from the pigeonhole principle. A finite
+measurement alphabet cannot encode distinctions below the minimal refinement
+scale~$\delta$. Once two closures agree on all $\delta$-sized cells, no admissible
+measurement can produce different records. Infinite refinement produces no new
+distinguishable outcomes.
+\end{proofsketch}
+
+
+
+Thus an infinitely refined object is operationally equivalent to a finite
+closure at the resolution permitted by the axioms. Infinite refinement is a
+mathematical limit, not an observable phenomenon. This prepares the way for the
+Law of Discrete Spline Necessity, which identifies the unique closure that
+saturates all distinguishable information at scale~$\delta$.
+
+\begin{phenomenon}[Informational Viscosity of Quicksand~\cite{batchelor1967,bonn2005}]
+\label{ph:viscosity-quicksand}
+
+\NB{In a continuous fluid, buoyancy is described by Archimedes' principle~\cite{archimedes1912}: an 
+immersed body floats when the upward force from displaced fluid balances its 
+weight~\cite{batchelor1967}. Bonn et al.~\cite{bonn2005} show that quicksand, 
+though a granular suspension rather than a true fluid, exhibits a nearby 
+buoyant behavior: objects settle only to a finite depth and then float, 
+reaching an equilibrium set by density matching, yield stress, and local 
+fluidization. The macroscopic effect resembles (and, to a certain coarseness 
+of refinement, is modeled by) Archimedes' principle, even though its 
+microscopic origin is entirely different. These physical observations serve 
+only as an analogy for the informational phenomenon described here; they do 
+not constrain the model. They illustrate how a finite set of admissible states 
+may appear, in the smooth limit, as a buoyant equilibrium.}
+\NB{The phenomenon described here concerns the irreversible, informational 
+component of fluid mechanics: the resistance to refinement below the minimum 
+distinguishable scale $\delta$. It is not a complete account of physical 
+viscosity, which depends on a finite third parameter $\Theta$ (see Coda: 
+Navier--Stokes as a Finite Third Parameter, Chapter~3) and requires an 
+independent kinematic assumption relating shear stress to velocity gradients. 
+The informational viscosity $\Psi_\delta$ treated here reflects only the 
+constraints of Causal Order and informational Minimality; it captures the 
+coarse, irreducible structure that remains when all sub-$\delta$ refinements 
+are suppressed.}
+\NB{\emph{A person floats on quicksand, rather than sinks}~\cite{bonn2005}}
+
+
+Consider an agent $E$ attempting to move through a medium governed solely by 
+distinguishability. Before contact, the mathematical continuum admits an 
+infinite family of smooth paths $\Phi_i$, distinguished by arbitrarily small 
+variations in curvature.
+
+Once $E$ enters the medium, the informational constraints become active. By 
+Axiom~\ref{ax:planck}, there exists a minimum distinguishable scale $\delta$. 
+Any displacement smaller than $\delta$ fails to generate a new event. The 
+continuum therefore collapses to a finite chain of $\delta$--compatible 
+anchors,
+\[
+    \Psi_\delta=\{x_1,\dots,x_N\},
+\]
+representing all positions that can be observationally distinguished.
+
+The medium exhibits an informational \emph{viscosity}: any attempted motion 
+that introduces sub-$\delta$ curvature is resisted and cancelled, keeping $E$ 
+pinned to the nearest admissible anchor. Only when the displacement exceeds 
+the refinement threshold does $E$ transition from $x_k$ to $x_{k+1}$.
+
+By Proposition~\ref{prop:pigeonhole}, the infinite microscopic variations 
+beneath the surface collapse into the finite observational buckets of 
+$\Psi_\delta$. Informational minimality (Axiom~\ref{ax:ockham}) then forces 
+the unique discrete closure consistent with the anchors and containing no 
+unrecorded structure: the discrete spline $\Psi_\delta$.
+
+This is the viscosity of quicksand: the resistance to refinement below the 
+minimum distinguishable scale $\delta$. Any attempted motion that fails to 
+produce a new admissible distinction is suppressed, and the system remains at 
+the nearest anchor in $\Psi_\delta$. In the smooth shadow, this appears as the 
+buoyant or viscous equilibrium observed by Bonn and others, where 
+a person floats because further descent would require the granular medium to 
+rearrange at scales smaller than the yield threshold of individual particles 
+of sand. Physically, the grains simply stop moving; informationally, no 
+additional distinctions can be recorded. The collapse of the infinitely many 
+ideal paths $\Phi_i$ into the single admissible sequence $\Psi_\delta$ is 
+therefore mirrored by the granular equilibrium: motion ceases not because of 
+any continuous force law, but because neither the sand nor the informational 
+model permits sub-$\delta$ refinements.
+\end{phenomenon}
+
+
+Thus the distinction between the approximate and ideal spline closures is purely
+mathematical. No experiment, sensor, or observational extension can reveal a
+difference between them without violating the Axioms of Measurement. The ideal
+spline belongs to the continuum limit; the approximate spline belongs to the
+finite informational world. Observationally, however, the two coincide to the
+highest permissible resolution.
+
+\section{The Law of Discrete Spline Necessity}
+\label{subsec:discrete-spline-necessity}
+
+Because the refinement depth of any admissible record is finite, the continuum
+limit in which an exact spline necessity law would hold can never be reached.
+Nevertheless, the refinement axioms determine a unique finite-resolution object
+that plays the role of a spline within the informational world. This discrete
+closure is the actual law governing all admissible completions of a finite
+record.
+
+\begin{law}[The Law of Discrete Spline Necessity]
+\label{law:discrete-spline}
+Let $\psi$ be any finite, non-contradictory record with minimum refinement scale
+$\delta$, guaranteed by the axioms of measurement. Then there exists a unique
+finite-resolution function $\Psi_\delta$ satisfying:
+
+(1) $\Psi_\delta$ agrees with $\psi$ at every anchor event and introduces no
+refinements smaller than $\delta$.
+
+(2) On each interval between anchors, $\Psi_\delta$ is the minimal-curvature
+function permitted by the refinement grid of scale $\delta$. In particular,
+$\Psi_\delta$ is represented by a cubic polynomial on each discrete cell of size
+$\delta$, with continuity of slope and curvature enforced at all interior
+junctions.
+
+(3) Any alternative function $\Phi$ that agrees with $\psi$ at the anchors and
+differs from $\Psi_\delta$ on any discrete cell either
+\begin{enumerate}
+\item introduces additional distinguishable structure below scale $\delta$
+(violating refinement compatibility and the Planck condition), or
+\item fails to maintain global causal consistency across cell boundaries.
+\end{enumerate}
+
+(4) As $\delta$ decreases along any refinement-compatible sequence, the discrete
+closures satisfy
+\[
+\Psi_{\delta} \;\longrightarrow\; \Psi
+\]
+where $\Psi$ is the ideal spline attractor described in
+Section~\ref{subsec:conditional-spline-law}. This convergence is monotone in the
+sense that each refinement preserves and sharpens all previously admissible
+distinctions.
+
+Thus every finite informational record admits a unique discrete closure
+$\Psi_\delta$, which is the minimal, globally coherent, refinement-compatible
+representation of that record at its permitted resolution. This is the
+informational law governing all realizable completions.
+\end{law}
+
+\NB{This law is exact. Unlike the continuum spline necessity law, which would
+require infinite refinement and therefore cannot apply to finite records, the Law
+of Discrete Spline Necessity governs all observationally realizable completions.
+Continuous splines appear only as limiting attractors. The discrete closure
+$\Psi_\delta$ is the true object selected by the axioms.}
+
+This law establishes the discrete analogue of curvature minimality,
+differentiability, and weak-form transport without invoking limits. All smooth
+structures used in physics arise from the asymptotic behavior of $\Psi_\delta$
+under refinement but are never instantiated exactly. The discrete closure is the
+only object compatible with the axioms at finite resolution.
+
+
+\subsection{The Indistinguishability of Discrete and Continuous
+Spline Closures}
+\label{subsec:axiom1-indistinguishability}
+
+Axiom~\ref{ax:kolmogorov} asserts that all measurements produce finitely many distinguishable
+outcomes and that every admissible refinement has a minimum resolvable scale
+$\delta>0$. No observational process may introduce refinements smaller than
+$\delta$ without violating the axiom. As a consequence, the refinement process
+terminates at a finite resolution, and the most refined discrete closure
+$\Psi_\delta$ permitted by the record is observationally maximal.
+
+If an ideal continuum limit were accessible, the refinement process would
+continue indefinitely and converge to a smooth cubic spline $\Psi$ satisfying
+the limiting minimality condition $\Psi^{(4)}=0$. However, the continuum limit
+requires refinements at scales below $\delta$, and therefore cannot be realized
+by any admissible sequence of measurements. The continuous spline $\Psi$ is a
+mathematical attractor, not an observable object.
+
+\NB{By Axiom~\ref{ax:kolmogorov}, the most refined discrete spline $\Psi_\delta$ is
+\emph{observationally indistinguishable} from the continuous spline attractor
+$\Psi$. No admissible measurement can detect any discrepancy between the two,
+because doing so would require refinements smaller than $\delta$, which the
+axioms forbid.}
+
+Formally, if $(\Psi_N)$ is any refinement-compatible sequence converging to
+$\Psi$, then for sufficiently large $N$,
+\[
+|\Psi_N(x) - \Psi(x)| < \delta
+\quad\text{for all admissible measurement points }x.
+\]
+Therefore $\Psi_N$ and $\Psi$ produce identical observational outcomes.
+
+This establishes that the continuous spline arises only as a limiting concept,
+while the discrete closure $\Psi_\delta$ is the unique physically realizable
+object. Axiom~\ref{ax:kolmogorov} identifies these two as observationally equivalent: the discrete
+spline is as refined as the informational world can ever be.
+
+\subsection{The Necessity of Approximation}
+\label{subsec:necessity-of-approximation}
+
+The preceding sections establish a structural asymmetry in the informational
+framework. On the one hand, the continuum spline appears as the unique limiting
+object that a refinement process \emph{would} select if infinite refinement were
+possible. On the other hand, Axiom~\ref{ax:kolmogorov} forbids refinements below a minimum
+distinguishable scale $\delta>0$. The refinement sequence therefore terminates at a
+finite stage, and no observational process can approach the continuum limit
+beyond this final resolution.
+
+This tension forces a fundamental conclusion: approximation is not a methodological
+choice but a structural necessity. Every admissible representation of a finite
+record must be an approximation to a limit that cannot be realized. The
+continuous spline is an ideal boundary point of the refinement process, never an
+attainable object within the informational universe.
+
+\NB{Approximation is necessary, not optional. The axioms prohibit the continuum
+limit required for exact closures, and therefore all admissible models are
+approximate shadows of the limiting structure they cannot reach.}
+
+Let $\Psi_\delta$ denote the discrete spline closure permitted by the minimal
+refinement scale. Let $\Psi$ denote the ideal spline attractor that would appear in
+the continuum limit. By Axiom~\ref{kolmogorov}, $\Psi_\delta$ is observationally
+indistinguishable from $\Psi$, but it remains a finite-resolution approximation.
+Any mathematical construction that assumes exact differentiability, exact
+integration, or exact smoothness implicitly appeals to a limit that the axioms
+deny. The familiar constructs of calculus therefore do not describe the
+informational world directly; they describe the limiting behavior that finite
+closures approximate.
+
+This necessity is not an impediment but a structural guide. The refinement
+sequence
+\[
+\Psi_{\delta} \;\longrightarrow\; \Psi
+\]
+never completes, yet its monotone convergence ensures that all admissible
+models become arbitrarily close to the ideal spline at resolutions permitted by
+the axioms. The continuous spline is unreachable but inevitable: no finite model
+can realize it, yet every refinement-compatible model approaches it.
+
+\paragraph{Quantum-like Emergence.}
+Finite refinement does more than require approximation; it enforces
+distinctively non-classical patterns of behavior. The inability to refine
+distinctions below scale $\delta$ produces irreducible uncertainty in the
+placement of events, non-additivity in refinements, and interference-like
+behavior when merging partially incompatible records. These effects arise
+not from physical postulates but from informational structure: finite
+resolution combined with refinement compatibility forces discrete update
+rules that mimic the algebra of quantum amplitudes.
+
+\NB{Quantum-like theories emerge naturally from the necessity of approximation:
+finite refinement yields non-classical composition of information, which
+manifests as interference, superposition-like combination, and the familiar
+probabilistic structure of quantum models. No quantum axioms are assumed; these
+behaviors follow from measurement constraints alone.}
+
+Thus approximation is the essential mode of representation in the informational
+framework. The equations and structures of classical \emph{and} quantum theories
+arise not because the world is continuous or probabilistic, but because the
+discrete closures enforced by the axioms approximate the same limiting behavior
+that continuous and quantum mathematics describe in their respective formalisms.
 
 
 \section{Equivalence of Discrete and Smooth Representations}

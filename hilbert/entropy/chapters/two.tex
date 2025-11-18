@@ -26,7 +26,7 @@ by refinement.
 This chapter formalizes that structure.  We build the algebra of
 measurement itself.  Rather than treating observations as values of
 continuous functions, we adopt the combinatorial viewpoint forced by
-the Axioms~\ref{ax:planck} and~\ref{ax:cantor}: every admissible experimental record
+the Axioms~\ref{ax:cantor} and~\ref{ax:planck}: every admissible experimental record
 is finite or countable, and every refinement is a restriction of
 admissible outcomes.  The central object of this chapter---the
 \emph{Causal Universe Tensor}---expresses the fact that history is
@@ -136,7 +136,7 @@ representation $\mathbf{U}_k$ is nothing more than the shadow of a
 discrete product of selections.
 \end{example}
 
-We begin by enumerating the Axioms of Measurement, which formalize the
+We begin by enumerating the seven Axioms of Measurement, which formalize the
 structure of admissible records and the refinement of observational
 history.
 
@@ -166,6 +166,7 @@ within standard ZFC mathematics; see Kunen~\cite{kunen1980} and Jech~\cite{jech2
 for set-theoretic foundations, and Halmos~\cite{halmos1958,halmos1974naive} for the
 induced tensor and operator structures on finite-dimensional vector spaces.
 
+\subsection{Measurements are Mathematical in Nature}
 The starting point of this framework is methodological rather than
 ontological.  We do not assume anything about the substance of physical
 reality.  We assume only that the outcomes of measurement are finite or
@@ -198,7 +199,27 @@ distinctions; nothing is asserted about any underlying physical substrate
 that might produce them.
 \end{axiom}
 
+\subsection{Mathematics is the Language of Measurement}
 
+Mathematics enters this framework not as an external interpretive layer
+but as the minimal language in which measurement can be expressed. A
+record of observation is a finite collection of distinguishable outcomes,
+and the relations among those outcomes—order, refinement, exclusion,
+and compatibility—require a precise symbolic setting. The purpose of this
+subsection is therefore methodological: to state explicitly the mathematical
+rules under which every subsequent construction is carried out.
+
+No structure beyond ordinary set theory is needed. The axioms of ZFC
+provide the machinery for forming sets of events, for defining relations
+among them, and for building the tensor algebra in which their continuous
+shadows will later appear. Within this system, counting becomes the first
+and most fundamental operation: to measure is to distinguish, and to
+distinguish is to enumerate the admissible outcomes. Peano’s contribution
+is thus not philosophical but operational. The natural numbers supply the
+ordinal scaffold upon which every causal record is indexed.
+
+With this in mind, we begin by stating the formal principle that makes
+counting available as a tool of measurement.
 
 \begin{axiom}[The Axiom of Peano~\cite{fraenkel1922,martin1970,zermelo1908}]
 \label{ax:peano}
@@ -252,7 +273,7 @@ level.
 \end{example}
 
 
-\section{The Axioms of Information}
+\section{The Axioms of Informational Structure}
 
 The previous section established that a physical record is a set of
 distinguishable observations, representable within ZFC, and partially ordered
@@ -415,7 +436,7 @@ time. Moreover, this ordered set possesses a mathematical structure that
 naturally yields the appearance of continuous physical laws and the conservation of quantities.
 To understand how this works, we first clarify what we mean by measurement.
 
-\subsection{Measurement and the Axiom of Cantor}
+\subsection{The Countable Nature of Events}
 \label{sse:measurement}
 Physical laws relate measurements. For example, Newton’s second law~\cite{newton1687}
 \begin{equation}
@@ -475,7 +496,7 @@ reordered independently of each other, yet the invariants are preserved.
 \end{example}
 
 
-\subsection{Observations are Combinatorial}
+\subsection{Observations are Fixed and Combinatorial}
 \label{sse:finite}
 
 A finite observer records events one at a time.  Each record refines the
@@ -492,10 +513,10 @@ capacity to distinguish events within it.
 
 \begin{axiom}[The Axiom of Planck~\cite{planck1901}]
 \label{ax:planck}
-\emph{[Observations are Finite]}
+\emph[Observations are Finite and Immutable]
 For any observer, the set of observable events within their causal domain
 is finite.  The chain of measurable distinctions terminates at the limit of the
-observer’s proper time or causal reach.
+observer’s proper time or causal reach. These observations do not change over time.
 \end{axiom}
 
 \noindent
@@ -506,7 +527,7 @@ additional distinctions can be drawn.  The \emph{last event} of an observer
 thus coincides with the top of their causal set: the boundary of all that can be
 measured or known.
 
-\subsection{Event Selection}
+\subsection{Measurements Must Extend Without Contradiction}
 The preceding axioms restrict the informational content of the record and the
 structure of causal precedence.  We now introduce an axiom governing how
 events may be selected in a consistent physical history.  A partial history is
@@ -671,7 +692,7 @@ A poset is a pair $(E,\leq)$ where $\leq$ is a binary relation on $E$ satisfying
 \end{definition}
 
 Such an ordering always admits at least one maximal element~\cite{bombelli1987}
-\begin{definition}[Top of a Poset]
+\begin{definition}[Top of a Poset~\cite{davey2002}]
 \label{def:top}
 Let $(E,\leq)$ be a partially ordered set.  The \emph{top} of $E$, denoted
 $\mathrm{Top}(E)$, is the set of maximal elements of $E$:
@@ -810,7 +831,7 @@ an integer, and continuity---when it appears---arises only as the smooth
 limit of increasingly refined counts.  We formalize this as follows.
 
 
-\begin{definition}[Measurement]
+\begin{definition}[Measurement~\cite{wheeler1990}]
 \label{def:measurement}
 Let $(E,\prec)$ be a locally finite partially ordered set of events, and let
 $P:E\to\{0,1\}$ be a predicate designating which events satisfy a specified
@@ -855,8 +876,17 @@ as a grammar of distinctions.  The familiar constants and fields---mass,
 charge, curvature, temperature---arise as \emph{derived measures} within a
 finite causal order, not as independent entities.
 
-\begin{example}[Measurement as a BNF Grammar~\cite{backus1959,naur1963}]
+\begin{example}[Measurement~\cite{backus1959,naur1963,wheeler1990}]
 \label{ex:bnf-measurement}
+\NB{Measurement is a formal writing system. Each observation selects a
+symbol from a finite alphabet, and a record is the word formed by these
+selections. No physical semantics are assumed; the structure is purely
+syntactic in the Backus--Naur sense~\cite{backus1959,naur1963}. In the
+spirit of Wheeler's dictum that information is fundamental~\cite{wheeler1990},
+the act of measurement is treated here as the creation of symbolic
+distinctions, nothing more.}
+
+
 Because measurement produces distinguishable outcomes, each observation
 selects a symbol from a finite or countable alphabet
 \[
@@ -1024,7 +1054,7 @@ Here, this is not assumed from geometry; it is a consequence of
 incomparability in the event order.
 \end{remark}
 
-\begin{definition}[Causal Network]
+\begin{definition}[Causal Network~\cite{bombelli1987}]
 \label{def:causal-network}
 Let $E$ be a finite set of admissible events and let $\triangleright$ denote
 the \emph{immediate causal cover}: $e \triangleright f$ if and only if $e < f$
@@ -1205,7 +1235,7 @@ have been restricted by all earlier observations.  The universe accumulates
 consistency through products of restricted increments, not by additive
 evolution.
 
-\begin{definition}[Partition of the Event Set]
+\begin{definition}[Partition of the Event Set~\cite{halmos1974naive}]
 \label{def:partition}
 Let $(E,\prec)$ be a locally finite partially ordered set of distinguishable
 events.  A \emph{partition} of $E$ is a collection of disjoint subsets
@@ -1224,6 +1254,15 @@ lie in distinct elements of the partition.
 
 \begin{definition}[Restriction Operator]
 \label{def:restriction}
+\NB{The restriction operator is the first construction that is intrinsic to the
+informational framework developed in this work.  All earlier definitions
+(posets, partitions, causal networks, and measurements) are standard
+mathematical structures.  The restriction operator encodes admissibility: it
+records which refinements survive in the presence of prior observations.  This
+mechanism does not appear in classical order theory or in conventional
+treatments of causality, and it is the essential ingredient that links local
+measurement constraints to global informational consistency.}
+
 Let $(E,\prec)$ be a partially ordered set of events, and let
 $e \in E$ be a newly recorded event.  The \emph{restriction operator}
 \[
@@ -1304,14 +1343,66 @@ order-insensitive accumulation of factors.
 \end{enumerate}
 \end{proposition}
 
+Categorically, the structure underlying this result is the
+naturality of a monoidal functor in the sense of
+Mac~Lane~\cite{maclane1971}, with further development in
+Kelly~\cite{kelly1982} and Leinster~\cite{leinster2014}.  The proof sketch
+below follows this diagrammatic perspective; the fully explicit ZFC
+realization appears in Appendix~\ref{app:proofs}.
+
 \begin{proofsketch}{universe-tensor}
-(1) By definition $\mathbf{F}(e)=\Psi(\hat{R}(e))$, so the left update is the
-representation of the discrete restriction; this is $R\circ\Psi=\Psi\circ\hat{R}$
-on ${\rm im}\,\Psi$. (2) Associativity of multiplication in $\mathcal{T}(V)$
-gives well-definedness for a fixed order; linear extensions differ only by
-swapping independent events. (3) and (4) follow from standard properties of
-products with commuting factors and invariance of cyclic scalar functionals.
+Let $\mathcal{E}$ be the refinement category of admissible event records,
+with objects the event sequences and morphisms the refinement maps
+$\widehat{R} : \mathbf{i} \to \widehat{R}(\mathbf{i})$.
+Let $T(V)$ be the tensor algebra regarded as a \emph{symmetric monoidal
+category} under the tensor product.
+
+The embedding $\Phi : E \to T(V)$ extends uniquely to a monoidal functor
+\[
+\Phi^{(\bullet)} : \mathcal{E} \longrightarrow T(V)^{(\bullet)},
+\qquad
+\mathbf{i} = (i_1,\dots,i_n) \longmapsto
+\bigl(\Phi(e_{i_1}),\dots,\Phi(e_{i_n})\bigr),
+\]
+sending refinement maps to componentwise restriction on the image.
+
+A refinement $\widehat{R} : \mathbf{i} \to \mathbf{j}$ in $\mathcal{E}$ is
+a morphism expressing that $\mathbf{j}$ is the universal solution to a finite
+cone of compatibility conditions.  Under the functor $\Phi^{(\bullet)}$, this
+induces a canonical morphism
+\[
+\Phi^{(\bullet)}(\widehat{R}) :
+\Phi^{(n)}(\mathbf{i})
+\longrightarrow
+\Phi^{(m)}(\mathbf{j}).
+\]
+By functoriality, the square
+\[
+\begin{tikzcd}
+\mathbf{i} @>\widehat{R}>> \mathbf{j} \\
+@V\Phi^{(n)}VV @VV\Phi^{(m)}V \\
+\Phi^{(n)}(\mathbf{i}) @>\Phi^{(\bullet)}(\widehat{R})>>
+\Phi^{(m)}(\mathbf{j})
+\end{tikzcd}
+\]
+commutes.  This is exactly the naturality square.
+
+To obtain the Causal Universe Tensor, form the \emph{monoidal accumulation}
+of the embedded sequence:
+\[
+U(\mathbf{i})
+   := \Phi(e_{i_1}) \otimes \cdots \otimes \Phi(e_{i_n}).
+\]
+Since $T(V)$ is symmetric monoidal, any two linear extensions of a finite
+event poset differ by braidings of incomparable events, and such braidings
+commute with the tensor structure.  Hence $U(\mathbf{i})$ is well defined up
+to the canonical symmetry of the monoidal category.
+
+Thus the Causal Universe Tensor is the monoidal image of a refinement diagram under a
+functor preserving both the tensor product and the naturality of
+refinement. 
 \end{proofsketch}
+
 
 
 
@@ -1420,7 +1511,7 @@ informational independence corresponds exactly to order-insensitive
 contribution to the invariants derived from $\mathbf{U}$.
 \end{remark}
 
-\begin{example}[Non-commutative Event Pair~\cite{hawking1973}]
+\begin{phenomenon}[Non-commutative Event Pair~\cite{hawking1973}]
 \NB{Non-commutative event tensors often signal a \emph{dependency}:
 one update must precede the other for the restricted outcome set to
 remain consistent.  Reversing such events changes the operator state,
@@ -1450,10 +1541,10 @@ states.  However, cyclic scalar invariants agree:
 \]
 In this sense, noncommutativity affects the internal operator record but
 not the measurable quantities obtained by cyclic scalar functionals.
-\end{example}
+\end{phenomenon}
 
 
-\begin{example}[Independent Event Chains~\cite{langevin1911}]
+\begin{phenomenon}[Independent Event Chains~\cite{langevin1911}]
 \NB{This is analogous to the inertial segment of the twin paradox.  During
 coasting, neither twin exchanges signals with the other, so no event on one
 worldline refines or restricts events on the other.  The two chains are
@@ -1502,7 +1593,7 @@ are partitioned into disjoint informational domains, their admissible
 increments commute.  Order affects the internal operator record but leaves
 measurable cyclic scalars unchanged, exactly as in the coasting phase of the
 twin paradox.
-\end{example}
+\end{phenomenon}
 
 
 \section{Information Minimality and Kolmogorov Closure}
@@ -1521,7 +1612,7 @@ We treat histories as finite symbolic strings and measure their descriptive
 content by Kolmogorov complexity. A physically admissible history is one
 that cannot be compressed by adding unrecorded structure.
 
-\begin{definition}[Kolmogorov Complexity {\cite{kolmogorov1965,chaitin1975}}]
+\begin{definition}[Kolmogorov Complexity~\cite{chaitin1975,kolmogorov1965}]
 Fix a universal Turing machine $U$~\cite{turing1936}. For any finite string $w\in\Sigma^{*}$,
 the Kolmogorov complexity $K(w)$ is the length of the shortest input to $U$
 that outputs $w$ and halts. The functional $K:\Sigma^{*}\rightarrow\mathbb{N}$
@@ -1538,12 +1629,24 @@ corresponding element of $E$. Any extension predicting unobserved structure
 is rejected as inadmissible.
 \end{definition}
 
-\begin{example}[Paradoxes of Time Travel~\cite{lewis1976}]
+\begin{phenomenon}[Paradoxes of Time Travel~\cite{godel1931,lewis1976}]
 \NB{Apparent paradoxes often attributed to \emph{time travel}, \emph{remote 
 viewing}, or other extraordinary mechanisms are pathologies of 
 over--resolution.  They arise when incompatible refinements are treated as 
 simultaneously admissible, producing the illusion of phenomenal violation 
 rather than an actual failure of causal order.}
+\NB{This thought experiment introduces constructions that are intentionally
+self--referential.  These devices are used only to illustrate how paradoxes
+arise when an observer attempts to treat its own temporal index as a
+manipulable datum.  Such constructions lie outside the admissible structure
+of the axioms and are not permitted in any formal derivation.  In particular,
+they follow the general pattern of self--reference that Godel cautioned
+against in his incompleteness results: systems that encode statements about
+their own inferential process cannot, in general, maintain global
+consistency~\cite{godel1931}.  The paradoxes described here therefore serve only as intuitive
+warnings.  They do not represent allowable configurations within the theory,
+and no phenomenon in this manuscript relies on them.}
+
 
 
 Let $E = \{e_1, e_2, e_3, \dots\}$ be a locally finite causal chain where each
@@ -1596,7 +1699,7 @@ single-valued universe tensor,
 The axiom thus enforces the same regularity that Martin's Axiom guarantees in
 set theory: every countable family of local choices admits a globally consistent
 selection that preserves the partial order.
-\end{example}
+\end{phenomenon}
 
 
 \begin{definition}[Information Minimality {\cite{kolmogorov1965,li1997}}]
@@ -1644,6 +1747,15 @@ history that predicts them is logically inconsistent with the observational
 record.
 
 \begin{definition}[Unobserved Structure]
+\NB{The idea of \emph{unobserved structure} echoes the notion of ``hidden''
+or ``non--observable'' structure that appears in several areas of theoretical
+computer science and logic, most notably in Scott's domain theory~\cite{scott1970}.  There, an
+extension may contain information that is not reflected in the observable
+prefix.  In the present framework, the analogy is purely conceptual: symbolic
+refinements that do not correspond to distinguishable events in the ledger do
+not contribute to the informational state.  Only observed distinctions shape
+the causal record.}
+
 Let $w$ be an admissible extension of $E$ (Definition~2.3.3). A symbolic
 segment of $w$ between $e_i$ and $e_{i+1}$ contains \emph{unobserved
 structure} if it encodes a distinguishable update that is not present in $E$.
