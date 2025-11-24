@@ -1,27 +1,13 @@
 \chapter{The Algebra of Events}
 \label{chap:algebra}
-\NB{The measurable objects of this chapter live in a finite--dimensional real
-vector space $V$ and its tensor algebra $\mathcal{T}(V)$.  We assume no
-metric, no inner product, and no rule for raising or lowering indices.
-Consequently, there is no notion of contravariance or covariance in the
-formal development, and Einstein summation does not apply.  The tensor
-algebra here is purely algebraic: indices do not carry geometric meaning.
-
-When a thought experiment quotes familiar expressions from continuum
-physics (stress--energy, geodesic equations, curvature terms, and so on),
-we reproduce their standard index notation verbatim so that the reader may
-recognize the classical form.  These indices belong to the \emph{smooth
-shadow} of the theory, not to the discrete algebra itself.  The combinatorial
-foundation assumes only that $V$ exists; no metric structure is imposed.}
-
-
 The first chapter established the informational mechanism of physics:
 each measurement produces a finite, distinguishable event, and the
 absence of additional events is itself a binding constraint.
 Measurement is not a sampling of an underlying continuum; it is the
-creation of distinguishability.  From a mathematical standpoint, the
-universe is therefore a growing record of discrete selections, ordered
-by refinement.
+creation of distinguishability.  From a mathematical standpoint, 
+measurement itself is therefore a growing record of discrete selections, ordered
+by refinement. Each measured event appends an inassailable fact to the experimental 
+record.
 
 This chapter formalizes that structure.  We build the algebra of
 measurement itself.  Rather than treating observations as values of
@@ -35,15 +21,119 @@ continuations of the record.  The universe does not evolve additively
 in time; it accumulates consistency through left products of restricted
 increments.
 
+\section{Time and Events}
 
-This changes the role of time entirely.  In the discrete domain $E$,
+Before introducing any notion of temporal ordering, it is necessary to
+separate the concept of an \emph{event} from the concept of \emph{time}.
+In this framework, neither is assumed a priori. Both arise as consequences
+of how distinguishable records can be extended without contradiction.
+
+An \emph{event} is defined as a minimal, distinguishable unit of record (Definition~\ref{def:event}).
+It is not something that happens in time. It is the act of recording a
+distinction. An event exists precisely when a measurement refines the
+experimental ledger. If nothing is distinguished, no event exists.
+
+Thus, the set of events $E$ is the set of all finite acts of distinction.
+This set carries structure not from motion or duration but from refinement.
+
+Time, therefore, does not exist as a background coordinate but as a way to 
+index events relative to each other. It is an ordinal indexing of
+refinement. Given two events $e_i, e_j \in E$, we say that $e_i \prec e_j$
+if and only if the record of $e_j$ is a refinement of the record of $e_i$.
+
+Time is therefore not measured. It is counted. It is the order type of the
+chain of events:
+\[
+e_1 \prec e_2 \prec e_3 \prec \cdots
+\]
+Proper time is the cardinality of this chain. There is no continuum of time
+between irreducible refinements. There is only succession.
+
+\begin{phenomenon}[The Event Effect~\cite{kant1781}]
+\NB{Kant identified time not as an object, but as a necessary ordering
+condition for experience.  The present construction reverses this dependency:
+the ordering of irreducible events generates time rather than presupposing it~\cite{kant1781}.}
+
+An event is the minimal irreducible act of distinguishability.  It arises
+when and only when a measurement refines the admissible history.  It is not
+located in time; it generates time by its order.
+\end{phenomenon}
+
+It is necessary to clarify what it means for a
+measurement to exist at all.  In this framework, measurement is not a passive
+act and not an inquiry about a pre--existing quantity.  It is the creation of a
+distinction that did not previously appear in the record.  A measurement is an
+operation that enlarges the causal ledger.
+
+A record that does not grow is not a record that was measured.  Silence cannot
+be distinguished from absence, and absence cannot participate in causal
+structure.  For this reason, the null act cannot be admitted as a measurement.
+
+This has an important structural consequence.  Measurement is not reversible.
+Later observations may refine, reinterpret, or contextualize earlier ones, but
+they cannot erase the fact that a distinction was recorded.  The ledger may be
+extended, but it cannot be undone.  This irreversibility is not a postulate of
+physics; it is a logical consequence of what it means to record anything at
+all.
+
+\begin{phenomenon}[The Positive Measurement Effect~\cite{plato1996}]
+\NB{Zeno's paradoxes arise precisely from allowing vanishingly small
+increments to masquerade as genuine acts.  In the present framework, such
+zero-measurement steps are inadmissible.  A measurement must refine, or it is
+not a measurement at all.}
+
+All admissible measurements produce a strictly positive refinement.  A zero
+measurement is not a measurement but a null act and is therefore excluded.
+Every event increases the informational record by a positive integer amount.
+Observations cannot be replaced or canceled by future observations.
+\end{phenomenon}
+
+Although no intermediate event exists between successive refinements, the
+dense limit of refinement forces the appearance of a smooth interval as an
+approximation. This interval is not fundamental. It is the shadow of coarse
+observation.
+
+Let $\tau : E \to \mathbb{N}$ be the ordinal timing map induced by
+refinement order. For two successive events $e_i \prec e_{i+1}$, the open set
+\[
+(\tau(e_i), \tau(e_{i+1}))
+\]
+contains no elements of $E$.
+
+However, in the smooth completion forced later by the Axiom of Cantor, this
+empty discrete interval is represented as a continuous open interval. This
+representation gives rise to the notion of a \emph{present moment}.
+
+\begin{phenomenon}[The Moment Effect]
+The Here and Now is the smooth shadow of the empty open interval between
+successive events.  It is not a primitive moment in time, but the continuous
+representation of the absence of distinguishable events between
+refinements.  Concretely, it appears as the open set
+\[
+(i,i+1) \subset \mathbb{R},
+\]
+which contains no admissible events.
+\end{phenomenon}
+
+\subsection{The Causal Universe Tensor}
+
+Having established that time is not a background parameter but an ordinal
+structure induced by refinement, we now consider the object that records the
+global consequences of this ordering.  The axioms do not allow a universe to
+be postulated as a stage on which events occur.  Instead, what is called the
+“universe” must be constructed as the unique coherent extension of the finite
+record itself.  The following tensor object is not dynamical and not
+geometric.  It is a bookkeeping device forced by the requirement that local
+distinctions admit a single, globally consistent smooth shadow.
+
+In the discrete domain $E$,
 time is ordinal: an index into the growing chain of distinguishable
 selections.  In the continuous shadow $U$, time does not flow at all.
 The continuous tensor $\mathbf{U}_k$ at step $k$ is not the result of
 propagation, but the image of a restriction map:
 \begin{equation}
 \label{eq:Uk-update}
-\mathbf{U}_{k+1} \;=\; \Psi\!\big(e_{k+1} \cap \hat{R}(e_k)\big)\,\mathbf{U}_k,
+\U_{k+1} \;=\; \Psi\!\big(e_{k+1} \cap \hat{R}(e_k)\big)\,\U_k,
 \end{equation}
 where $\hat{R}$ is the discrete restriction induced by the most recent event
 $e_k$, and $\Psi$ is its continuous representation.  Thus the
@@ -63,22 +153,7 @@ informational minimality and global coherence.
 
 In this way, Chapter~\ref{chap:algebra} performs the key transition:
 from sets of distinguishable events to an algebra of restricted,
-multiplicative updates.  The universe is ``embarrassingly parallel'':
-each inertial frame maintains its own $\mathbf{U}_k$, derived solely
-from the restriction of its local events.  Relativistic simultaneity
-requires no further machinery.  Partitions of $E$ arise naturally from
-informational independence, and the merge of light-cone–consistent
-updates uniquely defines their reconciliation.
-
-\NB{In the sense of parallel computing, the causal structure is
-``embarrassingly parallel'' \cite{amdahl1967}: independent branches of
-$E$ evolve without any need for global synchronization.  Only when
-light cones overlap must their records be reconciled, and in that case
-consistency is enforced by the causal order rather than by a shared
-clock.}
-
-
-
+multiplicative updates. 
 The remainder of the chapter introduces the axioms, operators, and
 tensor structures that make this viewpoint precise, culminating in the
 formal definition of the causal universe tensor.
@@ -90,6 +165,7 @@ demonstrates that measurement does not estimate a continuous parameter
 directly; it eliminates process states that are incompatible with the
 record.  The state of the system is therefore not an average, but the
 set of configurations that have survived all admissible checks.}
+For a formal treatment, see Phenomenon~\ref{ph:spc} later in this chapter.
 
 Imagine a factory that manufactures a precision component.  The process
 is controlled by a set of adjustable parameters: temperature, pressure,
@@ -125,9 +201,8 @@ the production line, can refine their records without communication.
 If their measurements are mutually consistent, the products merge
 without conflict.  If not, no admissible configuration survives the
 combined restrictions, and the process is flagged as out of control.
-In this sense the system is ``embarrassingly parallel'': independent
-measurements commute whenever they are spacelike in the informational
-sense, and consistency is enforced only when histories are compared.
+In this sense the system is independent, yet globally constrained
+by the requirement of the coherent environment.
 
 This ordinary industrial setting exhibits the same structure developed
 in this chapter.  Measurement eliminates incompatible alternatives,
@@ -157,6 +232,8 @@ consequences relevant to the construction that follows:
   remain sets.
   \item \textbf{Choice} permits well–ordering, allowing every countable
   causal domain to admit an ordinal index.
+  \item \textbf{The Successor Function} of the Peano axioms provides the
+  mechanism by which distinguishable outcomes may be counted.
 \end{itemize}
 
 These are precisely the ingredients required to formalize a locally finite
@@ -180,12 +257,41 @@ measurement produces data, and data are mathematical objects.
 Everything that follows concerns the admissible transformations among
 such records.
 
+\begin{definition}[Admissible Structure]
+Let $E$ denote the set of admissible objects.
+
+Every element of $E$ is a set.  Two types of elements are distinguished
+internally:
+
+\begin{itemize}
+  \item An \emph{event} is a set $e$ such that $e \in E$.
+  \item A \emph{worldline} is a set $S$ such that
+\[
+S \in E \quad \text{and} \quad \forall e \,(e \in S \Rightarrow e \in E).
+\]
+\end{itemize}
+
+Thus the admissibility relations are stratified as
+\[
+e \in E, \qquad S \in E, \qquad e \in S.
+\]
+\end{definition}
+
 \begin{axiom}[The Axiom of Kolmogorov~\cite{kolmogorov1933}]
 \label{ax:kolmogorov}
 \emph{[Measurement as a Formal Record.]}
+Formally, there exists a set $E$ such that $E$ is an admissible record and
+\begin{equation}
+\left|\{\, e \mid e \in E \,\}\right| > 3 .
+\end{equation}
+\NB{The choice of $3$ is not arbitrary, but serves to eliminate degenerate
+configurations and simplify the foundational proofs. There are posedness
+concerns for universes with less than 4 events and the analysis of the
+degenerate cases is omitted.}
+\end{axiom}
 
 The record of measurement---defined as the finite or countable set of
-observed, distinguishable events---is taken to be a mathematical object
+observed, distinguishable events and worldlines---is taken to be a mathematical object
 representable within ZFC. No
 ontological claim is made about physical reality. The axiom asserts only
 that observable data can be formalized as sets and relations.
@@ -197,7 +303,6 @@ mathematical object whose structure is defined entirely within ZFC. Throughout
 this work, the word ``information'' refers exclusively to these representable
 distinctions; nothing is asserted about any underlying physical substrate
 that might produce them.
-\end{axiom}
 
 \subsection{Mathematics is the Language of Measurement}
 
@@ -321,22 +426,27 @@ an axiom about how physical theories must interpret finite empirical records.
 
 \begin{axiom}[The Axiom of Ockham~\cite{ockham1323})]
 \label{ax:ockham}
-\emph{[Information Minimality]}
-Let $E=\{e_0\prec e_1\prec\cdots\prec e_n\}$ be the recorded events of an
-experiment, understood as a finite or countable set of distinguishable
-observations representable in ZFC. Among all symbolic descriptions that map
-to $E$ and introduce no additional recorded events, the admissible completion
-is the one of minimal Kolmogorov complexity.
-~\cite{kolmogorov1965,li2008}.
+\emph{[Order Coherence]}
+Let $E=\{e_0 \prec e_1 \prec \cdots \prec e_n\}$ be a finite or countable
+partially ordered set of recorded events.  The admissible histories are
+order--respecting in the following sense: for any two events $e_1,e_2 \in E$,
+\[
+e_1 \prec e_2 \;\;\Longrightarrow\;\; \forall S \in E \, (\, e_1 \in S \Rightarrow e_2 \in S \,).
+\]
 
-Equivalently, if a hypothetical refinement of the history introduces a
-distinguishable update that is not present in $E$, then that refinement is
-inadmissible. Any shorter description consistent with $E$ is preferred.
+That is, no admissible history may contain an earlier event without also
+containing all later events forced by the causal order.
 \end{axiom}
 
 We have seen this principle in action already.  Refer to Thought 
 Experiment~\ref{te:invisible-curve} and the use of Simpson's rule to
 compute the path of a spaceship with minimal measurement information.
+
+Further, we will later show, using Law~\ref{law:discrete-spline}, that the
+Axiom of Ockham imposes an informational minimality constraint on the
+evolution of the Causal Universe Tensor, and that this constraint
+mathematically characterizes the sharpness of the razor.
+
 
 \subsection{Causal Set Theory}
 The previous axiom imposed an informational constraint on admissible
@@ -417,26 +527,27 @@ structure is rejected as inadmissible, since it asserts observations that did
 not occur.
 \end{example}
 
-
-
-\section{The Axioms of Physics}
-\label{se:physicalaxioms}
+\section{The Axioms of Observation}
+\label{se:observationaxioms}
 
 A common criticism of mathematical physics is the extent to which mathematics can 
 be tuned to fit observation~\cite{boltzmann1896,planck1914} and, conversely, 
-manipulated to yield nonphysical results~\cite{berkeley1734,hossenfelder2018}.
-The critique of Newton’s fluxions could only be answered by successful prediction. 
+manipulated to yield nonphysical results~\cite{hossenfelder2018}.
+Lord Berkeley's critique of Newton’s fluxions~\cite{berkeley1734} could only be answered by centuries of successful 
+prediction with only intuition as justification. 
 Today, calculus feels like a natural extension of the real world---so much so that 
 Hilbert, in posing his famous list of open problems, explicitly formalized the lack 
 of a rigorous foundation for physics as his Sixth Problem~\cite{hilbert1902problems,weyl1949}.
 
-We aim to show that the mathematical language used to describe physics gives 
+We aim to show that the mathematical language used to describe observation gives 
 rise to a system expressible entirely as a discrete set of events ordered in 
 time. Moreover, this ordered set possesses a mathematical structure that 
 naturally yields the appearance of continuous physical laws and the conservation of quantities.
 To understand how this works, we first clarify what we mean by measurement.
 
 \subsection{The Countable Nature of Events}
+\begin{example}[Momentum~\cite{newton1687}]
+\NB{For a rigorous treatment of momentum see Phenomena~\cite{ph:momentum} and~\cite{ph:ang-momentum}}
 \label{sse:measurement}
 Physical laws relate measurements. For example, Newton’s second law~\cite{newton1687}
 \begin{equation}
@@ -447,6 +558,7 @@ states that force relates to the \emph{change} in momentum over time. To speak o
 two momentum values, one that \emph{comes before} the other; otherwise there is nothing to distinguish.
 In set-theoretic terms, by the Axiom of Extensionality (assumed in Axiom~\ref{ax:peano}), different states must differ in their
 contents, so ``change'' presupposes the distinguishability of two states.
+\end{example}
 
 In this framing, measurement values are \emph{counts} (cardinalities) of elementary occurrences: the number of
 hyperfine transitions during a gate, the tick marks traversed on a meter stick, the revolutions of a wheel.
@@ -473,7 +585,7 @@ distinguishable events that can be recorded between two selections:
 \end{axiom}
 
 
-\begin{example}[Relativistic simultaneity~\cite{einstein1905}.]
+\begin{example}[Relativistic Simultaneity~\cite{einstein1905}.]
 Two laboratories, $A$ and $B$, perform independent procedures, each producing
 a finite measurement record.  Because the experiments are independent, their
 events commute: no record in $A$ constrains the order of any record in $B$.
@@ -854,21 +966,6 @@ assumed \emph{a priori}; continuity is inferred from the refinement of a
 finite causal record.  In practice, every physical “number” depends on a
 calibration that relates discrete counts to a chosen system of units.
 
-
-\begin{example}[Planck's Constant~\cite{planck1901}]
-\NB{Planck's constant is ``constant'' only after a choice of units and a
-calibration procedure.  In practice, the quoted numerical value of $h$
-is obtained by fitting experimental data to a model, often by minimizing
-an $L^2$ measurement error across a calibration experiment.  The
-physical principle is invariant, but the reported number reflects the
-best fit of a finite data set in a chosen system of units.}
-
-Imagine a hypothetical measuring apparatus that records distinctions not by counting particles or intervals, but by tallying \emph{acts of discernment}—each act adding one quantum of distinguishability to the record. Suppose further that the calibration of such a device required only a single fixed scale to relate discrete counts to continuous units of measure. In physics, Planck’s constant $h$ serves precisely this purpose: it is not a force or an energy, but a bookkeeping factor that ensures continuity between discrete and continuous domains.
-
-In the present framework, the analogous constant plays no physical role—it merely fixes the \emph{dimensional scale} by which finite distinctions are rendered comparable. The constant’s existence affirms that measurement can be both discrete and metrically consistent without invoking any specific quantum postulate. As with $h$, the constant here is not discovered but \emph{defined}: a normalization that preserves coherence between counting and continuity.
-\end{example}
-
-
 The analysis concerns only the \emph{structure of measurement itself}:
 the mathematical relations among counts of distinguishable events that
 underlie all physical observations.  In this framing, physics is viewed
@@ -998,6 +1095,19 @@ spline, then
 the Lorentzian proper time. The integral form is not assumed; it is the smooth
 shadow of the combinatorial count.
 \end{remark}
+
+\begin{phenomenon}[The Fourier Budget Constraint]
+A refinement ledger possesses a finite informational budget.  To specify a
+location with increasing precision consumes refinement capacity that would
+otherwise resolve rates of change.  A perfectly sharp position therefore
+requires an unbounded refinement cost in momentum.
+
+This is not a probabilistic limitation but a bookkeeping constraint: the
+ledger cannot afford to encode arbitrarily precise conjugate refinements
+simultaneously.  The apparent uncertainty is the shadow of a finite
+refinement budget.
+\end{phenomenon}
+
 
 The notion of \emph{uncorrelant events} formalizes the idea that two recorded
 distinctions may be independent of one another.  In causal set theory,
@@ -1403,6 +1513,25 @@ functor preserving both the tensor product and the naturality of
 refinement. 
 \end{proofsketch}
 
+The existence of the Causal Universe Tensor gives rise to the appearance of
+stability in long sequences of refinement.  Because each admissible update is
+not free to evolve arbitrarily, but must remain compatible with the unique
+globally coherent extension of the record, deviations cannot accumulate
+without bound.  Local inconsistencies are absorbed through restriction and
+embedding, producing the observable effect of bounded variation in the
+measurement ledger.  This structural stability is not enforced by physical
+feedback or control, but by the logical necessity of coherent refinement
+itself.  This gives rise to the following informational phenomenon.
+
+\begin{phenomenon}[The Statistical Process Effect~\cite{shewhart1931}]
+\label{ph:spc}
+A sequence of measurements refined under admissible updates exhibits
+structural stability.  Local deviations are smoothed by the unique coherent
+extension enforced by restriction and embedding.  The resulting record
+remains bounded, not by physical forces, but by the logical requirement of
+global consistency.  This informational stability is the phenomenon known in
+classical practice as statistical process control.
+\end{phenomenon}
 
 
 
@@ -1731,7 +1860,7 @@ between recorded events. Thus the variational calculus is not imposed; it
 is the continuum limit of Kolmogorov minimality.
 \end{remark}
 
-\subsection{Inadmissibility of Unobserved Structure}
+\subsection*{Inadmissibility of Unobserved Structure}
 
 Let $E=\{e_0\prec e_1\prec\cdots\prec e_n\}$ be the finite set of recorded
 events produced by a measurement process. By Definition~\ref{def:measurement},

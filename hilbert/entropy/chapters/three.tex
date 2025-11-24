@@ -451,6 +451,7 @@ are therefore the unique histories that leave no trace.
 \end{phenomenon}
 
 
+
 \section{The Law of Spline Sufficiency}
 \label{sec:spline-sufficiency}
 
@@ -500,6 +501,60 @@ discrete measurement and continuous dynamics:
 Finite differences do not approximate the Euler--Lagrange equation; they
 \emph{generate} it.  Smooth calculus enters only as the completion of
 refinement in the causal record, not as an assumed geometric primitive.
+
+\subsection{Minimality}
+
+The Law of Spline Sufficiency guarantees that admissible histories are those
+that interpolate between refinements with minimal curvature.  This law does
+not merely describe smoothness; it constrains how influence can propagate
+through the ledger.  A localized refinement cannot remain localized under
+extension.  Its effect must be distributed across every admissible
+continuation consistent with global coherence.
+
+As the causal record is extended outward from an event, the frontier of
+admissible continuations grows combinatorially.  The same finite refinement
+budget must be shared across an increasing number of admissible degrees of
+freedom.  The effect of any single refinement therefore weakens with
+informational separation, not because of dissipation, but because of
+accounting.
+
+While any minimality can be enforced, measurement tends to prefer minimization
+in the $\mathcal{L}^2$-norm.
+
+\begin{phenomenon}[The Inverse Square Effect]
+\label{ph:inverse-square}
+
+\textbf{Statement.}
+The influence of a refinement event decreases as the inverse square of the
+informational separation.  This scaling is not postulated; it is forced by
+the geometry of admissible splines.
+
+\textbf{Mechanism.}
+By the Law of Spline Sufficiency, admissible continuations of the causal
+ledger are the minimal curvature interpolants consistent with boundary
+anchors.  A single refinement event acts as a localized constraint on the
+spline.  As the distance from that constraint increases, the number of
+distinct admissible continuations grows with the surface measure of the
+surrounding causal sphere.
+
+In three admissible dimensions, this measure scales as $4\pi r^2$.  The
+influence of a fixed refinement budget must therefore be distributed across a
+quadratically growing frontier.  The admissible effect per refinement falls
+as
+\[
+I(r) \propto \frac{1}{r^2}.
+\]
+
+\textbf{Interpretation.}
+This is not a force law.  It is a bookkeeping law.  The ledger cannot assign a
+fixed refinement cost to an expanding set of admissible continuations without
+diluting its effect.
+
+The inverse-square behavior of gravitation, radiation, and flux is therefore
+the smooth shadow of the combinatorial growth of admissible splines.
+
+\end{phenomenon}
+
 
 \section{Galerkin Methods}
 \label{sec:galerkin}
@@ -635,11 +690,12 @@ limitation of informational resolution.  The fluxion
 
   \end{phenomenon}
 
-\section{The Physical Impossibility of Spline Necessity}
-\label{subsec:impossibility-spline-law}
+\subsection{The Physical Impossibility of Infinite Refinement}
+\label{sec:impossibility-spline-law}
 
 A law of spline necessity \emph{would} describe the continuous limit of an
-ideal refinement process. In such a limit, where arbitrarily fine
+ideal refinement process much like the law of spline sufficiency. In such a limit, 
+where arbitrarily fine
 distinguishable refinements are permitted, the unique smooth closure
 compatible with informational minimality would necessarily coincide with a
 cubic spline satisfying $\Psi^{(4)} = 0$ between all anchors. This behavior
@@ -656,7 +712,8 @@ law of the finite world.
 
 \NB{The idea of a spline necessity law is meaningful only as a limiting
 construct. It does not apply to any finite record because no observational
-process can instantiate the infinite refinement depth the law presupposes.}
+process can instantiate the infinite refinement depth the law presupposes
+(Axiom~\ref{ax:planck}).}
 
 This observation motivates an approximate interpretation. Although an exact
 law cannot hold, the Galerkin convergence results of
@@ -667,6 +724,16 @@ is still relevant: finite informational models approach that limit as their
 resolution increases. The continuum spline is therefore best understood as
 the \emph{attractor} of refinement-compatible approximations, not as a law
 governing finite observational structure.
+
+\begin{definition}[Attractor~\cite{mandelbrot1982}]
+An attractor is a set of configurations toward which the admissible
+states of a system asymptotically converge under iteration of the update
+rule.  Once the refinement enters the neighborhood of the attractor,
+subsequent refinements remain confined to it.  The attractor represents the
+stable informational pattern that balances the system's internal stress and
+the constraints of the refinement process.  
+\end{definition}
+
 
 \subsection{Indistinguishability of Approximate and Ideal Spline Closures}
 \label{subsec:indistinguishability-spline}
@@ -702,7 +769,7 @@ Because no measurement can detect variation smaller than $\delta$, the outputs o
 $\Psi_N$ and $\Psi$ are observationally identical. To distinguish them would
 require a measurement refining the domain below $\delta$, which the axioms forbid.
 
-\begin{definition}[Observational Indistinguishability]
+\begin{definition}[Observational Indistinguishability~\cite{nyquist1928}]
 \label{def:indistinguishability}
 A finite-dimensional closure $\Psi_N$ is observationally indistinguishable from the
 ideal spline closure $\Psi$ if, for the minimum refinement scale $\delta$ of the
@@ -756,6 +823,17 @@ measurement can produce different records. Infinite refinement produces no new
 distinguishable outcomes.
 \end{proofsketch}
 
+\subsection{Discrete Refinement}
+\begin{phenomenon}[The Moire Effect]
+When two admissible ledgers defined on slightly different refinement lattices
+are reconciled, coherent and incoherent regions appear at macroscopic scale.
+These large scale beats are the smooth shadow of high frequency
+incompatibility between observer frames.
+
+The visible pattern is not a property of either ledger alone, but the
+structure required to preserve global consistency under their interaction.
+\end{phenomenon}
+
 
 
 Thus an infinitely refined object is operationally equivalent to a finite
@@ -764,7 +842,7 @@ mathematical limit, not an observable phenomenon. This prepares the way for the
 Law of Discrete Spline Necessity, which identifies the unique closure that
 saturates all distinguishable information at scale~$\delta$.
 
-\begin{phenomenon}[Informational Viscosity of Quicksand~\cite{batchelor1967,bonn2005}]
+\begin{phenomenon}[The Quicksand Effect~\cite{batchelor1967,bonn2005}]
 \label{ph:viscosity-quicksand}
 
 \NB{In a continuous fluid, buoyancy is described by Archimedes' principle~\cite{archimedes1912}: an 
@@ -951,6 +1029,16 @@ distinguishable scale $\delta>0$. The refinement sequence therefore terminates a
 finite stage, and no observational process can approach the continuum limit
 beyond this final resolution.
 
+\begin{phenomenon}[The Olbers Effect]
+An infinitely refined ledger would admit infinitely many luminous events.
+The observed darkness of the night sky demonstrates that the causal record
+is finite.
+
+The absence of uniform brightness is the direct observational proof that the
+informational capacity of admissible history is bounded.
+\end{phenomenon}
+
+
 This tension forces a fundamental conclusion: approximation is not a methodological
 choice but a structural necessity. Every admissible representation of a finite
 record must be an approximation to a limit that cannot be realized. The
@@ -1004,10 +1092,20 @@ discrete closures enforced by the axioms approximate the same limiting behavior
 that continuous and quantum mathematics describe in their respective formalisms.
 
 
-\section{Equivalence of Discrete and Smooth Representations}
-\label{sec:equivalence-principle}
 \subsection{Equivalence of Discrete and Smooth Representations}
-\label{sec:equivalence}
+\label{sec:equivalence-principle}
+
+\begin{phenomenon}[The Gibbs Phenomenon]
+When a discontinuous event is forced into a finite refinement ledger, a
+residual oscillation appears in its smooth shadow.  This overshoot is not an
+error of representation but the irreducible informational strain of mapping
+a discrete refinement into a bandwidth limited spline.
+
+The ringing persists because unobserved structure cannot be admitted.  The
+smooth shadow cannot perfectly close a discontinuity under finite
+refinement.
+\end{phenomenon}
+
 
 The preceding results establish the final closure of the Calculus of Dynamics.
 An admissible measurement record $\psi$ supported on event anchors
@@ -1160,8 +1258,110 @@ Smooth dynamics contain no structure beyond what is already present in the
 discrete causal record.  The apparent infinity of the continuum collapses to
 a single free parameter.
 
+\section{Time Dilation}
 
-\begin{coda}{Navier--Stokes as a Finite Third Parameter}
+The informational framework developed in Chapters~5 and~6 places a subtle
+constraint on how refinement may be transported across a causal network.
+Proper time is not a geometric parameter but the tally of irreducible
+distinctions, and the metric $g_{\mu\nu}$ records how this tally must adjust
+when two histories inhabit regions with different curvature residue.
+Whenever distinguishability is carried from one domain to another, the
+connection enforces a compatibility rule: the informational interval must be
+preserved even if the local refinement structure differs.
+
+This requirement has a striking observable consequence.  Two clocks placed
+at different informational potentials---that is, in regions where the
+residual strain of admissible curvature differs---cannot maintain the same
+rate of refinement.  Each clock is internally consistent, but the comparison
+of their records forces an adjustment.  A refinement sequence that is
+admissible at one potential must be reweighted when interpreted at another,
+or else the causal record would fail to merge coherently.
+
+In the smooth shadow, this bookkeeping adjustment becomes the familiar
+phenomenon of gravitational redshift.  Signals transported upward appear to
+lose frequency; signals transported downward appear to gain it.  Nothing
+mystical is occurring: the informational interval is being preserved, and the
+only available mechanism is a change in the rate at which distinguishability
+is accumulated.
+
+The Pound--Rebka experiment is therefore the archetype of an informational
+outcome.  It demonstrates that when refinement is compared across regions
+with differing curvature residue, the universe must adjust the apparent rate
+of time itself to maintain consistency.  No dynamical field need be invoked;
+the redshift is simply the shadow of the constraint that admissible
+refinements must agree on their causal overlap.
+
+
+\begin{phenomenon}[The Pound--Rebka Effect~\cite{pound1959}]
+
+\NB{The following is an \emph{informational phenomenon}.  No physical
+mechanism is assumed.  The interpretation concerns how the gauge of
+informational separation $g_{\mu\nu}$ adjusts refinement counts when
+distinguishability is transported across domains of differing causal
+potential.  Any resemblance to the gravitational redshift measured by
+Pound and Rebka is a consequence of the informational shadow, not an
+assumed dynamical cause.}
+
+The Axiom of Peano defines proper time as the count of irreducible refinements
+along an admissible history.  The Law of Causal Transport guarantees that
+this count is invariant under maximal propagation, while the informational
+metric $g_{\mu\nu}$ (Section~5.2) records how successive refinements compare
+when transported across regions whose admissible histories differ in their
+curvature residue.
+
+Consider two clocks: one at a lower informational potential (higher curvature
+residue) and one at a higher potential (lower residue).  Both clocks produce
+sequences of refinements
+\[
+  \langle e_1 \prec e_2 \prec \cdots \rangle_{\text{low}},
+  \qquad
+  \langle f_1 \prec f_2 \prec \cdots \rangle_{\text{high}},
+\]
+each internally consistent.  However, the Law of Boundary Consistency demands
+that refinements compared across their shared causal overlap must agree on
+their informational interval.  When the refinement sequence from the lower
+clock is transported to the higher clock, the compatibility condition forces
+an adjustment in the rate at which distinguishability is accumulated.
+
+Formally, transport along a connection with residue $\Gamma$ alters the
+frequency of refinements according to the first--order compatibility
+condition of Section~5.4:
+\[
+  \nu_{\text{high}}
+  = \nu_{\text{low}}\, (1 - \Gamma\,\Delta h),
+\]
+where $\Delta h$ is the informational separation between the clocks.
+This is the informational analogue of the frequency shift that appears in
+the smooth limit as gravitational redshift.
+
+In the Pound--Rebka configuration, a photon (interpreted here as a unit of
+transported distinguishability) sent upward from the lower clock must be
+refined in such a way that its informational interval remains constant.
+Since admissible refinements at higher potential accumulate fewer curvature
+corrections, the transported signal must appear at a lower frequency when
+measured by the upper clock.  Conversely, a downward signal appears at a
+higher frequency.  No physical field is invoked: the effect is a bookkeeping
+adjustment required to maintain Martin--consistent transport of
+distinguishability across regions of differing curvature residue.
+
+Thus the informational framework predicts a frequency shift of the form
+\[
+  \frac{\Delta \nu}{\nu} \approx \Gamma\,\Delta h,
+\]
+which matches the structure of the Pound--Rebka observation when interpreted
+in the smooth shadow of the metric gauge.
+
+The phenomenon of time dilation is therefore an observable outcome of the
+informational interval and the necessity of refinement--adjusted transport.
+Differences in curvature residue force clocks at different potentials to
+accumulate distinguishability at different rates, and the comparison of
+their refinement counts produces the celebrated redshift.
+
+\end{phenomenon}
+
+
+
+\begin{coda}{The Finite Navier--Stokes Effect}
 
 We do not derive the Navier--Stokes equations. Rather, we show how the
 measurement calculus constrains any smooth limit of finite records to a
