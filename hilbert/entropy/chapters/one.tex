@@ -24,7 +24,129 @@ distinguishable events.  Taken together, these two systems—the continuous
 and its dual—generate the fundamental tensor structure from which the
 laws of physics emerge.
 
-The central claim of this monograph is that the universe can be described
+\section{Facts and Truths}
+
+Scientific knowledge begins not with theory, but with tension.
+
+A \emph{fact} is a record that resists trivial dismissal.  A \emph{truth} is a
+structure that survives systematic attack.  The distance between them is the
+entire labor of science.
+
+The earliest failures of this distinction were philosophical, not numerical.
+Berkeley’s objection to Newton was not that Newton’s mechanics were wrong, but
+that infinite and invisible constructions had been smuggled into the argument
+without operational warrant.  Later, the industrial sciences confronted the
+same problem from the opposite direction: not infinite idealization, but
+finite noisy data mistaken for certainty.
+
+The earliest failures of this distinction were philosophical rather than
+numerical.  Berkeley’s critique of Newton, for instance, was not a dispute about the
+correctness of mechanics, but about the legitimacy of the constructions used
+to justify it~\cite{berkeley1734}.  Newton’s fluxions relied on quantities that were invoked,
+manipulated, and finally discarded without ever being observable.  Berkeley
+objected that invisible increments---ideal refinements with no operational
+definition---had been smuggled into the argument under the guise of
+mathematics.  
+
+In modern form, the criticism is that one cannot refine beyond what a
+measurement can actually distinguish.  An argument that depends on
+infinitesimal structure that no instrument could resolve is already
+admitting information that the record does not contain.  
+
+\begin{phenomenon}[The Bishop Berkeley Effect \cite{galileo1638}]
+\label{ph:fact-effect}
+
+The Bishop Berkeley Effect expresses a constraint on admissible mathematics:
+structure may not be introduced faster than it can be operationally
+recovered.  Berkeley’s complaint was not that Newton’s calculus failed, but
+that it succeeded by appealing to entities that could neither be produced nor
+distinguished by any finite observer.  Fluxions and infinitesimals appeared as
+objects of calculation without being objects of measurement.
+
+In this framework, a construction does not acquire the status of fact until
+there exists a procedure by which its effects could be recorded in a causal
+ledger.  Until such a procedure is available, the construction functions only
+as a shadow---a useful guide for reasoning, but not an admissible element of
+the record.  Mathematics is therefore subordinate to distinguishability:
+symbols are permitted only when they correspond to operations that could, in
+principle, leave a finite trace.
+
+This position does not reject abstraction.  It disciplines it.  A structure
+may be invoked only to the extent that it can be tested by admissible
+refinement.  What cannot be operationally recovered is treated as legend, not
+law.
+
+Galileo enters at this point for a clear methodological reason.  He was the
+first to insist that a claim about nature is admissible only if an
+instrument, a procedure, or a repeatable experiment could in principle
+distinguish it~\cite{galileo1638}.  His program tied knowledge to operations 
+that leave finite, recoverable traces.
+
+Berkeley supplied the complementary warning: even when mathematics succeeds,
+its constructions must still answer to that same discipline.  No symbolic
+form, however persuasive, is entitled to represent a fact unless its effects
+could be recovered by a finite observer.
+
+Together they enforce a single principle: facts precede the symbols used to
+describe them.
+
+This effect states that no mathematical object is admissible unless a
+finite observer could, in principle, construct a record distinguishing it.
+
+A fact is not a symbol.  It is a resistance: something that persists under
+attempts to erase it.  Mathematics that outruns operational recovery loses its
+connection to fact and becomes metaphysics.
+
+This discipline---that facts precede structure---is the Bishop Berkeley Effect.
+\end{phenomenon}
+
+Phenomenon~\ref{ph:fact-effect} secures the boundary of admissible structure, but it
+does not determine how claims survive contact with noise.  It tells us what
+is forbidden to assert, but not how fragile assertions should be tested.
+
+Once mathematics is disciplined by operational recoverability, a second
+problem emerges immediately: admissible measurements are never exact.  Even
+when structure is physically constructible, the record of observation is
+finite, irregular, and contaminated by variation.  The universe does not
+present for observation crisp algebraic objects, but clouds of outcomes.
+
+At this point, failure changes character.  The danger is no longer the
+introduction of metaphysical objects, but the premature declaration of truth
+from insufficient evidence.  A new discipline is required: not one that
+prevents imaginary structure, but one that makes genuine structure earn its
+right to be believed.
+
+The next phenomenon captures this inversion.  It treats every claim as guilty
+until it survives an organized attempt at its own destruction.
+
+\begin{phenomenon}[The Hume Effect \cite{hume1748}]
+\label{ph:hume-effect}
+\NB{One operational mechansim of the Hume effect is explored in Phenomenon~\ref{ph:gosset-t-test}}
+
+As Hume argued, no finite collection of observations can logically guarantee a
+universal claim.  A ledger of recorded events, however extensive, cannot rule
+out the possibility that some future refinement will produce a counterexample
+that the present record is too coarse to reveal.  The obstacle is not merely
+logical but operational: a finite observer cannot distinguish the indefinitely
+many circumstances in which a purported law might fail.
+
+Admissible knowledge must therefore proceed by attempted refutation rather
+than confirmation.  A rule earns standing only by resisting opportunities to
+break it.  Each refinement that fails to produce a contradiction strengthens
+the rule's credibility, but none can elevate it to certainty.  Confirmation
+adds no logical force; only the accumulation of failed refutations marks a
+claim as durable.
+
+In this framework, the reach of a universal statement is measured by the
+growth of the causal ledger it continues to survive.  Its authority derives
+from persistence under refinement, not from the number of times it has been
+observed to hold.
+
+This discipline---that universality rests on resistance rather than
+accumulation---is the Hume Effect.
+\end{phenomenon}
+
+As such, the central claim of this monograph is that the universe can be described
 as a pair of mutually defining operations: \emph{measurement} and \emph{distinction}.
 The first gives rise to the calculus of variation; the second to the
 ordering of events.  We introduce the \emph{Causal Universe Tensor} as the mathematical
@@ -94,7 +216,7 @@ decrease—the set of admissible distinctions.
 
 \noindent\textbf{The Axiom of Kolmogorov --- Information is Bounded}
 Every measurable event $e$ contains only a finite, countable quantity of 
-distinguishable information.  Each refinement $e' \succ e$ contributes a 
+distinguishable information.  Each refinement $e \prec e'$ contributes a 
 strictly greater number of distinguishable alternatives, and no refinement 
 may erase or reverse distinctions previously recorded.$\qed$
 
@@ -173,99 +295,7 @@ intermediate event may be inserted without contradicting the record of
 measurement.  Each event is therefore an atomic update: minimal, complete, 
 and indivisible.
 
-Several structural consequences follow immediately:
-
-\begin{phenomenon}[The CMBR Effect~\cite{penzias1965}]
-\label{ph:cmbr-effect}
-\NB{The method of bootstrapping used here is not new in spirit.  Aristotle
-described this power as \emph{aphairesis} (abstraction): the act of stripping
-away contingent structure until only the necessary form remains.  The ledger
-does not begin with objects, but with the minimal rules that survive repeated
-abstraction.  In this sense, the universe does not start by being written; it
-starts by being simplified until only recursion remain.~\cite{aristotle1984}.}
-\NB{The extraordinary smoothness of the cosmic microwave background implies
-not an infinite ledger, but a remarkably small one.  A record of unbounded
-size could not sustain such uniformity.  The near--perfect isotropy of the
-background is evidence that the initial informational ledger contained only a
-few admissible degrees of freedom.}
-
-
-The Cosmic Microwave Background Radiation is not merely the remnant of a
-thermal epoch; it is the informational bootstrap of the causal ledger.  It
-realizes the initial condition $U_0$ required for the recursive construction
-of the causal universe tensor.
-
-Any self-replicating system requires both an instruction rule and a writable
-substrate.  In this framework, the update operator $\Psi$ supplies the rule.
-The CMBR supplies the substrate.
-
-The observed uniformity of the background
-\(
-\Delta T / T \sim 10^{-5}
-\)
-corresponds to a maximally symmetric initialization of the ledger.  Prior to
-the first distinguishable event $e_1$, the causal record contained no ordered
-structure, only potential refinement.  The primordial anisotropies are not
-defects but seed refinements: the first admissible breaks in symmetry that
-permit ordinal counting.
-
-There is no ``time before'' the background, because there were no
-distinguishable events to enumerate.  The surface of last scattering is the
-read/write horizon of the ledger: the transition from an indistinct substrate
-to a persistent, countable record.
-
-A von Neumann machine is not merely a computer architecture.  It is a formal
-model of how structure can arise from structureless substrate through a
-self-referential update rule~\cite{vonneumann1966}.  Its defining feature is not speed but
-reflexivity: the same mechanism that executes instructions is itself
-described by those instructions.
-
-Bootstrapping in such a machine proceeds from three primitive elements: a
-blank writable medium, a minimal instruction interpreter, and a method for
-copying structure from the instruction stream into the substrate.  Once this
-cycle begins, increasingly complex states are constructed by repeated
-self-application of the same finite rule.
-
-Historically, this was not the first programmable computer, but it was the
-first formal description of a system capable of self-description.  The
-importance of the von Neumann construction lies not in hardware, but in the
-logical closure of the system.  The machine contains a representation of
-itself, and that representation participates in its own execution.
-
-This is the essential mechanism of causal bootstrapping in the informational
-framework.  The ledger begins as a maximally symmetric writable field.  The
-update operator applies not to external instructions, but to its own current
-state.  Structure emerges not because rules are imposed from outside, but
-because recursion is applied to the internal record.
-
-In this sense, the universe is not initialized by instruction.  It is
-initialized by the possibility of self-application.
-
-The bootstrapping behavior of the causal ledger is not an additional
-assumption.  It follows directly from the joint action of the Axioms of
-Kolmogorov and Peano.
-
-By the Axiom of Peano, admissible structure can only be constructed by
-successive application of a successor operation.  There is no primitive
-infinite object; there is only iteration.  Any admissible time, count, or
-history is therefore the result of repeated refinement, never a pre-existing
-continuum.
-
-By the Axiom of Kolmogorov, admissible structure must be described by a
-finite description.  No object may appear in the ledger without being
-compressible into a finite causal rule.
-
-Together, these axioms force recursion.  Finite rules applied only through
-successor operations necessarily generate structure by self-application.  A
-ledger that refines at all must therefore refine itself.  There is no other
-permissible mechanism.
-
-Bootstrapping is not an emergent feature of the universe tensor.  It is the
-only way a Peano process constrained by Kolmogorov finiteness can exist at
-all.
-
-\end{phenomenon}
-
+Several structural consequences gollow immediately:
 
 \begin{itemize}
 \item \textbf{Discrete Successor:}  
@@ -320,8 +350,8 @@ inadmissible.
 \noindent\textbf{The Axiom of Ockham --- Minimal Refinement}
 Given an observational record $\{e_1 \prec e_2 \prec \cdots \prec e_n\}$, the 
 admissible history is the refinement that introduces \emph{no unobserved 
-structure}.  Among all histories consistent with the recorded events, the 
-valid one is the element of minimal curvature, minimal oscillation, and 
+structure}.  As will be demonstrated, among all histories consistent with 
+the recorded events, the valid one is the element of minimal curvature, minimal oscillation, and 
 minimal informational content beyond what the measurements certify.
 $\qed$
 
@@ -392,7 +422,8 @@ manifold arises only when a discrete, partially ordered set of events is
 sampled at sufficiently high density.  Geometry is not assumed---it is
 recovered from order and counting.
 
-The present work adopts the same foundational stance while shifting the
+The present work adopts the same foundational stance and relies on intuitions and results
+developed by the causal set program while shifting the
 emphasis from causal order to measurement.  Events are again primary, but
 instead of encoding Lorentzian geometry, we encode informational content.
 An event is a unit of observation, and the absence of additional events is
@@ -402,7 +433,7 @@ postulate.
 
 \bigskip
 
-\noindent\textbf{The Axiom of Causal Sets \emph{[Events Have Order]}}
+\noindent\textbf{The Axiom of Causal Sets --- Events Have Order}}
 The set of distinguishable events forms a partially ordered set 
 $(E, \prec)$ under the refinement relation.  For any events $e,f \in E$:
 \begin{itemize}
@@ -445,15 +476,14 @@ consistent merging of local observational records.  In particular:
 \begin{itemize}
 \item Local chains of recorded events must be mergeable into a single
       admissible global chain whenever their overlaps do not contradict one
-      another (Axiom of Boltzmann).
+      another.
 \item The partial order induced by admissible refinement defines the
-      discrete origin of proper time (Axiom of Peano).
+      discrete origin of proper time.
 \item The existence of uncorrelant events forces a nontrivial algebra of
       informational commutation, and the consistent ordering of such events
       requires the introduction of resolving events that exclude persistent
       uncorrelancy.
 \end{itemize}
-
 
 Geometric and metric notions appear only in the dense limit of this ordered 
 structure.  Distances, intervals, and curvature are not inputs but derived 
@@ -466,44 +496,6 @@ comes with order}.  Measured distinctions cannot be rearranged arbitrarily,
 and every admissible refinement must respect a coherent partial order.  This 
 order serves as the backbone for extremality, transport, curvature, and the 
 informational symmetries developed in subsequent chapters.
-
-\begin{example}[Intersecting Light Cones {\cite{knuth1998}}]
-\NB{The continuous world offers a \emph{causal approach} to the ordering of measurements.
-The events as recorded in a laboratory notebook only serve as a time series~\cite{box1976}.}
-\NB{See Phenomenon~\ref{ph:history-merge} for a more rigorous treatment of history mergning.}
-Consider two observers $A$ and $B$, each of whom records a finite sequence of
-distinguishable events in increasing causal order:
-\[
-A = \langle a_1 \prec a_2 \prec \cdots \prec a_m \rangle,\qquad
-B = \langle b_1 \prec b_2 \prec \cdots \prec b_n \rangle.
-\]
-Each list is totally ordered by local causality (\emph{e.g.} a differential equation of dynamics). The requirement of global
-coherence asks whether there exists a single event sequence
-\[
-G = \langle e_1 \prec e_2 \prec \cdots \rangle
-\]
-containing all $a_i$ and $b_j$ such that the local orders are preserved:
-if $a_i \prec a_{i+1}$ in $A$, then $a_i \prec a_{i+1}$ in $G$, and similarly
-for $B$.
-
-This is exactly the merge step of a stable sorting algorithm. As shown by Knuth
-\cite{knuth1998} and others, if two lists are individually sorted, then the merge (if it
-exists) is uniquely determined up to elements that are incomparable. If at any
-step the merge requires placing $b_k \prec a_i$ even though $a_i \prec b_k$ was
-recorded locally, then no global sequence $G$ exists: the local records encode
-a logical contradiction. In concrete terms, observer $A$ may infer that $b_k$ is
-\emph{caused} by $a_i$, while observer $B$ insists the opposite: $b_k$ causes $a_i$.
-
-If the merge is admissible, the resulting global history is unique up to
-permutations of spacelike-separated elements. Those incomparable elements
-correspond exactly to the \emph{uncorrelant} equivalence classes introduced later:
-permuting them changes no scalar invariant of the Causal Universe Tensor. As the
-resolution of measurement increases, the merged list becomes longer, and in
-the dense limit it converges to the unique spline with no unrecorded
-curvature. Thus the continuum is not assumed; it is the only extension
-consistent with all local causal records.
-\end{example}
-
 
 \subsection{The Axiom of Cantor}
 
@@ -530,8 +522,8 @@ same ``size'' as countable sets built from measurable pieces.
 
 In numerical analysis, a more familiar version of this pathology appears as
 aliasing and cancellation.  A function sampled too coarsely can hide large
-oscillations between measurement points~\cite{hairer1993}; Gibbs-like ringing can vanish or
-flip sign~\cite{gibbs1899,smith1999}; and two nonzero signals can cancel exactly when sampled at
+oscillations between measurement points~\cite{hairer1993}; Gibbs-like ringing can surge, collapse, or abruptly flip sign~\cite{gibbs1899,smith1999};
+and two nonzero signals can cancel exactly when sampled at
 insufficient resolution~\cite{shannon1949}.  The data appear
 benign, but the underlying object may be violently oscillatory, or vice-versa.  In both
 cases, the fault lies not in the continuum, but in the failure to encode
@@ -548,7 +540,7 @@ distinguishable information than the underlying discrete record.$\qed$
 
 This axiom prohibits the continuum from entering the theory as a primitive 
 geometric entity.  The real line, differentiable manifolds, Hilbert spaces, 
-and smooth fields may appear, but only as the shadows of countable sequences 
+and smooth fields will appear, but only as the shadows of countable sequences 
 of refinements:
 \[
 e_1 \prec e_2 \prec e_3 \prec \cdots.
@@ -657,10 +649,10 @@ Several consequences follow immediately:
       The informational interval defined later inherits this bound: no two 
       distinct events can be separated by less than $\epsilon$.
 
-\item \textbf{Bounded Variation:}  
-      Because refinements cannot be arbitrarily fine, continuous variations 
-      representing dense limits must satisfy lower--semicontinuity constraints 
-      imposed by $\epsilon$.
+\item \textbf{Bounded Variation:}
+      Differences in admissible measurements are bounded; refinements cannot
+      produce changes smaller than~$\epsilon$.
+
 
 \item \textbf{No Hidden Microstructure:}  
       Any additional features below the threshold $\epsilon$ constitute 
@@ -1141,91 +1133,6 @@ empiracy: they are the constraints that every coherent, extensible
 observation record must satisfy.  Aristotle speculated; Galileo measured.  In
 an informational framework, only the latter can be admitted.
 
-\begin{phenomenon}[Empiracy~\cite{aristotle1984,galileo1638}]
-
-In the measurement--first framework, the distinction between Aristotle and
-Galileo can be stated as a precise admissibility test.  Let $\E$ denote the
-set of recorded events, each $e \in \E$ represented by a finite tuple of
-distinguishable marks (for example, height and time).  A \emph{dynamical
-theory} for free fall is an assignment of a constraint
-\[
-  L(h,t) = 0
-\]
-on admissible pairs $(h,t)$, interpreted as ``height $h$ at elapsed time
-$t$''.  The theory is \emph{admissible} for an observation record
-$\E \subset \R^2$ if there exists an extension $\E' \supseteq \E$ such that
-every event in $\E'$ satisfies the constraint:
-\[
-  (h,t) \in \E' \;\Longrightarrow\; L(h,t) = 0.
-\]
-In words: the theory must admit a refinement of the experimental ledger in
-which all events are consistent with a single law.
-
-Aristotle's account of motion can be rendered as a family of constraints
-$L_{A}(h,t; m)$ that enforce the rule that heavier bodies fall faster.  In a
-simple form, this may be modeled as
-\[
-  h(t;m) = \alpha(m)\,t^2,
-  \qquad
-  \alpha(m_1) \neq \alpha(m_2)
-  \;\;\text{for}\;\; m_1 \neq m_2,
-\]
-so that for fixed $h$ one has
-\[
-  t(h;m_1) \neq t(h;m_2)
-  \qquad\text{whenever}\qquad
-  m_1 \neq m_2.
-\]
-Now consider an observation record $\E$ containing two events at the same
-height $h_*$ but with experimentally indistinguishable fall times:
-\[
-  e_1 = (h_*, t_*, m_1),
-  \qquad
-  e_2 = (h_*, t_* + \delta, m_2),
-  \qquad
-  |\delta| < \delta_{\mathrm{res}},
-\]
-where $\delta_{\mathrm{res}}$ is the time resolution of the apparatus.
-Galileo's inclined--plane experiments produce exactly such records: within
-experimental resolution, bodies of different mass reach the same height in
-the same time.  For any $\delta_{\mathrm{res}}$ smaller than the separation
-implied by $L_{A}$, there is no extension $\E' \supseteq \E$ in which all
-events satisfy $L_{A}(h,t;m) = 0$.  Aristotle's rule is therefore
-\emph{informationally inadmissible}: it defines a constraint surface that
-does not admit a refinement of the actual observation record.
-
-Galileo's law, by contrast, can be expressed as a mass--independent
-constraint
-\[
-  L_{G}(h,t) = h - \frac{1}{2} g t^2 = 0,
-\]
-or more generally as an equivalence class of laws that agree within the
-resolution of the apparatus.  Given an experimental record $\E$ of fall
-times and heights, there always exists a parameter $g$ and an extension
-$\E' \supseteq \E$ such that
-\[
-  (h,t) \in \E' \;\Longrightarrow\; L_{G}(h,t) = 0
-  \quad\text{up to the experimental resolution.}
-\]
-Galileo's theory is therefore admissible: it defines a surface in
-$(h,t)$--space that can be populated by a consistent refinement of the
-ledger, with no contradiction between recorded events and the proposed law.
-
-In this sense, the difference between Aristotle and Galileo is not merely
-historical or philosophical but mathematical.  Aristotle's dynamics do not
-admit an embedding of the experimental record into a single, globally
-consistent constraint surface; Galileo's do.  Within a measurement--first
-framework, this is the precise meaning of admissibility.  A theory that
-cannot be realized as a consistent extension of the observation record is
-ruled out not by taste or interpretation, but by the impossibility of
-defining any refinement map
-\[
-  \iota : \E \hookrightarrow \{(h,t) : L(h,t)=0\}
-\]
-that preserves distinguishability and experimental resolution.  Aristotle
-specifies such an $L$ and fails the test.  Galileo, by measuring, finds one
-that passes.
-\end{phenomenon}
 
 \section*{The Purpose of Thought Experiments}
 

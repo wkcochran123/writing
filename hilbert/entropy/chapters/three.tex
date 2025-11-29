@@ -555,6 +555,66 @@ the smooth shadow of the combinatorial growth of admissible splines.
 
 \end{phenomenon}
 
+\subsection{Equivalence of Discrete and Smooth Representations}
+
+\begin{phenomenon}[The Gibbs Preservation Effect \cite{gibbs1906}]
+\label{ph:gibbs-null}
+
+\textbf{Statement.}
+Shape information is preserved under admissible projection by localization in
+the null space of the smoothing operator.
+
+\textbf{Description.}
+When a discrete causal ledger is projected into a smooth shadow, the
+corresponding operator necessarily possesses a nontrivial null space.  This
+null space does not destroy structure; instead, it stores it.
+
+Sharp boundaries, discontinuities, and finite structural features of the
+ledger are not eliminated by smoothing.  They are displaced into invariant
+modes that are orthogonal to the admissible smooth completion.
+
+Thus, the classical overshoot associated with Gibbs is not an artifact of
+error, but a conservation mechanism: the sharp structure survives precisely
+because it cannot be absorbed by the smooth basis.
+
+\textbf{Interpretation.}
+The Gibbs phenomenon is therefore not a failure of convergence, but the
+mechanism by which discrete shape is preserved under projection.  The null
+space acts as a reservoir of form, enforcing fidelity even when the ambient
+representation is forced to be smooth.
+
+This retention of structure through null–space localization is the Gibbs
+preservation effect.
+\end{phenomenon}
+
+\begin{proposition}[The Spline Strain Limit]
+\label{prop:gibbs-spline}
+
+\textbf{Claim.}
+Under the Law of Spline Sufficiency, the magnitude of the Gibbs overshoot is
+the unique variational bound compatible with admissible curvature.
+
+\textbf{Statement.}
+Let $\Psi(x)$ be an admissible completion of a causal ledger that minimizes
+the global curvature functional
+\[
+J[\Psi] = \int (\Psi'')^2 \, dx .
+\]
+If the ledger enforces a discrete step discontinuity, then the admissible
+minimizer exhibits a finite overshoot of approximately $13\%$ (numerically
+$\approx 1.1078$ for a unit step).
+\end{proposition}
+
+\begin{proofsketch}{gibbs-spline}
+Any reduction in overshoot forces curvature toward a distributional
+singularity at the discontinuity, violating admissibility.  Any increase in
+overshoot increases the value of $J[\Psi]$ and therefore violates minimality.
+Thus the overshoot amplitude is uniquely fixed by the variational structure of
+the problem.
+\end{proofsketch}
+
+
+
 
 \section{Galerkin Methods}
 \label{sec:galerkin}

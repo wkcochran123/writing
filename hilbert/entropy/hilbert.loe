@@ -1,9 +1,10 @@
 \addvspace {10\p@ }
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~1.1.1\else \numberline {1.1.1}Phenomenon\fi \thmtformatoptarg {The CMBR Effect~\cite {penzias1965}}}{5}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment~1.1.1\else \numberline {1.1.1}Thought Experiment\fi \thmtformatoptarg {Intersecting Light Cones {\cite {knuth1998}}}}{13}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment~1.1.2\else \numberline {1.1.2}Thought Experiment\fi \thmtformatoptarg {Planck's Constant~\cite {planck1901}}}{19}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment~1.1.3\else \numberline {1.1.3}Thought Experiment\fi \thmtformatoptarg {The Invisible Curve~\cite {simpson1743}}}{22}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~1.5.1\else \numberline {1.5.1}Phenomenon\fi \thmtformatoptarg {Empiracy~\cite {aristotle1984,galileo1638}}}{31}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~1.1.1\else \numberline {1.1.1}Phenomenon\fi \thmtformatoptarg {The Bishop Berkeley Effect \cite {galileo1638}}}{2}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~1.1.2\else \numberline {1.1.2}Phenomenon\fi \thmtformatoptarg {The Hume Effect \cite {hume1748}}}{3}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~1.2.1\else \numberline {1.2.1}Phenomenon\fi \thmtformatoptarg {The CMBR Effect~\cite {penzias1965}}}{8}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment~1.2.1\else \numberline {1.2.1}Thought Experiment\fi \thmtformatoptarg {Intersecting Light Cones {\cite {knuth1998}}}}{15}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment~1.2.2\else \numberline {1.2.2}Thought Experiment\fi \thmtformatoptarg {Planck's Constant~\cite {planck1901}}}{21}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment~1.2.3\else \numberline {1.2.3}Thought Experiment\fi \thmtformatoptarg {The Invisible Curve~\cite {simpson1743}}}{24}{}%
 \addvspace {10\p@ }
 \contentsline {phenomenon}{\ifthmt@listswap Phenomenon~2.1.1\else \numberline {2.1.1}Phenomenon\fi \thmtformatoptarg {The Event Effect~\cite {kant1781}}}{37}{}%
 \contentsline {phenomenon}{\ifthmt@listswap Phenomenon~2.1.2\else \numberline {2.1.2}Phenomenon\fi \thmtformatoptarg {The Positive Measurement Effect~\cite {plato1996}}}{38}{}%
@@ -59,143 +60,166 @@
 \contentsline {phenomenon}{\ifthmt@listswap Phenomenon~2.5.4\else \numberline {2.5.4}Phenomenon\fi \thmtformatoptarg {Independent Event Chains~\cite {langevin1911}}}{78}{}%
 \contentsline {definition}{\ifthmt@listswap Definition~18\else \numberline {18}Definition\fi \thmtformatoptarg {Kolmogorov Complexity~\cite {chaitin1975,kolmogorov1965}}}{80}{}%
 \contentsline {definition}{\ifthmt@listswap Definition~19\else \numberline {19}Definition\fi \thmtformatoptarg {Admissible Extension {\cite {li1997}}}}{80}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~2.6.1\else \numberline {2.6.1}Phenomenon\fi \thmtformatoptarg {Paradoxes of Time Travel~\cite {godel1931,lewis1976}}}{80}{}%
-\contentsline {definition}{\ifthmt@listswap Definition~20\else \numberline {20}Definition\fi \thmtformatoptarg {Information Minimality {\cite {kolmogorov1965,li1997}}}}{82}{}%
-\contentsline {remark}{\ifthmt@listswap Remark~13\else \numberline {13}Remark\fi }{82}{}%
-\contentsline {remark}{\ifthmt@listswap Remark~14\else \numberline {14}Remark\fi }{83}{}%
-\contentsline {definition}{\ifthmt@listswap Definition~21\else \numberline {21}Definition\fi \thmtformatoptarg {Unobserved Structure}}{83}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment~2.7.1\else \numberline {2.7.1}Thought Experiment\fi \thmtformatoptarg {Spooky Action at a Distance~\cite {bell1964,einstein1935,sorkin2005}}}{85}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment~2.7.2\else \numberline {2.7.2}Thought Experiment\fi \thmtformatoptarg {Hawking Radiation~\cite {hawking1975,unruh1976}}}{85}{}%
+\contentsline {definition}{\ifthmt@listswap Definition~20\else \numberline {20}Definition\fi \thmtformatoptarg {Causal Path~\cite {bombelli1987}}}{80}{}%
+\contentsline {definition}{\ifthmt@listswap Definition~21\else \numberline {21}Definition\fi \thmtformatoptarg {Informational Interval~\cite {trotter1992}}}{81}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~2.6.1\else \numberline {2.6.1}Phenomenon\fi \thmtformatoptarg {The Maxwell Effect~\cite {maxwell1871}}}{83}{}%
+\contentsline {definition}{\ifthmt@listswap Definition~22\else \numberline {22}Definition\fi \thmtformatoptarg {Causal Thread}}{84}{}%
+\contentsline {definition}{\ifthmt@listswap Definition~23\else \numberline {23}Definition\fi \thmtformatoptarg {Informational Density}}{85}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~2.6.2\else \numberline {2.6.2}Phenomenon\fi \thmtformatoptarg {The Pareto Effect~\cite {pareto1896}}}{85}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~2.6.3\else \numberline {2.6.3}Phenomenon\fi \thmtformatoptarg {Paradoxes of Time Travel~\cite {godel1931,lewis1976}}}{86}{}%
+\contentsline {definition}{\ifthmt@listswap Definition~24\else \numberline {24}Definition\fi \thmtformatoptarg {Information Minimality {\cite {kolmogorov1965,li1997}}}}{88}{}%
+\contentsline {remark}{\ifthmt@listswap Remark~13\else \numberline {13}Remark\fi }{89}{}%
+\contentsline {remark}{\ifthmt@listswap Remark~14\else \numberline {14}Remark\fi }{89}{}%
+\contentsline {definition}{\ifthmt@listswap Definition~25\else \numberline {25}Definition\fi \thmtformatoptarg {Unobserved Structure}}{89}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment~2.7.1\else \numberline {2.7.1}Thought Experiment\fi \thmtformatoptarg {Spooky Action at a Distance~\cite {bell1964,einstein1935,sorkin2005}}}{91}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment~2.7.2\else \numberline {2.7.2}Thought Experiment\fi \thmtformatoptarg {Hawking Radiation~\cite {hawking1975,unruh1976}}}{91}{}%
 \addvspace {10\p@ }
-\contentsline {example}{\ifthmt@listswap Thought Experiment~3.0.1\else \numberline {3.0.1}Thought Experiment\fi \thmtformatoptarg {Minimizing Variations~\cite {courant1953}}}{90}{}%
-\contentsline {definition}{\ifthmt@listswap Definition~22\else \numberline {22}Definition\fi \thmtformatoptarg {Anchor Points~\cite {deboor1978}}}{92}{}%
-\contentsline {definition}{\ifthmt@listswap Definition~23\else \numberline {23}Definition\fi \thmtformatoptarg {Reciprocity Map}}{93}{}%
-\contentsline {proposition}{\ifthmt@listswap Proposition~2\else \numberline {2}Proposition\fi \thmtformatoptarg {The Uniqueness of the Reciprocity Dual}}{94}{}%
-\contentsline {proposition}{\ifthmt@listswap Proposition~3\else \numberline {3}Proposition\fi \thmtformatoptarg {The Spline Condition of Information}}{98}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~3.1.1\else \numberline {3.1.1}Phenomenon\fi \thmtformatoptarg {Repeatability of Invisible Motion~\cite {bacon1620}}}{99}{}%
-\contentsline {law}{\ifthmt@listswap Law~1\else \numberline {1}Law\fi \thmtformatoptarg {The Law of Spline Sufficiency}}{100}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~3.2.1\else \numberline {3.2.1}Phenomenon\fi \thmtformatoptarg {The Inverse Square Effect}}{101}{}%
-\contentsline {corollary}{\ifthmt@listswap Corollary~1\else \numberline {1}Corollary\fi }{104}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~3.3.1\else \numberline {3.3.1}Phenomenon\fi \thmtformatoptarg {Fluxions~\cite {berkeley1734,newton1687}}}{105}{}%
-\contentsline {definition}{\ifthmt@listswap Definition~24\else \numberline {24}Definition\fi \thmtformatoptarg {Attractor~\cite {mandelbrot1982}}}{106}{}%
-\contentsline {definition}{\ifthmt@listswap Definition~25\else \numberline {25}Definition\fi \thmtformatoptarg {Observational Indistinguishability~\cite {nyquist1928}}}{108}{}%
-\contentsline {proposition}{\ifthmt@listswap Proposition~4\else \numberline {4}Proposition\fi \thmtformatoptarg {Pigeonhole Indistinguishability of Infinite Refinement~\cite {dirichlet1834,hardy1938}}}{108}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~3.3.2\else \numberline {3.3.2}Phenomenon\fi \thmtformatoptarg {The Moire Effect}}{109}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~3.3.3\else \numberline {3.3.3}Phenomenon\fi \thmtformatoptarg {The Quicksand Effect~\cite {batchelor1967,bonn2005}}}{109}{}%
-\contentsline {law}{\ifthmt@listswap Law~2\else \numberline {2}Law\fi \thmtformatoptarg {The Law of Discrete Spline Necessity}}{112}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~3.4.1\else \numberline {3.4.1}Phenomenon\fi \thmtformatoptarg {The Olbers Effect}}{114}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~3.4.2\else \numberline {3.4.2}Phenomenon\fi \thmtformatoptarg {The Gibbs Phenomenon}}{116}{}%
-\contentsline {proposition}{\ifthmt@listswap Proposition~5\else \numberline {5}Proposition\fi \thmtformatoptarg {The Free Parameter of Information}}{119}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~3.6.1\else \numberline {3.6.1}Phenomenon\fi \thmtformatoptarg {The Pound--Rebka Effect~\cite {pound1959}}}{121}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment~3.0.1\else \numberline {3.0.1}Thought Experiment\fi \thmtformatoptarg {Minimizing Variations~\cite {courant1953}}}{96}{}%
+\contentsline {definition}{\ifthmt@listswap Definition~26\else \numberline {26}Definition\fi \thmtformatoptarg {Anchor Points~\cite {deboor1978}}}{98}{}%
+\contentsline {definition}{\ifthmt@listswap Definition~27\else \numberline {27}Definition\fi \thmtformatoptarg {Reciprocity Map}}{99}{}%
+\contentsline {proposition}{\ifthmt@listswap Proposition~2\else \numberline {2}Proposition\fi \thmtformatoptarg {The Uniqueness of the Reciprocity Dual}}{100}{}%
+\contentsline {proposition}{\ifthmt@listswap Proposition~3\else \numberline {3}Proposition\fi \thmtformatoptarg {The Spline Condition of Information}}{104}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~3.1.1\else \numberline {3.1.1}Phenomenon\fi \thmtformatoptarg {Repeatability of Invisible Motion~\cite {bacon1620}}}{105}{}%
+\contentsline {law}{\ifthmt@listswap Law~1\else \numberline {1}Law\fi \thmtformatoptarg {The Law of Spline Sufficiency}}{106}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~3.2.1\else \numberline {3.2.1}Phenomenon\fi \thmtformatoptarg {The Inverse Square Effect}}{107}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~3.2.2\else \numberline {3.2.2}Phenomenon\fi \thmtformatoptarg {The Gibbs Preservation Effect \cite {gibbs1906}}}{108}{}%
+\contentsline {proposition}{\ifthmt@listswap Proposition~4\else \numberline {4}Proposition\fi \thmtformatoptarg {The Spline Strain Limit}}{109}{}%
+\contentsline {corollary}{\ifthmt@listswap Corollary~1\else \numberline {1}Corollary\fi }{111}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~3.3.1\else \numberline {3.3.1}Phenomenon\fi \thmtformatoptarg {Fluxions~\cite {berkeley1734,newton1687}}}{112}{}%
+\contentsline {definition}{\ifthmt@listswap Definition~28\else \numberline {28}Definition\fi \thmtformatoptarg {Attractor~\cite {mandelbrot1982}}}{114}{}%
+\contentsline {definition}{\ifthmt@listswap Definition~29\else \numberline {29}Definition\fi \thmtformatoptarg {Observational Indistinguishability~\cite {nyquist1928}}}{115}{}%
+\contentsline {proposition}{\ifthmt@listswap Proposition~5\else \numberline {5}Proposition\fi \thmtformatoptarg {Pigeonhole Indistinguishability of Infinite Refinement~\cite {dirichlet1834,hardy1938}}}{116}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~3.3.2\else \numberline {3.3.2}Phenomenon\fi \thmtformatoptarg {The Moire Effect}}{117}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~3.3.3\else \numberline {3.3.3}Phenomenon\fi \thmtformatoptarg {The Quicksand Effect~\cite {batchelor1967,bonn2005}}}{117}{}%
+\contentsline {law}{\ifthmt@listswap Law~2\else \numberline {2}Law\fi \thmtformatoptarg {The Law of Discrete Spline Necessity}}{119}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~3.4.1\else \numberline {3.4.1}Phenomenon\fi \thmtformatoptarg {The Olbers Effect}}{122}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~3.4.2\else \numberline {3.4.2}Phenomenon\fi \thmtformatoptarg {The Gibbs Phenomenon}}{124}{}%
+\contentsline {proposition}{\ifthmt@listswap Proposition~6\else \numberline {6}Proposition\fi \thmtformatoptarg {The Free Parameter of Information}}{127}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~3.6.1\else \numberline {3.6.1}Phenomenon\fi \thmtformatoptarg {The Pound--Rebka Effect~\cite {pound1959}}}{129}{}%
 \addvspace {10\p@ }
-\contentsline {definition}{\ifthmt@listswap Definition~26\else \numberline {26}Definition\fi \thmtformatoptarg {Clock}}{127}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment~4.0.1\else \numberline {4.0.1}Thought Experiment\fi \thmtformatoptarg {LiDAR~\cite {christian2013}}}{128}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.1.1\else \numberline {4.1.1}Phenomenon\fi \thmtformatoptarg {Shadow Tomography~\cite {aaronson2013}}}{131}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.2.1\else \numberline {4.2.1}Phenomenon\fi \thmtformatoptarg {The Quantum Zeno Effect}}{133}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.2.2\else \numberline {4.2.2}Phenomenon\fi \thmtformatoptarg {The Velocity Effect}}{134}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.2.3\else \numberline {4.2.3}Phenomenon\fi \thmtformatoptarg {The Acceleration Effect}}{137}{}%
-\contentsline {definition}{\ifthmt@listswap Definition~27\else \numberline {27}Definition\fi \thmtformatoptarg {Martin’s Condition~\cite {martin1970}}}{139}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment~4.2.1\else \numberline {4.2.1}Thought Experiment\fi \thmtformatoptarg {The Davisson--Germer Effect~\cite {davisson1927}}}{140}{}%
-\contentsline {definition}{\ifthmt@listswap Definition~28\else \numberline {28}Definition\fi \thmtformatoptarg {Interaction operator}}{142}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.3.1\else \numberline {4.3.1}Phenomenon\fi \thmtformatoptarg {The Stoichiometry Effect}}{142}{}%
-\contentsline {definition}{\ifthmt@listswap Definition~29\else \numberline {29}Definition\fi \thmtformatoptarg {Length on the common boundary~\cite {courant1953,stokes1850}}}{143}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.3.2\else \numberline {4.3.2}Phenomenon\fi \thmtformatoptarg {The Ideal Ledger Effect}}{143}{}%
-\contentsline {proposition}{\ifthmt@listswap Proposition~6\else \numberline {6}Proposition\fi \thmtformatoptarg {The Anti–symmetry of Information Propogation}}{144}{}%
-\contentsline {proposition}{\ifthmt@listswap Proposition~7\else \numberline {7}Proposition\fi \thmtformatoptarg {The Transitivity of Information Propogation}}{146}{}%
-\contentsline {proposition}{\ifthmt@listswap Proposition~8\else \numberline {8}Proposition\fi \thmtformatoptarg {The Commutativity of Uncorrelant Events}}{147}{}%
-\contentsline {remark}{\ifthmt@listswap Remark~15\else \numberline {15}Remark\fi }{149}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.3.3\else \numberline {4.3.3}Phenomenon\fi \thmtformatoptarg {The Entanglement Effect~\cite {einstein1935}}}{149}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.3.4\else \numberline {4.3.4}Phenomenon\fi \thmtformatoptarg {The Mach--Zehnder Effect~\cite {zehnder1891}}}{151}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.3.5\else \numberline {4.3.5}Phenomenon\fi \thmtformatoptarg {The Bell--Aspect Tests~\cite {bell1964}}}{152}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.3.6\else \numberline {4.3.6}Phenomenon\fi \thmtformatoptarg {Hawking Radiation Revisited}}{153}{}%
-\contentsline {law}{\ifthmt@listswap Law~3\else \numberline {3}Law\fi \thmtformatoptarg {The Law of Boundary Consistency}}{155}{}%
-\contentsline {remark}{\ifthmt@listswap Remark~16\else \numberline {16}Remark\fi }{155}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.5.1\else \numberline {4.5.1}Phenomenon\fi \thmtformatoptarg {Qubit Decoherence~\cite {joos2003,zurek2003}}}{157}{}%
-\contentsline {proposition}{\ifthmt@listswap Proposition~9\else \numberline {9}Proposition\fi \thmtformatoptarg {The Rate of Informational Decoherence}}{158}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.7.1\else \numberline {4.7.1}Phenomenon\fi \thmtformatoptarg {The Casimir effect}}{168}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.7.2\else \numberline {4.7.2}Phenomenon\fi \thmtformatoptarg {The Alpha-Decay Effect}}{169}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.7.3\else \numberline {4.7.3}Phenomenon\fi \thmtformatoptarg {The Gamma Decay Effect}}{170}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.7.4\else \numberline {4.7.4}Phenomenon\fi \thmtformatoptarg {The Brownian Motion Effect}}{171}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.8.1\else \numberline {4.8.1}Phenomenon\fi \thmtformatoptarg {The Momentum Effect}}{174}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.9.1\else \numberline {4.9.1}Phenomenon\fi \thmtformatoptarg {It\^o's Lemma~\cite {ito1944,ito1951}}}{176}{}%
-\contentsline {definition}{\ifthmt@listswap Definition~30\else \numberline {30}Definition\fi \thmtformatoptarg {Prediction~\cite {einstein1915,hamilton1834,hilbert1899,lagrange1788,maxwell1865,newton1687,schroedinger1926} et alii plures}}{180}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.9.2\else \numberline {4.9.2}Phenomenon\fi \thmtformatoptarg {The Hilbert Effect}}{182}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.9.3\else \numberline {4.9.3}Phenomenon\fi \thmtformatoptarg {The Butterfly Effect}}{184}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.10.1\else \numberline {4.10.1}Phenomenon\fi \thmtformatoptarg {The Anderson Effect}}{186}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.10.2\else \numberline {4.10.2}Phenomenon\fi \thmtformatoptarg {The Harmonic Oscillator~\cite {planck1900}}}{186}{}%
-\contentsline {remark}{\ifthmt@listswap Remark~17\else \numberline {17}Remark\fi }{187}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.10.3\else \numberline {4.10.3}Phenomenon\fi \thmtformatoptarg {The Catalyst Effect}}{188}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.10.4\else \numberline {4.10.4}Phenomenon\fi \thmtformatoptarg {The Thermostat Effect}}{188}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.10.5\else \numberline {4.10.5}Phenomenon\fi \thmtformatoptarg {The Orbiting Effect~\cite {kepler1609}}}{189}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.0.1\else \numberline {4.0.1}Phenomenon\fi \thmtformatoptarg {The Wittgenstein Effect~\cite {wittgenstein1922,wittgenstein1953}}}{134}{}%
+\contentsline {definition}{\ifthmt@listswap Definition~30\else \numberline {30}Definition\fi \thmtformatoptarg {Clock}}{135}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment~4.0.1\else \numberline {4.0.1}Thought Experiment\fi \thmtformatoptarg {LiDAR~\cite {christian2013}}}{136}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.1.1\else \numberline {4.1.1}Phenomenon\fi \thmtformatoptarg {Shadow Tomography~\cite {aaronson2013}}}{139}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.2.1\else \numberline {4.2.1}Phenomenon\fi \thmtformatoptarg {The Refinement Effect}}{141}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.2.2\else \numberline {4.2.2}Phenomenon\fi \thmtformatoptarg {The Velocity Effect}}{142}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.2.3\else \numberline {4.2.3}Phenomenon\fi \thmtformatoptarg {The Acceleration Effect}}{145}{}%
+\contentsline {definition}{\ifthmt@listswap Definition~31\else \numberline {31}Definition\fi \thmtformatoptarg {Martin’s Condition~\cite {martin1970}}}{147}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment~4.2.1\else \numberline {4.2.1}Thought Experiment\fi \thmtformatoptarg {The Davisson--Germer Effect~\cite {davisson1927}}}{148}{}%
+\contentsline {definition}{\ifthmt@listswap Definition~32\else \numberline {32}Definition\fi \thmtformatoptarg {Interaction operator}}{150}{}%
+\contentsline {definition}{\ifthmt@listswap Definition~33\else \numberline {33}Definition\fi \thmtformatoptarg {Causal Thread}}{150}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.3.1\else \numberline {4.3.1}Phenomenon\fi \thmtformatoptarg {The Cause--Effect Effect~\cite {wigner1960}}}{151}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.3.2\else \numberline {4.3.2}Phenomenon\fi \thmtformatoptarg {The Stoichiometry Effect}}{151}{}%
+\contentsline {definition}{\ifthmt@listswap Definition~34\else \numberline {34}Definition\fi \thmtformatoptarg {Length on the common boundary~\cite {courant1953,stokes1850}}}{152}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.3.3\else \numberline {4.3.3}Phenomenon\fi \thmtformatoptarg {The Ideal Ledger Effect}}{152}{}%
+\contentsline {proposition}{\ifthmt@listswap Proposition~7\else \numberline {7}Proposition\fi \thmtformatoptarg {The Anti–symmetry of Information Propogation}}{153}{}%
+\contentsline {proposition}{\ifthmt@listswap Proposition~8\else \numberline {8}Proposition\fi \thmtformatoptarg {The Transitivity of Information Propogation}}{155}{}%
+\contentsline {proposition}{\ifthmt@listswap Proposition~9\else \numberline {9}Proposition\fi \thmtformatoptarg {The Commutativity of Uncorrelant Events}}{156}{}%
+\contentsline {remark}{\ifthmt@listswap Remark~15\else \numberline {15}Remark\fi }{158}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.3.4\else \numberline {4.3.4}Phenomenon\fi \thmtformatoptarg {The Entanglement Effect~\cite {einstein1935}}}{159}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.3.5\else \numberline {4.3.5}Phenomenon\fi \thmtformatoptarg {The Mach--Zehnder Effect~\cite {zehnder1891}}}{160}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.3.6\else \numberline {4.3.6}Phenomenon\fi \thmtformatoptarg {The Bell--Aspect Tests~\cite {bell1964}}}{161}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.3.7\else \numberline {4.3.7}Phenomenon\fi \thmtformatoptarg {Hawking Radiation Revisited}}{163}{}%
+\contentsline {law}{\ifthmt@listswap Law~3\else \numberline {3}Law\fi \thmtformatoptarg {The Law of Boundary Consistency}}{164}{}%
+\contentsline {remark}{\ifthmt@listswap Remark~16\else \numberline {16}Remark\fi }{164}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.5.1\else \numberline {4.5.1}Phenomenon\fi \thmtformatoptarg {Qubit Decoherence~\cite {joos2003,zurek2003}}}{166}{}%
+\contentsline {proposition}{\ifthmt@listswap Proposition~10\else \numberline {10}Proposition\fi \thmtformatoptarg {The Rate of Informational Decoherence}}{168}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.7.1\else \numberline {4.7.1}Phenomenon\fi \thmtformatoptarg {The Casimir effect}}{177}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.7.2\else \numberline {4.7.2}Phenomenon\fi \thmtformatoptarg {The Alpha-Decay Effect}}{178}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.7.3\else \numberline {4.7.3}Phenomenon\fi \thmtformatoptarg {The Gamma Decay Effect}}{179}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.7.4\else \numberline {4.7.4}Phenomenon\fi \thmtformatoptarg {The Brownian Motion Effect}}{180}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.8.1\else \numberline {4.8.1}Phenomenon\fi \thmtformatoptarg {The Momentum Effect}}{184}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.9.1\else \numberline {4.9.1}Phenomenon\fi \thmtformatoptarg {It\^o's Lemma~\cite {ito1944,ito1951}}}{186}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.10.1\else \numberline {4.10.1}Phenomenon\fi \thmtformatoptarg {The Gosset Effect}}{189}{}%
+\contentsline {definition}{\ifthmt@listswap Definition~35\else \numberline {35}Definition\fi \thmtformatoptarg {Prediction~\cite {einstein1915,hamilton1834,hilbert1899,lagrange1788,maxwell1865,newton1687,schroedinger1926} et alii plures}}{191}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.10.2\else \numberline {4.10.2}Phenomenon\fi \thmtformatoptarg {The Hilbert Effect}}{193}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.10.3\else \numberline {4.10.3}Phenomenon\fi \thmtformatoptarg {The Butterfly Effect}}{196}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.11.1\else \numberline {4.11.1}Phenomenon\fi \thmtformatoptarg {The Anderson Effect}}{197}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.11.2\else \numberline {4.11.2}Phenomenon\fi \thmtformatoptarg {The Harmonic Oscillator~\cite {planck1900}}}{197}{}%
+\contentsline {remark}{\ifthmt@listswap Remark~17\else \numberline {17}Remark\fi }{198}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.11.3\else \numberline {4.11.3}Phenomenon\fi \thmtformatoptarg {The First Effect of Gibbs~\cite {gibbs1899}}}{199}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.11.4\else \numberline {4.11.4}Phenomenon\fi \thmtformatoptarg {The Thermostat Effect}}{200}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~4.11.5\else \numberline {4.11.5}Phenomenon\fi \thmtformatoptarg {The Kepler Effect~\cite {kepler1609}}}{200}{}%
 \addvspace {10\p@ }
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~5.1.1\else \numberline {5.1.1}Phenomenon\fi \thmtformatoptarg {Precision}}{192}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~5.2.1\else \numberline {5.2.1}Phenomenon\fi \thmtformatoptarg {The Richardson Effect~\cite {richardson1961}}}{194}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~5.2.2\else \numberline {5.2.2}Phenomenon\fi \thmtformatoptarg {Compact Disc Encoding~\cite {sony1980,philips1980}}}{196}{}%
-\contentsline {law}{\ifthmt@listswap Law~4\else \numberline {4}Law\fi \thmtformatoptarg {The Law of Causal Transport}}{200}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~5.3.1\else \numberline {5.3.1}Phenomenon\fi \thmtformatoptarg {The Michelson--Morley Effect~\cite {michelson1887}}}{204}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~5.3.2\else \numberline {5.3.2}Phenomenon\fi \thmtformatoptarg {The Traffic Effect}}{206}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~5.4.1\else \numberline {5.4.1}Phenomenon\fi \thmtformatoptarg {The Sagnac Effect}}{208}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~5.4.2\else \numberline {5.4.2}Phenomenon\fi \thmtformatoptarg {The Tail-Latency Effect}}{208}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~5.4.3\else \numberline {5.4.3}Phenomenon\fi \thmtformatoptarg {The Halt Effect.}}{209}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~5.5.1\else \numberline {5.5.1}Phenomenon\fi \thmtformatoptarg {The Foucault Effect}}{212}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~5.7.1\else \numberline {5.7.1}Phenomenon\fi \thmtformatoptarg {The Pound--Rebka Effect~\cite {pound1959}}}{216}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~5.7.2\else \numberline {5.7.2}Phenomenon\fi \thmtformatoptarg {The Event Horizon Effect}}{218}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~5.7.3\else \numberline {5.7.3}Phenomenon\fi \thmtformatoptarg {The Schwarzschild Effect~\cite {schwarzschild1916}}}{219}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~5.1.1\else \numberline {5.1.1}Phenomenon\fi \thmtformatoptarg {Precision}}{203}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~5.1.2\else \numberline {5.1.2}Phenomenon\fi \thmtformatoptarg {The Richardson Effect~\cite {richardson1961}}}{205}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~5.1.3\else \numberline {5.1.3}Phenomenon\fi \thmtformatoptarg {The von Neumann Effect~\cite {vonneumann1947}}}{207}{}%
+\contentsline {definition}{\ifthmt@listswap Definition~36\else \numberline {36}Definition\fi \thmtformatoptarg {Informational Quantum}}{208}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~5.1.4\else \numberline {5.1.4}Phenomenon\fi \thmtformatoptarg {Compact Disc Encoding~\cite {sony1980,philips1980}}}{209}{}%
+\contentsline {definition}{\ifthmt@listswap Definition~37\else \numberline {37}Definition\fi \thmtformatoptarg {Ruler}}{212}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~5.2.1\else \numberline {5.2.1}Phenomenon\fi \thmtformatoptarg {The Bacon Effect~\cite {bacon1620}}}{213}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~5.2.2\else \numberline {5.2.2}Phenomenon\fi \thmtformatoptarg {The Descartes Effect~\cite {descartes1637}}}{214}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~5.2.3\else \numberline {5.2.3}Phenomenon\fi \thmtformatoptarg {The Gallileo Effect~\cite {galileo1638}}}{216}{}%
+\contentsline {definition}{\ifthmt@listswap Definition~38\else \numberline {38}Definition\fi \thmtformatoptarg {Einstein Notation~\cite {einstein1916}}}{218}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~5.2.4\else \numberline {5.2.4}Phenomenon\fi \thmtformatoptarg {The Einstein Effect}}{219}{}%
+\contentsline {law}{\ifthmt@listswap Law~4\else \numberline {4}Law\fi \thmtformatoptarg {The Law of Causal Transport}}{220}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~5.3.1\else \numberline {5.3.1}Phenomenon\fi \thmtformatoptarg {The Michelson--Morley Effect~\cite {michelson1887}}}{224}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~5.3.2\else \numberline {5.3.2}Phenomenon\fi \thmtformatoptarg {The Traffic Effect}}{226}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~5.4.1\else \numberline {5.4.1}Phenomenon\fi \thmtformatoptarg {The Sagnac Effect}}{227}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~5.4.2\else \numberline {5.4.2}Phenomenon\fi \thmtformatoptarg {The Tail-Latency Effect}}{228}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~5.4.3\else \numberline {5.4.3}Phenomenon\fi \thmtformatoptarg {The Halt Effect.}}{228}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~5.5.1\else \numberline {5.5.1}Phenomenon\fi \thmtformatoptarg {The Foucault Effect}}{232}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~5.7.1\else \numberline {5.7.1}Phenomenon\fi \thmtformatoptarg {The Pound--Rebka Effect~\cite {pound1959}}}{235}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~5.7.2\else \numberline {5.7.2}Phenomenon\fi \thmtformatoptarg {The Event Horizon Effect}}{238}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~5.7.3\else \numberline {5.7.3}Phenomenon\fi \thmtformatoptarg {The Schwarzschild Effect~\cite {schwarzschild1916}}}{239}{}%
 \addvspace {10\p@ }
-\contentsline {definition}{\ifthmt@listswap Definition~31\else \numberline {31}Definition\fi \thmtformatoptarg {Cross Product~\cite {heaviside1893}}}{222}{}%
-\contentsline {definition}{\ifthmt@listswap Definition~32\else \numberline {32}Definition\fi \thmtformatoptarg {Galerkin Cross Product}}{224}{}%
-\contentsline {proposition}{\ifthmt@listswap Proposition~10\else \numberline {10}Proposition\fi \thmtformatoptarg {Recovery of the Classical Cross Product}}{225}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~6.3.1\else \numberline {6.3.1}Phenomenon\fi \thmtformatoptarg {The Message Effect\cite {ciarlet1978,marconi1901,strang1973}}}{227}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~6.4.1\else \numberline {6.4.1}Phenomenon\fi \thmtformatoptarg {The Time Effect~\cite {einstein1915,newton1687}}}{231}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~6.5.1\else \numberline {6.5.1}Phenomenon\fi \thmtformatoptarg {The Navier--Stokes effect~\cite {navier1822,stokes1845}}}{232}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~6.6.1\else \numberline {6.6.1}Phenomenon\fi \thmtformatoptarg {The Strong Interaction Effect}}{233}{}%
-\contentsline {definition}{\ifthmt@listswap Definition~33\else \numberline {33}Definition\fi \thmtformatoptarg {Informational Cross Product~\cite {jacobi1845}}}{234}{}%
-\contentsline {proposition}{\ifthmt@listswap Proposition~11\else \numberline {11}Proposition\fi \thmtformatoptarg {Informational Cross Product as Minimal Discretization}}{235}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~6.7.1\else \numberline {6.7.1}Phenomenon\fi \thmtformatoptarg {The Arago Effect}}{236}{}%
-\contentsline {definition}{\ifthmt@listswap Definition~34\else \numberline {34}Definition\fi \thmtformatoptarg {Informational Strain Tensor~\cite {cauchy1828,saintvenant1860}}}{237}{}%
-\contentsline {law}{\ifthmt@listswap Law~5\else \numberline {5}Law\fi \thmtformatoptarg {The Law of Curvature Balance}}{239}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~6.11.1\else \numberline {6.11.1}Phenomenon\fi \thmtformatoptarg {The Flat Rotation Curve Effect~\cite {shannon1948}}}{242}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~6.11.2\else \numberline {6.11.2}Phenomenon\fi \thmtformatoptarg {The Angular Momentum Effect}}{243}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~6.12.1\else \numberline {6.12.1}Phenomenon\fi \thmtformatoptarg {The Neutrino Effect~\cite {fukuda2003,hirata1987}}}{246}{}%
-\contentsline {example}{\ifthmt@listswap Thought Experiment~6.12.1\else \numberline {6.12.1}Thought Experiment\fi \thmtformatoptarg {Implied Orthogonality and Space--Time}}{247}{}%
+\contentsline {definition}{\ifthmt@listswap Definition~39\else \numberline {39}Definition\fi \thmtformatoptarg {Cross Product~\cite {heaviside1893}}}{242}{}%
+\contentsline {definition}{\ifthmt@listswap Definition~40\else \numberline {40}Definition\fi \thmtformatoptarg {Galerkin Cross Product}}{244}{}%
+\contentsline {proposition}{\ifthmt@listswap Proposition~11\else \numberline {11}Proposition\fi \thmtformatoptarg {Recovery of the Classical Cross Product}}{245}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~6.3.1\else \numberline {6.3.1}Phenomenon\fi \thmtformatoptarg {The Message Effect\cite {ciarlet1978,marconi1901,strang1973}}}{247}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~6.4.1\else \numberline {6.4.1}Phenomenon\fi \thmtformatoptarg {The Time Effect~\cite {einstein1915,newton1687}}}{251}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~6.5.1\else \numberline {6.5.1}Phenomenon\fi \thmtformatoptarg {The Navier--Stokes effect~\cite {navier1822,stokes1845}}}{252}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~6.6.1\else \numberline {6.6.1}Phenomenon\fi \thmtformatoptarg {The Strong Interaction Effect}}{253}{}%
+\contentsline {definition}{\ifthmt@listswap Definition~41\else \numberline {41}Definition\fi \thmtformatoptarg {Informational Cross Product~\cite {jacobi1845}}}{254}{}%
+\contentsline {proposition}{\ifthmt@listswap Proposition~12\else \numberline {12}Proposition\fi \thmtformatoptarg {Informational Cross Product as Minimal Discretization}}{255}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~6.7.1\else \numberline {6.7.1}Phenomenon\fi \thmtformatoptarg {The Arago Effect}}{256}{}%
+\contentsline {definition}{\ifthmt@listswap Definition~42\else \numberline {42}Definition\fi \thmtformatoptarg {Informational Strain Tensor~\cite {cauchy1828,saintvenant1860}}}{257}{}%
+\contentsline {law}{\ifthmt@listswap Law~5\else \numberline {5}Law\fi \thmtformatoptarg {The Law of Curvature Balance}}{259}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~6.11.1\else \numberline {6.11.1}Phenomenon\fi \thmtformatoptarg {The Flat Rotation Curve Effect~\cite {shannon1948}}}{262}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~6.11.2\else \numberline {6.11.2}Phenomenon\fi \thmtformatoptarg {The Angular Momentum Effect}}{263}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~6.12.1\else \numberline {6.12.1}Phenomenon\fi \thmtformatoptarg {The Neutrino Effect~\cite {fukuda2003,hirata1987}}}{266}{}%
+\contentsline {example}{\ifthmt@listswap Thought Experiment~6.12.1\else \numberline {6.12.1}Thought Experiment\fi \thmtformatoptarg {Implied Orthogonality and Space--Time}}{267}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~6.12.2\else \numberline {6.12.2}Phenomenon\fi \thmtformatoptarg {The Hawking Effect \cite {hawking1975}}}{267}{}%
 \addvspace {10\p@ }
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~7.1.1\else \numberline {7.1.1}Phenomenon\fi \thmtformatoptarg {The Photoelectric Effect~\cite {hertz1887,nyquist1928}}}{254}{}%
-\contentsline {remark}{\ifthmt@listswap Remark~18\else \numberline {18}Remark\fi }{257}{}%
-\contentsline {law}{\ifthmt@listswap Law~6\else \numberline {6}Law\fi \thmtformatoptarg {The Law of Combinatorial Symmetry}}{257}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~7.4.1\else \numberline {7.4.1}Phenomenon\fi \thmtformatoptarg {The Harmonic Oscillator Revisted~\cite {planck1900}}}{260}{}%
-\contentsline {remark}{\ifthmt@listswap Remark~19\else \numberline {19}Remark\fi }{261}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~7.4.2\else \numberline {7.4.2}Phenomenon\fi \thmtformatoptarg {The Compton Scattering Effect~\cite {compton1923}}}{263}{}%
-\contentsline {remark}{\ifthmt@listswap Remark~20\else \numberline {20}Remark\fi }{265}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~7.4.3\else \numberline {7.4.3}Phenomenon\fi \thmtformatoptarg {The Conservation of Energy~\cite {noether1918}}}{265}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~7.4.4\else \numberline {7.4.4}Phenomenon\fi \thmtformatoptarg {The Feynman Diagram~\cite {feynman1965}}}{266}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~7.5.1\else \numberline {7.5.1}Phenomenon\fi \thmtformatoptarg {The Spin--$\tfrac {1}{2}$ Effect~\cite {dirac1928}}}{268}{}%
-\contentsline {remark}{\ifthmt@listswap Remark~21\else \numberline {21}Remark\fi }{270}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~7.6.1\else \numberline {7.6.1}Phenomenon\fi \thmtformatoptarg {The Topological Integer Count}}{271}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~7.6.2\else \numberline {7.6.2}Phenomenon\fi \thmtformatoptarg {The Aharonov--Bohm Effect~\cite {aharonov1959}}}{272}{}%
-\contentsline {remark}{\ifthmt@listswap Remark~22\else \numberline {22}Remark\fi }{274}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~7.7.1\else \numberline {7.7.1}Phenomenon\fi \thmtformatoptarg {The Sombrero Potential~\cite {gellmannlevy1960}}}{275}{}%
-\contentsline {remark}{\ifthmt@listswap Remark~23\else \numberline {23}Remark\fi }{277}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~7.7.2\else \numberline {7.7.2}Phenomenon\fi \thmtformatoptarg {The Semiconductor Effect~\cite {wilson1931}}}{277}{}%
-\contentsline {remark}{\ifthmt@listswap Remark~24\else \numberline {24}Remark\fi }{279}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~7.8.1\else \numberline {7.8.1}Phenomenon\fi \thmtformatoptarg {The Echo Chamber Maze Solution}}{280}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~7.8.2\else \numberline {7.8.2}Phenomenon\fi \thmtformatoptarg {The Cost of Broken Symmetry}}{281}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~7.9.1\else \numberline {7.9.1}Phenomenon\fi \thmtformatoptarg {The Holographic Effect}}{281}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~7.9.2\else \numberline {7.9.2}Phenomenon\fi \thmtformatoptarg {The Dirac Operator~\cite {dirac1928}}}{282}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~7.9.3\else \numberline {7.9.3}Phenomenon\fi \thmtformatoptarg {The Chirality Effect}}{283}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~7.1.1\else \numberline {7.1.1}Phenomenon\fi \thmtformatoptarg {The Photoelectric Effect~\cite {hertz1887,nyquist1928}}}{277}{}%
+\contentsline {remark}{\ifthmt@listswap Remark~18\else \numberline {18}Remark\fi }{280}{}%
+\contentsline {law}{\ifthmt@listswap Law~6\else \numberline {6}Law\fi \thmtformatoptarg {The Law of Combinatorial Symmetry}}{280}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~7.4.1\else \numberline {7.4.1}Phenomenon\fi \thmtformatoptarg {The Harmonic Oscillator Revisted~\cite {planck1900}}}{283}{}%
+\contentsline {remark}{\ifthmt@listswap Remark~19\else \numberline {19}Remark\fi }{284}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~7.4.2\else \numberline {7.4.2}Phenomenon\fi \thmtformatoptarg {The Compton Scattering Effect~\cite {compton1923}}}{286}{}%
+\contentsline {remark}{\ifthmt@listswap Remark~20\else \numberline {20}Remark\fi }{288}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~7.4.3\else \numberline {7.4.3}Phenomenon\fi \thmtformatoptarg {The Conservation of Energy~\cite {noether1918}}}{288}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~7.4.4\else \numberline {7.4.4}Phenomenon\fi \thmtformatoptarg {The Feynman Diagram~\cite {feynman1965}}}{289}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~7.5.1\else \numberline {7.5.1}Phenomenon\fi \thmtformatoptarg {The Spin--$\tfrac {1}{2}$ Effect~\cite {dirac1928}}}{291}{}%
+\contentsline {remark}{\ifthmt@listswap Remark~21\else \numberline {21}Remark\fi }{293}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~7.6.1\else \numberline {7.6.1}Phenomenon\fi \thmtformatoptarg {The Topological Integer Count}}{294}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~7.6.2\else \numberline {7.6.2}Phenomenon\fi \thmtformatoptarg {The Aharonov--Bohm Effect~\cite {aharonov1959}}}{295}{}%
+\contentsline {remark}{\ifthmt@listswap Remark~22\else \numberline {22}Remark\fi }{297}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~7.7.1\else \numberline {7.7.1}Phenomenon\fi \thmtformatoptarg {The Sombrero Potential~\cite {gellmannlevy1960}}}{298}{}%
+\contentsline {remark}{\ifthmt@listswap Remark~23\else \numberline {23}Remark\fi }{300}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~7.7.2\else \numberline {7.7.2}Phenomenon\fi \thmtformatoptarg {The Semiconductor Effect~\cite {wilson1931}}}{300}{}%
+\contentsline {remark}{\ifthmt@listswap Remark~24\else \numberline {24}Remark\fi }{302}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~7.8.1\else \numberline {7.8.1}Phenomenon\fi \thmtformatoptarg {The Echo Chamber Maze Solution}}{303}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~7.8.2\else \numberline {7.8.2}Phenomenon\fi \thmtformatoptarg {The Newton Effect~\cite {newton1687}}}{304}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~7.8.3\else \numberline {7.8.3}Phenomenon\fi \thmtformatoptarg {The Ising Effect~\cite {ising1925}}}{306}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~7.8.4\else \numberline {7.8.4}Phenomenon\fi \thmtformatoptarg {The Yang-Mills Effect~\cite {yang1954}}}{307}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~7.9.1\else \numberline {7.9.1}Phenomenon\fi \thmtformatoptarg {The 't~Hooft--Susskind Effect}}{311}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~7.9.2\else \numberline {7.9.2}Phenomenon\fi \thmtformatoptarg {The Dirac Operator~\cite {dirac1928}}}{312}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~7.9.3\else \numberline {7.9.3}Phenomenon\fi \thmtformatoptarg {The Chirality Effect}}{313}{}%
 \addvspace {10\p@ }
-\contentsline {proposition}{\ifthmt@listswap Proposition~12\else \numberline {12}Proposition\fi \thmtformatoptarg {The Monotonicity of Causal Entropy}}{285}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~8.1.1\else \numberline {8.1.1}Phenomenon\fi \thmtformatoptarg {The Entropic Cost of Acceleration}}{286}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~8.1.2\else \numberline {8.1.2}Phenomenon\fi \thmtformatoptarg {The Thermodynamic Cost of Erasure}}{286}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~8.1.3\else \numberline {8.1.3}Phenomenon\fi \thmtformatoptarg {The Limitation of Indexing~\cite {russell1903}}}{286}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~8.2.1\else \numberline {8.2.1}Phenomenon\fi \thmtformatoptarg {Maxwell's Demon~\cite {maxwell1865}}}{287}{}%
-\contentsline {law}{\ifthmt@listswap Law~7\else \numberline {7}Law\fi \thmtformatoptarg {The Law of Causal Order}}{289}{}%
-\contentsline {theorem}{\ifthmt@listswap Theorem~1\else \numberline {1}Theorem\fi \thmtformatoptarg {The Second Law of Causal Order}}{290}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~8.6.1\else \numberline {8.6.1}Phenomenon\fi \thmtformatoptarg {The Prover--Verifier Effect}}{291}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~8.7.1\else \numberline {8.7.1}Phenomenon\fi \thmtformatoptarg {The Excel Effect}}{293}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~8.7.2\else \numberline {8.7.2}Phenomenon\fi \thmtformatoptarg {The Agent Effect}}{293}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~8.7.3\else \numberline {8.7.3}Phenomenon\fi \thmtformatoptarg {The Amdahl Effect}}{294}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~8.7.4\else \numberline {8.7.4}Phenomenon\fi \thmtformatoptarg {The Jupyter Effect}}{294}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~8.8.1\else \numberline {8.8.1}Phenomenon\fi \thmtformatoptarg {The Superconducting Effect}}{295}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~8.8.2\else \numberline {8.8.2}Phenomenon\fi \thmtformatoptarg {The Meissner Effect}}{295}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~8.9.1\else \numberline {8.9.1}Phenomenon\fi \thmtformatoptarg {The Dark Energy Effect}}{297}{}%
-\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~8.9.2\else \numberline {8.9.2}Phenomenon\fi \thmtformatoptarg {The White Hole Effect}}{298}{}%
+\contentsline {proposition}{\ifthmt@listswap Proposition~13\else \numberline {13}Proposition\fi \thmtformatoptarg {The Monotonicity of Causal Entropy}}{315}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~8.1.1\else \numberline {8.1.1}Phenomenon\fi \thmtformatoptarg {The Entropic Cost of Acceleration}}{316}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~8.1.2\else \numberline {8.1.2}Phenomenon\fi \thmtformatoptarg {The Thermodynamic Cost of Erasure}}{316}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~8.1.3\else \numberline {8.1.3}Phenomenon\fi \thmtformatoptarg {The Limitation of Indexing~\cite {russell1903}}}{316}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~8.2.1\else \numberline {8.2.1}Phenomenon\fi \thmtformatoptarg {Maxwell's Demon~\cite {maxwell1865}}}{317}{}%
+\contentsline {law}{\ifthmt@listswap Law~7\else \numberline {7}Law\fi \thmtformatoptarg {The Law of Causal Order}}{319}{}%
+\contentsline {theorem}{\ifthmt@listswap Theorem~1\else \numberline {1}Theorem\fi \thmtformatoptarg {The Second Law of Causal Order}}{320}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~8.6.1\else \numberline {8.6.1}Phenomenon\fi \thmtformatoptarg {The Prover--Verifier Effect}}{321}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~8.7.1\else \numberline {8.7.1}Phenomenon\fi \thmtformatoptarg {The Excel Effect}}{323}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~8.7.2\else \numberline {8.7.2}Phenomenon\fi \thmtformatoptarg {The Agent Effect}}{323}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~8.7.3\else \numberline {8.7.3}Phenomenon\fi \thmtformatoptarg {The Amdahl Effect}}{324}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~8.7.4\else \numberline {8.7.4}Phenomenon\fi \thmtformatoptarg {The Jupyter Effect}}{324}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~8.8.1\else \numberline {8.8.1}Phenomenon\fi \thmtformatoptarg {The Superconducting Effect}}{325}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~8.8.2\else \numberline {8.8.2}Phenomenon\fi \thmtformatoptarg {The Meissner Effect}}{325}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~8.9.1\else \numberline {8.9.1}Phenomenon\fi \thmtformatoptarg {The Dark Energy Effect}}{327}{}%
+\contentsline {phenomenon}{\ifthmt@listswap Phenomenon~8.9.2\else \numberline {8.9.2}Phenomenon\fi \thmtformatoptarg {The White Hole Effect}}{328}{}%

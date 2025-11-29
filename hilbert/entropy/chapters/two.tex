@@ -852,60 +852,7 @@ distinctions that have occurred.  The resulting object, the Causal
 Universe Tensor, represents the total recorded history up to any chosen
 ordinal position in the list of events.
 
-
-\subsection{Special Relativity}
-\label{se:special-relativity}
-
-Every physical description begins not with space or time, but with an \emph{event}---an 
-interaction that makes previously indistinguishable outcomes distinct~\cite{boltzmann1872, planck1914}.  
-The causal boundary of such an interaction is its \emph{light cone}: the set of all 
-events that can influence or be influenced by it according to special relativity~\cite{einstein1905, minkowski1908}.
-The intersection of two light cones, corresponding to the last particle--wave interaction 
-accessible to an observer, defines the maximal region of causal closure~\cite{hawking1973, penrose1972}.  
-Beyond this surface, no additional information can be exchanged; all distinguishable action has concluded.
-
-It is from this closure that the ordering of events arises.  Each 
-measurable interaction contributes one additional distinction to the universe, expanding its causal 
-surface by a finite count~\cite{hawking1973, malament1977}.  The smooth fabric of spacetime is not 
-primitive but emergent: it is the limiting behavior of discrete causal increments accumulated along 
-the light cone~\cite{bombelli1987, sorkin1991}.  Within each cone, the universe can be represented 
-by a finite tensor of interactions---local updates to a global state---that together approximate 
-continuity only through cancellation across countable events~\cite{bombelli1987, sorkin2003}.
-
-\begin{example}[Boosting Velocity~\cite{einstein1905}]
-\label{te:boosting-velocity}
-\NB{The Lorentz equations are presented here only as an illustrative model
-of the local causal structure.  They are not derived from the axioms in
-this chapter, and no subsequent argument depends on them.}
-
-Special relativity provides the canonical local model for this causal structure.  
-Consider the Lorentz transformation for a boost of velocity $v$ in one spatial dimension,~\cite{rindler2006,taylor1992}
-\begin{equation}
-\label{eq:lorentz}
-\begin{pmatrix}
-t' \\ x'
-\end{pmatrix}
-=
-\begin{pmatrix}
-\gamma & -\gamma v/c^{2} \\
--\gamma v & \gamma
-\end{pmatrix}
-\begin{pmatrix}
-t \\ x
-\end{pmatrix},
-\qquad \gamma = \frac{1}{\sqrt{1 - v^{2}/c^{2}}}.
-\end{equation}
-For infinitesimal separations satisfying \(x = ct\), the Lorentz transformation gives
-\begin{equation}
-t' = \gamma\, t (1 - v/c).
-\end{equation}
-If we take \(\Delta t = 1\) as the unit interval between distinguishable events,
-then observers moving at relative velocity \(v\) will, in general, disagree on the
-\emph{number} of such events that occur between two intersections of their respective
-light cones~\cite{minkowski1908}.  The only invariant quantity is the causal ordering itself:
-all observers concur on which event precedes which, even though they may count
-a different number of intermediate ticks~\cite{malament1977}.
-\end{example}
+\subsection{Refinement}
 
 \begin{definition}[Rank time~\cite{bombelli1987,davey2002}]\label{def:rank-time}
 Let $(E,\prec)$ be a locally finite \emph{partially ordered set of events}. A rank time is an order-embedding
@@ -1421,15 +1368,32 @@ $\mathcal{T}(V)$).  Define the left recursion
 \end{equation}
 Then:
 \begin{enumerate}
-\item \emph{(Naturality of restriction)} The update \eqref{eq:left-update}
-is precisely the expansion of the discrete restriction through the
-representation: $\,\mathbf{F}(e)=\Psi(\hat{R}(e))\,$ so that
+\item \emph{(Naturality of restriction)}
+Writing
 \[
-\mathbf{U}_{k+1}
-\;=\;
-\Psi\!\big(\hat{R}(e_{k+1})\big)\,\mathbf{U}_k.
+  R(e) \;:=\; \Psi\!\big(\hat{R}(e)\big),
 \]
-Equivalently, $R\circ\Psi=\Psi\circ\hat{R}$ on ${\rm im}\,\Psi$.
+the recursion \eqref{eq:left-update} can be written purely in terms of the
+restriction operator as
+\[
+  \mathbf{U}_{k+1}
+  \;=\; R(e_{k+1})\,\mathbf{U}_k.
+\]
+In other words, the tensor update is exactly the image under $\Psi$ of the
+same discrete restriction that acts on the event record.  On ${\rm im}\,\Psi$
+this is expressed by the commuting relation
+\[
+  R \circ \Psi \;=\; \Psi \circ \hat{R},
+\]
+which is the naturality of restriction.
+
+Moreover, this restriction is the informational inverse of merging along
+uncorrelant events, up to the permutation of uncorrelant factors: uncorrelant
+segments commute, so the order in which they are removed or reintroduced
+does not affect the admissible tensor.  Thus the relation
+$R\circ\Psi=\Psi\circ\hat R$ holds modulo the natural reordering of
+uncorrelant components.
+
 
 \item \emph{(Causal uniqueness)} The recursion \eqref{eq:left-update} is
 uniquely determined by the chosen linear extension.  Any two linear
@@ -1757,6 +1721,288 @@ beyond $E$; that is, every distinguishable update encoded by $w$ has a
 corresponding element of $E$. Any extension predicting unobserved structure
 is rejected as inadmissible.
 \end{definition}
+
+In an admissible ledger, events do not contribute equally to global
+coherence.  Some events exert disproportionate constraint on the space of
+admissible continuations.  Their presence “pulls” the structure of the
+record toward a narrow class of consistent refinements, while low–weight
+events deform the ledger only marginally.
+
+The language of weight captures this asymmetry without importing physical
+ontology.  Weight refers solely to the strength with which an event anchors
+the admissible encoding of the record.
+
+In later chapters, the smooth shadow of informational weight appears as
+inertia and mass.  The terminology is chosen in anticipation of that
+correspondence, not derived from it.
+
+\begin{definition}[Causal Path~\cite{bombelli1987}]
+A \emph{causal path} at scale $\epsilon$ is a finite sequence
+\[
+\gamma = \langle e_0,e_1,\dots,e_n\rangle
+\]
+such that for all $k$ with $0 \le k < n$:
+\begin{enumerate}
+  \item $e_k \prec e_{k+1}$ (causal ordering), and
+  \item $(e_k,e_{k+1}) \in \Refine_\epsilon$ (each step is an irreducible
+        $\epsilon$-refinement).
+\end{enumerate}
+\end{definition}
+
+A causal thread is, by definition, a totally ordered chain of admissible
+events.  Total order alone, however, does not yet quantify persistence; it
+only establishes comparability.
+
+To make persistence measurable, the ledger must distinguish between adjacent
+events that are separated by a genuine refinement and those that are merely
+related by admissible relabeling.  The $\epsilon$--refinement relation
+isolates precisely those transitions that cannot be compressed or skipped
+without violating admissibility.
+
+Along any causal thread $T = \{e_0 \prec e_1 \prec \cdots \prec e_n\}$,
+only those pairs $(e_k,e_{k+1}) \in \Refine_\epsilon$ represent irreducible
+extensions of the ledger.  These irreducible steps are invariant under all
+admissible coordinate changes: events may be renamed, but refinement steps
+cannot be removed or created.
+
+The \emph{informational interval} is therefore not an external parameter but
+an intrinsic count:
+
+\[
+\tau(T) \; := \; \#\{(e_k,e_{k+1}) \in \Refine_\epsilon\}.
+\]
+
+It measures the number of irreducible refinements required to sustain the
+persistence represented by the thread.
+
+\begin{definition}[Informational Interval~\cite{trotter1992}]
+\label{def:informational-interval}
+
+Let $\Ledger = (E,\prec,\Refine_\epsilon)$ be an admissible causal ledger,
+where:
+\begin{itemize}
+  \item $E$ is the set of distinguishable events,
+  \item $\prec$ is the causal partial order on $E$,
+  \item $\Refine_\epsilon \subseteq E \times E$ is the $\epsilon$-refinement
+        relation, with $(e,f) \in \Refine_\epsilon$ read as
+        ``$f$ is an irreducible $\epsilon$-refinement of $e$''.
+\end{itemize}
+
+Two causal paths $\gamma = \langle e_0,\dots,e_n\rangle$ and 
+$\gamma' = \langle e'_0,\dots,e'_m\rangle$
+are said to be \emph{order–equivalent} if there exists a bijection
+$\phi : \{0,\dots,n\} \to \{0,\dots,m\}$ such that
+\[
+k < \ell \quad \Longleftrightarrow \quad \phi(k) < \phi(\ell)
+\]
+and $e_k$ and $e'_{\phi(k)}$ are identified by an admissible relabeling of
+the ledger.
+
+The \emph{informational interval} (or \emph{tally}) of a causal path
+$\gamma$ at scale $\epsilon$ is the integer
+\[
+\tau_\epsilon(\gamma) \;:=\; n,
+\]
+the number of irreducible $\epsilon$-refinement steps in the path.
+
+By construction, $\tau_\epsilon$ is invariant under order–equivalence:
+if $\gamma \sim \gamma'$ (order–equivalent under admissible relabeling),
+then $\tau_\epsilon(\gamma) = \tau_\epsilon(\gamma')$.
+
+In this sense, the informational interval $\tau$ functions as a minimal
+proper labeling of a totally ordered subset of the causal ledger, closely
+related to classical coloring problems in order theory~\cite{trotter1992}.
+\end{definition}
+
+The informational interval $\tau$ was defined as a tally of irreducible
+refinement steps along a causal thread.  By construction, $\tau$ counts only
+those ledger updates that cannot be compressed, skipped, or removed without
+violating admissibility.
+
+This imposes an immediate structural consequence: any operation that changes
+the state of the ledger must alter $\tau$.  There is no admissible operation
+that produces a logical distinction without corresponding refinement count.
+
+Suppose a procedure attempts to erase, ignore, or overwrite a refinement
+event without recording the operation.  Such an erasure would reduce the
+effective value of $\tau$ along the affected thread without an admissible
+inverse refinement.  This is impossible: $\tau$ is invariant under all
+admissible relabelings and extensions.
+
+Therefore, any act of measurement, memory reset, or state preparation is
+itself an irreducible refinement and must be counted in $\tau$.
+
+Landauer's principle is recovered as a purely combinatorial constraint:
+information cannot be destroyed “for free” because doing so would require a
+non-admissible reduction of the informational interval~\cite{landaur1961}.
+Bennett's refinement follows immediately: reversible measurement is
+admissible, but erasure is not.  Resetting a memory necessarily increases
+$\tau$ elsewhere in the ledger, as the operation must be recorded~\cite{bennett1982}.
+
+In this framework, these effects are not thermodynamic in origin.  They do
+not rely on temperature, heat, or probabilistic mechanics.  Instead, they
+are manifestations of a more primitive structural constraint first made
+explicit by Maxwell.
+
+Maxwell’s original insight was not about engines, but about the limits of
+hidden order.  Any mechanism that appears to create structure must itself be
+expressible as an admissible operation of the ledger.  No admissible history
+permits unrecorded sorting, unrecorded selection, or unrecorded erasure.
+
+What later appears in thermodynamics as entropy, dissipation, and
+irreversibility is, in this framework, simply the smooth shadow of this
+combinatorial prohibition: order cannot be manufactured off the books.
+
+\begin{phenomenon}[The Maxwell Effect~\cite{maxwell1871}]
+Each causal thread induces its own internal ordering through the proper
+labeling of its refinement events.  This ordering functions as a local
+coordinate system: it is complete for the thread itself and does not require
+reference to any external global structure.
+
+Admissibility constrains how two such local systems may be compared.  A
+transformation between thread--local reference structures is permitted only
+if it preserves the invariant content of the ledger.  In particular, the
+number of irreducible refinement steps along any admissible history---the
+informational interval $\tau$---must remain unchanged.
+
+This restriction is not conventional symmetry.  It is a bookkeeping
+constraint.  A transformation that altered $\tau$ would either introduce or
+erase refinement events without record and is therefore forbidden.
+
+As a consequence, global structure does not arise from a single preferred
+frame, but from the overlap conditions between many admissible local frames.
+No admissible observation internal to a single causal thread can distinguish
+between globally relabeled versions of that thread, so long as the tally of
+irreducible refinements is preserved.  Only the number of admissible events
+is invariant, which permits the construction of a consistent inverse
+representation $\Psi^{-1}$ on equivalence classes of refinements.
+
+This structure appears in classical mechanics as Galilean relativity~\cite{galileo1638}, in
+which uniform translations cannot be detected internally.  It appears in
+Newtonian mechanics~\cite{newton1687} when acceleration introduces refinement strain, and in
+relativistic mechanics~\cite{einstein1905} when invariant propagation forces agreement on the
+count of admissible refinements.
+
+A reference frame is not a background geometry but a thread--local bookkeeping
+system.  Transformations between frames are admissible if and only if they
+preserve the discrete tally $\tau$ and do not introduce hidden structure.
+
+Apparent motion, force, and curvature arise only when distinct thread-local
+reference frames fail to reconcile their admissible refinements.
+\end{phenomenon}
+
+
+\begin{definition}[Causal Thread]
+\label{def:causal-thread}
+
+Let $\Ledger = (E,\prec,\Refine_\epsilon)$ be an admissible causal ledger as
+in Definition~\ref{def:informational-interval}.
+
+A subset $T \subseteq E$ is called a \emph{causal thread} if it satisfies the
+following properties:
+
+\begin{enumerate}
+  \item \textbf{Total Order:}  
+  The restriction of $\prec$ to $T$ totally orders $T$.  That is, for any
+  distinct $e,f \in T$, either $e \prec f$ or $f \prec e$.
+
+  \item \textbf{Successor Refinement:}  
+  For every non-maximal element $e \in T$, there exists a unique element
+  $f \in T$ such that:
+  \[
+    (e,f) \in \Refine_\epsilon
+    \quad\text{and}\quad
+    e \prec f,
+  \]
+  and no other $g \in T$ satisfies this property.
+
+  \item \textbf{Maximality:}  
+  The set $T$ is maximal with respect to these properties: there exists no
+  strict superset $T' \supsetneq T$ such that $T'$ also satisfies (1) and (2).
+\end{enumerate}
+
+Elements of a causal thread are called its \emph{events}, and the induced
+order type of $T$ is called the \emph{thread history}.
+
+A causal thread does not represent an object.  It represents the persistence
+of a single unresolved refinement obligation through the admissible
+extensions of the ledger.  Consequently, the cardinality of a causal thread $|T|$ is precisely the
+informational interval $\tau$ elapsed along that history.
+
+
+\end{definition}
+
+
+\begin{definition}[Informational Density]
+\label{def:informational-density}
+
+The \emph{informational density} of an event or region is the concentration of
+indispensable descriptive structure per admissible refinement.
+
+Formally, the informational density $\rho(e)$ is the marginal contribution of
+$e$ to the minimal admissible encoding of the causal ledger relative to the
+local refinement scale.
+
+High informational density indicates that small perturbations require large
+global re-encodings; low density indicates that refinements may be altered
+without violating coherence.
+
+\end{definition}
+
+
+
+\begin{phenomenon}[The Pareto Effect~\cite{pareto1896}]
+\label{ph:pareto-effect}
+
+\textbf{Statement.}
+Uniform informational weight is incompatible with admissibility.  If each
+event contributed equally to the global record, the ledger would approach a
+maximally indistinguishable state: no event could be compressed, prioritized,
+or eliminated without loss of consistency.  Such a record cannot be refined,
+because refinement presupposes a hierarchy of relevance among events.
+
+Admissibility therefore forces concentration.  At each extension of the
+ledger, a small number of refinements must anchor global structure, while
+the majority serve only to stabilize local consistency.  These dominant
+events define the effective degrees of freedom of the record.
+
+This non-uniformity is not statistical contingency, but logical necessity.
+A ledger without privileged refinements cannot be stored, transmitted, or
+reconciled across admissible boundaries.  The existence of “laws” in the
+continuous shadow is therefore the macroscopic signature of this forced
+inequality in informational weight.
+
+
+\medskip
+
+\textbf{Mechanism.}
+By the Axiom of Ockham, admissible histories are those that minimize
+descriptive complexity.  A ledger in which all events contribute equally is
+algorithmically incompressible and therefore inadmissible.  To remain
+describable, the causal record must concentrate refinement weight into a
+sparse set of principal events whose influence dominates the global
+invariants.
+
+This concentration is not contingent.  It is the unique combinatorial
+solution that permits a long causal history to remain finitely specifiable.
+
+\medskip
+
+\textbf{Operational Consequence.}
+The dominance of a small subset of events licenses truncation.  Higher–order
+refinements may be neglected without loss of global coherence.  Projection
+onto a sparse basis does not introduce error; it recovers the admissible
+smooth shadow of the record.
+
+\medskip
+
+\textbf{Interpretation.}
+The Pareto Effect is therefore not a sociological artifact but a structural
+necessity.  Legibility of history requires inequality of informational
+weight.
+
+\end{phenomenon}
+
 
 \begin{phenomenon}[Paradoxes of Time Travel~\cite{godel1931,lewis1976}]
 \NB{Apparent paradoxes often attributed to \emph{time travel}, \emph{remote 
