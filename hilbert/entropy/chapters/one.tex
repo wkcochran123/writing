@@ -433,7 +433,7 @@ postulate.
 
 \bigskip
 
-\noindent\textbf{The Axiom of Causal Sets --- Events Have Order}}
+\noindent\textbf{The Axiom of Causal Sets --- Events Have Order}
 The set of distinguishable events forms a partially ordered set 
 $(E, \prec)$ under the refinement relation.  For any events $e,f \in E$:
 \begin{itemize}
@@ -650,14 +650,33 @@ Several consequences follow immediately:
       distinct events can be separated by less than $\epsilon$.
 
 \item \textbf{Bounded Variation:}
-      Differences in admissible measurements are bounded; refinements cannot
-      produce changes smaller than~$\epsilon$.
-
+      Differences in admissible measurements are bounded because measuring
+      instruments have finite resolution and produce valid readings only
+      within their operational ranges; refinements cannot produce changes
+      smaller than~$\epsilon$ nor exceed the local curvature constraints
+      permitted by the record.
 
 \item \textbf{No Hidden Microstructure:}  
       Any additional features below the threshold $\epsilon$ constitute 
       forbidden unobserved structure and violate the Axiom of Ockham.
 \end{itemize}
+
+\begin{phenomenon}[The Lenard Effect~\cite{lenard1902}]
+\label{ph:lenard}
+Lenard’s experiments revealed that illumination of a metal
+surface with light below a characteristic frequency produces no measurable
+emission, regardless of intensity.  Above this threshold, however, emission
+occurs instantaneously: the appearance of each emitted electron is a discrete
+event that cannot be subdivided by increasing the smooth amplitude of the
+field.
+
+In the informational framework, this is the operational content of the Axiom
+of Planck.  The threshold frequency represents the minimal distinguishability
+cost required for a continuous field to induce a refinement in the causal
+ledger.  Below this cost, no admissible event can be recorded; above it,
+refinement proceeds in integer units.  Intensity controls the \emph{count} of
+events, not their indivisible informational scale.
+\end{phenomenon}
 
 The Axiom of Planck is the foundation for every discrete-to-continuous 
 transition in the monograph.  It guarantees that the dense limit of 
@@ -697,12 +716,18 @@ In the present framework, the analogous constant plays no physical role—it mer
 
 \subsection{The Axiom of Boltzmann}
 
-This axiom does not invoke statistical mechanics, molecular ensembles, or 
-Boltzmann’s physical interpretation of entropy.  Here, Boltzmann’s name 
-denotes a purely logical requirement: locally consistent observations must 
-extend to a single globally coherent history.  Entropy increases not because 
-of thermodynamic interactions, but because each refinement enlarges the set 
-of admissible futures.
+This axiom does not invoke statistical mechanics, molecular ensembles, or
+Boltzmann’s physical interpretation of entropy.  Here, Boltzmann’s name
+denotes a purely logical requirement: locally consistent observations must
+extend to a single globally coherent history.  Two independent measurements
+cannot contradict one another; an observer cannot record an outcome that
+would later be incompatible with a simultaneous observation elsewhere.  A
+fact, once entered into the ledger, cannot be painted over without destroying
+global consistency.  Entropy increases not because of thermodynamic
+interactions, but because each refinement enlarges the set of admissible
+futures.
+
+\bigskip
 
 \noindent\textbf{The Axiom of Boltzmann --- Global Coherence}
 Any finite collection of locally consistent measurements admits a single 
@@ -761,17 +786,22 @@ The Axiom of Boltzmann plays a central structural role in the theory:
       defined globally.
 \end{itemize}
 
-Most importantly, the Axiom of Boltzmann provides the logical foundation 
-for the informational law of non-negatuve change in entropy.  Because every 
-refinement is irreversible 
-(Axiom of Kolmogorov), successor-based (Axiom of Peano), ordered 
-(Axiom of Causal Sets), and lower-bounded (Axiom of Planck), the global 
-coherence requirement forces the set of admissible future histories to grow 
-monotonically.  This yields the theorem
-\begin{equation}
-\Delta S \ge 0,
-\end{equation}
-not as a physical principle but as a counting argument.
+Most importantly, the Axiom of Boltzmann provides the logical foundation for
+the informational law of non-negative change in entropy.  Because every
+refinement is irreversible (Axiom of Kolmogorov), successor-based (Axiom of
+Peano), ordered (Axiom of Causal Sets), and lower-bounded (Axiom of Planck),
+the global coherence requirement forces the set of admissible future
+histories to grow monotonically.  This yields the inequality
+\[
+\Delta S \ge 0
+\]
+not as a physical postulate but as a simple counting consequence of the
+admissible refinement structure.
+
+The purpose of this monograph is not merely to establish this inequality.
+It is to demonstrate that the informational framework supporting it is
+stable under empirical refinement, and that its derivation remains coherent
+across the full range of experimental phenomena.
 
 Thus, the Axiom of Boltzmann asserts that a universe capable of measurement 
 must be globally coherent.  Local distinctions cannot conflict, refinements 
@@ -783,9 +813,6 @@ measurement.
 
 \begin{example}[The Invisible Curve~\cite{simpson1743}]
 \label{te:invisible-curve}
-\NB{Thought experiments such as this often depict common physical phenomena
-and how the \emph{information being measured} must restrict admissable solutions.}
-
 A spacecraft travels between two distant stars.  Its onboard recorder has
 finite sensitivity: any change in motion or emission below a fixed
 detection threshold is not recorded.  Over the course of the journey the
@@ -805,7 +832,7 @@ With three recorded events, informational minimality forces the unique
 quadratic extremal that agrees with those samples—the same quadratic
 interpolant that underlies the classical Simpson's rule in numerical
 quadrature~\cite{davis1975}.  With four events the extremal becomes cubic,
-and with many events it approaches a spline.  Smooth motion is not assumed;
+and with many events it becomes a spline.  Smooth motion is not assumed;
 it is forced by the absence of evidence for anything else.  The continuum
 appears only as the limit of refinement: as the recorder gains resolution,
 the invisible curve becomes visible, but never exceeds what the events
@@ -813,7 +840,6 @@ certify.  In particular, the sequence of refinements forms a Cauchy
 sequence in the space of admissible motions\cite{cauchy1821,kolmogorov1970}, 
 and its completion is the unique smooth extremal consistent with the measured events.
 \end{example}
-
 
 \section{Derived Structures}
 \label{sec:derived}
@@ -834,11 +860,11 @@ the consequences of those axioms.
 \label{subsec:known}
 
 All familiar objects listed below are defined \emph{with respect to} the 
-Axioms of Measurement.  Their classical meanings should be temporarily set 
+Axioms of Measurement.  Their classical physical interpretations should be temporarily set 
 aside: here they are informational constructs built from refinement, 
 distinguishability, and minimality, not geometric or analytic primitives.
 
-\paragraph{(1) Tensors.}
+\paragraph{Tensors.}
 In classical geometry, tensors encode multilinear relations on vector spaces
 endowed with a metric and are organized through covariant and contravariant
 indexing schemes. In this framework, tensors arise from the refinement
@@ -851,30 +877,35 @@ theory does not assume. The Causal Universe Tensor is the canonical example,
 expressing how local refinements merge into globally coherent histories.
 
 
-\paragraph{(2) Adjoint / Reciprocity.}
+\paragraph{Adjoint / Reciprocity.}
 The adjoint of an operator is traditionally a metric-dependent construction.  
 Here, the adjoint is defined as the informational dual: the inverse mapping 
 that undoes a refinement in the variational sense while respecting the Axioms 
 of Kolmogorov and Ockham.  Classical integration–by–parts identities emerge 
 as continuum shadows of this discrete reciprocity.
 
-\paragraph{(3) The Informational Interval.}
+\paragraph{The Informational Interval.}
 Classically, an interval derives from a metric.  Here, the interval counts the 
 number of irreducible refinements between two events.  It is additive on 
 chains, lower bounded by the Axiom of Planck, and invariant under admissible 
 reorderings.  Proper time is defined as this interval.
 
-\paragraph{(4) The Informational Gradient and Divergence.}
+\paragraph{The Informational Gradient and Divergence.}
 These operators arise from differences between successive refinements and 
 their adjoints, not from coordinate derivatives.  In dense limits, they become 
 the usual notions of gradient and divergence, but their origin is purely 
 combinatorial.
 
-\paragraph{(5) Continuous Fields (as Limits).}
-A “field” is a Cauchy completion of a countable refinement sequence; no field 
-exists independently of such a sequence (Axiom of Cantor).  Smoothness is 
-therefore an informational property: a field is smooth when refinements converge 
-with vanishing discrete curvature residue.
+\paragraph{Continuous Fields (as Limits).}
+A “field’’ is the Cauchy completion of a countable refinement sequence; no
+field exists independently of such a sequence (Axiom of Cantor).  Smoothness
+is therefore an informational property: a field is smooth precisely when its
+refinements converge with vanishing discrete curvature residue, so that each
+successive refinement adds no new distinguishable structure.  In this
+framework, a smooth function is the unique continuous shadow that recovers
+the measured values---and the first- and second-order variation implicit in the
+refinement record---at the anchor points.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 2.2 NEW CONCEPTS INTRODUCED BY THE AXIOMS
@@ -1008,48 +1039,34 @@ Entropy as defined by the count of permissible measurements is necessarily monot
 % 1.0.4 LOGICAL FLOW OF THE THEORY
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Logical Flow of the Theory}
-
-The emergence chain of the theory is:
-
-\smallskip
-\begin{center}
-\begin{tabular}{c}
-$\text{Events} \;\Rightarrow\; \text{Order} \;\Rightarrow\; \text{Refinement} \;\Rightarrow\;$\\
-$\text{Extremality} \;\Rightarrow\; \text{Transport} \;\Rightarrow\; \text{Curvature} \;\Rightarrow\;$\\
-$\text{Symmetry} \;\Rightarrow\; \Delta S \ge 0.$
-\end{tabular}
-\end{center}
-\smallskip
-
-The inequality $\Delta S \ge 0$ is the final invariant: the count of admissible
-futures must grow as refinement proceeds.  No thermodynamic or statistical
-assumptions are required; the Law of Causal Order is a purely combinatorial result.
-
 \section{The Experimental Record}
 
 Every phenomenon referenced in this manuscript has occurred in the
 experimental record.  No effect is assumed, posited, or postulated as a
 primitive feature of the world.  Each is a constraint on what a consistent
 ledger of observations must allow.  The empirical record contains
-interference (Michelson--Morley), threshold behavior (Lenard, 
-photoelectric), scattering residues (Compton), nonlocal phase shifts 
-(Aharonov--Bohm), relativistic time dilation (Pound--Rebka), flat rotation
+interference (Phenomenon~\ref{ph:michelson}), 
+threshold behavior (Phenomenon~\ref{ph:photo}), 
+scattering residues (Compton), 
+nonlocal phase shifts (Aharonov--Bohm), 
+relativistic time dilation (Pound--Rebka), flat rotation
 curves (Rubin--Ford--Thonnard), decoherence, entropy increase, and scale
-relations such as Leavitt's Ladder.  
+relations such as Leavitt's Ladder, and quite a few more.  
 
-The task of a measurement-first theory is not to explain these effects by
+The task of a measurement--first theory is not to explain these effects by
 invoking additional structure, but to demonstrate that they are inevitable
 whenever recorded distinctions are required to remain globally consistent.
 Any admissible system of measurement must therefore reproduce the long list
 of observed behaviors already present in the experimental ledger.  The laws
-traditionally called ``physics'' are understood here as the compatibility
+traditionally called ``physics,'' ``chemistry,'' ``economics,'' or ``social 
+science'' are understood here as the compatibility
 conditions that a finite, discrete, and refinable observation record must
-satisfy in order to admit a coherent completion.
+satisfy in order to admit a coherent completion. Any discipline that collects,
+shares, and draws conclusions from data are subject to these laws.
 
-\subsection{On the Order of Presentation}
+\subsection{On the Order of Presentation of Phenomena}
 
-The sequence in which the principles appear in this manuscript does not
+The sequence in which the phenomena appear in this manuscript does not
 follow the historical order in which the corresponding physical effects
 were discovered or postulated.  The history of physics is a record of
 insight accumulated over centuries, each phenomenon understood in the
@@ -1082,7 +1099,7 @@ world.
 In this framework, a physical theory is not accepted because it describes
 an underlying reality, nor because it resembles the constructs of past
 models.  A theory is admissible only to the extent that it extends the
-observation record without contradiction.  It must refine the ledger in a
+observational record without contradiction.  It must refine the ledger in a
 way that preserves distinguishability, respects the partial order of events,
 and satisfies the global compatibility conditions that govern how
 information may flow.
@@ -1107,86 +1124,115 @@ globally consistent observational ledger.
 
 
 \begin{coda}{Aristotle and Galileo}
-Aristotle’s account of motion is historically influential but informationally
-inadmissible.  It asserts how bodies \emph{ought} to move, not how they
-\emph{do} move in the experimental record.  His conclusions do not arise from
-refinement of a finite ledger of observations, nor are they tested against
-distinguishability, comparison, or global compatibility.  They are rules
-posited about an unseen essence.  Such rules may be elegant, but they do not
-extend the observation record in a consistent way; they bypass it entirely.
+\subsection*{Motivation: Aristotle and Galileo}
 
-Galileo’s method is the opposite.  It begins with the empirical record and
-asks only what regularities its refinement demands.  Rolling spheres on
-inclines, comparing fall times, and separating signal from noise are not
-illustrations of a theory but demonstrations of admissibility.  The
-informational ledger is updated by experiment, and any proposed principle
-must preserve the coherence of that ledger when carried into new domains.
-Galileo’s observations satisfy this requirement; Aristotle’s do not.
+Aristotle represents the earliest systematic attempt to organize knowledge by
+causal structure.  His program sought not merely to catalogue observations,
+but to explain how they fit together into a coherent account of the world.
+This ambition was correct, but the mechanism was unavailable: Aristotle had
+no operational notion of measurement, no concept of distinguishability, and
+no method for recording outcomes as finite, reproducible events.  His causal
+theories therefore drifted toward metaphysics; they lacked a ledger against
+which claims could be tested or refined.
 
-The distinction is therefore not philosophical but structural.  A thought
-experiment that does not correspond to an actual refinement of the
-observation record is informationally empty.  An experiment that produces a
-finite, repeatable, distinguishable event contributes to the ledger and must
-be accommodated by any admissible theory.  In this manuscript, the laws of
-physics are reinterpreted as precisely those rules that survive this test of
-empiracy: they are the constraints that every coherent, extensible
-observation record must satisfy.  Aristotle speculated; Galileo measured.  In
-an informational framework, only the latter can be admitted.
+Galileo supplied precisely what Aristotle’s program was missing.  He shifted
+the foundation of knowledge from explanation to operation, insisting that any
+statement about nature be tied to procedures that can be carried out with
+instruments, repeated by different observers, and recorded as discrete,
+distinguishable outcomes.  In Galileo’s method, the legitimacy of a claim
+derives not from its philosophical elegance but from its recoverability by a
+finite observer.
 
+Seen together, Aristotle and Galileo mark the transition from \emph{causes as
+concepts} to \emph{causes as operations}.  Aristotle established the need for
+coherent structure; Galileo established the discipline by which such
+structure must be earned.  Their combined legacy motivates the central theme
+of this monograph: that admissible knowledge begins with finite,
+distinguishable events, and that all higher structure is justified only
+insofar as it can be recovered from such records.
 
-\section*{The Purpose of Thought Experiments}
+Aristotle and Galileo offered fundamentally different accounts of motion, not
+merely in terminology but in the logical structures they permitted.
 
-Thought experiments appear throughout this work, but their purpose is not
-to assert new structure or to introduce hypothetical mechanisms.  In a
-measurement--first framework, a thought experiment is merely an analytic
-scaffold: a controlled setting in which the mathematical consequences of
-the axioms can be examined without the distractions of incomplete data or
-instrumental complexity.  These constructions motivate the derivations,
-clarify the role of refinement, and expose the logical boundaries of the
-informational ledger.  They do not extend the observation record; they
-prepare the mathematics that later must be tested against it.
+\textbf{Violent Motion (Aristotle).}
+In Aristotle's framework, motion contrary to a body's natural place requires a
+continuous external cause.  A mover must act throughout the motion, and the
+motion ceases the moment the cause is removed.  The surrounding medium is
+itself part of this causal chain: a projectile continues only because the
+air or ether continuously pushes it forward after release.  Motion is
+therefore a \emph{sustained causal process}, not a state.  There is no
+quantitative notion of persistence.  Without an ongoing cause, the record of
+motion is expected to collapse immediately.
 
-The decisive content of the theory comes from the experimental record
-itself.  Any admissible system of measurement must reproduce the long list
-of effects already observed in nature.  These include interference
-(Michelson--Morley), diffraction and wavepacket breakup (Davisson--Germer),
-threshold emission (Lenard), scattering residues (Compton), nonlocal phase
-(Aharonov--Bohm), time dilation (Pound--Rebka), universal spectral
-calibration (Leavitt's Ladder), curvature balance, decoherence, and the
-statistical monotonicity expressed by $\Delta S \ge 0$.  None of these are
-assumptions; each belongs to the observational ledger, and a theory that
-fails to admit them is excluded by definition.
+\textbf{Inertia (Galileo).}
+Galileo inverted this structure.  Motion does not require a cause; only
+\emph{changes} of motion require one.  A body, once set in motion, continues
+uniformly unless acted upon.  The medium does not propel but resists.  Motion
+is a \emph{state} characterized by measurable invariances: equal distances in
+equal times in the absence of interference.  Persistence is expected unless a
+distinguishable interaction is recorded.  Inertia therefore replaces
+medium-driven continuity with an operational principle: motion is what
+remains invariant under repeated measurement.
 
-This manuscript also identifies several phenomena that have not yet been
-observed, but which are required by the informational axioms and the
-compatibility conditions derived in later chapters.  These predictions
-follow not from speculation, but from the structure that any coherent
-refinement must satisfy:
-\begin{itemize}
-  \item The existence of a curvature--strain residue in noninertial
-  interferometers, visible as a systematic phase offset independent of
-  dynamical forces.
-  \item Specific bandwidth limits on spectral transitions, arising from the
-  informational Nyquist bounds inherent to distinguishability.
-  \item A universal refinement–curvature correction in rotation curves,
-  independent of composition, luminosity, or mass model.
-  \item Quantized strain channels in strongly curved causal networks,
-  measurable as discrete deviations from the smooth–shadow Euler--Lagrange
-  approximation.
-  \item A monotone informational arrow that persists even in regimes where
-  thermodynamic mechanisms fail, providing a direct experimental signature
-  of $\Delta S$ as a bookkeeping constraint rather than a physical process.
-\end{itemize}
+Violent motion treats motion as the \emph{effect of a continuous cause};
+inertia treats uniform motion as the \emph{absence of distinguishable cause}.
+In Aristotle’s view, every moment of motion depends on an active force
+maintaining it; in Galileo’s, uniform motion is what persists when no new
+information enters the causal ledger.  Violent motion demands explanation for
+why motion continues; inertia demands explanation only for why motion
+changes.  The divide is structural: Aristotle’s motion is \emph{causal
+maintenance}, while Galileo’s motion is \emph{causal invariance}.
 
-These predictions are not optional embellishments.  They represent the
-phenomena that must appear in any future experiment if the axioms of
-measurement, refinement, and global consistency are correct.  Just as the
-classical effects above serve as validation of the informational framework,
-these forthcoming phenomena serve as its unavoidable consequences.  The
-theory begins with the observation record, but it does not end there: it
-extends the ledger into domains not yet measured, identifying the signatures
-that future observation must reveal.
+In the informational framework, a law of motion is admissible only if it can
+be expressed as a rule that a finite observer could verify through
+distinguishable operations recorded in a causal ledger.  The law must survive
+refinement: each additional distinction must either reproduce the rule or
+identify its failure as a discrete contradiction.
 
+\textbf{Violent Motion is Inadmissible.}
+Aristotle's account of violent motion requires that a mover act continuously
+throughout the motion and that the surrounding medium supply a sustaining
+impetus after the mover ceases contact.  No finite measurement procedure can
+distinguish or record such a cause, because the required causal influence has
+no discrete signature.  The medium’s “continued pushing’’ introduces an
+unobservable process that cannot be anchored to a sequence of refinements or
+finite events.
 
+Moreover, the theory is not stable under refinement: finer temporal or
+spatial distinctions never reveal new measurable events corresponding to the
+hypothesized sustaining cause.  A ledger containing the positions of a
+projectile at successive times admits many explanations, and the Aristotelian
+one cannot be singled out by any finite refinement.  Its causal structure
+cannot be operationally recovered, and contradictions (continued motion after
+loss of contact) appear immediately once friction is reduced.  The theory
+therefore fails admissibility: it introduces causes that cannot be recorded
+and predicts refinements that no instrument can witness.
+
+\textbf{Inertia is Admissible.}
+Galileo's principle of inertia requires no unobservable sustaining cause.
+Instead, it asserts that in the absence of distinguishable interactions, the
+motion of a body remains uniform.  This is admissible because it ties the
+law directly to the contents of the ledger: a sequence of equally spaced
+position measurements with no recorded external events is taken as evidence
+of uniform motion.
+
+Refinement strengthens the rule rather than undermining it.  Finer temporal
+measurements reduce noise but do not introduce new causal requirements:
+uniform motion survives every additional distinction unless a new event
+(force, collision, friction) is actually recorded.  The law is therefore
+operationally stable.  A finite observer can verify inertia by performing
+controlled experiments in which interference is minimized, and the results
+consistently reproduce the same invariant pattern up to the resolution of
+the experiment.
+
+Throughout this monograph a deliberate distinction has been maintained
+between thought experiments and phenomena.  Thought experiments serve as
+logical scaffolds: they expose the structure of admissible reasoning and show
+how far a claim may be carried without appeal to the empirical record.
+Phenomena, by contrast, are the points of resistance—observations that
+survive refinement and constrain the space of coherent histories.  The
+development presented here relies on both: thought experiments to clarify the
+rules by which information may be extended, and phenomena to anchor those
+rules to the world.  
 \end{coda}
 
