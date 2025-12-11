@@ -1,778 +1,54 @@
-\chapter{The Calculus of Dynamics}
-\label{chap:dynamics}
-We begin with the transition from the discrete algebra of refinements to
-the analytic structures that describe coherent dynamics.  Up to this point the
-theory has been entirely combinatorial: events, refinements, rank time,
-causal order, and the Causal Universe Tensor record what an observer may
-distinguish, but they do not yet determine how successive refinements should
-be selected among all admissible futures.
+\chapter{The Continuum of Experiment}
+\label{ch:calculus-dynamics}
 
-The missing principle is \emph{minimality}.  Every refinement enlarges the
-set of possible continuations, but only a tiny fraction of these
-continuations are compatible with the informational constraints imposed by
-the axioms.  The observer must choose refinements that preserve coherence
-while introducing no gratuitous structure.  This requirement forces the
-discrete ledger to evolve by selecting the \emph{minimal} extension
-consistent with present information.  Minimality therefore plays, in the
-informational framework, the role that extremal principles play in classical
-mechanics: it determines which refinements survive admissibility when many
-are formally possible.
+Every measurement advances the admissible history by adding a new
+distinction to an observer’s record. In prior chapters, this record was shown
+to accumulate as a finite vector of distinguishable counts: a count of counts.
+Such a structure evolves step by discrete step, through refinement operators
+that preserve what is already known while introducing new, minimally
+necessary distinctions.
 
-The analytic machinery of Chapter~\ref{chap:dynamics}---weak formulations, 
-spline sufficiency, Galerkin projection, and the emergence of smooth dynamics---all arise from
-this single principle.  Minimality is the bridge between the discrete
-structure of Chapter~2 and the variational, continuous shadows that follow.
+When a single observer refines the record, the evolution appears
+deterministic: each update follows uniquely from what has already been
+distinguished. The unfolding of admissible events resembles a gearwork,
+advancing one tooth at a time. From this perspective, the universe appears
+to operate like a perfect automaton.
 
-\section{Information Minimality and Kolmogorov Closure}
-\label{sec:minimality-kolmogorov}
+\begin{phenomenon}[The Laplace Effect~\cite{laplace1814}]
+\label{ph:clockwork}
+In the special case of a single observer following a single causal thread,
+the axioms of measurement select a unique admissible refinement at each
+ordinal step. Once an initial experimental record is fixed, every subsequent
+update is determined by the requirement of minimal refinement. From this
+perspective the evolution of the record appears completely constrained: the
+future is a necessary continuation of what has already been distinguished.
+This is the informational analogue of the classical picture in which the
+universe behaves like a perfectly wound mechanism, evolving according to a
+single deterministic rule in the sense articulated by Laplace~\cite{laplace1814}.
 
-The axioms established in Chapters~1 and~2 imply that any admissible
-completion of a finite measurement record must satisfy two independent
-constraints.  First, by Axiom~\ref{ax:ockham}, no completion may introduce
-unobserved structure: curvature, oscillation, inflection, or any additional
-pattern not forced by the record.  Second, by Axiom~\ref{ax:kolmogorov}, the
-informational complexity of the record cannot decrease under refinement.
-These principles together impose a \emph{closure rule} on admissible
-refinements.  This section establishes that rule and shows that it naturally
-induces the variational structure developed throughout this chapter.
-
-\subsection{Minimal Refinement Between Events}
-
-Let $e_i \prec e_j$ be two events in the experimental record.  Among all
-refinements consistent with the record, we will demmonstrate only those introducing the least
-possible informational structure are admissible.  This constraint removes all
-but a single interpolation pattern.
-
-\begin{definition}[Minimal Admissible Interpolant]
-\label{def:minimal-interpolant}
-Given events $e_i \prec e_j$, a refinement sequence
-$\widehat{R}(e_i,e_j)$ is a \emph{minimal admissible interpolant} if for every
-admissible refinement $R$ between $e_i$ and $e_j$,
-\[
-K(\widehat{R}) \leq K(R),
-\]
-where $K(\cdot)$ is the Kolmogorov complexity of the corresponding extension
-of the record.
-The interpolant $\widehat{R}$ introduces no unobserved structure and is
-unique up to observational indistinguishability.
-\end{definition}
-
-Minimality therefore selects a single discrete pattern between any two
-events: no additional bends, no extra modes, and no curvature beyond what is
-forced by the record.  This is the discrete prototype of the spline that
-emerges later in the continuum shadow.
-
-\subsection{Kolmogorov Closure}
-
-Minimality alone does not ensure global consistency.  A refinement that is
-minimal on one interval may contradict a refinement that is minimal on a
-neighboring interval.  The Axiom of Kolmogorov supplies the additional rule:
-the informational complexity of the record cannot be reduced by refinement.
-Combined with the Axiom of Boltzmann, this yields a unique globally
-consistent closure operation.
-
-\begin{proposition}[Kolmogorov Closure]
-\label{lem:kolmogorov-closure}
-Every finite experimental record admits a unique admissible extension
-$\Phi(R)$ such that
-\begin{enumerate}
-\item $\Phi(R)$ introduces no unobserved structure (Ockham minimality), and
-\item the informational complexity of $\Phi(R)$ is minimal among all
-admissible extensions of $R$ and is nondecreasing under refinement.
-\end{enumerate}
-\end{proposition}
-
-\noindent
-The operator $\Phi$ defines the \emph{Kolmogorov closure} of the record.  It
-acts as a projection onto the set of globally admissible refinements: any
-local refinement that would decrease complexity or introduce unobserved
-structure is rejected.  Only the minimal, globally consistent pattern
-survives.
-
-\subsection{Smooth Shadows in the Dense Limit}
-
-The Axiom of Cantor guarantees that countable refinement sequences admit
-Cauchy completions.  When the minimal interpolants chosen by
-Definition~\ref{def:minimal-interpolant} are densified and closed under
-$\Phi$, the resulting refinement chain converges to a smooth shadow
-curve.  In this sense, differentiability is not postulated but emerges as the
-limit of discrete minimality under Kolmogorov closure.  The variation of the
-refinement pattern becomes the variation of the corresponding smooth shadow.
-
-\subsection{Variation as Measurement}
-
-A refinement is a measurement: it records a new distinguishable event and
-therefore updates the admissible history.  Minimal admissible interpolants
-represent the only refinements compatible with the axioms.  Their dense
-limits inherit an extremal property: any deviation would either introduce
-unobserved structure or reduce informational complexity.  This yields the
-weak variational structure used in the next sections.  Variation is thus the
-smooth shadow of minimal refinement, and calculus arises as the unique tool
-that preserves admissibility under densification.
-
-The next subsection develops the algebraic conditions under which
-dependencies among events arise, preparing the weak formulation that
-connects minimality to the Euler--Lagrange closure.
-
-
-\section{Information Minimality and Kolmogorov Closure}
-
-The definitions of the previous chapter describe events as finite distinctions and their
-ordering as a partial refinement of information. What remains is the rule
-that determines which extensions of a recorded event set are admissible.
-Not every history consistent with the order is physically meaningful: a
-completion that inserts unobserved structure would imply additional
-measurements that never occurred. Information minimality formalizes this
-constraint through algorithmic information theory in the sense of
-Kolmogorov, Solomonoff, and Chaitin \cite{chaitin1975,kolmogorov1965,solomonoff1964a,
-solomonoff1964b}.
-
-We treat histories as finite symbolic strings and measure their descriptive
-content by Kolmogorov complexity. A physically admissible history is one
-that cannot be compressed by adding unrecorded structure.
-
-\begin{definition}[Kolmogorov Complexity~\cite{chaitin1975,kolmogorov1965}]
-Fix a universal Turing machine $U$~\cite{turing1936}. For any finite string $w\in\Sigma^{*}$,
-the Kolmogorov complexity $K(w)$ is the length of the shortest input to $U$
-that outputs $w$ and halts. The functional $K:\Sigma^{*}\rightarrow\mathbb{N}$
-is defined up to an additive constant independent of $w$.
-\end{definition}
-
-\begin{definition}[Admissible Extension {\cite{li1997}}]
-Let $E=\{e_0\prec e_1\prec\cdots\prec e_n\}$ be the recorded events of an
-experiment. A finite string $w\in\Sigma^{*}$ is an \emph{extension} of $E$
-if its image under the event map contains $E$ in the same causal order.
-An extension $w$ is \emph{admissible} if it introduces no additional events
-beyond $E$; that is, every distinguishable update encoded by $w$ has a
-corresponding element of $E$. Any extension predicting unobserved structure
-is rejected as inadmissible.
-\end{definition}
-
-In an admissible ledger, events do not contribute equally to global
-coherence.  Some events exert disproportionate constraint on the space of
-admissible continuations.  Their presence “pulls” the structure of the
-record toward a narrow class of consistent refinements, while low–weight
-events deform the ledger only marginally.
-
-\begin{definition}[Causal Path~\cite{bombelli1987}]
-A \emph{causal path} at scale $\epsilon$ is a finite sequence
-\[
-\gamma = \langle e_0,e_1,\dots,e_n\rangle
-\]
-such that for all $k$ with $0 \le k < n$:
-\begin{enumerate}
-  \item $e_k \prec e_{k+1}$ (causal ordering), and
-  \item $(e_k,e_{k+1}) \in \Refine_\epsilon$ (each step is an irreducible
-        $\epsilon$-refinement).
-\end{enumerate}
-\end{definition}
-
-A causal thread is, by definition, a totally ordered chain of admissible
-events.  Total order alone, however, does not yet quantify persistence; it
-only establishes comparability.
-
-To make persistence measurable, the ledger must distinguish between adjacent
-events that are separated by a genuine refinement and those that are merely
-related by admissible relabeling.  The $\epsilon$--refinement relation
-isolates precisely those transitions that cannot be compressed or skipped
-without violating admissibility.
-
-Along any causal thread $T = \{e_0 \prec e_1 \prec \cdots \prec e_n\}$,
-only those pairs $(e_k,e_{k+1}) \in \Refine_\epsilon$ represent irreducible
-extensions of the ledger.  These irreducible steps are invariant under all
-admissible coordinate changes: events may be renamed, but refinement steps
-cannot be removed or created.
-
-The \emph{informational interval} is therefore not an external parameter but
-an intrinsic count:
-
-\[
-\tau(T) \; := \; \#\{(e_k,e_{k+1}) \in \Refine_\epsilon\}.
-\]
-
-It measures the number of irreducible refinements required to sustain the
-persistence represented by the thread.
-
-\begin{definition}[Informational Interval~\cite{trotter1992}]
-\label{def:informational-interval}
-
-Let $\Ledger = (E,\prec,\Refine_\epsilon)$ be an admissible causal ledger,
-where:
-\begin{itemize}
-  \item $E$ is the set of distinguishable events,
-  \item $\prec$ is the causal partial order on $E$,
-  \item $\Refine_\epsilon \subseteq E \times E$ is the $\epsilon$-refinement
-        relation, with $(e,f) \in \Refine_\epsilon$ read as
-        ``$f$ is an irreducible $\epsilon$-refinement of $e$''.
-\end{itemize}
-
-Two causal paths $\gamma = \langle e_0,\dots,e_n\rangle$ and 
-$\gamma' = \langle e'_0,\dots,e'_m\rangle$
-are said to be \emph{order–equivalent} if there exists a bijection
-$\phi : \{0,\dots,n\} \to \{0,\dots,m\}$ such that
-\[
-k < \ell \quad \Longleftrightarrow \quad \phi(k) < \phi(\ell)
-\]
-and $e_k$ and $e'_{\phi(k)}$ are identified by an admissible relabeling of
-the ledger.
-
-The \emph{informational interval} (or \emph{tally}) of a causal path
-$\gamma$ at scale $\epsilon$ is the integer
-\[
-\tau_\epsilon(\gamma) \;:=\; n,
-\]
-the number of irreducible $\epsilon$-refinement steps in the path.
-
-By construction, $\tau_\epsilon$ is invariant under order–equivalence:
-if $\gamma \sim \gamma'$ (order–equivalent under admissible relabeling),
-then $\tau_\epsilon(\gamma) = \tau_\epsilon(\gamma')$.
-
-In this sense, the informational interval $\tau$ functions as a minimal
-proper labeling of a totally ordered subset of the causal ledger, closely
-related to classical coloring problems in order theory~\cite{trotter1992}.
-\end{definition}
-
-The informational interval $\tau$ was defined as a tally of irreducible
-refinement steps along a causal thread.  By construction, $\tau$ counts only
-those ledger updates that cannot be compressed, skipped, or removed without
-violating admissibility.
-
-This imposes an immediate structural consequence: any operation that changes
-the state of the ledger must alter $\tau$.  There is no admissible operation
-that produces a logical distinction without corresponding refinement count.
-
-Suppose a procedure attempts to erase, ignore, or overwrite a refinement
-event without recording the operation.  Such an erasure would reduce the
-effective value of $\tau$ along the affected thread without an admissible
-inverse refinement.  This is impossible: $\tau$ is invariant under all
-admissible relabelings and extensions.
-
-Therefore, any act of measurement, memory reset, or state preparation is
-itself an irreducible refinement and must be counted in $\tau$.
-
-Landauer's principle is recovered as a purely combinatorial constraint:
-information cannot be destroyed “for free” because doing so would require a
-non-admissible reduction of the informational interval~\cite{landaur1961}.
-Bennett's refinement follows immediately: reversible measurement is
-admissible, but erasure is not.  Resetting a memory necessarily increases
-$\tau$ elsewhere in the ledger, as the operation must be recorded~\cite{bennett1982}.
-
-In this framework, these effects are not thermodynamic in origin.  They do
-not rely on temperature, heat, or probabilistic mechanics.  Instead, they
-are manifestations of a more primitive structural constraint first made
-explicit by Maxwell.
-
-Maxwell’s original insight was not about engines, but about the limits of
-hidden order.  Any mechanism that appears to create structure must itself be
-expressible as an admissible operation of the ledger.  No admissible history
-permits unrecorded sorting, unrecorded selection, or unrecorded erasure.
-
-What later appears in thermodynamics as entropy, dissipation, and
-irreversibility is, in this framework, simply the smooth shadow of this
-combinatorial prohibition: order cannot be manufactured off the books.
-
-\begin{phenomenon}[The Maxwell Effect~\cite{maxwell1871}]
-Each causal thread induces its own internal ordering through the proper
-labeling of its refinement events.  This ordering functions as a local
-coordinate system: it is complete for the thread itself and does not require
-reference to any external global structure.
-
-Admissibility constrains how two such local systems may be compared.  A
-transformation between thread--local reference structures is permitted only
-if it preserves the invariant content of the ledger.  In particular, the
-number of irreducible refinement steps along any admissible history---the
-informational interval $\tau$---must remain unchanged.
-
-This restriction is not conventional symmetry.  It is a bookkeeping
-constraint.  A transformation that altered $\tau$ would either introduce or
-erase refinement events without record and is therefore forbidden.
-
-As a consequence, global structure does not arise from a single preferred
-frame, but from the overlap conditions between many admissible local frames.
-No admissible observation internal to a single causal thread can distinguish
-between globally relabeled versions of that thread, so long as the tally of
-irreducible refinements is preserved.  Only the number of admissible events
-is invariant, which permits the construction of a consistent inverse
-representation $\Psi^{-1}$ on equivalence classes of refinements.
-
-This structure appears in classical mechanics as Galilean relativity~\cite{galileo1638}, in
-which uniform translations cannot be detected internally.  It appears in
-Newtonian mechanics~\cite{newton1687} when acceleration introduces refinement strain, and in
-relativistic mechanics~\cite{einstein1905} when invariant propagation forces agreement on the
-count of admissible refinements.
-
-A reference frame is not a background geometry but a thread--local bookkeeping
-system.  Transformations between frames are admissible if and only if they
-preserve the discrete tally $\tau$ and do not introduce hidden structure.
-
-Apparent motion, force, and curvature arise only when distinct thread-local
-reference frames fail to reconcile their admissible refinements.
+Consider a single observer whose experimental record evolves under the
+axioms of measurement. Suppose that at each ordinal step $n$ there exists a
+unique admissible refinement operator $\mathbf{E}_n$ consistent with the
+current record. Then the state vector $\boldsymbol{\psi}_n$ evolves according
+to the discrete update rule
+\begin{equation}
+  \boldsymbol{\psi}_{n+1} = \mathbf{E}_n \, \boldsymbol{\psi}_n,
+\end{equation}
+with cumulative evolution
+\begin{equation}
+  \boldsymbol{\psi}_n = \mathbf{U}_n \, \boldsymbol{\psi}_0,
+  \qquad
+  \mathbf{U}_n = \mathbf{E}_{n-1} \cdots \mathbf{E}_0.
+\end{equation}
+In this regime the admissible history advances as a uniquely determined
+sequence of refinements. The observed universe behaves as a clockwork:
+a discrete mechanism in which each new distinction is fixed by those that
+precede it.
 \end{phenomenon}
-
-
-\begin{definition}[Causal Thread]
-\label{def:causal-thread}
-
-Let $\Ledger = (E,\prec,\Refine_\epsilon)$ be an admissible causal ledger as
-in Definition~\ref{def:informational-interval}.
-
-A subset $T \subseteq E$ is called a \emph{causal thread} if it satisfies the
-following properties:
-
-\begin{enumerate}
-  \item \textbf{Total Order:}  
-  The restriction of $\prec$ to $T$ totally orders $T$.  That is, for any
-  distinct $e,f \in T$, either $e \prec f$ or $f \prec e$.
-
-  \item \textbf{Successor Refinement:}  
-  For every non-maximal element $e \in T$, there exists a unique element
-  $f \in T$ such that:
-  \[
-    (e,f) \in \Refine_\epsilon
-    \quad\text{and}\quad
-    e \prec f,
-  \]
-  and no other $g \in T$ satisfies this property.
-
-  \item \textbf{Maximality:}  
-  The set $T$ is maximal with respect to these properties: there exists no
-  strict superset $T' \supsetneq T$ such that $T'$ also satisfies (1) and (2).
-\end{enumerate}
-
-Elements of a causal thread are called its \emph{events}, and the induced
-order type of $T$ is called the \emph{thread history}.
-
-A causal thread does not represent an object.  It represents the persistence
-of a single unresolved refinement obligation through the admissible
-extensions of the ledger.  Consequently, the cardinality of a causal thread $|T|$ is precisely the
-informational interval $\tau$ elapsed along that history.
-
-
-\end{definition}
-
-
-\begin{definition}[Informational Density]
-\label{def:informational-density}
-
-The \emph{informational density} of an event or region is the concentration of
-indispensable descriptive structure per admissible refinement.
-
-Formally, the informational density $\rho(e)$ is the marginal contribution of
-$e$ to the minimal admissible encoding of the causal ledger relative to the
-local refinement scale.
-
-High informational density indicates that small perturbations require large
-global re-encodings; low density indicates that refinements may be altered
-without violating coherence.
-
-\end{definition}
-
-
-
-\begin{phenomenon}[The Pareto Effect~\cite{pareto1896}]
-\label{ph:pareto-effect}
-
-\textbf{Statement.}
-Uniform informational weight is incompatible with admissibility.  If each
-event contributed equally to the global record, the ledger would approach a
-maximally indistinguishable state: no event could be compressed, prioritized,
-or eliminated without loss of consistency.  Such a record cannot be refined,
-because refinement presupposes a hierarchy of relevance among events.
-
-Admissibility therefore forces concentration.  At each extension of the
-ledger, a small number of refinements must anchor global structure, while
-the majority serve only to stabilize local consistency.  These dominant
-events define the effective degrees of freedom of the record.
-
-This non-uniformity is not statistical contingency, but logical necessity.
-A ledger without privileged refinements cannot be stored, transmitted, or
-reconciled across admissible boundaries.  The existence of “laws” in the
-continuous shadow is therefore the macroscopic signature of this forced
-inequality in informational weight.
-
-
-\medskip
-
-\textbf{Mechanism.}
-By the Axiom of Ockham, admissible histories are those that minimize
-descriptive complexity.  A ledger in which all events contribute equally is
-algorithmically incompressible and therefore inadmissible.  To remain
-describable, the causal record must concentrate refinement weight into a
-sparse set of principal events whose influence dominates the global
-invariants.
-
-This concentration is not contingent.  It is the unique combinatorial
-solution that permits a long causal history to remain finitely specifiable.
-
-\medskip
-
-\textbf{Operational Consequence.}
-The dominance of a small subset of events licenses truncation.  Higher–order
-refinements may be neglected without loss of global coherence.  Projection
-onto a sparse basis does not introduce error; it recovers the admissible
-smooth shadow of the record.
-
-\medskip
-
-\textbf{Interpretation.}
-The Pareto Effect is therefore not a sociological artifact but a structural
-necessity.  Legibility of history requires inequality of informational
-weight.
-
-\end{phenomenon}
-
-
-\begin{phenomenon}[Paradoxes of Time Travel~\cite{godel1931,lewis1976}]
-\NB{Apparent paradoxes often attributed to \emph{time travel}, \emph{remote 
-viewing}, or other extraordinary mechanisms are pathologies of 
-over--resolution.  They arise when incompatible refinements are treated as 
-simultaneously admissible, producing the illusion of phenomenal violation 
-rather than an actual failure of causal order.}
-\NB{This thought experiment introduces constructions that are intentionally
-self--referential.  These devices are used only to illustrate how paradoxes
-arise when an observer attempts to treat its own temporal index as a
-manipulable datum.  Such constructions lie outside the admissible structure
-of the axioms and are not permitted in any formal derivation.  In particular,
-they follow the general pattern of self--reference that Godel cautioned
-against in his incompleteness results: systems that encode statements about
-their own inferential process cannot, in general, maintain global
-consistency~\cite{godel1931}.  The paradoxes described here therefore serve only as intuitive
-warnings.  They do not represent allowable configurations within the theory,
-and no phenomenon in this manuscript relies on them.}
-
-
-
-Let $E = \{e_1, e_2, e_3, \dots\}$ be a locally finite causal chain where each
-event $e_i$ has a unique successor $e_{i+1}$.  Define the corresponding universe
-tensor
-\begin{equation}
-\U_n = \sum_{k=1}^{n} \E_k, \qquad \E_k=\mathbf\Psi_k(e_k).
-\end{equation}
-Now suppose we attempt to ``extend'' this history by splitting a single event
-$e_j$ into uncountably many indistinguishable refinements:
-\begin{equation}
-e_j \longrightarrow \{e_{j,\alpha}\}_{\alpha \in [0,1]},
-\end{equation}
-each representing a formally distinct but observationally identical outcome.
-Algebraically, this replacement yields
-\begin{equation}
-\E_j \longrightarrow \int_{0}^{1} \E_{j,\alpha}\, d\alpha,
-\end{equation}
-so that the next update becomes
-\begin{equation}
-\U_{n+1} = \U_n + \int_{0}^{1} \E_{j,\alpha}\, d\alpha.
-\end{equation}
-
-This ``extension'' violates the finiteness and distinguishability conditions
-necessary for causal coherence:
-\begin{enumerate}
-\item The set $\{e_{j,\alpha}\}$ is uncountable, destroying local finiteness;
-\item The new events are indistinguishable, so Extensionality no longer
-      guarantees unique contributions;
-\item The total tensor amplitude $U_{n+1}$ can diverge or cancel arbitrarily,
-      depending on how the continuum of duplicates is treated.
-\end{enumerate}
-
-Operationally, this is a Banach--Tarski-like overcounting: the causal structure
-has been ``refined'' in a way that preserves measure only formally while the
-order relation collapses.  The observer would now predict contradictory
-outcomes for the same antecedent state---an \emph{overcomplete history}.
-
-To prevent this, the \emph{Axiom of Event Selection} restricts the permissible
-extension to a countable, consistent refinement:
-\begin{equation}
-e_j \longrightarrow e_{j,1}, e_{j,2}, \dots, e_{j,k},
-\end{equation}
-and requires the selection of exactly one representative outcome from each
-locally admissible family.  This keeps $E$ locally finite and maintains a
-single-valued universe tensor,
-\begin{equation}
-\U_{n+1} = \U_n + \E_{j,k^\ast}.
-\end{equation}
-The axiom thus enforces the same regularity that Martin's Axiom guarantees in
-set theory: every countable family of local choices admits a globally consistent
-selection that preserves the partial order.
-\end{phenomenon}
-
-
-\begin{definition}[Information Minimality {\cite{kolmogorov1965,li1997}}]
-Among all admissible extensions of $E$, the physically admissible history is
-the one of minimal Kolmogorov complexity:
-\[
-w_{min}=\arg\min\{K(w): w\ \text{is an admissible extension of }E\}.
-\]
-\end{definition}
-
-Information minimality expresses the logical content of measurement: if
-additional curvature, oscillation, turning points, or discontinuities had
-occurred between $e_i$ and $e_{i+1}$, those features would have generated
-new events. Since no such events are present in $E$, any extension that
-predicts them is inadmissible, and a shorter description exists.
-
-\begin{remark}
-This principle is purely set--theoretic. No geometry, metric, or
-differential structure is assumed. Kolmogorov minimality selects the
-shortest admissible description of the recorded distinctions and forbids
-unobserved structure.
-\end{remark}
-
-\begin{remark}
-As the resolution of measurement increases, the admissible extension forms
-a Cauchy sequence~\cite{cauchy1821} in the space of symbolic descriptions. In the dense limit,
-its smooth shadow is the unique spline that introduces no new structure
-between recorded events. Thus the variational calculus is not imposed; it
-is the continuum limit of Kolmogorov minimality.
-\end{remark}
-
-\subsection*{Inadmissibility of Unobserved Structure}
-
-Let $E=\{e_0\prec e_1\prec\cdots\prec e_n\}$ be the finite set of recorded
-events produced by a measurement process. By Definition~\ref{def:measurement},
-each event corresponds to a distinguishable update of state: a change that
-crossed a detection threshold and became causally recorded.
-
-Between two successive events $e_i$ and $e_{i+1}$, no additional events
-were recorded. This absence is a data constraint: any refinement of the
-history that introduces detectable structure---curvature, oscillation,
-turning points, discontinuities, or other distinguishable phenomena---would
-generate additional events. Since these events do not appear in $E$, any
-history that predicts them is logically inconsistent with the observational
-record.
-
-\begin{definition}[Unobserved Structure]
-\NB{The idea of \emph{unobserved structure} echoes the notion of ``hidden''
-or ``non--observable'' structure that appears in several areas of theoretical
-computer science and logic, most notably in Scott's domain theory~\cite{scott1970}.  There, an
-extension may contain information that is not reflected in the observable
-prefix.  In the present framework, the analogy is purely conceptual: symbolic
-refinements that do not correspond to distinguishable events in the ledger do
-not contribute to the informational state.  Only observed distinctions shape
-the causal record.}
-
-Let $w$ be an admissible extension of $E$ (Definition~2.3.3). A symbolic
-segment of $w$ between $e_i$ and $e_{i+1}$ contains \emph{unobserved
-structure} if it encodes a distinguishable update that is not present in $E$.
-\end{definition}
-
-\section{Correlation and Dependency}
-
-In conventional quantum mechanics the word ``entanglement’’ refers to a
-non-classical dependency among amplitudes: indistinguishable histories are
-combined before probabilities are assigned.  The present framework adopts a
-similar intuition, but in a purely informational and algebraic form, with no
-amplitudes and no functional dependencies.
-
-Two events are \emph{uncorrelant} when no \emph{correlant} exists between them.
-In this case, their transposition commutes with every admissible invariant
-of the Universe Tensor, and the events may be represented independently.
-Uncorrelant events are informationally separable: no refinement of the
-record forces them to be treated jointly.
-
-Two events are \emph{correlant} when they do not commute: exchanging them
-changes at least one admissible invariant.  In this case a correlant
-exists.  A correlant is an informational relation---the minimal structure
-required when two events cannot be represented independently of one
-another.  Importantly, a correlant does not specify direction or causation:
-nothing is said about which event precedes, influences, or determines the
-other.  It expresses only that the transposition fails to commute.
-
-Uncorrelant events can become correlated when their light cones merge.
-Before the merger, each event admits a representation that commutes with
-the other; no correlant exists, and their histories may be transposed
-without altering any admissible invariant.  After the merger, additional
-distinctions become available, and the transposition may fail to commute.
-A correlant then forms, not because one event generates the other, but
-because the enlarged record no longer permits them to be represented
-independently.
-
-Dependency relations are stronger still.  A dependency asserts that one
-event is determined by another, as in the functional relationships of the
-classical calculus.  Such relations describe macro--events in conventional
-dynamics, where causes generate effects.  The present work is not concerned
-with dependency.  Correlation is the weaker structure: non-commutativity
-under admissible permutation, with no claim of generation or determination.
-
-Thus, ``entanglement'' in the conventional quantum sense has two
-informational analogues in this framework.  When amplitudes combine as
-indistinguishable histories, the result is a superposition.  When events
-cannot be transposed without altering admissible invariants, the result is
-a correlant.  Both are consequences of the same principle: distinctions
-cannot be manufactured retroactively.  What differs is the level at which
-indistinguishability occurs---the discrete record of events or the smooth
-representation of extremals.
-
-
-\begin{example}[Spooky Action at a Distance~\cite{bell1964,einstein1935,sorkin2005}]
-\label{ex:spooky}
-Consider an uncorrelant $S = \{ \E_i, \E_j \}$ of two
-spatially separated measurement events.  
-By definition, the order of $\E_i$ and $\E_j$ may be permuted
-without changing any invariant scalar of the universe tensor:
-\begin{equation}
-\label{eq:spooky}
-\E_i \E_j = \E_j \E_i.
-\end{equation}
-When an observer records $\E_i$, the global ordering is fixed, and the
-universe tensor is updated accordingly.  
-Because $\E_j$ belongs to the same uncorrelant set, its contribution
-is now determined consistently with $\E_i$, even if $E_j$
-occurs at a spacelike separation.  
-This manifests as the phenomenon of ``spooky action at a distance''---the
-appearance of instantaneous correlation due to reassociation within the
-uncorrelant subset.
-\end{example}
-
-\begin{example}[Hawking Radiation~\cite{hawking1975,unruh1976}]
-\label{ex:hawking}
-Let $\E_\text{in}$ and $\E_\text{out}$ denote the pair of
-particle-creation events near a black hole horizon.  
-These events form an uncorrelant set:
-\begin{equation}
-\label{eq:hawking}
-S = \{ \E_\text{in}, \E_\text{out} \}.
-\end{equation}
-As long as both remain unmeasured, their contributions may permute freely within
-the universe tensor, preserving scalar invariants.  
-However, once $\E_\text{out}$ is measured by an observer at infinity,
-the ordering is fixed, and $\E_\text{in}$ is forced to a complementary
-state inside the horizon.  
-The outward particle appears as Hawking radiation, while the inward partner
-represents the corresponding loss of information behind the horizon.  
-Thus Hawking radiation is naturally expressed as an uncorrelant whose collapse
-into correlation occurs asymmetrically across a causal boundary.
-\end{example}
-
-
-In the previous chapter, motion was described entirely as a sequence of
-admissible distinctions---a finite notebook of observable updates. No
-geometry, metric, or continuum was assumed. Refinement revealed additional
-events, but the history of any physical process remained a countable record
-that could be reconciled into a globally coherent ledger.
-
-This chapter introduces dynamics in the same spirit. By ``dynamics'' we do
-not mean a force law or a geometric trajectory. We mean the rule that
-selects, from all admissible histories, those that are physically possible.
-The key observation is that a physical history cannot contain unexplained
-motion. Any segment of a worldline must be consistent with the measurements
-that precede and follow it. When a history can be refined without altering
-its predictions at the recorded events, the refined history contains no
-additional information. In this sense, the physically admissible refinement
-is the one that introduces no new distinctions beyond those required by the
-data.
-
-This principle has a classical name. In the continuum limit, the requirement
-that refinements add no “hidden motion” is precisely the Euler–Lagrange
-condition: an admissible trajectory introduces no superfluous curvature beyond
-that certified by observed events \cite{ciarlet1978,courant1953,lanczos1970}.
-A trajectory of least informational content is a trajectory of least action,
-in the classical sense of Maupertuis, Euler, Lagrange, Hamilton, and their
-modern successors \cite{demaupertuis1744,euler1744,goldstein2002,hamilton1834,lagrange1788}.
-In the calculus of dynamics, smooth solutions arise not from
-geometry but from the demand that no further admissible distinctions can be
-discovered between measurements. The spline that leaves nothing to correct is
-the one nature selects.
-
-
-The remainder of this chapter develops this idea formally. Starting from a
-finite set of measurements, we construct the weak form of the problem and
-show that the unique refinement consistent with all observed distinctions is
-the cubic spline. Its extremality in the continuum reproduces the
-Euler--Lagrange equations familiar from classical mechanics and field theory.
-Dynamics are not imposed at the outset; they emerge as the limit in which
-refinement ceases to yield new information.
-
-\begin{example}[Minimizing Variations~\cite{courant1953}]
-\NB{For a comprehensive treatment of the calculus of variations, see Brenner and Scott~\cite{brenner2008}
-and Courant and Hilbert~\cite{courant1953}.}
-
-We consider the functional
-\[
-J[x] = \int_a^b f\bigl(t,x(t),\dot{x}(t)\bigr)\, dt,
-\]
-where $x$ is a twice continuously differentiable function with fixed
-endpoints $x(a)=x_a$ and $x(b)=x_b$. Let $\eta(t)$ be an admissible
-perturbation with $\eta(a)=\eta(b)=0$, and define the variation
-\[
-x_\varepsilon(t) = x(t) + \varepsilon\,\eta(t), \qquad \varepsilon\in\mathbb{R}.
-\]
-The directional derivative of $J$ at $x$ in the direction $\eta$ is
-\[
-\delta J[x;\eta]
-  = \left.\frac{d}{d\varepsilon} J[x_\varepsilon]\right|_{\varepsilon=0}
-  = \left.\frac{d}{d\varepsilon}
-       \int_a^b f\bigl(t, x_\varepsilon(t), \dot{x}_\varepsilon(t)\bigr)\, dt
-    \right|_{\varepsilon=0}.
-\]
-Since the integration limits do not depend on $\varepsilon$, the
-derivative may be moved inside:
-\[
-\delta J[x;\eta]
-  = \int_a^b
-      \left.\frac{\partial}{\partial\varepsilon}
-      f\bigl(t, x_\varepsilon(t), \dot{x}_\varepsilon(t)\bigr)
-      \right|_{\varepsilon=0} dt.
-\]
-By the chain rule,
-\[
-\frac{\partial}{\partial\varepsilon}
- f\bigl(t, x_\varepsilon(t), \dot{x}_\varepsilon(t)\bigr)
- = f_x(t,x(t),\dot{x}(t))\,\eta(t)
- + f_{\dot{x}}(t,x(t),\dot{x}(t))\,\dot{\eta}(t).
-\]
-Thus
-\[
-\delta J[x;\eta]
-  = \int_a^b \Bigl(
-      f_x(t,x,\dot{x})\,\eta(t)
-      + f_{\dot{x}}(t,x,\dot{x})\,\dot{\eta}(t)
-    \Bigr)\, dt.
-\]
-Integrate the second term by parts:
-\[
-\int_a^b f_{\dot{x}}\,\dot{\eta}\, dt
-  = \bigl[f_{\dot{x}}\eta\bigr]_{a}^{b}
-    - \int_a^b \frac{d}{dt}\bigl(f_{\dot{x}}\bigr)\,\eta(t)\, dt.
-\]
-Because $\eta(a)=\eta(b)=0$, the boundary term vanishes. Therefore
-\[
-\delta J[x;\eta]
-  = \int_a^b
-       \left(
-         f_x - \frac{d}{dt} f_{\dot{x}}
-       \right)\eta(t)\, dt.
-\]
-If $x$ is a stationary point of $J$, then $\delta J[x;\eta]=0$ for all
-admissible $\eta$. The fundamental lemma of the calculus of variations
-implies
-\[
-f_x(t,x,\dot{x}) - \frac{d}{dt}f_{\dot{x}}(t,x,\dot{x}) = 0,
-\]
-for all $t\in(a,b)$. This is the Euler--Lagrange equation, more commonly
-represented as
-\begin{equation}
-\frac{\partial f}{\partial x} = \frac{d}{dt}\frac{\partial f}{\partial\dot{x}}.
-\end{equation}
-
-This derivation demonstrates that the Euler--Lagrange equation selects the
-trajectory with no first-order change under admissible perturbations. No
-hidden motion can be inserted without altering the notebook. The path is
-stationary in its informational curvature.
-\end{example}
-
-\section{Emergent Dynamics}
-\label{sec:emergent-dynamics}
-
-In the discrete setting, the Causal Universe Tensor assigns a finite
-informational weight to every admissible history.  Refinement increases
-this weight only when new distinctions are recorded.  Any replacement of
-an admissible history by one containing additional, unobserved structure
-violates Axiom~\ref{ax:boltzmann}.  Consequently, dynamics is not an
-independent physical postulate.  It is the unique continuous shadow of
-informational extremality: the smooth curve is simply the history for
-which no further admissible distinctions can be revealed.
 
 In the discrete domain, \emph{anchor points} are the only places where the universe has
-committed to a specific value.  Between anchors the record is silent: the
+committed to a specific value---specific events yielding specific observations.  Between 
+anchors the record is silent: the
 data permit many possible continuations, but most would introduce
 unobserved structure.  Any admissible configuration must therefore agree
 at the anchor points and remain free of additional distinguishable
@@ -796,1365 +72,555 @@ on the anchors: no admissible configuration may contradict an observed
 event.
 \end{definition}
 
-In the discrete setting, reciprocity arises from a simple counting fact.
-A refinement of $\psi$ by a test configuration $\phi$ is admissible only
-when the resulting history contains no additional distinguishable events.
-If $\phi$ were to introduce extra curvature, oscillation, or ``hidden
-motion,'' the refinement would increase the causal count and violate
-Axiom~\ref{ax:boltzmann}.  The reciprocity pairing
-$\psi^{\!*}\mathcal{L}\phi$ measures this change: it evaluates whether
-$\phi$ is informationally neutral relative to $\psi$.
+But no observer measures the universe alone. When multiple observers refine
+their records independently, their accumulated distinctions need not align.
+Disagreement becomes observable. To maintain global admissibility, these
+differences must be reconciled on any overlapping portion of their records.
+They must be \emph{compatible}.
 
-Crucially, the dual $\psi^{\!*}$ is not a geometric adjoint; it is the
-reflection of $\psi$ in the informational algebra.  It answers the
-question: \emph{If $\psi$ is perturbed by $\phi$, does the universe record
-new distinguishable structure?}  If the reciprocity pairing vanishes for
-all admissible $\phi$ that share the anchors, then $\psi$ is extremal.
-Any remaining variation would imply new recorded events, and therefore be
-inadmissible.
+Compatibility introduces a new observable: the minimal number of refinements
+required to reconcile two distinct records on their overlap. This operational
+count defines an informational distance between observers. The necessity of
+preserving compatibility across refinements thereby introduces the first
+traces of geometry. It is here that motion emerges: not as a postulated law,
+but as the consequence of observers counting differently.
 
-\begin{definition}[Reciprocity Map]
-\label{def:reciprocity}
-\NB{In geometric settings equipped with a metric or inner product, the
-reciprocity map reduces to the familiar adjoint or complex conjugate, and
-the operation $\psi\mapsto\psi^{\!*}$ is often interpreted as a covariant or
-contravariant dual.  No such geometric structure is assumed here.  The
-reciprocity dual is defined purely informationally, as the configuration that
-symmetrizes the causal pairing.  It should not be confused with metric
-adjoints that appear in geometric representation theory, such as the Dirac
-adjoint of a spinor or the dual of a Weyl field.  Those constructions depend on
-Lorentz symmetry, Clifford algebras, and an invariant bilinear form; none of
-these structures are present at the informational level.}
+Thus, what appears as a clockwork when viewed along a single thread becomes
+dynamic when viewed across many. The evolution of the universe is not a
+predetermined mechanism but a continuous reconciliation of discrete
+distinctions. Dynamics arise from the requirement that all admissible records
+agree wherever they meet. Relative motion is the process by which compatibility is
+maintained.
 
+\section{The Experimental Record as a Count of Counts}
+\label{sec:count-of-counts}
 
-Let $\psi$ be an admissible configuration and let $\phi$ be a test variation
-that agrees with $\psi$ at the anchor points.  The \emph{reciprocity map} is
-the linear evaluation
+We begin by discarding the assumption that the state of a system is represented
+by a continuous field or a point in a smooth manifold. Instead, we adhere
+strictly to the axioms of finite distinguishability: the only admissible data
+are finite sets of events, labeled and ordered by their recording.
+
+The fundamental object of dynamics is not position $x(t)$, but the
+\emph{experimental record vector} $\boldsymbol{\psi}_n$. This vector does not
+describe where the system \emph{is}; it describes what the system has
+\emph{done}.  The experimental record is built from anchor points, it isn't the
+anchor points themselves.
+
+\subsection{Construction of an Experimental Record Vector}
+\label{subsec:construction-ER}
+
+Let $\Sigma = \{c_1, c_2, \dots, c_M\}$ be the finite alphabet of
+distinguishable outcomes available to an observer. At ordinal rank $n$ (the
+``proper time'' of the observer), the experimental record is the tally of all
+outcomes observed thus far.
+
+We define the experimental record vector $\boldsymbol{\psi}_n \in \mathbb{N}^M$ by
 \[
-\langle \psi,\phi\rangle_{\mathcal{L}}
-  := \psi^{\!*}\,\mathcal{L}\,\phi,
+  \boldsymbol{\psi}_n
+  =
+  \begin{pmatrix}
+    k_1 \\
+    k_2 \\
+    \vdots \\
+    k_M
+  \end{pmatrix},
 \]
-where $\mathcal{L}$ counts distinguishable causal increments.  A configuration
-$\chi$ is called a \emph{reciprocity dual} of $\psi$ if it satisfies
+where $k_i$ denotes the number of times outcome $c_i$ has been recorded in the
+history $H_n = \langle e_1 \prec \cdots \prec e_n \rangle$.
+
+This vector is an ``accumulator'' or histogram of the history. It satisfies:
+
+\begin{itemize}
+\item
+\textbf{Integer normality.}
+Entries are nonnegative integers: $k_i \in \mathbb{N}$.
+\item
+\textbf{Conservation of count.}
+The $L_1$ norm corresponds to the ordinal rank:
 \[
-\langle \psi,\phi\rangle_{\mathcal{L}}
-  = \langle \phi,\chi\rangle_{\mathcal{L}}
-  \quad\text{for all test variations }\phi.
+\|\boldsymbol{\psi}_n\|_1 = \sum_{i=1}^M k_i = n.
 \]
-When it exists, such a $\chi$ is denoted by $\psi^{\!*}$.
-The reciprocity dual encodes the informational response of $\psi$ to an
-infinitesimal variation $\phi$ without assuming any differential structure.
-\end{definition}
+\item
+\textbf{Irreversibility.}
+Entries can only increase: $k_i(n+1) \ge k_i(n)$.
+Erasing a recorded distinction is forbidden.
+\end{itemize}
 
-\begin{proposition}[The Uniqueness of the Reciprocity Dual]
-\label{prop:reciprocity-unique}
-Assume the causal pairing $\langle \cdot,\cdot\rangle_{\mathcal{L}}$ is
-nondegenerate in the second slot: if
+\subsection{Minimal Refinement Operators}
+\label{subsec:minimal-U}
+
+Dynamics is the rule governing the update $\boldsymbol{\psi}_n \to
+\boldsymbol{\psi}_{n+1}$. Because the record grows one event at a time, the
+update must be sparse.
+
+A \emph{minimal refinement} is an operator $\hat{R}_j$ that increments the
+count of outcome $c_j$ by exactly one unit, leaving all other components
+invariant:
 \[
-\langle \phi,\chi\rangle_{\mathcal{L}} = 0
-\quad\text{for all test variations }\phi,
+  \hat{R}_j \boldsymbol{\psi}_n = \boldsymbol{\psi}_n + \mathbf{e}_j,
 \]
-then $\chi$ is the trivial (null) configuration.  If $\chi_1$ and $\chi_2$
-are both reciprocity duals of the same configuration $\psi$, then
-$\chi_1 = \chi_2$.  In particular, whenever a reciprocity dual exists, it is
-unique.
-\end{proposition}
+where $\mathbf{e}_j$ is the $j$th standard basis vector in $\mathbb{N}^M$.
 
-\begin{proofsketch}{reciprocity-unique}
-Let $\chi_1$ and $\chi_2$ be reciprocity duals of $\psi$.  By definition,
-\[
-\langle \psi,\phi\rangle_{\mathcal{L}}
-  = \langle \phi,\chi_1\rangle_{\mathcal{L}}
-  = \langle \phi,\chi_2\rangle_{\mathcal{L}}
-\quad\text{for all test variations }\phi.
-\]
-Subtracting the two expressions gives
-\[
-\langle \phi,\chi_1 - \chi_2\rangle_{\mathcal{L}} = 0
-\quad\text{for all }\phi.
-\]
-By nondegeneracy in the second slot, this implies $\chi_1 - \chi_2$ is the
-null configuration, hence $\chi_1 = \chi_2$.  Thus any reciprocity dual, if
-it exists, is unique.
-\end{proofsketch}
+Two principles characterize these operators:
 
-
-In the continuum shadow, the reciprocity pairing becomes the usual weak
-inner product of variational calculus~\cite{brenner2008,evans2010}.  Integration by parts moves the
-variation from $\psi$ onto the test functions, producing natural boundary
-terms determined by the anchors.  The condition
-\[
-\langle \psi,\phi\rangle_{\mathcal{L}}
-  = \langle \phi,\psi\rangle_{\mathcal{L}}
-\]
-is then the classical reciprocity of the Euler--Lagrange operator: the
-dynamics are self-adjoint under the informational measure.  This equality
-holds not because symmetry is assumed, but because any antisymmetric
-contribution would encode unrecorded distinctions and be eliminated by
-Axiom~\ref{ax:boltzmann}.
-
-
-
-\subsection{Weak Formulation on Space--Time}
-\label{sec:weak-formulation}
-
-Let $\psi$ be an admissible configuration consistent with a fixed set of
-event anchors, and let $\phi$ be any test configuration that agrees with
-$\psi$ at those anchors.  Replacing $\psi$ by $\phi$ is permissible only if
-it does not reduce causal consistency.  In the discrete algebra this means
-that $\psi$ introduces no superfluous refinements relative to $\phi$; any
-additional curvature, oscillation, or ``hidden motion’’ would imply
-unrecorded events and thus be inadmissible.
-
-In the dense limit of refinement, this constraint appears as a weak
-relation
-\begin{equation}
-  \psi^{\!*}\,\mathcal{L}\,\psi
-  \;\leq\;
-  \psi^{\!*}\,\mathcal{L}\,\phi,
-  \label{eq:weak-form}
-\end{equation}
-where $\mathcal{L}$ is the informational count of distinguishable
-increments, and $\psi^{\!*}$ denotes its reciprocity dual.  The weak
-inequality asserts that $\psi$ is extremal among all admissible
-perturbations $\phi$.  No differential operators are assumed: the weak
-form arises because refinement limits the class of permissible discrete
-variations.
-
-Completing this refinement yields the continuous counterpart of
-\eqref{eq:weak-form}.  Integration by parts shifts variations from $\psi$
-onto the test functions, producing natural boundary conditions and a weak
-Euler--Lagrange statement.  The continuum calculus therefore does not
-describe an independently assumed physical law; it is the smooth completion
-of informational minimality on the discrete domain.
-
-\subsection{Reciprocity and the Adjoint Map}
-\label{sec:reciprocity-adjoint}
-
-The weak extremality relation~\eqref{eq:weak-form} compares an admissible
-configuration $\psi$ against a test configuration $\phi$ that shares the
-same event anchors.  In the discrete domain, replacing $\psi$ by $\phi$
-means refining the event record: only those local changes that introduce
-new, distinguishable curvature would alter the admissible history.  Any
-such change must correspond to additional recorded events; if none are
-present, the refinement is informationally neutral.  Thus $\phi$ is an
-admissible variation of $\psi$ precisely when it agrees at the anchors and
-introduces no distinctions beyond those already encoded in $\psi$.  The
-weak extremality condition~\eqref{eq:weak-form} is the continuous shadow of
-this discrete refinement rule.
-
-
-The weak comparison between $\psi$ and $\phi$ admits a natural dual
-representation.  For any admissible configuration $\psi$, there exists a
-\emph{reciprocity map} $\psi^{\!*}$ such that the informational pairing
-\begin{equation}
-\psi^{\!*}\,\mathcal{L}\,\phi
-\end{equation}
-measures the change in distinguishability that would result from locally
-replacing $\psi$ by $\phi$ between the anchors.  Intuitively, $\psi^{\!*}$
-captures the ``shadow'' of $\psi$ when viewed from the perspective of
-informational minimality: components of $\phi$ that would introduce new,
-unrecorded distinctions are suppressed by the adjoint action, while
-components that are informationally neutral remain.  In the dense limit,
-this pairing becomes the standard weak inner product of variational
-calculus.
-
-Because admissible configurations cannot contain hidden structure, the
-reciprocity map annihilates variations that are invisible at the event
-anchors.  If $\phi$ and $\psi$ agree at the anchors and differ only by an
-undetectable perturbation, then refining the event record yields no new
-distinctions, and the informational pairing remains unchanged:
-\[
-\psi^{\!*}\,\mathcal{L}\,\phi
-\;=\;
-\psi^{\!*}\,\mathcal{L}\,\psi.
-\]
-This equality is precisely the weak relation~\eqref{eq:weak-form}.  In this
-sense, $\psi^{\!*}$ enforces closure: the extremal configuration carries no
-latent curvature that would be revealed by further refinement.
-
-
-The ``variation'' of $\psi$ is therefore not a differential operation but a
-refinement of the causal record consistent with the event anchors.  The
-reciprocity map acts as the dual constraint, suppressing any component of
-that refinement which would introduce unrecorded distinctions.  Taken
-together, admissible refinements and their reciprocity dual generate the weak
-Euler--Lagrange structure entirely within the discrete domain, without
-assuming differentiability or a continuum of states.
-
-
-In this way, the reciprocity map ensures that any admissible refinement of
-$\psi$ corresponds to an interpolant $f(\psi)$ that introduces no new
-distinguishable structure.  As refinement becomes dense, all such
-interpolants converge to the same smooth closure $\Psi$.  Since the event
-record defines a finite labeled partition of the causal domain, $\Psi$
-preserves anchor order and is injective on each partition element.  Its
-inverse $\Psi^{-1}$ therefore recovers exactly the original discrete record:
-\begin{equation}
-  f(\psi) \;\longrightarrow\; \Psi^{-1}.
-\end{equation}
-Thus the interpolant and its smooth limit are informationally equivalent
-representations of the same causal structure.
-
-
-\subsection{Dense Limit and Euler--Lagrange Closure}
-\label{sec:dense-limit}
-
-In the present framework no differentiability is assumed.  The weak
-extremality relation~\eqref{eq:weak-form} is defined entirely in the discrete
-domain, where each term counts distinguishable causal increments.  A
-``variation'' of $\psi$ is therefore not a differential operator but a
-refinement of the event record that leaves the anchors unchanged.
-
-In the discrete domain, such refinements appear as finite differences: each
-admissible update replaces a segment of the causal history by one with
-strictly greater resolution.  Because informational minimality forbids
-unobserved curvature, every admissible refinement corresponds to a
-piecewise-linear or piecewise-polynomial interpolant that agrees with $\psi$
-on the anchors and introduces no new distinguishable structure.  As
-refinements become arbitrarily dense, the finite differences form a Cauchy
-sequence in the space of admissible interpolants, and their limit is the
-unique smooth closure $\Psi$ established in the previous subsection.
-
-Applying the reciprocity pairing to successive refinements yields the
-discrete extremality condition: no admissible finite difference can reduce
-the informational measure $\mathcal{L}$.  In the dense limit, the weak
-relation~\eqref{eq:weak-form} becomes the standard variational identity of
-Euler--Lagrange calculus, obtained entirely from finite differences.  The
-weak derivative enters only as the completion of refinement; it is not
-assumed \emph{a priori}.
-
-When the causal grid is refined, informational minimality forces cubic
-continuity at each event anchor: jumps in slope or curvature would constitute
-new observable events and are therefore inadmissible.  In the dense limit,
-the discrete extremal coincides with the classical Euler--Lagrange closure.
-This structure is summarized in the following proposition.
-
-\begin{proposition}[The Spline Condition of Information]
-\label{prop:fourth-derivative}
-Let $\psi$ be an admissible configuration with smooth closure $\Psi$.  If no
-admissible refinement reduces the informational measure $\mathcal{L}$, then
-$\Psi$ is $C^{2}$ and satisfies
-\begin{equation}
-\Psi^{(4)} = 0.
-\end{equation}
-\end{proposition}
-
-\begin{proofsketch}{fourth-derivative}
-Between anchors, $\Psi$ must be polynomial, since any additional inflection
-would imply unrecorded structure.  Polynomials of degree greater than three
-contain latent turning points and are therefore excluded.  Hence each segment
-is cubic.  At the anchors, the interpolants must glue with $C^2$ continuity:
-jumps in slope or curvature would constitute new observable events.  As the
-grid of anchors is refined, the third derivative $\Psi'''$ must be constant
-on every shrinking interval.  In the dense limit that interval has zero
-measure, so $\Psi'''$ is constant everywhere.  A constant third derivative
-implies $\Psi^{(4)} = 0$.  Thus the smooth closure of any informationally
-extremal configuration satisfies the Euler--Lagrange condition.
-\end{proofsketch}
-
-Proposition~\ref{prop:fourth-derivative} shows that the Euler--Lagrange
-equation is not postulated.  It is the continuous shadow of discrete
-informational extremality.  Finite differences do not approximate the
-differential equation; they \emph{generate} it.  The unique admissible smooth
-representative is cubic on each partition element, $C^2$ at the event
-anchors, and satisfies $\Psi^{(4)}=0$ everywhere.  Smooth calculus appears
-solely as the completion of refinement in the discrete causal record.
-
-
-\begin{phenomenon}[Repeatability of Invisible Motion~\cite{bacon1620}]
-\label{ex:repeatability}
-Consider two independent observers, $A$ and $B$, who record the motion of a
-particle between the same event anchors $x_i \prec x_{i+1}$.  Each observer
-has finite resolution: any acceleration or inflection large enough to be
-distinguishable produces a new event.  Both refine their instruments until
-no further events are detected on the interval.
-
-If hidden curvature existed between the anchors, further refinement would
-create additional distinguishable records.  The absence of such records
-forces each observer to recover the same polynomial of minimal degree.  Thus
-both obtain a cubic patch on the interval.
-
-Now let $A$ and $B$ exchange data and perform a joint refinement on a finer
-grid.  Any disagreement in value, slope, or bending moment at a shared
-anchor would itself generate an observable event.  To avoid contradiction,
-the cubic patches must glue together with continuous $U$, $U'$, and $U''$.
-In the dense refinement limit, the piecewise constant third derivative
-converges to a continuous function whose integral vanishes on every
-shrinking interval, yielding
-\[
-U^{(4)} = 0.
-\]
-
-Thus repeatability demands the Euler--Lagrange closure: if two observers can
-refine their measurements indefinitely without producing new events, their
-reconstructions must converge to the same cubic extremal.  Smooth dynamics
-are therefore the unique histories that leave no trace.
-\end{phenomenon}
-
-
-
-\section{The Law of Spline Sufficiency}
-\label{sec:spline-sufficiency}
-
-The preceding analysis shows that every admissible refinement of the event
-record corresponds to a piecewise-cubic interpolant that preserves the event
-anchors and introduces no new distinguishable structure.  In the dense
-limit, these interpolants converge to a unique smooth closure $\Psi$ that is
-$\mathcal{C}^{2}$ and satisfies $\Psi^{(4)} = 0$.  The discrete causal record
-and its smooth completion are therefore informationally equivalent
-representations of the same history.
-
-\begin{law}[The Law of Spline Sufficiency]
-\label{law:spline-sufficiency}
-Let $\psi$ be any finite, non-contradictory record of admissible events.
-There exists a unique continuous completion $\Psi$ such that:
 \begin{enumerate}
-\item $\Psi$ agrees with $\psi$ at every event anchor,
-\item $\Psi$ is piecewise cubic and $\mathcal{C}^{2}$ on its domain,
-\item $\Psi$ introduces no new distinguishable structure beyond $\psi$, and
-\item $\Psi$ satisfies the Euler--Lagrange closure $\Psi^{(4)} = 0$.
+\item
+\textbf{Unit step.}
+The operator adds one, never fractions: information is discretized.
+\item
+\textbf{Non-triviality.}
+The zero operator is inadmissible: a measurement that records nothing is
+indistinguishable from the absence of measurement.
 \end{enumerate}
-The cubic spline is therefore \emph{sufficient} to represent all admissible
-distinctions in the data: no higher-order model encodes additional
-information available to measurement.
-\end{law}
 
-The Law of Spline Sufficiency justifies the use of Galerkin methods~\cite{galerkin1915} in this
-framework.  By choosing the functional 
-\begin{equation}
-\mathcal{J}[\Psi] = \int (\Psi'')^2
-\,dx
-\end{equation} as a measure of curvature, the Galerkin extremal selects the simplest
-admissible interpolant consistent with the event anchors.  Because every
-sequence of admissible refinements converges to the unique $\mathcal{C}^{2}$
-cubic closure, the Galerkin solution coincides with the informationally
-extremal configuration.  No additional degrees of freedom are required.
+Thus, the evolution of the system is a path on the integer lattice
+$\mathbb{N}^M$, driven by the sequential application of minimal refinement
+operators.
 
-In this sense, spline sufficiency provides the logical bridge between
-discrete measurement and continuous dynamics:
+\subsection{Variation as a Change in Count Structure}
+\label{subsec:variation-counts}
+
+In classical calculus, variation is defined as a perturbation of a continuous
+variable. Here, variation is defined as a \emph{change in count distribution}
+between two admissible histories of the same length.
+
+Consider two histories $A$ and $B$ that have reached the same ordinal rank
+$n$. Their records $\boldsymbol{\psi}_n^A$ and $\boldsymbol{\psi}_n^B$ may
+differ. The \emph{variation} is
 \[
-\text{discrete measurement}
-\;\xrightarrow{\;\text{spline sufficiency}\;}\;
-\Psi
-\;\xrightarrow{\;\text{closure}\;}\;
-\Psi^{(4)} = 0.
+  \delta\boldsymbol{\psi}
+  =
+  \boldsymbol{\psi}_n^A
+  -
+  \boldsymbol{\psi}_n^B.
 \]
-Finite differences do not approximate the Euler--Lagrange equation; they
-\emph{generate} it.  Smooth calculus enters only as the completion of
-refinement in the causal record, not as an assumed geometric primitive.
+Because both vectors sum to $n$, the components of
+$\delta\boldsymbol{\psi}$ must sum to zero. Variation is therefore a
+\emph{trade-off}: increasing one count requires decreasing another relative to
+a baseline.
 
-\subsection{Minimality}
-
-The Law of Spline Sufficiency guarantees that admissible histories are those
-that interpolate between refinements with minimal curvature.  This law does
-not merely describe smoothness; it constrains how influence can propagate
-through the ledger.  A localized refinement cannot remain localized under
-extension.  Its effect must be distributed across every admissible
-continuation consistent with global coherence.
-
-As the causal record is extended outward from an event, the frontier of
-admissible continuations grows combinatorially.  The same finite refinement
-budget must be shared across an increasing number of admissible degrees of
-freedom.  The effect of any single refinement therefore weakens with
-informational separation, not because of dissipation, but because of
-accounting.
-
-While any minimality can be enforced, measurement tends to prefer minimization
-in the $\mathcal{L}^2$-norm.
-
-\begin{phenomenon}[The Inverse Square Effect]
-\label{ph:inverse-square}
-
-\textbf{Statement.}
-The influence of a refinement event decreases as the inverse square of the
-informational separation.  This scaling is not postulated; it is forced by
-the geometry of admissible splines.
-
-\textbf{Mechanism.}
-By the Law of Spline Sufficiency, admissible continuations of the causal
-ledger are the minimal curvature interpolants consistent with boundary
-anchors.  A single refinement event acts as a localized constraint on the
-spline.  As the distance from that constraint increases, the number of
-distinct admissible continuations grows with the surface measure of the
-surrounding causal sphere.
-
-In three admissible dimensions, this measure scales as $4\pi r^2$.  The
-influence of a fixed refinement budget must therefore be distributed across a
-quadratically growing frontier.  The admissible effect per refinement falls
-as
-\[
-I(r) \propto \frac{1}{r^2}.
-\]
-
-\textbf{Interpretation.}
-This is not a force law.  It is a bookkeeping law.  The ledger cannot assign a
-fixed refinement cost to an expanding set of admissible continuations without
-diluting its effect.
-
-The inverse-square behavior of gravitation, radiation, and flux is therefore
-the smooth shadow of the combinatorial growth of admissible splines.
-
+\begin{phenomenon}[The Heisenberg Effect as Trade-off]
+\label{ph:heisenberg-tradeoff}
+A ledger with fixed capacity $n$ cannot refine all outcome classes
+simultaneously. Allocating refinements to one group of outcomes consumes the
+budget available to resolve the remainder. The variation
+$\delta\boldsymbol{\psi}$ expresses this pivot between mutually exclusive
+informational descriptions.
 \end{phenomenon}
 
-\subsection{Equivalence of Discrete and Smooth Representations}
+Variation is therefore not a derivative; it is a \emph{reallocation of
+counts}. The calculus of dynamics that follows is the study of which
+reallocations are admissible while preserving the coherence of the global
+ledger.
 
-\begin{phenomenon}[The Gibbs Preservation Effect \cite{gibbs1906}]
-\label{ph:gibbs-null}
+\section{Exhaustion of Distinguishability}
+\label{sec:exhaustion}
 
-\textbf{Statement.}
-Shape information is preserved under admissible projection by localization in
-the null space of the smoothing operator.
+The experimental record advances only when a new distinguishable event is
+successfully observed. Distance, defined internally as the tally of repeated
+outcomes, is therefore meaningful only while new increments are possible.
+If a proposed refinement yields no observable event, the history cannot
+continue.
 
-\textbf{Description.}
-When a discrete causal ledger is projected into a smooth shadow, the
-corresponding operator necessarily possesses a nontrivial null space.  This
-null space does not destroy structure; instead, it stores it.
+Let $\{c_1,\dots,c_M\}$ denote the current outcome labels available to the
+observer. At ordinal step $n+1$, the observer attempts to refine the
+experimental record. If no admissible outcome occurs, then
+\[
+  \boldsymbol{\psi}_{n+1}
+  \text{ is undefined},
+\]
+and the admissible history terminates at step $n$.
 
-Sharp boundaries, discontinuities, and finite structural features of the
-ledger are not eliminated by smoothing.  They are displaced into invariant
-modes that are orthogonal to the admissible smooth completion.
-
-Thus, the classical overshoot associated with Gibbs is not an artifact of
-error, but a conservation mechanism: the sharp structure survives precisely
-because it cannot be absorbed by the smooth basis.
-
-\textbf{Interpretation.}
-The Gibbs phenomenon is therefore not a failure of convergence, but the
-mechanism by which discrete shape is preserved under projection.  The null
-space acts as a reservoir of form, enforcing fidelity even when the ambient
-representation is forced to be smooth.
-
-This retention of structure through null–space localization is the Gibbs
-preservation effect.
+\begin{phenomenon}[The Malus Effect~\cite{malus1810}]
+\label{ph:polarization-termination}
+Consider a beam of light that has passed through a linear polarizing filter.
+All subsequent photons are aligned to that axis. If the observer introduces a
+second polarizer oriented at $90^\circ$ to the first, no photon passes. There
+is no new distinguishable event. The count of counts cannot increase, and
+the experimental record ends. The light can no longer be observed.
 \end{phenomenon}
 
-\begin{proposition}[The Spline Strain Limit]
-\label{prop:gibbs-spline}
+In this setting, the attempt to extend the record fails. The observer has
+exhausted the available structure. Without a new admissible event, no component of
+$\boldsymbol{\psi}_n$ can grow, and no distance can be defined beyond this
+point.
 
-\textbf{Claim.}
-Under the Law of Spline Sufficiency, the magnitude of the Gibbs overshoot is
-the unique variational bound compatible with admissible curvature.
+\begin{center}
+\emph{If a refinement produces no observable outcome, the history stops.}
+\end{center}
 
-\textbf{Statement.}
-Let $\Psi(x)$ be an admissible completion of a causal ledger that minimizes
-the global curvature functional
+The failure to propagate the experimental record marks a fundamental limit:
+progress requires either additional distinguishable outcomes or an expanded
+basis of measurement. As long as only one observer is present, such limits
+are absolute. A new source of distinction is needed for the universe to
+continue unfolding.
+
+
+\section{Multiple Observers and Compatibility}
+\label{sec:multiple-observers}
+
+A single observer records a sequence of events, generating a private history
+vector $\boldsymbol{\psi}_A$. A second observer generates a separate history
+$\boldsymbol{\psi}_B$. The central problem of physics is not describing these
+histories in isolation, but determining when they can be merged into a single,
+compatible global history.
+
+The universe does not ``average'' incompatible observations. If Observer~A
+records an event that contradicts the causal structure recorded by Observer~B,
+no joint history exists. The system does not find a compromise; it halts.
+
+\subsection{Compatibility of Experimental Records}
+\label{subsec:compatibility}
+
+Let $E_A$ and $E_B$ be the ordered sets of events for two observers. We say
+that $E_A$ and $E_B$ are \emph{compatible} if there exists a third event set
+$E_{\mathrm{univ}}$ such that:
+
+\begin{enumerate}
+\item \textbf{Embeddability.}
+Both $E_A$ and $E_B$ admit order-preserving injections into
+$E_{\mathrm{univ}}$.
+\item \textbf{No contradiction.}
+If an event $e$ appears in both event sets (identified by shared causal
+ancestry), its ordering relationships with all shared prior events must be
+identical in both.
+\item \textbf{Global admissibility.}
+$E_{\mathrm{univ}}$ must satisfy all axioms of measurement: finiteness,
+distinctness, and non-decreasing recorded information.
+\end{enumerate}
+
+If these conditions are met, the observers inhabit the same admissible
+universe. If they are not met, the observers are causally disjoint or the
+proposed merge represents a physical impossibility.
+
+\begin{phenomenon}[The Halt Effect]
+\label{ph:halt-effect}
+Consider two processors attempting to write different values to the same
+memory address at the same logical clock tick. The system cannot resolve
+this by superposition or averaging; the operation is undefined. The system
+halts.
+
+Likewise, if two observers record mutually exclusive refinements of what
+they assert is the \emph{same} event (for instance, simultaneous assignments
+of ``spin up'' and ``spin down'' in the same basis), then no compatible
+$E_{\mathrm{univ}}$ exists. The joint evolution is forbidden. The admissible
+timeline terminates.
+\end{phenomenon}
+
+\subsection{Overlap and Shared Distinguishability}
+\label{subsec:overlap}
+
+Compatibility is determined entirely by the \emph{overlap} of the event sets.
+The overlap $\mathcal{O} = E_A \cap E_B$ consists of all events causally
+ancestral to both observers.
+
+For the experimental records to be compatible, they must agree on the counts
+and ordering of events in $\mathcal{O}$. This induces a synchronization
+condition on the history vectors:
 \[
-J[\Psi] = \int (\Psi'')^2 \, dx .
+  \boldsymbol{\psi}_A \big|_{\mathcal{O}}
+  =
+  \boldsymbol{\psi}_B \big|_{\mathcal{O}},
 \]
-If the ledger enforces a discrete step discontinuity, then the admissible
-minimizer exhibits a finite overshoot of approximately $13\%$ (numerically
-$\approx 1.1078$ for a unit step).
+where the restriction $|_{\mathcal{O}}$ projects each history vector onto the
+shared outcome classes.
+
+This equality is the \emph{Martin Consistency Condition} in vector form: the
+shared past has only one admissible representation. Any discrepancy implies
+either that one observer has recorded a distinction the other has not, or
+that the observers inhabit different universes.
+
+If $\mathcal{O} = \varnothing$, the observers are uncorrelant (spacelike
+separated). If $\mathcal{O} \neq \varnothing$ and the consistency condition is
+satisfied, the observers are causally connected. If
+$\mathcal{O} \neq \varnothing$ but the condition fails, the configuration is
+physically forbidden.
+
+
+
+\section{Informational Distance}
+\label{sec:informational-distance}
+
+Once compatibility is secured (Section~\ref{sec:multiple-observers}), a
+quantitative relationship between observers becomes meaningful. If two
+records agree on a shared past, we may ask: how many further distinctions
+separate their present observations?
+
+Distance measures refinement. It counts how many distinguishable
+updates one history has recorded beyond another.
+
+\subsection{Compatibility as the Basis of Distance}
+\label{subsec:distance-definition}
+
+A distance measure is only meaningful when the underlying comparison
+procedure is repeatable. Before defining a metric, we must establish the
+instrument that performs the counting.
+
+\begin{definition}[Ruler]
+\label{def:ruler}
+A \textbf{ruler} is a fixed repeatable procedure that assigns a nonnegative
+integer to any ordered pair of compatible events. Formally, a ruler is a map
+\[
+  R : E \times E \to \mathbb{N}
+\]
+such that $R(e_i, e_j)$ equals the number of admissible refinement steps
+required to distinguish $e_j$ from $e_i$.
+\end{definition}
+
+The ruler does not rely on geometry or coordinates. It operates purely by
+tracking how refinements accumulate. If repeated trials yield inconsistent
+counts, no distance is defined.
+
+Given a shared event set $E_{\mathrm{univ}}$, the \emph{informational
+distance} between two compatible events $e_A \prec e_B$ is the largest number
+of refinements that any admissible observer can record between them:
+\[
+  d(e_A, e_B)
+  =
+  \max
+  \bigl\{
+    R(e_i, e_{i+1}) :
+    e_A = e_0 \prec \cdots \prec e_k = e_B
+  \bigr\}.
+\]
+
+\subsection{Additivity on Overlaps}
+\label{subsec:additivity}
+
+Distance is defined by maximizing over refinement chains. If an intermediate
+event lies along a maximal chain, then separating the journey into parts
+preserves the count.
+
+\begin{proposition}[Additivity of Maximal Refinement]
+\label{prop:additivity}
+Let $e_A \prec e_B \prec e_C$ be events such that $e_B$ is on a maximal
+chain from $e_A$ to $e_C$. Then
+\[
+  d(e_A, e_C)
+  =
+  d(e_A, e_B)
+  +
+  d(e_B, e_C).
+\]
 \end{proposition}
 
-\begin{proofsketch}{gibbs-spline}
-Any reduction in overshoot forces curvature toward a distributional
-singularity at the discontinuity, violating admissibility.  Any increase in
-overshoot increases the value of $J[\Psi]$ and therefore violates minimality.
-Thus the overshoot amplitude is uniquely fixed by the variational structure of
-the problem.
-\end{proofsketch}
+\begin{proof}
+A maximal chain from $e_A$ to $e_C$ passing through $e_B$ consists of a
+maximal chain from $e_A$ to $e_B$ followed by a maximal chain from $e_B$ to
+$e_C$. If either subchain were not maximal, replacing it with a longer one
+would contradict maximality of the full chain. Thus, the lengths add.
+\end{proof}
 
+Additivity ensures there are no ``hidden'' refinements. All observable
+distinguishability is accounted for in the record.
 
+\subsection{Operational Properties}
+\label{subsec:operational-distance}
 
+Informational distance is a nonnegative integer determined entirely by
+causal structure. For compatible events $e_A, e_B, e_C$:
 
-\section{Galerkin Methods}
-\label{sec:galerkin}
-\NB{This argument applies the Law of Spline Sufficiency.  We do not assume
-that Euler--Lagrange dynamics exist \emph{a priori}.  Rather, we show that
-if the data admit a smooth completion, then a cubic spline exists which
-reproduces the Euler--Lagrange solution to arbitrary accuracy.  In this
-sense, observing a spline is sufficient to infer Euler--Lagrange dynamics:
-the differential equation models the behavior only insofar as the data
-allow it, and no additional geometric or differentiable structure is
-assumed.}
-
-
-The Law of Spline Sufficiency establishes that cubic splines contain all
-admissible distinguishable structure.  In this section we assume the
-existence of a smooth Euler--Lagrange solution and show that a Galerkin
-projection onto a spline basis produces a sequence of spline functions that
-converges to it.  This suffices to justify the use of splines as the
-representatives of continuous dynamics: if Euler--Lagrange motion exists,
-Galerkin refinement will recover it to arbitrary accuracy.
-
-\subsection{Galerkin Projection onto a Spline Basis}
-
-Let $\Psi$ be the smooth solution to an Euler--Lagrange boundary value
-problem.  Choose a finite spline basis $\{\varphi_k\}$ that satisfies the
-boundary constraints and let
+\begin{enumerate}
+\item
+\textbf{Non-negativity.}
+$d(e_A, e_B) \ge 0$. Refinements cannot decrement.
+\item
+\textbf{Identity of indiscernibles.}
+$d(e_A, e_B) = 0$ if and only if $e_A$ and $e_B$ represent the same record
+of distinctions.
+\item
+\textbf{Maximality.}
+If $e_A \prec e_B \prec e_C$, then
 \[
-  \Psi_n(x) = \sum_{k=1}^{n} a_k\,\varphi_k(x)
+d(e_A, e_C) \ge d(e_A, e_B) + d(e_B, e_C),
 \]
-be the Galerkin projection of $\Psi$ onto this space.  The coefficients
-$a_k$ are chosen so that the residual of the Euler--Lagrange equation is
-orthogonal to the spline basis:
+with equality if and only if $e_B$ lies on a maximal refinement chain.
+\end{enumerate}
+
+In this sense, distance is the measure of how many admissible distinctions
+separate one informational state from another. It is not imposed from
+outside. It emerges directly from the count structure observed within the
+history.
+
+\section{Minimality and Reciprocity}
+\label{sec:minimality-reciprocity}
+
+The Axiom of Ockham imposes a strict constraint: a physical trajectory must
+not introduce any distinguishable structure that does not appear in the
+experimental record. To enforce this, the history must remain stable not
+only in its original description, but under any admissible relabeling of
+the outcomes.
+
+\subsection{Weak Form as Minimal Compatibility Correction}
+\label{subsec:weak-form}
+
+Let $\boldsymbol{\psi}$ be a candidate history connecting two anchor events.
+Let $\boldsymbol{\phi}$ be a \emph{test variation}: a hypothetical refinement
+that vanishes at the anchors but introduces count changes in the interior.
+
+The Weak Form is the requirement that no such variation reveals any
+distinguishable deviation from $\boldsymbol{\psi}$:
 \begin{equation}
-  \int \Psi_n''(x)\,\varphi_k''(x)\,dx = \int \Psi''(x)\,\varphi_k''(x)\,dx,
-  \qquad k = 1,\dots,n.
-  \label{eq:galerkin-projection}
+  \langle \boldsymbol{\psi}, \boldsymbol{\phi} \rangle_L = 0
+  \qquad
+  \forall \boldsymbol{\phi} \in V_{\mathrm{test}},
+  \label{eq:weak-form-min}
 \end{equation}
-This is the standard spline Galerkin formulation \cite{ciarlet1978,brenner2008}:
-the weak form enforces the Euler--Lagrange condition in the finite
-dimensional subspace spanned by the splines.
+where $\langle \cdot , \cdot \rangle_L$ is a pairing that detects
+distinguishable increments. If this quantity were nonzero, the variation
+would represent unrecorded structure, contradicting the record and halting
+the history.
 
-Solving \eqref{eq:galerkin-projection} yields a unique spline $\Psi_n$ that
-agrees with the smooth solution at all knot points and is $\mathcal{C}^2$ on
-the domain.  No higher-order degrees of freedom are necessary; the curvature
-functional ensures that splines are the minimal weak extremals.
+Thus, the Weak Form does not minimize anything. It eliminates all histories
+that would produce additional observable distinctions.
 
-\subsection{Convergence of the Galerkin Sequence}
+\subsection{Reciprocity and the Transpose Map}
+\label{subsec:adjoint}
 
-By the Weierstrass Approximation Theorem, cubic splines form a dense
-subspace of continuous functions on a compact interval.  As the mesh is
-refined and more basis functions are added, the sequence $\{\Psi_n\}$
-converges uniformly to $\Psi$:
+Two observers may describe the same history using different outcome
+alphabets. Let $L$ be the linear operator that translates the record of
+Observer~A into the alphabet of Observer~B:
 \[
-  \Psi_n \;\xrightarrow[n\to\infty]{}\; \Psi.
+  \boldsymbol{\psi}_B = L \boldsymbol{\psi}_A.
 \]
-Because the Euler--Lagrange operator is continuous in the weak topology,
-convergence of $\Psi_n$ implies convergence of all weak derivatives:
+
+If $\boldsymbol{\phi}$ is a test variation in Observer~B’s frame, the total
+count of distinguishable increments must remain invariant when expressed in
+either description:
 \[
-  \Psi_n'' \;\xrightarrow[n\to\infty]{}\; \Psi''.
+  \langle \boldsymbol{\psi}_B, \boldsymbol{\phi} \rangle
+  =
+  \langle \boldsymbol{\psi}_A, \tilde{\boldsymbol{\phi}} \rangle.
 \]
-Thus the Galerkin sequence yields arbitrarily good spline approximations of
-the Euler--Lagrange solution.  In particular, $\Psi_n$ satisfies
+
+Using the standard inner-product representation for integer counts,
 \[
-  \Psi_n^{(4)} = 0
+  (L \boldsymbol{\psi}_A)^T \boldsymbol{\phi}
+  =
+  \boldsymbol{\psi}_A^T (L^T \boldsymbol{\phi}),
 \]
-on each spline element, up to a boundary residual that vanishes as the mesh
-is refined.
-
-\begin{corollary}
-If a smooth Euler--Lagrange solution $\Psi$ exists, a sequence of cubic
-splines $\{\Psi_n\}$ constructed by Galerkin projection converges uniformly
-to $\Psi$.  Since cubic splines represent all admissible distinguishable
-structure, observing a spline solution is sufficient to infer the underlying
-Euler--Lagrange dynamics.
-\end{corollary}
-
-In summary:
+we identify the transformed test
 \[
-  \Psi
-  \xrightarrow{\text{Galerkin projection}}
-  \Psi_n
-  \xrightarrow[n\to\infty]{\text{Weierstrass}}
-  \Psi,
+  \tilde{\boldsymbol{\phi}} = L^T \boldsymbol{\phi}.
 \]
-so splines not only represent all admissible distinctions, but converge to
-the unique extremal of the Euler--Lagrange equation whenever one exists.  The
-Galerkin method therefore completes the argument of spline sufficiency in the
-continuum: if continuous dynamics exist, spline solutions will recover them
-to arbitrary accuracy.
 
-The Galerkin refinement therefore recovers smooth calculus without assuming
-infinitesimal increments or geometric primitives.  The classical paradox of
-the fluxion may now be revisited in this light.
+The transpose $L^T$ is therefore defined operationally as the \emph{reciprocal
+change of variables}: it translates tests backward exactly as $L$ translates
+histories forward. This ensures that the count of refinements does not
+depend on the observer’s chosen description.
 
-
-\begin{phenomenon}[Fluxions~\cite{berkeley1734,newton1687}]
-\label{te:newtonian-ghost}
-
-\NB{The classical paradox of the fluxion treats an infinitesimal $\mathrm{d}t$
-as a quantity that is neither zero nor nonzero.  In the present framework,
-the limit is defined without invoking infinitesimals: smooth structure appears
-only as the unique completion of finite distinctions.}
-
-In the 18th century, Bishop Berkeley criticized Newton's calculus of
-\emph{fluxions} ($\dot{x},\dot{y}$) for relying on quantities that vanish in
-one step of a proof and are treated as nonzero in the preceding step.  If
-$\dot{x}$ and $\dot{y}$ are the ghost-like ``increments'' of position, the
-question arises: \emph{How can a finite, observable change emerge from the
-vanishing difference of infinitesimal quantities?}
-
-In the causal accounting used here, this is not a paradox of quantity but a
-limitation of informational resolution.  The fluxion
-\[
-  \dot{x} = \frac{\Delta x}{\Delta t}
-  \]
-  is a ratio of two sequentially recorded distinctions: the number of spatial
-  ticks $\Delta x$ versus the number of temporal ticks $\Delta t$ between two
-  anchors.  Both are finite, integer-valued measurements.
-
-  The classical paradox appears only when $\Delta t \to 0$ is interpreted as a
-  transition through a nonphysical intermediate state.  In the present
-  framework, no such state is required.  The smooth completion $\Psi$
-  constructed in the dense limit satisfies $\Psi^{(4)}=0$ and is the unique
-  curvature-free extension of the data.  As the anchor spacing shrinks, the
-  ratio $\frac{\Delta x}{\Delta t}$ converges to the unique $\mathcal{C}^{2}$
-  slope $\Psi'$ of the cubic interpolant determined by the neighboring anchors.
-
-  No ghost-like infinitesimal is invoked.  The derivative is the continuous
-  shadow of finite bookkeeping: the single value required to prevent the
-  appearance of new, unrecorded events as resolution increases.  Smooth
-  calculus arises not by manipulating vanished quantities, but as the unique
-  function consistent with every refinement of the observable record.
-
-  \end{phenomenon}
-
-\subsection{The Physical Impossibility of Infinite Refinement}
-\label{sec:impossibility-spline-law}
-
-A law of spline necessity \emph{would} describe the continuous limit of an
-ideal refinement process much like the law of spline sufficiency. In such a limit, 
-where arbitrarily fine
-distinguishable refinements are permitted, the unique smooth closure
-compatible with informational minimality would necessarily coincide with a
-cubic spline satisfying $\Psi^{(4)} = 0$ between all anchors. This behavior
-would characterize the limiting object toward which all admissible
-refinements converge.
-
-However, this description is inherently conditional. The existence of such a
-law requires access to refinements at arbitrarily small scales. In the
-informational setting developed here, no such refinement process exists:
-every record admits only finitely many distinguishable refinements. As a
-consequence, the continuum limit in which an exact spline law \emph{would}
-hold is never attainable. The law does not fail; rather, it is not a
-law of the finite world.
-
-\NB{The idea of a spline necessity law is meaningful only as a limiting
-construct. It does not apply to any finite record because no observational
-process can instantiate the infinite refinement depth the law presupposes
-(Axiom~\ref{ax:planck}).}
-
-This observation motivates an approximate interpretation. Although an exact
-law cannot hold, the Galerkin convergence results of
-Section~\ref{subsec:approx-spline-necessity} imply that finite-dimensional
-closures can be made arbitrarily close to the ideal spline closure. Thus,
-while a spline necessity law describes an unattainable limit, its behavior
-is still relevant: finite informational models approach that limit as their
-resolution increases. The continuum spline is therefore best understood as
-the \emph{attractor} of refinement-compatible approximations, not as a law
-governing finite observational structure.
-
-\begin{definition}[Attractor~\cite{mandelbrot1982}]
-An attractor is a set of configurations toward which the admissible
-states of a system asymptotically converge under iteration of the update
-rule.  Once the refinement enters the neighborhood of the attractor,
-subsequent refinements remain confined to it.  The attractor represents the
-stable informational pattern that balances the system's internal stress and
-the constraints of the refinement process.  
-\end{definition}
-
-
-\subsection{Indistinguishability of Approximate and Ideal Spline Closures}
-\label{subsec:indistinguishability-spline}
-
-A law of spline necessity would characterize the exact continuous limit of an
-ideal refinement process. In practice, however, only approximate spline closures
-exist, obtained through refinement-compatible approximations such as Galerkin
-methods. This raises a natural question: could any measurement distinguish between
-an approximate closure and the ideal spline attractor it converges toward?
-
-The answer is no. Under the axioms of event selection, refinement compatibility,
-and informational minimality, no admissible measurement can separate the two. Any
-measurement capable of distinguishing an approximate spline from the ideal one
-would require detecting differences at scales finer than the minimum resolvable
-distinction allowed by the record. Such a measurement would necessarily violate
-the axioms by introducing new refinements below the Planck scale.
-
-\NB{There exists no admissible observational procedure, consistent with the axioms
-of measurement, that can differentiate between the approximate spline obtained at a
-finite refinement scale and the ideal spline that would appear in the continuum
-limit. Any attempt to do so requires forbidden refinements and is therefore
-inadmissible.}
-
-Let $(\Psi_N)$ be a sequence of refinement-compatible approximations converging
-toward an ideal spline $\Psi$ in the sense of
-Section~\ref{subsec:approx-spline-necessity}. For any fixed resolution scale
-permitted by the record, there exists $N$ such that
-\[
-\|\Psi_N - \Psi\| < \delta,
-\]
-where $\delta$ is the smallest distinguishable refinement allowed by the axioms.
-Because no measurement can detect variation smaller than $\delta$, the outputs of
-$\Psi_N$ and $\Psi$ are observationally identical. To distinguish them would
-require a measurement refining the domain below $\delta$, which the axioms forbid.
-
-\begin{definition}[Observational Indistinguishability~\cite{nyquist1928}]
-\label{def:indistinguishability}
-A finite-dimensional closure $\Psi_N$ is observationally indistinguishable from the
-ideal spline closure $\Psi$ if, for the minimum refinement scale $\delta$ of the
-record,
-\[
-|\Psi_N(x) - \Psi(x)| < \delta
-\quad\text{for all admissible measurement points } x.
-\]
-No admissible measurement can detect any discrepancy of magnitude less than
-$\delta$.
-\end{definition}
-
-\subsection{Indistinguishability of Infinite Refinement}
-\label{subsec:pigeonhole-indistinguishability}
-
-Axiom~\ref{ax:kolmogorov} states that every measurement produces a symbol from a finite or
-countable alphabet and that all refinements are bounded below by a minimum
-distinguishable scale~$\delta > 0$. A measurement record is therefore a finite
-string over an alphabet whose effective base is determined by the refinement
-scale. In this setting, the pigeonhole principle implies that only finitely many
-distinct measurement outcomes are possible at resolution~$\delta$.
-
-Let $\Psi$ be an ideal closure that would be obtained in an infinite-refinement
-limit, and let $\Psi_\delta$ be any finite-resolution approximation consistent
-with the refinement scale~$\delta$. If $\Psi$ and $\Psi_\delta$ differ only on
-sub-\,$\delta$ scales, then no admissible measurement can distinguish them.
-Their projections into the measurement alphabet coincide, and therefore they
-produce the same finite string of observations.
-
-\begin{proposition}[Pigeonhole Indistinguishability of Infinite Refinement~\cite{dirichlet1834,hardy1938}]
-\label{prop:pigeonhole}
-Let $\Sigma_\delta$ be the finite set of symbols distinguishable at refinement
-scale~$\delta$, and let $\mathcal{M}$ denote the measurement map
-\[
-\mathcal{M} : \{\text{closures}\} \to \Sigma_\delta^*.
-\]
-If two closures $\Psi$ and $\Phi$ differ only at scales smaller than~$\delta$,
-then
-\[
-\mathcal{M}(\Psi) = \mathcal{M}(\Phi).
-\]
-In particular, any infinitely refined closure is observationally
-indistinguishable from a sufficiently refined finite approximation.
-\end{proposition}
-
-\begin{proofsketch}{pigeonhole}
-This result follows directly from the pigeonhole principle. A finite
-measurement alphabet cannot encode distinctions below the minimal refinement
-scale~$\delta$. Once two closures agree on all $\delta$-sized cells, no admissible
-measurement can produce different records. Infinite refinement produces no new
-distinguishable outcomes.
-\end{proofsketch}
-
-\subsection{Discrete Refinement}
-\begin{phenomenon}[The Moire Effect]
-When two admissible ledgers defined on slightly different refinement lattices
-are reconciled, coherent and incoherent regions appear at macroscopic scale.
-These large scale beats are the smooth shadow of high frequency
-incompatibility between observer frames.
-
-The visible pattern is not a property of either ledger alone, but the
-structure required to preserve global consistency under their interaction.
-\end{phenomenon}
-
-
-
-Thus an infinitely refined object is operationally equivalent to a finite
-closure at the resolution permitted by the axioms. Infinite refinement is a
-mathematical limit, not an observable phenomenon. This prepares the way for the
-Law of Discrete Spline Necessity, which identifies the unique closure that
-saturates all distinguishable information at scale~$\delta$.
-
-\begin{phenomenon}[The Quicksand Effect~\cite{batchelor1967,bonn2005}]
-\label{ph:viscosity-quicksand}
-
-\NB{In a continuous fluid, buoyancy is described by Archimedes' principle~\cite{archimedes1912}: an 
-immersed body floats when the upward force from displaced fluid balances its 
-weight~\cite{batchelor1967}. Bonn et al.~\cite{bonn2005} show that quicksand, 
-though a granular suspension rather than a true fluid, exhibits a nearby 
-buoyant behavior: objects settle only to a finite depth and then float, 
-reaching an equilibrium set by density matching, yield stress, and local 
-fluidization. The macroscopic effect resembles (and, to a certain coarseness 
-of refinement, is modeled by) Archimedes' principle, even though its 
-microscopic origin is entirely different. These physical observations serve 
-only as an analogy for the informational phenomenon described here; they do 
-not constrain the model. They illustrate how a finite set of admissible states 
-may appear, in the smooth limit, as a buoyant equilibrium.}
-\NB{The phenomenon described here concerns the irreversible, informational 
-component of fluid mechanics: the resistance to refinement below the minimum 
-distinguishable scale $\delta$. It is not a complete account of physical 
-viscosity, which depends on a finite third parameter $\Theta$ (see Coda: 
-Navier--Stokes as a Finite Third Parameter, Chapter~3) and requires an 
-independent kinematic assumption relating shear stress to velocity gradients. 
-The informational viscosity $\Psi_\delta$ treated here reflects only the 
-constraints of Causal Order and informational Minimality; it captures the 
-coarse, irreducible structure that remains when all sub-$\delta$ refinements 
-are suppressed.}
-\NB{\emph{A person floats on quicksand, rather than sinks}~\cite{bonn2005}}
-
-
-Consider an agent $E$ attempting to move through a medium governed solely by 
-distinguishability. Before contact, the mathematical continuum admits an 
-infinite family of smooth paths $\Phi_i$, distinguished by arbitrarily small 
-variations in curvature.
-
-Once $E$ enters the medium, the informational constraints become active. By 
-Axiom~\ref{ax:planck}, there exists a minimum distinguishable scale $\delta$. 
-Any displacement smaller than $\delta$ fails to generate a new event. The 
-continuum therefore collapses to a finite chain of $\delta$--compatible 
-anchors,
-\[
-    \Psi_\delta=\{x_1,\dots,x_N\},
-\]
-representing all positions that can be observationally distinguished.
-
-The medium exhibits an informational \emph{viscosity}: any attempted motion 
-that introduces sub-$\delta$ curvature is resisted and cancelled, keeping $E$ 
-pinned to the nearest admissible anchor. Only when the displacement exceeds 
-the refinement threshold does $E$ transition from $x_k$ to $x_{k+1}$.
-
-By Proposition~\ref{prop:pigeonhole}, the infinite microscopic variations 
-beneath the surface collapse into the finite observational buckets of 
-$\Psi_\delta$. Informational minimality (Axiom~\ref{ax:ockham}) then forces 
-the unique discrete closure consistent with the anchors and containing no 
-unrecorded structure: the discrete spline $\Psi_\delta$.
-
-This is the viscosity of quicksand: the resistance to refinement below the 
-minimum distinguishable scale $\delta$. Any attempted motion that fails to 
-produce a new admissible distinction is suppressed, and the system remains at 
-the nearest anchor in $\Psi_\delta$. In the smooth shadow, this appears as the 
-buoyant or viscous equilibrium observed by Bonn and others, where 
-a person floats because further descent would require the granular medium to 
-rearrange at scales smaller than the yield threshold of individual particles 
-of sand. Physically, the grains simply stop moving; informationally, no 
-additional distinctions can be recorded. The collapse of the infinitely many 
-ideal paths $\Phi_i$ into the single admissible sequence $\Psi_\delta$ is 
-therefore mirrored by the granular equilibrium: motion ceases not because of 
-any continuous force law, but because neither the sand nor the informational 
-model permits sub-$\delta$ refinements.
-\end{phenomenon}
-
-
-Thus the distinction between the approximate and ideal spline closures is purely
-mathematical. No experiment, sensor, or observational extension can reveal a
-difference between them without violating the Axioms of Measurement. The ideal
-spline belongs to the continuum limit; the approximate spline belongs to the
-finite informational world. Observationally, however, the two coincide to the
-highest permissible resolution.
-
-\section{The Law of Discrete Spline Necessity}
-\label{subsec:discrete-spline-necessity}
-
-Because the refinement depth of any admissible record is finite, the continuum
-limit in which an exact spline necessity law would hold can never be reached.
-Nevertheless, the refinement axioms determine a unique finite-resolution object
-that plays the role of a spline within the informational world. This discrete
-closure is the actual law governing all admissible completions of a finite
+Reciprocity is the condition:
+\begin{equation}
+  \langle L \boldsymbol{\psi}, \boldsymbol{\phi} \rangle
+  =
+  \langle \boldsymbol{\psi}, L^T \boldsymbol{\phi} \rangle
+  \qquad \forall \boldsymbol{\psi}, \boldsymbol{\phi},
+  \label{eq:reciprocity}
+\end{equation}
+guaranteeing that a change of variables cannot create or erase information.
+The adjoint arises not from geometry, but from the informational requirement
+that two observers must agree on the tally of distinctions they jointly
 record.
 
-\begin{law}[The Law of Discrete Spline Necessity]
-\label{law:discrete-spline}
-Let $\psi$ be any finite, non-contradictory record with minimum refinement scale
-$\delta$, guaranteed by the axioms of measurement. Then there exists a unique
-finite-resolution function $\Psi_\delta$ satisfying:
 
-(1) $\Psi_\delta$ agrees with $\psi$ at every anchor event and introduces no
-refinements smaller than $\delta$.
+\section{Galerkin Closure}
+\label{sec:galerkin-closure}
 
-(2) On each interval between anchors, $\Psi_\delta$ is the minimal-curvature
-function permitted by the refinement grid of scale $\delta$. In particular,
-$\Psi_\delta$ is represented by a cubic polynomial on each discrete cell of size
-$\delta$, with continuity of slope and curvature enforced at all interior
-junctions.
+We now address the problem of reconstruction: given the finite experimental
+record $\boldsymbol{\psi}$, which admissible history extends it without
+predicting refinements that do not appear?
 
-(3) Any alternative function $\Phi$ that agrees with $\psi$ at the anchors and
-differs from $\Psi_\delta$ on any discrete cell either
+In numerical analysis, the Galerkin method selects a solution by enforcing
+orthogonality of the residual. In our setting, this principle is elevated to
+a fundamental law: the physical history is the one that introduces no
+distinguishable structure beyond what the observer records.
+
+\subsection{Trial Functions as Hypothetical Refinements}
+\label{subsec:trial-refinements}
+
+Let $\mathcal{H}$ denote the space of conceivable histories connecting two
+anchors. A \emph{trial history} $\mathbf{u} \in \mathcal{H}$ interpolates the
+recorded events but may contain additional unobserved refinements. These
+represent hypothetical structure without operational support.
+
+The space $\mathcal{H}$ is far larger than what measurement can constrain.
+
+\subsection{Test Functions as Observer Constraints}
+\label{subsec:test-constraints}
+
+A \emph{test function} $\mathbf{v}$ represents a distinguishability
+constraint: a refinement the observer \emph{could} resolve.
+
+The admissible tests are determined by a change-of-variables operator $L$:
+the mapping that relates one observer’s outcome alphabet to another’s. The
+rows of $L$ span the test space
+\[
+  V_{\mathrm{test}} = \mathrm{rowspan}(L).
+\]
+A trial refinement that lies outside this span cannot be detected by
+measurement.
+
+\subsection{Minimal Refinement as $L$-Orthogonality}
+\label{subsec:minimal-weak-limit}
+
+Let $\mathbf{R}(\mathbf{u})$ denote the informational residue: the portion of
+$\mathbf{u}$ that is not required by the anchors. The physical history
+$\mathbf{u}_h$ is determined by the condition
+\begin{equation}
+  \langle \mathbf{R}(\mathbf{u}_h), \mathbf{v} \rangle_L = 0
+  \qquad
+  \forall\, \mathbf{v} \in V_{\mathrm{test}},
+  \label{eq:Lorthogonality}
+\end{equation}
+where $\langle \cdot, \cdot \rangle_L$ is the observational pairing induced
+by $L$.
+
+This condition ensures:
+
 \begin{enumerate}
-\item introduces additional distinguishable structure below scale $\delta$
-(violating refinement compatibility and the Planck condition), or
-\item fails to maintain global causal consistency across cell boundaries.
+\item
+\textbf{Fidelity.}
+$\mathbf{u}_h$ agrees with the recorded counts: it matches the anchors.
+\item
+\textbf{Minimality.}
+Any excess structure in $\mathbf{u}_h$ is undetectable by the observer and
+contributes no distinguishability.
 \end{enumerate}
 
-(4) As $\delta$ decreases along any refinement-compatible sequence, the discrete
-closures satisfy
+In algebraic terms,
 \[
-\Psi_{\delta} \;\longrightarrow\; \Psi
+  \mathbf{R}(\mathbf{u}_h) \in \ker(L^T).
 \]
-where $\Psi$ is the ideal spline attractor described in
-Section~\ref{subsec:conditional-spline-law}. This convergence is monotone in the
-sense that each refinement preserves and sharpens all previously admissible
-distinctions.
-
-Thus every finite informational record admits a unique discrete closure
-$\Psi_\delta$, which is the minimal, globally coherent, refinement-compatible
-representation of that record at its permitted resolution. This is the
-informational law governing all realizable completions.
-\end{law}
-
-\NB{This law is exact. Unlike the continuum spline necessity law, which would
-require infinite refinement and therefore cannot apply to finite records, the Law
-of Discrete Spline Necessity governs all observationally realizable completions.
-Continuous splines appear only as limiting attractors. The discrete closure
-$\Psi_\delta$ is the true object selected by the axioms.}
-
-This law establishes the discrete analogue of curvature minimality,
-differentiability, and weak-form transport without invoking limits. All smooth
-structures used in physics arise from the asymptotic behavior of $\Psi_\delta$
-under refinement but are never instantiated exactly. The discrete closure is the
-only object compatible with the axioms at finite resolution.
-
-
-\subsection{The Indistinguishability of Discrete and Continuous
-Spline Closures}
-\label{subsec:axiom1-indistinguishability}
-
-Axiom~\ref{ax:kolmogorov} asserts that all measurements produce finitely many distinguishable
-outcomes and that every admissible refinement has a minimum resolvable scale
-$\delta>0$. No observational process may introduce refinements smaller than
-$\delta$ without violating the axiom. As a consequence, the refinement process
-terminates at a finite resolution, and the most refined discrete closure
-$\Psi_\delta$ permitted by the record is observationally maximal.
-
-If an ideal continuum limit were accessible, the refinement process would
-continue indefinitely and converge to a smooth cubic spline $\Psi$ satisfying
-the limiting minimality condition $\Psi^{(4)}=0$. However, the continuum limit
-requires refinements at scales below $\delta$, and therefore cannot be realized
-by any admissible sequence of measurements. The continuous spline $\Psi$ is a
-mathematical attractor, not an observable object.
-
-\NB{By Axiom~\ref{ax:kolmogorov}, the most refined discrete spline $\Psi_\delta$ is
-\emph{observationally indistinguishable} from the continuous spline attractor
-$\Psi$. No admissible measurement can detect any discrepancy between the two,
-because doing so would require refinements smaller than $\delta$, which the
-axioms forbid.}
-
-Formally, if $(\Psi_N)$ is any refinement-compatible sequence converging to
-$\Psi$, then for sufficiently large $N$,
-\[
-|\Psi_N(x) - \Psi(x)| < \delta
-\quad\text{for all admissible measurement points }x.
-\]
-Therefore $\Psi_N$ and $\Psi$ produce identical observational outcomes.
-
-This establishes that the continuous spline arises only as a limiting concept,
-while the discrete closure $\Psi_\delta$ is the unique physically realizable
-object. Axiom~\ref{ax:kolmogorov} identifies these two as observationally equivalent: the discrete
-spline is as refined as the informational world can ever be.
-
-\subsection{The Necessity of Approximation}
-\label{subsec:necessity-of-approximation}
-
-The preceding sections establish a structural asymmetry in the informational
-framework. On the one hand, the continuum spline appears as the unique limiting
-object that a refinement process \emph{would} select if infinite refinement were
-possible. On the other hand, Axiom~\ref{ax:kolmogorov} forbids refinements below a minimum
-distinguishable scale $\delta>0$. The refinement sequence therefore terminates at a
-finite stage, and no observational process can approach the continuum limit
-beyond this final resolution.
-
-\begin{phenomenon}[The Olbers Effect]
-An infinitely refined ledger would admit infinitely many luminous events.
-The observed darkness of the night sky demonstrates that the causal record
-is finite.
-
-The absence of uniform brightness is the direct observational proof that the
-informational capacity of admissible history is bounded.
-\end{phenomenon}
-
-
-This tension forces a fundamental conclusion: approximation is not a methodological
-choice but a structural necessity. Every admissible representation of a finite
-record must be an approximation to a limit that cannot be realized. The
-continuous spline is an ideal boundary point of the refinement process, never an
-attainable object within the informational universe.
-
-\NB{Approximation is necessary, not optional. The axioms prohibit the continuum
-limit required for exact closures, and therefore all admissible models are
-approximate shadows of the limiting structure they cannot reach.}
-
-Let $\Psi_\delta$ denote the discrete spline closure permitted by the minimal
-refinement scale. Let $\Psi$ denote the ideal spline attractor that would appear in
-the continuum limit. By Axiom~\ref{kolmogorov}, $\Psi_\delta$ is observationally
-indistinguishable from $\Psi$, but it remains a finite-resolution approximation.
-Any mathematical construction that assumes exact differentiability, exact
-integration, or exact smoothness implicitly appeals to a limit that the axioms
-deny. The familiar constructs of calculus therefore do not describe the
-informational world directly; they describe the limiting behavior that finite
-closures approximate.
-
-This necessity is not an impediment but a structural guide. The refinement
-sequence
-\[
-\Psi_{\delta} \;\longrightarrow\; \Psi
-\]
-never completes, yet its monotone convergence ensures that all admissible
-models become arbitrarily close to the ideal spline at resolutions permitted by
-the axioms. The continuous spline is unreachable but inevitable: no finite model
-can realize it, yet every refinement-compatible model approaches it.
-
-\paragraph{Quantum-like Emergence.}
-Finite refinement does more than require approximation; it enforces
-distinctively non-classical patterns of behavior. The inability to refine
-distinctions below scale $\delta$ produces irreducible uncertainty in the
-placement of events, non-additivity in refinements, and interference-like
-behavior when merging partially incompatible records. These effects arise
-not from physical postulates but from informational structure: finite
-resolution combined with refinement compatibility forces discrete update
-rules that mimic the algebra of quantum amplitudes.
-
-\NB{Quantum-like theories emerge naturally from the necessity of approximation:
-finite refinement yields non-classical composition of information, which
-manifests as interference, superposition-like combination, and the familiar
-probabilistic structure of quantum models. No quantum axioms are assumed; these
-behaviors follow from measurement constraints alone.}
-
-Thus approximation is the essential mode of representation in the informational
-framework. The equations and structures of classical \emph{and} quantum theories
-arise not because the world is continuous or probabilistic, but because the
-discrete closures enforced by the axioms approximate the same limiting behavior
-that continuous and quantum mathematics describe in their respective formalisms.
-
-
-\subsection{Equivalence of Discrete and Smooth Representations}
-\label{sec:equivalence-principle}
-
-\begin{phenomenon}[The Gibbs Phenomenon]
-When a discontinuous event is forced into a finite refinement ledger, a
-residual oscillation appears in its smooth shadow.  This overshoot is not an
-error of representation but the irreducible informational strain of mapping
-a discrete refinement into a bandwidth limited spline.
-
-The ringing persists because unobserved structure cannot be admitted.  The
-smooth shadow cannot perfectly close a discontinuity under finite
-refinement.
-\end{phenomenon}
-
-
-The preceding results establish the final closure of the Calculus of Dynamics.
-An admissible measurement record $\psi$ supported on event anchors
-$\{x_i\}$ is informationally equivalent to its smooth completion $\Psi$.
-The smooth calculus does not introduce new structure; it is the completion of
-refinement in the discrete domain.
-
-Let $\psi$ be an admissible event record and let $f(\psi)$ denote any
-interpolant that preserves the anchors and introduces no distinguishable
-features between them.  Refining the interpolant over nested partitions
-$\{\mathcal{T}_n\}$ produces a Galerkin sequence $\{\,\Psi_n\,\}$.  By the
-convergence theorems, this sequence converges uniformly to a unique $\mathcal{C}^{2}$
-cubic function $\Psi$:
-\[
-  \Psi_n \;\xrightarrow[n\to\infty]{}\; \Psi.
-\]
-Informational minimality ensures that $\Psi$ is uniquely determined by the
-anchors: for every event point $x_i$,
-\[
-  \Psi(x_i) = \psi(x_i).
-\]
-Because $\Psi$ is cubic on each partition element, preserves anchor order, and
-is globally $\mathcal{C}^{2}$, it is injective on each interval.  Its inverse
-therefore recovers the original record:
-\[
-  \Psi^{-1}(x_i) = \psi(x_i).
-\]
-Thus the discrete record $\psi$ and the smooth completion $\Psi$ contain
-exactly the same information.  The interpolant and its limit are
-informationally equivalent representations of a single causal history.
-
-\subsection{Recovery of the Euler--Lagrange Form}
-
-The weak extremality condition was obtained entirely from finite differences
-in the discrete domain.  In the Galerkin formulation this appears as
-\[
-  \int \Psi''(x)\,\phi''(x)\,dx = 0,
-  \qquad\text{for all admissible test functions }\phi.
-\]
-Integrating this identity twice yields the strong closure
-\[
-  \Psi^{(4)}(x) = 0.
-\]
-No differentiability was assumed \emph{a priori}: smoothness appears only as
-the completion of refinement in the Galerkin limit.  The Euler--Lagrange
-equation is therefore a \emph{recovered} description of the data, not an
-independent postulate.  It is sufficient to model the discrete record because
-every admissible refinement converges to the same $\mathcal{C}^{2}$ cubic
-function.
-
-In this sense the epistemic direction is inverted.  We do not derive
-Euler--Lagrange dynamics and then discretize them.  We begin with finite
-measurements, enforce informational minimality, and recover the
-Euler--Lagrange operator as the unique smooth shadow of refinement:
-\[
-  \text{measurement}
-  \;\xrightarrow{\text{refinement}}\;
-  \Psi
-  \;\xrightarrow{\text{closure}}\;
-  \Psi^{(4)} = 0.
-\]
-In this sense the epistemic direction is inverted.  We do not derive
-Euler--Lagrange dynamics and then discretize them.  We begin with finite
-measurements, enforce informational minimality, and recover the
-Euler--Lagrange operator as the unique smooth shadow of refinement:
-\[
-  \text{measurement}
-  \;\xrightarrow{\text{refinement}}\;
-  \Psi
-  \;\xrightarrow{\text{closure}}\;
-  \Psi^{(4)} = 0.
-\]
-Smooth calculus is therefore compatible with the axioms because it contains
-exactly the information present in the discrete causal record and no more.
-
-\NB{With apologies to Bishop Berkeley: smooth dynamics are not prior to
-measurement; they are merely the grammar of its consistent refinement.}
-
-
-\section{The Free Parameter of the Cubic Spline}
-\label{sec:free-parameter}
-
-The Law of Spline Sufficiency requires that the smooth completion
-$\Psi$ of any admissible record be $\mathcal{C}^{2}$ and satisfy
-$\Psi^{(4)}=0$.  Each segment of $\Psi$ is therefore a cubic polynomial,
-\[
-  \Psi(x) = a_0 + a_1 x + a_2 x^2 + a_3 x^3,
-\]
-but informational minimality collapses the apparent local degrees of freedom
-to a single global parameter.
-
-\subsection{Fixing the Lower--Order Coefficients}
-
-The value $a_0$ is fixed by the anchors: $\Psi(x_i)=\psi(x_i)$ for every
-event point $x_i$.  The first derivative $\Psi'$ must be continuous across
-anchors; a jump in slope would constitute a new observable event, so $a_1$ is
-likewise determined.  The curvature $\Psi''$ must also be continuous; any
-discontinuity would represent an unobserved acceleration and violate
-informational minimality.  Thus $a_2$ is fixed by $\mathcal{C}^{2}$
-continuity at the anchors.
-
-These constraints ensure that adjacent cubic segments glue together without
-introducing new distinguishable structure.  The only remaining coefficient,
-$a_3$, controls the third derivative of $\Psi$:
-\[
-  \Psi'''(x) = 6a_3.
-\]
-
-\subsection{The Single Free Parameter}
-
-Because $\Psi^{(4)} = 0$, the third derivative $\Psi'''$ is constant on every
-interval of the causal domain.  Informational minimality permits this
-quantity to vary from interval to interval only when the variation is itself
-detectable as a recorded event.  Absent such detection, $\Psi'''$ is the sole
-unconstrained degree of freedom.
-
-\begin{proposition}[The Free Parameter of Information]
-\label{prop:free-parameter}
-The smooth completion $\Psi$ contains exactly one free parameter: the global
-scale of its third derivative $\Psi'''$.  All lower--order coefficients are
-fixed by anchor data and continuity constraints.
-\end{proposition}
-
-\begin{proofsketch}{free-parameter}
-Cubic structure follows from $\Psi^{(4)}=0$.  Values and derivatives up to
-order two are fixed by $\mathcal{C}^{2}$ boundary matching; any jump would be
-observable.  Hence the only quantity not determined by anchor data is the
-constant third derivative on each interval, which is governed by $a_3$.  No
-other freedom remains.
-\end{proofsketch}
-
-\subsection{Physical Interpretation}
-
-The single free parameter $\Psi'''$ represents the entire informational
-content of smooth kinematics.  All subsequent dynamical quantities---wave
-speed, stress, curvature, and eventually mass---are determined by this one
-global scale.  The Law of Spline Sufficiency therefore reduces the continuum
-to its minimal informational foundation: a $\mathcal{C}^{2}$ cubic universe
-with one degree of freedom.
-
-\[
-  \text{finite record}
-  \;\xrightarrow{\text{closure}}\;
-  \Psi
-  \;\xrightarrow{\text{spline law}}\;
-  \Psi''' = \text{constant on intervals}.
-\]
-
-Smooth dynamics contain no structure beyond what is already present in the
-discrete causal record.  The apparent infinity of the continuum collapses to
-a single free parameter.
-
-\section{Time Dilation}
-
-The informational framework developed in Chapters~5 and~6 places a subtle
-constraint on how refinement may be transported across a causal network.
-Proper time is not a geometric parameter but the tally of irreducible
-distinctions, and the metric $g_{\mu\nu}$ records how this tally must adjust
-when two histories inhabit regions with different curvature residue.
-Whenever distinguishability is carried from one domain to another, the
-connection enforces a compatibility rule: the informational interval must be
-preserved even if the local refinement structure differs.
-
-This requirement has a striking observable consequence.  Two clocks placed
-at different informational potentials---that is, in regions where the
-residual strain of admissible curvature differs---cannot maintain the same
-rate of refinement.  Each clock is internally consistent, but the comparison
-of their records forces an adjustment.  A refinement sequence that is
-admissible at one potential must be reweighted when interpreted at another,
-or else the causal record would fail to merge coherently.
-
-In the smooth shadow, this bookkeeping adjustment becomes the familiar
-phenomenon of gravitational redshift.  Signals transported upward appear to
-lose frequency; signals transported downward appear to gain it.  Nothing
-mystical is occurring: the informational interval is being preserved, and the
-only available mechanism is a change in the rate at which distinguishability
-is accumulated.
-
-The Pound--Rebka experiment is therefore the archetype of an informational
-outcome.  It demonstrates that when refinement is compared across regions
-with differing curvature residue, the universe must adjust the apparent rate
-of time itself to maintain consistency.  No dynamical field need be invoked;
-the redshift is simply the shadow of the constraint that admissible
-refinements must agree on their causal overlap.
-
-
-\begin{phenomenon}[The Pound--Rebka Effect~\cite{pound1959}]
-
-\NB{The following is an \emph{informational phenomenon}.  No physical
-mechanism is assumed.  The interpretation concerns how the gauge of
-informational separation $g_{\mu\nu}$ adjusts refinement counts when
-distinguishability is transported across domains of differing causal
-potential.  Any resemblance to the gravitational redshift measured by
-Pound and Rebka is a consequence of the informational shadow, not an
-assumed dynamical cause.}
-
-The Axiom of Peano defines proper time as the count of irreducible refinements
-along an admissible history.  The Law of Causal Transport guarantees that
-this count is invariant under maximal propagation, while the informational
-metric $g_{\mu\nu}$ (Section~5.2) records how successive refinements compare
-when transported across regions whose admissible histories differ in their
-curvature residue.
-
-Consider two clocks: one at a lower informational potential (higher curvature
-residue) and one at a higher potential (lower residue).  Both clocks produce
-sequences of refinements
-\[
-  \langle e_1 \prec e_2 \prec \cdots \rangle_{\text{low}},
-  \qquad
-  \langle f_1 \prec f_2 \prec \cdots \rangle_{\text{high}},
-\]
-each internally consistent.  However, the Law of Boundary Consistency demands
-that refinements compared across their shared causal overlap must agree on
-their informational interval.  When the refinement sequence from the lower
-clock is transported to the higher clock, the compatibility condition forces
-an adjustment in the rate at which distinguishability is accumulated.
-
-Formally, transport along a connection with residue $\Gamma$ alters the
-frequency of refinements according to the first--order compatibility
-condition of Section~5.4:
-\[
-  \nu_{\text{high}}
-  = \nu_{\text{low}}\, (1 - \Gamma\,\Delta h),
-\]
-where $\Delta h$ is the informational separation between the clocks.
-This is the informational analogue of the frequency shift that appears in
-the smooth limit as gravitational redshift.
-
-In the Pound--Rebka configuration, a photon (interpreted here as a unit of
-transported distinguishability) sent upward from the lower clock must be
-refined in such a way that its informational interval remains constant.
-Since admissible refinements at higher potential accumulate fewer curvature
-corrections, the transported signal must appear at a lower frequency when
-measured by the upper clock.  Conversely, a downward signal appears at a
-higher frequency.  No physical field is invoked: the effect is a bookkeeping
-adjustment required to maintain Martin--consistent transport of
-distinguishability across regions of differing curvature residue.
-
-Thus the informational framework predicts a frequency shift of the form
-\[
-  \frac{\Delta \nu}{\nu} \approx \Gamma\,\Delta h,
-\]
-which matches the structure of the Pound--Rebka observation when interpreted
-in the smooth shadow of the metric gauge.
-
-The phenomenon of time dilation is therefore an observable outcome of the
-informational interval and the necessity of refinement--adjusted transport.
-Differences in curvature residue force clocks at different potentials to
-accumulate distinguishability at different rates, and the comparison of
-their refinement counts produces the celebrated redshift.
-
-\end{phenomenon}
-
-
-
-\begin{coda}{The Finite Navier--Stokes Effect}
-
-We do not derive the Navier--Stokes equations. Rather, we show how the
-measurement calculus constrains any smooth limit of finite records to a
-cubic-spline structure and thereby recasts the regularity question as the
-finiteness of a single quantity: the third parameter of the spline.
-
-\subsection*{1. Statement of the classical problem}
-Let $v(x,t)$ be a velocity field and $p(x,t)$ a pressure satisfying the
-incompressible Navier--Stokes system on $\mathbb{R}^3$ (or a smooth domain
-with suitable boundary conditions):
-\begin{equation}
-\label{eq:NSE}
-\partial_t v + (v\cdot\nabla)v + \nabla p = \nu \Delta v + f, 
-\qquad \nabla\cdot v = 0,
-\end{equation}
-with smooth initial data $v_0$. The Millennium Problem asks whether smooth
-solutions remain smooth for all time or may develop singularities in finite
-time.
-
-\subsection*{2. Measurement-to-spline reduction}
-Chapter 2 established that admissible smooth limits of finite records obey
-a local cubic constraint. Along any coordinate line (and likewise along any
-admissible selection chain) each component admits a representation whose
-fourth derivative vanishes in the limit:
-\begin{equation}
-\label{eq:quarticzero}
-U^{(4)} = 0 \quad \text{(componentwise along admissible lines)}.
-\end{equation}
-Hence the only freely varying local quantity is the \emph{third parameter}
-(the derivative of curvature). In one dimension this is $U'''$. In three
-dimensions we package the idea as the third spatial derivatives of $v$:
-\begin{equation}
-\label{eq:thirdparam}
-\Theta(x,t) := \nabla(\nabla^2 v)(x,t) \quad \text{(a third-derivative tensor)}.
-\end{equation}
-Informally: $v$, $\nabla v$, and $\nabla^2 v$ are glued continuously by the
-spline closure; only $\Theta$ may vary piecewise without introducing
-fourth-order structure.
-
-\subsection*{3. Regularity as finiteness of the third parameter}
-\begin{quote}
-\emph{Principle.} If the third parameter $\Theta$ stays finite at all
-scales allowed by measurement, the smooth spline limit persists and no
-singularity can occur within the calculus of measurement.
-\end{quote}
-A practical surrogate is a scale-invariant boundedness criterion on $\Theta$
-(or a closely related norm tied to enstrophy growth):
-\begin{equation}
-\label{eq:criterion}
-\sup_{0\le t\le T}\ \|\Theta(\cdot,t)\|_{X} < \infty
-\quad \Longrightarrow \quad \text{no blow-up on } [0,T],
-\end{equation}
-where $X$ is chosen to control the admissible refinements (e.g. an
-$L^\infty$-type or Besov/H\"older proxy along selection chains). In words:
-the only obstruction to global smoothness is unbounded third-parameter
-amplitude.
-
-\subsection*{4. Heuristic link to classical controls}
-Energy and enstrophy inequalities control $\|v\|_{L^2}$ and $\|\nabla v\|_{L^2}$.
-Vorticity $\omega=\nabla\times v$ monitors the first derivative. Growth of
-$\nabla\omega$ involves $\nabla^2 v$; the \emph{onset} of non-smoothness is
-therefore detected by $\Theta=\nabla(\nabla^2 v)$, the next rung. Thus the
-finite-third-parameter condition \eqref{eq:criterion} plays the same role in
-this framework that classical blow-up criteria play in PDE analyses: it is
-the minimal spline-compatible guardrail against curvature concentration.
-
-\subsection*{5. Non-classical dependency is not invoked}
-No dependency (cause-effect) is asserted. The argument is purely
-informational: as long as the admissible record does not force the third
-parameter to diverge, the cubic-spline closure remains valid and the smooth
-limit inferred earlier continues to apply.
-
-\subsection*{6. The rephrased question}
-\begin{quote}
-\textbf{Navier--Stokes, reframed.} Given smooth initial data and forcing,
-must the third parameter $\Theta$ in \eqref{eq:thirdparam} remain finite
-for all time under \eqref{eq:NSE}? Equivalently, can measurement-consistent
-refinement generate unbounded third-parameter amplitude in finite time?
-\end{quote}
-If $\Theta$ stays finite, the spline structure persists, and the calculus
-of measurement supports global smoothness. If $\Theta$ diverges, the smooth
-continuum description ceases to be representable as a limit of admissible
-records, and the measurement calculus no longer licenses Euler--Lagrange
-inference on that interval.
-
-\subsection*{7. What we have and have not done}
-We have not solved the Millennium Problem. We have shown that within this
-program the obstruction to smoothness is concentrated in a single quantity,
-the third parameter of the cubic spline representation. The classical
-regularity question is thus equivalent, in this calculus, to the finiteness
-of $\Theta$.
-\end{coda}
-
+All admissible residue is confined to the kernel of the dual measurement
+operator. Anything else would be detectable and therefore forbidden.
+
+\begin{center}
+\emph{Reality is the projection of conceivable histories onto shared,
+operationally accessible distinctions.}
+\end{center}
+
+As the test space densifies and spans the full dual,
+$\ker(L^T) \to \{0\}$, forcing $\mathbf{R}(\mathbf{u}_h) = 0$. In this limit,
+the physical history becomes uniquely determined by the experimental record.
+Smooth dynamics appears not as a primitive feature, but as the residual-free
+closure of discrete refinement data.
+
+
+% 3.6
+\section{Dense Limit and Classical Calculus}
+\label{sec:dense-limit}
+  \subsection{Differentiable Distance in the Smooth Shadow}
+  \label{subsec:smooth-distance}
+  \subsection{Euler--Lagrange Form as Informational Minimality}
+  \label{subsec:euler-lagrange}
+
+% 3.7
+\section{Consequences of Compatible Refinement}
+\label{sec:consequences}
+  \subsection{Relative Velocity as Change in Distance}
+  \label{subsec:relative-velocity}
+  \subsection{Time Dilation as Unequal Refinement Density}
+  \label{subsec:time-dilation}
+  \subsection{Finite Navier--Stokes Closure}
+  \label{subsec:finite-NS}
 
